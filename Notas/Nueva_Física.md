@@ -12,9 +12,9 @@ El Modelo Estándar es uno de los mayores triunfos científicos del siglo pasado
 ## Problemas fenomenológicos
 ### Asimetría materia-antimateria: 
 La simetría materia-antimateria puede ser acomodada, pero no explicada por el Modelo Estándar. En 1967, Sakharov propuso tres condiciones necesarias para crear la concentración significativa de bariones en el universo temprano[^sakharov]:
-    *    Interacciones que puedan cambiar quarks a leptones (violación del número bariónico).
-    *    Condiciones en las que el equilibrio termodinámico no se sostenga. Esto pudo haber ocurrido durante la expansión del universo temprano.
-    *    Violación C y CP, que se observa experimentalmente dada la diferencia en cantidad de materia y antimateria.  
+* Interacciones que puedan cambiar quarks a leptones (violación del número bariónico).
+* Condiciones en las que el equilibrio termodinámico no se sostenga. Esto pudo haber ocurrido durante la expansión del universo temprano.
+* Violación C y CP, que se observa experimentalmente dada la diferencia en cantidad de materia y antimateria.  
     
   Sin embargo, la violación C y CP descrita por el Modelo Estándar no es suficiente para generar la cantidad de materia que se observa en el universo.[^cp]
   
@@ -38,7 +38,7 @@ Se estima que la materia oscura forma aproximadamente el 27% del universo, mient
 [^darkm]: https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2011.0452
 ## Problemas teóricos
 ### Descripción cuántica de la gravedad
-La evidencia más clara de que se necesita física más allá del Modelo Estándar es que no incluya la gravedad. La gravedad afecta a la física de partículas a escalas pequeñas cuántificadas por la escala de Planck $M_{Planck}\approx10^{19}GeV$, escala que se considera el límite de validez del Modelo Estándar[^scales]. 
+La evidencia más clara de que se necesita física más allá del Modelo Estándar es que no incluya la gravedad. La gravedad afecta a la física de partículas a escalas pequeñas cuántificadas por la escala de Planck ![equation](https://latex.codecogs.com/gif.latex?M_%7BPlanck%7D%5Capprox10%5E%7B19%7DGeV), escala que se considera el límite de validez del Modelo Estándar[^scales]. 
 
   Sin embargo, la gravedad es no renormalizable, por lo que no se ha logrado construido una teoría cuántica de campos que reconcilie la gravedad con la física de partículas.[^gravedad]
 
@@ -60,13 +60,13 @@ El Modelo Estándar no tiene una explicación para la masa de los fermiones, los
 
 
 ### Problema CP fuerte
-La cromodinámica cuántica depende de pocos parámetros: la constante de acoplamiento fuerte, la masa de los quarks y un parametro relacionado a la estructura del vacio de QCD $\theta$.[^qcd] Este último se encuentra en un término de interacción que permite la violación CP: 
- $$
- \mathcal{L}_\theta=\frac{\theta g_s^2}{32\pi^2}G^a_{\mu\nu}\tilde{G}_{a\mu\nu}
- $$
-   Donde $G^{a}_{\mu\nu}$ son las fuerzas de los campos de QCD y $g_s$ es la contante de acoplamiento.
+La cromodinámica cuántica depende de pocos parámetros: la constante de acoplamiento fuerte, la masa de los quarks y un parametro relacionado a la estructura del vacio de QCD ![equation](https://latex.codecogs.com/gif.latex?%5Ctheta).[^qcd] Este último se encuentra en un término de interacción que permite la violación CP: 
+
+![equation](https://latex.codecogs.com/gif.latex?%5Cmathcal%7BL%7D_%5Ctheta%3D%5Cfrac%7B%5Ctheta%20g_s%5E2%7D%7B32%5Cpi%5E2%7DG%5Ea_%7B%5Cmu%5Cnu%7D%5Ctilde%7BG%7D_%7Ba%5Cmu%5Cnu%7D)
+
+   Donde ![equation](https://latex.codecogs.com/gif.latex?G%5E%7Ba%7D_%7B%5Cmu%5Cnu%7D) son las fuerzas de los campos de QCD y ![equation](https://latex.codecogs.com/gif.latex?g_s) es la contante de acoplamiento.
   
-   Este parámetro aparece en el cálculo del momento dipolar del neutron, indicando que $\theta$ debe ser muy pequeño.[^cpfuerte] Experimentalmente no se ha observado violación CP en la interacción fuerte.
+   Este parámetro aparece en el cálculo del momento dipolar del neutron, indicando que [equation](https://latex.codecogs.com/gif.latex?%5Ctheta) debe ser muy pequeño.[^cpfuerte] Experimentalmente no se ha observado violación CP en la interacción fuerte.
  
    El problema de por qué el parámetro $\theta$ es tan pequeño no se ha resuelto.
 
@@ -75,14 +75,14 @@ La cromodinámica cuántica depende de pocos parámetros: la constante de acopla
 
 ### Problema de jerarquía
 El boson de Higgs es la única partícula fundamental escalar en el Modelo Estándar, por lo que su masa es modificada por terminos correctivos en todas las escalas en las que interactua; términos proporcionales a estas escalas[^correccion] :
- $$
-m^2\equiv m_0^2+\delta m^2
- $$
-  Donde $m_0$ corresponde a la 'masa desnuda' del Higgs y $\delta m^2$ a las correciones radiativas.
+
+![equation](https://latex.codecogs.com/gif.latex?m%5E2%5Cequiv%20m_0%5E2&plus;%5Cdelta%20m%5E2)
+
+  Donde ![equation](https://latex.codecogs.com/gif.latex?m_0) corresponde a la 'masa desnuda' del Higgs y ![equation](https://latex.codecogs.com/gif.latex?%5Cdelta%20m%5E2) a las correciones radiativas.
   
-  En el Modelo Estándar se consideran escalas hasta $M_{Planck}\approx10^{19}GeV$, por lo que teóricamente $\delta m^2\approx M_{Planck}$.
+  En el Modelo Estándar se consideran escalas hasta ![equation](https://latex.codecogs.com/gif.latex?M_%7BPlanck%7D%5Capprox10%5E%7B19%7DGeV), por lo que teóricamente ![equation](https://latex.codecogs.com/gif.latex?%5Cdelta%20m%5E2%5Capprox%20M_%7BPlanck%7D).
  
-  Se tiene un valor experimental de $m^2\approx125GeV$, lo que requeriría un valor de $m_0^2$ escogido muy específicamente para cancelar la mayoría de las correcciones. El ajuste fino de este parámetro se considera no-natural y representa problemas con respecto a la universalidad de la teoría.
+  Se tiene un valor experimental de ![equation](https://latex.codecogs.com/gif.latex?m%5E2%5Capprox125GeV), lo que requeriría un valor de ![equation](https://latex.codecogs.com/gif.latex?m_0%5E2) escogido muy específicamente para cancelar la mayoría de las correcciones. El ajuste fino de este parámetro se considera no-natural y representa problemas con respecto a la universalidad de la teoría.
   
   El problema de jerarquía es consecuencia de la diferencia entre escalas de la fuerza electro-débil y la fuerza gravitacional.[^jerarquia]
 
