@@ -7,7 +7,6 @@ Discusiones tesis de Mariana - mayo 2021
 
 Link al github:https://github.com/marianaiv/Tesis_grado_UCV
 
-# Reuniones
 
 ## Viernes, 21 de mayo 2021
 
@@ -80,8 +79,7 @@ No hubo reunión por fallas de internet.
 https://www.youtube.com/watch?v=Enn2NGMGC2k&ab_channel=OpenLifeSci).
 - [Slides de OLS](https://openlifesci.org/ols-3/schedule/#week-04).
 
-# Template
-## Fecha
+## Template
 ### Participantes
 ### Agenda
 ### Notas
