@@ -6,7 +6,7 @@ Overview: Olimpiadas LHC 2020
 
 Interpretar los datos producidos por el LHC no es una tarea fácil. Los protones son estructuras complejas, lo que hace difícil interpretar exactamente que sucede en el nivel fundamental de cada colisión. 
 
-Para mejorar la hábilidad de decifrar la información correctamente, se crearon las Olimpiadas LHC.
+Para mejorar la hábilidad de descifrar la información correctamente, se crearon las Olimpiadas LHC.
 
 En las olimpiadas se simulan tres conjuntos de datos que podrían generarse en el acelerador. Los participantes deben interpretar estos datos, buscando partículas y evidencia de teorías que no han sido presenciados o confirmados.
 
