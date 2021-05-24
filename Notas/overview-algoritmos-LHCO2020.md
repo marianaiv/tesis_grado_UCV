@@ -115,7 +115,6 @@ Reducir la dimensionalidad de los datos utilizando una red neuronal que retenga 
 
 ![Arquitectura ABCNet](https://i.imgur.com/prLqhhI.png)
 
-
 ---
 
 # Débilmente Supervisados
@@ -124,48 +123,56 @@ Reducir la dimensionalidad de los datos utilizando una red neuronal que retenga 
 
 ## CWoLa
 
-Dada una hipótesis de masa resonante y un ancho, se construye una región de señal seleccionando los eventos en una ventana alrededor de la hipótesis de masa resonante.
-Utiliza un clasificador binario para distinguir la región de eventos de los eventos laterales. Cuatro loops de aprendizaje.
+Classification Without Labels es un paradigma en el que un clasificador es entrenado para distiguir mezclas estadísticas de clases.
 
-- Bump hunt y test de hipótesis de Poisson en la tasa observada de eventos en la región de señal comparada con el parámetro esperado. 
-- ReLU, Adam
+Utiliza un clasificador binario para distinguir la región de eventos de señal de los eventos de bandas laterales, haciendo uso de muestras mezcladas de señales y fondo. Emplean cuatro bucles de aprendizaje.
+
+Por construcción, es sensible solo a señales que resulten del decaimiento de una resonancia pesada a dos partículas significativamente más ligeras que decaen a jets. Por lo tanto, puede ser sensible a R&D y BB1 pero no a BB3.
 
 ---
 
 ## CWoLa AE Compare
 
 Comparan CWoLa y deep autoencoders.
-- CWoLa: mejor actuación para gran cantidad de señal
-- AE: robustos en el límite de bajas señales estadísticas.
+- CWoLa: mejor actuación para gran cantidad de señal.
+  - Dense NN con cuatro capas.
+- AE: robustos en el límite de bajas señales estadísticas. 
+  - Un autoencoder entrenado para cada jet. Dense NN con siete capas. 
+
 Pueden tener una intersección en el rendimiento en diferentes secciones transversales que sería de gran interés para búsquedas experimentales reales. 
-
-CWoLa: lamina anterior
-AE: Dos autoencoders entrenados en jet 1 y 2. Entrenaron 20 modelos y reconstruyeron el error para cada uno. El error final con la media. 
-
-NN: ReLU - Linear. 
-Loss Function: Minimum squared error. 
-Adam optimizer
 
 ---
 
 ## Tag N' Train
 
-La técnica utiliza un clasificador débil (autoencoder) en uno de los objetos para etiquetar muestras ricas en señales y ricas en fondo. Estas muestras luego se utilizan para entrenar un clasificador más fuerte (CWoLa) para otro objeto.
+La técnica se basa en que los eventos de señal contienen dos o mas objetos anómalos que se pueden usar independientemente para clasificación. Utiliza un clasificador débil (autoencoder) en uno de los objetos para etiquetar muestras ricas en señales y ricas en fondo. Estas muestras luego se utilizan para entrenar a un clasificador más fuerte (CWoLa) para el otro objeto.
 
-Utiliza imagenes de jet como entrada para ambos autoencoders y el clasificador TNT y un modelo basado en CNN entrenado con un optimizador Adam.
+Utiliza imagenes de jet como entrada para ambos autoencoders, el clasificador TNT y un modelo basado en CNN.
+
+----
+### Técnica
+
+En general, toma una entrada de data sin etiqueta y dos clasificadores iniciales, y tiene como salida dos nuevos clasificadores con actuación mejorada.
+
+![Ilustración de la técnica TNT](https://i.imgur.com/nKQrwtV.png)
 
 ---
 
 ## SALAD
 
-Tiene una aproximación que utiliza simulación de fondo de manera que depende lo menos posible de la simulación. En particula, una red neuronal basada en redes neuronales profundas que utilizan clasificación para tuning y reweighting es entrenada en una region del espacio de fase que carece en gran medida de señales. Esta región puede ser aislada utilizando bandas laterales en la característica resonante. El modelo se interpola a la region de señal y la simulación de fondo reweighted se puede usar para mejorar la sensitividad de señal y la estimación del fondo. 
+Simulation Assisted Likelihood-free Anomaly Detection (SALAD) es una aproximación que usa redes neuronales basadas en el protocolo Deep neural networks using Classification for Tuning and Reweighting (DCTR) entrenada en una región del espacio de fase que está en gran parte desprovista de señales.
+
+En una busqueda de resonancia, esta región puede ser aislada usando bandas laterales en la característica resonante. El modelo se interpola a la region de señal y la simulación reponderación del fondo se puede usar para mejorar la sensibilidad de señal y la estimación del fondo. 
+
+Intuitivamente, la idea es entrenar a un clasificador para distinguir datos y simulación en la región de señal. Sin embargo, pueden haber diferencias entre el fondo de los datos y de la simulación, por lo que una función de reponderación se aprende en las bandas laterales que hace que la simulación parezca más al fondo en los datos.
 
 ---
 
 ## SA-CWoLa
 
 Dos aproximaciones: Classification without Labels (CWoLa) y Simulation Assisted Likelihood-free Anomaly Detection (SALAD).
-Se introduce la aproximación SA-CWoLa que aumenta la función de perdida de CWoLa para penalizar al clasificador por aprender diferencias entre la región de señal y de bandas laterales en la simulación, que es libre de señal por construcción.
+
+Se introduce la aproximación SA-CWoLa que aumenta la función de pérdida de CWoLa para penalizar al clasificador por aprender diferencias entre la región de señal y de bandas laterales en la simulación, que es libre de señal por construcción.
 
 ---
 
@@ -175,7 +182,8 @@ Se introduce la aproximación SA-CWoLa que aumenta la función de perdida de CWo
 
 ## Deep Ensemble
 
-Mezcla de redes neuronales con capas convolucionales y Boosted Decision Trees. Basado en un pipeline de dos pasos para asignar probabilidades evento-por-evento es categorías señal y fondo. El modelo es entrenado para los datos etiquetados de señal y fondo.
+Mezcla de redes neuronales con capas convolucionales (CNN) y Boosted Decision Trees (BDT). Basado en un pipeline de dos pasos para asignar probabilidades evento-por-evento es categorías señal y fondo. El modelo es entrenado para los datos etiquetados de señal y fondo.
+- Tiene como entrada imágenes de los eventos.
 - CNN para clasificación de la imagen: pre-entrenada ResNet-34 como preclasificador. 
 - BDT con las predicciones del ResNet-34 y la información cinemática.
 
@@ -215,15 +223,31 @@ Agrupa los hadrones en jets anti-kT R = 0,7 y ejecuta la secuencia de jets en un
 |     PGAE|    NS| [GitHub](https://github.com/stsan9/AnomalyDetection4Jets) | Graph neural network + Autoencoder(edge convolutional network)| BB1,2|
 | Reg. Likelihoods| NS| [Github modelo](https://github.com/johannbrehmer/manifold-flow)| Normalizing flows: M-flow | R&D|
 | UCluster|   NS| [Github](https://github.com/ViniciusMikuni/UCluster), [Paper](https://arxiv.org/pdf/2010.07106.pdf) | Independiente del modelo ML. Utilizaron ABCNet(GNN)| BB2,3|
-|   CWoLa|    DS| [GitHub sin README](https://github.com/Jackadsa/CWoLa-Hunting/tree/tf2/LHCO-code)| | BB1,2|
-|CWoLa AE Compare|D/NS| [Paper](https://arxiv.org/pdf/2104.02092.pdf) | | R&D|
-|Tag N' Train|DS| [GitHub](https://github.com/OzAmram/TagNTrain), [Paper](https://arxiv.org/pdf/2002.12376.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf) | | BB1-3|
-|   SALAD|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Paper](https://arxiv.org/abs/2001.05001) | | R&D|
-|SA-CWoLa|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Paper](https://arxiv.org/pdf/2009.02205.pdf)| | R&D|
+|   CWoLa|    DS| [GitHub sin README](https://github.com/Jackadsa/CWoLa-Hunting/tree/tf2/LHCO-code)| Clasificador binario| BB1,2|
+|CWoLa AE Compare|D/NS| [Paper](https://arxiv.org/pdf/2104.02092.pdf) | CWoLa y autoencoders| R&D|
+|Tag N' Train|DS| [GitHub](https://github.com/OzAmram/TagNTrain), [Paper](https://arxiv.org/pdf/2002.12376.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf) | Autoencoder, técnica TNT y convolutional neural network| BB1-3|
+|   SALAD|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Paper](https://arxiv.org/abs/2001.05001) | DCTR| R&D|
+|SA-CWoLa|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Paper](https://arxiv.org/pdf/2009.02205.pdf)| SALAD+CWoLa| R&D|
 |Deep Ensemble|SS| [GitHub](https://github.com/FFFreitas/Deep-Ensemble-Anomaly-Detection)| | BB1|
 | Factorized Topics| SS| [GitHub](https://github.com/nilais/factorized-topic-modeling)| | R&D|
 |    QUAK|    SS| [Paper](https://arxiv.org/abs/2011.03550)| | BB1-3|
 |    LSTM|    SS| ?? | | BB1-3|
+
+# Resultado de las olimpiadas
+
+## BB1
+### Masa resonante
+![Resultados de masa resonante](https://i.imgur.com/GiCMmhN.png)
+
+### Número de eventos
+![Resultados de numero de eventos ](https://i.imgur.com/h7JEaCv.png)
+
+### Masas hija
+![Resultado masa hija](https://i.imgur.com/pLHMIGR.png)
+
+## Ganadores
+- Conditional density estimation for anomaly detection (GIS)
+- Tag N' Train (TNT)
 
 # Conceptos útiles
 
@@ -247,3 +271,6 @@ Agrupa los hadrones en jets anti-kT R = 0,7 y ejecuta la secuencia de jets en un
 - Gaussian Iterative Slicing: GIS works by iteratively matching the 1D marginalized distribution of the data to a Gaussian.[13](https://arxiv.org/pdf/2012.11638.pdf)
 - Latent Dirichlet Allocation (LDA) is a generative statistical model that allows sets of observations to be explained by unobserved groups that explain why some parts of the data are similar. For example, if observations are words collected into documents, it posits that each document is a mixture of a small number of topics and that each word's presence is attributable to one of the document's topics. LDA is an example of a topic model and belongs to the machine learning toolbox and in wider sense to the artificial intelligence toolbox.[14](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation)
   Latent Dirichlet Allocation (LDA) is a “generative probabilistic model” of a collection of composites made up of parts. In terms of topic modeling, the composites are documents and the parts are words and/or phrases (n-grams). But you could apply LDA to DNA and nucleotides, pizzas and toppings, molecules and atoms, employees and skills, or keyboards and crumbs.[15](https://towardsdatascience.com/latent-dirichlet-allocation-15800c852699)
+- Deep neural networks using Classification for Tuning and Reweighting (DCTR, pronounced “doctor”) is a technique for
+  - Reweighting a dataset into another using the full phase-space information (assuming they have support in the same domain)
+  - If one of the datasets were generated with a Monte Carlo (MC) generator, DCTR can infer what the optimal MC parameters are for reproducing the other dataset (typically experimental data). This is referred to as MC Tuning.[16](https://github.com/bnachman/DCTR)
