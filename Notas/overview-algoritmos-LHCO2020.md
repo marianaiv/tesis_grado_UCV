@@ -215,11 +215,11 @@ Estos resultados son el análisis ciego de la Black Box 1.
   En comparación con un modelo discriminativo [[3]](https://en.wikipedia.org/wiki/Generative_model):
   - Un modelo **discriminativo** modela la probabilidad condicional en el objetivo Y dada una observación x (P(Y|X=x))
   - Un modelo **generativo** modela la probabilidad condicional de un observable X, dado un objetivo y (P(X|Y=y))
-- **Autoencoder**: Un autoencoder acepta entradas, las comprime y recrea las entradas originales.[[5]](https://jamesmccaffrey.wordpress.com/2018/07/03/the-difference-between-an-autoencoder-and-a-variational-autoencoder/)  
+- **Autoencoder**: Un autoencoder acepta entradas, las comprime y recrea las entradas originales.[[4]](https://jamesmccaffrey.wordpress.com/2018/07/03/the-difference-between-an-autoencoder-and-a-variational-autoencoder/)  
   Los usos principales de un autoencoder son:
   - Comprimir datos a dos (o tres) dimensiones para que puedan ser graficados. 
   - Comprimir y descomprimir imágenes y documentos, lo que remueve ruido de los datos.
-- **Autoencoder variacional**: Un autoencoder variacional asume que los datos de entrada tienen algún tipo de distribución de probabilidad subyacente (como una Gaussiana) e intenta hallar los parametros de la distribución. El uso principal de un autoencoder variacional es generar nuevos datos que se relacionen a la fuente original de datos.[[5]](https://jamesmccaffrey.wordpress.com/2018/07/03/the-difference-between-an-autoencoder-and-a-variational-autoencoder/)
+- **Autoencoder variacional**: Un autoencoder variacional asume que los datos de entrada tienen algún tipo de distribución de probabilidad subyacente (como una Gaussiana) e intenta hallar los parametros de la distribución. El uso principal de un autoencoder variacional es generar nuevos datos que se relacionen a la fuente original de datos.[[4]](https://jamesmccaffrey.wordpress.com/2018/07/03/the-difference-between-an-autoencoder-and-a-variational-autoencoder/)
 - **Flujo normalizante**: Los flujos normalizantes son modelos generativos que producen distribuciones manejables donde la evaluación de la muestra y de la densidad pueden ser eficientes y exactas. Aprenden un mapeo biyectivo entre la distribución de los datos y una Gaussiana multivariada.[[5]](https://arxiv.org/pdf/1908.09257.pdf)   
   El nombre se puede interpretar [[6]](https://deepgenerativemodels.github.io/notes/flow/):
   - Flujo: significa que las transformaciones invertibles se pueden componer entre si para crear transformaciones invertibles más complejas.
