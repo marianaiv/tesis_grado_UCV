@@ -22,7 +22,7 @@ Supone los jets como un elemento anómalo de un conjunto de datos contaminados. 
 
 Anomaly Detection with Density Estimation asume que la señal está localizada, por lo que se puede estimar la densidad de probabilidad en las bandas laterales e interpolarla a la región de señal, construyendo una proporción de verosimilitudes entre datos y fondo.
 
-Utiliza normalizing flows, en particular Masked Autoregressive Flow (MAF): estos métodos estiman las densidades mediante el uso de una sucesión de redes neuronales para asignar gradualmente los datos originales a un conjunto de datos transformado que sigue una distribución simple (por ejemplo, normal o uniforme).
+Utiliza flujos normalizantes, en particular Masked Autoregressive Flow (MAF): estos métodos estiman las densidades mediante el uso de una sucesión de redes neuronales para asignar gradualmente los datos originales a un conjunto de datos transformado que sigue una distribución simple (por ejemplo, normal o uniforme).
 
 ## BuHuLaSpa
 
@@ -138,14 +138,14 @@ Se introduce la aproximación SA-CWoLa que aumenta la función de pérdida de CW
 
 ## Deep Ensemble
 
-Mezcla de redes neuronales con capas convolucionales (CNN) y Boosted Decision Trees (BDT). Basado en un pipeline de dos pasos para asignar probabilidades evento-por-evento es categorías señal y fondo. El modelo es entrenado para los datos etiquetados de señal y fondo.
+Mezcla de redes neuronales con capas convolucionales (CNN) y Boosted Decision Trees (BDT). Basado en un pipeline de dos pasos para asignar probabilidades evento-por-evento en categorías señal y fondo. El modelo es entrenado con los datos etiquetados de señal y fondo.
 - Tiene como entrada imágenes de los eventos.
 - CNN para clasificación de la imagen: pre-entrenada ResNet-34 como preclasificador. 
 - BDT con las predicciones del ResNet-34 y la información cinemática.
 
 ## Factorized Topics
 
-Partiendo del marco de "jet topics ", hacen uso un teorema de factorización para la subestructura del jet (la sección transversal para la producción de dijets satisface un teorema de factorización de primer orden, lo que implica ue ambos jets son estadísticamente independientes) para construir un modelo generativo, y demuestran un procedimiento para optimizarlo, recuperando ambas fracciones relativas de diferentes tipos de jets dentro de una muestra mixta, así como la distribución de componentes para un observable dado.
+Partiendo del marco de "jet topics ", hacen uso un teorema de factorización para la subestructura del jet (la sección transversal para la producción de dijets satisface un teorema de factorización de primer orden, lo que implica que ambos jets son estadísticamente independientes) para construir un modelo generativo, y demuestran un procedimiento para optimizarlo, recuperando ambas fracciones relativas de diferentes tipos de jets dentro de una muestra mixta, así como la distribución de componentes para un observable dado.
 
 Utilizan la norma de Frobenius como función de pérdida.
 
@@ -158,7 +158,7 @@ Para construir QUAK:
 - Construir un espacio 'QUAK' N-dimensional que consista en la pérdida de cada modelo probabilistico no supervisado
 - Explotar el espacio QUAK para buscar anomalías.
 
-Utilizan un variational autoencoder con Normalizing flows en el espacio latente, para transformar la distribución posterior en una distribución más flexible que sea representativa de los datos correspondientes.
+Utilizan un variational autoencoder con flujos normalizantes en el espacio latente, para transformar la distribución posterior en una distribución más flexible que sea representativa de los datos correspondientes.
 
 ### Arquitectura
 
@@ -174,24 +174,24 @@ Se emplearon dos capas Long Short-Term Memory (LSTM), con algunas capas densas d
 
 | Nombre | Método | Referencia | Descripción | Resultado |
 |--------|------|------------|-------------|-----------|
-|   VRNN |    NS|[Paper](https://arxiv.org/pdf/2105.09274.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632656/attachments/1971110/3278934/AnomalyScore_LHCOlympics.pdf) | Recurrent Neural Network con Variational Autoencoder | BB1-3 |
-|   ANODE|    NS| [Paper](https://arxiv.org/pdf/2001.04990.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3699483/attachments/1971094/3278905/george_stein_LHCO.pdf)| Normalizing flows: Masked Autoregressive Flow | R&D|
-| BuHuLaSpa|  NS| [Paper](https://arxiv.org/pdf/2103.06595.pdf)| Variational Autoencoder | BB1-3 |
-|  GAN-AE|    NS| [GitHub](https://github.com/lovaslin/GAN-AE_LHCOlympics), [BumpHunter](https://github.com/lovaslin/pyBumpHunter), [Slides](https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0) | Multilayer perceptron con autoencoder de forma GAN + BumpHunter | BB1-3 |
-|     GIS|    NS| [Paper](https://arxiv.org/pdf/2012.11638.pdf) | Normalizing flow: Gaussianizing Iterative Slicing| BB1|
+|   VRNN |    NS|[Paper](https://arxiv.org/pdf/2105.09274.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632656/attachments/1971110/3278934/AnomalyScore_LHCOlympics.pdf) | Red neuronal recurrente con Autoencoder variacional | BB1-3 |
+|   ANODE|    NS| [Paper](https://arxiv.org/pdf/2001.04990.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3699483/attachments/1971094/3278905/george_stein_LHCO.pdf)| Flujo normalizante: Masked Autoregressive Flow | R&D|
+| BuHuLaSpa|  NS| [Paper](https://arxiv.org/pdf/2103.06595.pdf)| Autoencoder variacional| BB1-3 |
+|  GAN-AE|    NS| [GitHub](https://github.com/lovaslin/GAN-AE_LHCOlympics), [BumpHunter](https://github.com/lovaslin/pyBumpHunter), [Slides](https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0) | Perceptron multicapa con autoencoder de forma GAN + BumpHunter | BB1-3 |
+|     GIS|    NS| [Paper](https://arxiv.org/pdf/2012.11638.pdf) | Flujo normalizante: Gaussianizing Iterative Slicing| BB1|
 |     LDA|    NS| [GitHub](https://github.com/bmdillon/lda-jet-substructure), [Paper](https://arxiv.org/pdf/1904.04200.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632625/attachments/1971084/3278910/ML4Jets_talk_barrydillon.pdf)| Latent Dirichlet Allocation + Bump hunt| BB1-3|
-|     PGAE|    NS| [GitHub](https://github.com/stsan9/AnomalyDetection4Jets) | Graph neural network + Autoencoder(edge convolutional network)| BB1,2|
-| Reg. Likelihoods| NS| [Github modelo](https://github.com/johannbrehmer/manifold-flow)| Normalizing flows: M-flow | R&D|
+|     PGAE|    NS| [GitHub](https://github.com/stsan9/AnomalyDetection4Jets) | Red neuronal de grafos + Autoencoder(edge convolutional network)| BB1,2|
+| Reg. Likelihoods| NS| [Github modelo](https://github.com/johannbrehmer/manifold-flow)| Flujos normalizantes: M-flow | R&D|
 | UCluster|   NS| [Github](https://github.com/ViniciusMikuni/UCluster), [Paper](https://arxiv.org/pdf/2010.07106.pdf) | Independiente del modelo ML. Utilizaron ABCNet(GNN)| BB2,3|
 |   CWoLa|    DS| [GitHub sin README](https://github.com/Jackadsa/CWoLa-Hunting/tree/tf2/LHCO-code)| Clasificador binario| BB1,2|
 |CWoLa AE Compare|D/NS| [Paper](https://arxiv.org/pdf/2104.02092.pdf) | CWoLa y autoencoders| R&D|
-|Tag N' Train|DS| [GitHub](https://github.com/OzAmram/TagNTrain), [Paper](https://arxiv.org/pdf/2002.12376.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf) | Autoencoder, técnica TNT y convolutional neural network| BB1-3|
+|Tag N' Train|DS| [GitHub](https://github.com/OzAmram/TagNTrain), [Paper](https://arxiv.org/pdf/2002.12376.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf) | Autoencoder, técnica TNT y red neuronal convolucional| BB1-3|
 |   SALAD|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Paper](https://arxiv.org/abs/2001.05001) | DCTR| R&D|
 |SA-CWoLa|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Paper](https://arxiv.org/pdf/2009.02205.pdf)| SALAD+CWoLa| R&D|
-|Deep Ensemble|SS| [GitHub](https://github.com/FFFreitas/Deep-Ensemble-Anomaly-Detection)| Convolutional neural network + Bosted decision tree | BB1|
+|Deep Ensemble|SS| [GitHub](https://github.com/FFFreitas/Deep-Ensemble-Anomaly-Detection)| Red neuronal convolucional + Bosted decision tree | BB1|
 | Factorized Topics| SS| [GitHub](https://github.com/nilais/factorized-topic-modeling)| Restricción estadística | R&D|
-|    QUAK|    SS| [Paper](https://arxiv.org/abs/2011.03550) |Variational autoencoders + Normalizing flows | BB1-3|
-|    LSTM|    SS| ?? | Recurrent neural network: Long Short-Term Memory| BB1-3|
+|    QUAK|    SS| [Paper](https://arxiv.org/abs/2011.03550) |Autoencoder variacional + Flujo normalizante | BB1-3|
+|    LSTM|    SS| ?? | Red neuronal recurrente: Long Short-Term Memory| BB1-3|
 
 # Resultado de las olimpiadas 
 ## BB1
@@ -205,9 +205,25 @@ Estos resultados son el análisis ciego de la Black Box 1.
 ### Masas hija
 ![Resultado masa hija](https://i.imgur.com/pLHMIGR.png)
 
-## Ganadores
+### Ganadores
 - Conditional density estimation for anomaly detection (GIS)
 - Tag N' Train (TNT)
+
+## Black Box 2
+Algunas resonancias fueron detectadas a pesar de la falta de señal:
+- PCA: 4.2 TeV
+- VRNN: 4.6 TeV
+- QUAK: 5 TeV
+- LDA: sin señal
+
+## Black Box 3
+Las resonancias detectadas:
+- PCA: una resonancia que decae a hadrones y partículas invisibles
+- LDA: 5.6-6.4 TeV
+- QUAK: 5-5.5 TeV
+- VRNN: sin señal
+
+La resonancia de 4.2 TeV y los dos modos de decaimiento no fueron detectados por ningún algoritmo.
 
 # Conceptos útiles
 - **Espacio latente**: Es una representación de datos comprimidos en los que puntos similares están juntos en un espacio. El espacio latente es útil para aprender características de los datos y hallar representaciones más simples para su análisis. [[1]](https://towardsdatascience.com/understanding-latent-space-in-machine-learning-de5a7c687d8d)
@@ -225,14 +241,14 @@ Estos resultados son el análisis ciego de la Black Box 1.
   - Flujo: significa que las transformaciones invertibles se pueden componer entre si para crear transformaciones invertibles más complejas.
   - Normalizante: significa que el cambio de variables da una densidad normalizada después de aplicar una transformación invertible.
 - **Masked Autoregressive Flow (MAF)**: Consiste en construir una "pila" de modelos autoregresivos, cada uno modelando un número aleatorio del siguiente modelo en la pila, obteniendo un tipo de flujo normalizante apropiado para estimación de densidad. [[7]](https://arxiv.org/pdf/1705.07057.pdf),[[8]](https://arxiv.org/pdf/1705.07057.pdf)
-- **Red adversaria generativa**: Estas redes tienen como tarea la discriminación entre muestras reales y generadas. O, se podria decir, una tarea de no-discriminación ya que se quiere que la discriminiación falle lo más posible. En una arquitectura GAN se tiene [[10]](https://towardsdatascience.com/understanding-generative-adversarial-networks-gans-cd6e4651a29),[[11]](https://youtu.be/6v7lJHFaZZ4):
+- **Red adversaria generativa**: Estas redes tienen como tarea la discriminación entre muestras reales y generadas. O, se podria decir, una tarea de no-discriminación ya que se quiere que la discriminiación falle lo más posible. En una arquitectura GAN se tiene [[9]](https://towardsdatascience.com/understanding-generative-adversarial-networks-gans-cd6e4651a29),[[10]](https://youtu.be/6v7lJHFaZZ4):
   - Un discriminador, que toma muestras de los datos realeas y generados e intenta clasificarlos lo mejor posible
   - Un generador que está entrenado para engañar al discriminador lo mejor posible.
 - **Perceptron multicapa** (MLP): es un tipo de red neuronal feedfoward (ANN)
-- **Gaussian Iterative Slicing (GIS)**: funciona pareando iterativamente la distribución marginalizada en 1D de los datos a una Gaussiana.[[12]](https://arxiv.org/pdf/2012.11638.pdf)
+- **Gaussian Iterative Slicing (GIS)**: funciona pareando iterativamente la distribución marginalizada en 1D de los datos a una Gaussiana.[[11]](https://arxiv.org/pdf/2012.11638.pdf)
 - **Latent Dirichlet Allocation** (LDA): Es un modelo estadístico generativo que permite que conjuntos de observaciones sean explicados por grupos no observados, explicando por qué algunas partes de los datos son similares.  
-  Por ejemplo, si las observaciones son palabras recopiladas en documentos, postula que cada documento es una mezcla de una pequeño número de tópicos y que la presencia de cada palabra es atribuible a alguno de los tópicos del documento. LDA es un ejemplo de un modelo de tópico. [[13]](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation)
-- **Deep neural networks using Classification for Tuning and Reweighting**: (DCTR, pronounced “doctor”) es una técnica para [[14]](https://github.com/bnachman/DCTR)
+  Por ejemplo, si las observaciones son palabras recopiladas en documentos, postula que cada documento es una mezcla de una pequeño número de tópicos y que la presencia de cada palabra es atribuible a alguno de los tópicos del documento. LDA es un ejemplo de un modelo de tópico. [[12]](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation)
+- **Deep neural networks using Classification for Tuning and Reweighting**: (DCTR, pronounced “doctor”) es una técnica para [[13]](https://github.com/bnachman/DCTR)
   - Repesar un conjunto de datos en otro utilizando toda la información del espacio de fase (asumiendo que tienen soporte en el mismo dominio)
   - Si uno de los conjuntos de datos fue generado con Monte Carlo, DCTR puede inferir los parámetros óptimos de MC para reproducir el conjunto de datos (típicamente datos experimentales). Esto se conoce como MC Tuning.
-- **Long Short-Term Memory**: es un tipo de red neuronal recurrente capaz de aprender ordenes de dependencia en problemas de predicción de secuencia. Este es un comportamiento requerido en el dominio de problemas complejos como traducción de máquinas, reconocimiento de voz, entre otros. [[15]](https://machinelearningmastery.com/gentle-introduction-long-short-term-memory-networks-experts/)
+- **Long Short-Term Memory**: es un tipo de red neuronal recurrente capaz de aprender ordenes de dependencia en problemas de predicción de secuencia. Este es un comportamiento requerido en el dominio de problemas complejos como traducción de máquinas, reconocimiento de voz, entre otros. [[14]](https://machinelearningmastery.com/gentle-introduction-long-short-term-memory-networks-experts/)
