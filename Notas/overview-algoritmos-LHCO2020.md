@@ -210,11 +210,11 @@ Cada item mencionado equivale a un punto.
 |   CWoLa|    DS| [GitHub sin README](https://github.com/Jackadsa/CWoLa-Hunting/tree/tf2/LHCO-code)| Clasificador binario| BB1,2| GitHub: 0, General: 1 (Pl)|
 |CWoLa AE Compare|D/NS| [Artículo](https://arxiv.org/pdf/2104.02092.pdf) | CWoLa y autoencoders| R&D| GitHub: 0, General: 2 (A/Pl)|
 |Tag N' Train|DS| [Artículo](https://arxiv.org/pdf/2002.12376.pdf), [Diapositivas](https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf), [GitHub](https://github.com/OzAmram/TagNTrain) | Autoencoder, técnica TNT y red neuronal convolucional| BB1-3| GitHub: 3 (RM/PD/E), General: 4 (A/AD/Pl/S)|
-|   SALAD|    DS| [Artículo](https://arxiv.org/abs/2001.05001), [GitHub](https://github.com/bnachman/DCTRHunting) | DCTR| R&D| GitHub: 2 (RM/E), General: 2 (A/Pl)
-|SA-CWoLa|    DS| [Artículo](https://arxiv.org/pdf/2009.02205.pdf), [GitHub](https://github.com/bnachman/DCTRHunting)| SALAD+CWoLa| R&D|
+|   SALAD|    DS| [Artículo](https://arxiv.org/abs/2001.05001), [GitHub](https://github.com/bnachman/DCTRHunting) | DCTR| R&D| GitHub: 2 (RM/E), General: 2 (A/Pl)|
+|SA-CWoLa|    DS| [Artículo](https://arxiv.org/pdf/2009.02205.pdf), [GitHub](https://github.com/bnachman/DCTRHunting)| SALAD+CWoLa| R&D| GitHub: 2 (RM/E), General: 2 (A/Pl)|
 |Deep Ensemble|SS| [Artículo](https://www.dropbox.com/s/9hzcvxxedeqez36/LHCOsubmission%20-%20Charanjit%20Kaur.pdf?dl=0), [GitHub](https://github.com/FFFreitas/Deep-Ensemble-Anomaly-Detection)| Red neuronal convolucional + Bosted decision tree | BB1| GitHub: 3 (RC/CC/E), General: 2 (Pl)|
-| Factorized Topics| SS| [GitHub](https://github.com/nilais/factorized-topic-modeling)| Restricción estadística | R&D|
-|    QUAK|    SS| [Artículo](https://arxiv.org/abs/2011.03550) |Autoencoder variacional + Flujo normalizante | BB1-3| GitHub: 0, General: 3 (A/AD/Pl)|
+| Factorized Topics| SS| [GitHub](https://github.com/nilais/factorized-topic-modeling)| Restricción estadística | R&D| GitHub: 2 (RM/L), General: 1 (Pl)|
+|    QUAK|    SS| [Artículo](https://arxiv.org/abs/2011.03550) |Autoencoder variacional + Flujo normalizante | BB1-3| GitHub: 0, General: 3 (A/AD/Pl)| GitHub: 2 (RM/E), General: 2 (A/Pl)|
 |    LSTM|    SS| ?? | Red neuronal recurrente: Long Short-Term Memory| BB1-3| GitHub: 0, General: 0| GitHub: 0, General: 0|
 
 # Resultado de las olimpiadas 
