@@ -172,26 +172,50 @@ Se emplearon dos capas Long Short-Term Memory (LSTM), con algunas capas densas d
 
 # Tabla resumen
 
-| Nombre | Método | Referencia | Descripción | Resultado |
-|--------|------|------------|-------------|-----------|
-|   VRNN |    NS|[Paper](https://arxiv.org/pdf/2105.09274.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632656/attachments/1971110/3278934/AnomalyScore_LHCOlympics.pdf) | Red neuronal recurrente con Autoencoder variacional | BB1-3 |
-|   ANODE|    NS| [Paper](https://arxiv.org/pdf/2001.04990.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3699483/attachments/1971094/3278905/george_stein_LHCO.pdf)| Flujo normalizante: Masked Autoregressive Flow | R&D|
-| BuHuLaSpa|  NS| [Paper](https://arxiv.org/pdf/2103.06595.pdf)| Autoencoder variacional| BB1-3 |
-|  GAN-AE|    NS| [GitHub](https://github.com/lovaslin/GAN-AE_LHCOlympics), [BumpHunter](https://github.com/lovaslin/pyBumpHunter), [Slides](https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0) | Perceptron multicapa con autoencoder de forma GAN + BumpHunter | BB1-3 |
-|     GIS|    NS| [Paper](https://arxiv.org/pdf/2012.11638.pdf) | Flujo normalizante: Gaussianizing Iterative Slicing| BB1|
-|     LDA|    NS| [GitHub](https://github.com/bmdillon/lda-jet-substructure), [Paper](https://arxiv.org/pdf/1904.04200.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632625/attachments/1971084/3278910/ML4Jets_talk_barrydillon.pdf)| Latent Dirichlet Allocation + Bump hunt| BB1-3|
-|     PGAE|    NS| [GitHub](https://github.com/stsan9/AnomalyDetection4Jets) | Red neuronal de grafos + Autoencoder(edge convolutional network)| BB1,2|
-| Reg. Likelihoods| NS| [Github modelo](https://github.com/johannbrehmer/manifold-flow)| Flujos normalizantes: M-flow | R&D|
-| UCluster|   NS| [Github](https://github.com/ViniciusMikuni/UCluster), [Paper](https://arxiv.org/pdf/2010.07106.pdf) | Independiente del modelo ML. Utilizaron ABCNet(GNN)| BB2,3|
-|   CWoLa|    DS| [GitHub sin README](https://github.com/Jackadsa/CWoLa-Hunting/tree/tf2/LHCO-code)| Clasificador binario| BB1,2|
-|CWoLa AE Compare|D/NS| [Paper](https://arxiv.org/pdf/2104.02092.pdf) | CWoLa y autoencoders| R&D|
-|Tag N' Train|DS| [GitHub](https://github.com/OzAmram/TagNTrain), [Paper](https://arxiv.org/pdf/2002.12376.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf) | Autoencoder, técnica TNT y red neuronal convolucional| BB1-3|
-|   SALAD|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Paper](https://arxiv.org/abs/2001.05001) | DCTR| R&D|
-|SA-CWoLa|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Paper](https://arxiv.org/pdf/2009.02205.pdf)| SALAD+CWoLa| R&D|
-|Deep Ensemble|SS| [GitHub](https://github.com/FFFreitas/Deep-Ensemble-Anomaly-Detection)| Red neuronal convolucional + Bosted decision tree | BB1|
+Los algoritmos se agruparon en tres categorías generales:
+- No supervisado (NS): No proveen información etiquetada al algoritmo de machine learning(ML) durante el entrenamiento. 
+- Débilmente Supervisado (DS): Proveen etiquetas "ruidosas" (posiblemente sin señal/posiblemente señal)
+- (Semi-)Supervisado (SS): Utilizan simulación de señal para construir sensibilidad. 
+
+La columna "Resultado" contiene información sobre cuales Black Box se analizaron.
+
+La columna "Reproducibilidad" tiene un puntaje que refleja cuánta información relacionada al algoritmo se encuentra disponible. Se evalua:
+- GitHub con:
+  - ReadMe (RM)
+  - Instrucciones para correr el código (RC)
+  - Información sobre procesamiento de datos (PD)
+  - Código comentado (CC)
+  - Información sobre programas y versiones utilizados (enviroment) (E)
+  - Licencia (L)
+- En general:
+  - Artículo (A)
+  - Diagramas de la arquitectura del algoritmo (AD)
+  - Información sobre CPU necesario para correr el código (CP)
+  - Plots (Pl)
+  - Diapositivas explicativas (S)
+
+Cada item mencionado equivale a un punto.
+
+| Nombre | Método | Referencia | Descripción | Resultado | Reproducibilidad |
+|--------|--------|------------|-------------|-----------|------------------|
+|   VRNN |    NS|[Artículo](https://arxiv.org/pdf/2105.09274.pdf), [Diapositivas](https://indico.cern.ch/event/809820/contributions/3632656/attachments/1971110/3278934/AnomalyScore_LHCOlympics.pdf), [GitHub](https://github.com/akahn1213/vrnn) | Red neuronal recurrente con Autoencoder variacional | BB1-3 | GitHub: 3 (RM/RC/PD), General: 4 (A/AD/Pl/S) |
+|   ANODE|    NS| [Artículo](https://arxiv.org/pdf/2001.04990.pdf), [Diapositivas](https://indico.cern.ch/event/809820/contributions/3699483/attachments/1971094/3278905/george_stein_LHCO.pdf), [GitHub modelo](https://github.com/ikostrikov/pytorch-flows)| Flujo normalizante: Masked Autoregressive Flow | R&D| GitHub: 0, General: 3 (A/Pl/S)|
+| BuHuLaSpa|  NS| [Artículo](https://arxiv.org/pdf/2103.06595.pdf), [GitHub](https://github.com/alekssmolkovic/BuHuLaSpa)| Autoencoder variacional| BB1-3 |GitHub: 0, General: 2 (A/Pl) |
+|  GAN-AE|    NS| [GitHub](https://github.com/lovaslin/GAN-AE_LHCOlympics), [BumpHunter](https://github.com/lovaslin/pyBumpHunter), [Diapositivas](https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0) | Perceptron multicapa con autoencoder de forma GAN + BumpHunter | BB1-3 | GitHub: 5 (RM/RC/PD/CC/E), General: 1 (Pl) |
+|     GIS|    NS| [Artículo](https://arxiv.org/pdf/2012.11638.pdf) | Flujo normalizante: Gaussianizing Iterative Slicing| BB1| GitHub: 0, General: 2 (A/Pl)|
+|     LDA|    NS| [Artículo](https://arxiv.org/pdf/1904.04200.pdf), [Artículo](https://arxiv.org/pdf/2005.12319.pdf), [Diapositivas](https://indico.cern.ch/event/809820/contributions/3632625/attachments/1971084/3278910/ML4Jets_talk_barrydillon.pdf), [GitHub](https://github.com/bmdillon/lda-jet-substructure)| Latent Dirichlet Allocation + Bump hunt| BB1-3| GitHub: 5 (RM/RC/PD/CC/E), General: 4 (A/AD/Pl/S)|
+|     PGAE|    NS| [GitHub](https://github.com/stsan9/AnomalyDetection4Jets) | Red neuronal de grafos + Autoencoder(edge convolutional network)| BB1,2| GitHub: 5 (RM/RC/PD/CC/E), General: 2 (A/Pl)|
+| Reg. Likelihoods| NS| [Github modelo](https://github.com/johannbrehmer/manifold-flow)| Flujos normalizantes: M-flow | R&D| GitHub: 0, General: 1 (Pl)|
+| UCluster|   NS| [Artículo](https://arxiv.org/pdf/2010.07106.pdf), [Github](https://github.com/ViniciusMikuni/UCluster) | Independiente del modelo ML. Utilizaron ABCNet(GNN)| BB2,3| GitHub: 5 (RM/RC/PD/E/L), General: 3 (A/AD/Pl)|
+|   CWoLa|    DS| [GitHub sin README](https://github.com/Jackadsa/CWoLa-Hunting/tree/tf2/LHCO-code)| Clasificador binario| BB1,2| GitHub: 0, General: 1 (Pl)|
+|CWoLa AE Compare|D/NS| [Artículo](https://arxiv.org/pdf/2104.02092.pdf) | CWoLa y autoencoders| R&D| GitHub: 0, General: 2 (A/Pl)|
+|Tag N' Train|DS| [Artículo](https://arxiv.org/pdf/2002.12376.pdf), [Diapositivas](https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf), [GitHub](https://github.com/OzAmram/TagNTrain) | Autoencoder, técnica TNT y red neuronal convolucional| BB1-3| GitHub: 3 (RM/PD/E), General: 4 (A/AD/Pl/S)|
+|   SALAD|    DS| [Artículo](https://arxiv.org/abs/2001.05001), [GitHub](https://github.com/bnachman/DCTRHunting) | DCTR| R&D| GitHub: 2 (RM/E), General: 2 (A/Pl)
+|SA-CWoLa|    DS| [Artículo](https://arxiv.org/pdf/2009.02205.pdf), [GitHub](https://github.com/bnachman/DCTRHunting)| SALAD+CWoLa| R&D|
+|Deep Ensemble|SS| [Artículo](https://www.dropbox.com/s/9hzcvxxedeqez36/LHCOsubmission%20-%20Charanjit%20Kaur.pdf?dl=0), [GitHub](https://github.com/FFFreitas/Deep-Ensemble-Anomaly-Detection)| Red neuronal convolucional + Bosted decision tree | BB1| GitHub: 3 (RC/CC/E), General: 2 (Pl)|
 | Factorized Topics| SS| [GitHub](https://github.com/nilais/factorized-topic-modeling)| Restricción estadística | R&D|
-|    QUAK|    SS| [Paper](https://arxiv.org/abs/2011.03550) |Autoencoder variacional + Flujo normalizante | BB1-3|
-|    LSTM|    SS| ?? | Red neuronal recurrente: Long Short-Term Memory| BB1-3|
+|    QUAK|    SS| [Artículo](https://arxiv.org/abs/2011.03550) |Autoencoder variacional + Flujo normalizante | BB1-3| GitHub: 0, General: 3 (A/AD/Pl)|
+|    LSTM|    SS| ?? | Red neuronal recurrente: Long Short-Term Memory| BB1-3| GitHub: 0, General: 0| GitHub: 0, General: 0|
 
 # Resultado de las olimpiadas 
 ## BB1
