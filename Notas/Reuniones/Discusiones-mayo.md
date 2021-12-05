@@ -7,7 +7,289 @@ Discusiones tesis de Mariana
 
 [Link al github de la tesis](https://github.com/marianaiv/tesis_grado_UCV)
 
-[Link al github del análisis](https://github.com/marianaiv/benchmark_clalgoritmos)
+[Link al github del benchmarking](https://github.com/marianaiv/benchmark_clalgoritmos)
+
+## Diciembre
+### Viernes, 3 de Diciembre 2021
+#### Participantes
+- Reina
+- Camila
+- Mariana
+#### Agenda
+- Update
+#### Notas
+- Reina en github: camachoreina
+#### Acciones
+- Correr UCluster en el servidor
+- Agregar a Reina al repo
+- Hacer los PR pertinentes
+#### Links relevantes
+
+## Noviembre
+### Viernes, 26 de Noviembre 2021
+#### Participantes
+- Reina
+- Camila
+- Mariana
+#### Agenda
+- Update
+#### Notas
+
+#### Acciones
+- Escribirle un correo a arturos.cern@gmail.com pidiendole las notas
+#### Links relevantes
+- https://stackoverflow.com/questions/35545402/how-to-run-an-ipynb-jupyter-notebook-from-terminal
+- https://github.com/alan-turing-institute/rds-course
+
+## Octubre
+
+### Viernes, 15 de Octubre 2021
+#### Participantes
+- Reina
+- Mariana
+#### Agenda
+- Presentación de seminario
+#### Notas
+- En **busqueda de nueva física**:
+    - Varias teorias que resuelven problemas planteados incluyen nuevas resonancia particulas que decaen a jets.
+    - En el LHC se producen muchos jets asi que es interesante este tipo de busqueda.
+    - Varios análisis que utilizan estas busquedas pero utilizando métodos sencillos.
+    - Intentar usar ML para mejorar analisis
+- **Reproducibilidad**:
+    - Mover LCHO reproducibilidad a antes de reproducibilidad
+#### Acciones
+- Arreglar presentación
+#### Links relevantes
+- https://iopscience.iop.org/book/978-0-7503-2112-9/chapter/bk978-0-7503-2112-9ch8
+
+### Viernes, 8 de Octubre 2021
+#### Participantes
+- Camila
+- José Antonio
+- Mariana
+#### Agenda
+- Discutir fecha del seminario
+#### Notas
+- fecha para seminario: 25 o 26 de octubre 
+- api kernel
+#### Acciones
+#### Links relevantes
+
+## Septiembre 
+
+### Viernes, 17 de Septiembre 2021
+#### Participantes
+- Reina
+- Camila
+- Mariana
+#### Agenda
+- Packaging
+- [Plots con los valores no estandarizados](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/GBC-clasificacion.ipynb)
+#### Notas
+- Volver build_features.py funciones
+- Hacer el packaging desde afuera
+- [wget de python](https://stackoverflow.com/questions/24346872/python-equivalent-of-a-given-wget-command)
+#### Acciones
+- Packaging
+#### Links relevantes
+- https://github.com/alan-turing-institute/Palaeoanalytics/blob/main/setup.py
+### Viernes, 10 de Septiembre 2021
+#### Participantes
+- Camila
+- Reina
+- Mariana
+#### Agenda
+- [Correlación de los datos](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/correlacion-data.ipynb)
+- [Estructura del repositorio](https://hackmd.io/@marianaiv/rJ6BqE_fF)
+    - Cómo ordenar para el packaging 
+#### Notas
+- Enviar correo preguntando por clave informatique@lpnhe.in2p3.fr
+#### Acciones
+- Hacer los plots con los datos no estandarizados
+#### Links relevantes
+
+### Viernes, 03 de Septiembre 2021
+#### Participantes
+- Camila
+- Mariana
+#### Agenda
+- [Correlación de los datos](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/correlacion-data.ipynb)
+- [Clasificación BB1](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/GBC-clasificacion.ipynb)
+- [Pre-procesamiento BB1](https://github.com/marianaiv/benchmark_clalgoritmos/blob/preprocesamiento/scripts/pre-procesamiento.py)
+  - Agregué una función para leer los labels como dataframe y concatené los label al dataframe de los datos antes del clustering
+- [Estructura para proyectos de ciencias de datos](https://drivendata.github.io/cookiecutter-data-science/)
+
+#### Notas
+- Revisar [correlación de los datos](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/correlacion-data.ipynb) con Reina
+- Dummy classifier
+#### Acciones
+- Separar data y fondo para estudiar la correlacion
+  - Poner los puntos con alpha mas bajo para poder ver donde se acumulan 
+- Ver la correlacion del delta phi de ambos jets y del delta eta
+- Agregar la masa a las correlaciones
+- Tratar de escribir códico para energy correlation o alguna otra variable de subestructura
+- Correr una copia del notebook de comparación sin estandarizar, para poder comparar
+- Cursos de la conga: revisar lo del kernel
+- Averiguar como hacer las funciones un paquete (revisar links)
+#### Links relevantes
+- https://github.com/alan-turing-institute/monitoring-ecosystem-resilience/tree/master/pyveg
+- https://github.com/alan-turing-institute/Palaeoanalytics
+
+## Agosto
+
+### Viernes, 27 de Agosto 2021
+#### Participantes
+- Camila
+- Mariana
+#### Agenda
+- [Overfitting](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/GBC-overfitting.ipynb)
+- [Otro tipo de ROC](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/comparacion-algoritmos-sencillos.ipynb)
+#### Notas
+#### Acciones
+- Investigar Mean Absolute Error cero
+- Investigar sobre variables colineales
+  - Feature importance 
+- Estandarizar las variables 
+- Reorganizar los scripts según pipeline de reproducibilidad
+  - How to structure a datascience project
+#### Links relevantes
+
+### Viernes, 20 de Agosto 2021
+#### Participantes
+- Camila
+- Mariana
+#### Agenda
+- [Clasificación con Gradient Boosting](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/GBC-clasificacion.ipynb)
+- [Resultados de los algoritmos supervisados](https://hackmd.io/@marianaiv/ByBQASFgK)
+- [Distribuciones de mj1 y mj2, constituyentes en log](https://github.com/marianaiv/tesis_grado_UCV/blob/main/Analisis/Analisis_datos_RD.ipynb), etc.
+- [Intento de fine tuning](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/fine-tuning-clasificador.ipynb)
+  - Da unos warnings con infinitos
+-  [ReadMe en scripts](https://github.com/marianaiv/benchmark_clalgoritmos/blob/preprocesamiento/scripts/README.md)
+- Tuve que agregarle una excepción a la [función de subjettiness](https://github.com/marianaiv/benchmark_clalgoritmos/blob/preprocesamiento/scripts/subestructura.py) que no está en el [código original](https://github.com/ViniciusMikuni/UCluster/blob/master/scripts/prepare_data_unsup.py)
+- Posible [flujo del seminario](https://hackmd.io/@marianaiv/SkNqvgset)?
+#### Notas
+- Flujo del seminario
+  - Olimpiadas: hablar de que es complicado comparar los algoritmos porque no hay métrica estándar
+#### Acciones
+- Graficar el ROC del 1/eficiencia de señal vs eficiencia de fondo para la comparación de algoritmos sencillos
+- Revisar overfitting
+- Hacer la clasificación con la BB1
+- Utilizar los parametros del fine tuning para comparar
+  - Hacer ROC
+
+#### Links relevantes
+
+### Viernes, 14 de Agosto 2021
+#### Participantes
+- Reina
+- Camila
+- Mariana
+#### Agenda
+- Revisar
+  - El [script de preprocesamiento](https://github.com/marianaiv/benchmark_clalgoritmos/tree/preprocesamiento)
+  - [Grafico para hadrones asociados a cada jet](https://github.com/marianaiv/tesis_grado_UCV/blob/main/Analisis/Analisis_datos_RD.ipynb) y de correlacion de m_jj y nro de hadrones
+ - Feature importance
+#### Notas
+- Arreglar labels plots de distribucion en https://github.com/marianaiv/tesis_grado_UCV/blob/main/Analisis/Analisis_datos_RD.ipynb
+- Pensar en algo de preprocesamiento de imagenes
+
+#### Acciones
+- Valor máximo de nro. de constituyentes en el jet
+  - Ver en escala logaritmica
+- Agregar plot de distribución para masa del j1 y j2 
+- Revisar los resultados de los algoritmos mas sencillos del paper
+- Ver si puedo hacer algo con imagenes
+- Aplicar algoritmos no supervisados
+- Escribirle a José Antonio
+- Arreglar correcciones del resumen
+
+#### Links relevantes
+
+## Julio
+
+### Viernes, 30 de Julio 2021
+#### Participantes
+- Reina
+- Camila
+- Mariana
+#### Agenda
+- [Comparación de algoritmos sencillos](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/comparacion-algoritmos-sencillos.ipynb)
+#### Notas
+
+#### Acciones
+- Sklearn: ver como entrenar maximizando métricas en específico
+- Averiguar qué tan configurable son las funciones de costo
+- Qué es el treshole de roc y auc
+- Por qué el algoritmo que es mejor es mejor
+- Una vez que clasifique, volver a hacer plots de señal y fondo (mjj)
+- Importance de los features
+- Plot de correlacion mjj y numero de hadrones
+- Hadrones asociados a cada jet: ver como sacar ese valor de cada jet
+- Arreglar el script de pre-procesamiento
+#### Links relevantes
+
+### Viernes, 16 de Julio 2021
+#### Participantes
+- Reina
+- Mariana
+- 
+#### Agenda
+- [Comparación de algoritmos sencillos](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/comparacion-algoritmos-sencillos.ipynb)
+  - Qué otros valores estadísticos puedo revisar, de qué otra forma puedo analizar y comparar los algoritmos
+- Script de pre-procesamiento
+  - No puedo correrlo porque no puedo cargar todo el archivo de datos como en el notebook 
+- [Resumen del proyecto](https://docs.google.com/document/d/1nHJRCc5W9etmus8x02Bt9eOsSETJykbXqcvm7RK9fdc/edit?usp=sharing)
+- Seminario? 
+#### Notas
+- Background vs signal efficiency 
+- Titulo y objetivo principal: busqueda de nueva física, investigación abierta y reproducible. 
+#### Acciones
+- Cambios en el resumen
+  - Eliminar LCHO del titulo y objetivo principal en el resumen
+- Agregar plot de background vs signal efficiency
+- Aplicar algoritmos no supervisados
+- Revisar iteraciones en scripts de pre-procesamiento
+#### Links relevantes
+
+
+### Viernes, 9 de Julio 2021
+#### Participantes
+- Camila
+- Mariana
+#### Agenda
+- Discutir acerca del seminario
+- Revisar la implementación del decision tree
+#### Notas
+- Feature importance, specificity ...
+#### Acciones
+- Pasar el preprocesamiento en script
+- Dividir el clustering en dos funciones
+- Función de estadisticas principales
+- Algoritmos de clasificación de sklearn
+  - Logistic regression por ejemplo
+  - Bosted decision tree
+  - etc 
+#### Links relevantes
+
+### Lunes, 5 de Julio 2021
+
+#### Participantes
+- Camila (solo por 20m)
+- Mariana
+- Reina
+#### Agenda
+
+### Notas
+
+### Acciones
+- Implementar BDT simple
+- Intentar usar lo que envió Julia
+- Seguir revisando el pre-procesamiento de datos 
+- Rellenar la plantilla de TEG de la facultad
+
+#### Links relevantes
+- https://gitlab.com/escueladefisicaucv/teg_info
+
 ## Junio
 ### Viernes, 25 de junio 2021
 #### Participantes
@@ -19,7 +301,6 @@ Discusiones tesis de Mariana
   - NSubjettiness y EnergyCorrelator
   - Intento de análisis de Black Box 1
 #### Notas
-
 - Ejes en mismo rango en señal y fondo
 - Celda 32, arreglar plot.
 #### Acciones
