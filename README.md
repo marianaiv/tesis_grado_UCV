@@ -4,7 +4,7 @@ En este repositorio se encuentra la tesis de grado de Mariana Vivas para la lice
 
 ## Proyecto
 
-### Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets: Análisis comparativo de algoritmos de clasificación en términos de reproducibilidad y rendimiento
+### Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets: análisis comparativo de algoritmos de clasificación en términos de reproducibilidad y rendimiento
 #### Objetivos 
 * Objetivo general: 
    * Búsqueda de nueva física utilizando jets y aprendizaje automático bajo un concepto de investigación reproducible.  
