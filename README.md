@@ -5,7 +5,7 @@ En este repositorio se encuentra la tesis de grado de Mariana Vivas para la lice
 ## Proyecto
 
 ### Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets: Análisis comparativo de algoritmos de clasificación en términos de reproducibilidad y rendimiento
-**Objetivos**   
+#### Objetivos 
 * Objetivo general: 
    * Búsqueda de nueva física utilizando jets y aprendizaje automático bajo un concepto de investigación reproducible.  
 * Objetivos específicos:  
@@ -15,9 +15,9 @@ En este repositorio se encuentra la tesis de grado de Mariana Vivas para la lice
    * Desarrollar un programa que caracterice algoritmos de clasificación para eventos de múltiples jets.
    * Hacer una investigación reproducible bajo los lineamientos de [The Turing Way](https://the-turing-way.netlify.app/welcome.html).
 
-* **Tutores**
-    *   Camila Rangel Smith (https://github.com/crangelsmith)
-    *   Reina Camacho Toro (https://camachoreina.github.io)
+#### Tutores
+  *   Camila Rangel Smith (https://github.com/crangelsmith)
+  *   Reina Camacho Toro (https://camachoreina.github.io)
 ## Contenido del repositorio
 El contenido de este repositorio se encuentra organizado de la siguiente forma:
 * :bar_chart: [Análisis](Analisis): Datos y código utilizado para obtener los resultados.
