@@ -3,8 +3,10 @@
 Trabajo especial de grado realizado por Mariana Vivas para la Universidad Central de Venezuela como requisito parcial para optar por el título de licenciada en física.
 
 ### Tutores
-  *   Camila Rangel Smith (https://github.com/crangelsmith)
-  *   Reina Camacho Toro (https://camachoreina.github.io)
+| Nombre | Role | email | Github | 
+| --- | --- | --- | --- |
+| Reina Camacho Toro | Investigadora en LPNHE/CNRS  | [reina.camacho@cern.ch](mailto:reina.camacho@cern.ch) | [@camachoreina](https://camachoreina.github.io) |
+| Camila Rangel Smith | Investigadora científica de datos en El Instituto Alan Turing | [crangelsmith@turing.ac.uk](mailto:crangelsmith@turing.ac.uk) |[@crangelsmith](https://github.com/crangelsmith) |
 
 ### Resumen
 **Este proyecto se plantea a partir de la necesidad de buscar nueva física** para responder las preguntas que surgen del modelo estándar. 
