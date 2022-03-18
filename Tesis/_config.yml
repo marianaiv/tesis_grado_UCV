@@ -1,0 +1,24 @@
+# Configuración del libro
+# Para saber más sobre este archivo https://jupyterbook.org/customize/config.html
+title: Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets
+author: Mariana Vivas, Universidad Central de Venezuela
+logo: logo_ucv.png
+
+# Fuerza la re-ejecución de los notebooks en cada construcción.
+# Ver https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
+
+# Información sobre donde existe el libro en la web
+repository:
+  url: https://github.com/marianaiv/tesis_grado_UCV # Ubicación en línea del libro
+  path_to_book: "tesis"  # Ruta opcional al libro, relativa a la raíz del repositorio
+
+# Agregar botones de GitHub al libro
+# Ver https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_repository_button: true
+
+# Un archivo bibtex para poder crear citas
+#bibtex_bibfiles:
+#  - references.bib
