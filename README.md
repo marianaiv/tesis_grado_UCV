@@ -41,5 +41,7 @@ Para desarrollar la herramienta de comparación es necesario estudiar la topolog
 
 
 ### Tutores
-  *   Camila Rangel Smith (https://github.com/crangelsmith)
-  *   Reina Camacho Toro (https://camachoreina.github.io)
+| Nombre | Role | email | Github | 
+| --- | --- | --- | --- |
+| Reina Camacho Toro | Investigadora en LPNHE/CNRS  | [reina.camacho@cern.ch](mailto:reina.camacho@cern.ch) | [@camachoreina](https://camachoreina.github.io) |
+| Camila Rangel Smith | Científica de datos de investigación en El Instituto Alan Turing | [crangelsmith@turing.ac.uk](mailto:crangelsmith@turing.ac.uk) |[@crangelsmith](https://github.com/crangelsmith) |
