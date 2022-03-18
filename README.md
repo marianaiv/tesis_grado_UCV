@@ -1,5 +1,6 @@
 <h1 align="center">Trabajo especial de grado</h1>
-En este repositorio se encuentra la tesis de grado de Mariana Vivas para la licenciatura en física en la Universidad Central de Venezuela (UCV)
+
+> En este repositorio se encuentra la tesis de grado de Mariana Vivas para la licenciatura en física en la Universidad Central de Venezuela (UCV)
 
 ## Contenido del repositorio
 El contenido de este repositorio se encuentra organizado de la siguiente forma:
