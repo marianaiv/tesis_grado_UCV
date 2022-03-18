@@ -1,13 +1,6 @@
 # Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets: análisis comparativo de algoritmos de clasificación en términos de reproducibilidad y rendimiento
 
 Trabajo especial de grado realizado por Mariana Vivas para la Universidad Central de Venezuela como requisito parcial para optar por el título de licenciada en física.
-
-### Tutores
-| Nombre | Role | email | Github | 
-| --- | --- | --- | --- |
-| Reina Camacho Toro | Investigadora en LPNHE/CNRS  | [reina.camacho@cern.ch](mailto:reina.camacho@cern.ch) | [@camachoreina](https://camachoreina.github.io) |
-| Camila Rangel Smith | Investigadora científica de datos en El Instituto Alan Turing | [crangelsmith@turing.ac.uk](mailto:crangelsmith@turing.ac.uk) |[@crangelsmith](https://github.com/crangelsmith) |
-
 ### Resumen
 **Este proyecto se plantea a partir de la necesidad de buscar nueva física** para responder las preguntas que surgen del modelo estándar. 
 
@@ -26,3 +19,8 @@ Para desarrollar la herramienta de comparación es necesario estudiar la topolog
 **Se requiere que la investigación se haga de manera reproducible por la naturaleza de los datos y algoritmos a utilizar en el proyecto**, que son open source. Por esto, se siguen los lineamientos planteados en [The Turing Way](https://the-turing-way.netlify.app/welcome.html), un manual para hacer ciencia de datos de forma reproducible, ética y colaborativa. Permitiendo así que los resultados obtenidos se puedan utilizar fácilmente y signifiquen un aporte útil para esta comunidad y cualquier ente interesado en el estudio de estos métodos.
 
 **Palabras clave**: modelo estándar, nueva física, jets, dijets, LHC, aprendizaje automático, redes neuronales, algoritmo de clasificación, métricas, análisis comparativo, reproducibilidad 
+### Tutores
+| Nombre | Role | email | Github | 
+| --- | --- | --- | --- |
+| Reina Camacho Toro | Investigadora en LPNHE/CNRS  | [reina.camacho@cern.ch](mailto:reina.camacho@cern.ch) | [@camachoreina](https://camachoreina.github.io) |
+| Camila Rangel Smith | Investigadora científica de datos en El Instituto Alan Turing | [crangelsmith@turing.ac.uk](mailto:crangelsmith@turing.ac.uk) |[@crangelsmith](https://github.com/crangelsmith) |

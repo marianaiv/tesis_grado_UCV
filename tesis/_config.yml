@@ -23,3 +23,8 @@ html:
 # Un archivo bibtex para poder crear citas
 bibtex_bibfiles:
   - referencias.bib
+
+  # In _config.yml
+sphinx:
+  config:
+    bibtex_reference_style: label
