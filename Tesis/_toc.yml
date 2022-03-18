@@ -1,0 +1,18 @@
+# Tabla de contenido
+# Ver https://jupyterbook.org/customize/toc.html
+
+
+# Cada entrada tiene la siguiente plantilla:
+#
+# - title: mititulo   # Titulo de capitulo o sub-capitulo
+#   file: miarchivo  # Nombre del archivo relativo a la carpeta.
+#   sections:  # Contiene una lista con mas entradas que hacen los sub-capitulos
+#
+# 
+
+format: jb-book
+root: intro
+parts:
+  - caption: "Marco teórico"
+    chapters:
+    - file: capitulos/marco-teorico/modelo-estandar
