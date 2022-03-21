@@ -16,3 +16,6 @@ parts:
   - caption: "Marco teórico"
     chapters:
     - file: capitulos/marco-teorico/modelo-estandar
+  - caption: "Referencias"
+    chapters:
+    - file: capitulos/referencias/referencias
