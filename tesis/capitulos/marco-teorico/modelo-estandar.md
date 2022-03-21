@@ -38,3 +38,6 @@ La interacción débil es comúnmente conocida por ser la responsable del decaim
 
 ### Interacción fuerte
 La interacción fuerte es la responsable de unir los protones y los neutrones en los núcleos atómicos. El gluon ($g$) es el medidador de esta interacción; una partícula no masiva y neutra que posee carga de color. Interactúa con las partículas que poseen carga de color, los quarks. La teoría de campos asociada a la interacción fuerte es la teoría no-Abeliana con simetría de color $SU(3)_C$ conocida como cromodinámica cuántica (QCD). Esta teoría se discutirá en la siguiente sección.
+
+```{bibliography}
+```
