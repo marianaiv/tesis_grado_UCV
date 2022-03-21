@@ -5,7 +5,7 @@ title: Búsqueda de nueva física utilizando técnicas de aprendizaje automátic
 author: Mariana Vivas, Universidad Central de Venezuela
 logo: logo_ucv.png
 
-# Fuerza la re-ejecución de los notebooks en cada construcción.
+# Forza la re-ejecución de los notebooks en cada construcción.
 # Ver https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
