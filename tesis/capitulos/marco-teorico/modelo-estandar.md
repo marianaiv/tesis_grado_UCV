@@ -1,10 +1,10 @@
 # El módelo estándar
 
-El modelo estándar de la física de partículas es la teoría que intenta describir las partículas elementales y sus interacciones mediante tres de la cuatro fuerzas fundamentales: la interacción electromagnética, la interacción débil y la interacción fuerte. Es una teoría cuántica relativista de campos en la cual las partículas corresponden a excitaciones de campos. La dinámica de estas partículas está dada por el Lagrangiano de la teoría {cite:ps}`Beresford:2642397`.
+El modelo estándar de la física de partículas es la teoría que intenta describir las partículas elementales y sus interacciones mediante tres de la cuatro fuerzas fundamentales: la interacción electromagnética, la interacción débil y la interacción fuerte. Es una teoría cuántica relativista de campos en la cual las partículas corresponden a excitaciones de campos. La dinámica de estas partículas está dada por el Lagrangiano de la teoría {cite}`Beresford:2642397`.
 
-Se desarrolló por etapas a lo largo de la segunda mitad del siglo XX, con la formulación actual finalizada a mediados de la década de 1970. Desde entonces, ha sido probado por múltiples experimentos sin desviación significativas entre lo observado y lo predicho. En 2012 los experimentos ATLAS y CMS completaron la búsqueda de partículas del modelo estándar con el hallazgo del Boson de Higgs {cite:ps}`20121,201230,PhysRevLett.114.191803`. Hoy en día se considera al modelo estándar como uno de los más grandes éxitos de la física moderna.
+Se desarrolló por etapas a lo largo de la segunda mitad del siglo XX, con la formulación actual finalizada a mediados de la década de 1970. Desde entonces, ha sido probado por múltiples experimentos sin desviación significativas entre lo observado y lo predicho. En 2012 los experimentos ATLAS y CMS completaron la búsqueda de partículas del modelo estándar con el hallazgo del Boson de Higgs {cite}`20121,201230,PhysRevLett.114.191803`. Hoy en día se considera al modelo estándar como uno de los más grandes éxitos de la física moderna.
 
-A continuación se proporcionará una breve descripción general del modelo estándar. A menos que se indique lo contrario, las referencias bibliográficas utilizadas en este capítulo son {cite:ps}`Beresford:2642397,altarelli2005standard,morii_lim_mukherjee_2004`. 
+A continuación se proporcionará una breve descripción general del modelo estándar. A menos que se indique lo contrario, las referencias bibliográficas utilizadas en este capítulo son {cite}`Beresford:2642397,altarelli2005standard,morii_lim_mukherjee_2004`. 
 
 ## Partículas 
 
@@ -17,13 +17,13 @@ Existen seis **quarks** (conocidos como seis sabores de quarks) que se organizan
 
 También hay seis sabores de **leptones** que se agrupan en generaciones. Los leptones cargados poseen carga eléctrica -1: electron ($e$), muon ($\mu$) y tau ($\tau$), y los neutros se conocen como neutrinos. 
 
-Cada generación de fermiones consiste en dos quarks, un lepton cargado eléctricamente y un lepton neutro. Las partículas cargadas de la primera generación son las que constituyen la materia estable, la segunda y tercera generación de partículas cargadas solo se observan en interacciones a altas energías y decaen rápidamente a partículas de la primera generación. Los neutrinos no decaen y raramente interactuan con la materia. Más bien oscilan entre generaciones debido a la masa no-cero de los neutrinos y a los ángulos de mezcla.{cite:ps}`camachotoro:tel-00818796`
+Cada generación de fermiones consiste en dos quarks, un lepton cargado eléctricamente y un lepton neutro. Las partículas cargadas de la primera generación son las que constituyen la materia estable, la segunda y tercera generación de partículas cargadas solo se observan en interacciones a altas energías y decaen rápidamente a partículas de la primera generación. Los neutrinos no decaen y raramente interactuan con la materia. Más bien oscilan entre generaciones debido a la masa no-cero de los neutrinos y a los ángulos de mezcla.{cite}`camachotoro:tel-00818796`
 
 ### Bosones
 
-El modelo estándar describe tres de las cuatro interacciones fundamentales. Cada interacción o fuerza está asociada a un grupo de simetría. La teoría está basada en los grupos $SU(3)_C\times SU(2)_I\times U(1)_Y$, donde SU(3) corresponde a la interacción fuerte, SU(2) a la interacción débil y U(1) a la fuerza electromágnetica. La carga de color (.C), el isoespin débil (I) y la hipercarga (Y) son los números cuánticos conservados para cada simetría{cite:ps}`burgess_moore_2013`. El Lagrangiano del modelo estándar requiere que la teoría sea invariante bajo transformaciones locales de gauge, lo que introduce los bosones de gauge.
+El modelo estándar describe tres de las cuatro interacciones fundamentales. Cada interacción o fuerza está asociada a un grupo de simetría. La teoría está basada en los grupos $SU(3)_C\times SU(2)_I\times U(1)_Y$, donde SU(3) corresponde a la interacción fuerte, SU(2) a la interacción débil y U(1) a la fuerza electromágnetica. La carga de color (.C), el isoespin débil (I) y la hipercarga (Y) son los números cuánticos conservados para cada simetría{cite}`burgess_moore_2013`. El Lagrangiano del modelo estándar requiere que la teoría sea invariante bajo transformaciones locales de gauge, lo que introduce los bosones de gauge.
 
-Los **bosones** son las partículas responsables de las interacciones. Poseen espín entero y siguen la estadística de Einstein-Bose. El modelo estándar incluye tres bosones de espín 1 y un boson de espín 0. Los bosones de espín 1 están asociados a las interacciones fundamentales incluidas en el modelo: el foton $\gamma$, el gluon $g$ y los bosones $W^+$, $W^-$ y $Z^0$. Por último, un boson de espin 0 conocido como el boson de Higgs, un boson escalar y masivo que rompe las simetrías $SU(2)\times U(1)$, generando la masa de los fermiones y bosones{cite:ps}`PhysRevLett.13.508,PhysRevLett.13.321`. Interactua con todas las partículas masivas (excepto los neutrinos[]) por lo que se predice que tiene interacción propia. Esto completa el contenido de partículas del modelo estándar.
+Los **bosones** son las partículas responsables de las interacciones. Poseen espín entero y siguen la estadística de Einstein-Bose. El modelo estándar incluye tres bosones de espín 1 y un boson de espín 0. Los bosones de espín 1 están asociados a las interacciones fundamentales incluidas en el modelo: el foton $\gamma$, el gluon $g$ y los bosones $W^+$, $W^-$ y $Z^0$. Por último, un boson de espin 0 conocido como el boson de Higgs, un boson escalar y masivo que rompe las simetrías $SU(2)\times U(1)$, generando la masa de los fermiones y bosones{cite}`PhysRevLett.13.508,PhysRevLett.13.321`. Interactua con todas las partículas masivas (excepto los neutrinos[]) por lo que se predice que tiene interacción propia. Esto completa el contenido de partículas del modelo estándar.
 
 
 ## Interacciones
@@ -38,6 +38,3 @@ La interacción débil es comúnmente conocida por ser la responsable del decaim
 
 ### Interacción fuerte
 La interacción fuerte es la responsable de unir los protones y los neutrones en los núcleos atómicos. El gluon ($g$) es el medidador de esta interacción; una partícula no masiva y neutra que posee carga de color. Interactúa con las partículas que poseen carga de color, los quarks. La teoría de campos asociada a la interacción fuerte es la teoría no-Abeliana con simetría de color $SU(3)_C$ conocida como cromodinámica cuántica (QCD). Esta teoría se discutirá en la siguiente sección.
-
-```{bibliography}
-```
