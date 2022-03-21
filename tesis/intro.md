@@ -1,4 +1,5 @@
-# Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets: análisis comparativo de algoritmos de clasificación en términos de reproducibilidad y rendimiento
+# Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets
+## Análisis comparativo de algoritmos de clasificación en términos de reproducibilidad y rendimiento
 
 Trabajo especial de grado realizado por Mariana Vivas para la Universidad Central de Venezuela como requisito parcial para optar por el título de licenciada en física.
 ### Resumen
