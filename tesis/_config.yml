@@ -26,7 +26,7 @@ sphinx:
   extra_extensions          :  # A list of extra extensions to load by Sphinx.
   config                    :  # key-value pairs to directly over-ride the Sphinx configuration
     language                : sp
-    bibtex_reference_style  : label
+    bibtex_reference_style  : numbers
 
 
 # Un archivo bibtex para poder crear citas
