@@ -25,6 +25,6 @@ bibtex_bibfiles:
     - referencias.bib
 
   # In _config.yml
-sphinx:
-  config:
-    bibtex_reference_style: label
+#sphinx:
+#  config:
+#    bibtex_reference_style: label
