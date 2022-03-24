@@ -15,7 +15,8 @@ Las partículas elementales son los bloques de construcción más fundamentales 
 width: 500px
 name: sm-particulas
 ---
-Contenido de partículas y antipartículas del modelo estándar. Los leptones están organizados de acuerdo a sus generaciones. Fabsanhvasq, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons.
+Contenido de partículas del modelo estándar. Los leptones están organizados de acuerdo a sus generaciones.   
+Fabsanhvasq, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons.
 ```
 ### Fermiones 
 Los fermiones son las partículas que componen la materia visible del universo. Son partículas de espín 1/2 que siguen la estadística de Fermi-Dirac. Se clasifican a su vez en quarks y leptones. Para cada partícula existe su correspondiente antipartícula con igual masa pero números cuánticos opuestos.
