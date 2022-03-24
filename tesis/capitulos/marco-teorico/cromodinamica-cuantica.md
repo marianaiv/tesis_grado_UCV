@@ -13,7 +13,7 @@ Una interacción básica es el cambio de color de un gluon en un vértice quark-
 width: 300px
 name: qcd-quarkgluon
 ---
-Vértice de interacción de QCD. Un quark con carga de color rojo ($r$) cambia a un quark con carga de color azul ($b$) emitiendo un gluon rojo-antiazul ($r\bar{b}$)
+Vértice de interacción de QCD. Un quark con carga de color rojo ($r$) cambia a un quark con carga de color azul ($b$) emitiendo un gluon rojo-antiazul ($r\bar{b}$). Imagen tomada de {cite:p}`griffiths_1987`.
 ```
 La interacción propia del gluon se puede observar en la {numref}`qcd-gluongluon` en los vértices de tres y cuatro gluones.
 
@@ -22,6 +22,6 @@ La interacción propia del gluon se puede observar en la {numref}`qcd-gluongluon
 width: 400px
 name: qcd-gluongluon
 ---
-Vértice de interacción de QCD. De izquierda a derecha, interacción propia de tres y cuatro gluones, respectivamente. 
+Vértice de interacción de QCD. De izquierda a derecha, interacción propia de tres y cuatro gluones, respectivamente. Imagen tomada de {cite:p}`griffiths_1987`.
 ```
-En teoría de campos el acople efectivo de un vertice de interacción es modificado por la interacción{cite}`altarelli2005standard`. Como resultado la intensidad de la fuerza depende del cuadri-momento al cuadrado, $Q^2$, entre los participantes. La medida de intensidad de la interacción es la constante de acople de QCD $\alpha_s$($Q^2$). El acople es grande para pequeños valores de $Q$ y disminuye a medida que $Q$ aumenta. Esto se conoce como confinamiento y libertad asintótica, respectivamente.
+En teoría de campos, el acople efectivo de un vertice de interacción es modificado por la interacción{cite:p}`altarelli2005standard`. Como resultado la intensidad de la fuerza depende del cuadri-momento al cuadrado ($Q^2$) entre los participantes. La medida de intensidad de la interacción es la constante de acople de QCD $\alpha_s$($Q^2$). El acople es grande para pequeños valores de $Q$ y disminuye a medida que $Q$ aumenta. Esto se conoce como confinamiento y libertad asintótica, respectivamente.
