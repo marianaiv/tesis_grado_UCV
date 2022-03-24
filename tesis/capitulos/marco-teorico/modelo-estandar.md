@@ -24,7 +24,7 @@ El modelo estándar describe tres de las cuatro interacciones fundamentales. Cad
 
 Los **bosones** son las partículas responsables de las interacciones. Poseen espín entero y siguen la estadística de Einstein-Bose. El modelo estándar incluye tres bosones de espín 1 y un boson de espín 0. Los bosones de espín 1 están asociados a las interacciones fundamentales incluidas en el modelo: el foton $\gamma$, el gluon $g$ y los bosones $W^+$, $W^-$ y $Z^0$. Por último, un boson de espin 0 conocido como el boson de Higgs, un boson escalar y masivo que rompe las simetrías $SU(2)\times U(1)$, generando la masa de los fermiones y bosones{cite:p}`PhysRevLett.13.508,PhysRevLett.13.321`. Interactua con todas las partículas masivas (excepto los neutrinos[]) por lo que se predice que tiene interacción propia. Esto completa el contenido de partículas del modelo estándar.
 
-```{figure} ./../figuras/sm-particulas.png
+```{figure} ./../../figuras/sm-particulas.png
 ---
 width: 400px
 name: sm-particulas
