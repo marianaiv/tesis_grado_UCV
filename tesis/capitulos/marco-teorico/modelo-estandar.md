@@ -26,8 +26,9 @@ Los **bosones** son las partículas responsables de las interacciones. Poseen es
 
 ```{figure} ./../../figuras/sm-particulas.png
 ---
-width: 400px
+width: 600px
 name: sm-particulas
+alt: Contenido de partículas y antipartículas del modelo estándar: leptones, antileptones y bosones.
 ---
 Contenido de partículas y antipartículas del modelo estándar. Los leptones están organizados de acuerdo a sus generaciones.
 ```
