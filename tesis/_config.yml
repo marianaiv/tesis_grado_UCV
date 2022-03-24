@@ -3,7 +3,7 @@
 # Para saber más sobre este archivo https://jupyterbook.org/customize/config.html
 title: Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets
 author: Mariana Vivas, Universidad Central de Venezuela
-logo: logo_ucv.png
+logo: ./figuras/logo_ucv.png
 
 # Forza la re-ejecución de los notebooks en cada construcción.
 # Ver https://jupyterbook.org/content/execute.html
