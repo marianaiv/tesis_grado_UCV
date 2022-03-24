@@ -10,6 +10,13 @@ A continuación se proporcionará una breve descripción general del modelo est�
 
 Las partículas elementales son los bloques de construcción más fundamentales de la materia. En el modelo estándar se contemplan dos tipos de partículas: partículas con espín medio-entero, conocidas como *fermiones* y partículas con espín entero conocidas como *bosones*. 
 
+```{figure} ./../../figuras/sm-particulas.png
+---
+width: 600px
+name: sm-particulas
+---
+Contenido de partículas y antipartículas del modelo estándar. Los leptones están organizados de acuerdo a sus generaciones.
+```
 ### Fermiones 
 Los fermiones son las partículas que componen la materia visible del universo. Son partículas de espín 1/2 que siguen la estadística de Fermi-Dirac. Se clasifican a su vez en quarks y leptones. Para cada partícula existe su correspondiente antipartícula con igual masa pero números cuánticos opuestos.
 
@@ -23,14 +30,6 @@ Cada generación de fermiones consiste en dos quarks, un lepton cargado eléctri
 El modelo estándar describe tres de las cuatro interacciones fundamentales. Cada interacción o fuerza está asociada a un grupo de simetría. La teoría está basada en los grupos $SU(3)_C\times SU(2)_I\times U(1)_Y$, donde SU(3) corresponde a la interacción fuerte, SU(2) a la interacción débil y U(1) a la fuerza electromágnetica. La carga de color (.C), el isoespin débil (I) y la hipercarga (Y) son los números cuánticos conservados para cada simetría{cite:p}`burgess_moore_2013`. El Lagrangiano del modelo estándar requiere que la teoría sea invariante bajo transformaciones locales de gauge, lo que introduce los bosones de gauge.
 
 Los **bosones** son las partículas responsables de las interacciones. Poseen espín entero y siguen la estadística de Einstein-Bose. El modelo estándar incluye tres bosones de espín 1 y un boson de espín 0. Los bosones de espín 1 están asociados a las interacciones fundamentales incluidas en el modelo: el foton $\gamma$, el gluon $g$ y los bosones $W^+$, $W^-$ y $Z^0$. Por último, un boson de espin 0 conocido como el boson de Higgs, un boson escalar y masivo que rompe las simetrías $SU(2)\times U(1)$, generando la masa de los fermiones y bosones{cite:p}`PhysRevLett.13.508,PhysRevLett.13.321`. Interactua con todas las partículas masivas (excepto los neutrinos[]) por lo que se predice que tiene interacción propia. Esto completa el contenido de partículas del modelo estándar.
-
-```{figure} ./../../figuras/sm-particulas.png
----
-width: 600px
-name: sm-particulas
----
-Contenido de partículas y antipartículas del modelo estándar. Los leptones están organizados de acuerdo a sus generaciones.
-```
 ## Interacciones
 
 Como se especificó anteriormente, el modelo estándar describe tres de las cuatro interacciones fundamentales: la interacción electromagnética, la interacción débil y la interacción fuerte. La cuarta fuerza fundamental, la gravedad, no está incluida en la teoría y su impacto en procesos de partículas fundamentales a las energías accesibles es despreciable.
