@@ -40,7 +40,7 @@ El aumento de la constante de acople implica que donde $Q^2$ es pequeño, o a di
 
 ```{figure} ./../../figuras/qcd-alphas.png
 ---
-width: 400px
+width: 600px
 name: qcd-alphas
 ---
 Resumen de medidas de la constante de acople $\alpha_s$ en función de la escala de energía $Q${cite}`alphas`.
