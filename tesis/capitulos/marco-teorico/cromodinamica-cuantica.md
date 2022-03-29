@@ -6,7 +6,7 @@ El boson predicho por la teoría es el gluon. Al igual que el foton, es una part
 
 Los gluones poseen carga de color, contrario a los fotones que no poseen carga eléctrica. Existen ocho gluones con superposiciones de cargas de color. Así, los gluones median la interacción fuerte pero también interactúan entre sí, haciendo que el análisis de la QCD sea más complejo. 
 
-Una interacción básica es el acomple quark-gluon como se observa en la {numref}`qcd-quarkgluon`.
+Una interacción básica es el acople quark-gluon como se observa en la {numref}`qcd-quarkgluon`.
 
 ```{figure} ./../../figuras/qcd-quarkgluon.png
 ---
@@ -32,12 +32,6 @@ El comportamiento de la constante de acople de QCD es contrario al de QED: en QE
 
 La libertad asintótica fue descubierta en 1973 por David Gross, Frank Wilczek y David Politzer. Por ello obtuvieron el premio Nobel de física en 2004{cite:p}`nobel2004`.
 
-(qcd-confinamiento)=
-## Confinamiento
-Contrario al concepto de libertad asintótica se encuentra el confinamiento. La fuerza de la interacción, o constante de acople $\alpha_S$, aumenta a largas distancias o pequeñas transferencias de momento $Q$, como se puede observar en la {numref}`qcd-alphas`. Esta propiedad explica la imposibilidad de separar partículas con carga de color, es decir, explica por qué no se observan quarks y gluones libres. También explica que los hadrones se encuentren en estados compuestos de quarks estrechamente unidos y de carga de color neutra. Por ejemplo, al intentar separar un meson neutro conformado por un quark y un anti-quark, la energía crece hasta que se crean pares de quarks y anti-quarks a partir del vacío y se forman nuevos mesones neutros en lugar de obtener quarks libres
-
-El aumento de la constante de acople implica que donde $Q^2$ es pequeño, o a distancias grandes, los cálculos con teoría de perturbación ya no son válidos; esta región se conoce como no-perturbativa.
-
 ```{figure} ./../../figuras/qcd-alphas.png
 ---
 width: 600px
@@ -45,3 +39,9 @@ name: qcd-alphas
 ---
 Resumen de medidas de la constante de acople $\alpha_s$ en función de la escala de energía $Q${cite:p}`alphas`.
 ```
+
+(qcd-confinamiento)=
+## Confinamiento
+Contrario al concepto de libertad asintótica se encuentra el confinamiento. La fuerza de la interacción, o constante de acople $\alpha_S$, aumenta a largas distancias o pequeñas transferencias de momento $Q$, como se puede observar en la {numref}`qcd-alphas`. Esta propiedad explica la imposibilidad de separar partículas con carga de color, es decir, explica por qué no se observan quarks y gluones libres. También explica que los hadrones se encuentren en estados compuestos de quarks estrechamente unidos y de carga de color neutra. Por ejemplo, al intentar separar un meson neutro conformado por un quark y un anti-quark, la energía crece hasta que se crean pares de quarks y anti-quarks a partir del vacío y se forman nuevos mesones neutros en lugar de obtener quarks libres
+
+El aumento de la constante de acople implica que donde $Q^2$ es pequeño, o a distancias grandes, los cálculos con teoría de perturbación ya no son válidos; esta región se conoce como no-perturbativa.
