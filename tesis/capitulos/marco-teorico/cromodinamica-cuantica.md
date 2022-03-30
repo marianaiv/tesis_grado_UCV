@@ -6,29 +6,32 @@ El boson predicho por la teoría es el gluon. Al igual que el foton, es una part
 
 Los gluones poseen carga de color, contrario a los fotones que no poseen carga eléctrica. Existen ocho gluones con superposiciones de cargas de color. Así, los gluones median la interacción fuerte pero también interactúan entre sí, haciendo que el análisis de la QCD sea más complejo. 
 
-Una interacción básica es el acople quark-gluon como se observa en la {numref}`qcd-quarkgluon`.
+Los vértices de interacción permitidos por la cromodinámica cuántica son $gq\bar{q}$, *ggg* y *gggg*.
+
+Una interacción básica es el acople quark-gluon, $gq\bar{q}$, como se observa en la {numref}`qcd-quarkgluon`.
 
 ```{figure} ./../../figuras/qcd-quarkgluon.png
 ---
 width: 300px
 name: qcd-quarkgluon
 ---
-Vértice de interacción de QCD. Un quark con carga de color rojo ($r$) cambia a un quark con carga de color azul ($b$) emitiendo un gluon rojo-antiazul ($r\bar{b}$){cite:p}`griffiths_1987`.
+Vértice de interacción $gq\bar{q}$. En este vértice en particular, un quark con carga de color rojo ($r$) cambia a un quark con carga de color azul ($b$) emitiendo un gluon rojo-antiazul ($r\bar{b}$){cite:p}`griffiths_1987`.
 ```
-La interacción propia del gluon se puede observar en la {numref}`qcd-gluongluon` en los vértices de tres y cuatro gluones.
+La interacción propia del gluon se puede observar en la {numref}`qcd-gluongluon` en los vértices de tres y cuatro gluones, *ggg* y *gggg*, respectivamente.
 
 ```{figure} ./../../figuras/qcd-gluongluon.png
 ---
 width: 400px
 name: qcd-gluongluon
 ---
-Vértice de interacción de QCD. De izquierda a derecha, interacción propia de tres y cuatro gluones, respectivamente{cite:p}`griffiths_1987`.
+Vértice de interacción permitidos en QCD. De izquierda a derecha, interacción propia de tres y cuatro gluones{cite:p}`griffiths_1987`.
 ```
+
 En teoría de campos, el acople efectivo de un vertice de interacción es modificado por la interacción{cite:p}`altarelli2005standard`. Como resultado la intensidad de la fuerza depende del cuadri-momento al cuadrado ($Q^2$) entre los participantes. La medida de intensidad de la interacción es la constante de acople de QCD $\alpha_s$($Q^2$). El acople es grande para pequeños valores de $Q$ y disminuye a medida que $Q$ aumenta. Esto se conoce como confinamiento y libertad asintótica, respectivamente.
 
 (qcd-libertadasintotica)=
 ## Libertad asintótica
-El comportamiento de la constante de acople de QCD es contrario al de QED: en QED la constante de acople aumenta en función de Q, pero para QCD la constante de acople disminuye. La libertad asintótica se refiere a que el acople efectivo disminuye al aumentar $Q^2$ y desaparece asintóticamente ({numref}`qcd-alphas`). Por lo tanto, las interacciones de QCD son débiles para valores grandes de $Q^2$, conocidas como procesos duros o procesos inelásticos profundos (con una distribución final de momento y contenido de partículas completamente diferente a los del estado inicial). Esto implica que en regiones donde $Q^2$ es grande, o a distancias pequeñas, $\alpha_s$ es pequeño y la teoría de perturbación puede ser utilizada para calcular observables. 
+El comportamiento de la constante de acople de QCD es contrario al de QED: en QED la constante de acople aumenta en función de *Q*. Para QCD la constante de acople disminuye. La libertad asintótica se refiere a que el acople efectivo disminuye al aumentar $Q^2$ y desaparece asintóticamente ({numref}`qcd-alphas`). Por lo tanto, las interacciones de QCD son débiles para valores grandes de $Q^2$. Esto implica que en regiones donde $Q^2$ es grande, o a distancias pequeñas, $\alpha_s$ y la teoría de perturbación puede ser utilizada para calcular observables. 
 
 La libertad asintótica fue descubierta en 1973 por David Gross, Frank Wilczek y David Politzer. Por ello obtuvieron el premio Nobel de física en 2004{cite:p}`nobel2004`.
 
