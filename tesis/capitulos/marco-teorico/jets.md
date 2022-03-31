@@ -88,16 +88,15 @@ Esquema de la estabilidad infrarroja. La emisión de un gluon suave entre dos je
 Existen dos tipos principales de algoritmos de agrupamiento: *algoritmos de cono* y *algoritmos de recombinación secuencial*
 
 #### Cono
-Los algoritmos de cono asume que el jet se encontrara en regiones cónicas del espacio $(\eta-\phi)$, por lo que se obtendrán jets con bordes circulares. Estos algoritmos son de fácil implementación pero no son colinealmente estables{cite}`Atkin_2015`.
+Los algoritmos de cono asumen que el jet se encuentra en regiones cónicas del espacio $(\eta-\phi)$, por lo que los jets reconstruidos por estos algoritmos tienen bordes circulares. Son de fácil implementación pero no son colinealmente estables{cite}`Atkin_2015`.
 
 Se puede pensar que su aproximación es de arriba hacia abajo. En general, funcionan de la siguiente manera:
-1. Hallar la particula más energética del evento, o semilla.
+1. Hallar la partícula más energética del evento, o semilla.
 2. Colocar un cono de radio *R* alrededor de esta semilla y sumar el momento de todas las partículas que constituyen el cono, formando un jet de prueba.
 3. Comparar el eje de la semilla con el del jet de prueba.
-4. Iterar hasta que el eje de la semilla y del jet de prueba coincidan.
+4. Repetir estos pasos hasta que el eje de la semilla y del jet de prueba coincidan.
 
 #### Recombinación secuencial
-
 
 (jets-subestructura)=
 ## Variables de subestructura

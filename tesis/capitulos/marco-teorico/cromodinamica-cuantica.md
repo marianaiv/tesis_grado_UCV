@@ -2,13 +2,11 @@
 # Cromodinámica cuántica
 Como se mencionó en el [capítulo anterior](ms-interacciones), la cromodinámica cuántica (QCD) es la teoría de la interacción fuerte y describe la dinámica de los quarks y gluones. Es una teoría cuántica de campos no-Abeliana asociada al grupo de simetría $SU(3)_C$ y construída en analogía a la electrodinámica cuántica (QED){cite:p}`Sutton2016-eh`.
 
-El boson predicho por la teoría es el gluon. Al igual que el foton, es una partícula no-masiva de espín 1 que interactua con partículas que poseen *carga de color*. La carga de color es el análogo a la carga eléctrica y es el número cuántico conservado en la teoría. Existen tres tipos de carga para los quarks: rojo, verde y azul; para los anti-quarks: anti-rojo, anti-verde y anti-azul. 
+El boson predicho por la teoría es el gluon. Al igual que el foton, es una partícula no-masiva de espín 1 que interactua con partículas que poseen *carga de color*. La carga de color es el análogo a la carga eléctrica y es el número cuántico conservado en la teoría. Existen tres tipos de carga para los quarks: rojo, verde y azul (para los anti-quarks: anti-rojo, anti-verde y anti-azul). 
 
 Los gluones poseen carga de color, contrario a los fotones que no poseen carga eléctrica. Existen ocho gluones con superposiciones de cargas de color. Así, los gluones median la interacción fuerte pero también interactúan entre sí, haciendo que el análisis de la QCD sea más complejo. 
 
-Los vértices de interacción permitidos por la cromodinámica cuántica son $gq\bar{q}$, *ggg* y *gggg*.
-
-Una interacción básica es el acople quark-gluon, $gq\bar{q}$, como se observa en la {numref}`qcd-quarkgluon`.
+Los vértices de interacción permitidos por la cromodinámica cuántica son el acople quark-gluon, $gq\bar{q}$, como se observa en la {numref}`qcd-quarkgluon`:
 
 ```{figure} ./../../figuras/qcd-quarkgluon.png
 ---
@@ -31,7 +29,7 @@ En teoría de campos, el acople efectivo de un vertice de interacción es modifi
 
 (qcd-libertadasintotica)=
 ## Libertad asintótica
-El comportamiento de la constante de acople de QCD es contrario al de QED: en QED la constante de acople aumenta en función de *Q*. Para QCD la constante de acople disminuye. La libertad asintótica se refiere a que el acople efectivo disminuye al aumentar $Q^2$ y desaparece asintóticamente ({numref}`qcd-alphas`). Por lo tanto, las interacciones de QCD son débiles para valores grandes de $Q^2$. Esto implica que en regiones donde $Q^2$ es grande, o a distancias pequeñas, $\alpha_s$ y la teoría de perturbación puede ser utilizada para calcular observables. 
+La libertad asintótica explica que a altas energías las partículas dentro de un hadron se comportan como libres. El comportamiento de la constante de acople de QCD es contrario al de QED: en QED la constante de acople aumenta en función de *Q*. Para QCD la constante de acople disminuye. La libertad asintótica se refiere a que el acople efectivo disminuye al aumentar $Q^2$ y desaparece asintóticamente ({numref}`qcd-alphas`). Por lo tanto, las interacciones de QCD son débiles para valores grandes de $Q^2$. Esto implica que en regiones donde $Q^2$ es grande, o a distancias pequeñas, $\alpha_s$ es pequeño y la teoría de perturbación puede ser utilizada para calcular observables. 
 
 La libertad asintótica fue descubierta en 1973 por David Gross, Frank Wilczek y David Politzer. Por ello obtuvieron el premio Nobel de física en 2004{cite:p}`nobel2004`.
 
