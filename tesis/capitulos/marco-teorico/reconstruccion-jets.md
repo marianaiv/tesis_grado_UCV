@@ -13,7 +13,7 @@ El proceso principal es la **dispersión fuerte**: los protones colisionan a alt
 
 También se consideran procesos de **radiación de estado inicial** y **radiación de estado final**: las partículas entrantes y salientes pueden radiar otras partículas. 
 
-Por último están los **eventos subyacentes**, que es el término utilizado para las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas.
+Por último están los **eventos subyacentes**, que son las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas.
 
 ```{figure} ./../../figuras/jets-qcd.png
 ---
@@ -157,6 +157,31 @@ $$
 $$ (ratio_subjettiness)
 
 Un jet con N-1 subjets tendrá un valor de $\tau_{N-1,N}$ menor a un jet conformado de N o más subjets.
+
 ### Funciones de correlación de energía
 
-Las funciones de correlación de energía logran esencialmente lo mismo que N-subjettines, sin la necesidad de definir N ejes de referencia {cite}`Marzani_2019`. 
+Las funciones de correlación de energía logran esencialmente lo mismo que N-subjettines, sin la necesidad de definir N ejes de referencia {cite}`Marzani_2019`. Su finalidad es identificar una estructura de N-subjets o depositos de energía. Las funciones de correlación de energía (ECF) están definidas de la siguiente forma{cite}`Jankowiak_2012,Larkoski_2013`:
+
+\begin{gather}
+    ECF(1,\beta)=\sum p_{Ti}\\
+    ECF(2,\beta)=\sum_{i<j} p_{Ti}p_{Tj}(\Delta R_{ij})^\beta\\
+    ECF(3,\beta)=\sum_{i<j<k} p_{Ti}p_{Tj}p_{Tk}(\Delta R_{ij}\Delta R_{jk}\Delta R_{ki})^\beta\\
+    \dots\\
+    ECF(N,\beta)=\sum_{\text{all N}} \left(\prod^{N}_{a=1} p_{Ta}\right)\left(\prod^{N-1}_{b=1}\prod^{N}_{c=b+1} \Delta R_{ib}\Delta R_ic\right)
+\end{gather}
+
+donde el parámetro angular $\beta$ permite sensibilidad a distintas escalas angulares. Si un jet tiene N depositos de energía, ECF(N+1) es menor que ECF(N).
+
+Al igual que en N-subjettiness, se definen variables adimensionales utilizando proporciones:
+
+$$
+    r_N = \frac{ECF(N+1)}{ECF(N)}
+$$ (ecf_ratio)
+
+Y se ha hallado que las proporciones tienen mayor poder de discriminación, por ejemplo:
+
+$$
+    C_N = \frac{r_N}{r_{N-1}}
+$$ (ecf_double)
+
+Existen otras proporciones{cite}`Marzani_2019` y se construyen para amplificar características específicas de los jets.
