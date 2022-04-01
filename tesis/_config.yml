@@ -10,6 +10,24 @@ logo: ./figuras/logo_ucv.png
 execute:
   execute_notebooks: force
 
+# Configuración de procesamiento y parsing
+# Ver https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+parse:
+  myst_enable_extensions:  
+    - amsmath
+    - colon_fence
+    # - deflist
+    - dollarmath
+    # - html_admonition
+    # - html_image
+    - linkify
+    # - replacements
+    # - smartquotes
+    - substitution
+    - tasklist
+  myst_url_schemes: [mailto, http, https] # Esquemas de URI que se reconocerán como URL externas en los enlaces de Markdown
+  myst_dmath_double_inline: true  # Permitir mostrar matemáticas ($$) en una línea
+
 # Información sobre donde existe el libro en la web
 repository:
   url: https://github.com/marianaiv/tesis_grado_UCV # Ubicación en línea del libro
@@ -18,7 +36,8 @@ repository:
 # Agregar botones de GitHub al libro
 # Ver https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  use_repository_button: true
+  use_repository_button: true # Link al repositorio
+  home_page_in_navbar: true   # Si incluir la pagina de inicio en la navegación
 
 #######################################################################################
 # Advanced and power-user settings
