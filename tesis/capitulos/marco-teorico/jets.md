@@ -123,7 +123,7 @@ Se puede pensar que el funcionamiento de estos algoritmos es de abajo hacia arri
 
 1. Hallar el mínimo en el conjunto $\{d_{ij},d_{iB}\}$.  
    1. *Si el mínimo es $d_{ij}$*: los constituyentes *i* y *j* se unen en un solo constituyente *ij*, sumando el cuadri-momento y eliminando *i* y *j*  de la lista de constituyentes.   
-   2. Si el mínimo es $d_{iB}$: *i* es considera jet y eliminado de la lista de constituyentes.   
+   2. Si el mínimo es $d_{iB}$: *i* se considera jet y eliminado de la lista de constituyentes.   
 
 Los pasos anteriores se repiten hasta que todas las partículas son parte de un jet, con distancias $\Delta R_{ij}$ entre los ejes de los jets mayores a *R* (agrupamiento inclusivo), o hasta que se obtenga una cantidad específica de jets (agrupamiento exclusivo).
 
@@ -139,12 +139,12 @@ Los algoritmos de recombinación son los más utilizados desde su implementació
 ## Variables de subestructura
 La subestructura de un jet puede analizarse para diferenciar si el jet es de un gluon, un quark suave o partículas aún no descubiertas. A continuación se describirán algunas de las variables que se calculan para estudiar la subestructura de un jet, utilizando como referencia {cite}`10.1088/2053-2563/ab1be6ch8`.
 
-## Masa
+### Masa
 La masa es la variable mas evidente para discriminar entre jets provinientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet.
 
 La masa de un jet está definida como la suma de la masa invariante de todos los constituyentes del jet.
 
-## N-subjettiness
+### N-subjettiness
 Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman los jets. Para lograr esto, se hace un agrupamiento exclusivo de N jets con los constituyentes del jet y se calcula la variable $\tau_N$
 
 $$
@@ -158,6 +158,6 @@ $$
 $$
 
 Un jet con N-1 subjets tendrá un valor de $\tau_{N-1,N}$ menor a un jet conformado de N o más subjets.
-## Funciones de correlación de energía
+### Funciones de correlación de energía
 
 Las funciones de correlación de energía logran esencialmente lo mismo que N-subjettines, sin la necesidad de definir N ejes de referencia {cite}`Marzani_2019`. 
