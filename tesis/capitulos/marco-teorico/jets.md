@@ -2,7 +2,7 @@
 # Jets
 En colisiones de hadrones a altas energías, la libertad asintótica y el confinamiento son los conceptos principales que explican la formación de jets, que es el proceso de dispersión fuerte con mayor tasa de producción en colisiones hadrónicas{cite}`Mangano:2674114`. Los jets son lluvias de partículas colimadas que están conformados principalmente por hadrones, pero también por fotones y leptones{cite}`HARRIS_2011`. Debido a la alta tasa de producción, los jets se han vuelto objetivo de estudio para "redescubrir" procesos esperados del modelo estándar y garantizar que los detectores se comporten correctamente{cite}`Marshall:1308447`.
 
-A continuación se explicará la formación de jets de colisiones protón-protón (*pp*) haciendo referencia a {cite}`HARRIS_2011,Beresford:2642397`. Un diagrama del proceso se encuentra en la {numref}`jets-formacion`.
+A continuación se explicará la formación de jets de colisiones protón-protón (*pp*) haciendo referencia a {cite}`HARRIS_2011,Beresford:2642397`. Un diagrama del proceso se encuentra en la {numref}`jets-desarrollo`.
 
 (jets-formacion)=
 ## Formación de jets
@@ -15,7 +15,7 @@ También se consideran procesos de **radiación de estado inicial** y **radiaci�
 
 Por último están los **eventos subyacentes**, que es el término utilizado para las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas.
 
-```{figure} ./../../figuras/jets-qcd.png
+```{figure} ./../../figuras/jets-qcd.PNG
 ---
 width: 500px
 name: jets-qcd
@@ -32,7 +32,7 @@ El proceso explicado anteriormente se muestra en el siguiente diagrama:
 ```{figure} ./../../figuras/jets-formacion.png
 ---
 width: 600px
-name: jets-formacion
+name: jets-desarrollo
 ---
 Esquema de la formación de jets{cite}`camachotoro:tel-00818796`. (esta imagen la voy a adaptar al español)
 ```
