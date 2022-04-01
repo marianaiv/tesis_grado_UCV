@@ -124,15 +124,15 @@ Hallar el mínimo en el conjunto {d_{ij},d_{iB}}.
     *Si el mínimo es $d_{ij}$*   
         Los constituyentes *i* y *j* se unen en un solo constituyente *ij*, sumando el cuadri-momento y eliminando *i* y *j*  de la lista de constituyentes.   
      Si el mínimo es $d_{iB}   
-        *i* es etiquetado como el jet final y eliminado de la lista de constituyentes.   
+        *i* es considera jet y eliminado de la lista de constituyentes.   
 
 Los pasos anteriores se repiten hasta que todas las partículas son parte de un jet, con distancias $\Delta R_{ij}$ entre los ejes de los jets mayores a *R* (agrupamiento inclusivo), o hasta que se obtenga una cantidad específica de jets (agrupamiento exclusivo).
 
 Entre los algoritmos de recombinación utilizados son:
 
-- *kt*: para este algoritmo $p=1$. Este algoritmo es mejor para estudiar subjets, pero es sensible a los UE y PU.
-- *anti kt*: para este algoritmo $p=-1$. Contrario al *kt*, es poco sensible a los UE y el PU, pero peor para estudiar la subestrutura del jet.
-- Cambridge/Aachen: para este algoritmo $p=0$. Es el mejor para estudiar la subestructura de los jets, pero es más complicado que *kt*. También es suceptible a los UE y el PU.
+- *kt*{cite}`PhysRevD.48.3160`: para este algoritmo $p=1$. Sensible a los UE y PU. Este algoritmo representa una aproximación de la inversión del proceso de ramificación de QCD porque preserva la historia de agrupamiento.
+- *anti kt*{cite}`Cacciari_2008`: para este algoritmo $p=-1$. Contrario al *kt*, es poco sensible a los UE y el PU. En este algoritmo el agrupamiento no está relacionada a la manera en la que los partones se dividen.
+- Cambridge/Aachen{cite}`Dokshitzer_1997`: para este algoritmo $p=0$. Es el mejor para estudiar la subestructura de los jets, pero es más complicado que *kt*. También es suceptible a los UE y el PU. 
 
 Los algoritmos de recombinación son los más utilizados desde su implementación en el programa *FastJet*{cite}`FastJet`, un paquete de C++ que proporciona herramientas para agrupar y analizar jets.
 
