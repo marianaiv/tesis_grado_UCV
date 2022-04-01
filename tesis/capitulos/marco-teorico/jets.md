@@ -45,19 +45,21 @@ Las colisiones *pp* son utilizadas principalmente para descubrir nueva física. 
 ## Agrupamiento de jets
 La definición de un jet no es única. De hecho, la existencia de un jet es dependiente de la regla matemática que lo defina. Esta regla matemática agrupa los constituyentes del jet de acuerdo a propiedades cinemáticas y se conoce como *algoritmo de agrupamiento de jets*. A continuación se explicará acerca de estos algoritmos siguiendo{cite}`10.1088/2053-2563/ab1be6ch3,Marshall:1308447,Huth:1990mi`
 
-De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de hadrones del estado final con cuadri-momento ${p_1^{had},p_2^{had},\dots,p_n^{had},}$ a un conjunto de jets con cuadri-momento ${p_1^{jet},p_2^{jet},\dots,p_m^{jet},}$, donde usualmente $m<n$. El momento de cada jet es la suma de los momentos de las partículas que lo constituyen y la suma vectorial define el eje del jet.
+De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de hadrones del estado final con cuadri-momento $\{p_1^{had},p_2^{had},\dots,p_n^{had}\}$ a un conjunto de jets con cuadri-momento $\{p_1^{jet},p_2^{jet},\dots,p_m^{jet}\}$, donde usualmente $m<n$. El momento de cada jet es la suma de los momentos de las partículas que lo constituyen y la suma vectorial define el eje del jet.
 
 Todos los algoritmos agrupan objetos cercanos alrededor del ángulo polar de los protones entrantes $\phi$ y la pseudo-rapidez $eta$, definida como: 
+
 $$
-    \eta\equiv -ln(\tan(\frac{\theta}{2}
+    \eta\equiv -\ln(\tan(\frac{\theta}{2}
 $$
+
 donde $\theta$ es el ángulo azimutal entre los constituyentes y los protones entrantes.
 
 Los jets se pueden reconstruir a partir de objetos experimentales, como depósitos de energía en calorímetros y trayectorias de partículas cargadas, o de objetos teóricos, como partones y hadrones obtenidos mediante simulaciones.
 
 ```{figure} ./../../figuras/jets-types.png
 ---
-width: 500px
+width: 700px
 name: jets-types
 ---
 Esquema que muestra los diferentes tipos de jet. Se producen partículas de color por la dispersión fuerte, que crean partículas de color neutro. Estas partículas pueden producir distintas señales en los detectores{cite}`camachotoro:tel-00818796`.
@@ -92,13 +94,11 @@ Existen dos tipos principales de algoritmos de agrupamiento: *algoritmos de cono
 Los algoritmos de cono asumen que el jet se encuentra en regiones cónicas del espacio $(\eta-\phi)$, por lo que los jets reconstruidos por estos algoritmos tienen bordes circulares. Son de fácil implementación pero no son colinealmente estables{cite}`Atkin_2015`.
 
 Se puede pensar que su aproximación es de arriba hacia abajo. En general, un algoritmo de cono sigue los pasos a continuación{cite}`Schieferdecker_2009`:
-Hallar el constituyente más energética del evento, o semilla.
-    Colocar un cono de radio *R* alrededor de esta semilla y sumar el momento de todas las partículas que constituyen el cono, formando un jet de prueba.
-    Comparar el eje de la semilla con el del jet de prueba.
-    *Si el eje del del jet de prueba y la semilla coinciden*:
-        El jet se prueba se toma como jet
-    *De otra forma*:
-        Se repiten los pasos anteriores con el eje del jet de prueba como semilla.
+1. Hallar el constituyente más energética del evento, o semilla.
+2. Colocar un cono de radio *R* alrededor de esta semilla y sumar el momento de todas las partículas que constituyen el cono, formando un jet de prueba.
+3. Comparar el eje de la semilla con el del jet de prueba.
+4. *Si el eje del del jet de prueba y la semilla coinciden*: El jet se prueba se toma como jet
+5. *De otra forma*: Se repiten los pasos anteriores con el eje del jet de prueba como semilla.
 
 Estos pasos se repiten hasta estos pasos hasta que no hayan semillas sobre un umbral de energía escogido.
 
@@ -107,11 +107,12 @@ Ejemplos de algoritmos de cono son: *Midpoint Cone*, utilizado en Tevatron, *Ite
 Los algoritmos de recombinación secuencial asumen que los constituyentes de un jet poseen una pequeña diferencia en el momento transverso. Por esto, las particulas son agrupadas en el espacio de momento, resultando en jets con fluctuaciones en el espacio $(\eta-\phi)${cite}`Atkin_2015`.  
 
 En general, los algoritmos de recombinación secuencial utilizan las siguientes medida de distancia entre dos constituyentes:
+
 $$
     d_{ij} = min(p_{Ti}^{2p},p_{Tj}^{2p})\times \frac{\Delta R_{ij}^2}{R}
 $$
 
-donde $p_T$ es el momento transverso de las partículas, $\Delta R_{ij} = sqrt((\eta_i-eta_j)^2+(\phi_i-\phi_j)^2)$ es la distancia entre dos constituyentes en el espacio $(\eta-\phi)$, *R* es el radio final del jet, usualmente entre 0.4-0.7 y *p* es un parámetro referente al tipo de algoritmo.
+donde $p_T$ es el momento transverso de las partículas, $\Delta R_{ij} = \sqrt((\eta_i-eta_j)^2+(\phi_i-\phi_j)^2)$ es la distancia entre dos constituyentes en el espacio $(\eta-\phi)$, *R* es el radio final del jet, usualmente entre 0.4-0.7 y *p* es un parámetro referente al tipo de algoritmo.
 
 Y también utilizn la distancia entre el eje del haz y el constituyente detectado:
 $$
@@ -120,11 +121,9 @@ $$
 
 Se puede pensar que el funcionamiento de estos algoritmos es de abajo hacia arriba:
 
-Hallar el mínimo en el conjunto {d_{ij},d_{iB}}.  
-    *Si el mínimo es $d_{ij}$*   
-        Los constituyentes *i* y *j* se unen en un solo constituyente *ij*, sumando el cuadri-momento y eliminando *i* y *j*  de la lista de constituyentes.   
-     Si el mínimo es $d_{iB}   
-        *i* es considera jet y eliminado de la lista de constituyentes.   
+1. Hallar el mínimo en el conjunto $\{d_{ij},d_{iB}\}$.  
+   1. *Si el mínimo es $d_{ij}$*: los constituyentes *i* y *j* se unen en un solo constituyente *ij*, sumando el cuadri-momento y eliminando *i* y *j*  de la lista de constituyentes.   
+   2. Si el mínimo es $d_{iB}$: *i* es considera jet y eliminado de la lista de constituyentes.   
 
 Los pasos anteriores se repiten hasta que todas las partículas son parte de un jet, con distancias $\Delta R_{ij}$ entre los ejes de los jets mayores a *R* (agrupamiento inclusivo), o hasta que se obtenga una cantidad específica de jets (agrupamiento exclusivo).
 
@@ -149,7 +148,7 @@ La masa de un jet está definida como la suma de la masa invariante de todos los
 Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman los jets. Para lograr esto, se hace un agrupamiento exclusivo de N jets con los constituyentes del jet y se calcula la variable $\tau_N$
 
 $$
-    \tau_N = \left(\frac{1}{d_0}\right)\sum_{i=0}^{i=N} p_{Ti} \Delta R_{min,i}
+    \tau_N = \left(\frac{1}{d_0}\right)\sum_{i=0}^{i=N} p_{Ti} \times \Delta R_{min,i}
 $$
 
 Donde $\Delta R_{min,i}$ es la menor distancia entre el constituyente *i* del subjet más cercano y $d_0$ es la suma de $p_T$ de todos los constituyentes multiplicada por el radio del jet, para obtener $0<\tau_N<1$. Un valor menor de $\tau_N$ corresponde a una cantidad de subjets igual a N o menor, mientras que un valor mayor indica más de N subjets. Sin embargo, se prefiere utilizar una variable adimensional:
