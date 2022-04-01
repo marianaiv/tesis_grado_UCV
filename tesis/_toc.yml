@@ -17,6 +17,7 @@ parts:
     chapters:
     - file: capitulos/marco-teorico/modelo-estandar
     - file: capitulos/marco-teorico/cromodinamica-cuantica
+    - file: capitulos/marco-teorico/jets
   - caption: "Referencias"
     chapters:
     - file: capitulos/referencias/referencias
