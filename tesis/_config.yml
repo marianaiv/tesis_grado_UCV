@@ -37,7 +37,7 @@ repository:
 # Ver https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_repository_button: true # Link al repositorio
-  home_page_in_navbar: true   # Si incluir la pagina de inicio en la navegación
+  home_page_in_navbar: false   # Si incluir la pagina de inicio en la navegación
 
 #######################################################################################
 # Advanced and power-user settings
