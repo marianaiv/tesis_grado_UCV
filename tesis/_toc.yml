@@ -20,4 +20,4 @@ parts:
     - file: capitulos/marco-teorico/jets
   - caption: "Referencias"
     chapters:
-    - file: capitulos/referencias/referencias
+    - file: capitulos/referencias/referencias 
