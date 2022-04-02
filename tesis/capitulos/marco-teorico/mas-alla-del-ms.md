@@ -101,7 +101,7 @@ La supersimetría (SUSY) es una simetría entre fermiones y bosones. La mínima 
 width: 700px
 name: bsm-sparticulas
 ---
-Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY.
+Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY. De {cite}`york`.
 ```
 
 Entre las motivaciones teóricas de este modelo se encuentra{cite}`Virdee2016-dd`:
@@ -115,7 +115,7 @@ Entre las motivaciones teóricas de este modelo se encuentra{cite}`Virdee2016-dd
 width: 500px
 name: bsm-susyunificacion
 ---
-Evolución de las constantes de acople en función de la energía para el modelo estándar (líneas punteadas) y para MSSM (líneas sólidas). En rojo la interacción electromagnética, en azul la interacción débil y en verde la interacción fuerte.
+Evolución de las constantes de acople en función de la energía para el modelo estándar (líneas punteadas) y para MSSM (líneas sólidas). En rojo la interacción electromagnética, en azul la interacción débil y en verde la interacción fuerte. De {cite}`Cornell_2015`
 ```
 
 Sin embargo, las partículas supersimétricas no han sido observadas{cite}`ATLAS_SUSY,CMS_SUSY`, ninguno de los experimentos diseñados para detectar materia oscura han detectado la partícula ligera que predice SUSY y tampoco hay evidencia para la unificación de las fuerzas.
