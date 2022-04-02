@@ -1,6 +1,6 @@
 (qcd)=
 # Cromodinámica cuántica
-Como se mencionó en el [capítulo anterior](ms-interacciones), la cromodinámica cuántica (QCD) es la teoría de la interacción fuerte y describe la dinámica de los quarks y gluones. Es una teoría cuántica de campos no-Abeliana asociada al grupo de simetría $SU(3)_C$ y construída en analogía a la electrodinámica cuántica (QED){cite:p}`Sutton2016-eh`.
+Como se mencionó en la [sección anterior](ms-interacciones), la cromodinámica cuántica (QCD) es la teoría de la interacción fuerte y describe la dinámica de los quarks y gluones. Es una teoría cuántica de campos no-Abeliana asociada al grupo de simetría $SU(3)_C$ y construída en analogía a la electrodinámica cuántica (QED){cite:p}`Sutton2016-eh`.
 
 El boson predicho por la teoría es el gluon. Al igual que el foton, es una partícula no-masiva de espín 1 que interactua con partículas que poseen *carga de color*. La carga de color es el análogo a la carga eléctrica y es el número cuántico conservado en la teoría. Existen tres tipos de carga para los quarks: rojo, verde y azul (para los anti-quarks: anti-rojo, anti-verde y anti-azul). 
 

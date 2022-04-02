@@ -2,7 +2,7 @@
 # Reconstrucción de jets
 En colisiones de hadrones a altas energías, la libertad asintótica y el confinamiento son los conceptos principales que explican la formación de jets, que es el proceso de dispersión fuerte con mayor tasa de producción en colisiones hadrónicas{cite}`Mangano:2674114`. Los jets son lluvias de partículas colimadas, conformadas principalmente por hadrones, pero también por fotones y leptones. Debido a su alta tasa de producción, los jets se han vuelto objetivo de estudio para "redescubrir" procesos esperados del modelo estándar y garantizar que los detectores se comporten correctamente{cite}`Marshall:1308447`.
 
-En este capítulo se explicará la formación de jets a partir de colisiones protón-protón (*pp*), así como los métodos para reconstruirlos y las variables para analizarlos. 
+En esta sección se explicará la formación de jets a partir de colisiones protón-protón (*pp*), así como los métodos para reconstruirlos y las variables para analizarlos. 
 
 (jets-formacion)=
 ## Formación de jets
@@ -11,9 +11,9 @@ Al colisionar dos protones altamente energéticos, existe una alta tasa de proba
 
 El proceso principal es la **dispersión fuerte**: los protones colisionan a altas energías, produciéndose una interacción con alta transferencia de momento *Q* entre los constituyentes o partones de los protones. Por la libertad asintótica, los partones se comportan como partículas libres y la teoría de perturbación es válida. En la dispersión fuerte se puede crear una partícula resonante de corta vida o puede suceder un proceso de QCD estándar ({numref}`jets-qcd`). Luego, se generan otras partículas mediante decaimientos o procesos de QCD.
 
-También se consideran procesos de **radiación de estado inicial** y **radiación de estado final**: las partículas entrantes y salientes pueden radiar otras partículas. 
+También se consideran procesos de **radiación de estado inicial** (ISR) y **radiación de estado final** (FSR): las partículas entrantes y salientes pueden radiar otras partículas. 
 
-Por último están los **eventos subyacentes**, que son las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas.
+Por último están los **eventos subyacentes** (UE), que son las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas.
 
 ```{figure} ./../../figuras/jets-qcd.png
 ---
