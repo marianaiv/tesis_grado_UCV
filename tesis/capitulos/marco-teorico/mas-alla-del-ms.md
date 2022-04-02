@@ -81,10 +81,10 @@ El problema de jerarquía es consecuencia de la diferencia entre escalas de la f
 ## Búsqueda de nueva física
 La búsqueda de una teoría del todo, que relacione los fenómenos físicos conocidos y prediga el resultado de cualquier experimento, es un tema en curso en la física. 
 
-```{figure} ./../../figuras/bsm-unificación.png
+```{figure} ./../../figuras/bsm-unificacion.png
 ---
 width: 700px
-name: bsm-neutrinos
+name: bsm-unificacion
 ---
 Secuencia histórica de la unificación de leyes físicas. De {cite}`Elert_1998`. 
 ```
