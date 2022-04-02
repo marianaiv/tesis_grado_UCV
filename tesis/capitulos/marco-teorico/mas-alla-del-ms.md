@@ -2,7 +2,7 @@
 # Más allá del modelo estándar
 El modelo estándar es uno de los mayores triunfos científicos del siglo pasado. Durante los últimos 40 años se han verificado exitosamente múltiples predicciones hechas a partir de este modelo{cite}`Kobayashi_2021,NAP6045`. Sin embargo, es evidente que no es una teoría final debido a que no explica varios fenómenos observados experimentalmente. A partir de estas limitaciones, se han planteado múltiples teorías que intentan responder a las preguntas para las que el modelo estándar no tiene explicación. Estás teorías se conocen como *teorías más allá del modelo estándar* (BSM) y su verificación/refutación es uno de los objetivos en el programa del LHC.
 
-En esta sección se explicarán algunas de las limitaciones que presenta el modelo estándar. Seguido de esto, se presentarán algunas de las teorías BSM más conocidas y, más específicamente, teorías BSM relacionadas a eventos dijet.
+En esta sección se explicarán algunas de las limitaciones que presenta el modelo estándar. Seguido de esto, se presentarán las teorías BSM más conocidas y, más específicamente, teorías BSM relacionadas a eventos dijet.
 
 ## Limitaciones del modelo estándar
 Las limitaciones del modelo estándar se pueden separar en *fenomenológicas*, que se refiere a inconsistencias de la teoría con observaciones experimentales o observaciones experimentales que el modelo estándar no puede explicar, y *teóricas*, que hace referencia a predicciones no observadas o valores y parámetros para los que la teoría no tiene explicación. La referencia principal para esta sección es {cite}`BSMlectures`.
@@ -28,14 +28,14 @@ name: bsm-neutrinos
 Masa de los fermiones del modelo estándar. Para la masa de los neutrinos, se asumió la jerarquía usual de masas entre generaciones, con un límite superior de  $m_i$ < 1 eV. De {cite}`deGouvea_2009`.
 ```
 
-El modelo estándar predice neutrinos no masivos,se necesita nueva física para explicar el mecanismo mediante el cual los neutrinos adquieren masa y por qué es tan pequeña.
+El modelo estándar predice neutrinos no masivos, se necesita nueva física para explicar el mecanismo mediante el cual los neutrinos adquieren masa y por qué es tan pequeña.
 
 #### Materia oscura y energía oscura
-Se estima que la materia oscura forma aproximadamente el 27% del universo, mientras que la materia que conocemos forma solo el 5%. Su existencia se ha inferido por los efectos gravitacionales que tiene en la materia visible, ya que las estructuras del universo no serían posibles sin la fuerza de gravedad de algún tipo de materia invisible y no relativista{cite}`Ellis2012-rh`. 
+Se estima que la materia oscura forma aproximadamente el 27% del universo, mientras que la materia visible forma menos del 5%. La existencia de la materia oscura se ha inferido por los efectos gravitacionales que tiene en la materia visible. Las estructuras del universo no serían posibles sin la fuerza de gravedad debido a algún tipo de materia invisible y no relativista{cite}`Ellis2012-rh`. 
 
 La materia oscura en conjunto con la materia visible conforman aproximadamente el 32% de la energía del universo. El resto se conoce como *energía oscura* y está asociada con el vacio en el espacio. La energía oscura se utiliza para explicar la tasa de expansión del universo y su aceleración.{cite}`1607.00330`
 
-La naturaleza del la materia oscura y la energía oscura no están incluidas en el modelo estándar.
+La naturaleza de la materia oscura y la energía oscura no está incluida en el modelo estándar.
 
 ### Problemas teóricos
 #### Descripción cuántica de la gravedad
@@ -79,4 +79,49 @@ Se tiene un valor experimental de $m^2\approx125GeV$, lo que requeriría un valo
 El problema de jerarquía es consecuencia de la diferencia entre escalas de la fuerza electro-débil y la fuerza gravitacional{cite}`camachotoro:tel-00818796`.
 
 ## Búsqueda de nueva física
+La búsqueda de una teoría del todo, que relacione los fenómenos físicos conocidos y prediga el resultado de cualquier experimento, es un tema en curso en la física. 
+
+```{figure} ./../../figuras/bsm-unificación.png
+---
+width: 700px
+name: bsm-neutrinos
+---
+Secuencia histórica de la unificación de leyes físicas. De {cite}`Elert_1998`. 
+```
+Se cree que el modelo estándar es una aproximación a bajas energías que unifica las cuatro interacciones fundamentales. Hasta ahora, no se ha propuesto una teoría que logre este objetivo.
+
+Sin embargo, se existen teorías que intentan explicar varias de las preguntas para las que el modelo estándar no tiene respuesta.
+
+### Supersimetría
+
+La supersimetría (SUSY) es una simetría entre fermiones y bosones. La mínima extensión supersimétrica del modelo estándar (MSSM) se plantea como una extensión del modelo estándar que duplica el espectro de masa al agregar partículas supersimétricas, o spartículas.
+
+```{figure} ./../../figuras/bsm-sparticulas.png
+---
+width: 700px
+name: bsm-sparticulas
+---
+Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY.
+```
+
+Entre las motivaciones teóricas de este modelo se encuentra{cite}`Virdee2016-dd`:
+
+- Las contribuciones de las partículas supersimétricas en el cálculo de la masa del bosón de Higgs cancelan las contribuciones de las partículas del modelo estándar, eliminando el problema de jerarquía.
+- Ofrece una ruta para la unificación de las fuerzas fundamentales del modelo estándar en una escala de $10^15$ GeV ({numref}`bsm-susyunificacion`).
+- La partícula más ligera predicha por el modelo es estable y eléctricamente neutra, por lo que es un candidato a la materia oscura.
+
+```{figure} ./../../figuras/bsm-susyunificacion.png
+---
+width: 500px
+name: bsm-susyunificacion
+---
+Evolución de las constantes de acople en función de la energía para el modelo estándar (líneas punteadas) y para MSSM (líneas sólidas). En rojo la interacción electromagnética, en azul la interacción débil y en verde la interacción fuerte.
+```
+
+Sin embargo, las partículas supersimétricas no han sido observadas{cite}`ATLAS_SUSY,CMS_SUSY`, ninguno de los experimentos diseñados para detectar materia oscura han detectado la partícula ligera que predice SUSY y tampoco hay evidencia para la unificación de las fuerzas.
+
+### Gravedad cuántica de búcles
+
+### Teoría de cuerdas
+
 ## Eventos dijet
