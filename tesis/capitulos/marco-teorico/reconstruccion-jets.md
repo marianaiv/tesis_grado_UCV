@@ -141,7 +141,7 @@ Los algoritmos de recombinación son los más utilizados desde su implementació
 La subestructura de un jet puede analizarse para diferenciar si el jet proviene de un gluon, un quark suave o partículas aún no descubiertas. A continuación se describirán algunas de las variables que se calculan para estudiar la subestructura de un jet, utilizando como referencia {cite}`10.1088/2053-2563/ab1be6ch8`.
 
 ### Masa
-La masa es la variable mas evidente para discriminar entre jets provinientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Wstá definida como la suma de la masa invariante de todos los constituyentes del jet calculada a partir del cuadri-momento de cada constituyente.
+La masa es la variable mas evidente para discriminar entre jets provinientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet calculada a partir del cuadri-momento de cada constituyente.
 
 ### N-subjettiness
 Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet. Para lograr esto, se hace un agrupamiento exclusivo de N jets con los constituyentes del jet y se calcula la variable $\tau_N$
