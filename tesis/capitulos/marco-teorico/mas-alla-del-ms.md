@@ -27,7 +27,6 @@ name: bsm-neutrinos
 ---
 Masa de los fermiones del modelo estándar. Para la masa de los neutrinos, se asumió la jerarquía usual de masas entre generaciones, con un límite superior de  $m_i$ < 1 eV. De {cite}`deGouvea_2009`.
 ```
-
 El modelo estándar predice neutrinos no masivos, se necesita nueva física para explicar el mecanismo mediante el cual los neutrinos adquieren masa y por qué es tan pequeña.
 
 #### Materia oscura y energía oscura
@@ -39,14 +38,12 @@ La naturaleza de la materia oscura y la energía oscura no está incluida en el 
 
 ### Problemas teóricos
 #### Descripción cuántica de la gravedad
-La evidencia más clara de que se necesita nueva física es que el modelo estándar no explica la gravedad. La gravedad afecta la física de partículas a escalas pequeñas cuantificadas por la escala de Planck $M_{Planck}\approx10^{19}GeV$, escala que se considera el límite de validez del modelo estándar{cite}`Gripaios_2015`. 
-
-Sin embargo, la interacción gravitatoria no es renormalizable, por lo que no se ha logrado construir una teoría cuántica de campos que reconcilie la gravedad con la física de partículas{cite}`Allison:2014sjw`
+La evidencia más clara de que se necesita nueva física es que el modelo estándar no explica la gravedad. La fuerza gravitatoria afecta a la física de partículas a escalas pequeñas, cuantificadas por la escala de Planck $M_{Planck}\approx10^{19}GeV$, escala que se considera el límite de validez del modelo estándar{cite}`Gripaios_2015`. Sin embargo, la relatividad general, que es la teoría de la gravedad, no es renormalizable. Debido a esto, no se ha logrado construir una teoría cuántica de campos que reconcilie la gravedad con la física de partículas{cite}`Allison:2014sjw`
 
 #### Origen de las masas/mezclas
 El modelo estándar no tiene explicación para la masa de los fermiones, los ángulos de mezcla de los quarks o por qué las partículas parecen organizarse en tres generaciones.
 
-El mecanismo de ruptura de simetría espontánea, que explica como las partículas obtienen masa, es agregado al modelo estándar de manera conveniente. La teoría no explica el origen de este mecanismo, solo se sabe que es necesario para poder coincidir con las observaciones experimentales{cite}`camachotoro:tel-00818796`.
+El mecanismo de ruptura espontánea de simetría, que explica como las partículas obtienen masa, es agregado al modelo estándar de manera conveniente. La teoría no explica el origen de este mecanismo, solo se sabe que es necesario para poder coincidir con las observaciones experimentales{cite}`camachotoro:tel-00818796`.
 
 Por otra parte, las tres generaciones de fermiones muestran un jerarquía regular en sus masas ({numref}`bsm-neutrinos`) y los ángulos de mezcla de los quarks parecen tener un patrón o estructura en sus valores. Estos sólo representan parámetros en el modelo estándar y no se entiende por qué presentan una estructura.
 
@@ -83,7 +80,7 @@ La búsqueda de una teoría del todo, que relacione los fenómenos físicos cono
 
 ```{figure} ./../../figuras/bsm-unificacion.png
 ---
-width: 700px
+width: 900px
 name: bsm-unificacion
 ---
 Secuencia histórica de la unificación de leyes físicas. De {cite}`Elert_1998`. 
@@ -93,8 +90,7 @@ Se cree que el modelo estándar es una aproximación a bajas energías que unifi
 Sin embargo, se existen teorías que intentan explicar varias de las preguntas para las que el modelo estándar no tiene respuesta.
 
 ### Supersimetría
-
-La supersimetría (SUSY) es una simetría entre fermiones y bosones. La mínima extensión supersimétrica del modelo estándar (MSSM) se plantea como una extensión del modelo estándar que duplica el espectro de masa al agregar partículas supersimétricas, o spartículas.
+La supersimetría (SUSY) es una simetría de teoría cuántica de campos que relaciona fermiones y bosones. La mínima extensión supersimétrica del modelo estándar (MSSM) duplica el espectro de masa al agregar partículas supersimétricas, o spartículas.
 
 ```{figure} ./../../figuras/bsm-sparticulas.png
 ---
@@ -103,12 +99,11 @@ name: bsm-sparticulas
 ---
 Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY. De {cite}`york`.
 ```
-
 Entre las motivaciones teóricas de este modelo se encuentra{cite}`Virdee2016-dd`:
 
 - Las contribuciones de las partículas supersimétricas en el cálculo de la masa del bosón de Higgs cancelan las contribuciones de las partículas del modelo estándar, eliminando el problema de jerarquía.
 - Ofrece una ruta para la unificación de las fuerzas fundamentales del modelo estándar en una escala de $10^15$ GeV ({numref}`bsm-susyunificacion`).
-- La partícula más ligera predicha por el modelo es estable y eléctricamente neutra, por lo que es un candidato a la materia oscura.
+- La partícula más ligera predicha por el modelo es estable y eléctricamente neutra, por lo que es un candidato para la materia oscura.
 
 ```{figure} ./../../figuras/bsm-susyunificacion.png
 ---
@@ -117,11 +112,27 @@ name: bsm-susyunificacion
 ---
 Evolución de las constantes de acople en función de la energía para el modelo estándar (líneas punteadas) y para MSSM (líneas sólidas). En rojo la interacción electromagnética, en azul la interacción débil y en verde la interacción fuerte. De {cite}`Cornell_2015`
 ```
+Sin embargo, las partículas supersimétricas no han sido observadas{cite}`ATLAS_SUSY`, ninguno de los experimentos diseñados para detectar materia oscura han detectado la partícula ligera que predice SUSY y tampoco hay evidencia para la unificación de las fuerzas.
 
-Sin embargo, las partículas supersimétricas no han sido observadas{cite}`ATLAS_SUSY,CMS_SUSY`, ninguno de los experimentos diseñados para detectar materia oscura han detectado la partícula ligera que predice SUSY y tampoco hay evidencia para la unificación de las fuerzas.
+### Dimensiones extra
+Desde 1920 se ha considera la existencia de dimensiones espaciales nuevas, más allá de las cuatro que conocemos. La primera idea, por Kaluza y Klein{cite}`KALUZA_2018,Klein:1926tv`, propone una quinta dimensión, unificando la relatividad general y el electromagnetismo. Desde entonces, se han estudiado varios modelos que plantean nuevas dimensiones. Por ejemplo, la teoría de cuerdas en todas sus versiones contempla más de cuatro dimensiones.
 
-### Gravedad cuántica de búcles
+Las motivación detrás de las dimensiones extras es que al considerarlas, se podrían resolver alguno de los problemas que presenta el modelo estándar. Por ejemplo, el modelo Arkani-Dimopoulos-Dvali (ADD){cite}`Arkani_Hamed_1998` agrega dimensiones extra grandes en las que la gravedad se propaga. Este modelo podría resolver el problema de jerarquía al acercar la escala fundamental a la escala electrodébil.
+
+Sin embargo, no es claro cómo se manifestarían estas dimensiones. Algunas de las maneras de probar experimentalmente su existencia sería mediante el descubrimiento de partículas que solo puedan existir si las dimensiones extra existen o mediante la producción de agujeros negros microscópicos.
+
+Una explicación más detallada sobre modelos que incluyen dimensiones extras se puede encontrar en {cite}`P_rez_Lorenzana_2005`.
 
 ### Teoría de cuerdas
+Hasta ahora, los intentos para incorporar la relatividad general en el modelo estándar no han sido exitosos. La teoría de cuerdas intenta reconciliar estas teorías planteando que las partículas fundamentales no son puntuales, sino más bien cuerdas unidimensionales que vibran. En la teoría de cuerdas uno de los muchos estados de vibración de la cuerda corresponde al graviton, la partícula que en la mecánica cuántica es responsable de la fuerza gravitacional{cite}`Wray_2011`.
+
+En los 80s habían distintas versiones de la teoria de cuerdas que en los 90s resultaron ser parte de una teoría que se conoce como la teoria M.
+
+Sin embargo,
+- La teoría solo funciona con dimensiones adicionales para las que no se tiene evidencia.
+- Introduce partículas supersimétricas que no se han hallado. Estas partículas podrían ser realmente masivas, explicando por qué no se han producido en los aceleradores de partículas.
+- El número de soluciones posibles es del orden de $10^{500}$, cada una con su conjunto único de partículas fundamentales y valores para las constantes fundamentales. Estas posibles soluciones puede que indiquen que el universo es una gran cantidad de universos posibles. Esto hace que la teoría sea difícil de comprobar experimentalmente.
+
+La teoría de cuerdas es un trabajo en proceso, pero es una de las mayores promesas para la unificación de todas las fuerzas fundamentales en una teoría cuántica de campos.
 
 ## Eventos dijet
