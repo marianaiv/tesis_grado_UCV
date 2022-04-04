@@ -87,7 +87,7 @@ Secuencia histórica de la unificación de leyes físicas. De {cite}`Elert_1998`
 ```
 Se cree que el modelo estándar es una aproximación a bajas energías que unifica las cuatro interacciones fundamentales. Hasta ahora, no se ha propuesto una teoría que logre este objetivo.
 
-Sin embargo, se existen teorías que intentan explicar varias de las preguntas para las que el modelo estándar no tiene respuesta.
+Sin embargo, existen teorías que intentan explicar varias de las preguntas para las que el modelo estándar no tiene respuesta.
 
 ### Supersimetría
 La supersimetría (SUSY) es una simetría de teoría cuántica de campos que relaciona fermiones y bosones. La mínima extensión supersimétrica del modelo estándar (MSSM) duplica el espectro de masa al agregar partículas supersimétricas, o spartículas.
@@ -136,3 +136,6 @@ Sin embargo,
 La teoría de cuerdas es un trabajo en proceso, pero es una de las mayores promesas para la unificación de todas las fuerzas fundamentales en una teoría cuántica de campos.
 
 ## Eventos dijet
+La búsqueda de nuevas partículas es parte importante de la búsqueda de nueva física. Los modelos explicados anteriormente y muchos otros incluyen en su formulación nuevas partículas que permiten explicar alguna de las limitacione del modelo estándar presentadas anteriormente.
+
+En el LHC se utilizan haces de protones, por lo que una alta fracción de los eventos de colision resultan en formación de jets. Para este proyecto es de particular interés la topología de dos jets, o dijet.
