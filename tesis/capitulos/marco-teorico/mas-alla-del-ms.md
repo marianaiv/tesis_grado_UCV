@@ -136,6 +136,62 @@ Sin embargo,
 La teoría de cuerdas es un trabajo en proceso, pero es una de las mayores promesas para la unificación de todas las fuerzas fundamentales en una teoría cuántica de campos.
 
 ## Eventos dijet
-La búsqueda de nuevas partículas es parte importante de la búsqueda de nueva física. Los modelos explicados anteriormente y muchos otros incluyen en su formulación nuevas partículas que permiten explicar alguna de las limitacione del modelo estándar presentadas anteriormente.
+La búsqueda de nuevas partículas es parte importante de la búsqueda de física BSM. Los modelos explicados anteriormente y muchos otros incluyen en su formulación nuevas partículas que permiten explicar alguna de las limitaciones del modelo estándar.
 
-En el LHC se utilizan haces de protones, por lo que una alta fracción de los eventos de colision resultan en formación de jets. Para este proyecto es de particular interés la topología de dos jets, o dijet.
+En el LHC se utilizan haces de protones, por lo que una alta fracción de los eventos de colisión resultan en formación de jets. Para este proyecto es de particular interés la topología de dos jets, o dijet.
+
+```{figure} ./../../figuras/bsm-dijets.png
+---
+width: 400px
+name: bsm-dijets
+---
+Diagrama de la producción de una resonancia *X* por la interacción de dos partones y su decaimiento. De {cite}`Beresford:2642397`
+```
+Debido a la falta de evidencia de física BSM, existen varios modelos de producción dijet que se utilizan para mejorar y optimizar los métodos de análisis{cite}`Beresford:2642397,Allen:2636572`.
+
+### Mediador Z' de materia oscura
+Para incluir la materia oscura en el modelo estándar, se plantea una *partícula masiva de interacción débil* (WIMP, por sus siglas en inglés). Sus características principales son:
+- Interactua principalmente a través de la fuerza nuclear débil y la gravedad.
+- Masa de mayor magnitud que cualquier partícula del modelo estándar.
+- Estable o de larga vida. 
+
+La partícula Z' se acopla a la materia oscura y a todos los quarks del modelo estándar, pero no a los leptones. Debido a que no interactúa con la materia a través de la fuerza electromagnética ni fuerza fuerte, no es visible directamente en los detectores. Por su masa, se movería relativamente lento.
+
+```{figure} ./../../figuras/bsm-wboson.png
+---
+width: 500px
+name: bsm-wboson
+---
+Diagrama de Feynman para los decaimientos de *Z'*. (a) Decaimiento a dos partículas de materia oscura con ISR. (b) Decaimiento a dijets. De {cite}`Allen:2636572`.
+```
+
+Partículas como estas son parte de varios modelos BSM como SUSY, dimensión extra universal (UED) y little Higgs. Otros modelos postulan un "sector oscuro" de partículas que no interactúan directamente con la materia regular, sino a través de una partícula mediadora que se acoplan tanto al modelo estándar como a la materia oscura. Estas podrían producirse y ser detectadas en el LHC. La forma en la que se podrían detectar depende del modo de decaimiento. Si el decamiento es a partículas de materia oscura, se puede detectar como falta de energía. En cambio, si decae a partículas del modelo estándar, sus productos se podrían observar directamente ({numref}`bsm-wboson`).
+
+El modelo Z' es recomendado por ATLAS/CMS Dark Matter Forum{cite}`Abercrombie_2020`.
+
+### Boson W' pesado
+Algunas teorías que plantean un grupo de calibre adicional introducen un boson *W'*. Un modelo comunmente utilizados para análisis es el *modelo estándar secuencial* (SSM). Este nuevo boson es una versión más pesada del boson *W* del modelo estándar. La tasa de decaimiento a un estado final de dos quarks ($W'\longrightarrow qq$) es del 75%.
+
+### Quarks excitados
+Los quarks excitados *q\** son característicos de los modelos de quarks complejos{cite}`PhysRevD.42.815`. En estos modelos, los quarks no son partículas fundamentales, más bien son estados ligados de otras partículas. 
+
+Los modelos compuestos buscan abordar la jerarquía de masa de los quarks y la aparente organización de fermiones en generaciones, explicando también el comportamiento de hadrones.
+
+Se plantea que en una colisión *pp* un quark puede ser excitado a aun estado superior mediante la absorción de un gluon y luego radiar un boson cuando regresa a su estado fundamental.
+
+```{figure} ./../../figuras/bsm-quark.png
+---
+width: 600px
+name: bsm-quark
+---
+Diagrama de Feynman de la producción de un quark excitado *q\** por la dispersión fuerte de un quark *q* y un gluon *g*, y subsecuente decaimiento a dos jets. De {cite}`Ruiz_2015`.
+```
+Un quark excitado puede decaer a un par quark-gluon ($q^*\longrightarrow qg$). Este decaimiento tiene una tasa de ramificación del $\sim 85\%$.
+
+### Agujeros negros cuánticos
+
+La escala fundamental de la fuerza gravitatoria, escala de Planck se encuentra $\sim 10^16$ órdenes de magnitud sobre la escala electrodébil. Para explicar esto, se plantea que la fuerza gravitatoria se encuentra en la escala electrodébil, pero que parece más débil porque se propaga en dimensiones adicionales. Evidencia de estas dimensiones se pueden buscar en el LHC a través de los efectos gravitatorios que producen.
+
+La introducción de dimensiones extra disminuye la escala fundamental de la gravedad $M_D$ a TeV, lo que permite la posibilidad de producir agujeros negros cuánticos en colisiones *pp*. Si los agujeros negros producidos poseen masa $\sim M_D$, pueden decaer a un estado final de 2 cuerpos{cite}`Meade_2008`.
+
+Dos modelos populares que incluyen dimensiones extra son el modelo ADD{cite}`Arkani_Hamed_1998`, discutido anteriormente, y el modelo Randall-Sundrum (RS){cite}`Randall:1999ee`.
