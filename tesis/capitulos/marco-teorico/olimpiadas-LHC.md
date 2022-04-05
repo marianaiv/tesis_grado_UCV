@@ -30,10 +30,9 @@ El estado final esta enfocado en múltiples jets. A pesar de esto, en los datos 
 
 Para las olimpiadas publicaron dos tipos de archivo: una simulación de Monte Carlo del fondo, sin eventos de nueva física o señal, un conjunto de datos con señal y tres cajas negras, que pueden o no contener señal. 
 
+Las cajas negras son los conjuntos de datos proporcionado para probar los modelos previamente desarrollados. El contenido de estas es desconocido para los participante. Una vez dados los resultados de las olimpiadas, se proporcionaron las etiquetas de señal y fondo para estos conjuntos.
 
-Las cajas negras son los conjuntos de datos proporcionado para probar los modelos previamente desarrollados. Estos se publicaron por etapas, para permitir que los participantes ajustaran sus modelos a cada conjunto de datos. Una vez dados los resultados de las olimpiadas, se proporcionaron las etiquetas de señal y fondo para estos conjuntos.
-
-Cada evento está compuesto por una lista de todos los hadrones ($p_T,\eta,\phi,$p_T,\eta,\phi,\dots$), con relleno de ceros hasta 700 hadrones. En caso de tener la etiqueta para el tipo de evento (señal o fondo), esta se encuentra en la úlitma columna. Todos los eventos tienen al menos un jet anti-kT con R=1.0, pseudorapidez $\abs{\eta}<2.5$ y momento transversal $p_T > 1.2 TeV$.
+Cada evento está compuesto por una lista de todos los hadrones ($p_T,\eta,\phi,p_T,\eta,\phi,\dots$), con relleno de ceros hasta 700 hadrones. En caso de tener la etiqueta para el tipo de evento (señal o fondo), esta se encuentra en la úlitma columna. Todos los eventos tienen al menos un jet anti-kT con R=1.0, pseudorapidez $|\eta|<2.5$ y momento transversal $p_T > 1.2 TeV$.
 
 ### Conjunto R&D
 Este es el conjunto para ser usado para analizar los datos y entrenar modelos supervisados, es decir, contiene una etiqueta que define si un evento es señal (1) o es fondo (0). 
@@ -69,40 +68,75 @@ Diagrama de Feynmman para la señal del conjunto BB3. Arriba, el modo de decaimi
 El fondo fue simulado con una configuración modificada de Pythia y Delphes.
 
 ## Participantes
-Los participantes debieron reporta al menos alguno de los siguientes resultados utilizando las cajas negras:
+Los participantes debieron reporta al menos alguno de los siguientes resultados:
 - Un valor p asociado a la falta de nuevas partículas en el conjunto de datos.
 - Una descripción completa de la nueva física: masas y modos de decaimiento de las nuevas partículas.
 - Cuantos eventos de señal hay en el conjunto de datos (antes de cualquier criterio de selección)
 
-Los modelos participantes se encuentran agrupados dependiendo del método utilizado:
-- **(Semi-)Supervisado**: los modelos supervisados necesitan datos etiquetados acerca de la señal para construir sensibilidad.
-- **Debilmente supervisado**: utilizan etiquetas ruidosas (posiblemente sin señal/posiblemente sin fondo) en el proceso de entrenamiento.
-- **No supervisados**: no necesitan datos etiquetados para el entrenamiento.
+Los modelos están agrupados dependiendo del método utilizado:
+- **(Semi-)Supervisado** (SS): los modelos supervisados necesitan datos etiquetados acerca de la señal para construir sensibilidad.
+- **Debilmente supervisado** (DS): utilizan etiquetas ruidosas (posiblemente sin señal/posiblemente sin fondo) en el proceso de entrenamiento.
+- **No supervisados** (NS): no necesitan datos etiquetados para el entrenamiento.
 
-En la siguiente tabla se encuentra un **resumen de los participantes**, con el método, los datos que analizaron y si fueron analizados teniendo la información de la etiqueta para cada evento:
+En la siguiente tabla se encuentra un **resumen de los participantes**, con el método, referencias, una breve descripción de cada aproximación y los datos que analizaron:
 
-| Nombre | Método | Análisis sin etiqueta| Análisis con etiqueta|
-|--------|--------|----------------------|----------------------|
-|   VRNN |No supervisado| BB2,3           | BB1|
-|   ANODE|No supervisado|     -           | R&D|
-| BuHuLaSpa|No supervisado| BB2,3         |BB1 |
-|  GAN-AE|No supervisado| BB2,3           |BB1 |
-|     GIS|No supervisado| BB1             | - |
-|     LDA|No supervisado| BB1-3           | - |
-|    PGAE|No supervisado| -               |BB1,2|
-| Reg. Likelihoods| No supervisado|   -   |R&D|
-| UCluster|No supervisado|  BB2,3         | - |
-|   CWoLa|Debilmente supervisado|  -      |BB1,2|
-|CWoLa AE Compare|Debilmente supervisado/No supervisado| - |R&D|
-|Tag N' Train|Debilmente supervisado| BB1-3| - |
-|   SALAD|Debilmente supervisado| -       |R&D|
-|SA-CWoLa|Debilmente supervisado| -       |R&D|
-|Deep Ensemble|(Semi-)Supervisado| BB1    | - |
-| Factorized Topics| (Semi-)Supervisado| -|R&D|
-|    QUAK|(Semi-)Supervisado| BB2,3       | BB1|
-|    LSTM|(Semi-)Supervisado| BB1-3       | - |
+```{table} Participantes de las LHCO 2020
+:name: lhc-participantes
 
-
+| Nombre | Método | Referencia | Descripción | Resultado |
+|--------|------|------------|-------------|-----------|
+|   VRNN |    NS|[Artículo](https://arxiv.org/pdf/2105.09274.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632656/attachments/1971110/3278934/AnomalyScore_LHCOlympics.pdf) | Red neuronal recurrente con autoencoder variacional | BB1-3 |
+|   ANODE|    NS| [Artículo](https://arxiv.org/pdf/2001.04990.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3699483/attachments/1971094/3278905/george_stein_LHCO.pdf)| Estimación de densidades con flujo normalizante: Masked Autoregressive Flow | R&D|
+| BuHuLaSpa|  NS| [Artículo](https://arxiv.org/pdf/2103.06595.pdf)| Espacio latente + autoencoder variacional| BB1-3 |
+|  GAN-AE|    NS| [GitHub](https://github.com/lovaslin/GAN-AE_LHCOlympics), [BumpHunter](https://github.com/lovaslin/pyBumpHunter), [Slides](https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0) | MLP + autoencoder + BumpHunter  | BB1-3 |
+|     GIS|    NS| [Artículo](https://arxiv.org/pdf/2012.11638.pdf) | Flujo normalizante: Gaussianizing Iterative Slicing| BB1|
+|     LDA|    NS| [GitHub](https://github.com/bmdillon/lda-jet-substructure), [Artículo](https://arxiv.org/pdf/1904.04200.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632625/attachments/1971084/3278910/ML4Jets_talk_barrydillon.pdf)| modelo generativo discreto+ BumpHunter| BB1-3|
+|     PGAE|    NS| [GitHub](https://github.com/stsan9/AnomalyDetection4Jets) | Red neuronal de grafos + autoencoder| BB1,2|
+| Reg. Likelihoods| NS| [Github modelo](https://github.com/johannbrehmer/manifold-flow)| Flujos normalizantes: M-flow | R&D|
+| UCluster|   NS| [Github](https://github.com/ViniciusMikuni/UCluster), [Artículo](https://arxiv.org/pdf/2010.07106.pdf) | Agrupamiento + red neuronal de grafos.| BB2,3|
+|   CWoLa|    DS| [GitHub](https://github.com/Jackadsa/CWoLa-Hunting/tree/tf2/LHCO-code)| Clasificador binario| BB1,2|
+|CWoLa AE Compare|D/NS| [Artículo](https://arxiv.org/pdf/2104.02092.pdf) | CWoLa y autoencoders| R&D|
+|Tag N' Train|DS| [GitHub](https://github.com/OzAmram/TagNTrain), [Artículo](https://arxiv.org/pdf/2002.12376.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf) | Autoencoder, técnica TNT y red neuronal convolucional| BB1-3|
+|   SALAD|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Artículo](https://arxiv.org/abs/2001.05001) | Red de aprendizaje profundo: DCTR| R&D|
+|SA-CWoLa|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Artículo](https://arxiv.org/pdf/2009.02205.pdf)| SALAD+CWoLa| R&D|
+|Deep Ensemble|SS| [GitHub](https://github.com/FFFreitas/Deep-Ensemble-Anomaly-Detection)| Red neuronal convolucional + árbol de decisión potenciado | BB1|
+| Factorized Topics| SS| [GitHub](https://github.com/nilais/factorized-topic-modeling)| Restricción estadística | R&D|
+|    QUAK|    SS| [Artículo](https://arxiv.org/abs/2011.03550) |Autoencoder variacional + flujo normalizante | BB1-3|
+|    LSTM|    SS| - | Red neuronal recurrente: Long Short-Term Memory| BB1-3|
+```
 ## Resultados 
+Los resultados individuales de cada modelo se encuentran en {cite}`Kasieczka_2021`. Los resultados obtenidos se pueden resumir cronológicamente en tres etapas
+### ML4Jets workshop 
+Durante este taller se publicó la BB1. En la siguiente figura se resumen los resultados de los nueve participantes de esta etapa:
+```{figure} ./../../figuras/lhco-resultados.png
+---
+width: 700px
+name: lhco-resultados
+---
+Resultados de la primera caja negra. En la figura se encuentran las predicciones de la masa resonante (arriba a la izquierda), el número de eventos de señal (arriba a la derecha), la masa de la primera partícula hija (abajo a la izquierda) y de la segunda partícula hija (abajo a la derecha). En un panel más pequeño se encuentra el "pull" *(respuesta-verdadera)/incertidumbre*
+```
+Los modelos LSTM, Tag N Train y Density Estimation identificaron la masa correcta de la resonancia en una ventana de $\pm 200$ GeV y PCA identificó dentro del error. Las predicciones de otros observables fueron logradas únicamente por Density Estimation.
+### Verano
+Los conjuntos de datos BB2 y BB3 fueron públicados en el verano de 2020. Las predicciones fueron las siguientes:
+### BB2
+El modelo LDA fue el único que predijo ausencia de señal. Los demás participantes que analizaron este conjunto de datos obtuvieron resonancias: 
+- PCA detectó una resonancia de 4.8 TeV,
+- VRNN de 4.2 TeV, 
+- UCluster de 4.6 TeV y 
+- QUAK de 5 TeV.
+### BB3
+Ningún participante logró detectar la resonancia real de 4.2 TeV. 
+- PCA detectó una resonancia que decae a hadrones y partículas invisibles,
+- LDA una resonancia entre 5.4 y 6.4 Tev,
+- UCluster en 3.1 TeV, 
+- QUAK entre 5 y 5.55 TeV y 
+- VRNN no detectó señal.
 
+### Revelación de las cajas negras
+Después de revelar las señales de las cajas negras y publicar las etiquetas de los eventos para cada caja, algunos modelos enviaron mejoras para BB1. 
+- VRNN y BuHuLaSpa reportaron una mejora en la masa invariante debajo de 4 TeV, 
+- Deep Ensemble detectó una resonancia en 3.5 Tev, 
+- LDA una resonancia no incompatible con 3.8 TeV,
+- PGA detectó una resonancia en 3.9 TeV
+- CWoLa observó una resonancia en 3.5 TeV
 ## Comparación de los algoritmos
