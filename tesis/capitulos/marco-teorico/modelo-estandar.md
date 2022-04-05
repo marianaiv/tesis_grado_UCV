@@ -28,14 +28,12 @@ También hay seis sabores de **leptones** que se agrupan en generaciones. Los le
 
 Cada generación de fermiones consiste en dos quarks, un lepton cargado eléctricamente y un lepton neutro, como se puede observar en {numref}`sm-particulas` . Las partículas cargadas de la primera generación son las que constituyen la materia estable, la segunda y tercera generación de partículas cargadas solo se observan en interacciones a altas energías y decaen rápidamente a partículas de la primera generación. Los neutrinos no decaen y raramente interactuan con la materia. Más bien oscilan entre generaciones debido a que los neutrinos son masivos y a los ángulos de mezcla.{cite:p}`camachotoro:tel-00818796`
 ### Bosones
-
 El modelo estándar describe tres de las cuatro interacciones fundamentales. Cada interacción o fuerza está asociada a un grupo de simetría. La teoría está basada en los grupos $SU(3)_C\times SU(2)_I\times U(1)_Y$, donde *SU(3)* corresponde a la interacción fuerte, *SU(2)* a la interacción débil y *U(1)* a la fuerza electromágnetica. La carga de color (/C), el isoespin débil (I) y la hipercarga (Y) son los números cuánticos conservados para cada simetría{cite:p}`burgess_moore_2013`. El Lagrangiano del modelo estándar requiere que la teoría sea invariante bajo transformaciones locales de gauge, lo que introduce los bosones de gauge.
 
 Los **bosones** son las partículas responsables de las interacciones. Poseen espín entero y siguen la estadística de Einstein-Bose. El modelo estándar incluye tres bosones de espín 1 y un boson de espín 0. Los bosones de espín 1 están asociados a las interacciones fundamentales incluidas en el modelo: el foton $\gamma$, el gluon $g$ y los bosones $W^+$, $W^-$ y $Z^0$. Por último, un boson de espin 0 conocido como el boson de Higgs. Es un boson escalar y masivo que rompe las simetrías $SU(2)\times U(1)$, generando la masa de los fermiones y bosones{cite:p}`PhysRevLett.13.508,PhysRevLett.13.321`. Interactua con todas las partículas masivas (excepto los neutrinos[]), por lo que se predice que tiene interacción propia. Esto completa el contenido de partículas del modelo estándar.
 
 (ms-interacciones)=
 ## Interacciones
-
 Como se especificó anteriormente, el modelo estándar describe tres de las cuatro interacciones fundamentales: la interacción electromagnética, la interacción débil y la interacción fuerte. La cuarta fuerza fundamental, la gravedad, no está incluida en la teoría y su impacto en procesos de partículas fundamentales a las energías accesibles es despreciable.
 
 ### Interacción electromagnética
