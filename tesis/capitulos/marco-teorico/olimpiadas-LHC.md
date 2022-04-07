@@ -13,7 +13,7 @@ Las olimpiadas de 2020 estuvieron enfocadas en el desarrollo técnicas de aprend
 
 El desarrollo de estas herramienta para su uso en física de altas energías se ha visto limitado porque los datos relacionados a colisiones *pp* no están públicamente disponibles y son muy diferentes a los datos comunmente utilizados para estudiar estos métodos. Sin embargo, el aprendizaje automático posee un gran potencial para ampliar la búsqueda de nueva física porque permite una aproximación más amplia al problema, eliminando la necesidad de buscar una partícula en específico, más allá de definir unos parámetros generales del tipo de partícula que se busca. A esto se le conoce como búsqueda libre de modelo.
 
-En el caso de las LHCO 2020, se plantea una partícula resonante con un ancho de decaimiento pequeño, que produzca eventos de múltiples jets. Un ejemplo de esta topología se ilustra a continuación{cite}`lhco_2020`.
+En el caso de las LHCO 2020, se plantea una partícula resonante con un ancho de decaimiento pequeño, que produzca eventos de múltiples jets. Un ejemplo de esta topología se ilustra a continuación.
 
 ```{figure} ./../../figuras/lhco-topologia.png
 ---
@@ -32,12 +32,12 @@ Para las olimpiadas publicaron dos tipos de archivo: una simulación de Monte Ca
 
 Las cajas negras son los conjuntos de datos proporcionado para probar los modelos previamente desarrollados. El contenido de estas es desconocido para los participante. Una vez dados los resultados de las olimpiadas, se proporcionaron las etiquetas de señal y fondo para estos conjuntos.
 
-Cada evento está compuesto por una lista de todos los hadrones ($p_T,\eta,\phi,p_T,\eta,\phi,\dots$), con relleno de ceros hasta 700 hadrones. En caso de tener la etiqueta para el tipo de evento (señal o fondo), esta se encuentra en la úlitma columna. Todos los eventos tienen al menos un jet anti-kT con R=1.0, pseudorapidez $|\eta|<2.5$ y momento transversal $p_T > 1.2 TeV$.
+Cada evento está compuesto por una lista de todos los hadrones ($p_T,\eta,\phi,p_T,\eta,\phi,\dots$), con relleno de ceros hasta 700 hadrones. En caso de tener la etiqueta para el tipo de evento (señal o fondo), esta se encuentra en la úlitma columna. Todos los eventos tienen al menos un jet anti-kT con $R=1.0$, pseudorapidez $|\eta|<2.5$ y momento transversal $p_T > 1.2$ TeV.
 
 ### Conjunto R&D
-Este es el conjunto para ser usado para analizar los datos y entrenar modelos supervisados, es decir, contiene una etiqueta que define si un evento es señal (1) o es fondo (0). 
+Este es el conjunto de datos proporcionado para analizar los datos y entrenar modelos supervisados, es decir, contiene una etiqueta que define si un evento es señal (1) o es fondo (0). 
 
-Consiste en 1,000,0000 de eventos dijets de QCD, o eventos de fondo, y 100,000 eventos de BSM $Z'\rightarrow XY$ con $X\rightarrow q\bar{q}$ y $Y\rightarrow q\bar{q}$. Las masas de las partículas *Z'*, *X* y *Y* son 3.5 TeV, 500 GeV y 100 GeV, respectivamente.
+Consiste en 1,000,0000 de eventos dijet de QCD, o eventos de fondo, y 100,000 eventos de BSM, o de señal, $Z'\rightarrow XY$ con $X\rightarrow q\bar{q}$ y $Y\rightarrow q\bar{q}$. Las masas de las partículas *Z'*, *X* y *Y* son 3.5 TeV, 500 GeV y 100 GeV, respectivamente.
 
 ```{figure} ./../../figuras/lhco-RnD.png
 ---
@@ -52,7 +52,7 @@ Este conjunto posee la misma señal que el conjunto R&D pero con masas para *Z'*
 
 Consiste en 1,000,000 de eventos, de los cuales 834 son señal.
 
-Los eventos de fondo en la Caja Negra 1 son diferentes a los del conjunto R&D. Algunas configuraciones por defecto de Pythia y Delphes fueron cambiadas.
+Los eventos de fondo en la caja negra 1 son diferentes a los del conjunto R&D. Algunas configuraciones por defecto de Pythia y Delphes fueron cambiadas.
 ### Caja negra 2 (BB2)
 La caja negra 2 no tiene señal. Contiene 1,000,0000 de eventos de fondo, producido usando Herwig++ en vez de Pythia.
 
@@ -90,7 +90,7 @@ En la siguiente tabla se encuentra un **resumen de los participantes**, con el m
 | BuHuLaSpa|  NS| [Artículo](https://arxiv.org/pdf/2103.06595.pdf)| Espacio latente + autoencoder variacional| BB1-3 |
 |  GAN-AE|    NS| [GitHub](https://github.com/lovaslin/GAN-AE_LHCOlympics), [BumpHunter](https://github.com/lovaslin/pyBumpHunter), [Slides](https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0) | MLP + autoencoder + BumpHunter  | BB1-3 |
 |     GIS|    NS| [Artículo](https://arxiv.org/pdf/2012.11638.pdf) | Flujo normalizante: Gaussianizing Iterative Slicing| BB1|
-|     LDA|    NS| [GitHub](https://github.com/bmdillon/lda-jet-substructure), [Artículo](https://arxiv.org/pdf/1904.04200.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632625/attachments/1971084/3278910/ML4Jets_talk_barrydillon.pdf)| modelo generativo discreto+ BumpHunter| BB1-3|
+|     LDA|    NS| [GitHub](https://github.com/bmdillon/lda-jet-substructure), [Artículo](https://arxiv.org/pdf/1904.04200.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632625/attachments/1971084/3278910/ML4Jets_talk_barrydillon.pdf)| Modelo generativo discreto+ BumpHunter| BB1-3|
 |     PGAE|    NS| [GitHub](https://github.com/stsan9/AnomalyDetection4Jets) | Red neuronal de grafos + autoencoder| BB1,2|
 | Reg. Likelihoods| NS| [Github modelo](https://github.com/johannbrehmer/manifold-flow)| Flujos normalizantes: M-flow | R&D|
 | UCluster|   NS| [Github](https://github.com/ViniciusMikuni/UCluster), [Artículo](https://arxiv.org/pdf/2010.07106.pdf) | Agrupamiento + red neuronal de grafos.| BB2,3|
@@ -115,17 +115,17 @@ name: lhco-resultados
 ---
 Resultados de la primera caja negra. En la figura se encuentran las predicciones de la masa resonante (arriba a la izquierda), el número de eventos de señal (arriba a la derecha), la masa de la primera partícula hija (abajo a la izquierda) y de la segunda partícula hija (abajo a la derecha). En un panel más pequeño se encuentra el "pull" *(respuesta-verdadera)/incertidumbre*
 ```
-Los modelos LSTM, Tag N Train y Density Estimation identificaron la masa correcta de la resonancia en una ventana de $\pm 200$ GeV y PCA identificó dentro del error. Las predicciones de otros observables fueron logradas únicamente por Density Estimation.
-### Verano
+Los modelos LSTM, Tag N Train y GIS identificaron la masa correcta de la resonancia en una ventana de $\pm 200$ GeV y PCA (análisis de componentes principales) identificó dentro del error. Las predicciones de otros observables fueron logradas únicamente por GIS.
+### Verano 2020
 Los conjuntos de datos BB2 y BB3 fueron públicados en el verano de 2020. Las predicciones fueron las siguientes:
-### BB2
-El modelo LDA fue el único que predijo ausencia de señal. Los demás participantes que analizaron este conjunto de datos obtuvieron resonancias: 
+
+En el conjunto de datos **BB2**, el modelo LDA fue el único que predijo ausencia de señal. Los demás participantes que analizaron este conjunto de datos obtuvieron resonancias: 
 - PCA detectó una resonancia de 4.8 TeV,
 - VRNN de 4.2 TeV, 
 - UCluster de 4.6 TeV y 
 - QUAK de 5 TeV.
-### BB3
-Ningún participante logró detectar la resonancia real de 4.2 TeV. 
+
+Para el conjunto de datos **BB3**, ningún participante logró detectar la resonancia real de 4.2 TeV. 
 - PCA detectó una resonancia que decae a hadrones y partículas invisibles,
 - LDA una resonancia entre 5.4 y 6.4 Tev,
 - UCluster en 3.1 TeV, 
