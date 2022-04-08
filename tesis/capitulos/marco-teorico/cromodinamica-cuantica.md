@@ -2,7 +2,7 @@
 # Cromodinámica cuántica
 Como se mencionó en la [sección anterior](ms-interacciones), la cromodinámica cuántica (QCD) es la teoría de la interacción fuerte y describe la dinámica de los quarks y gluones. Es una teoría cuántica de campos no-Abeliana asociada al grupo de simetría $SU(3)_C$ y construída en analogía a la electrodinámica cuántica (QED){cite:p}`Sutton2016-eh`.
 
-El boson predicho por la teoría es el gluon. Al igual que el foton, es una partícula no-masiva de espín 1 que interactua con partículas que poseen *carga de color*. La carga de color es el análogo a la carga eléctrica y es el número cuántico conservado en la teoría. Existen tres tipos de carga para los quarks: rojo, verde y azul (para los anti-quarks: anti-rojo, anti-verde y anti-azul). 
+El boson predicho por la teoría es el gluon. Al igual que el foton, es una partícula no-masiva de espín 1 que interactúa con partículas que poseen *carga de color*. La carga de color es el análogo a la carga eléctrica y es el número cuántico conservado en la teoría. Existen tres tipos de carga para los quarks: rojo, verde y azul (para los anti-quarks: anti-rojo, anti-verde y anti-azul). 
 
 Los gluones poseen carga de color, contrario a los fotones que no poseen carga eléctrica. Existen ocho gluones con superposiciones de cargas de color. Así, los gluones median la interacción fuerte pero también interactúan entre sí, haciendo que el análisis de la QCD sea más complejo. 
 
@@ -15,7 +15,7 @@ name: qcd-quarkgluon
 ---
 Vértice de interacción $gq\bar{q}$. En este vértice en particular, un quark con carga de color rojo ($r$) cambia a un quark con carga de color azul ($b$) emitiendo un gluon rojo-antiazul ($r\bar{b}$){cite:p}`griffiths_1987`.
 ```
-La interacción propia del gluon se puede observar en la {numref}`qcd-gluongluon` en los vértices de tres y cuatro gluones, *ggg* y *gggg*, respectivamente.
+Y los vértices de interacción propia del gluon, que se puede observar en la {numref}`qcd-gluongluon`. La interacción de tres y cuatro gluones, *ggg* y *gggg*, respectivamente.
 
 ```{figure} ./../../figuras/qcd-gluongluon.png
 ---
