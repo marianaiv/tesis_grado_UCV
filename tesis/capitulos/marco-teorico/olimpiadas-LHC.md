@@ -105,7 +105,7 @@ En la siguiente tabla se encuentra un **resumen de los participantes**, con el m
 |    LSTM|    SS| - | Red neuronal recurrente: Long Short-Term Memory| BB1-3|
 ```
 ## Resultados 
-Los resultados individuales de cada modelo se encuentran en {cite}`Kasieczka_2021`. Los resultados obtenidos se pueden resumir cronológicamente en tres etapas
+Los resultados individuales de cada modelo se encuentran en {cite}`Kasieczka_2021`. Sin embargo, se pueden resumir cronológicamente en tres etapas
 ### ML4Jets workshop 
 Durante este taller se publicó la BB1. En la siguiente figura se resumen los resultados de los nueve participantes de esta etapa:
 ```{figure} ./../../figuras/lhco-resultados.png
