@@ -3,6 +3,7 @@
 En física de altas energías (HEP) los datos obtenidos de experimentos son sumamente complejos y de grandes dimensiones. A medida que alcanzamos mayores energías en los aceleradores de partículas, conseguimos nuevos desafíos debido al aumento en el tamaño de los eventos, el volumen de datos y su complejidad. Por esto, en la última década ha existido un enfoque en el estudio y la mejora de métodos y herramientas de análisis de datos, puesto que el alcance de los experimentos puede ser limitado por el rendimiento de algoritmos y de recursos computacionales. El aprendizaje automático es una herramienta que promete mejoras en estas áreas.
 
 En este capítulos se presentan brevemente conceptos básicos de aprendizaje automático y un resumen de su uso en HEP. Información más detallada sobre este tema se encuentra en {cite}`Mehta_2019,Bourilkov_2019`. Una recopilación al día de las investigaciones relacionadas a aprendizaje automático y física de partículas se encuentra en {cite}`hepmllivingreview`
+
 (ml-conceptos)=
 ## Conceptos básicos
 El aprendizaje automático es un subcampo de la inteligencia artificial. Tiene como objetivo el desarrollo de algoritmos que mejoran su desempeño de manera cuantificable en una tarea determinada mediante un proceso de entrenamiento que utiliza grandes conjuntos de datos.
@@ -10,19 +11,18 @@ El aprendizaje automático es un subcampo de la inteligencia artificial. Tiene c
 Típicamente los problemas hacen uso de un conjunto de datos $\mathcal{D}=(\mathbf{X},\mathbf{y})$ donde $\mathbf{X}$ es una matriz de variables independientes $\mathbf{y}$ es un vector de variables dependientes. La tarea es optimizar un modelo $f(\mathbf{x};\mathbf{\theta})$ tal que $f:\mathbf{x}\rightarrow y$ de los parámetros $\mathbf{\theta}$. Esto es, *f* es una función utilizada para predecir una única salida de un vector de varibles de entrada. Esta función optimiza alguna métrica escogida que se conoce como función de pérdida o costo $\mathcal{L}(\mathbf{y},f(\mathbf{x}))$. Esto se logra encontrando el valor de $\mathbf{\theta}$ que minimiza $\mathcal{L}${cite}`Mehta_2019`.
 
 El **proceso de aprendizaje** de un algoritmo se puede resumir en los siguientes pasos:
-1. Usualmente es necesario pre-procesar los datos. En HEP esto puede ser, por ejemplo, mediante el calculo de variables físicas. En este paso es común incluir el normalizar o escalar los datos y disminución de dimensiones.
+1. Usualmente es necesario pre-procesar los datos. En HEP esto puede ser, por ejemplo, mediante el cálculo de variables físicas. En este paso es común incluir el normalizar o escalar los datos y la disminución de dimensiones.
 2. Se divide aleatoreamente $\mathcal{D}$ en dos conjuntos mutuamente exclusivos de entrenamiento y prueba. $\mathcal{D}_{train}$ y $\mathcal{D}_{test}$, respectivamente. Se suele utilizar la mayor parte de los datos para entrenamiento. Por ejemplo, 70% entrenamiento y 30% prueba.
 3. El ajuste del modelo se hace minimizando la función de pérdida utilizando los datos de entrenamiento $\mathbf{\hat{\theta}}=\text{arg min}_{\theta}\{\mathcal{L}(\mathbf{y}_{train},f(\mathbf{X}_{train};\mathbf{\theta}))\}$
 1. Finalmente, el rendimiento del modelo se evalúa calculando la función de pérdida con los datos de prueba $\mathcal{L}(\mathbf{y}_{test},f(\mathbf{X}_{test};\mathbf{\hat{\theta}}))$.
 
-El aprendizaje automático se puede dividir en tres categorías: aprendizaje supervisado, aprendizaje no-supervisado y aprendizaje reforzado. Aunque la distinción es útil, se suelen combinar estos tipos de aprendizaje, por lo que los términos se suelen utilizar de manera imprecisa y pueden ser confusos.
+El aprendizaje automático se puede dividir en tres categorías: aprendizaje supervisado, aprendizaje no-supervisado y aprendizaje reforzado. Aunque la distinción es útil, se suelen combinar estos tipos de aprendizaje, por lo que los términos se suelen utilizar de manera imprecisa y pueden ser confusos. En este proyecto se utilizarán métodos de aprendizaje supervisado y no supervisado.
 
-En este proyecto es de interés el aprendizaje supervisado y no supervisado debido al tipo de problemas que se quieren 
 (ml-supervisado)=
 ## Aprendizaje supervisado
 El aprendizaje supervisado se refiere al aprendizaje a partir de datos etiquetados (por ejemplo, en HEP podría ser datos etiquetados como que *contienen señal* o que *no contienen señal*). Las tareas comunes incluyen *clasificación*, cuando el objetivo de aprendizaje $y$ es discreto y finito, y *regresión*, cuando $y$ es continuo o discreto e infinito{cite}`Karagiorgi_2021`.
 
-Los problemas que se tratan en este proyecto son de clasificación binaria, es decir, clasificación de dos clases. Por esto, el siguiente segmento tratará sobre álgunos algoritmos de clasificación, enfocado en el caso de clasificación binaria. Sin embargo, algunos son modelos combinados y es necesario presentar primero los *métodos de ensamble*.
+Los problemas que se tratan en este proyecto son de clasificación binaria, es decir, clasificación de dos clases. A continuación, se presentarán los algoritmos que se van a utilizar. Sin embargo, algunos modelos son combinados y es necesario presentar primero los *métodos de ensamble*.
 
 ### Métodos de ensamble 
 Los *métodos de ensamble* utilizan conjuntos de algoritmos de aprendizaje automático cuyas decisiones se combinan para mejorar el rendimiento del sistema en general. Estos métodos han probado solucionar deficiencias estadísticas, computacionales y de representación. Las razones para usar estos métodos están explicadas en {cite}`louppe2015understanding`:
@@ -92,15 +92,59 @@ $$ (ml-gbcaprendizdebil)
 donde $g_i$ es la derivada de la función de pérdida con respecto a su segundo parámetro, evaluada en $F_{m-1}(x)$. La suma en {eq}`ml-gbcaprendizdebil` se minimiza si $h(x_i)$ se ajusta para predecir un valor proporcional al gradiente negativo $−g_i$. Por lo tanto, en cada iteración, el estimador $h_m$ está ajustado para predecir los gradientes negativos de las muestras. Los gradientes se actualizan en cada iteración. Este proceso puede considerarse como una especie de descenso de gradiente en un espacio funcional.
 
 #### Análisis de discriminante cuadrático
-El análisis de discriminante cuadrático es un *modelo discriminante* con un límite de decisión cuadrático. 
+El análisis de discriminante cuadrático{cite}`QDA` es un clasificador con un límite de decisión cuadrático. El modelo asume que las densidades condicionales de clase $ P(\mathbf{X}|y=k)$, para cada clase $k$, están distribuidas normalmente.
+
+Las predicciones para cada muestra de entrenamiento $x$ se obtienen utilizando el teorema de Bayes:
+
+$$
+    P(y=k|x) = \frac{P(x|y=k)P(y=k)}{P(x)}
+$$
+
+Donde se selecciona la clase $k$ que maximice esta probabilidad.
+
+```{figure} ./../../figuras/ml-qda.png
+---
+width: 700px
+name: ml-qda
+---
+Clasificación con QDA. a) Lods puntos a ser clasificados, b) los límites o fronteras de decisión. La barra de color indica la probabilidad de pertenecer a la clase 1. De {cite}`QDAimg`
+```
 
 #### Redes neuronales
+Las redes neuronales son modelos no-lineales inspirados en las neuronas. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.
+
+Las redes neuronales se definen mediante una serie de transformaciones que mapean la entrada $x$ a estados "ocultos" $\mathbf{h}_i$. Finalmente, una transformación final mapea estos estados a una función de salida $\mathbf{y}${cite}`Guest_2018`.
+
+Las transformaciones se pueden escribir matemáticamente como:
+
+$$
+    \mathbf{h}_i = g_i(W_i\mathbf{h}_i+\mathbf{b}_i)
+$$ (ml-nnneurona)
+
+donde $g_i$ es una función conocida como *función de activación* y $\mathbf{h}_i$ representa la transformación i-ésima de $\mathbf{x}$, llamado *embedding*. $W$ es la matrix de los *pesos* y $\mathbf{b}$ el vector de los *sesgos*.
+
+El objetivo es hallar los pesos y sesgos que optimizan la función de pérdida. Esto se logra utilizando las etiquetas de los datos y calculando el gradiente de la función de pérdida con respecto a los parámetross del modelo. Esto se conoce como *retropropagación* y requiere que las funciones sean diferenciables.
+
+Las transformaciones se ordenan en capas ({numref}`ml-nn`). La salida de una capa es la entrada de la siguiente.
+
+```{figure} ./../../figuras/ml-nn.png
+---
+width: 700px
+name: ml-nn
+---
+Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente. De {cite}`Mehta_2019`
+```
+La tarea de la red depende de su arquitectura. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la *entropía cruzada binaria* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
 
 (ml-nosupervisado)=
 ## Aprendizaje no-supervisado
 Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Ejemplos de tareas comunes de algoritmos no-supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo y detección de anomalías.
 
-### K-means
+Algunos algoritmos de agrupamiento se pueden utilizar como clasificadores binarios, como es el caso de *K-means*
+
+### Algoritmos de clasificación
+#### K-means
+
 
 (ml-metricas)=
 ## Métricas de rendimiento
