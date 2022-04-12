@@ -1,14 +1,16 @@
 (ml)=
 # Aprendizaje automático
-En física de altas energías (HEP) los datos obtenidos de experimentos son sumamente complejos y de grandes dimensiones. A medida que alcanzamos mayores energías en los aceleradores de partículas, conseguimos nuevos desafíos debido al aumento en el tamaño de los eventos, el volumen de datos y su complejidad. Por esto, en la última década ha existido un enfoque en el estudio y la mejora de métodos y herramientas de análisis de datos, puesto que el alcance de los experimentos puede ser limitado por el rendimiento de algoritmos y de recursos computacionales. El aprendizaje automático es una herramienta que promete mejoras en estas áreas.
+En física de altas energías (HEP) los datos obtenidos de experimentos son sumamente complejos y de grandes dimensiones. A medida que alcanzamos mayores energías en los aceleradores de partículas, conseguimos nuevos desafíos debido al aumento en el tamaño de los eventos, el volumen de datos y su complejidad. Por esto, en la última década ha existido un enfoque en el estudio y la mejora de métodos y herramientas de análisis de datos, puesto que el alcance de los experimentos puede ser limitado por el rendimiento de algoritmos y de recursos computacionales. El aprendizaje automático es una herramienta que promete algunas soluciones a estos problemas.
 
-En este capítulos se presentan brevemente conceptos básicos de aprendizaje automático y un resumen de su uso en HEP. Información más detallada sobre este tema se encuentra en {cite}`Mehta_2019,Bourilkov_2019`. Una recopilación al día de las investigaciones relacionadas a aprendizaje automático y física de partículas se encuentra en {cite}`hepmllivingreview`
+Estos métodos han encontrado múltiples aplicaciones en HEP. Por ejemplo, en reconstrucción de hits y trayectorias en los detectores, identificación de partículas, clasificación y selección de eventos a nivel de detectores, simulaciones, procesamiento de datos, detección de anomalías, búsquedas independientes de modelo, entre otros{cite}`Bourilkov_2019,Guest_2018`.  Notablemente, estas herramientas han tenido un gran impacto en la medición de la masa del quark top{cite}`Bhat:1997rc` en 1997 y el descubrimiento del boson de Higgs{cite}`201230,20121` en 2012{cite}`jimenez:tel-02402488`. Un resumen al día del uso de aprendizaje automático en HEP se puede encontrar en *[A Living Review of Machine Learning for Particle Physics](https://iml-wg.github.io/HEPML-LivingReview/)*{cite}`hepmllivingreview`.
+
+A continuación se presentan brevemente conceptos básicos de aprendizaje automático y los algoritmos a emplear en el proyecto, utilizando como referencia{cite}`Mehta_2019`.
 
 (ml-conceptos)=
 ## Conceptos básicos
-El aprendizaje automático es un subcampo de la inteligencia artificial. Tiene como objetivo el desarrollo de algoritmos que mejoran su desempeño de manera cuantificable en una tarea determinada mediante un proceso de entrenamiento que utiliza grandes conjuntos de datos.
+El aprendizaje automático es un subcampo de la inteligencia artificial. Tiene como objetivo el desarrollo de algoritmos que mejoran su desempeño de manera cuantificable en una tarea determinada, "aprendiendo" mediante un proceso de entrenamiento que utiliza grandes conjuntos de datos.
 
-Típicamente los problemas hacen uso de un conjunto de datos $\mathcal{D}=(\mathbf{X},\mathbf{y})$ donde $\mathbf{X}$ es una matriz de variables independientes $\mathbf{y}$ es un vector de variables dependientes. La tarea es optimizar un modelo $f(\mathbf{x};\mathbf{\theta})$ tal que $f:\mathbf{x}\rightarrow y$ de los parámetros $\mathbf{\theta}$. Esto es, $f$ es una función utilizada para predecir una única salida de un vector de varibles de entrada. La funcion $f$ optimiza alguna métrica escogida que se conoce como función de pérdida o costo $\mathcal{L}(\mathbf{y},f(\mathbf{x}))$, lo que se logra encontrando el valor de $\mathbf{\theta}$ que minimiza $\mathcal{L}${cite}`Mehta_2019`.
+Típicamente los problemas hacen uso de un conjunto de datos $\mathcal{D}=(\mathbf{X},\mathbf{y})$ donde $\mathbf{X}$ es una matriz de variables independientes $\mathbf{y}$ es un vector de variables dependientes. La tarea es optimizar un modelo $f(\mathbf{x};\mathbf{\theta})$ tal que $f:\mathbf{x}\rightarrow y$ de los parámetros $\mathbf{\theta}$. Esto es, $f$ es una función utilizada para predecir una salida de un vector de varibles de entrada. La funcion $f$ optimiza alguna métrica escogida que se conoce como función de pérdida o costo $\mathcal{L}(\mathbf{y},f(\mathbf{x}))$, lo que se logra encontrando el valor de $\mathbf{\theta}$ que minimiza $\mathcal{L}${cite}`Mehta_2019`.
 
 El **proceso de aprendizaje** de un algoritmo se puede resumir en los siguientes pasos:
 1. Pre-procesamiento de datos. En HEP puede ser, por ejemplo, mediante el cálculo de variables físicas. En este paso es común normalizar o escalar los datos y disminuir sus dimensiones .
@@ -20,9 +22,9 @@ El aprendizaje automático se puede dividir en tres categorías: aprendizaje sup
 
 (ml-supervisado)=
 ## Aprendizaje supervisado
-El aprendizaje supervisado se refiere al aprendizaje a partir de datos etiquetados (por ejemplo, en HEP podría ser datos etiquetados como que *contienen señal* o que *no contienen señal*). Las tareas comunes incluyen *clasificación*, cuando el objetivo de aprendizaje $y$ es discreto y finito, y *regresión*, cuando $y$ es continuo o discreto e infinito{cite}`Karagiorgi_2021`.
+El aprendizaje supervisado se refiere al aprendizaje a partir de datos etiquetados (por ejemplo, en HEP podría ser datos etiquetados como que *contiene señal* o que *no contiene señal*). Las tareas comúnes incluyen *clasificación*, cuando el objetivo de aprendizaje $y$ es discreto y finito, y *regresión*, cuando $y$ es continuo o discreto e infinito{cite}`Karagiorgi_2021`.
 
-Los problemas que se tratan en este proyecto son de clasificación binaria, es decir, clasificación de dos clases. A continuación, se presentarán los algoritmos que se van a utilizar. Sin embargo, algunos modelos son combinados y es necesario presentar primero los *métodos de ensamble*.
+En este proyecto utilizamos algunos modelos combinados, es decir, que utilizan *métodos de ensamble*.
 
 ### Métodos de ensamble 
 Los *métodos de ensamble* utilizan conjuntos de algoritmos de aprendizaje automático cuyas decisiones se combinan para mejorar el rendimiento del sistema en general. Estos métodos han probado solucionar deficiencias estadísticas, computacionales y de representación. Las razones para usar estos métodos están explicadas en {cite}`louppe2015understanding`:
@@ -41,9 +43,20 @@ $$ (ml-boosting)
 
 donde $\sum_k \alpha_k=1$.
 
-### Algoritmos
-#### Bosque aleatorio
-Los bosques aleatorios son utilizados ampliamente para tareas complejas de clasificación. Estos algoritmos son ensambles de árboles de decisión.
+(ml-nosupervisado)=
+## Aprendizaje no-supervisado
+Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Ejemplos de tareas comunes de algoritmos no-supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo y detección de anomalías.
+
+Algunos algoritmos de agrupamiento se pueden utilizar para clasificación, como es el caso de *K-means*
+
+(ml-algoritmos)=
+## Algoritmos para detección de anomalías
+En este proyecto se trata un problema de clasificación binaria con datos altamente desbalanceados, lo que se conoce como una tarea de *detección de anomalías*. El objetivo de la detección de anomalías es predecir la categoría a la que pertenece una muestra: "normal" o "anómala".
+
+A continuación, se explicarán los algoritmos utilizados en este trabajo, enfocándonos en su uso para esta tarea.
+
+### Bosque aleatorio
+Los bosques aleatorios son algoritmos supervisados utilizados ampliamente para tareas complejas de clasificación. Estos algoritmos son ensambles de árboles de decisión.
 
 Un **arbol de decisión** utiliza una serie de preguntas para realizar la partición jerarquica de los datos. Su objetivo es hallar un conjunto de reglas que naturalmente separen el espacio de características, proporcionando un modelo de clasificación sólido e informativo{cite}`myles_2004`. 
 
@@ -63,9 +76,9 @@ name: ml-bosquealeatorio
 ---
 Representación visual del funcionamiento de un bosque aleatorio. De {cite}`chauhan_2021`
 ```
-#### Clasificador de boosting de gradiente
+### Clasificador de boosting de gradiente
 
-El clasificador de boosting de gradiente (GBC) usualmente utiliza árboles de regresión como aprendiz débil. Es un modelo aditivo que avanza por etapas{cite}`GBC`. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior.
+El clasificador de boosting de gradiente (GBC) usualmente utiliza árboles de regresión como aprendiz débil. Es un modelo supervisado y aditivo que avanza por etapas{cite}`GBC`. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior.
 
 GBC se puede usar para regresión y clasificación. Su formulación matemática es la siguiente{cite}`GTBC`.
 
@@ -91,8 +104,8 @@ $$ (ml-gbcaprendizdebil)
 
 donde $g_i$ es la derivada de la función de pérdida con respecto a su segundo parámetro, evaluada en $F_{m-1}(x)$. La suma en {eq}`ml-gbcaprendizdebil` se minimiza si $h(x_i)$ se ajusta para predecir un valor proporcional al gradiente negativo $−g_i$. Por lo tanto, en cada iteración, el estimador $h_m$ está ajustado para predecir los gradientes negativos de las muestras. Los gradientes se actualizan en cada iteración. Este proceso puede considerarse como una especie de descenso de gradiente en un espacio funcional.
 
-#### Análisis de discriminante cuadrático
-El análisis de discriminante cuadrático{cite}`QDA` es un clasificador con un límite de decisión cuadrático. El modelo asume que las densidades condicionales de clase $P(\mathbf{X}|y=k)$, para cada clase $k$, están distribuidas normalmente.
+### Análisis de discriminante cuadrático
+El análisis de discriminante cuadrático{cite}`QDA` es un clasificador supervisado con un límite de decisión cuadrático. El modelo asume que las densidades condicionales de clase $P(\mathbf{X}|y=k)$, para cada clase $k$, están distribuidas normalmente.
 
 Las predicciones para cada muestra de entrenamiento $x$ se obtienen utilizando el teorema de Bayes:
 
@@ -110,8 +123,8 @@ name: ml-qda
 Clasificación con QDA. a) Lods puntos a ser clasificados, b) los límites o fronteras de decisión. La barra de color indica la probabilidad de pertenecer a la clase 1. De {cite}`QDAimg`
 ```
 
-#### Redes neuronales
-Las redes neuronales son modelos no-lineales inspirados en las neuronas. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.
+### Redes neuronales
+Las redes neuronales son modelos supervisados y no-lineales inspirados en las neuronas. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.
 
 Las redes neuronales se definen mediante una serie de transformaciones que mapean la entrada $x$ a estados "ocultos" $\mathbf{h}_i$. Finalmente, una transformación final mapea estos estados a una función de salida $\mathbf{y}${cite}`Guest_2018`.
 
@@ -136,15 +149,8 @@ Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde l
 ```
 La tarea de la red depende de su arquitectura. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la *entropía cruzada binaria* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
 
-(ml-nosupervisado)=
-## Aprendizaje no-supervisado
-Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Ejemplos de tareas comunes de algoritmos no-supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo y detección de anomalías.
-
-Algunos algoritmos de agrupamiento se pueden utilizar para clasificación, como es el caso de *K-means*
-
-### Algoritmos
-#### K-means
-*K-means* separa los datos en $K$ grupos con igual varianza. Los grupos están caracterizados por la media de los datos pertenecientes al grupo. Estos se conocen como "centroides" y se representan con $\mu_j${cite}`Kmeans`. 
+### K-means
+*K-means* es un algoritmo no-supervisado que separa los datos en $K$ grupos con igual varianza. Los grupos están caracterizados por la media de los datos pertenecientes al grupo. Estos se conocen como "centroides" y se representan con $\mu_j${cite}`Kmeans`. 
 
 El objetivo del algoritmo es minimizar la *inercia* o *criterio de suma de cuadrados dentro del grupo*, definida como: 
 
@@ -174,10 +180,28 @@ Como la inicialización de los centroides es aleatoria, usualmente se realizan m
 (ml-metricas)=
 ## Métricas de rendimiento
 
-## Aprendizaje automático en HEP
-https://arxiv.org/pdf/1912.08245.pdf 
-https://arxiv.org/pdf/1806.11484.pdf
 
-### Clasificación y selección de eventos
+(ml-HEP)=
+## Aprendizaje automático en HEP
+Como se mencionó anteriormente, el uso de aprendizaje automático en HEP es amplio. Sin embargo, este trabajo se enfoca en las técnicas de  *detección de anomalías* y *búsquedas libres de modelo*
 
 ### Detección de anomalías
+Hasta ahora no se ha confirmado ninguna señal de nueva física. Parte de la dificultad recae en diferenciar la pequeña cantidad de eventos que podrían ser señales nuevas, de eventos de fondo o que no son de interés. Debido a esto, se ha planteado el uso de algoritmos de detección de anomalías para clasificación de los eventos de señal.
+
+Las técnicas de detección de anomalías se pueden dividir en dos tipos{cite}`Fraser_2022`. 
+- Algunas señales son cualitativamente distintas de del fondo y se utilizan técnicas para caracterizar estos eventos como anómalos. 
+- Algunos eventos de señal son similares a los de fondo, por lo que se explota información sobre la distribución de probabilidad esperada del fondo para allar señal. 
+
+Este útlimo caso es el que se trata en este proyecto y los detalles se discutirán en la [última sección](lhc) de este capítulo.
+
+### Búsquedas de nueva física independiente de modelo
+La mayor parte de la búsqueda de nueva física está guiada por modelos partículares de BSM, supersimetría o materia oscura. Sin embargo, con la introducción de del aprendizaje automático, se han propuesto métodos para la búsqueda independiente de módelo. El objetivo general de estas búsquedas es que sean lo más agnosticas posibles al proceso físico subyacente que puede ser responsable de la señal de nueva física{cite}`jimenez:tel-02402488`.
+
+Un ejemplo de una búsqueda independiente de modelo es {cite}`De_Simone_2019`, donde se plantea el uso de aprendizaje no supervisado para comparar las distribuciones de densidad de probabilidad de dos muestras: simulaciones de eventos del modelo estándar, o lo que sería el fondo para las búsquedas de nueva física, y datos reales.
+
+Una búsqueda de este tipo es{cite}`Fraser_2022`:
+- *Libre de modelo*: sin suposiciones sobre las densidades
+- *No-paramétrica*: compara las densidades como un todo, no valores específicos asociados a estas.
+- *No-clasificada*: usa la dimensionalidad completa de la información.
+
+La relación entre la detección de anomalías y la búsqueda libre de modelo es evidente, ya que el objetivo en ambos casos es realizar una búsqueda no-específica o más general de eventos de nueva física.
