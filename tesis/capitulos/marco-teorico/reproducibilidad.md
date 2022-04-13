@@ -1,4 +1,4 @@
-(rd)=
+(rpd)=
 # Reproducibilidad
 En 1973, Robert Merton describió el ethos de la ciencia moderna a través de cuatro características principales{cite}`merton_storer_1973`:
 1. *Universalismo*: las pretensiones de verdad, cualquiera que sea su fuente, deben estar sujetas a criterios impersonales preestablecidos, en consonancia con la observación y con el conocimiento previamente confirmado.
@@ -8,5 +8,19 @@ En 1973, Robert Merton describió el ethos de la ciencia moderna a través de cu
 
 Desde entonces, el panorama científico ha evolucionado. Hoy en día, el proceso de investigación y experimentación se lleva a cabo por redes complejas de equipos y comunidades de todas partes el mundo, involucrando a una gran cantidad de personas. Sólo en 2020, más de 2.9 millones de artículos de ingeniería e investigación científica fueron públicados mundialmente{cite}`white_2021`. Además, por la disponibilidad de recursos computacionales y de grandes cantidades de datos, se han creado nuevas formas de hacer investigación científica{cite}`NAP25303`. 
 
-Esta evolución trajo consigo preguntas y problemas acerca del mantenimiento de los ethos de la ciencia moderna. En particular, ha habido un foco de interés en los problemas relacionados con la reproducibilidad científica{cite}``. Tomando en cuenta la gran cantidad de publicaciones y las nuevas maneras de hacer investigación, es necesario estudiar las formas más eficientes de diseñar estudios y comunicar resultados para permitir que se puedan comprobar o refutar fácilmente, y que puedan servir como base para el desarrollo de conocimiento futuro.
+Esta evolución trajo consigo preguntas sobre cómo mantener los ethos de la ciencia moderna. En particular, ha habido un foco de interés en los problemas relacionados con la reproducibilidad científica{cite}`Baker2016`. Tomando en cuenta la gran cantidad de publicaciones y las nuevas maneras de hacer investigación, es necesario estudiar las formas más eficientes de diseñar estudios y comunicar resultados para permitir que sean fácilmente comprobables o refutables, y que puedan servir como base para el desarrollo de nuevos conocimientos.
+
+(rpd-definicion)=
+## Definición 
+
+
+(rpd-investigacion)=
+## Investigación reproducible
+
+
+(rpd-barreras)=
+## Barreras para la reproducibilidad
+
+
+
 
