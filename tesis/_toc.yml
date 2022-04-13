@@ -18,6 +18,7 @@ parts:
     - file: capitulos/marco-teorico/reconstruccion-jets
     - file: capitulos/marco-teorico/mas-alla-del-ms
     - file: capitulos/marco-teorico/aprendizaje-automatico
+    - file: capitulos/marco-teorico/reproducibilidad
     - file: capitulos/marco-teorico/olimpiadas-LHC
     
   - caption: "Referencias"
