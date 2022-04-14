@@ -1,8 +1,8 @@
+(lhco)=
 # Olimpiadas LHC 2020
+La búsqueda de física BSM es parte principal del programa de investigación del LHC. Hasta ahora no ha sido exitosa, pero se mejora constantemente. Sin embargo, es evidente que se requieren mejoraras en las herramientas de análisis para que puedan aprovechar la cantidad y complejidad de los datos.
 
-La búsqueda de física BSM es parte principal del programa de investigación en el LHC. Hasta ahora no ha sido exitosa, pero se mejora constantemente. Sin embargo, es evidente que se requiere mejorar las herramientas para que puedan aprovechar la cantidad y complejidad de los datos.
-
-Con el fin de mejorar estas herramientas y el análisis de los datos se crearon las olimpiadas LHC (LHCO). Para las olimpiadas, se simulan conjuntos de datos con eventos de nueva física que podrían observarse en el acelerador con el objetivo de que los participantes interpreten los datos en términos de modelos de física BSM.
+Con el fin de mejorar estas herramientas y el análisis de los datos se crearon las olimpiadas LHC (LHCO). Para las olimpiadas, se simulan conjuntos de datos con eventos de nueva física que podrían observarse en el acelerador. El objetivo es que los participantes interpreten los datos en términos de modelos de física BSM.
 
 > "La idea principal es que si no lo puedes hacer para el caso simulado, es mucho menos probable que lo puedas hacer para el caso real. 
 > Hace que las personas aprendan a pensar de manera diferente y aborden el problema de la forma en que habría que abordarlo" 
@@ -11,7 +11,7 @@ Con el fin de mejorar estas herramientas y el análisis de los datos se crearon 
 
 Las olimpiadas de 2020 estuvieron enfocadas en el desarrollo técnicas de aprendizaje automático para la búsqueda de partículas resonantes. 
 
-El desarrollo de estas herramienta para su uso en física de altas energías se ha visto limitado porque los datos relacionados a colisiones *pp* no están públicamente disponibles y son muy diferentes a los datos comunmente utilizados para estudiar estos métodos. Sin embargo, el aprendizaje automático posee un gran potencial para ampliar la búsqueda de nueva física porque permite una aproximación más amplia al problema, eliminando la necesidad de buscar una partícula en específico, más allá de definir unos parámetros generales del tipo de partícula que se busca. A esto se le conoce como búsqueda libre de modelo.
+El desarrollo de estas herramienta para su uso en física de altas energías se ha visto limitado porque los datos relacionados a colisiones *pp* no se encuentran públicamente disponibles y son muy diferentes a los datos que se utilizan comunmente para estudiar estos métodos. Sin embargo, el aprendizaje automático posee un gran potencial para ampliar la búsqueda de nueva física porque permite una aproximación más amplia al problema, como las búsquedas libres de modelo. 
 
 En el caso de las LHCO 2020, se plantea una partícula resonante con un ancho de decaimiento pequeño, que produzca eventos de múltiples jets. Un ejemplo de esta topología se ilustra a continuación.
 
@@ -22,20 +22,22 @@ name: lhco-topologia
 ---
 Un tipo de topología que se puede encontrar en los datos de las LHCO 2020. Evento dijet por el decaimiento de una partícula de nueva física en dos partículas de nueva física que decaen a jets. Tomada de {cite}`lhco_2020`.
 ```
-
 En esta sección se describirán los conjuntos de datos públicados, los algoritmos participantes y los resultados obtenidos. Para mayor información acerca de cualquiera de los puntos, consultar {cite}`Kasieczka_2021`.
 
+(lhco-datos)=
 ## Conjuntos de datos
-El estado final esta enfocado en múltiples jets. A pesar de esto, en los datos proporcionados, el espacio de fase de los observables y el de posibles parámetros de BSM son grandes, es decir, proporcionan la información de todos los hadrones de cada evento.
+El estado final esta enfocado en múltiples jets. A pesar de esto, en los conjuntos de datos el espacio de fase de los observables y el espacio de posibles parámetros de BSM son grandes, es decir, proporcionan la información de todos los hadrones de cada evento. 
 
-Para las olimpiadas publicaron dos tipos de archivo: una simulación de Monte Carlo del fondo, sin eventos de nueva física o señal, un conjunto de datos con señal y tres cajas negras, que pueden o no contener señal. 
+Los eventos se generaron utilizando *Pythia*, *Herwig++* y *Delphes*. Pythia y Herwig++ son programas para la generación de eventos de colisión en HEP, categorizados como generadores de eventos Monte Carlo de propósito general. Delphes simula la respuesta de un detector multipropósito.
+
+Para las olimpiadas publicaron dos tipos de archivo: una simulación de Monte Carlo del fondo, sin eventos de nueva física o señal, un conjunto de datos con señal para investigación y desarrollo y tres cajas negras, que pueden o no contener señal. 
 
 Las cajas negras son los conjuntos de datos proporcionado para probar los modelos previamente desarrollados. El contenido de estas es desconocido para los participante. Una vez dados los resultados de las olimpiadas, se proporcionaron las etiquetas de señal y fondo para estos conjuntos.
 
 Cada evento está compuesto por una lista de todos los hadrones ($p_T,\eta,\phi,p_T,\eta,\phi,\dots$), con relleno de ceros hasta 700 hadrones. En caso de tener la etiqueta para el tipo de evento (señal o fondo), esta se encuentra en la úlitma columna. Todos los eventos tienen al menos un jet anti-kT con $R=1.0$, pseudorapidez $|\eta|<2.5$ y momento transversal $p_T > 1.2$ TeV.
 
 ### Conjunto R&D
-Este es el conjunto de datos proporcionado para analizar los datos y entrenar modelos supervisados, es decir, contiene una etiqueta que define si un evento es señal (1) o es fondo (0). 
+Este es el conjunto de datos proporcionado para investigación y desarrollo (Research & Development). Se utiliza para analizar los datos y entrenar modelos supervisados, es decir, contiene una etiqueta que define si un evento es señal (1) o es fondo (0). 
 
 Consiste en 1,000,0000 de eventos dijet de QCD, o eventos de fondo, y 100,000 eventos de BSM, o de señal, $Z'\rightarrow XY$ con $X\rightarrow q\bar{q}$ y $Y\rightarrow q\bar{q}$. Las masas de las partículas *Z'*, *X* y *Y* son 3.5 TeV, 500 GeV y 100 GeV, respectivamente.
 
@@ -48,9 +50,7 @@ Diagrama de Feynmman para la señal del conjunto R&D y la BB1. Producción del b
 ```
 Los eventos de este conjunto de datos se produjeron utilizando Pythia y Delphes con la configuración por defecto.
 ### Caja negra 1 (BB1)
-Este conjunto posee la misma señal que el conjunto R&D pero con masas para *Z'*, *X* y *Y* de 3.823 TeV, 732 GeV y 378 GeV.
-
-Consiste en 1,000,000 de eventos, de los cuales 834 son señal.
+Este conjunto posee la misma señal que el conjunto R&D pero con masas para *Z'*, *X* y *Y* de 3.823 TeV, 732 GeV y 378 GeV. Consiste en 1,000,000 de eventos, de los cuales 834 son señal.
 
 Los eventos de fondo en la caja negra 1 son diferentes a los del conjunto R&D. Algunas configuraciones por defecto de Pythia y Delphes fueron cambiadas.
 ### Caja negra 2 (BB2)
@@ -67,43 +67,46 @@ Diagrama de Feynmman para la señal del conjunto BB3. Arriba, el modo de decaimi
 ```
 El fondo fue simulado con una configuración modificada de Pythia y Delphes.
 
+(lhco-participantes)
 ## Participantes
-Los participantes debieron reporta al menos alguno de los siguientes resultados:
+Los participantes reportaron al menos alguno de los siguientes resultados:
 - Un valor p asociado a la falta de nuevas partículas en el conjunto de datos.
 - Una descripción completa de la nueva física: masas y modos de decaimiento de las nuevas partículas.
 - Cuantos eventos de señal hay en el conjunto de datos (antes de cualquier criterio de selección)
 
 Los modelos están agrupados dependiendo del método utilizado:
-- **(Semi-)Supervisado** (SS): los modelos supervisados necesitan datos etiquetados acerca de la señal para construir sensibilidad.
-- **Debilmente supervisado** (DS): utilizan etiquetas ruidosas (posiblemente sin señal/posiblemente sin fondo) en el proceso de entrenamiento.
-- **No supervisados** (NS): no necesitan datos etiquetados para el entrenamiento.
+- **(Semi-)Supervisado**: los modelos supervisados necesitan datos etiquetados acerca de la señal para construir sensibilidad.
+- **Debilmente supervisado**: utilizan etiquetas ruidosas (posiblemente sin señal/posiblemente sin fondo) en el proceso de entrenamiento.
+- **No supervisados**: no necesitan datos etiquetados para el entrenamiento.
 
 En la siguiente tabla se encuentra un **resumen de los participantes**, con el método, referencias, una breve descripción de cada aproximación y los datos que analizaron:
 
 ```{table} Participantes de las LHCO 2020
 :name: lhc-participantes
 
-| Nombre | Método | Referencia | Descripción | Resultado |
+| Nombre | Método | Referencia | Resultado |
 |--------|------|------------|-------------|-----------|
-|   VRNN |    NS|[Artículo](https://arxiv.org/pdf/2105.09274.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632656/attachments/1971110/3278934/AnomalyScore_LHCOlympics.pdf) | Red neuronal recurrente con autoencoder variacional | BB1-3 |
-|   ANODE|    NS| [Artículo](https://arxiv.org/pdf/2001.04990.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3699483/attachments/1971094/3278905/george_stein_LHCO.pdf)| Estimación de densidades con flujo normalizante: Masked Autoregressive Flow | R&D|
-| BuHuLaSpa|  NS| [Artículo](https://arxiv.org/pdf/2103.06595.pdf)| Espacio latente + autoencoder variacional| BB1-3 |
-|  GAN-AE|    NS| [GitHub](https://github.com/lovaslin/GAN-AE_LHCOlympics), [BumpHunter](https://github.com/lovaslin/pyBumpHunter), [Slides](https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0) | MLP + autoencoder + BumpHunter  | BB1-3 |
+|   VRNN |    NS|[Artículo](https://arxiv.org/pdf/2105.09274.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632656/attachments/1971110/3278934/AnomalyScore_LHCOlympics.pdf) | BB1-3 |
+|   ANODE|    NS| [Artículo](https://arxiv.org/pdf/2001.04990.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3699483/attachments/1971094/3278905/george_stein_LHCO.pdf)| R&D|
+| BuHuLaSpa|  NS| [Artículo](https://arxiv.org/pdf/2103.06595.pdf)| BB1-3 |
+|  GAN-AE|    NS| [GitHub](https://github.com/lovaslin/GAN-AE_LHCOlympics), [BumpHunter](https://github.com/lovaslin/pyBumpHunter), [Slides](https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0) | BB1-3 |
 |     GIS|    NS| [Artículo](https://arxiv.org/pdf/2012.11638.pdf) | Flujo normalizante: Gaussianizing Iterative Slicing| BB1|
-|     LDA|    NS| [GitHub](https://github.com/bmdillon/lda-jet-substructure), [Artículo](https://arxiv.org/pdf/1904.04200.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632625/attachments/1971084/3278910/ML4Jets_talk_barrydillon.pdf)| Modelo generativo discreto+ BumpHunter| BB1-3|
-|     PGAE|    NS| [GitHub](https://github.com/stsan9/AnomalyDetection4Jets) | Red neuronal de grafos + autoencoder| BB1,2|
+|     LDA|    NS| [GitHub](https://github.com/bmdillon/lda-jet-substructure), [Artículo](https://arxiv.org/pdf/1904.04200.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632625/attachments/1971084/3278910/ML4Jets_talk_barrydillon.pdf)| BB1-3|
+|     PGAE|    NS| [GitHub](https://github.com/stsan9/AnomalyDetection4Jets) | BB1,2|
 | Reg. Likelihoods| NS| [Github modelo](https://github.com/johannbrehmer/manifold-flow)| Flujos normalizantes: M-flow | R&D|
-| UCluster|   NS| [Github](https://github.com/ViniciusMikuni/UCluster), [Artículo](https://arxiv.org/pdf/2010.07106.pdf) | Agrupamiento + red neuronal de grafos.| BB2,3|
-|   CWoLa|    DS| [GitHub](https://github.com/Jackadsa/CWoLa-Hunting/tree/tf2/LHCO-code)| Clasificador binario| BB1,2|
-|CWoLa AE Compare|D/NS| [Artículo](https://arxiv.org/pdf/2104.02092.pdf) | CWoLa y autoencoders| R&D|
-|Tag N' Train|DS| [GitHub](https://github.com/OzAmram/TagNTrain), [Artículo](https://arxiv.org/pdf/2002.12376.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf) | Autoencoder, técnica TNT y red neuronal convolucional| BB1-3|
-|   SALAD|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Artículo](https://arxiv.org/abs/2001.05001) | Red de aprendizaje profundo: DCTR| R&D|
-|SA-CWoLa|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Artículo](https://arxiv.org/pdf/2009.02205.pdf)| SALAD+CWoLa| R&D|
-|Deep Ensemble|SS| [GitHub](https://github.com/FFFreitas/Deep-Ensemble-Anomaly-Detection)| Red neuronal convolucional + árbol de decisión potenciado | BB1|
-| Factorized Topics| SS| [GitHub](https://github.com/nilais/factorized-topic-modeling)| Restricción estadística | R&D|
-|    QUAK|    SS| [Artículo](https://arxiv.org/abs/2011.03550) |Autoencoder variacional + flujo normalizante | BB1-3|
-|    LSTM|    SS| - | Red neuronal recurrente: Long Short-Term Memory| BB1-3|
+| UCluster|   NS| [Github](https://github.com/ViniciusMikuni/UCluster), [Artículo](https://arxiv.org/pdf/2010.07106.pdf) | BB2,3|
+|   CWoLa|    DS| [GitHub](https://github.com/Jackadsa/CWoLa-Hunting/tree/tf2/LHCO-code)| BB1,2|
+|CWoLa AE Compare|D/NS| [Artículo](https://arxiv.org/pdf/2104.02092.pdf) | R&D|
+|Tag N' Train|DS| [GitHub](https://github.com/OzAmram/TagNTrain), [Artículo](https://arxiv.org/pdf/2002.12376.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf) | BB1-3|
+|   SALAD|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Artículo](https://arxiv.org/abs/2001.05001) | R&D|
+|SA-CWoLa|    DS| [GitHub](https://github.com/bnachman/DCTRHunting), [Artículo](https://arxiv.org/pdf/2009.02205.pdf)| R&D|
+|Deep Ensemble|SS| [GitHub](https://github.com/FFFreitas/Deep-Ensemble-Anomaly-Detection)| BB1|
+| Factorized Topics| SS| [GitHub](https://github.com/nilais/factorized-topic-modeling)| R&D|
+|    QUAK|    SS| [Artículo](https://arxiv.org/abs/2011.03550) | BB1-3|
+|    LSTM|    SS| - | BB1-3|
 ```
+
+(lhco-resultados-cap)=
 ## Resultados 
 Los resultados individuales de cada modelo se encuentran en {cite}`Kasieczka_2021`. Sin embargo, se pueden resumir cronológicamente en tres etapas
 ### ML4Jets workshop 
@@ -139,4 +142,6 @@ Después de revelar las señales de las cajas negras y publicar las etiquetas de
 - LDA una resonancia no incompatible con 3.8 TeV,
 - PGA detectó una resonancia en 3.9 TeV
 - CWoLa observó una resonancia en 3.5 TeV
+
+(lhco-comparación)=
 ## Comparación de los algoritmos
