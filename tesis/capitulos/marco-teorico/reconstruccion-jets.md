@@ -1,6 +1,6 @@
 (jets)=
 # Reconstrucción de jets
-En colisiones de hadrones a altas energías, la libertad asintótica y el confinamiento son los conceptos principales que explican la formación de jets, que es el proceso de dispersión fuerte con mayor tasa de producción en colisiones hadrónicas{cite}`Mangano:2674114`. Los jets son lluvias de partículas colimadas, conformadas principalmente por hadrones, pero también por fotones y leptones. Debido a su alta tasa de producción, los jets se han vuelto objetivo de estudio para "redescubrir" procesos esperados del modelo estándar y garantizar que los detectores se comporten correctamente{cite}`Marshall:1308447`.
+En colisiones de hadrones a altas energías, la libertad asintótica y el confinamiento son los conceptos principales que explican la formación de jets, el proceso de dispersión fuerte con mayor tasa de producción en colisiones hadrónicas{cite}`Mangano:2674114`. Los jets son lluvias de partículas colimadas, conformadas principalmente por hadrones, pero también por fotones y leptones. Debido a su alta tasa de producción, los jets se han vuelto objetivo de estudio para "redescubrir" procesos esperados del modelo estándar y garantizar que los detectores se comporten correctamente{cite}`Marshall:1308447`.
 
 En esta sección se explicará la formación de jets a partir de colisiones protón-protón (*pp*), así como los métodos para reconstruirlos y las variables para analizarlos. 
 
@@ -13,7 +13,7 @@ El proceso principal es la **dispersión fuerte**: los protones colisionan a alt
 
 También se consideran procesos de **radiación de estado inicial** (ISR) y **radiación de estado final** (FSR): las partículas entrantes y salientes pueden radiar otras partículas. 
 
-Por último están los **eventos subyacentes** (UE), que son las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas.
+Por último, están los **eventos subyacentes** (UE), que son las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas.
 
 ```{figure} ./../../figuras/jets-qcd.png
 ---
@@ -22,10 +22,9 @@ name: jets-qcd
 ---
 Diagramas de Feynmann que representan la producción de dos jets en colisiones hadrónicas por procesos de QCD{cite}`Mangano:2674114`, construidos a partir de los vértices permitidos ({numref}`qcd-quarkgluon` y {numref}`qcd-gluongluon`)
 ```
-
 A muy altas energías las partículas generadas se puedan dividir para generar más partículas mediante procesos que todavía no se comprenden completamente{cite}`cottingham_greenwood_2007`. Esta lluvia de partículas se dice colimada porque las partículas se generan a ángulos pequeños del partón original.
 
-La evolución perturbativa del jet se detendrá una vez que las partículas alcancen bajas energías. A bajas energías, el confinamiento domina el proceso y las partículas creadas se unen para formar partículas de color neutro. Este proceso no-perturbativo se conoce como **hadronización** y ocurre técnicamente fuera del radio del proton{cite}`10.1088/2053-2563/ab1be6ch4`. La hadronización, en conjunto con la radiación de estado final, se conoce como **fragmentación**. A la colección de todos los hadrones resultantes cerca de la dirección del partón original se le llama jet{cite}`burgess_moore_2013_hadronic`.
+La evolución perturbativa del jet se detendrá una vez que las partículas alcancen bajas energías. A bajas energías, el confinamiento domina el proceso y las partículas creadas se unen para formar partículas de color neutro. Este proceso no-perturbativo se conoce como **hadronización** y ocurre técnicamente fuera del radio del protón{cite}`10.1088/2053-2563/ab1be6ch4`. La hadronización, en conjunto con la radiación de estado final, se conoce como **fragmentación**. A la colección de todos los hadrones resultantes cerca de la dirección del partón original se le llama jet{cite}`burgess_moore_2013_hadronic`.
 
 El proceso explicado anteriormente se muestra en el siguiente diagrama:
 
@@ -34,12 +33,9 @@ El proceso explicado anteriormente se muestra en el siguiente diagrama:
 width: 600px
 name: jets-desarrollo
 ---
-Esquema de la formación de jets{cite}`camachotoro:tel-00818796`. (esta imagen la voy a adaptar al español)
+Esquema de la formación de jets{cite}`camachotoro:tel-00818796`.
 ```
-
 A pesar de ser un proceso complejo, las propiedades cinemáticas de un jet son las mismas que las del parton original, en primera aproximación.
-
-Las colisiones *pp* son utilizadas principalmente para descubrir nueva física. Esto se discutirá más adelante.
 
 (jets-agrupamiento)=
 ## Agrupamiento de jets
@@ -50,7 +46,7 @@ De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de ha
 Todos los algoritmos agrupan objetos cercanos alrededor del ángulo polar de los protones entrantes $\phi$ y la pseudo-rapidez $\eta$, definida como: 
 
 $$
-    \eta\equiv -\ln\left(\tan\left(\frac{\theta}{2}\right)\right)
+    \eta\equiv -\ln\left[\tan\left(\frac{\theta}{2}\right)\right]
 $$ (eta)
 
 donde $\theta$ es el ángulo azimutal entre los constituyentes y los protones entrantes.
@@ -62,12 +58,11 @@ Los jets se pueden reconstruir a partir de objetos experimentales, como depósit
 width: 700px
 name: jets-types
 ---
-Esquema que muestra los diferentes tipos de jet. Se producen partículas de color por la dispersión fuerte, que crean partículas de color neutro. Estas partículas pueden producir distintas señales en los detectores{cite}`camachotoro:tel-00818796`.
+Esquema que muestra los diferentes tipos de jet. Se producen partículas de color por la dispersión fuerte, creando partículas de color neutro en la fragmentación. Estas partículas pueden producir distintas señales en los detectores{cite}`camachotoro:tel-00818796`.
 ```
-
 Se espera que un algoritmo posea ciertas características:
 - Ser robusto con respecto al tipo de datos de entrada.
-- Teóricamente, debe ser *colinealmente estable*: la separación de un parton en dos partones colineales no debe cambiar el resultado del agrupamiento del jet ({numref}`jets-colineal`).
+- Teóricamente, debe ser *colinealmente estable*: la separación de un partón en dos partones colineales no debe cambiar el resultado del agrupamiento del jet ({numref}`jets-colineal`).
 - Cumplir con la *estabilidad infrarroja*: la radiación de un gluon suave no debe cambiar el agrupamiento ({numref}`jets-infrarrojo`).
 - Baja sensibilidad a los eventos subyacentes y el "pileup" (PU).
 - Fácil de utilizar en cálculos teóricos y análisis experimentales, así como computacionalmente rápidos de ejecutar.
@@ -91,7 +86,7 @@ Esquema de la estabilidad infrarroja. La emisión de un gluon suave entre dos je
 Existen dos tipos principales de algoritmos de agrupamiento: *algoritmos de cono* y *algoritmos de recombinación secuencial*
 
 #### Cono
-Los algoritmos de cono asumen que el jet se encuentra en regiones cónicas del espacio $(\eta-\phi)$, por lo que los jets reconstruidos por estos algoritmos tienen bordes circulares. Son de fácil implementación pero no son colinealmente estables{cite}`Atkin_2015`.
+Los algoritmos de cono asumen que el jet se encuentra en regiones cónicas del espacio $(\eta-\phi)$, por lo que los jets reconstruidos por estos algoritmos tienen bordes circulares. Son de fácil implementación, pero no son colinealmente estables{cite}`Atkin_2015`.
 
 Se puede pensar que su aproximación es de arriba hacia abajo. En general, un algoritmo de cono sigue los pasos a continuación{cite}`Schieferdecker_2009`:
 1. Hallar el constituyente más energética del evento, o semilla.
@@ -100,13 +95,13 @@ Se puede pensar que su aproximación es de arriba hacia abajo. En general, un al
 4. *Si el eje del del jet de prueba y la semilla coinciden*: El jet se prueba se toma como jet
 5. *De otra forma*: Se repiten los pasos anteriores con el eje del jet de prueba como semilla.
 
-Estos pasos se repiten hasta estos pasos hasta que no hayan semillas sobre un umbral de energía escogido.
+Estos pasos se repiten hasta estos pasos hasta que no haya semillas sobre un umbral de energía escogido.
 
 Ejemplos de algoritmos de cono son: *Midpoint Cone*, utilizado en Tevatron, *Iterative Cone* y *SISCone*{cite}`Salam_2007`, utilizados anteriormente por CMS.
 #### Recombinación secuencial
-Los algoritmos de recombinación secuencial asumen que los constituyentes de un jet poseen una pequeña diferencia en el momento transverso. Por esto, las particulas son agrupadas en el espacio de momento, resultando en jets con fluctuaciones en el espacio $(\eta-\phi)${cite}`Atkin_2015`.  
+Los algoritmos de recombinación secuencial asumen que los constituyentes de un jet poseen una pequeña diferencia en el momento transverso. Por esto, las partículas son agrupadas en el espacio de momento, resultando en jets con fluctuaciones en el espacio $(\eta-\phi)${cite}`Atkin_2015`.  
 
-En general, los algoritmos de recombinación secuencial utilizan las siguientes medida de distancia entre dos constituyentes:
+En general, los algoritmos de recombinación secuencial utilizan las siguientes medidas de distancia entre dos constituyentes:
 
 $$
     d_{ij} = min(p_{Ti}^{2p},p_{Tj}^{2p})\times \frac{\Delta R_{ij}^2}{R}
@@ -114,7 +109,7 @@ $$ (dist_const)
 
 donde $p_T$ es el momento transverso de las partículas, $\Delta R_{ij} = \sqrt((\eta_i-eta_j)^2+(\phi_i-\phi_j)^2)$ es la distancia entre dos constituyentes en el espacio $(\eta-\phi)$, *R* es el radio final del jet, usualmente entre 0.4-0.7 y *p* es un parámetro referente al tipo de algoritmo.
 
-Y también utilizn la distancia entre el eje del haz y el constituyente detectado:
+También utilizan la distancia entre el eje del haz y el constituyente detectado:
 
 $$
     d_{iB}=p_{Ti}^{2p}
@@ -132,7 +127,7 @@ Los algoritmos de recombinación utilizados son:
 
 - *kt*{cite}`PhysRevD.48.3160`: para este algoritmo $p=1$. Es sensible a los UE y PU. Este algoritmo representa una aproximación de la inversión del proceso de ramificación de QCD porque preserva la historia de agrupamiento.
 - *anti kt*{cite}`Cacciari_2008`: para este algoritmo $p=-1$. Contrario al *kt*, es poco sensible a los UE y el PU. En este algoritmo el agrupamiento no está relacionada a la manera en la que los partones se dividen.
-- Cambridge/Aachen{cite}`Dokshitzer_1997`: para este algoritmo $p=0$. Es el mejor para estudiar la subestructura de los jets, pero es más complicado que *kt*. También es suceptible a los UE y el PU. 
+- Cambridge/Aachen{cite}`Dokshitzer_1997`: para este algoritmo $p=0$. Es el mejor para estudiar la subestructura de los jets, pero es más complicado que *kt*. También es susceptible a los UE y el PU. 
 
 Los algoritmos de recombinación son los más utilizados desde su implementación en el programa *FastJet*{cite}`FastJet`, un paquete de C++ que proporciona herramientas para agrupar y analizar jets.
 
@@ -141,7 +136,7 @@ Los algoritmos de recombinación son los más utilizados desde su implementació
 La subestructura de un jet puede analizarse para diferenciar si el jet proviene de un gluon, un quark suave o partículas aún no descubiertas. A continuación se describirán algunas de las variables que se calculan para estudiar la subestructura de un jet, utilizando como referencia {cite}`10.1088/2053-2563/ab1be6ch8`.
 
 ### Masa
-La masa es la variable mas evidente para discriminar entre jets provinientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet calculada a partir del cuadri-momento de cada constituyente.
+La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet calculada a partir del cuadri-momento de cada constituyente.
 
 ### N-subjettiness
 Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet. Para lograr esto, se hace un agrupamiento exclusivo de N jets con los constituyentes del jet y se calcula la variable $\tau_N$
@@ -160,7 +155,7 @@ Un jet con N-1 subjets tendrá un valor de $\tau_{N-1,N}$ menor a un jet conform
 
 ### Funciones de correlación de energía
 
-Las funciones de correlación de energía logran esencialmente lo mismo que N-subjettines, sin la necesidad de definir N ejes de referencia {cite}`Marzani_2019`. Su finalidad es identificar una estructura de N-subjets o depositos de energía. Las funciones de correlación de energía (ECF) están definidas de la siguiente forma{cite}`Jankowiak_2012,Larkoski_2013`:
+Las funciones de correlación de energía logran esencialmente lo mismo que N-subjettines, sin la necesidad de definir N ejes de referencia {cite}`Marzani_2019`. Su finalidad es identificar una estructura de N-subjets o depósitos de energía. Las funciones de correlación de energía (ECF) están definidas de la siguiente forma{cite}`Jankowiak_2012,Larkoski_2013`:
 
 \begin{gather}
     ECF(1,\beta)=\sum p_{Ti}\\
@@ -170,7 +165,7 @@ Las funciones de correlación de energía logran esencialmente lo mismo que N-su
     ECF(N,\beta)=\sum_{\text{all N}} \left(\prod^{N}_{a=1} p_{Ta}\right)\left(\prod^{N-1}_{b=1}\prod^{N}_{c=b+1} \Delta R_{ib}\Delta R_ic\right)
 \end{gather}
 
-donde el parámetro angular $\beta$ permite sensibilidad a distintas escalas angulares. Si un jet tiene N depositos de energía, ECF(N+1) es menor que ECF(N).
+donde el parámetro angular $\beta$ permite sensibilidad a distintas escalas angulares. Si un jet tiene N depósitos de energía, ECF(N+1) es menor que ECF(N).
 
 Al igual que en N-subjettiness, se definen variables adimensionales utilizando proporciones:
 
