@@ -64,7 +64,7 @@ Se espera que un algoritmo posea ciertas características:
 - Ser robusto con respecto al tipo de datos de entrada.
 - Teóricamente, debe ser *colinealmente estable*: la separación de un partón en dos partones colineales no debe cambiar el resultado del agrupamiento del jet ({numref}`jets-colineal`).
 - Cumplir con la *estabilidad infrarroja*: la radiación de un gluon suave no debe cambiar el agrupamiento ({numref}`jets-infrarrojo`).
-- Baja sensibilidad a los eventos subyacentes y el "pileup" (PU).
+- Baja sensibilidad a los UE y el pileup (PU), que son señales remanentes de otras colisiones.
 - Fácil de utilizar en cálculos teóricos y análisis experimentales, así como computacionalmente rápidos de ejecutar.
 
 ```{figure} ./../../figuras/jets-colineal.png
