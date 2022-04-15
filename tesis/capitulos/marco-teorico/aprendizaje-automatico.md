@@ -2,9 +2,9 @@
 # Aprendizaje automático
 En física de altas energías (HEP) los datos obtenidos de experimentos son sumamente complejos y de grandes dimensiones. A medida que alcanzamos mayores energías en los aceleradores de partículas, conseguimos nuevos desafíos debido al aumento en el tamaño de los eventos, el volumen de datos y su complejidad. Por esto, en la última década ha existido un enfoque en el estudio y la mejora de métodos y herramientas de análisis de datos, puesto que el alcance de los experimentos puede ser limitado por el rendimiento de algoritmos y de recursos computacionales. El aprendizaje automático es una herramienta que promete algunas soluciones a estos problemas.
 
-Estos métodos han encontrado múltiples aplicaciones en HEP. Por ejemplo, en reconstrucción de hits y trayectorias en los detectores, identificación de partículas, clasificación y selección de eventos a nivel de detectores, simulaciones, procesamiento de datos, detección de anomalías, búsquedas independientes de modelo, entre otros{cite}`Bourilkov_2019,Guest_2018`.  Notablemente, estas herramientas han tenido un gran impacto en la medición de la masa del quark top{cite}`Bhat:1997rc` en 1997 y el descubrimiento del boson de Higgs{cite}`201230,20121` en 2012{cite}`jimenez:tel-02402488`. Un resumen al día del uso de aprendizaje automático en HEP se puede encontrar en *[A Living Review of Machine Learning for Particle Physics](https://iml-wg.github.io/HEPML-LivingReview/)*{cite}`hepmllivingreview`.
+Estos métodos han encontrado múltiples aplicaciones en HEP. Por ejemplo, en reconstrucción de hits y trayectorias en los detectores, identificación de partículas, clasificación y selección de eventos a nivel de detectores, simulaciones, procesamiento de datos, detección de anomalías, búsquedas independientes de modelo, entre otros{cite}`Bourilkov_2019,Guest_2018`.  Notablemente, estas herramientas han tenido un gran impacto en la medición de la masa del quark top{cite}`Bhat:1997rc` en 1997 y el descubrimiento del bosón de Higgs{cite}`201230,20121` en 2012{cite}`jimenez:tel-02402488`. Un resumen al día del uso de aprendizaje automático en HEP se puede encontrar en *[A Living Review of Machine Learning for Particle Physics](https://iml-wg.github.io/HEPML-LivingReview/)*{cite}`hepmllivingreview`.
 
-A continuación se presentan brevemente conceptos básicos de aprendizaje automático y los algoritmos a emplear en el proyecto, utilizando como referencia{cite}`Mehta_2019`.
+A continuación, se presentan brevemente conceptos básicos de aprendizaje automático y los algoritmos a emplear en el proyecto, utilizando como referencia{cite}`Mehta_2019`.
 
 (ml-conceptos)=
 ## Conceptos básicos
@@ -13,8 +13,8 @@ El aprendizaje automático es un subcampo de la inteligencia artificial. Tiene c
 Típicamente los problemas hacen uso de un conjunto de datos $\mathcal{D}=(\mathbf{X},\mathbf{y})$ donde $\mathbf{X}$ es una matriz de variables independientes $\mathbf{y}$ es un vector de variables dependientes. La tarea es optimizar un modelo $f(\mathbf{x};\mathbf{\theta})$ tal que $f:\mathbf{x}\rightarrow y$ de los parámetros $\mathbf{\theta}$. Esto es, $f$ es una función utilizada para predecir una salida de un vector de varibles de entrada. La funcion $f$ optimiza alguna métrica escogida que se conoce como función de pérdida o costo $\mathcal{L}(\mathbf{y},f(\mathbf{x}))$, lo que se logra encontrando el valor de $\mathbf{\theta}$ que minimiza $\mathcal{L}${cite}`Mehta_2019`.
 
 El **proceso de aprendizaje** de un algoritmo se puede resumir en los siguientes pasos:
-1. Pre-procesamiento de datos. En HEP puede ser, por ejemplo, mediante el cálculo de variables físicas. En este paso es común normalizar o escalar los datos y disminuir sus dimensiones .
-2. Se divide aleatoreamente $\mathcal{D}$ en dos conjuntos mutuamente exclusivos de entrenamiento y prueba. $\mathcal{D}_{train}$ y $\mathcal{D}_{test}$, respectivamente. Se suele utilizar la mayor parte de los datos para entrenamiento. Por ejemplo, 70% entrenamiento y 30% prueba.
+1. Pre-procesamiento de datos. En HEP puede ser, por ejemplo, mediante el cálculo de variables físicas. En este paso es común normalizar o escalar los datos y disminuir sus dimensiones.
+2. Se divide aleatoriamente $\mathcal{D}$ en dos conjuntos mutuamente exclusivos de entrenamiento y prueba. $\mathcal{D}_{train}$ y $\mathcal{D}_{test}$, respectivamente. Se suele utilizar la mayor parte de los datos para entrenamiento. Por ejemplo, 70% entrenamiento y 30% prueba.
 3. El ajuste del modelo se hace minimizando la función de pérdida utilizando los datos de entrenamiento $\mathbf{\hat{\theta}}=\text{arg min}_{\theta}\{\mathcal{L}(\mathbf{y}_{train},f(\mathbf{X}_{train};\mathbf{\theta}))\}$
 4. Finalmente, el rendimiento del modelo se evalúa calculando la función de pérdida con los datos de prueba $\mathcal{L}(\mathbf{y}_{test},f(\mathbf{X}_{test};\mathbf{\hat{\theta}}))$.
 
@@ -22,7 +22,7 @@ El aprendizaje automático se puede dividir en tres categorías: aprendizaje sup
 
 (ml-supervisado)=
 ## Aprendizaje supervisado
-El aprendizaje supervisado se refiere al aprendizaje a partir de datos etiquetados (por ejemplo, en HEP podría ser datos etiquetados como que *contiene señal* o que *no contiene señal*). Las tareas comúnes incluyen *clasificación*, cuando el objetivo de aprendizaje $y$ es discreto y finito, y *regresión*, cuando $y$ es continuo o discreto e infinito{cite}`Karagiorgi_2021`.
+El aprendizaje supervisado se refiere al aprendizaje a partir de datos etiquetados (por ejemplo, en HEP podría ser datos etiquetados como *contiene señal* o *no contiene señal*). Las tareas comunes incluyen *clasificación*, cuando el objetivo de aprendizaje $y$ es discreto y finito, y *regresión*, cuando $y$ es continuo o discreto e infinito{cite}`Karagiorgi_2021`.
 
 En este proyecto utilizamos algunos modelos combinados, es decir, que utilizan *métodos de ensamble*.
 
@@ -56,14 +56,14 @@ A continuación, se explicarán los algoritmos utilizados en este trabajo, enfoc
 ### Bosque aleatorio
 Los bosques aleatorios son algoritmos supervisados utilizados ampliamente para tareas complejas de clasificación. Estos algoritmos son ensambles de árboles de decisión.
 
-Un **arbol de decisión** utiliza una serie de preguntas para realizar la partición jerarquica de los datos. Su objetivo es hallar un conjunto de reglas que naturalmente separen el espacio de características, proporcionando un modelo de clasificación sólido e informativo{cite}`myles_2004`. 
+Un **árbol de decisión** utiliza una serie de preguntas para realizar la partición jerárquica de los datos. Su objetivo es hallar un conjunto de reglas que naturalmente separen el espacio de características, proporcionando un modelo de clasificación sólido e informativo{cite}`myles_2004`. 
 
 ```{figure} ./../../figuras/ml-arboldecision.png
 ---
 width: 600px
 name: ml-arboldecision
 ---
-Ejemplo de un árbol de decisión. Para una conjunto de características $\mathbf{x}$, su etiqueta $y$ es predicha, recorriéndolo desde su raiz, pasando por las hojas, siguiendo las ramas que satiface. De {cite}`Mehta_2019`
+Ejemplo de un árbol de decisión. Para una conjunto de características $\mathbf{x}$, su etiqueta $y$ es predicha, recorriéndolo desde su raíz, pasando por las hojas, siguiendo las ramas que satisface. De {cite}`Mehta_2019`
 ```
 Los *bosques aleatorios* son clasificadores que consisten en una colección de árboles de decisión $\{h(\mathbf{x},\Theta_k),k=1,\dots\}$ donde $\{\Theta_k\}$ son vectores aleatorios e independientes con la misma distribución. Cada árbol emite un voto unitario para la clase más popular dada la entrada $\mathbf{x}${cite}`Breiman:2001hzm`. La clase con más votos es asignada a esta entrada. 
 
@@ -80,7 +80,7 @@ El clasificador del gradiente del impulso (GBC) usualmente utiliza árboles de r
 
 GBC se puede usar para regresión y clasificación. Su formulación matemática es la siguiente{cite}`GTBC`.
 
-La predicción $y_i$ del modelo para la entrada $x_i$ esta dada por:
+La predicción $y_i$ del modelo para la entrada $x_i$ está dada por:
 
 $$
     \hat{y}_i=F_M(x_i)=\sum_{m=1}^{M}h_m(x_i)
@@ -132,9 +132,9 @@ $$
     \mathbf{h}_i = g_i(W_i\mathbf{h}_i+\mathbf{b}_i)
 $$ (ml-nnneurona)
 
-donde $g_i$ es una función conocida como *función de activación* y $\mathbf{h}_i$ representa la transformación i-ésima de $\mathbf{x}$, llamado *embedding*. $W$ es la matrix de los *pesos* y $\mathbf{b}$ el vector de los *sesgos*.
+donde $g_i$ es una función conocida como *función de activación* y $\mathbf{h}_i$ representa la transformación iésima de $\mathbf{x}$, llamada *embedding*. $W$ es la matriz de los *pesos* y $\mathbf{b}$ el vector de los *sesgos*.
 
-El objetivo es hallar los pesos y sesgos que optimizan la función de pérdida. Esto se logra utilizando las etiquetas de los datos y calculando el gradiente de la función de pérdida con respecto a los parámetross del modelo. Esto se conoce como *retropropagación* y requiere que las funciones sean diferenciables.
+El objetivo es hallar los pesos y sesgos que optimizan la función de pérdida. Esto se logra utilizando las etiquetas de los datos y calculando el gradiente de la función de pérdida con respecto a los parámetros del modelo. Esto se conoce como *retropropagación* y requiere que las funciones sean diferenciables.
 
 Las transformaciones se ordenan en capas ({numref}`ml-nn`). La salida de una capa es la entrada de la siguiente.
 
@@ -160,7 +160,7 @@ donde $\mathbf{x}_n$ es la observación enésima y $r_nk$ es la asignación. $r_
 
 El algoritmo sigue los siguientes pasos:
 1. Escoger los centroides. En la primera inicialización se escogen puntos aleatorios de los datos.
-2. Asignar cada muestra al centroide mas cercano, minimizando $\mathcal{C}$
+2. Asignar cada muestra al centroide más cercano, minimizando $\mathcal{C}$
 3. Crear nuevos centroides tomando el valor medio de todas las muestras asignadas a cada centroide anterior.
 4. Calcular la diferencia entre los centroides anteriores y los nuevos.
 
@@ -179,7 +179,7 @@ Como la inicialización de los centroides es aleatoria, usualmente se realizan m
 ## Métricas de rendimiento
 La clasificación es una de las tareas más comunes en el aprendizaje automático. Sin embargo, no existe un algoritmo que funcione mejor para todos los problemas; cada algoritmo tiene ventajas y desventajas. Por lo tanto, requerimos formas de medir el grado en que la clasificación sugerida y la real coinciden.
 
-El uso de estas métricas depende del problema de clasificación específico. Sin embargo, se hará un resumen general de las más comúnes en clasificación binaria.
+El uso de estas métricas depende del problema de clasificación específico. Sin embargo, se hará un resumen general de las más comunes en clasificación binaria.
 
 ### Métricas numéricas
 La métrica de evaluación primaria es la *matriz de confusión*. En esta matriz se resumen el número de etiquetas predichas correctamente e incorrectamente.  
@@ -194,7 +194,7 @@ La métrica de evaluación primaria es la *matriz de confusión*. En esta matriz
 ```
 La diagonal representa las etiquetas predichas correctamente, mientras que los elementos fuera de la diagonal son las predicciones incorrectas. A partir de los valores de esta matriz se definen el resto de las métricas.
 
-En la {numref}`ml-metricas` se presenta un resumen de las métricas utilizadas comunmente para clasificación binaria{cite}`SOKOLOVA2009427`.
+En la {numref}`ml-metricas` se presenta un resumen de las métricas utilizadas comúnmente para clasificación binaria{cite}`SOKOLOVA2009427`.
 
 ```{table} Métricas para la clasificación binaria utilizando la notación en la matriz de confusión.
 :name: ml-metricas
@@ -210,7 +210,7 @@ En la {numref}`ml-metricas` se presenta un resumen de las métricas utilizadas c
 ```
 El nombre de las métricas varía en distintas áreas. En HEP, la recuperación y especificidad se conocen como *eficiencia de señal* ($\epsilon_s$) y *rechazo de fondo* ($1-\epsilon_{b}$), respectivamente. La precisión se conoce como *pureza* ($\rho$){cite}`valassi_andrea_2018_1405727`.
 
-Las métricas utilizadas dependen del problema de clasificación. Para datos altamente imbalanceados, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Sin embargo, se puede utilizar la *exactitud balanceada*:
+Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Sin embargo, se puede utilizar la *exactitud balanceada*:
 
 $$
     \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}
@@ -256,7 +256,7 @@ La curva ROC y el AUC tienen sus limitaciones{cite}`valassi_2019`:
 #### Curva PR
 Para datos altamente desbalanceados se suele sugerir el uso de la curva PR:
 
-> Si la proporción de instancias positivas y negativas en un conjunto de prueba cambia, la curva ROC no cambia. [...]Métricas como la exactitud, la precisión, las curvas de aumento y el puntaje F usan valores de ambas columnas de la matriz de confusión. Cuanndo la distribución de clases cambia, estas métricas también cambian, incluso si el rendimiento del clasificador no cambia. Las curvas ROC se basan en la tasa de TP y FP, en la cual cada dimensión es una proporción de la columna, por lo que no depende de la distribución de clases.
+> Si la proporción de instancias positivas y negativas en un conjunto de prueba cambia, la curva ROC no cambia. [...]Métricas como la exactitud, la precisión, las curvas de aumento y el puntaje F usan valores de ambas columnas de la matriz de confusión. Cuando la distribución de clases cambia, estas métricas también cambian, incluso si el rendimiento del clasificador no cambia. Las curvas ROC se basan en la tasa de TP y FP, en la cual cada dimensión es una proporción de la columna, por lo que no depende de la distribución de clases.
 > — ROC Graphs: Notes and Practical Considerations for Data Mining Researchers, 2003{cite}`Fawcett_2004`.
 
 ```{figure} ./../../figuras/ml-curvapr.png
@@ -296,19 +296,19 @@ Ejemplo de curva de mejora significativa. De {cite}`Kasieczka_2021`
 
 (ml-HEP)=
 ## Aprendizaje automático en HEP
-Como se mencionó anteriormente, el uso de aprendizaje automático en HEP es amplio. Sin embargo, este trabajo se enfoca en las técnicas de  *detección de anomalías* y *búsquedas libres de modelo*
+Como se mencionó anteriormente, el uso de aprendizaje automático en HEP es amplio. Sin embargo, este trabajo se enfoca en las técnicas de *detección de anomalías* y *búsquedas libres de modelo*
 
 ### Detección de anomalías
 Hasta ahora no se ha confirmado ninguna señal de nueva física. Parte de la dificultad recae en diferenciar la pequeña cantidad de eventos que podrían ser señales nuevas, de eventos de fondo o que no son de interés. Debido a esto, se ha planteado el uso de algoritmos de detección de anomalías para clasificación de los eventos de señal.
 
 Las técnicas de detección de anomalías se pueden dividir en dos tipos{cite}`Fraser_2022`. 
 - Algunas señales son cualitativamente distintas de del fondo y se utilizan técnicas para caracterizar estos eventos como anómalos. 
-- Algunos eventos de señal son similares a los de fondo, por lo que se explota información sobre la distribución de probabilidad esperada del fondo para allar señal. 
+- Algunos eventos de señal son similares a los de fondo, por lo que se explota información sobre la distribución de probabilidad esperada del fondo para hallar señal. 
 
-Este útlimo caso es el que se trata en este proyecto y los detalles se discutirán en la [última sección](lhco) de este capítulo.
+Este último caso es el que se trata en este proyecto y los detalles se discutirán en la [última sección](lhco) de este capítulo.
 
 ### Búsquedas de nueva física independiente de modelo
-La mayor parte de la búsqueda de nueva física está guiada por modelos partículares de BSM, supersimetría o materia oscura. Sin embargo, con la introducción de del aprendizaje automático, se han propuesto métodos para la búsqueda independiente de módelo. El objetivo general de estas búsquedas es que sean lo más agnosticas posibles al proceso físico subyacente que puede ser responsable de la señal de nueva física{cite}`jimenez:tel-02402488`.
+La mayor parte de la búsqueda de nueva física está guiada por modelos particulares de BSM, supersimetría o materia oscura. Sin embargo, con la introducción de del aprendizaje automático, se han propuesto métodos para la búsqueda independiente de modelo. El objetivo general de estas búsquedas es que sean lo más agnósticas posibles al proceso físico subyacente que puede ser responsable de la señal de nueva física{cite}`jimenez:tel-02402488`.
 
 Un ejemplo de una búsqueda independiente de modelo es {cite}`De_Simone_2019`, donde se plantea el uso de aprendizaje no supervisado para comparar las distribuciones de densidad de probabilidad de dos muestras: simulaciones de eventos del modelo estándar, o lo que sería el fondo para las búsquedas de nueva física, y datos reales.
 
