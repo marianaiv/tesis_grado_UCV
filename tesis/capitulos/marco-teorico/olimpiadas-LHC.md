@@ -90,7 +90,7 @@ En la siguiente tabla se encuentra un **resumen de los participantes**, con el m
 |   ANODE| No supervisado| [Artículo](https://arxiv.org/pdf/2001.04990.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3699483/attachments/1971094/3278905/george_stein_LHCO.pdf)| R&D|
 | BuHuLaSpa| No supervisado| [Artículo](https://arxiv.org/pdf/2103.06595.pdf)| BB1-3 |
 |  GAN-AE|    No supervisado| [GitHub](https://github.com/lovaslin/GAN-AE_LHCOlympics), [BumpHunter](https://github.com/lovaslin/pyBumpHunter), [Slides](https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0) | BB1-3 |
-|     GIS|    No supervisado| [Artículo](https://arxiv.org/pdf/2012.11638.pdf) | Flujo normalizante: Gaussianizing Iterative Slicing| BB1|
+|     GIS|    No supervisado| [Artículo](https://arxiv.org/pdf/2012.11638.pdf) |BB1|
 |     LDA|    No supervisado| [GitHub](https://github.com/bmdillon/lda-jet-substructure), [Artículo](https://arxiv.org/pdf/1904.04200.pdf), [Slides](https://indico.cern.ch/event/809820/contributions/3632625/attachments/1971084/3278910/ML4Jets_talk_barrydillon.pdf)| BB1-3|
 |     PGAE|    No supervisado| [GitHub](https://github.com/stsan9/AnomalyDetection4Jets) | BB1,2|
 | Reg. Likelihoods| No supervisado| [Github modelo](https://github.com/johannbrehmer/manifold-flow)| R&D|
