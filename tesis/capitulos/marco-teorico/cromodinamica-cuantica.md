@@ -27,7 +27,7 @@ En teoría de campos, el acople efectivo de un vértice de interacción es modif
 
 (qcd-libertadasintotica)=
 ## Libertad asintótica
-La libertad asintótica explica que a altas energías las partículas dentro de un hadrón se comportan como libres. El comportamiento de la constante de acople de QCD es contrario al de QED: en QED la constante de acople aumenta en función de *Q*. Para QCD la constante de acople disminuye. La libertad asintótica se refiere a que el acople efectivo disminuye al aumentar $Q^2$ y desaparece asintóticamente ({numref}`qcd-alphas`). Por lo tanto, las interacciones de QCD son débiles para valores grandes de $Q^2$. Esto implica que en regiones donde $Q^2$ es grande, o a distancias pequeñas, $\alpha_s$ es pequeño y la teoría de perturbación puede ser utilizada para calcular observables. 
+La libertad asintótica explica que a altas energías las partículas dentro de un hadrón se comportan como libres. El comportamiento de la constante de acople de QCD es contrario al de QED: en QED la constante de acople aumenta en función de $Q$. Para QCD la constante de acople disminuye. La libertad asintótica se refiere a que el acople efectivo disminuye al aumentar $Q^2$ y desaparece asintóticamente ({numref}`qcd-alphas`). Por lo tanto, las interacciones de QCD son débiles para valores grandes de $Q^2$. Esto implica que en regiones donde $Q^2$ es grande, o a distancias pequeñas, $\alpha_s$ es pequeño y la teoría de perturbación puede ser utilizada para calcular observables. 
 
 La libertad asintótica fue descubierta en 1973 por David Gross, Frank Wilczek y David Politzer. Por ello obtuvieron el premio Nobel de física en 2004{cite:p}`nobel2004`.
 
