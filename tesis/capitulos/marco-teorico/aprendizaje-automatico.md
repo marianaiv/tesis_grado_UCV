@@ -33,9 +33,9 @@ Los *métodos de ensamble* utilizan conjuntos de algoritmos de aprendizaje autom
 2. **Computacional**: Muchos algoritmos de aprendizaje se basan en suposiciones o búsquedas locales que pueden atascarse en los óptimos locales. Un conjunto formado por modelos individuales construidos a partir de muchos puntos de partida diferentes puede proporcionar una mejor aproximación de la verdadera función desconocida, que cualquier aproximación de los modelos individuales.
 3. **Representacional**: En la mayoría de los casos, para un conjunto de aprendizaje de tamaño finito, la verdadera función no puede ser representada por ninguno de los modelos candidatos en $\mathcal{H}$. Al combinar varios modelos en un conjunto, puede ser posible expandir el espacio de funciones representables y modelar mejor la verdadera función.
 
-Existen varios métodos de ensamble, pero, de acuerdo a los algoritmos que se explicarán más adelante, es de interés el método de *boosting*.
-#### Boosting
-El *boosting* es un tipo de método de ensamble basado en la idea de que hallar varias reglas generales aproximadas puede ser más sencillo que hallar una regla general altamente precisa{cite}`Schapire2003`. Este método se aplica utilizando un conjunto de algoritmos con poca precisión o *aprendices débiles* $\{g_k(\mathbf{x})\}$. Inicialmente, un aprendiz débil halla una regla aproximada haciendo uso de un subconjunto de datos de entrenamiento. A cada clasificador se le asocia un peso $\alpha_k$ que indica cuánto contribuye al clasificador general. El clasificador general se puede expresar matemáticamente como:
+Existen varios métodos de ensamble, pero, de acuerdo a los algoritmos que se explicarán más adelante, es de interés el método de *impulso*.
+#### Impulso
+El *impulso* es un tipo de método de ensamble basado en la idea de que hallar varias reglas generales aproximadas puede ser más sencillo que hallar una regla general altamente precisa{cite}`Schapire2003`. Este método se aplica utilizando un conjunto de algoritmos con poca precisión o *aprendices débiles* $\{g_k(\mathbf{x})\}$. Inicialmente, un aprendiz débil halla una regla aproximada haciendo uso de un subconjunto de datos de entrenamiento. A cada clasificador se le asocia un peso $\alpha_k$ que indica cuánto contribuye al clasificador general. El clasificador general se puede expresar matemáticamente como:
 
 $$
     g_A(\mathbf{x})=\sum_{K=1}^{M} \alpha_K g_K(\mathbf{x})
@@ -45,9 +45,7 @@ donde $\sum_k \alpha_k=1$.
 
 (ml-nosupervisado)=
 ## Aprendizaje no-supervisado
-Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Ejemplos de tareas comunes de algoritmos no-supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo y detección de anomalías.
-
-Algunos algoritmos de agrupamiento se pueden utilizar para clasificación, como es el caso de *K-means*
+Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Ejemplos de tareas comunes de algoritmos no-supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo, detección de anomalías y clasificación.
 
 (ml-algoritmos)=
 ## Algoritmos para detección de anomalías
@@ -67,7 +65,7 @@ name: ml-arboldecision
 ---
 Ejemplo de un árbol de decisión. Para una conjunto de características $\mathbf{x}$, su etiqueta $y$ es predicha, recorriéndolo desde su raiz, pasando por las hojas, siguiendo las ramas que satiface. De {cite}`Mehta_2019`
 ```
-Los *bosques aleatorios* son clasificadores que consisten en una colección de árboles de decisión $\{h(\mathbf{x},\Theta_k),k=1,\dots\}$ donde $\{\Theta_k\}$ son son vectores aleatorios e independientes con la misma distribución. Cada árbol emite un voto unitario para la clase más popular dada la entrada $\mathbf{x}${cite}`Breiman:2001hzm`. La clase con más votos es asignada a esta entrada. 
+Los *bosques aleatorios* son clasificadores que consisten en una colección de árboles de decisión $\{h(\mathbf{x},\Theta_k),k=1,\dots\}$ donde $\{\Theta_k\}$ son vectores aleatorios e independientes con la misma distribución. Cada árbol emite un voto unitario para la clase más popular dada la entrada $\mathbf{x}${cite}`Breiman:2001hzm`. La clase con más votos es asignada a esta entrada. 
 
 ```{figure} ./../../figuras/ml-bosquealeatorio.png
 ---
@@ -76,9 +74,9 @@ name: ml-bosquealeatorio
 ---
 Representación visual del funcionamiento de un bosque aleatorio. De {cite}`chauhan_2021`
 ```
-### Clasificador de boosting de gradiente
+### Clasificador del gradiente del impulso
 
-El clasificador de boosting de gradiente (GBC) usualmente utiliza árboles de regresión como aprendiz débil. Es un modelo supervisado y aditivo que avanza por etapas{cite}`GBC`. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior.
+El clasificador del gradiente del impulso (GBC) usualmente utiliza árboles de regresión como aprendiz débil. Es un modelo supervisado y aditivo que avanza por etapas{cite}`GBC`. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior.
 
 GBC se puede usar para regresión y clasificación. Su formulación matemática es la siguiente{cite}`GTBC`.
 
@@ -177,9 +175,124 @@ Primeras cinco iteraciones de dos inicializaciones diferentes de K-means. De {ci
 ```
 Como la inicialización de los centroides es aleatoria, usualmente se realizan múltiples inicializaciones se escoge la que resulte en un menor valor de la inercia.
 
-(ml-metricas)=
+(ml-metricasderendimiento)=
 ## Métricas de rendimiento
+La clasificación es una de las tareas más comunes en el aprendizaje automático. Sin embargo, no existe un algoritmo que funcione mejor para todos los problemas; cada algoritmo tiene ventajas y desventajas. Por lo tanto, requerimos formas de medir el grado en que la clasificación sugerida y la real coinciden.
 
+El uso de estas métricas depende del problema de clasificación específico. Sin embargo, se hará un resumen general de las más comúnes en clasificación binaria.
+
+### Métricas numéricas
+La métrica de evaluación primaria es la *matriz de confusión*. En esta matriz se resumen el número de etiquetas predichas correctamente e incorrectamente.  
+
+```{table} Matriz de confusión.
+:name: ml-matriz-confusion
+
+|                                                           |Clase: **P**ositivos<br>(HEP: **señal** $S_{tot}$)|Clase: **N**egativos<br>(HEP: **fondo** $B_{tot}$)|
+|-----------------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
+|Clasificado como: **P**ositivos<br>(HEP: **seleccionados**)|**Verdaderos Positivos (TP)**<br>(HEP: señal seleccionada $S_{sel}$)|**Falsos Positivos (FP)**<br>(HEP: fondo seleccionado $B_{sel}$)|
+|Clasificado como: **N**egativos<br>(HEP: **rechazados**)   |**Falsos Negativos(FN)**<br>(HEP: señal rechazada $S_{rej}$)|**Verdaderos Negativos (TN)**<br>(HEP: fondo rechazado $B_{rej}$)|
+```
+La diagonal representa las etiquetas predichas correctamente, mientras que los elementos fuera de la diagonal son las predicciones incorrectas. A partir de los valores de esta matriz se definen el resto de las métricas.
+
+En la {numref}`ml-metricas` se presenta un resumen de las métricas utilizadas comunmente para clasificación binaria{cite}`SOKOLOVA2009427`.
+
+```{table} Métricas para la clasificación binaria utilizando la notación en la matriz de confusión.
+:name: ml-metricas
+
+| Métrica       | Ecuación                                           | Enfoque de evaluación                                               |
+|---------------|----------------------------------------------------|---------------------------------------------------------------------|
+| Exactitud     | $\frac{TP+TN}{TP+FP+FN+TN}$                        | Número correcto de predicciones sobre todas las predicciones hechas |
+| Precisión     | $\frac{TP}{TP+FP}$                                 | Proporción de tasa de verdaderos positivos                          |
+| Recuperación  | $\frac{TP}{TP+FN}$                                 | Efectividad del clasificador para identificar etiquetas positivas   |
+| Especificidad | $\frac{TN}{TN+FP}$                                 | Efectividad del clasificador para identificar etiquetas negativas   |
+| Puntaje f1    | $\frac{(\beta^2+1)TP}{(\beta^2+1)TP+\beta^2FN+FP}$ | Promedio ponderado de precisión y sensibilidad                      |
+
+```
+El nombre de las métricas varía en distintas áreas. En HEP, la recuperación y especificidad se conocen como *eficiencia de señal* ($\epsilon_s$) y *rechazo de fondo* ($1-\epsilon_{b}$), respectivamente. La precisión se conoce como *pureza* ($\rho$){cite}`valassi_andrea_2018_1405727`.
+
+Las métricas utilizadas dependen del problema de clasificación. Para datos altamente imbalanceados, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Sin embargo, se puede utilizar la *exactitud balanceada*:
+
+$$
+    \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}
+$$ (ml-exactitudbalanceada)
+
+### Métricas gráficas
+Las métricas gráficas más conocidas son la *curva característica de funcionamiento del receptor* (curva ROC) y la *curva precisión-recuperación* (curva PR).
+
+#### Curva ROC
+Los clasificadores usualmente asignan un puntaje $\mathcal{D}$ de manera que una puntuación más alta significa mayor probabilidad de ser señal. La clasificación discreta se logra escogiendo un *punto de operación*, es decir, escogiendo un umbral de decisión $\mathcal{D}_{thr}$, de manera que todas las muestras $\mathcal{D}\geq\mathcal{D}_{thr}$ se clasifican como positivas, o señal, y todas las demás como negativas, o fondo{cite}`valassi_2019`.
+
+La *curva ROC* se construye graficando la recuperación vs. 1-especificidad para varios umbrales de decisión. En términos de HEP, la eficiencia de señal vs. la eficiencia de fondo. 
+
+```{figure} ./../../figuras/ml-roc.png
+---
+width: 600px
+name: ml-roc
+---
+Ilustración de la curva ROC. La diagonal representa a un clasificador aleatorio o que no distingue entre clases. En este caso, el clasificador con la curva azul es mejor distinguiendo entre clases. De MartinThoma, CC0, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Roc-draft-xkcd-style.svg).
+```
+El *área debajo de la curva* (AUC) representa la habilidad del clasificador para distinguir entre clases.
+
+$$
+    \text{AUC}=\int_0^1\epsilon_s\text{d}\epsilon_b
+$$ (ml-auc)
+
+Un valor de AUC de 0.5 indica que la predicción no es mejor que una clasificación aleatoria. Menor a 0.5 indica que el clasificador está clasificando de manera inversa{cite}`Kohl_2012`.
+
+En HEP se utilizan versiones de esta curva. Es común graficar ***eficiencia de señal* vs. *rechazo de fondo***, en vez de la curva ROC clásica, y el AUC se calcula en términos de estas variables. También se suele graficar el ***inverso de la eficiencia de fondo* vs. *eficiencia de señal***.
+
+```{figure} ./../../figuras/ml-otrasroc.png
+---
+width: 800px
+name: ml-otrasroc
+---
+Ejemplos de otras versiones de la curva ROC. A la izquierda la curvas de eficiencia de señal vs. rechazo de fondo. A la derecha, inverso de la eficiencia de fondo vs. eficiencia de señal. De {cite}`Kasieczka_2021`
+```
+
+La curva ROC y el AUC tienen sus limitaciones{cite}`valassi_2019`:
+- La comparación de dos curvas ROC que se cruzan no es tan evidente, ya que el AUC se construye como una integral que otorga el mismo peso a todas las partes de la curva. Sin embargo, para la clasificación se escoge un punto específico. En este caso, otras métricas se deben utilizar para definir cuál clasificador proporciona mejor rendimiento en la región donde se elija el umbral de decisión.
+- El uso de las curvas ROC puede no ser apropiado para problemas que incluyan datos altamente desbalanceados, debido a que conduce a evaluaciones demasiado optimistas. La curva PR puede ser más informativa en este caso
+  
+#### Curva PR
+Para datos altamente desbalanceados se suele sugerir el uso de la curva PR:
+
+> Si la proporción de instancias positivas y negativas en un conjunto de prueba cambia, la curva ROC no cambia. [...]Métricas como la exactitud, la precisión, las curvas de aumento y el puntaje F usan valores de ambas columnas de la matriz de confusión. Cuanndo la distribución de clases cambia, estas métricas también cambian, incluso si el rendimiento del clasificador no cambia. Las curvas ROC se basan en la tasa de TP y FP, en la cual cada dimensión es una proporción de la columna, por lo que no depende de la distribución de clases.
+> — ROC Graphs: Notes and Practical Considerations for Data Mining Researchers, 2003{cite}`Fawcett_2004`.
+
+```{figure} ./../../figuras/ml-curvapr.png
+---
+width: 500px
+name: ml-curvapr
+---
+Ejemplos de curva precisión-recuperación. De {cite}`valassi_andrea_2018_1405727`
+```
+
+Análogo al AUC, se utiliza el área bajo la curva PR (AUCPR) y la precisión promedio (AP). La precisión promedio resume la curva PR utilizando la media ponderada de las precisiones logradas en cada umbral, utilizando como peso el aumento en recuperación del umbral anterior{cite}`AP`.
+
+$$
+    AP=\sum_n (R_n - R_{n-1})P_n
+$$ (ml-precisionpromedio)
+
+donde $P_n$ y $R_n$ son la precisión y la recuperación del umbral enésimo.
+
+#### Mejora significativa
+Otra medida utilizada regularmente en HEP es la *mejora significativa* definida como:
+
+$$
+    \text{Mejora significativa} = \frac{\epsilon_s}{\sqrt{\epsilon_b}}
+$$ (ml-mejorasignificativa)
+
+Una mejora significativa = 2 significa que la mejora significativa inicial es amplificada por un factor de 2 después de utilizar la estrategia de clasificación{cite}`Kasieczka_2021`.
+
+Así, se grafica la *mejora significativa* vs. *eficiencia de señal* con el fin de visualizar la mejora significativa del clasificador en múltiples umbrales.
+
+```{figure} ./../../figuras/ml-significancia.png
+---
+width: 500px
+name: ml-significancia
+---
+Ejemplo de curva de mejora significativa. De {cite}`Kasieczka_2021`
+```
 
 (ml-HEP)=
 ## Aprendizaje automático en HEP
@@ -192,7 +305,7 @@ Las técnicas de detección de anomalías se pueden dividir en dos tipos{cite}`F
 - Algunas señales son cualitativamente distintas de del fondo y se utilizan técnicas para caracterizar estos eventos como anómalos. 
 - Algunos eventos de señal son similares a los de fondo, por lo que se explota información sobre la distribución de probabilidad esperada del fondo para allar señal. 
 
-Este útlimo caso es el que se trata en este proyecto y los detalles se discutirán en la [última sección](lhc) de este capítulo.
+Este útlimo caso es el que se trata en este proyecto y los detalles se discutirán en la [última sección](lhco) de este capítulo.
 
 ### Búsquedas de nueva física independiente de modelo
 La mayor parte de la búsqueda de nueva física está guiada por modelos partículares de BSM, supersimetría o materia oscura. Sin embargo, con la introducción de del aprendizaje automático, se han propuesto métodos para la búsqueda independiente de módelo. El objetivo general de estas búsquedas es que sean lo más agnosticas posibles al proceso físico subyacente que puede ser responsable de la señal de nueva física{cite}`jimenez:tel-02402488`.

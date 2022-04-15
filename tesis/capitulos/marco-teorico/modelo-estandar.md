@@ -1,7 +1,7 @@
-(modelo-estandar)=
+(ms)=
 # El módelo estándar
 
-El modelo estándar de la física de partículas es la teoría que intenta describir las partículas elementales y sus interacciones mediante tres de la cuatro fuerzas fundamentales: la interacción electromagnética, la interacción débil y la interacción fuerte. Es una teoría cuántica relativista de campos en la cual las partículas corresponden a excitaciones de campos. La dinámica de estas partículas está dada por el Lagrangiano de la teoría.
+El modelo estándar de física de partículas es la teoría que intenta describir las partículas elementales y sus interacciones mediante tres de la cuatro fuerzas fundamentales: la interacción electromagnética, la interacción débil y la interacción fuerte. Es una teoría cuántica relativista de campos en la cual las partículas corresponden a excitaciones de campos. La dinámica de estas partículas está dada por el Lagrangiano de la teoría.
 
 Se desarrolló por etapas a lo largo de la segunda mitad del siglo XX, con la formulación actual finalizada a mediados de la década de 1970. Desde entonces, ha sido probado por múltiples experimentos sin desviación significativas entre lo observado y lo predicho. En 2012 los experimentos ATLAS y CMS completaron la búsqueda de partículas del modelo estándar con el hallazgo del Boson de Higgs {cite:p}`20121,201230,PhysRevLett.114.191803`. Hoy en día se considera al modelo estándar como uno de los más grandes éxitos de la física moderna.
 
