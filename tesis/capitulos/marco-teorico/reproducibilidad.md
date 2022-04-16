@@ -15,12 +15,12 @@ Esta evolución trajo consigo retos para mantener los ethos de la ciencia modern
 La definición y los criterios de reproducibilidad varían ampliamente entre las distintas áreas de investigación{cite}`nature_2016`. Para efectos de este trabajo, utilizaremos la definición y criterios de reproducibilidad considerados por [The Turing Way](https://the-turing-way.netlify.app/welcome.html){cite}`the_turing_way_community_2021_5671094`:
 > Un resultado es reproducible cuando los pasos de un análisis específico realizados en un mismo conjunto de datos producen consistentemente la misma respuesta.
 
-*The Turing Way* es un manual para hacer ciencia de datos de forma reproducible, ética y colaborativa. Su objetivo es proporcionar la información necesaria para que los investigadores puedan realizar trabajos fáciles de reproducir y reutilizar. Es un proyecto de código abierto, es decir que todo el código utilizado es público, de colaboración abierta, cualquier persona puede colaborar, e impulsado por la comunidad.
+*The Turing Way* es un manual para hacer ciencia de datos de forma reproducible, ética y colaborativa. Su objetivo es proporcionar la información necesaria para que los investigadores puedan realizar trabajos fáciles de reproducir y reutilizar. Es un proyecto de código abierto (todo el código utilizado es público), de colaboración abierta (cualquier persona puede colaborar), e impulsado por la comunidad.
 
 Hacer investigación reproducible es necesario para el desarrollo del conocimiento ya que:
 - La evidencia de un resultado se fortalece si puede ser reproducido y confirmado por investigadores independientes.
 - Un trabajo reproducible permite que otras investigaciones utilicen más fácilmente el análisis y los resultados para desarrollar conocimiento nuevo.
-- La transparencia también permite mayor colaboración y mayor complejidad en el análisis.
+- La transparencia también permite mayor colaboración y mayor complejidad en los análisis.
 
 (rpd-investigacion)=
 ## Investigación reproducible
@@ -28,9 +28,9 @@ Dependiendo del tipo de investigación hay distintas consideraciones que se debe
 
 Particularmente, se toma un enfoque de **investigación abierta**, lo que implica que el desarrollo y los pasos de la investigación deben estar *públicamente disponibles*, ser *trasparentes* y *reutilizable*.
 
-El registro del desarrollo de la investigación se hace mediante el *control de versiones*. Controlar versiones es una manera de registrar los cambios hechos en un archivo de manera cronológica. En el desarrollo de software es común utilizar Git para este propósito, un sistema de control de versiones de código abierto y gratuito.
+El registro del desarrollo de la investigación se hace mediante el *control de versiones*. Controlar versiones es una manera de registrar los cambios hechos en un archivo de manera cronológica. En desarrollo de software es común utilizar Git para este propósito, un sistema de control de versiones de código abierto y gratuito.
 
-Que esté públicamente disponible implica que los datos utilizados, el código desarrollado, y los resultados obtenidos deben ser accesibles de manera fácil y gratuita. En este proyecto se publican utilizando [GitHub](https://github.com), una plataforma de internet para el alojamiento de desarrollo de software y el control de versiones usando Git.
+Pas que esté públicamente disponible los datos utilizados, el código desarrollado, y los resultados obtenidos deben ser accesibles de manera fácil y gratuita. En este proyecto se publican utilizando [GitHub](https://github.com), una plataforma de internet para el alojamiento de desarrollo de software y el control de versiones usando Git.
 
 Controlar las versiones y publicar cada uno de los pasos de la investigación es un buen inicio para lograr transparencia. Sin embargo, es necesario proporcionar *documentación* acerca de la información publicada. La documentación engloba los metadatos necesarios para entender el contenido de cada paso de la investigación. Específicamente, es necesario incluir información sobre los datos, instrucciones sobre cómo usar el código y pasos a seguir que se utilizaron para obtener los resultados. 
 

@@ -9,7 +9,7 @@ En esta sección se explicará la formación de jets a partir de colisiones prot
 
 Al colisionar dos protones altamente energéticos, existe una alta tasa de probabilidad de formación de jets. Un diagrama de la formación de un jet se encuentra en la {numref}`jets-desarrollo` y los procesos que intervienen se explican a continuación{cite}`HARRIS_2011,Beresford:2642397`.
 
-El proceso principal es la **dispersión fuerte**: los protones colisionan a altas energías, produciéndose una interacción con alta transferencia de momento *Q* entre los constituyentes o partones de los protones. Por la libertad asintótica, los partones se comportan como partículas libres y la teoría de perturbación es válida. En la dispersión fuerte se puede crear una partícula resonante de corta vida o puede suceder un proceso de QCD estándar ({numref}`jets-qcd`). Luego, se generan otras partículas mediante decaimientos o procesos de QCD.
+El proceso principal es la **dispersión fuerte**: los protones colisionan a altas energías, produciéndose una interacción con alta transferencia de momento $Q$ entre los constituyentes o partones de los protones. Por la libertad asintótica, los partones se comportan como partículas libres y la teoría de perturbación es válida. En la dispersión fuerte se puede crear una partícula resonante de corta vida o puede suceder un proceso de QCD estándar ({numref}`jets-qcd`). Luego, se generan otras partículas mediante decaimientos o procesos de QCD.
 
 También se consideran procesos de **radiación de estado inicial** (ISR) y **radiación de estado final** (FSR): las partículas entrantes y salientes pueden radiar otras partículas. 
 
@@ -22,7 +22,7 @@ name: jets-qcd
 ---
 Diagramas de Feynmann que representan la producción de dos jets en colisiones hadrónicas por procesos de QCD{cite}`Mangano:2674114`, construidos a partir de los vértices permitidos ({numref}`qcd-quarkgluon` y {numref}`qcd-gluongluon`)
 ```
-A muy altas energías las partículas generadas se puedan dividir para generar más partículas mediante procesos que todavía no se comprenden completamente{cite}`cottingham_greenwood_2007`. Esta lluvia de partículas se dice colimada porque las partículas se generan a ángulos pequeños del partón original.
+A muy altas energías las partículas generadas se puedan dividir para generar más partículas mediante procesos que todavía no se comprenden completamente{cite}`cottingham_greenwood_2007`. Esta lluvia de partículas se dice colimada porque se generan a ángulos pequeños del partón original.
 
 La evolución perturbativa del jet se detendrá una vez que las partículas alcancen bajas energías. A bajas energías, el confinamiento domina el proceso y las partículas creadas se unen para formar partículas de color neutro. Este proceso no-perturbativo se conoce como **hadronización** y ocurre técnicamente fuera del radio del protón{cite}`10.1088/2053-2563/ab1be6ch4`. La hadronización, en conjunto con la radiación de estado final, se conoce como **fragmentación**. A la colección de todos los hadrones resultantes cerca de la dirección del partón original se le llama jet{cite}`burgess_moore_2013_hadronic`.
 
@@ -92,8 +92,8 @@ Se puede pensar que su aproximación es de arriba hacia abajo. En general, un al
 1. Hallar el constituyente más energética del evento, o semilla.
 2. Colocar un cono de radio *R* alrededor de esta semilla y sumar el momento de todas las partículas que constituyen el cono, formando un jet de prueba.
 3. Comparar el eje de la semilla con el del jet de prueba.
-4. *Si el eje del del jet de prueba y la semilla coinciden*: El jet se prueba se toma como jet
-5. *De otra forma*: Se repiten los pasos anteriores con el eje del jet de prueba como semilla.
+   1. Si el eje del del jet de prueba y la semilla coinciden: El jet se prueba se toma como jet
+   2. De otra forma: Se repiten los pasos anteriores con el eje del jet de prueba como semilla.
 
 Estos pasos se repiten hasta estos pasos hasta que no haya semillas sobre un umbral de energía escogido.
 
@@ -107,7 +107,7 @@ $$
     d_{ij} = min(p_{Ti}^{2p},p_{Tj}^{2p})\times \frac{\Delta R_{ij}^2}{R}
 $$ (dist_const)
 
-donde $p_T$ es el momento transverso de las partículas, $\Delta R_{ij} = \sqrt((\eta_i-eta_j)^2+(\phi_i-\phi_j)^2)$ es la distancia entre dos constituyentes en el espacio $(\eta-\phi)$, *R* es el radio final del jet, usualmente entre 0.4-0.7 y *p* es un parámetro referente al tipo de algoritmo.
+donde $p_T$ es el momento transverso de las partículas, $\Delta R_{ij} = \sqrt{(\eta_i-eta_j)^2+(\phi_i-\phi_j)^2}$ es la distancia entre dos constituyentes en el espacio $(\eta-\phi)$, $R$ es el radio final del jet, usualmente entre 0.4-0.7 y $p$ es un parámetro referente al tipo de algoritmo.
 
 También utilizan la distancia entre el eje del haz y el constituyente detectado:
 
@@ -118,15 +118,15 @@ $$ (dist_eje)
 Se puede pensar que el funcionamiento de estos algoritmos es de abajo hacia arriba:
 
 1. Hallar el mínimo en el conjunto $\{d_{ij},d_{iB}\}$.  
-   1. *Si el mínimo es $d_{ij}$*: los constituyentes *i* y *j* se unen en un solo constituyente *ij*, sumando el cuadri-momento y eliminando *i* y *j*  de la lista de constituyentes.   
+   1. Si el mínimo es $d_{ij}$: los constituyentes *i* y *j* se unen en un solo constituyente *ij*, sumando el cuadri-momento y eliminando *i* y *j*  de la lista de constituyentes.   
    2. Si el mínimo es $d_{iB}$: *i* se considera jet y eliminado de la lista de constituyentes.   
 
-Los pasos anteriores se repiten hasta que todas las partículas son parte de un jet, con distancias $\Delta R_{ij}$ entre los ejes de los jets mayores a *R* (agrupamiento inclusivo), o hasta que se obtenga una cantidad específica de jets (agrupamiento exclusivo).
+Los pasos anteriores se repiten hasta que todas las partículas son parte de un jet, con distancias $\Delta R_{ij}$ entre los ejes de los jets mayores a $R$ (agrupamiento inclusivo), o hasta que se obtenga una cantidad específica de jets (agrupamiento exclusivo).
 
 Los algoritmos de recombinación utilizados son:
 
-- *kt*{cite}`PhysRevD.48.3160`: para este algoritmo $p=1$. Es sensible a los UE y PU. Este algoritmo representa una aproximación de la inversión del proceso de ramificación de QCD porque preserva la historia de agrupamiento.
-- *anti kt*{cite}`Cacciari_2008`: para este algoritmo $p=-1$. Contrario al *kt*, es poco sensible a los UE y el PU. En este algoritmo el agrupamiento no está relacionada a la manera en la que los partones se dividen.
+- *Kt*{cite}`PhysRevD.48.3160`: para este algoritmo $p=1$. Es sensible a los UE y PU. Este algoritmo representa una aproximación de la inversión del proceso de ramificación de QCD porque preserva la historia de agrupamiento.
+- *Anti kt*{cite}`Cacciari_2008`: para este algoritmo $p=-1$. Contrario al *kt*, es poco sensible a los UE y el PU. En este algoritmo el agrupamiento no está relacionada a la manera en la que los partones se dividen.
 - Cambridge/Aachen{cite}`Dokshitzer_1997`: para este algoritmo $p=0$. Es el mejor para estudiar la subestructura de los jets, pero es más complicado que *kt*. También es susceptible a los UE y el PU. 
 
 Los algoritmos de recombinación son los más utilizados desde su implementación en el programa *FastJet*{cite}`FastJet`, un paquete de C++ que proporciona herramientas para agrupar y analizar jets.

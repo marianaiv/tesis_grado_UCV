@@ -5,7 +5,7 @@ El modelo estándar de física de partículas es la teoría que intenta describi
 
 Se desarrolló por etapas a lo largo de la segunda mitad del siglo XX, con la formulación actual finalizada a mediados de la década de 1970. Desde entonces, ha sido probado por múltiples experimentos sin desviación significativas entre lo observado y lo predicho. En 2012 los experimentos ATLAS y CMS completaron la búsqueda de partículas del modelo estándar con el hallazgo del bosón de Higgs {cite:p}`20121,201230,PhysRevLett.114.191803`. Hoy en día se considera al modelo estándar como uno de los más grandes éxitos de la física moderna.
 
-A continuación se proporcionará una breve descripción del modelo estándar. A menos que se indique lo contrario, las referencias bibliográficas utilizadas en este capítulo y parte del siguiente son {cite:p}`Beresford:2642397,altarelli2005standard,morii_lim_mukherjee_2004`. 
+A continuación se proporcionará una breve descripción del modelo estándar. A menos que se indique lo contrario, las referencias bibliográficas utilizadas en esta sección y la siguiente son {cite:p}`Beresford:2642397,altarelli2005standard,morii_lim_mukherjee_2004`. 
 
 (ms-particulas)=
 ## Partículas 
@@ -19,7 +19,7 @@ name: sm-particulas
 Contenido de partículas del modelo estándar. Los leptones están organizados de acuerdo a sus generaciones. Autor: Fabsanhvasq, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons.
 ```
 ### Fermiones 
-Los fermiones son las partículas que componen la materia visible del universo. Son partículas de espín 1/2 que siguen la estadística de Fermi-Dirac. Se clasifican a su vez en quarks y leptones. Para cada partícula existe su correspondiente antipartícula con igual masa, pero números cuánticos opuestos.
+Los fermiones son las partículas que componen la materia visible del universo. Son partículas de espín 1/2 que siguen la estadística de Fermi-Dirac. Se clasifican a su vez en *quarks* y *leptones*. Para cada partícula existe su correspondiente antipartícula con igual masa, pero números cuánticos opuestos.
 
 Existen seis **quarks** (o seis sabores de quarks) que se organizan en tres pares o generaciones: up y down, charm y strange y top y bottom. Los quarks up, charm y top poseen carga eléctrica -1/3 y los quarks down, strange y bottom poseen carga eléctrica +2/3. Por cada quark existen tres quarks con carga de color distinta. Los quarks y anti-quarks se encuentran unidos en combinaciones conocidas como hadrones, con carga eléctrica entera y carga de color neutro. Los hadrones de tres quarks se conocen como bariones. Los pares quark—anti-quark como mesones. 
 
@@ -29,7 +29,7 @@ Cada generación de fermiones consiste en dos quarks, un leptón cargado eléctr
 ### Bosones
 El modelo estándar describe tres de las cuatro interacciones fundamentales. Cada interacción o fuerza está asociada a un grupo de simetría. La teoría está basada en los grupos $SU(3)_C\times SU(2)_I\times U(1)_Y$, donde $SU(3)_C$ corresponde a la interacción fuerte, $SU(2)_I$ a la interacción débil y $U(1)_Y$ a la fuerza electromagnética. La carga de color \(C), el isospín débil (I) y la hipercarga (Y) son los números cuánticos conservados para cada simetría{cite:p}`burgess_moore_2013`. El Lagrangiano del modelo estándar requiere que la teoría sea invariante bajo transformaciones locales de gauge, lo que introduce los bosones de gauge.
 
-Los **bosones** son las partículas responsables de las interacciones. Poseen espín entero y siguen la estadística de Einstein-Bose. El modelo estándar incluye tres bosones de espín 1 y un bosón de espín 0. Los bosones de espín 1 están asociados a las interacciones fundamentales incluidas en el modelo: el foton $\gamma$, el gluon $g$ y los bosones $W^+$, $W^-$ y $Z^0$. Por último, un bosón de espín 0 conocido como el bosón de Higgs. Es un bosón escalar y masivo que rompe las simetrías $SU(2)_I\times U(1)_Y$, generando la masa de los fermiones y bosones{cite:p}`PhysRevLett.13.508,PhysRevLett.13.321`. Interactúa con todas las partículas masivas (excepto los neutrinos[]), por lo que se predice que tiene interacción propia. 
+Los **bosones** son las partículas responsables de las interacciones. Poseen espín entero y siguen la estadística de Einstein-Bose. El modelo estándar incluye tres bosones de espín 1 y un bosón de espín 0. Los bosones de espín 1 están asociados a las interacciones fundamentales incluidas en el modelo: el foton $\gamma$, el gluon $g$ y los bosones $W^+$, $W^-$ y $Z^0$. El bosón de espín 0 conocido como el bosón de Higgs, es un bosón escalar y masivo que rompe las simetrías $SU(2)_I\times U(1)_Y$, generando la masa de los fermiones y bosones{cite:p}`PhysRevLett.13.508,PhysRevLett.13.321`. Interactúa con todas las partículas masivas (excepto los neutrinos[]), por lo que se predice que tiene interacción propia. 
 
 Esto completa el contenido de partículas del modelo estándar.
 

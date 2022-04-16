@@ -1,6 +1,6 @@
 (bsm)=
 # Más allá del modelo estándar
-El modelo estándar es uno de los mayores triunfos científicos del siglo pasado. Durante los últimos 40 años se han verificado exitosamente múltiples predicciones hechas a partir de este modelo{cite}`Kobayashi_2021,NAP6045`. Sin embargo, es evidente que no es una teoría final debido a que no explica varios fenómenos observados experimentalmente. A partir de estas limitaciones, se han planteado múltiples teorías que intentan responder a las preguntas para las que el modelo estándar no tiene explicación. Estás teorías se conocen como teorías *más allá del modelo estándar* (BSM) y su verificación/refutación es uno de los objetivos en el programa del LHC.
+El modelo estándar es uno de los mayores triunfos científicos del siglo pasado. Durante los últimos 40 años se han verificado exitosamente múltiples predicciones hechas a partir de este modelo{cite}`Kobayashi_2021,NAP6045`. Sin embargo, es evidente que no es una teoría final debido a que no explica varios fenómenos observados experimentalmente. A partir de estas limitaciones, se han planteado múltiples teorías que intentan responder las preguntas para las que el modelo estándar no tiene explicación. Estás teorías se conocen como teorías *más allá del modelo estándar* (BSM) y su verificación/refutación es uno de los objetivos del programa del LHC.
 
 En esta sección se explicarán algunas de las limitaciones que presenta el modelo estándar. Seguido de esto, se presentarán las teorías BSM más conocidas y, más específicamente, teorías BSM relacionadas a eventos dijet.
 
@@ -9,7 +9,7 @@ Las limitaciones del modelo estándar se pueden separar en *fenomenológicas*, q
 
 ### Problemas fenomenológicos
 #### Asimetría materia-antimateria
-La simetría materia-antimateria puede ser acomodada, pero no explicada por el Modelo Estándar. En 1967, Sakharov propuso tres condiciones necesarias para crear la concentración significativa de materia en el universo temprano{cite}`Sather:1996cz`:
+La asimetría materia-antimateria puede ser acomodada, pero no explicada por el Modelo Estándar. En 1967, Sakharov propuso tres condiciones necesarias para crear una concentración significativa de materia en el universo temprano{cite}`Sather:1996cz`:
 
 - Interacciones que puedan cambiar quarks a leptones (violación del número bariónico).
 - Condiciones en las que el equilibrio termodinámico no se sostenga. Esto pudo haber ocurrido durante la expansión del universo temprano. 
@@ -18,7 +18,7 @@ La simetría materia-antimateria puede ser acomodada, pero no explicada por el M
 Sin embargo, la violación *C* y *CP* descrita por el modelo estándar no es suficiente para generar la cantidad de materia que se observa en el universo.
 
 #### Masa de los neutrinos
-La masa de los neutrinos es al menos seis ordenes de magnitud más pequeña que la masa de los electrones. La brecha entre la masa del neutrino y cualquier otro fermión cargado es mucho más grande que entre cualesquiera de los demás fermiones{cite}`deGouvea_2009`:
+La masa de los neutrinos es al menos seis ordenes de magnitud más pequeña que la masa de los electrones. La brecha entre la masa de los neutrinos y cualquier otro fermión cargado es mucho más grande que entre cualesquiera de los demás fermiones{cite}`deGouvea_2009`:
 
 ```{figure} ./../../figuras/bsm-neutrinos.png
 ---
@@ -27,7 +27,7 @@ name: bsm-neutrinos
 ---
 Masa de los fermiones del modelo estándar. Para la masa de los neutrinos, se asumió la jerarquía usual de masas entre generaciones, con un límite superior de  $m_i$ < 1 eV. De {cite}`deGouvea_2009`.
 ```
-El modelo estándar predice neutrinos no masivos, se necesita nueva física para explicar el mecanismo mediante el cual los neutrinos adquieren masa y por qué es tan pequeña.
+El modelo estándar predice neutrinos no masivos, por lo que se necesita nueva física para explicar el mecanismo mediante el cual los neutrinos adquieren masa y por qué es tan pequeña.
 
 #### Materia oscura y energía oscura
 Se estima que la materia oscura forma aproximadamente el 27% del universo, mientras que la materia visible forma menos del 5%. La existencia de la materia oscura se ha inferido por los efectos gravitacionales que tiene en la materia visible. Las estructuras del universo no serían posibles sin la fuerza de gravedad debido a algún tipo de materia invisible y no relativista{cite}`Ellis2012-rh`. 
@@ -38,17 +38,15 @@ La naturaleza de la materia oscura y la energía oscura no está incluida en el 
 
 ### Problemas teóricos
 #### Descripción cuántica de la gravedad
-La evidencia más clara de que se necesita nueva física es que el modelo estándar no explica la gravedad. La fuerza gravitatoria afecta a la física de partículas a escalas pequeñas, cuantificadas por la escala de Planck $M_{Planck}\approx10^{19}GeV$, escala que se considera el límite de validez del modelo estándar{cite}`Gripaios_2015`. Sin embargo, la relatividad general, que es la teoría de la gravedad, no es renormalizable. Debido a esto, no se ha logrado construir una teoría cuántica de campos que reconcilie la gravedad con la física de partículas{cite}`Allison:2014sjw`
+La evidencia más clara de que se necesita nueva física es que el modelo estándar no incluye la gravedad. La fuerza gravitatoria afecta la física de partículas a escalas pequeñas, cuantificadas por la escala de Planck $M_{Planck}\approx10^{19}GeV$, escala que se considera el límite de validez del modelo estándar{cite}`Gripaios_2015`. Sin embargo, la relatividad general, que es la teoría de la gravedad, no es renormalizable. Debido a esto, no se ha logrado construir una teoría cuántica de campos que reconcilie la gravedad con la física de partículas{cite}`Allison:2014sjw`
 
 #### Origen de las masas/mezclas
-El modelo estándar no tiene explicación para la masa de los fermiones, los ángulos de mezcla de los quarks o por qué las partículas parecen organizarse en tres generaciones.
-
 El mecanismo de ruptura espontánea de simetría, que explica como las partículas obtienen masa, es agregado al modelo estándar de manera conveniente. La teoría no explica el origen de este mecanismo, solo se sabe que es necesario para poder coincidir con las observaciones experimentales{cite}`camachotoro:tel-00818796`.
 
 Por otra parte, las tres generaciones de fermiones muestran una jerarquía regular en sus masas ({numref}`bsm-neutrinos`) y los ángulos de mezcla de los quarks parecen tener un patrón o estructura en sus valores. Estos sólo representan parámetros en el modelo estándar y no se entiende por qué presentan una estructura.
 
 #### Problema CP fuerte
-La cromodinámica cuántica depende de pocos parámetros: la constante de acoplamiento fuerte, la masa de los quarks y un parámetro relacionado a la estructura del vacío de QCD $\theta${cite}`Creutz_2018`. Este último se encuentra en un término de interacción que permite la violación CP: 
+La cromodinámica cuántica depende de pocos parámetros: la constante de acople fuerte, la masa de los quarks y un parámetro relacionado a la estructura del vacío de QCD $\theta${cite}`Creutz_2018`. Este último se encuentra en un término de interacción que permite la violación CP: 
 
 $$
     \mathcal{L}_\theta=\frac{\theta g_s^2}{32\pi^2}G^a_{\mu\nu}\tilde{G}_{a\mu\nu}
@@ -56,7 +54,7 @@ $$ (bsm-qcdcp)
 
 donde $G^{a}_{\mu\nu}$ son las fuerzas de los campos de QCD y $g_s$ es la contante de acoplamiento.
 
-Este parámetro aparece en el cálculo del momento dipolar del neutrón, e índice que $\theta$ debe ser muy pequeño{cite}`Mannel:2007zz`. 
+El parámetro aparece en el cálculo del momento dipolar del neutrón, e indica que $\theta$ debe ser muy pequeño{cite}`Mannel:2007zz`. 
 
 Experimentalmente no se ha observado violación *CP* en la interacción fuerte y el problema de por qué el parámetro $\theta$ es tan pequeño no se ha resuelto.
 
@@ -71,7 +69,7 @@ donde $m_0$ corresponde a la 'masa desnuda' del Higgs y $\delta m^2$ a las corre
 
 En el Modelo Estándar se consideran escalas hasta $M_{Planck}\approx10^{19}GeV$, por lo que teóricamente $\delta m^2\approx M_{Planck}$.
 
-Se tiene un valor experimental de $m^2\approx125GeV$, lo que requeriría un valor de $m_0^2$ escogido muy específicamente para cancelar la mayoría de las correcciones. El ajuste fino de este parámetro no se considera natural y representa problemas con respecto a la universalidad de la teoría.
+Sin embargo, se tiene un valor experimental de $m^2\approx125GeV$, lo que requeriría un valor de $m_0^2$ escogido muy específicamente para cancelar la mayoría de las correcciones. El ajuste fino de este parámetro no se considera natural y representa problemas con respecto a la universalidad de la teoría.
 
 El problema de jerarquía es consecuencia de la diferencia entre escalas de la fuerza electro-débil y la fuerza gravitacional{cite}`camachotoro:tel-00818796`.
 
@@ -87,7 +85,7 @@ Secuencia histórica de la unificación de leyes físicas. De {cite}`Elert_1998`
 ```
 Se cree que el modelo estándar es una aproximación a bajas energías que unifica las cuatro interacciones fundamentales. Hasta ahora, no se ha propuesto una teoría que logre este objetivo.
 
-Sin embargo, existen teorías que intentan explicar varias de las preguntas para las que el modelo estándar no tiene respuesta.
+Sin embargo, existen teorías que intentan explicar los fenómenos que el modelo estándar no explica.
 
 ### Supersimetría
 La supersimetría (SUSY) es una simetría de teoría cuántica de campos que relaciona fermiones y bosones. La mínima extensión supersimétrica del modelo estándar (MSSM) duplica el espectro de masa al agregar partículas supersimétricas, o spartículas.
@@ -102,7 +100,7 @@ Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY. De
 Entre las motivaciones teóricas de este modelo se encuentra{cite}`Virdee2016-dd`:
 
 - Las contribuciones de las partículas supersimétricas en el cálculo de la masa del bosón de Higgs cancelan las contribuciones de las partículas del modelo estándar, eliminando el problema de jerarquía.
-- Ofrece una ruta para la unificación de las fuerzas fundamentales del modelo estándar en una escala de $10^15$ GeV ({numref}`bsm-susyunificacion`).
+- Ofrece una ruta para la unificación de las fuerzas fundamentales del modelo estándar en una escala de $10^{15}$ GeV ({numref}`bsm-susyunificacion`).
 - La partícula más ligera predicha por el modelo es estable y eléctricamente neutra, por lo que es un candidato para la materia oscura.
 
 ```{figure} ./../../figuras/bsm-susyunificacion.png
@@ -117,16 +115,16 @@ Sin embargo, las partículas supersimétricas no han sido observadas{cite}`ATLAS
 ### Dimensiones extra
 Desde 1920 se ha considera la existencia de dimensiones espaciales nuevas, más allá de las cuatro que conocemos. La primera idea, por Kaluza y Klein{cite}`KALUZA_2018,Klein:1926tv`, propone una quinta dimensión, unificando la relatividad general y el electromagnetismo. Desde entonces, se han estudiado varios modelos que plantean nuevas dimensiones. Por ejemplo, la teoría de cuerdas en todas sus versiones contempla más de cuatro dimensiones.
 
-La motivación detrás de las dimensiones extras es que al considerarlas, se podrían resolver alguno de los problemas que presenta el modelo estándar. Por ejemplo, el modelo Arkani-Dimopoulos-Dvali (ADD){cite}`Arkani_Hamed_1998` agrega dimensiones extra grandes en las que la gravedad se propaga. Este modelo podría resolver el problema de jerarquía al acercar la escala fundamental a la escala electrodébil.
+La motivación detrás de las dimensiones extras es que al considerarlas, se podrían resolver alguno de los problemas que presenta el modelo estándar. Por ejemplo, el modelo Arkani-Dimopoulos-Dvali (ADD){cite}`Arkani_Hamed_1998` agrega dimensiones extra grandes en las que se propaga la gravedad. Este modelo podría resolver el problema de jerarquía al acercar la escala fundamental a la escala electrodébil.
 
-Sin embargo, no es claro cómo se manifestarían estas dimensiones. Algunas de las maneras de probar experimentalmente su existencia serían mediante el descubrimiento de partículas que solo puedan existir si las dimensiones extra existen o mediante la producción de agujeros negros microscópicos.
+Sin embargo, no es claro cómo se manifestarían estas dimensiones. Algunas de las maneras de probar experimentalmente su existencia sería mediante el descubrimiento de partículas que solo puedan existir si las dimensiones extra existen o mediante la producción de agujeros negros microscópicos.
 
 Una explicación más detallada sobre modelos que incluyen dimensiones extras se puede encontrar en {cite}`P_rez_Lorenzana_2005`.
 
 ### Teoría de cuerdas
 Hasta ahora, los intentos para incorporar la relatividad general en el modelo estándar no han sido exitosos. La teoría de cuerdas intenta reconciliar estas teorías planteando que las partículas fundamentales no son puntuales, sino más bien cuerdas unidimensionales que vibran. En la teoría de cuerdas uno de los muchos estados de vibración de la cuerda corresponde al gravitón, la partícula que en la mecánica cuántica es responsable de la fuerza gravitacional{cite}`Wray_2011`.
 
-En los 80s habían distintas versiones de la teoría de cuerdas que en los 90s resultaron ser parte de una teoría que se conoce como la teoría M.
+En los 80s se plantearon distintas versiones de la teoría de cuerdas que en los 90s resultaron ser parte de una teoría que se conoce como la teoría M.
 
 Sin embargo,
 - La teoría solo funciona con dimensiones adicionales para las que no se tiene evidencia.
@@ -190,7 +188,7 @@ Un quark excitado puede decaer a un par quark-gluon ($q^*\longrightarrow qg$). E
 
 ### Agujeros negros cuánticos
 
-La escala fundamental de la fuerza gravitatoria, escala de Planck se encuentra $\sim 10^16$ órdenes de magnitud sobre la escala electrodébil. Para explicar esto, se plantea que la fuerza gravitatoria se encuentra en la escala electrodébil, pero que parece más débil porque se propaga en dimensiones adicionales. Evidencia de estas dimensiones se pueden buscar en el LHC a través de los efectos gravitatorios que producen.
+La escala fundamental de la fuerza gravitatoria, escala de Planck se encuentra $\sim 10^{16}$ órdenes de magnitud sobre la escala electrodébil. Para explicar esto, se plantea que la fuerza gravitatoria se encuentra en la escala electrodébil, pero que parece más débil porque se propaga en dimensiones adicionales. Evidencia de estas dimensiones se pueden buscar en el LHC a través de los efectos gravitatorios que producen.
 
 La introducción de dimensiones extra disminuye la escala fundamental de la gravedad $M_D$ a TeV, lo que permite la posibilidad de producir agujeros negros cuánticos en colisiones *pp*. Si los agujeros negros producidos poseen masa $\sim M_D$, pueden decaer a un estado final de 2 cuerpos{cite}`Meade_2008`.
 
