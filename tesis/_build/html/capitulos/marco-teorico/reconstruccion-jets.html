@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+
+<html lang="spanish">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reconstrucción de jets &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="Más allá del modelo estándar" href="mas-alla-del-ms.html" />
+    <link rel="prev" title="Cromodinámica cuántica" href="cromodinamica-cuantica.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="spanish">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_ucv.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Marco teórico
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="modelo-estandar.html">
+   El módelo estándar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cromodinamica-cuantica.html">
+   Cromodinámica cuántica
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Reconstrucción de jets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mas-alla-del-ms.html">
+   Más allá del modelo estándar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="aprendizaje-automatico.html">
+   Aprendizaje automático
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reproducibilidad.html">
+   Reproducibilidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="olimpiadas-LHC.html">
+   Olimpiadas LHC 2020
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Referencias
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../referencias/referencias.html">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/capitulos/marco-teorico/reconstruccion-jets.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
+                    class="fab fa-github"></i>repositorio</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formacion-de-jets">
+   Formación de jets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agrupamiento-de-jets">
+   Agrupamiento de jets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipos-de-algoritmos">
+     Tipos de algoritmos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cono">
+       Cono
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#recombinacion-secuencial">
+       Recombinación secuencial
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables-de-subestructura">
+   Variables de subestructura
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#masa">
+     Masa
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#n-subjettiness">
+     N-subjettiness
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funciones-de-correlacion-de-energia">
+     Funciones de correlación de energía
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Reconstrucción de jets</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formacion-de-jets">
+   Formación de jets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agrupamiento-de-jets">
+   Agrupamiento de jets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipos-de-algoritmos">
+     Tipos de algoritmos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cono">
+       Cono
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#recombinacion-secuencial">
+       Recombinación secuencial
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables-de-subestructura">
+   Variables de subestructura
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#masa">
+     Masa
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#n-subjettiness">
+     N-subjettiness
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funciones-de-correlacion-de-energia">
+     Funciones de correlación de energía
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="reconstruccion-de-jets">
+<span id="jets"></span><h1>Reconstrucción de jets<a class="headerlink" href="#reconstruccion-de-jets" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En colisiones de hadrones a altas energías, la libertad asintótica y el confinamiento son los conceptos principales que explican la formación de jets, el proceso de dispersión fuerte con mayor tasa de producción en colisiones hadrónicas<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id19" title="M Mangano. QCD and the physics of Hadronic Collisions. CERN Yellow Rep. School Proc., 4:27-62. 36 p, 2018. URL: http://cds.cern.ch/record/2674114, doi:10.23730/CYRSP-2018-004.27.">15</a>]</span>. Los jets son lluvias de partículas colimadas, conformadas principalmente por hadrones, pero también por fotones y leptones. Debido a su alta tasa de producción, los jets se han vuelto objetivo de estudio para &quot;redescubrir&quot; procesos esperados del modelo estándar y garantizar que los detectores se comporten correctamente<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id18" title="Zachary L Marshall. A Measurement of Jet Shapes in Proton-Proton Collisions at 7.0 TeV Center-of-Mass Energy with the ATLAS Detector at the Large Hadron Collider. PhD thesis, California Institute of Technology, 2010. Presented on 09 Nov 2010. URL: https://cds.cern.ch/record/1308447.">16</a>]</span>.</p>
+<p>En esta sección se explicará la formación de jets a partir de colisiones protón-protón (<em>pp</em>), así como los métodos para reconstruirlos y las variables para analizarlos.</p>
+<div class="section" id="formacion-de-jets">
+<span id="jets-formacion"></span><h2>Formación de jets<a class="headerlink" href="#formacion-de-jets" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Al colisionar dos protones altamente energéticos, existe una alta tasa de probabilidad de formación de jets. Un diagrama de la formación de un jet se encuentra en la <a class="reference internal" href="#jets-desarrollo"><span class="std std-numref">Figura 6</span></a> y los procesos que intervienen se explican a continuación<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id5" title="Lydia Audrey Beresford. Searches for Dijet Resonances using $\sqrt s = 13$ TeV proton–proton collision data recorded by the ATLAS detector at the Large Hadron Collider. Dijet Resognance Searches with the ATLAS detector at 13 TeV and jet punch-through corrections. PhD thesis, University of Oxford, 2017. URL: https://cds.cern.ch/record/2642397, doi:10.1007/978-3-319-97520-7.">4</a>, <a class="reference internal" href="../referencias/referencias.html#id17" title="ROBERT M. HARRIS and KONSTANTINOS KOUSOURIS. SEARCHES FOR DIJET RESONANCES AT HADRON COLLIDERS. International Journal of Modern Physics A, 26(30n31):5005–5055, dec 2011. URL: https://doi.org/10.1142%2Fs0217751x11054905, doi:10.1142/s0217751x11054905.">17</a>]</span>.</p>
+<p>El proceso principal es la <strong>dispersión fuerte</strong>: los protones colisionan a altas energías, produciéndose una interacción con alta transferencia de momento <span class="math notranslate nohighlight">\(Q\)</span> entre los constituyentes o partones de los protones. Por la libertad asintótica, los partones se comportan como partículas libres y la teoría de perturbación es válida. En la dispersión fuerte se puede crear una partícula resonante de corta vida o puede suceder un proceso de QCD estándar (<a class="reference internal" href="#jets-qcd"><span class="std std-numref">Figura 5</span></a>). Luego, se generan otras partículas mediante decaimientos o procesos de QCD.</p>
+<p>También se consideran procesos de <strong>radiación de estado inicial</strong> (ISR) y <strong>radiación de estado final</strong> (FSR): las partículas entrantes y salientes pueden radiar otras partículas.</p>
+<p>Por último, están los <strong>eventos subyacentes</strong> (UE), que son las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas.</p>
+<div class="figure align-default" id="jets-qcd">
+<a class="reference internal image-reference" href="../../_images/jets-qcd.png"><img alt="../../_images/jets-qcd.png" src="../../_images/jets-qcd.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Figura 5 </span><span class="caption-text">Diagramas de Feynmann que representan la producción de dos jets en colisiones hadrónicas por procesos de QCD<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id19" title="M Mangano. QCD and the physics of Hadronic Collisions. CERN Yellow Rep. School Proc., 4:27-62. 36 p, 2018. URL: http://cds.cern.ch/record/2674114, doi:10.23730/CYRSP-2018-004.27.">15</a>]</span>, construidos a partir de los vértices permitidos (<a class="reference internal" href="cromodinamica-cuantica.html#qcd-quarkgluon"><span class="std std-numref">Figura 2</span></a> y <a class="reference internal" href="cromodinamica-cuantica.html#qcd-gluongluon"><span class="std std-numref">Figura 3</span></a>)</span><a class="headerlink" href="#jets-qcd" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>A muy altas energías las partículas generadas se puedan dividir para generar más partículas mediante procesos que todavía no se comprenden completamente<span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id20" title="W. N Cottingham and D. A Greenwood. An introduction to the standard model of particle physics. Cambridge University Press, 2007.">18</a>]</span>. Esta lluvia de partículas se dice colimada porque se generan a ángulos pequeños del partón original.</p>
+<p>La evolución perturbativa del jet se detendrá una vez que las partículas alcancen bajas energías. A bajas energías, el confinamiento domina el proceso y las partículas creadas se unen para formar partículas de color neutro. Este proceso no-perturbativo se conoce como <strong>hadronización</strong> y ocurre técnicamente fuera del radio del protón<span id="id6">[<a class="reference internal" href="../referencias/referencias.html#id22" title="Deepak Kar. Theoretical view of collisions and simulating them. In Experimental Particle Physics, 2053-2563, pages 4-1 to 4-40. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch4, doi:10.1088/2053-2563/ab1be6ch4.">19</a>]</span>. La hadronización, en conjunto con la radiación de estado final, se conoce como <strong>fragmentación</strong>. A la colección de todos los hadrones resultantes cerca de la dirección del partón original se le llama jet<span id="id7">[<a class="reference internal" href="../referencias/referencias.html#id21" title="C. P. Burgess and Guy D. Moore. Hadronic Interactions. Cambridge Univ. Press, 2013.">20</a>]</span>.</p>
+<p>El proceso explicado anteriormente se muestra en el siguiente diagrama:</p>
+<div class="figure align-default" id="jets-desarrollo">
+<a class="reference internal image-reference" href="../../_images/jets-formacion.png"><img alt="../../_images/jets-formacion.png" src="../../_images/jets-formacion.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Figura 6 </span><span class="caption-text">Esquema de la formación de jets<span id="id8">[<a class="reference internal" href="../referencias/referencias.html#id4" title="Reina Coromoto Camacho Toro. Search of new resonances decaying into top quark pairs with the ATLAS detector at the LHC and jet calibration studies. Theses, Université Blaise Pascal - Clermont-Ferrand II, July 2012. URL: https://tel.archives-ouvertes.fr/tel-00818796.">7</a>]</span>.</span><a class="headerlink" href="#jets-desarrollo" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>A pesar de ser un proceso complejo, las propiedades cinemáticas de un jet son las mismas que las del parton original, en primera aproximación.</p>
+</div>
+<div class="section" id="agrupamiento-de-jets">
+<span id="jets-agrupamiento"></span><h2>Agrupamiento de jets<a class="headerlink" href="#agrupamiento-de-jets" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La definición de un jet no es única. De hecho, la existencia de un jet es dependiente de la regla matemática que lo defina. Esta regla matemática agrupa los constituyentes del jet de acuerdo a propiedades cinemáticas y se conoce como <em>algoritmo de agrupamiento de jets</em>. A continuación, se explicará acerca de estos algoritmos siguiendo<span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id18" title="Zachary L Marshall. A Measurement of Jet Shapes in Proton-Proton Collisions at 7.0 TeV Center-of-Mass Energy with the ATLAS Detector at the Large Hadron Collider. PhD thesis, California Institute of Technology, 2010. Presented on 09 Nov 2010. URL: https://cds.cern.ch/record/1308447.">16</a>, <a class="reference internal" href="../referencias/referencias.html#id23" title="Deepak Kar. Analysis objects. In Experimental Particle Physics, 2053-2563, pages 3-1 to 3-32. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch3, doi:10.1088/2053-2563/ab1be6ch3.">21</a>, <a class="reference internal" href="../referencias/referencias.html#id24" title="John E. Huth and others. Toward a standardization of jet definitions. In 1990 DPF Summer Study on High-energy Physics: Research Directions for the Decade (Snowmass 90), 0134–136. 12 1990.">22</a>]</span></p>
+<p>De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de hadrones del estado final con cuadri-momento <span class="math notranslate nohighlight">\(\{p_1^{had},p_2^{had},\dots,p_n^{had}\}\)</span> a un conjunto de jets con cuadri-momento <span class="math notranslate nohighlight">\(\{p_1^{jet},p_2^{jet},\dots,p_m^{jet}\}\)</span>, donde usualmente <span class="math notranslate nohighlight">\(m&lt;n\)</span>. El momento de cada jet es la suma de los momentos de las partículas que lo constituyen y la suma vectorial define el eje del jet.</p>
+<p>Todos los algoritmos agrupan objetos cercanos alrededor del ángulo polar de los protones entrantes <span class="math notranslate nohighlight">\(\phi\)</span> y la pseudo-rapidez <span class="math notranslate nohighlight">\(\eta\)</span>, definida como:</p>
+<div class="math notranslate nohighlight" id="equation-eta">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eta" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    \eta\equiv -\ln\left[\tan\left(\frac{\theta}{2}\right)\right]
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\theta\)</span> es el ángulo azimutal entre los constituyentes y los protones entrantes.</p>
+<p>Los jets se pueden reconstruir a partir de objetos experimentales, como depósitos de energía en calorímetros y trayectorias de partículas cargadas, o de objetos teóricos, como partones y hadrones obtenidos mediante simulaciones.</p>
+<div class="figure align-default" id="jets-types">
+<a class="reference internal image-reference" href="../../_images/jets-types.png"><img alt="../../_images/jets-types.png" src="../../_images/jets-types.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Figura 7 </span><span class="caption-text">Esquema que muestra los diferentes tipos de jet. Se producen partículas de color por la dispersión fuerte, creando partículas de color neutro en la fragmentación. Estas partículas pueden producir distintas señales en los detectores<span id="id10">[<a class="reference internal" href="../referencias/referencias.html#id4" title="Reina Coromoto Camacho Toro. Search of new resonances decaying into top quark pairs with the ATLAS detector at the LHC and jet calibration studies. Theses, Université Blaise Pascal - Clermont-Ferrand II, July 2012. URL: https://tel.archives-ouvertes.fr/tel-00818796.">7</a>]</span>.</span><a class="headerlink" href="#jets-types" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Se espera que un algoritmo posea ciertas características:</p>
+<ul class="simple">
+<li><p>Ser robusto con respecto al tipo de datos de entrada.</p></li>
+<li><p>Teóricamente, debe ser <em>colinealmente estable</em>: la separación de un partón en dos partones colineales no debe cambiar el resultado del agrupamiento del jet (<a class="reference internal" href="#jets-colineal"><span class="std std-numref">Figura 8</span></a>).</p></li>
+<li><p>Cumplir con la <em>estabilidad infrarroja</em>: la radiación de un gluon suave no debe cambiar el agrupamiento (<a class="reference internal" href="#jets-infrarrojo"><span class="std std-numref">Figura 9</span></a>).</p></li>
+<li><p>Baja sensibilidad a los UE y el pileup (PU), que son señales remanentes de otras colisiones.</p></li>
+<li><p>Fácil de utilizar en cálculos teóricos y análisis experimentales, así como computacionalmente rápidos de ejecutar.</p></li>
+</ul>
+<div class="figure align-default" id="jets-colineal">
+<a class="reference internal image-reference" href="../../_images/jets-colineal.png"><img alt="../../_images/jets-colineal.png" src="../../_images/jets-colineal.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Figura 8 </span><span class="caption-text">Esquema de la estabilidad colineal. La separación de un parton en partones colineales no debe cambiar la configuración de un jet<span id="id11">[<a class="reference internal" href="../referencias/referencias.html#id23" title="Deepak Kar. Analysis objects. In Experimental Particle Physics, 2053-2563, pages 3-1 to 3-32. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch3, doi:10.1088/2053-2563/ab1be6ch3.">21</a>]</span>.</span><a class="headerlink" href="#jets-colineal" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="figure align-default" id="jets-infrarrojo">
+<a class="reference internal image-reference" href="../../_images/jets-infrarrojo.png"><img alt="../../_images/jets-infrarrojo.png" src="../../_images/jets-infrarrojo.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Figura 9 </span><span class="caption-text">Esquema de la estabilidad infrarroja. La emisión de un gluon suave entre dos jets no debe resultar en su unión<span id="id12">[<a class="reference internal" href="../referencias/referencias.html#id23" title="Deepak Kar. Analysis objects. In Experimental Particle Physics, 2053-2563, pages 3-1 to 3-32. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch3, doi:10.1088/2053-2563/ab1be6ch3.">21</a>]</span>.</span><a class="headerlink" href="#jets-infrarrojo" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="section" id="tipos-de-algoritmos">
+<h3>Tipos de algoritmos<a class="headerlink" href="#tipos-de-algoritmos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Existen dos tipos principales de algoritmos de agrupamiento: <em>algoritmos de cono</em> y <em>algoritmos de recombinación secuencial</em></p>
+<div class="section" id="cono">
+<h4>Cono<a class="headerlink" href="#cono" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Los algoritmos de cono asumen que el jet se encuentra en regiones cónicas del espacio <span class="math notranslate nohighlight">\((\eta-\phi)\)</span>, por lo que los jets reconstruidos por estos algoritmos tienen bordes circulares. Son de fácil implementación, pero no son colinealmente estables<span id="id13">[<a class="reference internal" href="../referencias/referencias.html#id25" title="Ryan Atkin. Review of jet reconstruction algorithms. Journal of Physics: Conference Series, 645:012008, oct 2015. URL: https://doi.org/10.1088/1742-6596/645/1/012008, doi:10.1088/1742-6596/645/1/012008.">23</a>]</span>.</p>
+<p>Se puede pensar que su aproximación es de arriba hacia abajo. En general, un algoritmo de cono sigue los pasos a continuación<span id="id14">[<a class="reference internal" href="../referencias/referencias.html#id27" title="Philipp Schieferdecker. Jet algorithms. 4 2009. URL: https://twiki.cern.ch/twiki/pub/Sandbox/Lecture/Philipp_Schieferdeckers_Lecture.pdf.">24</a>]</span>:</p>
+<ol class="simple">
+<li><p>Hallar el constituyente más energética del evento, o semilla.</p></li>
+<li><p>Colocar un cono de radio <em>R</em> alrededor de esta semilla y sumar el momento de todas las partículas que constituyen el cono, formando un jet de prueba.</p></li>
+<li><p>Comparar el eje de la semilla con el del jet de prueba.</p>
+<ol class="simple">
+<li><p>Si el eje del del jet de prueba y la semilla coinciden: El jet se prueba se toma como jet</p></li>
+<li><p>De otra forma: Se repiten los pasos anteriores con el eje del jet de prueba como semilla.</p></li>
+</ol>
+</li>
+</ol>
+<p>Estos pasos se repiten hasta estos pasos hasta que no haya semillas sobre un umbral de energía escogido.</p>
+<p>Ejemplos de algoritmos de cono son: <em>Midpoint Cone</em>, utilizado en Tevatron, <em>Iterative Cone</em> y <em>SISCone</em><span id="id15">[<a class="reference internal" href="../referencias/referencias.html#id26" title="Gavin P Salam and Grégory Soyez. A practical seedless infrared-safe cone jet algorithm. Journal of High Energy Physics, 2007(05):086–086, may 2007. URL: https://doi.org/10.1088%2F1126-6708%2F2007%2F05%2F086, doi:10.1088/1126-6708/2007/05/086.">25</a>]</span>, utilizados anteriormente por CMS.</p>
+</div>
+<div class="section" id="recombinacion-secuencial">
+<h4>Recombinación secuencial<a class="headerlink" href="#recombinacion-secuencial" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Los algoritmos de recombinación secuencial asumen que los constituyentes de un jet poseen una pequeña diferencia en el momento transverso. Por esto, las partículas son agrupadas en el espacio de momento, resultando en jets con fluctuaciones en el espacio <span class="math notranslate nohighlight">\((\eta-\phi)\)</span><span id="id16">[<a class="reference internal" href="../referencias/referencias.html#id25" title="Ryan Atkin. Review of jet reconstruction algorithms. Journal of Physics: Conference Series, 645:012008, oct 2015. URL: https://doi.org/10.1088/1742-6596/645/1/012008, doi:10.1088/1742-6596/645/1/012008.">23</a>]</span>.</p>
+<p>En general, los algoritmos de recombinación secuencial utilizan las siguientes medidas de distancia entre dos constituyentes:</p>
+<div class="math notranslate nohighlight" id="equation-dist-const">
+<span class="eqno">(2)<a class="headerlink" href="#equation-dist-const" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    d_{ij} = min(p_{Ti}^{2p},p_{Tj}^{2p})\times \frac{\Delta R_{ij}^2}{R}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(p_T\)</span> es el momento transverso de las partículas, <span class="math notranslate nohighlight">\(\Delta R_{ij} = \sqrt{(\eta_i-eta_j)^2+(\phi_i-\phi_j)^2}\)</span> es la distancia entre dos constituyentes en el espacio <span class="math notranslate nohighlight">\((\eta-\phi)\)</span>, <span class="math notranslate nohighlight">\(R\)</span> es el radio final del jet, usualmente entre 0.4-0.7 y <span class="math notranslate nohighlight">\(p\)</span> es un parámetro referente al tipo de algoritmo.</p>
+<p>También utilizan la distancia entre el eje del haz y el constituyente detectado:</p>
+<div class="math notranslate nohighlight" id="equation-dist-eje">
+<span class="eqno">(3)<a class="headerlink" href="#equation-dist-eje" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    d_{iB}=p_{Ti}^{2p}
+\]</div>
+<p>Se puede pensar que el funcionamiento de estos algoritmos es de abajo hacia arriba:</p>
+<ol class="simple">
+<li><p>Hallar el mínimo en el conjunto <span class="math notranslate nohighlight">\(\{d_{ij},d_{iB}\}\)</span>.</p>
+<ol class="simple">
+<li><p>Si el mínimo es <span class="math notranslate nohighlight">\(d_{ij}\)</span>: los constituyentes <em>i</em> y <em>j</em> se unen en un solo constituyente <em>ij</em>, sumando el cuadri-momento y eliminando <em>i</em> y <em>j</em>  de la lista de constituyentes.</p></li>
+<li><p>Si el mínimo es <span class="math notranslate nohighlight">\(d_{iB}\)</span>: <em>i</em> se considera jet y eliminado de la lista de constituyentes.</p></li>
+</ol>
+</li>
+</ol>
+<p>Los pasos anteriores se repiten hasta que todas las partículas son parte de un jet, con distancias <span class="math notranslate nohighlight">\(\Delta R_{ij}\)</span> entre los ejes de los jets mayores a <span class="math notranslate nohighlight">\(R\)</span> (agrupamiento inclusivo), o hasta que se obtenga una cantidad específica de jets (agrupamiento exclusivo).</p>
+<p>Los algoritmos de recombinación utilizados son:</p>
+<ul class="simple">
+<li><p><em>Kt</em><span id="id17">[<a class="reference internal" href="../referencias/referencias.html#id30" title="Stephen D. Ellis and Davison E. Soper. Successive combination jet algorithm for hadron collisions. Phys. Rev. D, 48:3160–3166, Oct 1993. URL: https://link.aps.org/doi/10.1103/PhysRevD.48.3160, doi:10.1103/PhysRevD.48.3160.">26</a>]</span>: para este algoritmo <span class="math notranslate nohighlight">\(p=1\)</span>. Es sensible a los UE y PU. Este algoritmo representa una aproximación de la inversión del proceso de ramificación de QCD porque preserva la historia de agrupamiento.</p></li>
+<li><p><em>Anti kt</em><span id="id18">[<a class="reference internal" href="../referencias/referencias.html#id29" title="Matteo Cacciari, Gavin P Salam, and Gregory Soyez. The anti-ktjet clustering algorithm. Journal of High Energy Physics, 2008(04):063–063, apr 2008. URL: https://doi.org/10.1088/1126-6708/2008/04/063, doi:10.1088/1126-6708/2008/04/063.">27</a>]</span>: para este algoritmo <span class="math notranslate nohighlight">\(p=-1\)</span>. Contrario al <em>kt</em>, es poco sensible a los UE y el PU. En este algoritmo el agrupamiento no está relacionada a la manera en la que los partones se dividen.</p></li>
+<li><p>Cambridge/Aachen<span id="id19">[<a class="reference internal" href="../referencias/referencias.html#id31" title="Yu.L Dokshitzer, G.D Leder, S Moretti, and B.R Webber. Better jet clustering algorithms. Journal of High Energy Physics, 1997(08):001–001, aug 1997. URL: https://doi.org/10.1088/1126-6708/1997/08/001, doi:10.1088/1126-6708/1997/08/001.">28</a>]</span>: para este algoritmo <span class="math notranslate nohighlight">\(p=0\)</span>. Es el mejor para estudiar la subestructura de los jets, pero es más complicado que <em>kt</em>. También es susceptible a los UE y el PU.</p></li>
+</ul>
+<p>Los algoritmos de recombinación son los más utilizados desde su implementación en el programa <em>FastJet</em><span id="id20">[<a class="reference internal" href="../referencias/referencias.html#id28" title="Matteo Cacciari, Gavin P. Salam, and Gregory Soyez. FastJet user manual. The European Physical Journal C, mar 2012. URL: https://doi.org/10.1140%2Fepjc%2Fs10052-012-1896-2, doi:10.1140/epjc/s10052-012-1896-2.">29</a>]</span>, un paquete de C++ que proporciona herramientas para agrupar y analizar jets.</p>
+</div>
+</div>
+</div>
+<div class="section" id="variables-de-subestructura">
+<span id="jets-subestructura"></span><h2>Variables de subestructura<a class="headerlink" href="#variables-de-subestructura" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La subestructura de un jet puede analizarse para diferenciar si el jet proviene de un gluon, un quark suave o partículas aún no descubiertas. A continuación se describirán algunas de las variables que se calculan para estudiar la subestructura de un jet, utilizando como referencia <span id="id21">[<a class="reference internal" href="../referencias/referencias.html#id32" title="Deepak Kar. Advanced topic: jet substructure. In Experimental Particle Physics, 2053-2563, pages 8-1 to 8-28. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch8, doi:10.1088/2053-2563/ab1be6ch8.">30</a>]</span>.</p>
+<div class="section" id="masa">
+<h3>Masa<a class="headerlink" href="#masa" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet calculada a partir del cuadri-momento de cada constituyente.</p>
+</div>
+<div class="section" id="n-subjettiness">
+<h3>N-subjettiness<a class="headerlink" href="#n-subjettiness" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet. Para lograr esto, se hace un agrupamiento exclusivo de N jets con los constituyentes del jet y se calcula la variable <span class="math notranslate nohighlight">\(\tau_N\)</span></p>
+<div class="math notranslate nohighlight" id="equation-subjettiness">
+<span class="eqno">(4)<a class="headerlink" href="#equation-subjettiness" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    \tau_N = \left(\frac{1}{d_0}\right)\sum_{i=0}^{i=N} p_{Ti} \times \Delta R_{min,i}
+\]</div>
+<p>Donde <span class="math notranslate nohighlight">\(\Delta R_{min,i}\)</span> es la menor distancia entre el constituyente <em>i</em> del subjet más cercano y <span class="math notranslate nohighlight">\(d_0\)</span> es la suma de <span class="math notranslate nohighlight">\(p_T\)</span> de todos los constituyentes multiplicada por el radio del jet, para obtener <span class="math notranslate nohighlight">\(0&lt;\tau_N&lt;1\)</span>. Un valor menor de <span class="math notranslate nohighlight">\(\tau_N\)</span> corresponde a una cantidad de subjets igual a N o menor, mientras que un valor mayor indica más de N subjets. Sin embargo, se prefiere utilizar una variable adimensional:</p>
+<div class="math notranslate nohighlight" id="equation-ratio-subjettiness">
+<span class="eqno">(5)<a class="headerlink" href="#equation-ratio-subjettiness" title="Enlace permanente a esta ecuación">¶</a></span>\[
+\tau_{N-1,N}=\frac{\tau_{N-1}}{\tau_N}
+\]</div>
+<p>Un jet con N-1 subjets tendrá un valor de <span class="math notranslate nohighlight">\(\tau_{N-1,N}\)</span> menor a un jet conformado de N o más subjets.</p>
+</div>
+<div class="section" id="funciones-de-correlacion-de-energia">
+<h3>Funciones de correlación de energía<a class="headerlink" href="#funciones-de-correlacion-de-energia" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Las funciones de correlación de energía logran esencialmente lo mismo que N-subjettines, sin la necesidad de definir N ejes de referencia <span id="id22">[<a class="reference internal" href="../referencias/referencias.html#id33" title="Simone Marzani, Gregory Soyez, and Michael Spannowsky. Looking Inside Jets: an introduction to jet substructure and boosted-object phenomenology. Springer International Publishing, 2019. URL: https://doi.org/10.1007%2F978-3-030-15709-8, doi:10.1007/978-3-030-15709-8.">31</a>]</span>. Su finalidad es identificar una estructura de N-subjets o depósitos de energía. Las funciones de correlación de energía (ECF) están definidas de la siguiente forma<span id="id23">[<a class="reference internal" href="../referencias/referencias.html#id34" title="Martin Jankowiak and Andrew J. Larkoski. Angular scaling in jets. Journal of High Energy Physics, apr 2012. URL: https://doi.org/10.1007%2Fjhep04%282012%29039, doi:10.1007/jhep04(2012)039.">32</a>, <a class="reference internal" href="../referencias/referencias.html#id35" title="Andrew J. Larkoski, Gavin P. Salam, and Jesse Thaler. Energy correlation functions for jet substructure. Journal of High Energy Physics, jun 2013. URL: https://doi.org/10.1007%2Fjhep06%282013%29108, doi:10.1007/jhep06(2013)108.">33</a>]</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-db59ad01-f8d9-4779-b069-d6eb1789ecfe">
+<span class="eqno">(6)<a class="headerlink" href="#equation-db59ad01-f8d9-4779-b069-d6eb1789ecfe" title="Enlace permanente a esta ecuación">¶</a></span>\[\begin{gather}
+    ECF(1,\beta)=\sum p_{Ti}\\
+    ECF(2,\beta)=\sum_{i&lt;j} p_{Ti}p_{Tj}(\Delta R_{ij})^\beta\\
+    ECF(3,\beta)=\sum_{i&lt;j&lt;k} p_{Ti}p_{Tj}p_{Tk}(\Delta R_{ij}\Delta R_{jk}\Delta R_{ki})^\beta\\
+    \dots\\
+    ECF(N,\beta)=\sum_{\text{all N}} \left(\prod^{N}_{a=1} p_{Ta}\right)\left(\prod^{N-1}_{b=1}\prod^{N}_{c=b+1} \Delta R_{ib}\Delta R_ic\right)
+\end{gather}\]</div>
+<p>donde el parámetro angular <span class="math notranslate nohighlight">\(\beta\)</span> permite sensibilidad a distintas escalas angulares. Si un jet tiene N depósitos de energía, ECF(N+1) es menor que ECF(N).</p>
+<p>Al igual que en N-subjettiness, se definen variables adimensionales utilizando proporciones:</p>
+<div class="math notranslate nohighlight" id="equation-ecf-ratio">
+<span class="eqno">(7)<a class="headerlink" href="#equation-ecf-ratio" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    r_N = \frac{ECF(N+1)}{ECF(N)}
+\]</div>
+<p>Y se ha hallado que las proporciones tienen mayor poder de discriminación, por ejemplo:</p>
+<div class="math notranslate nohighlight" id="equation-ecf-double">
+<span class="eqno">(8)<a class="headerlink" href="#equation-ecf-double" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    C_N = \frac{r_N}{r_{N-1}}
+\]</div>
+<p>Existen otras proporciones<span id="id24">[<a class="reference internal" href="../referencias/referencias.html#id33" title="Simone Marzani, Gregory Soyez, and Michael Spannowsky. Looking Inside Jets: an introduction to jet substructure and boosted-object phenomenology. Springer International Publishing, 2019. URL: https://doi.org/10.1007%2F978-3-030-15709-8, doi:10.1007/978-3-030-15709-8.">31</a>]</span> y se construyen para amplificar características específicas de los jets.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos\marco-teorico"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="cromodinamica-cuantica.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title">Cromodinámica cuántica</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mas-alla-del-ms.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Más allá del modelo estándar</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Por Mariana Vivas, Universidad Central de Venezuela<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
