@@ -37,6 +37,8 @@ repository:
 # Ver https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_repository_button: true # Link al repositorio
+  use_edit_page_button: true  # Si agregar un boton de "editar esta pagina"
+  use_issues_button: true  # Si agregar boton "open an issue"
   home_page_in_navbar: false   # Si incluir la pagina de inicio en la navegación
 
 #######################################################################################
@@ -45,8 +47,6 @@ sphinx:
   extra_extensions          :  # A list of extra extensions to load by Sphinx.
   config                    :  # key-value pairs to directly over-ride the Sphinx configuration
     language                : spanish
-
-
 
 # Un archivo bibtex para poder crear citas
 bibtex_bibfiles:
