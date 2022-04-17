@@ -32,6 +32,7 @@ parse:
 repository:
   url: https://github.com/marianaiv/tesis_grado_UCV # Ubicación en línea del libro
   path_to_book: "tesis"  # Ruta opcional al libro, relativa a la raíz del repositorio
+  branch: marco-teorico  # Que rama usar para crear links
 
 # Agregar botones de GitHub al libro
 # Ver https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
