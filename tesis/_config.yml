@@ -41,7 +41,8 @@ html:
   use_edit_page_button: true  # Si agregar un boton de "editar esta pagina"
   use_issues_button: true  # Si agregar boton "open an issue"
   home_page_in_navbar: false   # Si incluir la pagina de inicio en la navegación
-
+  use_multitoc_numbering: false   # Numeración continua entre partes/capitulos
+  
 #######################################################################################
 # Advanced and power-user settings
 sphinx:
