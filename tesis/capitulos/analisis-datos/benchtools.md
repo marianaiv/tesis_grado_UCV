@@ -21,7 +21,7 @@ En *metrictools* hay múltiples funciones que caluculan y grafican las métricas
 
 En *clustering* se encuentra la función que realiza el pre-procesamiento de los datos, `build_features`, y las funciones que la confoman.
 
-(bench-pre)
+(bench-pre)=
 ## Pre-procesamiento de datos
 El pre-procesamiento de datos se realiza para obtener variables físicas, que son las que van a utilizar los modelos para aprender y clasificar. Los pasos para pre-procesar son los siguientes:
 1. Cargar una fracción de los datos
@@ -55,13 +55,15 @@ La variable de correlación de energía no se pudo calcular debido a que no se e
 ## Pipeline
 En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de `benchtools` procesa los datos, entrena los modelos explicados en la {numref}`ml-algoritmos`, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos específicos se describen a continuación:
 
-**Entrada**: un archivo con los datos de los eventos y un archivo con la lista de los clasificadores externos a comparar, salvados como un objeto `clasificador`.
+**Entrada**: un archivo con los datos de los eventos y un archivo con la lista de los clasificadores externos a comparar, salvados como un objeto `classifier`.
+
 **Pasos**:
 1. Pre-procesar los datos de los eventos.
 2. Escalar los datos según el clasificador a utilizar y entrenar los modelos y salvarlos.
 3. Obtener los puntajes y predicciones de cada clasificador.
 4. Cargar los clasificadores externos.
 5. Comparar los algoritmos utilizando las métricas en *metrictools*
+
 **Salida**: archivo con imagenes de los plots de las métricas y una tabla con las métricas númericas, así como gráficos de barra de cada variable para visualizar los resultados.
 
 El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra a continuación:
