@@ -6,9 +6,9 @@ En esta sección se describirá de manera general el paquete `benchtools`, desar
 
 (bench-herramientas)=
 ## Funciones
-El paquete se puede dividir en dos partes principales: las funciones y el pipeline. Una función es un bloque de código que resuelve un problema concreto y es lo que utilizamos para armar el pipeline. Recibe cero o más argumentos de entrada y devuelve un argumento de salida o realiza una tarea. En el caso de `benchtools`, se agruparon funciones en cinco archivos diferentes de acuerdo a su utilidad. A continuación se describirán brevemente los grupos y las funciones más relevantes.
+El paquete se puede dividir en dos partes principales: las funciones y el pipeline. Una función es un bloque de código que resuelve un problema concreto y es lo que utilizamos para armar el pipeline. Recibe cero o más argumentos de entrada y devuelve un argumento de salida o realiza una tarea. En el caso de `benchtools`, se agruparon funciones en cinco modulos diferentes de acuerdo a su utilidad. A continuación se describirán brevemente los grupos y las funciones más relevantes.
 
-Las funciones se dividen en los siguientes archivos:
+Las funciones se dividen en los siguientes modulos:
 - **datatools**: funciones para manejar los datos. Por ejemplo, leer datos iterativamente, unir tablas de datos, entre otras. 
 - **substructure**: funciones para calcular variables cinemática y de subestructura de los jets.
 - **clustering**: funciones para pre-procesar los datos. Por ejemplo, agrupar los jets, calcular las variables de un jet, entre otras.
@@ -17,20 +17,20 @@ Las funciones se dividen en los siguientes archivos:
 
 Las funciones en *datatools* y *substructure* son utilizadas principalmente en otras funciones y su contenido no se discutirá en este trabajo. Las funciones en *plotools* se utilizarán más adelante y se observará su funcionamiento, por lo que omitiremos su explicación.
 
-En *metrictools* hay múltiples funciones que caluculan y grafican las métricas mencionadas en la {numref}`ml-metricasderendimiento`. Para calcular las métricas numéricas, en general se va a utilizar `compare_metrics`, que calcula la exactitud balanceada, la precisión, el puntaje f1 y la recuperación para múltiples clasificadores. Las métricas gráficas incluidas en el paquete son la curva ROC y sus variaciones (ROC inversa y eficiencia de señal vs. rechazo de fondo), la curva PR y la curva de mejora significativa. Por último, en este archivo se encuentra una clase `clasificador`. Se utiliza para guardar los resultados de la clasificación en un objeto que contenga el nombre del clasificador, el puntaje de cada evento asociado a la probabilidad de ser señal, la etiqueta binaria predicha para cada evento y la etiqueta real.
+En *metrictools* hay múltiples funciones que calculan y grafican las métricas mencionadas en la {numref}`ml-metricasderendimiento`. Para calcular las métricas numéricas, en general se va a utilizar `compare_metrics`, que calcula la exactitud balanceada, la precisión, el puntaje f1 y la recuperación para múltiples clasificadores. Las métricas gráficas incluidas en el paquete son la curva ROC y sus variaciones (ROC inversa y eficiencia de señal vs. rechazo de fondo), la curva PR y la curva de mejora significativa. Por último, en este archivo se encuentra una clase `clasificador`. Se utiliza para guardar los resultados de la clasificación en un objeto que contenga el nombre del clasificador, el puntaje de cada evento asociado a la probabilidad de ser señal, la etiqueta binaria predicha para cada evento y la etiqueta real.
 
 En *clustering* se encuentra la función que realiza el pre-procesamiento de los datos, `build_features`, y las funciones que la confoman.
 
 (bench-pre)=
 ## Pre-procesamiento de datos
-El pre-procesamiento de datos se realiza para obtener variables físicas, que son las que van a utilizar los modelos para aprender y clasificar. Los pasos para pre-procesar son los siguientes:
+El pre-procesamiento de datos se realiza para obtener variables físicas. Estas variables son las que utilizan los modelos para entrenamiento y clasificación. Los pasos para pre-procesar son los siguientes:
 1. Cargar una fracción de los datos
 2. Agrupar los jets de cada evento utilizando anti-kt con $R=1$.
 3. Guardar los jets que tengan $p_T>20GeV$
 4. Calcular $p_T$, $m_j$, $\eta$, $\phi$, $E$, $\tau_{21}$ y el número de hadrones en el jet para los dos jets más energéticos. $\Delta R$, $m_{jj}$ utilizando los dos jets principales y el número de hadrones del evento.
 5. Se salvan los datos pre-procesados.
 
-Este proceso se hace iterativamente para fracciones de los datos, debido a que cargar todos los eventos requiere gran cantidad de memoria, y se unen los archivos, para tener un solo conjunto de datos pre-procesados.
+Este proceso se hace iterativamente para fracciones de datos, debido a que cargar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos pre-procesados.
 
 Una tabla con el significado de cada variable calculada se encuentra a continuación:
 ```{table} Variables calculadas en el pre-procesamiento de los datos
@@ -51,7 +51,7 @@ Una tabla con el significado de cada variable calculada se encuentra a continuac
 ```
 La variable de correlación de energía no se pudo calcular debido a que no se encuentra implementada en la librería `pyjet`, utilizada para agrupar los jets y calcular algunas variables, y no se logró la implementación propia.
 
-(bench-pipeline)=
+(bench-pipeline-cap)=
 ## Pipeline
 En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de `benchtools` procesa los datos, entrena los modelos explicados en la {numref}`ml-algoritmos`, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos específicos se describen a continuación:
 
