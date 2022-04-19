@@ -154,7 +154,6 @@ $$ (jets-ratio_subjettiness)
 Un jet con N-1 subjets tendrá un valor de $\tau_{N,N-1}$ mayor a un jet conformado de N o más subjets.
 
 ### Funciones de correlación de energía
-
 Las funciones de correlación de energía logran esencialmente lo mismo que N-subjettines, sin la necesidad de definir N ejes de referencia {cite}`Marzani_2019`. Su finalidad es identificar una estructura de N-subjets o depósitos de energía. Las funciones de correlación de energía (ECF) están definidas de la siguiente forma{cite}`Jankowiak_2012,Larkoski_2013`:
 
 \begin{gather}
