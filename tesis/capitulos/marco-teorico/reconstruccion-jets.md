@@ -148,10 +148,10 @@ $$ (jets-subjettiness)
 Donde $\Delta R_{min,i}$ es la menor distancia entre el constituyente *i* del subjet más cercano y $d_0$ es la suma de $p_T$ de todos los constituyentes multiplicada por el radio del jet, para obtener $0<\tau_N<1$. Un valor menor de $\tau_N$ corresponde a una cantidad de subjets igual a N o menor, mientras que un valor mayor indica más de N subjets. Sin embargo, se prefiere utilizar una variable adimensional:
 
 $$
-\tau_{N-1,N}=\frac{\tau_{N-1}}{\tau_N}
+    \tau_{N,N-1}=\frac{\tau_{N}}{\tau_{N-1}}
 $$ (jets-ratio_subjettiness)
 
-Un jet con N-1 subjets tendrá un valor de $\tau_{N-1,N}$ menor a un jet conformado de N o más subjets.
+Un jet con N-1 subjets tendrá un valor de $\tau_{N,N-1}$ mayor a un jet conformado de N o más subjets.
 
 ### Funciones de correlación de energía
 
