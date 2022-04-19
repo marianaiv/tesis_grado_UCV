@@ -47,7 +47,7 @@ Todos los algoritmos agrupan objetos cercanos alrededor del ángulo polar de los
 
 $$
     \eta\equiv -\ln\left[\tan\left(\frac{\theta}{2}\right)\right]
-$$ (eta)
+$$ (jets-eta)
 
 donde $\theta$ es el ángulo azimutal entre los constituyentes y los protones entrantes.
 
@@ -143,18 +143,17 @@ Esta variable intenta diferenciar jets de acuerdo al número N de subjets que co
 
 $$
     \tau_N = \left(\frac{1}{d_0}\right)\sum_{i=0}^{i=N} p_{Ti} \times \Delta R_{min,i}
-$$ (subjettiness) 
+$$ (jets-subjettiness) 
 
 Donde $\Delta R_{min,i}$ es la menor distancia entre el constituyente *i* del subjet más cercano y $d_0$ es la suma de $p_T$ de todos los constituyentes multiplicada por el radio del jet, para obtener $0<\tau_N<1$. Un valor menor de $\tau_N$ corresponde a una cantidad de subjets igual a N o menor, mientras que un valor mayor indica más de N subjets. Sin embargo, se prefiere utilizar una variable adimensional:
 
 $$
-\tau_{N-1,N}=\frac{\tau_{N-1}}{\tau_N}
-$$ (ratio_subjettiness)
+    \tau_{N,N-1}=\frac{\tau_{N}}{\tau_{N-1}}
+$$ (jets-ratio_subjettiness)
 
-Un jet con N-1 subjets tendrá un valor de $\tau_{N-1,N}$ menor a un jet conformado de N o más subjets.
+Un jet con N-1 subjets tendrá un valor de $\tau_{N,N-1}$ mayor a un jet conformado de N o más subjets.
 
 ### Funciones de correlación de energía
-
 Las funciones de correlación de energía logran esencialmente lo mismo que N-subjettines, sin la necesidad de definir N ejes de referencia {cite}`Marzani_2019`. Su finalidad es identificar una estructura de N-subjets o depósitos de energía. Las funciones de correlación de energía (ECF) están definidas de la siguiente forma{cite}`Jankowiak_2012,Larkoski_2013`:
 
 \begin{gather}
@@ -171,12 +170,12 @@ Al igual que en N-subjettiness, se definen variables adimensionales utilizando p
 
 $$
     r_N = \frac{ECF(N+1)}{ECF(N)}
-$$ (ecf_ratio)
+$$ (jets-ecf_ratio)
 
 Y se ha hallado que las proporciones tienen mayor poder de discriminación, por ejemplo:
 
 $$
     C_N = \frac{r_N}{r_{N-1}}
-$$ (ecf_double)
+$$ (jets-ecf_double)
 
 Existen otras proporciones{cite}`Marzani_2019` y se construyen para amplificar características específicas de los jets.

@@ -394,8 +394,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>La definición de un jet no es única. De hecho, la existencia de un jet es dependiente de la regla matemática que lo defina. Esta regla matemática agrupa los constituyentes del jet de acuerdo a propiedades cinemáticas y se conoce como <em>algoritmo de agrupamiento de jets</em>. A continuación, se explicará acerca de estos algoritmos siguiendo<span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id18" title="Zachary L Marshall. A Measurement of Jet Shapes in Proton-Proton Collisions at 7.0 TeV Center-of-Mass Energy with the ATLAS Detector at the Large Hadron Collider. PhD thesis, California Institute of Technology, 2010. Presented on 09 Nov 2010. URL: https://cds.cern.ch/record/1308447.">16</a>, <a class="reference internal" href="../referencias/referencias.html#id23" title="Deepak Kar. Analysis objects. In Experimental Particle Physics, 2053-2563, pages 3-1 to 3-32. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch3, doi:10.1088/2053-2563/ab1be6ch3.">21</a>, <a class="reference internal" href="../referencias/referencias.html#id24" title="John E. Huth and others. Toward a standardization of jet definitions. In 1990 DPF Summer Study on High-energy Physics: Research Directions for the Decade (Snowmass 90), 0134–136. 12 1990.">22</a>]</span></p>
 <p>De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de hadrones del estado final con cuadri-momento <span class="math notranslate nohighlight">\(\{p_1^{had},p_2^{had},\dots,p_n^{had}\}\)</span> a un conjunto de jets con cuadri-momento <span class="math notranslate nohighlight">\(\{p_1^{jet},p_2^{jet},\dots,p_m^{jet}\}\)</span>, donde usualmente <span class="math notranslate nohighlight">\(m&lt;n\)</span>. El momento de cada jet es la suma de los momentos de las partículas que lo constituyen y la suma vectorial define el eje del jet.</p>
 <p>Todos los algoritmos agrupan objetos cercanos alrededor del ángulo polar de los protones entrantes <span class="math notranslate nohighlight">\(\phi\)</span> y la pseudo-rapidez <span class="math notranslate nohighlight">\(\eta\)</span>, definida como:</p>
-<div class="math notranslate nohighlight" id="equation-eta">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-eta" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<div class="math notranslate nohighlight" id="equation-jets-eta">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-jets-eta" title="Enlace permanente a esta ecuación">¶</a></span>\[
     \eta\equiv -\ln\left[\tan\left(\frac{\theta}{2}\right)\right]
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\theta\)</span> es el ángulo azimutal entre los constituyentes y los protones entrantes.</p>
@@ -484,22 +484,22 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="n-subjettiness">
 <h3><span class="section-number">1.3.3.2. </span>N-subjettiness<a class="headerlink" href="#n-subjettiness" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet. Para lograr esto, se hace un agrupamiento exclusivo de N jets con los constituyentes del jet y se calcula la variable <span class="math notranslate nohighlight">\(\tau_N\)</span></p>
-<div class="math notranslate nohighlight" id="equation-subjettiness">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-subjettiness" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<div class="math notranslate nohighlight" id="equation-jets-subjettiness">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-jets-subjettiness" title="Enlace permanente a esta ecuación">¶</a></span>\[
     \tau_N = \left(\frac{1}{d_0}\right)\sum_{i=0}^{i=N} p_{Ti} \times \Delta R_{min,i}
 \]</div>
 <p>Donde <span class="math notranslate nohighlight">\(\Delta R_{min,i}\)</span> es la menor distancia entre el constituyente <em>i</em> del subjet más cercano y <span class="math notranslate nohighlight">\(d_0\)</span> es la suma de <span class="math notranslate nohighlight">\(p_T\)</span> de todos los constituyentes multiplicada por el radio del jet, para obtener <span class="math notranslate nohighlight">\(0&lt;\tau_N&lt;1\)</span>. Un valor menor de <span class="math notranslate nohighlight">\(\tau_N\)</span> corresponde a una cantidad de subjets igual a N o menor, mientras que un valor mayor indica más de N subjets. Sin embargo, se prefiere utilizar una variable adimensional:</p>
-<div class="math notranslate nohighlight" id="equation-ratio-subjettiness">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-ratio-subjettiness" title="Enlace permanente a esta ecuación">¶</a></span>\[
-\tau_{N-1,N}=\frac{\tau_{N-1}}{\tau_N}
+<div class="math notranslate nohighlight" id="equation-jets-ratio-subjettiness">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-jets-ratio-subjettiness" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    \tau_{N,N-1}=\frac{\tau_{N}}{\tau_{N-1}}
 \]</div>
-<p>Un jet con N-1 subjets tendrá un valor de <span class="math notranslate nohighlight">\(\tau_{N-1,N}\)</span> menor a un jet conformado de N o más subjets.</p>
+<p>Un jet con N-1 subjets tendrá un valor de <span class="math notranslate nohighlight">\(\tau_{N,N-1}\)</span> mayor a un jet conformado de N o más subjets.</p>
 </div>
 <div class="section" id="funciones-de-correlacion-de-energia">
 <h3><span class="section-number">1.3.3.3. </span>Funciones de correlación de energía<a class="headerlink" href="#funciones-de-correlacion-de-energia" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Las funciones de correlación de energía logran esencialmente lo mismo que N-subjettines, sin la necesidad de definir N ejes de referencia <span id="id22">[<a class="reference internal" href="../referencias/referencias.html#id33" title="Simone Marzani, Gregory Soyez, and Michael Spannowsky. Looking Inside Jets: an introduction to jet substructure and boosted-object phenomenology. Springer International Publishing, 2019. URL: https://doi.org/10.1007%2F978-3-030-15709-8, doi:10.1007/978-3-030-15709-8.">31</a>]</span>. Su finalidad es identificar una estructura de N-subjets o depósitos de energía. Las funciones de correlación de energía (ECF) están definidas de la siguiente forma<span id="id23">[<a class="reference internal" href="../referencias/referencias.html#id34" title="Martin Jankowiak and Andrew J. Larkoski. Angular scaling in jets. Journal of High Energy Physics, apr 2012. URL: https://doi.org/10.1007%2Fjhep04%282012%29039, doi:10.1007/jhep04(2012)039.">32</a>, <a class="reference internal" href="../referencias/referencias.html#id35" title="Andrew J. Larkoski, Gavin P. Salam, and Jesse Thaler. Energy correlation functions for jet substructure. Journal of High Energy Physics, jun 2013. URL: https://doi.org/10.1007%2Fjhep06%282013%29108, doi:10.1007/jhep06(2013)108.">33</a>]</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a796a04-6acf-417b-92c0-c759abc8e8ef">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-0a796a04-6acf-417b-92c0-c759abc8e8ef" title="Enlace permanente a esta ecuación">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-4d831d0f-8fc7-42ea-ade7-0d02b383e103">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-4d831d0f-8fc7-42ea-ade7-0d02b383e103" title="Enlace permanente a esta ecuación">¶</a></span>\[\begin{gather}
     ECF(1,\beta)=\sum p_{Ti}\\
     ECF(2,\beta)=\sum_{i&lt;j} p_{Ti}p_{Tj}(\Delta R_{ij})^\beta\\
     ECF(3,\beta)=\sum_{i&lt;j&lt;k} p_{Ti}p_{Tj}p_{Tk}(\Delta R_{ij}\Delta R_{jk}\Delta R_{ki})^\beta\\
@@ -508,13 +508,13 @@ const thebe_selector_output = ".output, .cell_output"
 \end{gather}\]</div>
 <p>donde el parámetro angular <span class="math notranslate nohighlight">\(\beta\)</span> permite sensibilidad a distintas escalas angulares. Si un jet tiene N depósitos de energía, ECF(N+1) es menor que ECF(N).</p>
 <p>Al igual que en N-subjettiness, se definen variables adimensionales utilizando proporciones:</p>
-<div class="math notranslate nohighlight" id="equation-ecf-ratio">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-ecf-ratio" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<div class="math notranslate nohighlight" id="equation-jets-ecf-ratio">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-jets-ecf-ratio" title="Enlace permanente a esta ecuación">¶</a></span>\[
     r_N = \frac{ECF(N+1)}{ECF(N)}
 \]</div>
 <p>Y se ha hallado que las proporciones tienen mayor poder de discriminación, por ejemplo:</p>
-<div class="math notranslate nohighlight" id="equation-ecf-double">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-ecf-double" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<div class="math notranslate nohighlight" id="equation-jets-ecf-double">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-jets-ecf-double" title="Enlace permanente a esta ecuación">¶</a></span>\[
     C_N = \frac{r_N}{r_{N-1}}
 \]</div>
 <p>Existen otras proporciones<span id="id24">[<a class="reference internal" href="../referencias/referencias.html#id33" title="Simone Marzani, Gregory Soyez, and Michael Spannowsky. Looking Inside Jets: an introduction to jet substructure and boosted-object phenomenology. Springer International Publishing, 2019. URL: https://doi.org/10.1007%2F978-3-030-15709-8, doi:10.1007/978-3-030-15709-8.">31</a>]</span> y se construyen para amplificar características específicas de los jets.</p>
