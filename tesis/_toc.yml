@@ -22,4 +22,9 @@ chapters:
   - file: capitulos/marco-teorico/aprendizaje-automatico
   - file: capitulos/marco-teorico/reproducibilidad
   - file: capitulos/marco-teorico/olimpiadas-LHC
+- file: capitulos/analisis-datos/resumen
+  sections:
+  - file: capitulos/analisis-datos/benchtools
+  - file: capitulos/analisis-datos/conjunto-RnD
+  - file: capitulos/analisis-datos/conjunto-BB1
 - file: capitulos/referencias/referencias 
