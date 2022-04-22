@@ -1,2 +1,2 @@
 # Análisis de datos
-*Aquí va el resumen*
+El análisis de datos es parte fundamental de la implementación de técnicas de aprendizaje automático, ya que ayuda a escoger las mejores herramientas para aproximarse al problema. En este capítulo realizaremos un análisis de los datos a utilizar en este trabajo: el conjunto R&D y el conjunto BB1. Iniciaremos con un resumen del paquete `benchtools`, desarrollado para el proyecto. Seguidamente se utilizarán estas herramientas para observar las distribuciones de los datos, agrupar los jets y calcular variables. Finalmente se presentarán las distribuciones de las variables y sus correlaciones.
