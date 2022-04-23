@@ -1,41 +1,6 @@
 (jets)=
 # Reconstrucción de jets
-En colisiones de hadrones a altas energías, la libertad asintótica y el confinamiento son los conceptos principales que explican la formación de jets, el proceso de dispersión fuerte con mayor tasa de producción en colisiones hadrónicas{cite}`Mangano:2674114`. Los jets son lluvias de partículas colimadas, conformadas principalmente por hadrones, pero también por fotones y leptones. Debido a su alta tasa de producción, los jets se han vuelto objetivo de estudio para "redescubrir" procesos esperados del modelo estándar y garantizar que los detectores se comporten correctamente{cite}`Marshall:1308447`.
-
-En esta sección se explicará la formación de jets a partir de colisiones protón-protón (*pp*), así como los métodos para reconstruirlos y las variables para analizarlos. 
-
-(jets-formacion)=
-## Formación de jets
-
-Al colisionar dos protones altamente energéticos, existe una alta tasa de probabilidad de formación de jets. Un diagrama de la formación de un jet se encuentra en la {numref}`jets-desarrollo` y los procesos que intervienen se explican a continuación{cite}`HARRIS_2011,Beresford:2642397`.
-
-El proceso principal es la **dispersión fuerte**: los protones colisionan a altas energías, produciéndose una interacción con alta transferencia de momento $Q$ entre los constituyentes o partones de los protones. Por la libertad asintótica, los partones se comportan como partículas libres y la teoría de perturbación es válida. En la dispersión fuerte se puede crear una partícula resonante de corta vida o puede suceder un proceso de QCD estándar ({numref}`jets-qcd`). Luego, se generan otras partículas mediante decaimientos o procesos de QCD.
-
-También se consideran procesos de **radiación de estado inicial** (ISR) y **radiación de estado final** (FSR): las partículas entrantes y salientes pueden radiar otras partículas. 
-
-Por último, están los **eventos subyacentes** (UE), que son las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas.
-
-```{figure} ./../../figuras/jets-qcd.png
----
-width: 500px
-name: jets-qcd
----
-Diagramas de Feynmann que representan la producción de dos jets en colisiones hadrónicas por procesos de QCD{cite}`Mangano:2674114`, construidos a partir de los vértices permitidos ({numref}`qcd-quarkgluon` y {numref}`qcd-gluongluon`)
-```
-A muy altas energías las partículas generadas se puedan dividir para generar más partículas mediante procesos que todavía no se comprenden completamente{cite}`cottingham_greenwood_2007`. Esta lluvia de partículas se dice colimada porque se generan a ángulos pequeños del partón original.
-
-La evolución perturbativa del jet se detendrá una vez que las partículas alcancen bajas energías. A bajas energías, el confinamiento domina el proceso y las partículas creadas se unen para formar partículas de color neutro. Este proceso no-perturbativo se conoce como **hadronización** y ocurre técnicamente fuera del radio del protón{cite}`10.1088/2053-2563/ab1be6ch4`. La hadronización, en conjunto con la radiación de estado final, se conoce como **fragmentación**. A la colección de todos los hadrones resultantes cerca de la dirección del partón original se le llama jet{cite}`burgess_moore_2013_hadronic`.
-
-El proceso explicado anteriormente se muestra en el siguiente diagrama:
-
-```{figure} ./../../figuras/jets-formacion.png
----
-width: 600px
-name: jets-desarrollo
----
-Esquema de la formación de jets{cite}`camachotoro:tel-00818796`.
-```
-A pesar de ser un proceso complejo, las propiedades cinemáticas de un jet son las mismas que las del parton original, en primera aproximación.
+Como se explicó en la {numref}`qcd-jets`, la formación de un jet resulta en múltiples partículas de color neutro. Las características de estas partículas del estado final es lo que se mide en los detectores, es decir, es la información que se obtiene de los jets. Por lo tanto, para analizar los eventos de jets es necesario reconstruirlos. En esta sección se explicarán los métodos más conocidos para reconstruirlos y algunas de las variables que se utilizan para analizarlos. 
 
 (jets-agrupamiento)=
 ## Agrupamiento de jets
@@ -69,7 +34,7 @@ Se espera que un algoritmo posea ciertas características:
 
 ```{figure} ./../../figuras/jets-colineal.png
 ---
-width: 500px
+width: 400px
 name: jets-colineal
 ---
 Esquema de la estabilidad colineal. La separación de un parton en partones colineales no debe cambiar la configuración de un jet{cite}`10.1088/2053-2563/ab1be6ch3`.
@@ -77,7 +42,7 @@ Esquema de la estabilidad colineal. La separación de un parton en partones coli
 
 ```{figure} ./../../figuras/jets-infrarrojo.png
 ---
-width: 500px
+width: 400px
 name: jets-infrarrojo
 ---
 Esquema de la estabilidad infrarroja. La emisión de un gluon suave entre dos jets no debe resultar en su unión{cite}`10.1088/2053-2563/ab1be6ch3`. 
@@ -126,7 +91,7 @@ Los pasos anteriores se repiten hasta que todas las partículas son parte de un 
 Los algoritmos de recombinación utilizados son:
 
 - *Kt*{cite}`PhysRevD.48.3160`: para este algoritmo $p=1$. Es sensible a los UE y PU. Este algoritmo representa una aproximación de la inversión del proceso de ramificación de QCD porque preserva la historia de agrupamiento.
-- *Anti kt*{cite}`Cacciari_2008`: para este algoritmo $p=-1$. Contrario al *kt*, es poco sensible a los UE y el PU. En este algoritmo el agrupamiento no está relacionada a la manera en la que los partones se dividen.
+- *Anti-kt*{cite}`Cacciari_2008`: para este algoritmo $p=-1$. Contrario al *kt*, es poco sensible a los UE y el PU. En este algoritmo el agrupamiento no está relacionada a la manera en la que los partones se dividen.
 - Cambridge/Aachen{cite}`Dokshitzer_1997`: para este algoritmo $p=0$. Es el mejor para estudiar la subestructura de los jets, pero es más complicado que *kt*. También es susceptible a los UE y el PU. 
 
 Los algoritmos de recombinación son los más utilizados desde su implementación en el programa *FastJet*{cite}`FastJet`, un paquete de C++ que proporciona herramientas para agrupar y analizar jets.
@@ -139,13 +104,13 @@ La subestructura de un jet puede analizarse para diferenciar si el jet proviene 
 La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet calculada a partir del cuadri-momento de cada constituyente.
 
 ### N-subjettiness
-Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet. Para lograr esto, se hace un agrupamiento exclusivo de N jets con los constituyentes del jet y se calcula la variable $\tau_N$
+Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet. Para lograr esto, se hace un agrupamiento exclusivo de N jets, utilizando los constituyentes del jet, y se calcula la variable $\tau_N$
 
 $$
     \tau_N = \left(\frac{1}{d_0}\right)\sum_{i=0}^{i=N} p_{Ti} \times \Delta R_{min,i}
 $$ (jets-subjettiness) 
 
-Donde $\Delta R_{min,i}$ es la menor distancia entre el constituyente *i* del subjet más cercano y $d_0$ es la suma de $p_T$ de todos los constituyentes multiplicada por el radio del jet, para obtener $0<\tau_N<1$. Un valor menor de $\tau_N$ corresponde a una cantidad de subjets igual a N o menor, mientras que un valor mayor indica más de N subjets. Sin embargo, se prefiere utilizar una variable adimensional:
+donde $\Delta R_{min,i}$ es la menor distancia entre el constituyente *i* del subjet más cercano y $d_0$ es la suma de $p_T$ de todos los constituyentes multiplicada por el radio del jet, para obtener $0<\tau_N<1$. Un valor menor de $\tau_N$ corresponde a una cantidad de subjets igual a N o menor, mientras que un valor mayor indica más de N subjets. Sin embargo, se prefiere utilizar variables adimensionales:
 
 $$
     \tau_{N,N-1}=\frac{\tau_{N}}{\tau_{N-1}}
