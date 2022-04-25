@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
     <link rel="next" title="1.6. Reproducibilidad" href="reproducibilidad.html" />
-    <link rel="prev" title="1.4. Más allá del modelo estándar" href="mas-alla-del-ms.html" />
+    <link rel="prev" title="1.4. Reconstrucción de jets" href="reconstruccion-jets.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="spanish">
     
@@ -115,13 +115,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="reconstruccion-jets.html">
-     1.3. Reconstrucción de jets
+    <a class="reference internal" href="mas-alla-del-ms.html">
+     1.3. Más allá del modelo estándar
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="mas-alla-del-ms.html">
-     1.4. Más allá del modelo estándar
+    <a class="reference internal" href="reconstruccion-jets.html">
+     1.4. Reconstrucción de jets
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -265,84 +265,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algoritmos-para-deteccion-de-anomalias">
-   1.5.4. Algoritmos para detección de anomalías
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bosque-aleatorio">
-     1.5.4.1. Bosque aleatorio
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#clasificador-del-gradiente-del-impulso">
-     1.5.4.2. Clasificador del gradiente del impulso
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#analisis-de-discriminante-cuadratico">
-     1.5.4.3. Análisis de discriminante cuadrático
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#redes-neuronales">
-     1.5.4.4. Redes neuronales
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#k-means">
-     1.5.4.5. K-means
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#metricas-de-rendimiento">
-   1.5.5. Métricas de rendimiento
+   1.5.4. Métricas de rendimiento
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metricas-numericas">
-     1.5.5.1. Métricas numéricas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metricas-graficas">
-     1.5.5.2. Métricas gráficas
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#curva-roc">
-       Curva ROC
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#curva-pr">
-       Curva PR
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mejora-significativa">
-       Mejora significativa
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aprendizaje-automatico-en-hep">
-   1.5.6. Aprendizaje automático en HEP
+   1.5.5. Aprendizaje automático en HEP
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#deteccion-de-anomalias">
-     1.5.6.1. Detección de anomalías
+     1.5.5.1. Detección de anomalías
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#busquedas-de-nueva-fisica-independiente-de-modelo">
-     1.5.6.2. Búsquedas de nueva física independiente de modelo
+     1.5.5.2. Búsquedas de nueva física independiente de modelo
     </a>
    </li>
   </ul>
@@ -397,84 +336,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algoritmos-para-deteccion-de-anomalias">
-   1.5.4. Algoritmos para detección de anomalías
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bosque-aleatorio">
-     1.5.4.1. Bosque aleatorio
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#clasificador-del-gradiente-del-impulso">
-     1.5.4.2. Clasificador del gradiente del impulso
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#analisis-de-discriminante-cuadratico">
-     1.5.4.3. Análisis de discriminante cuadrático
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#redes-neuronales">
-     1.5.4.4. Redes neuronales
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#k-means">
-     1.5.4.5. K-means
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#metricas-de-rendimiento">
-   1.5.5. Métricas de rendimiento
+   1.5.4. Métricas de rendimiento
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metricas-numericas">
-     1.5.5.1. Métricas numéricas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metricas-graficas">
-     1.5.5.2. Métricas gráficas
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#curva-roc">
-       Curva ROC
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#curva-pr">
-       Curva PR
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#mejora-significativa">
-       Mejora significativa
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aprendizaje-automatico-en-hep">
-   1.5.6. Aprendizaje automático en HEP
+   1.5.5. Aprendizaje automático en HEP
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#deteccion-de-anomalias">
-     1.5.6.1. Detección de anomalías
+     1.5.5.1. Detección de anomalías
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#busquedas-de-nueva-fisica-independiente-de-modelo">
-     1.5.6.2. Búsquedas de nueva física independiente de modelo
+     1.5.5.2. Búsquedas de nueva física independiente de modelo
     </a>
    </li>
   </ul>
@@ -491,17 +369,17 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="aprendizaje-automatico">
 <span id="ml"></span><h1><span class="section-number">1.5. </span>Aprendizaje automático<a class="headerlink" href="#aprendizaje-automatico" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>En física de altas energías (HEP) los datos obtenidos de experimentos son sumamente complejos y de grandes dimensiones. A medida que alcanzamos mayores energías en los aceleradores de partículas, conseguimos nuevos desafíos debido al aumento en el tamaño de los eventos, el volumen de datos y su complejidad. Por esto, en la última década ha habido un enfoque en el estudio y la mejora de métodos y herramientas de análisis de datos, puesto que el alcance de los experimentos puede ser limitado por el rendimiento de algoritmos y de recursos computacionales. El aprendizaje automático es una herramienta que promete algunas soluciones a estos problemas.</p>
-<p>Estos métodos han encontrado múltiples aplicaciones en HEP. Por ejemplo, en reconstrucción de hits y trayectorias en los detectores, identificación de partículas, clasificación y selección de eventos a nivel de detectores, simulaciones, procesamiento de datos, detección de anomalías, búsquedas independientes de modelo, entre otros<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id68" title="Dimitri Bourilkov. Machine and deep learning applications in particle physics. International Journal of Modern Physics A, 34(35):1930019, dec 2019. URL: https://doi.org/10.1142%2Fs0217751x19300199, doi:10.1142/s0217751x19300199.">62</a>, <a class="reference internal" href="../referencias/referencias.html#id83" title="Dan Guest, Kyle Cranmer, and Daniel Whiteson. Deep learning and its application to LHC physics. Annual Review of Nuclear and Particle Science, 68(1):161–181, oct 2018. URL: https://doi.org/10.1146%2Fannurev-nucl-101917-021019, doi:10.1146/annurev-nucl-101917-021019.">63</a>]</span>.  Notablemente, estas herramientas han tenido un gran impacto en la medición de la masa del quark top<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id87" title="Pushpalatha C. Bhat, Harrison B. Prosper, and Scott S. Snyder. Bayesian analysis of multisource data. Phys. Lett. B, 407:73–78, 1997. doi:10.1016/S0370-2693(97)00723-5.">64</a>]</span> en 1997 y el descubrimiento del bosón de Higgs<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id11" title="Aad et al. Observation of a new particle in the search for the standard model higgs boson with the atlas detector at the lhc. Physics Letters B, 716(1):1-29, 2012. URL: https://www.sciencedirect.com/science/article/pii/S037026931200857X, doi:https://doi.org/10.1016/j.physletb.2012.08.020.">1</a>, <a class="reference internal" href="../referencias/referencias.html#id10" title="Chatrchyan et al. Observation of a new boson at a mass of 125 gev with the cms experiment at the lhc. Physics Letters B, 716(1):30-61, 2012. URL: https://www.sciencedirect.com/science/article/pii/S0370269312008581, doi:https://doi.org/10.1016/j.physletb.2012.08.021.">2</a>]</span> en 2012<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id88" title="Fabricio Jimenez. Model independent searches for New Physics using Machine Learning at the ATLAS experiment. Theses, Université Clermont Auvergne [2017-2020], September 2019. URL: https://tel.archives-ouvertes.fr/tel-02402488.">65</a>]</span>. Un resumen al día del uso de aprendizaje automático en HEP se puede encontrar en <em><a class="reference external" href="https://iml-wg.github.io/HEPML-LivingReview/">A Living Review of Machine Learning for Particle Physics</a></em><span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id71" title="HEP ML Community. A Living Review of Machine Learning for Particle Physics. URL: https://iml-wg.github.io/HEPML-LivingReview/.">66</a>]</span>.</p>
+<p>Estos métodos han encontrado múltiples aplicaciones en HEP. Por ejemplo, en reconstrucción de hits y trayectorias en los detectores, identificación de partículas, clasificación y selección de eventos a nivel de detectores, simulaciones, procesamiento de datos, detección de anomalías, búsquedas independientes de modelo, entre otros<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id68" title="Dimitri Bourilkov. Machine and deep learning applications in particle physics. International Journal of Modern Physics A, 34(35):1930019, dec 2019. URL: https://doi.org/10.1142%2Fs0217751x19300199, doi:10.1142/s0217751x19300199.">62</a>, <a class="reference internal" href="../referencias/referencias.html#id83" title="Dan Guest, Kyle Cranmer, and Daniel Whiteson. Deep learning and its application to LHC physics. Annual Review of Nuclear and Particle Science, 68(1):161–181, oct 2018. URL: https://doi.org/10.1146%2Fannurev-nucl-101917-021019, doi:10.1146/annurev-nucl-101917-021019.">63</a>]</span>.  Notablemente, estas herramientas han tenido un gran impacto en la medición de la masa del quark top<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id87" title="Pushpalatha C. Bhat, Harrison B. Prosper, and Scott S. Snyder. Bayesian analysis of multisource data. Physics Letters B, 407:73–78, 1997. doi:10.1016/S0370-2693(97)00723-5.">64</a>]</span> en 1997 y el descubrimiento del bosón de Higgs<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id11" title="Aad et al. Observation of a new particle in the search for the standard model higgs boson with the atlas detector at the lhc. Physics Letters B, 716(1):1-29, 2012. URL: https://www.sciencedirect.com/science/article/pii/S037026931200857X, doi:https://doi.org/10.1016/j.physletb.2012.08.020.">1</a>, <a class="reference internal" href="../referencias/referencias.html#id10" title="Chatrchyan et al. Observation of a new boson at a mass of 125 gev with the cms experiment at the lhc. Physics Letters B, 716(1):30-61, 2012. URL: https://www.sciencedirect.com/science/article/pii/S0370269312008581, doi:https://doi.org/10.1016/j.physletb.2012.08.021.">2</a>]</span> en 2012<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id88" title="Fabricio Jimenez. Model independent searches for New Physics using Machine Learning at the ATLAS experiment. Theses, Université Clermont Auvergne [2017-2020], September 2019. URL: https://tel.archives-ouvertes.fr/tel-02402488.">65</a>]</span>. Un resumen al día del uso de aprendizaje automático en HEP se puede encontrar en <em><a class="reference external" href="https://iml-wg.github.io/HEPML-LivingReview/">A Living Review of Machine Learning for Particle Physics</a></em><span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id71" title="HEP ML Community. A Living Review of Machine Learning for Particle Physics. URL: https://iml-wg.github.io/HEPML-LivingReview/.">66</a>]</span>.</p>
 <p>A continuación, se presentan brevemente conceptos básicos de aprendizaje automático y los algoritmos a emplear en el proyecto, utilizando como referencia<span id="id6">[<a class="reference internal" href="../referencias/referencias.html#id69" title="Pankaj Mehta, Marin Bukov, Ching-Hao Wang, Alexandre G.R. Day, Clint Richardson, Charles K. Fisher, and David J. Schwab. A high-bias, low-variance introduction to machine learning for physicists. Physics Reports, 810:1–124, may 2019. URL: https://doi.org/10.1016%2Fj.physrep.2019.03.001, doi:10.1016/j.physrep.2019.03.001.">67</a>]</span>.</p>
 <div class="section" id="conceptos-basicos">
 <span id="ml-conceptos"></span><h2><span class="section-number">1.5.1. </span>Conceptos básicos<a class="headerlink" href="#conceptos-basicos" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El aprendizaje automático es un subcampo de la inteligencia artificial. Tiene como objetivo el desarrollo de algoritmos que mejoran su desempeño de manera cuantificable en una tarea determinada, &quot;aprendiendo&quot; mediante un proceso de entrenamiento que utiliza grandes conjuntos de datos.</p>
 <p>Típicamente los problemas hacen uso de un conjunto de datos <span class="math notranslate nohighlight">\(\mathcal{D}=(\mathbf{X},\mathbf{y})\)</span> donde <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> es una matriz de variables independientes y <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> es un vector de variables dependientes. La tarea es optimizar un modelo <span class="math notranslate nohighlight">\(f(\mathbf{x};\mathbf{\theta})\)</span> tal que <span class="math notranslate nohighlight">\(f:\mathbf{x}\rightarrow y\)</span> de los parámetros <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span>. Esto es, <span class="math notranslate nohighlight">\(f\)</span> es una función utilizada para predecir una salida de un vector de varibles de entrada. La funcion <span class="math notranslate nohighlight">\(f\)</span> optimiza alguna métrica escogida que se conoce como función de pérdida o costo <span class="math notranslate nohighlight">\(\mathcal{L}(\mathbf{y},f(\mathbf{x}))\)</span>, lo que se logra encontrando el valor de <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span> que minimiza <span class="math notranslate nohighlight">\(\mathcal{L}\)</span><span id="id7">[<a class="reference internal" href="../referencias/referencias.html#id69" title="Pankaj Mehta, Marin Bukov, Ching-Hao Wang, Alexandre G.R. Day, Clint Richardson, Charles K. Fisher, and David J. Schwab. A high-bias, low-variance introduction to machine learning for physicists. Physics Reports, 810:1–124, may 2019. URL: https://doi.org/10.1016%2Fj.physrep.2019.03.001, doi:10.1016/j.physrep.2019.03.001.">67</a>]</span>.</p>
-<p>El <strong>proceso de aprendizaje</strong> de un algoritmo se puede resumir en los siguientes pasos:</p>
+<p>El <strong>proceso de aprendizaje</strong> para problemas de predicción sigue una receta general que se puede resumir en los siguientes pasos:</p>
 <ol class="simple">
 <li><p>Pre-procesamiento de datos. En HEP puede ser, por ejemplo, mediante el cálculo de variables físicas. En este paso es común normalizar o escalar los datos y disminuir sus dimensiones.</p></li>
-<li><p>Se divide aleatoriamente <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> en dos conjuntos mutuamente exclusivos de entrenamiento y prueba. <span class="math notranslate nohighlight">\(\mathcal{D}_{train}\)</span> y <span class="math notranslate nohighlight">\(\mathcal{D}_{test}\)</span>, respectivamente. Se suele utilizar la mayor parte de los datos para entrenamiento. Por ejemplo, 70% entrenamiento y 30% prueba.</p></li>
-<li><p>El ajuste del modelo se hace minimizando la función de pérdida utilizando los datos de entrenamiento <span class="math notranslate nohighlight">\(\mathbf{\hat{\theta}}=\text{arg min}_{\theta}\{\mathcal{L}(\mathbf{y}_{train},f(\mathbf{X}_{train};\mathbf{\theta}))\}\)</span></p></li>
+<li><p>Se divide aleatoriamente <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> en conjuntos mutuamente exclusivos. Por ejemplo, de entrenamiento y prueba <span class="math notranslate nohighlight">\(\mathcal{D}_{train}\)</span> y <span class="math notranslate nohighlight">\(\mathcal{D}_{test}\)</span>, respectivamente.</p></li>
+<li><p>El ajuste del modelo se hace minimizando la función de pérdida, utilizando los datos de entrenamiento <span class="math notranslate nohighlight">\(\mathbf{\hat{\theta}}=\text{arg min}_{\theta}\{\mathcal{L}(\mathbf{y}_{train},f(\mathbf{X}_{train};\mathbf{\theta}))\}\)</span></p></li>
 <li><p>Finalmente, el rendimiento del modelo se evalúa calculando la función de pérdida con los datos de prueba <span class="math notranslate nohighlight">\(\mathcal{L}(\mathbf{y}_{test},f(\mathbf{X}_{test};\mathbf{\hat{\theta}}))\)</span>.</p></li>
 </ol>
 <p>El aprendizaje automático se puede dividir en tres categorías: aprendizaje supervisado, aprendizaje no-supervisado y aprendizaje reforzado. Aunque la distinción es útil, se suelen combinar estos tipos de aprendizaje, por lo que los términos se suelen utilizar de manera imprecisa y pueden ser confusos. En este proyecto se utilizarán métodos de aprendizaje supervisado y no supervisado.</p>
@@ -534,237 +412,18 @@ const thebe_selector_output = ".output, .cell_output"
 <span id="ml-nosupervisado"></span><h2><span class="section-number">1.5.3. </span>Aprendizaje no-supervisado<a class="headerlink" href="#aprendizaje-no-supervisado" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Ejemplos de tareas comunes de algoritmos no-supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo, detección de anomalías y clasificación.</p>
 </div>
-<div class="section" id="algoritmos-para-deteccion-de-anomalias">
-<span id="ml-algoritmos"></span><h2><span class="section-number">1.5.4. </span>Algoritmos para detección de anomalías<a class="headerlink" href="#algoritmos-para-deteccion-de-anomalias" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En este proyecto se trata un problema de clasificación binaria con datos altamente desbalanceados, lo que se conoce como una tarea de <em>detección de anomalías</em>. El objetivo de la detección de anomalías es predecir la categoría a la que pertenece una muestra: &quot;normal&quot; o &quot;anómala&quot;.</p>
-<p>A continuación, se explicarán los algoritmos utilizados en este trabajo, enfocándonos en su uso para esta tarea.</p>
-<div class="section" id="bosque-aleatorio">
-<h3><span class="section-number">1.5.4.1. </span>Bosque aleatorio<a class="headerlink" href="#bosque-aleatorio" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Los bosques aleatorios son algoritmos supervisados utilizados ampliamente para tareas complejas de clasificación. Estos algoritmos son ensambles de árboles de decisión.</p>
-<p>Un <strong>árbol de decisión</strong> utiliza una serie de preguntas para realizar la partición jerárquica de los datos. Su objetivo es hallar un conjunto de reglas que separen naturalmente el espacio de características<span id="id11">[<a class="reference internal" href="../referencias/referencias.html#id73" title="Anthony J. Myles, Robert N. Feudale, Yang Liu, Nathaniel A. Woody, and Steven D. Brown. An introduction to decision tree modeling. Journal of Chemometrics, 18(6):275-285, 2004. doi:10.1002/cem.873.">71</a>]</span>.</p>
-<div class="figure align-default" id="ml-arboldecision">
-<a class="reference internal image-reference" href="../../_images/ml-arboldecision.png"><img alt="../../_images/ml-arboldecision.png" src="../../_images/ml-arboldecision.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.17 </span><span class="caption-text">Ejemplo de un árbol de decisión. Para una conjunto de características <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, su etiqueta <span class="math notranslate nohighlight">\(y\)</span> es predicha, recorriéndolo desde su raíz, pasando por las hojas, siguiendo las ramas que satisface. De <span id="id12">[<a class="reference internal" href="../referencias/referencias.html#id69" title="Pankaj Mehta, Marin Bukov, Ching-Hao Wang, Alexandre G.R. Day, Clint Richardson, Charles K. Fisher, and David J. Schwab. A high-bias, low-variance introduction to machine learning for physicists. Physics Reports, 810:1–124, may 2019. URL: https://doi.org/10.1016%2Fj.physrep.2019.03.001, doi:10.1016/j.physrep.2019.03.001.">67</a>]</span>.</span><a class="headerlink" href="#ml-arboldecision" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
-<p>Los <em>bosques aleatorios</em> son clasificadores que consisten en una colección de árboles de decisión <span class="math notranslate nohighlight">\(\{h(\mathbf{x},\Theta_k),k=1,\dots\}\)</span> donde <span class="math notranslate nohighlight">\(\{\Theta_k\}\)</span> son vectores aleatorios e independientes con la misma distribución. Cada árbol emite un voto unitario para la clase más popular dada la entrada <span class="math notranslate nohighlight">\(\mathbf{x}\)</span><span id="id13">[<a class="reference internal" href="../referencias/referencias.html#id72" title="Leo Breiman. Random Forests. Machine Learning, 45(1):5–32, 2001. doi:10.1023/A:1010933404324.">72</a>]</span>. La clase con más votos es asignada a esta entrada.</p>
-<div class="figure align-default" id="ml-bosquealeatorio">
-<a class="reference internal image-reference" href="../../_images/ml-bosquealeatorio.png"><img alt="../../_images/ml-bosquealeatorio.png" src="../../_images/ml-bosquealeatorio.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.18 </span><span class="caption-text">Representación visual del funcionamiento de un bosque aleatorio. De <span id="id14">[<a class="reference internal" href="../referencias/referencias.html#id76" title="Ankit Chauhan. Random forest classifier and its hyperparameters. 2021. URL: https://medium.com/analytics-vidhya/random-forest-classifier-and-its-hyperparameters-8467bec755f6.">73</a>]</span></span><a class="headerlink" href="#ml-bosquealeatorio" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
-</div>
-<div class="section" id="clasificador-del-gradiente-del-impulso">
-<h3><span class="section-number">1.5.4.2. </span>Clasificador del gradiente del impulso<a class="headerlink" href="#clasificador-del-gradiente-del-impulso" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>El clasificador del gradiente del impulso (GBC) usualmente utiliza árboles de regresión como aprendiz débil. Es un modelo supervisado y aditivo que avanza por etapas<span id="id15">[<a class="reference internal" href="../referencias/referencias.html#id78" title="Sklearn.ensemble.gradientboostingclassifier. URL: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html.">74</a>]</span>. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior.</p>
-<p>GBC se puede usar para regresión y clasificación. Su formulación matemática es la siguiente<span id="id16">[<a class="reference internal" href="../referencias/referencias.html#id80" title="Ensemble methods: gradient tree boosting. URL: https://scikit-learn.org/stable/modules/ensemble.html#gradient-tree-boosting.">75</a>]</span>.</p>
-<p>La predicción <span class="math notranslate nohighlight">\(y_i\)</span> del modelo para la entrada <span class="math notranslate nohighlight">\(x_i\)</span> está dada por:</p>
-<div class="math notranslate nohighlight" id="equation-ml-gbcpred">
-<span class="eqno">(1.12)<a class="headerlink" href="#equation-ml-gbcpred" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \hat{y}_i=F_M(x_i)=\sum_{m=1}^{M}h_m(x_i)
-\]</div>
-<p>donde <span class="math notranslate nohighlight">\(h_m\)</span> son los aprendices débiles. En el caso de clasificación, el mapeo del valor de <span class="math notranslate nohighlight">\(F_M(x_i)\)</span> a una clase o probabilidad es dependiente de la pérdida. La probabilidad de que <span class="math notranslate nohighlight">\(x_i\)</span> pertenezca a la clase positiva se modela usando la función sigmoid <span class="math notranslate nohighlight">\(p(y_i=|x_i)=\sigma(F_M(x_i))\)</span></p>
-<p>El GBC se construye de la siguiente manera:</p>
-<div class="math notranslate nohighlight" id="equation-ml-gbc">
-<span class="eqno">(1.13)<a class="headerlink" href="#equation-ml-gbc" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    F_m(x)=F_{m-1}(x)+h_m(x)
-\]</div>
-<p>donde <span class="math notranslate nohighlight">\(h_m\)</span> se ajusta para minimizar la suma de las pérdidas dado el ensamble anterior <span class="math notranslate nohighlight">\(F_{m-1}\)</span></p>
-<div class="math notranslate nohighlight" id="equation-ml-gbcaprendizdebil">
-<span class="eqno">(1.14)<a class="headerlink" href="#equation-ml-gbcaprendizdebil" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    h_m\approx\text{arg min}_h\sum_{i=1}^{n}h(x_i)g_i
-\]</div>
-<p>donde <span class="math notranslate nohighlight">\(g_i\)</span> es la derivada de la función de pérdida con respecto a su segundo parámetro, evaluada en <span class="math notranslate nohighlight">\(F_{m-1}(x)\)</span>. La suma en <a class="reference internal" href="#equation-ml-gbcaprendizdebil">(1.14)</a> se minimiza si <span class="math notranslate nohighlight">\(h(x_i)\)</span> se ajusta para predecir un valor proporcional al gradiente negativo <span class="math notranslate nohighlight">\(−g_i\)</span>. Por lo tanto, en cada iteración, el estimador <span class="math notranslate nohighlight">\(h_m\)</span> está ajustado para predecir los gradientes negativos de las muestras. Los gradientes se actualizan en cada iteración. Este proceso puede considerarse como una especie de descenso de gradiente en un espacio funcional.</p>
-</div>
-<div class="section" id="analisis-de-discriminante-cuadratico">
-<h3><span class="section-number">1.5.4.3. </span>Análisis de discriminante cuadrático<a class="headerlink" href="#analisis-de-discriminante-cuadratico" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>El análisis de discriminante cuadrático<span id="id17">[<a class="reference internal" href="../referencias/referencias.html#id81" title="1.2. linear and quadratic discriminant analysis. Accessed: 08-04-2022. URL: scikit-learn.org/stable/modules/lda_qda.html.">76</a>]</span> es un clasificador supervisado con un límite de decisión cuadrático. El modelo asume que las densidades condicionales de clase <span class="math notranslate nohighlight">\(P(\mathbf{X}|y=k)\)</span>, para cada clase <span class="math notranslate nohighlight">\(k\)</span>, están distribuidas normalmente.</p>
-<p>Las predicciones para cada muestra de entrenamiento <span class="math notranslate nohighlight">\(x\)</span> se obtienen utilizando el teorema de Bayes:</p>
-<div class="math notranslate nohighlight">
-\[
-    P(y=k|x) = \frac{P(x|y=k)P(y=k)}{P(x)}
-\]</div>
-<p>Donde se selecciona la clase <span class="math notranslate nohighlight">\(k\)</span> que maximice esta probabilidad.</p>
-<div class="figure align-default" id="ml-qda">
-<a class="reference internal image-reference" href="../../_images/ml-qda.png"><img alt="../../_images/ml-qda.png" src="../../_images/ml-qda.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.19 </span><span class="caption-text">Clasificación con QDA. a) Lods puntos a ser clasificados, b) los límites o fronteras de decisión. La barra de color indica la probabilidad de pertenecer a la clase 1. De <span id="id18">[<a class="reference internal" href="../referencias/referencias.html#id82" title="Quadratic discriminant analysis. 2021. Accessed: 08-04-2022. URL: https://towardsdatascience.com/quadratic-discriminant-analysis-ae55d8a8148a.">77</a>]</span></span><a class="headerlink" href="#ml-qda" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
-</div>
-<div class="section" id="redes-neuronales">
-<h3><span class="section-number">1.5.4.4. </span>Redes neuronales<a class="headerlink" href="#redes-neuronales" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Las redes neuronales son modelos supervisados y no-lineales inspirados en las neuronas. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.</p>
-<p>Las redes neuronales se definen mediante una serie de transformaciones que mapean la entrada <span class="math notranslate nohighlight">\(x\)</span> a estados &quot;ocultos&quot; <span class="math notranslate nohighlight">\(\mathbf{h}_i\)</span>. Finalmente, una última transformación mapea estos estados a una función de salida <span class="math notranslate nohighlight">\(\mathbf{y}\)</span><span id="id19">[<a class="reference internal" href="../referencias/referencias.html#id83" title="Dan Guest, Kyle Cranmer, and Daniel Whiteson. Deep learning and its application to LHC physics. Annual Review of Nuclear and Particle Science, 68(1):161–181, oct 2018. URL: https://doi.org/10.1146%2Fannurev-nucl-101917-021019, doi:10.1146/annurev-nucl-101917-021019.">63</a>]</span>.</p>
-<p>Las transformaciones se pueden escribir matemáticamente como:</p>
-<div class="math notranslate nohighlight" id="equation-ml-nnneurona">
-<span class="eqno">(1.15)<a class="headerlink" href="#equation-ml-nnneurona" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \mathbf{h}_i = g_i(W_i\mathbf{h}_i+\mathbf{b}_i)
-\]</div>
-<p>donde <span class="math notranslate nohighlight">\(g_i\)</span> es una función conocida como <em>función de activación</em> y <span class="math notranslate nohighlight">\(\mathbf{h}_i\)</span> representa la transformación iésima de <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, llamada <em>embedding</em>. <span class="math notranslate nohighlight">\(W\)</span> es la matriz de los <em>pesos</em> y <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> el vector de los <em>sesgos</em>.</p>
-<p>El objetivo es hallar los pesos y sesgos que optimizan la función de pérdida. Esto se logra utilizando las etiquetas de los datos y calculando el gradiente de la función de pérdida con respecto a los parámetros del modelo. Este prceso se conoce como <em>retropropagación</em> y requiere que las funciones sean diferenciables.</p>
-<p>Las transformaciones se ordenan en capas (<a class="reference internal" href="#ml-nn"><span class="std std-numref">Figura 1.20</span></a>), donde la salida de una capa es la entrada de la siguiente.</p>
-<div class="figure align-default" id="ml-nn">
-<a class="reference internal image-reference" href="../../_images/ml-nn.png"><img alt="../../_images/ml-nn.png" src="../../_images/ml-nn.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.20 </span><span class="caption-text">Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente. De <span id="id20">[<a class="reference internal" href="../referencias/referencias.html#id69" title="Pankaj Mehta, Marin Bukov, Ching-Hao Wang, Alexandre G.R. Day, Clint Richardson, Charles K. Fisher, and David J. Schwab. A high-bias, low-variance introduction to machine learning for physicists. Physics Reports, 810:1–124, may 2019. URL: https://doi.org/10.1016%2Fj.physrep.2019.03.001, doi:10.1016/j.physrep.2019.03.001.">67</a>]</span></span><a class="headerlink" href="#ml-nn" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
-<p>La tarea de la red depende de su arquitectura. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la <em>entropía cruzada binaria</em> como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales.</p>
-</div>
-<div class="section" id="k-means">
-<h3><span class="section-number">1.5.4.5. </span>K-means<a class="headerlink" href="#k-means" title="Enlazar permanentemente con este título">¶</a></h3>
-<p><em>K-means</em> es un algoritmo no-supervisado que separa los datos en <span class="math notranslate nohighlight">\(K\)</span> grupos con igual varianza. Los grupos están caracterizados por la media de los datos pertenecientes al grupo. Estos se conocen como &quot;centroides&quot; y se representan con <span class="math notranslate nohighlight">\(\mu_j\)</span><span id="id21">[<a class="reference internal" href="../referencias/referencias.html#id84" title="Clustering: k-means. 2021. Accessed: 09-04-2022. URL: https://scikit-learn.org/stable/modules/clustering.html#k-means.">78</a>]</span>.</p>
-<p>El objetivo del algoritmo es minimizar la <em>inercia</em> o <em>criterio de suma de cuadrados</em> dentro del grupo, definida como:</p>
-<div class="math notranslate nohighlight" id="equation-ml-kmeansinertia">
-<span class="eqno">(1.16)<a class="headerlink" href="#equation-ml-kmeansinertia" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \mathcal{C}(\{x,\mathbf{\mu}\})=\sum_{k=1}^{K}\sum_{n=1}^{N}r_{nk}(\mathbf{x}_n-\mu_k)^2
-\]</div>
-<p>donde <span class="math notranslate nohighlight">\(\mathbf{x}_n\)</span> es la observación enésima y <span class="math notranslate nohighlight">\(r_{nk}\)</span> es la asignación. <span class="math notranslate nohighlight">\(r_{nk}\)</span> es 1 si <span class="math notranslate nohighlight">\(x_n\)</span> pertenece al grupo y 0 de otra forma.</p>
-<p>El algoritmo funciona mediante los siguientes pasos:</p>
-<ol class="simple">
-<li><p>Escoger los centroides. En la primera inicialización se escogen puntos aleatorios de los datos.</p></li>
-<li><p>Asignar cada muestra al centroide más cercano, minimizando <span class="math notranslate nohighlight">\(\mathcal{C}\)</span></p></li>
-<li><p>Crear nuevos centroides tomando el valor medio de todas las muestras asignadas a cada centroide anterior.</p></li>
-<li><p>Calcular la diferencia entre los centroides anteriores y los nuevos.</p></li>
-</ol>
-<p>Los últimos tres pasos se repiten hasta que la diferencia entre los centroides esté debajo de un umbral, es decir, hasta que los centroides no se muevan significativamente.</p>
-<div class="figure align-default" id="ml-kmeans">
-<a class="reference internal image-reference" href="../../_images/ml-kmeans.webp"><img alt="../../_images/ml-kmeans.webp" src="../../_images/ml-kmeans.webp" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.21 </span><span class="caption-text">Primeras cinco iteraciones de dos inicializaciones diferentes de K-means. De <span id="id22">[<a class="reference internal" href="../referencias/referencias.html#id85" title="K-means clustering in python: a practical guide. 2021. Accessed: 09-04-2022. URL: https://realpython.com/k-means-clustering-python/.">79</a>]</span></span><a class="headerlink" href="#ml-kmeans" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
-<p>Como la inicialización de los centroides es aleatoria, usualmente se realizan múltiples inicializaciones y se escoge la que resulte en un menor valor de la inercia.</p>
-</div>
-</div>
 <div class="section" id="metricas-de-rendimiento">
-<span id="ml-metricasderendimiento"></span><h2><span class="section-number">1.5.5. </span>Métricas de rendimiento<a class="headerlink" href="#metricas-de-rendimiento" title="Enlazar permanentemente con este título">¶</a></h2>
+<span id="ml-metricasderendimiento"></span><h2><span class="section-number">1.5.4. </span>Métricas de rendimiento<a class="headerlink" href="#metricas-de-rendimiento" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>La clasificación es una de las tareas más comunes en el aprendizaje automático. Sin embargo, no existe un algoritmo que funcione mejor para todos los problemas; cada algoritmo tiene ventajas y desventajas. Por lo tanto, requerimos formas de medir el grado en que la clasificación sugerida y la real coinciden.</p>
-<p>El uso de estas métricas depende del problema de clasificación específico. Sin embargo, se hará un resumen general de las más comunes en clasificación binaria.</p>
-<div class="section" id="metricas-numericas">
-<h3><span class="section-number">1.5.5.1. </span>Métricas numéricas<a class="headerlink" href="#metricas-numericas" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>La métrica de evaluación primaria es la <em>matriz de confusión</em>. En esta matriz se resumen el número de etiquetas predichas correctamente e incorrectamente.</p>
-<table class="colwidths-auto table" id="ml-matriz-confusion">
-<caption><span class="caption-number">Tabla 1.1 </span><span class="caption-text">Matriz de confusión.</span><a class="headerlink" href="#ml-matriz-confusion" title="Enlace permanente a esta tabla">¶</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>Clase: <strong>P</strong>ositivos<br>(HEP: <strong>señal</strong> <span class="math notranslate nohighlight">\(S_{tot}\)</span>)</p></th>
-<th class="head"><p>Clase: <strong>N</strong>egativos<br>(HEP: <strong>fondo</strong> <span class="math notranslate nohighlight">\(B_{tot}\)</span>)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Clasificado como: <strong>P</strong>ositivos<br>(HEP: <strong>seleccionados</strong>)</p></td>
-<td><p><strong>Verdaderos Positivos (TP)</strong><br>(HEP: señal seleccionada <span class="math notranslate nohighlight">\(S_{sel}\)</span>)</p></td>
-<td><p><strong>Falsos Positivos (FP)</strong><br>(HEP: fondo seleccionado <span class="math notranslate nohighlight">\(B_{sel}\)</span>)</p></td>
-</tr>
-<tr class="row-odd"><td><p>Clasificado como: <strong>N</strong>egativos<br>(HEP: <strong>rechazados</strong>)</p></td>
-<td><p><strong>Falsos Negativos(FN)</strong><br>(HEP: señal rechazada <span class="math notranslate nohighlight">\(S_{rej}\)</span>)</p></td>
-<td><p><strong>Verdaderos Negativos (TN)</strong><br>(HEP: fondo rechazado <span class="math notranslate nohighlight">\(B_{rej}\)</span>)</p></td>
-</tr>
-</tbody>
-</table>
-<p>La diagonal representa las etiquetas predichas correctamente, mientras que los elementos fuera de la diagonal son las predicciones incorrectas. A partir de los valores de esta matriz se definen el resto de las métricas.</p>
-<p>En la <a class="reference internal" href="#ml-metricas"><span class="std std-numref">Tabla 1.2</span></a> se presenta un resumen de las métricas utilizadas comúnmente para clasificación binaria<span id="id23">[<a class="reference internal" href="../referencias/referencias.html#id90" title="Marina Sokolova and Guy Lapalme. A systematic analysis of performance measures for classification tasks. Information Processing &amp; Management, 45(4):427-437, 2009. URL: https://www.sciencedirect.com/science/article/pii/S0306457309000259, doi:https://doi.org/10.1016/j.ipm.2009.03.002.">80</a>]</span>.</p>
-<table class="colwidths-auto table" id="ml-metricas">
-<caption><span class="caption-number">Tabla 1.2 </span><span class="caption-text">Métricas para la clasificación binaria utilizando la notación en la matriz de confusión.</span><a class="headerlink" href="#ml-metricas" title="Enlace permanente a esta tabla">¶</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><p>Métrica</p></th>
-<th class="head"><p>Ecuación</p></th>
-<th class="head"><p>Enfoque de evaluación</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Exactitud</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{TP+TN}{TP+FP+FN+TN}\)</span></p></td>
-<td><p>Número correcto de predicciones sobre todas las predicciones hechas</p></td>
-</tr>
-<tr class="row-odd"><td><p>Precisión</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{TP}{TP+FP}\)</span></p></td>
-<td><p>Proporción de tasa de verdaderos positivos</p></td>
-</tr>
-<tr class="row-even"><td><p>Recuperación</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{TP}{TP+FN}\)</span></p></td>
-<td><p>Efectividad del clasificador para identificar etiquetas positivas</p></td>
-</tr>
-<tr class="row-odd"><td><p>Especificidad</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{TN}{TN+FP}\)</span></p></td>
-<td><p>Efectividad del clasificador para identificar etiquetas negativas</p></td>
-</tr>
-<tr class="row-even"><td><p>Puntaje f1</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{(\beta^2+1)TP}{(\beta^2+1)TP+\beta^2FN+FP}\)</span></p></td>
-<td><p>Promedio ponderado de precisión y sensibilidad</p></td>
-</tr>
-</tbody>
-</table>
-<p>El nombre de las métricas varía en distintas áreas. En HEP, la recuperación y especificidad se conocen como <em>eficiencia de señal</em> (<span class="math notranslate nohighlight">\(\epsilon_s\)</span>) y <em>rechazo de fondo</em> (<span class="math notranslate nohighlight">\(1-\epsilon_{b}\)</span>), respectivamente. La precisión se conoce como <em>pureza</em> (<span class="math notranslate nohighlight">\(\rho\)</span>)<span id="id24">[<a class="reference internal" href="../referencias/referencias.html#id91" title="Andrea Valassi. Fisher information metrics for binary classifier evaluation and training. August 2018. URL: https://doi.org/10.5281/zenodo.1405727, doi:10.5281/zenodo.1405727.">81</a>]</span>.</p>
-<p>Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Sin embargo, se puede utilizar la <em>exactitud balanceada</em>:</p>
-<div class="math notranslate nohighlight" id="equation-ml-exactitudbalanceada">
-<span class="eqno">(1.17)<a class="headerlink" href="#equation-ml-exactitudbalanceada" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}
-\]</div>
-</div>
-<div class="section" id="metricas-graficas">
-<h3><span class="section-number">1.5.5.2. </span>Métricas gráficas<a class="headerlink" href="#metricas-graficas" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Las métricas gráficas más conocidas son la <em>curva característica de funcionamiento del receptor</em> (curva ROC) y la <em>curva precisión-recuperación</em> (curva PR).</p>
-<div class="section" id="curva-roc">
-<h4>Curva ROC<a class="headerlink" href="#curva-roc" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Los clasificadores usualmente asignan un puntaje <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> de manera que una puntuación más alta significa mayor probabilidad de ser señal. La clasificación discreta se logra escogiendo un <em>punto de operación</em>, es decir, escogiendo un umbral de decisión <span class="math notranslate nohighlight">\(\mathcal{D}_{thr}\)</span>, de manera que todas las muestras <span class="math notranslate nohighlight">\(\mathcal{D}\geq\mathcal{D}_{thr}\)</span> se clasifican como positivas, o señal, y todas las demás como negativas, o fondo<span id="id25">[<a class="reference internal" href="../referencias/referencias.html#id92" title="Valassi, Andrea. Binary classifier metrics for optimizing hep event selection. EPJ Web Conf., 214:06004, 2019. URL: https://doi.org/10.1051/epjconf/201921406004, doi:10.1051/epjconf/201921406004.">82</a>]</span>.</p>
-<p>La <em>curva ROC</em> se construye graficando la recuperación vs. 1-especificidad para varios umbrales de decisión. En términos de HEP, la eficiencia de señal vs. la eficiencia de fondo.</p>
-<div class="figure align-default" id="ml-roc">
-<a class="reference internal image-reference" href="../../_images/ml-roc.png"><img alt="../../_images/ml-roc.png" src="../../_images/ml-roc.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.22 </span><span class="caption-text">Ilustración de la curva ROC. La diagonal representa a un clasificador aleatorio o que no distingue entre clases. En este caso, el clasificador con la curva azul es mejor distinguiendo entre clases. De MartinThoma, CC0, via <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Roc-draft-xkcd-style.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#ml-roc" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
-<p>El <em>área debajo de la curva</em> (AUC) representa la habilidad del clasificador para distinguir entre clases.</p>
-<div class="math notranslate nohighlight" id="equation-ml-auc">
-<span class="eqno">(1.18)<a class="headerlink" href="#equation-ml-auc" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \text{AUC}=\int_0^1\epsilon_s\text{d}\epsilon_b
-\]</div>
-<p>Un valor de AUC de 0.5 indica que la predicción no es mejor que una clasificación aleatoria. Menor a 0.5 indica que el clasificador está clasificando de manera inversa<span id="id26">[<a class="reference internal" href="../referencias/referencias.html#id93" title="Matthias Kohl. Performance measures in binary classification. International Journal of Statistics in Medical Research, 1(1):79–81, Oct. 2012. URL: https://lifescienceglobal.com/pms/index.php/ijsmr/article/view/512, doi:10.6000/1929-6029.2012.01.01.08.">83</a>]</span>.</p>
-<p>En HEP se utilizan versiones de esta curva. Es común graficar <strong><em>eficiencia de señal</em> vs. <em>rechazo de fondo</em></strong>, en vez de la curva ROC clásica, y el AUC se calcula en términos de estas variables. También se suele graficar el <strong><em>inverso de la eficiencia de fondo</em> vs. <em>eficiencia de señal</em></strong>.</p>
-<div class="figure align-default" id="ml-otrasroc">
-<a class="reference internal image-reference" href="../../_images/ml-otrasroc.png"><img alt="../../_images/ml-otrasroc.png" src="../../_images/ml-otrasroc.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.23 </span><span class="caption-text">Ejemplos de otras versiones de la curva ROC. A la izquierda la curvas de eficiencia de señal vs. rechazo de fondo. A la derecha, inverso de la eficiencia de fondo vs. eficiencia de señal. De <span id="id27">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">84</a>]</span></span><a class="headerlink" href="#ml-otrasroc" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
-<p>La curva ROC y el AUC tienen sus limitaciones<span id="id28">[<a class="reference internal" href="../referencias/referencias.html#id92" title="Valassi, Andrea. Binary classifier metrics for optimizing hep event selection. EPJ Web Conf., 214:06004, 2019. URL: https://doi.org/10.1051/epjconf/201921406004, doi:10.1051/epjconf/201921406004.">82</a>]</span>:</p>
-<ul class="simple">
-<li><p>La comparación de dos curvas ROC que se cruzan no es tan evidente, ya que el AUC se construye como una integral que otorga el mismo peso a todas las partes de la curva. Sin embargo, para la clasificación se escoge un punto específico. En este caso, otras métricas se deben utilizar para definir cuál clasificador proporciona mejor rendimiento en la región donde se elija el umbral de decisión.</p></li>
-<li><p>El uso de las curvas ROC puede no ser apropiado para problemas que incluyan datos altamente desbalanceados, debido a que conduce a evaluaciones demasiado optimistas. La curva PR puede ser más informativa en este caso</p></li>
-</ul>
-</div>
-<div class="section" id="curva-pr">
-<h4>Curva PR<a class="headerlink" href="#curva-pr" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Para datos altamente desbalanceados se suele sugerir el uso de la curva PR:</p>
-<blockquote>
-<div><p>Si la proporción de instancias positivas y negativas en un conjunto de prueba cambia, la curva ROC no cambia. [...]Métricas como la exactitud, la precisión, las curvas de aumento y el puntaje F usan valores de ambas columnas de la matriz de confusión. Cuando la distribución de clases cambia, estas métricas también cambian, incluso si el rendimiento del clasificador no cambia. Las curvas ROC se basan en la tasa de TP y FP, en la cual cada dimensión es una proporción de la columna, por lo que no depende de la distribución de clases.</p>
-<p>— ROC Graphs: Notes and Practical Considerations for Data Mining Researchers, 2003<span id="id29">[<a class="reference internal" href="../referencias/referencias.html#id95" title="Tom Fawcett. Roc graphs: notes and practical considerations for researchers. Machine Learning, 31:1-38, 01 2004.">85</a>]</span>.</p>
-</div></blockquote>
-<div class="figure align-default" id="ml-curvapr">
-<a class="reference internal image-reference" href="../../_images/ml-curvapr.png"><img alt="../../_images/ml-curvapr.png" src="../../_images/ml-curvapr.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.24 </span><span class="caption-text">Ejemplos de curva precisión-recuperación. De <span id="id30">[<a class="reference internal" href="../referencias/referencias.html#id91" title="Andrea Valassi. Fisher information metrics for binary classifier evaluation and training. August 2018. URL: https://doi.org/10.5281/zenodo.1405727, doi:10.5281/zenodo.1405727.">81</a>]</span></span><a class="headerlink" href="#ml-curvapr" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
-<p>Análogo al AUC, se utiliza el área bajo la curva PR (AUCPR) y la precisión promedio (AP). La precisión promedio resume la curva PR utilizando la media ponderada de las precisiones logradas en cada umbral, utilizando como peso el aumento en recuperación del umbral anterior<span id="id31">[<a class="reference internal" href="../referencias/referencias.html#id96" title="Precision-recall. URL: https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py.">86</a>]</span>.</p>
-<div class="math notranslate nohighlight" id="equation-ml-precisionpromedio">
-<span class="eqno">(1.19)<a class="headerlink" href="#equation-ml-precisionpromedio" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    AP=\sum_n (R_n - R_{n-1})P_n
-\]</div>
-<p>donde <span class="math notranslate nohighlight">\(P_n\)</span> y <span class="math notranslate nohighlight">\(R_n\)</span> son la precisión y la recuperación del umbral enésimo.</p>
-</div>
-<div class="section" id="mejora-significativa">
-<h4>Mejora significativa<a class="headerlink" href="#mejora-significativa" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Otra medida utilizada regularmente en HEP es la <em>mejora significativa</em> definida como:</p>
-<div class="math notranslate nohighlight" id="equation-ml-mejorasignificativa">
-<span class="eqno">(1.20)<a class="headerlink" href="#equation-ml-mejorasignificativa" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \text{Mejora significativa} = \frac{\epsilon_s}{\sqrt{\epsilon_b}}
-\]</div>
-<p>Una mejora significativa = 2 significa que la mejora significativa inicial es amplificada por un factor de 2 después de utilizar la estrategia de clasificación<span id="id32">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">84</a>]</span>.</p>
-<p>Así, se grafica la <em>mejora significativa</em> vs. <em>eficiencia de señal</em> con el fin de visualizar la mejora significativa del clasificador en múltiples umbrales.</p>
-<div class="figure align-default" id="ml-significancia">
-<a class="reference internal image-reference" href="../../_images/ml-significancia.png"><img alt="../../_images/ml-significancia.png" src="../../_images/ml-significancia.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.25 </span><span class="caption-text">Ejemplo de curva de mejora significativa. De <span id="id33">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">84</a>]</span></span><a class="headerlink" href="#ml-significancia" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
-</div>
-</div>
+<p>Algunas métricas númericas comúnes son la exactitud, precisión, recuperación, especificidad y puntaje f1. También se utilizan métricas gráficas como la <em>curva característica de funcionamiento del receptor</em> (curva ROC) y la <em>curva precisión-recuperación</em> (curva PR). El uso de estas métricas depende del problema de clasificación específico. Un resumen general de las métricas se presentará más adelante, en la {numref}``.</p>
 </div>
 <div class="section" id="aprendizaje-automatico-en-hep">
-<span id="ml-hep"></span><h2><span class="section-number">1.5.6. </span>Aprendizaje automático en HEP<a class="headerlink" href="#aprendizaje-automatico-en-hep" title="Enlazar permanentemente con este título">¶</a></h2>
+<span id="ml-hep"></span><h2><span class="section-number">1.5.5. </span>Aprendizaje automático en HEP<a class="headerlink" href="#aprendizaje-automatico-en-hep" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Como se mencionó anteriormente, el uso de aprendizaje automático en HEP es amplio. Sin embargo, este trabajo se enfoca en las técnicas de <em>detección de anomalías</em> y <em>búsquedas libres de modelo</em>.</p>
 <div class="section" id="deteccion-de-anomalias">
-<h3><span class="section-number">1.5.6.1. </span>Detección de anomalías<a class="headerlink" href="#deteccion-de-anomalias" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Hasta ahora no se ha confirmado ninguna señal de nueva física. Parte de la dificultad recae en diferenciar la pequeña cantidad de eventos que podrían ser señales nuevas de los eventos de fondo o que no son de interés. Debido a esto, se ha planteado el uso de algoritmos de detección de anomalías para clasificación de los eventos de señal.</p>
-<p>Las técnicas de detección de anomalías se pueden dividir en dos tipos<span id="id34">[<a class="reference internal" href="../referencias/referencias.html#id89" title="Katherine Fraser, Samuel Homiller, Rashmish K. Mishra, Bryan Ostdiek, and Matthew D. Schwartz. Challenges for unsupervised anomaly detection in particle physics. Journal of High Energy Physics, mar 2022. URL: https://doi.org/10.1007%2Fjhep03%282022%29066, doi:10.1007/jhep03(2022)066.">87</a>]</span>.</p>
+<h3><span class="section-number">1.5.5.1. </span>Detección de anomalías<a class="headerlink" href="#deteccion-de-anomalias" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Hasta ahora no se ha confirmado ninguna señal de nueva física. Parte de la dificultad recae en diferenciar la pequeña cantidad de eventos que podrían ser señales nuevas de los eventos de fondo o que no son de interés. Debido a esto, se ha planteado el uso de algoritmos de detección de anomalías para clasificación de los eventos de señal. La tarea de detección de anomalías tiene como objetivo predecir la categoría a la que pertenece una muestra: &quot;normal&quot; o &quot;anómala&quot;.</p>
+<p>Las técnicas de detección de anomalías se pueden dividir en dos tipos<span id="id11">[<a class="reference internal" href="../referencias/referencias.html#id89" title="Katherine Fraser, Samuel Homiller, Rashmish K. Mishra, Bryan Ostdiek, and Matthew D. Schwartz. Challenges for unsupervised anomaly detection in particle physics. Journal of High Energy Physics, mar 2022. URL: https://doi.org/10.1007%2Fjhep03%282022%29066, doi:10.1007/jhep03(2022)066.">71</a>]</span>.</p>
 <ul class="simple">
 <li><p>Algunas señales son cualitativamente distintas de del fondo y se utilizan técnicas para caracterizar estos eventos como anómalos.</p></li>
 <li><p>Algunos eventos de señal son similares a los de fondo, por lo que se explota información sobre la distribución de probabilidad esperada del fondo para hallar señal.</p></li>
@@ -772,10 +431,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Este último caso es el que se trata en este proyecto y los detalles se discutirán en la <a class="reference internal" href="olimpiadas-LHC.html#lhco"><span class="std std-ref">última sección</span></a> de este capítulo.</p>
 </div>
 <div class="section" id="busquedas-de-nueva-fisica-independiente-de-modelo">
-<h3><span class="section-number">1.5.6.2. </span>Búsquedas de nueva física independiente de modelo<a class="headerlink" href="#busquedas-de-nueva-fisica-independiente-de-modelo" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>La mayor parte de la búsqueda de nueva física está guiada por modelos específicos de BSM, supersimetría o materia oscura. Sin embargo, con la introducción del aprendizaje automático, se han propuesto métodos para la búsqueda independiente de modelo. El objetivo general de estas búsquedas es que sean lo más agnósticas posibles al proceso físico subyacente que puede ser responsable de la señal de nueva física<span id="id35">[<a class="reference internal" href="../referencias/referencias.html#id88" title="Fabricio Jimenez. Model independent searches for New Physics using Machine Learning at the ATLAS experiment. Theses, Université Clermont Auvergne [2017-2020], September 2019. URL: https://tel.archives-ouvertes.fr/tel-02402488.">65</a>]</span>.</p>
-<p>Un ejemplo de una búsqueda independiente de modelo es <span id="id36">[<a class="reference internal" href="../referencias/referencias.html#id86" title="Andrea De Simone and Thomas Jacques. Guiding new physics searches with unsupervised learning. The European Physical Journal C, mar 2019. URL: https://doi.org/10.1140%2Fepjc%2Fs10052-019-6787-3, doi:10.1140/epjc/s10052-019-6787-3.">88</a>]</span>, donde se plantea el uso de aprendizaje no supervisado para comparar las distribuciones de densidad de probabilidad de dos muestras: simulaciones de eventos del modelo estándar, o lo que sería el fondo para las búsquedas de nueva física, y datos reales.</p>
-<p>Una búsqueda de este tipo es<span id="id37">[<a class="reference internal" href="../referencias/referencias.html#id89" title="Katherine Fraser, Samuel Homiller, Rashmish K. Mishra, Bryan Ostdiek, and Matthew D. Schwartz. Challenges for unsupervised anomaly detection in particle physics. Journal of High Energy Physics, mar 2022. URL: https://doi.org/10.1007%2Fjhep03%282022%29066, doi:10.1007/jhep03(2022)066.">87</a>]</span>:</p>
+<h3><span class="section-number">1.5.5.2. </span>Búsquedas de nueva física independiente de modelo<a class="headerlink" href="#busquedas-de-nueva-fisica-independiente-de-modelo" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La mayor parte de la búsqueda de nueva física está guiada por modelos específicos de BSM, supersimetría o materia oscura. Sin embargo, con la introducción del aprendizaje automático, se han propuesto métodos para la búsqueda independiente de modelo. El objetivo general de estas búsquedas es que sean lo más agnósticas posibles al proceso físico subyacente que puede ser responsable de la señal de nueva física<span id="id12">[<a class="reference internal" href="../referencias/referencias.html#id88" title="Fabricio Jimenez. Model independent searches for New Physics using Machine Learning at the ATLAS experiment. Theses, Université Clermont Auvergne [2017-2020], September 2019. URL: https://tel.archives-ouvertes.fr/tel-02402488.">65</a>]</span>.</p>
+<p>Un ejemplo de una búsqueda independiente de modelo es <span id="id13">[<a class="reference internal" href="../referencias/referencias.html#id86" title="Andrea De Simone and Thomas Jacques. Guiding new physics searches with unsupervised learning. The European Physical Journal C, mar 2019. URL: https://doi.org/10.1140%2Fepjc%2Fs10052-019-6787-3, doi:10.1140/epjc/s10052-019-6787-3.">72</a>]</span>, donde se plantea el uso de aprendizaje no supervisado para comparar las distribuciones de densidad de probabilidad de dos muestras: simulaciones de eventos del modelo estándar, o lo que sería el fondo para las búsquedas de nueva física, y datos reales.</p>
+<p>Una búsqueda de este tipo es<span id="id14">[<a class="reference internal" href="../referencias/referencias.html#id89" title="Katherine Fraser, Samuel Homiller, Rashmish K. Mishra, Bryan Ostdiek, and Matthew D. Schwartz. Challenges for unsupervised anomaly detection in particle physics. Journal of High Energy Physics, mar 2022. URL: https://doi.org/10.1007%2Fjhep03%282022%29066, doi:10.1007/jhep03(2022)066.">71</a>]</span>:</p>
 <ul class="simple">
 <li><p><em>Libre de modelo</em>: sin suposiciones sobre las densidades</p></li>
 <li><p><em>No-paramétrica</em>: compara las densidades como un todo, no valores específicos asociados a estas.</p></li>
@@ -811,11 +470,11 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="mas-alla-del-ms.html" title="anterior página">
+    <a class='left-prev' id="prev-link" href="reconstruccion-jets.html" title="anterior página">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">anterior</p>
-            <p class="prev-next-title"><span class="section-number">1.4. </span>Más allá del modelo estándar</p>
+            <p class="prev-next-title"><span class="section-number">1.4. </span>Reconstrucción de jets</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="reproducibilidad.html" title="siguiente página">
