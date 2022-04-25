@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conjunto R&amp;D &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    <title>2.2. Conjunto R&amp;D &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="2.3. Conjunto BB1" href="conjunto-BB1.html" />
+    <link rel="prev" title="2.1. Paquete Benchtools" href="benchtools.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="spanish">
     
@@ -91,7 +93,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../marco-teorico/resumen.html">
    1. Marco teórico
@@ -139,9 +141,36 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="resumen.html">
+   2. Análisis de datos
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="benchtools.html">
+     2.1. Paquete Benchtools
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.2. Conjunto R&amp;D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="conjunto-BB1.html">
+     2.3. Conjunto BB1
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../referencias/referencias.html">
-   2. Referencias
+   3. Referencias
   </a>
  </li>
 </ul>
@@ -252,13 +281,25 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#datos-crudos">
-   Datos crudos
+   2.2.1. Datos crudos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#datos-pre-procesados">
-   Datos pre-procesados
+   2.2.2. Datos pre-procesados
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribuciones">
+     2.2.2.1. Distribuciones
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correlaciones">
+     2.2.2.2. Correlaciones
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -282,13 +323,25 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#datos-crudos">
-   Datos crudos
+   2.2.1. Datos crudos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#datos-pre-procesados">
-   Datos pre-procesados
+   2.2.2. Datos pre-procesados
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribuciones">
+     2.2.2.1. Distribuciones
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correlaciones">
+     2.2.2.2. Correlaciones
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -300,15 +353,15 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="conjunto-r-d">
-<span id="rnd"></span><h1>Conjunto R&amp;D<a class="headerlink" href="#conjunto-r-d" title="Enlazar permanentemente con este título">¶</a></h1>
+<span id="rnd"></span><h1><span class="section-number">2.2. </span>Conjunto R&amp;D<a class="headerlink" href="#conjunto-r-d" title="Enlazar permanentemente con este título">¶</a></h1>
 <div class="margin figure align-default" id="rnd-rnd">
 <img alt="../../_images/lhco-RnD.png" src="../../_images/lhco-RnD.png" />
-<p class="caption"><span class="caption-text">Diagrama de Feynmann para la señal.</span><a class="headerlink" href="#rnd-rnd" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 2.2 </span><span class="caption-text">Diagrama de Feynmann para la señal.</span><a class="headerlink" href="#rnd-rnd" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Como se mencionó en la <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html#lhco-datos"><span class="std std-numref">Sección 1.7.1</span></a>, el conjunto R&amp;D posee 1,000,000 de eventos de fondo y 100,000 de señal (aproximadamente 9.09% de los eventos son señal). La señal se trata de <span class="math notranslate nohighlight">\(Z'\rightarrow XY\)</span> con <span class="math notranslate nohighlight">\(X\rightarrow q\bar{q}\)</span> y <span class="math notranslate nohighlight">\(Y\rightarrow q\bar{q}\)</span>. Con masas de 3.5 TeV, 500 GeV y 100 GeV para <em>Z'</em>, <em>X</em> y <em>Y</em>, respectivamente.</p>
 <p>El archivo R&amp;D publicado por las LHCO 2020 es de la siguiente forma:</p>
-<table class="colwidths-auto table" id="rnd-raw">
-<caption><span class="caption-text">Estructura del conjunto de datos R&amp;D. Cada fila es un evento y la última columna hace referencia a si el evento es de fondo (0) o de señal (1).</span><a class="headerlink" href="#rnd-raw" title="Enlace permanente a esta tabla">¶</a></caption>
+<table class="colwidths-auto table" id="rnd-rawdataframe">
+<caption><span class="caption-number">Tabla 2.2 </span><span class="caption-text">Estructura del conjunto de datos R&amp;D. Cada fila es un evento y la última columna hace referencia a si el evento es de fondo (0) o de señal (1).</span><a class="headerlink" href="#rnd-rawdataframe" title="Enlace permanente a esta tabla">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Evento</p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(pT\)</span></p></th>
@@ -357,46 +410,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Este conjunto de datos tiene 1,100,000 eventos. Cada 3 columnas representan el <span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span> y <span class="math notranslate nohighlight">\(\phi\)</span> de un hadrón, con relleno de ceros hasta 700 hadrones. Por lo tanto los datos se encuentran organizados en una tabla de <span class="math notranslate nohighlight">\(1,100,000\times2101\)</span>, tomando en cuenta la columna de señal.</p>
 <p>A continuación se va a presentar un análisis de los datos. Para ello utilizaremos 100,000 eventos del conjunto de datos.</p>
 <div class="section" id="datos-crudos">
-<span id="id1"></span><h2>Datos crudos<a class="headerlink" href="#datos-crudos" title="Enlazar permanentemente con este título">¶</a></h2>
+<span id="rnd-raw"></span><h2><span class="section-number">2.2.1. </span>Datos crudos<a class="headerlink" href="#datos-crudos" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Al cargar los datos en una tabla se ven de la siguiente forma,</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importamos las librerías principales</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
-
-<span class="c1"># Funciones de benchtools</span>
-<span class="kn">from</span> <span class="nn">benchtools.src.plotools</span> <span class="kn">import</span> <span class="n">bkg_sig_hist</span>
-<span class="kn">from</span> <span class="nn">benchtools.src.clustering</span> <span class="kn">import</span> <span class="n">build_features</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_492</span><span class="o">/</span><span class="mf">1782456959.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Importamos las librerías principales</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cargamos 100,000 eventos</span>
-<span class="n">path_data</span> <span class="o">=</span> <span class="s2">&quot;../../../datos/events_anomalydetection.h5&quot;</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">path_data</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -565,34 +581,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>5 rows × 2101 columns</p>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculamos la proporción de señal</span>
-<span class="n">df_sig</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>    <span class="c1"># Última columna es señal</span>
-<span class="n">ratio_sig</span> <span class="o">=</span> <span class="n">df_sig</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="c1"># Guardamos el valor en el notebook</span>
-<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;RnD-ratio&quot;</span><span class="p">,</span> <span class="n">ratio_sig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
 <p>La proporción de señal en este subconjunto de 100,000 eventos es del <span class="pasted-text">9.06</span>%. Cada evento tiene una cantidad distinta de hadrones,</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eliminamos la señal para evitar contar los hadrones</span>
-<span class="n">ns_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  
-
-<span class="c1"># Contamos los valores de pT distintos de cero</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;n_hadrons&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ns_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,::</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">gt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
-
-<span class="c1"># Imprimimos para los primeros 5 eventos    </span>
-<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número de hadrones en el evento </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">event</span><span class="p">,</span><span class="s1">&#39;n_hadrons&#39;</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_hide-input tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de hadrones en el evento 0: 109
 Número de hadrones en el evento 1: 208
@@ -613,53 +603,16 @@ Número de hadrones en el evento 4: 169
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="figure align-default" id="fig1">
 <img alt="../../_images/conjunto-RnD_7_0.png" src="../../_images/conjunto-RnD_7_0.png" />
+<p class="caption"><span class="caption-text"><p><b>Figure 1</b> My Caption.</p>
+</span><a class="headerlink" href="#fig1" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separamos la señal del fondo</span>
-<span class="n">df_sig</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># -2 porque agregamos columna de n_hadrons</span>
-<span class="n">df_bkg</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span> 
-
-<span class="c1"># Calculamos la media</span>
-<span class="n">mean_had_sig</span> <span class="o">=</span> <span class="n">df_sig</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;n_hadrons&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">mean_had_bkg</span> <span class="o">=</span> <span class="n">df_bkg</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;n_hadrons&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-<span class="c1"># Guardamos los valores en el notebook</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;RnD-mean_had_sig&#39;</span><span class="p">,</span> <span class="n">mean_had_sig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;RnD-mean_had_bkg&#39;</span><span class="p">,</span> <span class="n">mean_had_bkg</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
 </div>
 </div>
 <p>La distribución del número de hadrones de los eventos de fondo es más ancha y con una media de <span class="pasted-text">171</span> con menor densidad de eventos. La distribución de la señal es mas angosta con una media de <span class="pasted-text">140</span>. Esto quiere decir que los eventos de señal tienden a tener menos hadrones.</p>
 <p>Graficamos también también las distribuciones del promedio de <span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span> y <span class="math notranslate nohighlight">\(\phi\)</span> de los hadrones de cada evento, para todos los eventos.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cada 3 valores es pT, cada 3 empezando por 1 es eta </span>
-<span class="c1"># y cada 3 empezando por 2 es phi.</span>
-<span class="c1"># Remplazamos los ceros con NaN para poder utilizar .mean()</span>
-
-<span class="n">pt_df</span> <span class="o">=</span> <span class="n">ns_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,::</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
-<span class="n">eta_df</span> <span class="o">=</span> <span class="n">ns_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
-<span class="n">phi_df</span> <span class="o">=</span> <span class="n">ns_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">::</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
-
-<span class="c1"># Calculamos la media de cada evento</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;mean_pT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pt_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;mean_eta&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">eta_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;mean_phi&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">phi_df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Graficamos cada variable</span>
-<span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mean_pT&#39;</span><span class="p">,</span> <span class="s1">&#39;mean_eta&#39;</span><span class="p">,</span> <span class="s1">&#39;mean_phi&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
-    <span class="n">bkg_sig_hist</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="mi">2100</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/conjunto-RnD_10_0.png" src="../../_images/conjunto-RnD_10_0.png" />
 <img alt="../../_images/conjunto-RnD_10_1.png" src="../../_images/conjunto-RnD_10_1.png" />
@@ -670,41 +623,24 @@ Número de hadrones en el evento 4: 169
 <p>A continuación agruparemos los jets y observaremos la distribución de las variables.</p>
 </div>
 <div class="section" id="datos-pre-procesados">
-<span id="rnd-jets"></span><h2>Datos pre-procesados<a class="headerlink" href="#datos-pre-procesados" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Los datos pre-procesados de los primeros 100,000 eventos se obtienen utilizando <code class="docutils literal notranslate"><span class="pre">build_features</span></code> de <code class="docutils literal notranslate"><span class="pre">benchtools.src.clustering</span></code>, que utiliza la librería <code class="docutils literal notranslate"><span class="pre">pyjet</span></code>. Los detalles de este pre-procesamiento se encuentran en la <code class="xref std std-numref docutils literal notranslate"><span class="pre">bench-pre</span></code>.</p>
+<span id="rnd-jets"></span><h2><span class="section-number">2.2.2. </span>Datos pre-procesados<a class="headerlink" href="#datos-pre-procesados" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los datos pre-procesados de los primeros 100,000 eventos se obtienen utilizando <code class="docutils literal notranslate"><span class="pre">build_features</span></code> de <code class="docutils literal notranslate"><span class="pre">benchtools.src.clustering</span></code>, que utiliza la librería <code class="docutils literal notranslate"><span class="pre">pyjet</span></code>. Los detalles de este pre-procesamiento se encuentran en la <a class="reference internal" href="benchtools.html#bench-pre"><span class="std std-numref">Sección 2.1.2</span></a>.</p>
 <p>Los datos de los jets agrupados que se obtienen del pre-procesamiento son de la siguiente forma,</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">build_features</span><span class="p">(</span><span class="n">path_data</span><span class="o">=</span><span class="n">path_data</span><span class="p">,</span> <span class="n">nbatch</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">outname</span><span class="o">=</span><span class="s1">&#39;RnD-100000&#39;</span><span class="p">,</span> <span class="n">outdir</span><span class="o">=</span><span class="s1">&#39;../../../datos/&#39;</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Esta celda se corre una vez para pre-procesar los datos</span>
+<span class="c1"># Una vez que el archivo existe no vuelve a correr</span>
+<span class="n">build_features</span><span class="p">(</span><span class="n">path_data</span><span class="o">=</span><span class="n">path_data</span><span class="p">,</span> <span class="n">nbatch</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">outname</span><span class="o">=</span><span class="s1">&#39;RnD-100000&#39;</span><span class="p">,</span> <span class="n">outdir</span><span class="o">=</span><span class="s1">&#39;../../../datos/&#39;</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Part 1/2
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 50000/50000 [19:14&lt;00:00, 43.32it/s] 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Part 2/2
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 50000/50000 [17:26&lt;00:00, 47.77it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Done
-Merging files
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A file with that name already exists
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../../datos/RnD-100000.csv&quot;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -854,15 +790,11 @@ Merging files
 </table>
 </div></div></div>
 </div>
-<p>Estas variables son las que se van a utilizar para entrenar los modelos de aprendizaje automático. Algunas de estas poseen distribuciones diferentes para los eventos de señal y de fondo.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;pT_j1&#39;</span><span class="p">,</span><span class="s1">&#39;E_j1&#39;</span><span class="p">,</span> <span class="s1">&#39;m_j1&#39;</span><span class="p">,</span><span class="s1">&#39;tau_21_j1&#39;</span><span class="p">]:</span>
-    <span class="n">bkg_sig_hist</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="n">variable</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<p>Estas variables son las que se van a utilizar para entrenar los modelos de aprendizaje automático.</p>
+<div class="section" id="distribuciones">
+<h3><span class="section-number">2.2.2.1. </span>Distribuciones<a class="headerlink" href="#distribuciones" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Algunas variables poseen distribuciones diferentes para los eventos de señal y de fondo.</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/conjunto-RnD_15_0.png" src="../../_images/conjunto-RnD_15_0.png" />
 <img alt="../../_images/conjunto-RnD_15_1.png" src="../../_images/conjunto-RnD_15_1.png" />
@@ -875,13 +807,7 @@ Merging files
 <p>La distribución de masa del jet principal también es diferente. Para el fondo, los jets tienden a ser menos masivos y también decaen suavemente. Sin embargo, en los eventos de señal se observan dos picos alrededor de 100 y 500 GeV. Estas son las masas de las partículas <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> del evento <span class="math notranslate nohighlight">\(Z'\rightarrow XY\)</span>.</p>
 <p>Finalmente, se observa una diferencia en la distribución de la variable <span class="math notranslate nohighlight">\(\tau_21\)</span>. De acuerdo a su definición en <code class="xref std std-numref docutils literal notranslate"><span class="pre">ratio_subjettiness</span></code>, el valor de esta variable es menor cuando los jets poseen dos subjets. Por lo tanto, como la señal se agrupa hacia valores más pequeños, indica que los jets de señal son más consistentes con la estructura de dos subjets.</p>
 <p>Algunas variables no presentan una diferencia tan marcada entre las distribuciones,</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;eta_j1&#39;</span><span class="p">,</span> <span class="s1">&#39;nhadrons_j1&#39;</span><span class="p">,</span> <span class="s1">&#39;phi_j1&#39;</span><span class="p">]:</span>
-    <span class="n">bkg_sig_hist</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="n">variable</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/conjunto-RnD_17_0.png" src="../../_images/conjunto-RnD_17_0.png" />
 <img alt="../../_images/conjunto-RnD_17_1.png" src="../../_images/conjunto-RnD_17_1.png" />
@@ -889,59 +815,56 @@ Merging files
 </div>
 </div>
 <p>Las distribuciones de <span class="math notranslate nohighlight">\(\eta\)</span> y el número de hadrones que constituyen el jet principal son más angostas para la señal. El ángulo <span class="math notranslate nohighlight">\(\phi\)</span> de los jets no presenta diferencias marcadas.</p>
-<p>Por último, las variables que reprensentan una relación entre los dos jets principalestambién poseen diferencias,</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;deltaR_j12&#39;</span><span class="p">,</span><span class="s1">&#39;m_jj&#39;</span><span class="p">]:</span>
-    <span class="n">bkg_sig_hist</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="n">variable</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<p>Los plots de las distribuciones de estas variables para el jet secundario son similares, pero el jet de señal posee menor <span class="math notranslate nohighlight">\(p_T\)</span> y por lo tanto, menor energía.</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="../../_images/conjunto-RnD_19_0.png" src="../../_images/conjunto-RnD_19_0.png" />
 <img alt="../../_images/conjunto-RnD_19_1.png" src="../../_images/conjunto-RnD_19_1.png" />
+<img alt="../../_images/conjunto-RnD_19_2.png" src="../../_images/conjunto-RnD_19_2.png" />
+<img alt="../../_images/conjunto-RnD_19_3.png" src="../../_images/conjunto-RnD_19_3.png" />
+<img alt="../../_images/conjunto-RnD_19_4.png" src="../../_images/conjunto-RnD_19_4.png" />
+<img alt="../../_images/conjunto-RnD_19_5.png" src="../../_images/conjunto-RnD_19_5.png" />
+<img alt="../../_images/conjunto-RnD_19_6.png" src="../../_images/conjunto-RnD_19_6.png" />
+</div>
+</div>
+<p>Por último, las variables que reprensentan una relación entre los dos jets principales también poseen diferencias,</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/conjunto-RnD_21_0.png" src="../../_images/conjunto-RnD_21_0.png" />
+<img alt="../../_images/conjunto-RnD_21_1.png" src="../../_images/conjunto-RnD_21_1.png" />
 </div>
 </div>
 <p>La distribución de <span class="math notranslate nohighlight">\(\Delta R\)</span> es más angosta para los eventos de señal. La masa invariante del fondo se encuentra entre 2000 y 3000 GeV, y decae suavemente, mientras que para la señal se observa un pico alrededor de 3500 GeV, consistente con la masa del bosón <span class="math notranslate nohighlight">\(Z'\)</span> de nueva física para el evento de este conjunto de datos.</p>
-<div class="cell docutils container">
+<p>Aunque las variables de masa poseen diferentes distribuciones para señal y fondo y podrían ser de utilidad para que el modelo aprenda, no serán utilizadas. La idea es que la búsqueda sea lo más libre de modelo posible, por lo que no se desea que aprendan la distribución de masa.</p>
+</div>
+<div class="section" id="correlaciones">
+<h3><span class="section-number">2.2.2.2. </span>Correlaciones<a class="headerlink" href="#correlaciones" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La correlación de las variables que se utilizarán para entrenamiento se pueden observar a continuación.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/conjunto-RnD_23_0.png" src="../../_images/conjunto-RnD_23_0.png" />
+<img alt="../../_images/conjunto-RnD_23_1.png" src="../../_images/conjunto-RnD_23_1.png" />
+</div>
+</div>
+<p>La mayoría de las variables no están correlacionadas. Sin embargo, tanto para la señal como para el fondo el <span class="math notranslate nohighlight">\(p_T\)</span> de los dos jets principales posee una correlación positiva y <span class="math notranslate nohighlight">\(\phi\)</span> de ambos jets negativa. Para la señal, los <span class="math notranslate nohighlight">\(p_T\)</span> de los jets principales presentan correlaciones negativas con <span class="math notranslate nohighlight">\(\Delta R\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Queremos tener las correlaciones para la señal y el fondo en dataframes separados</span>
-<span class="n">df_bkg</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;label&#39;</span><span class="p">,</span><span class="s1">&#39;m_jj&#39;</span><span class="p">,</span><span class="s1">&#39;m_j1&#39;</span><span class="p">,</span><span class="s1">&#39;m_j2&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">df_sig</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;label&#39;</span><span class="p">,</span><span class="s1">&#39;m_jj&#39;</span><span class="p">,</span><span class="s1">&#39;m_j1&#39;</span><span class="p">,</span><span class="s1">&#39;m_j2&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Calculamos las correlaciones</span>
-<span class="n">df_bkg_corr</span> <span class="o">=</span> <span class="n">df_bkg</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
-<span class="n">df_sig_corr</span> <span class="o">=</span> <span class="n">df_sig</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
-
-<span class="c1"># Para graficar el mapa de correlaciones:</span>
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">corr</span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;fondo&#39;</span><span class="p">,</span> <span class="n">df_bkg_corr</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;señal&#39;</span><span class="p">,</span> <span class="n">df_sig_corr</span><span class="p">)]:</span>
-    
-    <span class="c1"># Definimos figura y tamaño</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
-    
-    <span class="c1"># Mapa de color</span>
-    <span class="n">cax</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cax</span><span class="p">)</span>
-    
-    <span class="c1">#Ejes</span>
-    <span class="n">ticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">corr</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ticks</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">ticks</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">corr</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">corr</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-    
-    <span class="c1"># Título</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Correlación: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">relations</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;pT_j1&#39;</span><span class="p">,</span> <span class="s1">&#39;pT_j2&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;phi_j1&#39;</span><span class="p">,</span> <span class="s1">&#39;phi_j2&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;pT_j1&#39;</span><span class="p">,</span> <span class="s1">&#39;deltaR_j12&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;pT_j2&#39;</span><span class="p">,</span> <span class="s1">&#39;deltaR_j12&#39;</span><span class="p">)]</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="n">relations</span><span class="p">:</span>
+    <span class="n">bkg_sig_scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/conjunto-RnD_21_0.png" src="../../_images/conjunto-RnD_21_0.png" />
-<img alt="../../_images/conjunto-RnD_21_1.png" src="../../_images/conjunto-RnD_21_1.png" />
+<img alt="../../_images/conjunto-RnD_25_0.png" src="../../_images/conjunto-RnD_25_0.png" />
+<img alt="../../_images/conjunto-RnD_25_1.png" src="../../_images/conjunto-RnD_25_1.png" />
+<img alt="../../_images/conjunto-RnD_25_2.png" src="../../_images/conjunto-RnD_25_2.png" />
+<img alt="../../_images/conjunto-RnD_25_3.png" src="../../_images/conjunto-RnD_25_3.png" />
 </div>
+</div>
+<p>La correlación del <span class="math notranslate nohighlight">\(p_T\)</span> de los jets <em>inserte razón</em>. Los valores de <span class="math notranslate nohighlight">\(\phi\)</span> presentan esta distribución porque los dos jets del evento se generan en direcciones opuestas, a ángulos opuestos. Las demás correlaciones no son evidentes en los gráficos.</p>
+<p>La correlación de los datos puede generar problemas al utilizar algoritmos de aprendizaje automático para regresión. Sin embargo, debido a los modelos que se van a utilizar y a que la tarea es de clasificación las consideraciones respecto a la correlación de las variables relacionadas al entrenamiento de los modelos no son necesarias.</p>
 </div>
 </div>
 </div>
@@ -970,7 +893,21 @@ Merging files
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="benchtools.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">2.1. </span>Paquete Benchtools</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="conjunto-BB1.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>Conjunto BB1</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

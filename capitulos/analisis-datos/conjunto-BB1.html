@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Marco teórico &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    <title>2.3. Conjunto BB1 &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,10 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="1.1. El módelo estándar" href="modelo-estandar.html" />
-    <link rel="prev" title="Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets: análisis comparativo de algoritmos de clasificación en términos de reproducibilidad y rendimiento" href="../../intro.html" />
+    <link rel="next" title="3. Referencias" href="../referencias/referencias.html" />
+    <link rel="prev" title="2.2. Conjunto R&amp;D" href="conjunto-RnD.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="spanish">
     
@@ -92,56 +94,83 @@ const thebe_selector_output = ".output, .cell_output"
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../marco-teorico/resumen.html">
    1. Marco teórico
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="modelo-estandar.html">
+    <a class="reference internal" href="../marco-teorico/modelo-estandar.html">
      1.1. El módelo estándar
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="cromodinamica-cuantica.html">
+    <a class="reference internal" href="../marco-teorico/cromodinamica-cuantica.html">
      1.2. Cromodinámica cuántica
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="mas-alla-del-ms.html">
-     1.3. Más allá del modelo estándar
+    <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html">
+     1.3. Reconstrucción de jets
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="reconstruccion-jets.html">
-     1.4. Reconstrucción de jets
+    <a class="reference internal" href="../marco-teorico/mas-alla-del-ms.html">
+     1.4. Más allá del modelo estándar
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="aprendizaje-automatico.html">
+    <a class="reference internal" href="../marco-teorico/aprendizaje-automatico.html">
      1.5. Aprendizaje automático
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="reproducibilidad.html">
+    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
      1.6. Reproducibilidad
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="olimpiadas-LHC.html">
+    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
      1.7. Olimpiadas LHC 2020
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="resumen.html">
+   2. Análisis de datos
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="benchtools.html">
+     2.1. Paquete Benchtools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="conjunto-RnD.html">
+     2.2. Conjunto R&amp;D
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.3. Conjunto BB1
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../referencias/referencias.html">
-   2. Referencias
+   3. Referencias
   </a>
  </li>
 </ul>
@@ -185,9 +214,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/capitulos/marco-teorico/resumen.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/capitulos/analisis-datos/conjunto-BB1.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -205,10 +234,10 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
                     class="fab fa-github"></i>repositorio</button></a>
         <a class="issues-button"
-            href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/marco-teorico/resumen.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/analisis-datos/conjunto-BB1.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
-        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/marco-teorico/resumen.md"><button
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/analisis-datos/conjunto-BB1.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
     </div>
@@ -223,11 +252,53 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/marianaiv/tesis_grado_UCV/marco-teorico?urlpath=tree/tesis/capitulos/analisis-datos/conjunto-BB1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datos-pre-procesados">
+   2.3.1. Datos pre-procesados
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribuciones">
+     2.3.1.1. Distribuciones
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correlaciones">
+     2.3.1.2. Correlaciones
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -235,22 +306,89 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Marco teórico</h1>
+                <h1>Conjunto BB1</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datos-pre-procesados">
+   2.3.1. Datos pre-procesados
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribuciones">
+     2.3.1.1. Distribuciones
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correlaciones">
+     2.3.1.2. Correlaciones
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="marco-teorico">
-<h1><span class="section-number">1. </span>Marco teórico<a class="headerlink" href="#marco-teorico" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>El modelo estándar de física de partículas es una de las teorías más éxitosas de la física moderna. Describe tres de las cuatro interacciones conocidas y clasifica los componentes más fundamentales de la materia. A pesar de su éxito, posee múltiples limitaciones, por lo que la búsqueda de física más allá del modelo estándar (BSM) es uno de los ejes principales de investigación en el Gran Colisionador de Hadrones (LHC). En la última decada se ha utilizado aprendizaje automático para mejorar la búsqueda de nueva física. Sin embargo, debido al gran volumen de datos que se utilizan hoy en día y su complejidad, el desarrollo y uso de estas herramientas presenta múltiples retos.</p>
-<p>La primera sección de este capítulo resume algunos conceptos básicos del modelo estándar. Seguidamente, nos enfocamos en la cromodinámica cuántica y los aspectos que conducen a la formación de jets. La formación de jets es el proceso con mayor ramificación en las colisiones de protones, por lo que en la <a class="reference internal" href="reconstruccion-jets.html#jets"><span class="std std-numref">Sección 1.4</span></a> se describe el proceso de formación, cómo se reconstruyen y las variables que los caracterizan. Las limitaciones del modelo se resumen en la <a class="reference internal" href="mas-alla-del-ms.html#bsm"><span class="std std-numref">Sección 1.3</span></a>, en conjunto con las teorías BSM que se han planteado para solucionar estos problemas. También se resumen algunos modelos BSM que plantean nuevas partículas que se podrían producir en colisiones <em>pp</em> y decaen a dos jets. Un resumen de conceptos básicos de aprendizaje automático y su uso para la búsqueda de nueva física se encuentra en la <a class="reference internal" href="aprendizaje-automatico.html#ml"><span class="std std-numref">Sección 1.5</span></a>. En la <a class="reference internal" href="reproducibilidad.html#rpd"><span class="std std-numref">Sección 1.6</span></a> se discute brevemente la reproducibilidad y las consideraciones que se deben que tener al utilizar herramientas como el apredizaje automático para hacer investigación. Finalmente, se introducen las olimpiadas LHC 2020, donde se investigó el uso de aprendizaje automático para búsqueda de nuevas partículas.</p>
-<div class="toctree-wrapper compound">
+  <div class="tex2jax_ignore mathjax_ignore section" id="conjunto-bb1">
+<h1><span class="section-number">2.3. </span>Conjunto BB1<a class="headerlink" href="#conjunto-bb1" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Este conjunto de datos posee la misma señal que el conjunto R&amp;D, pero con un 0,08 % de señal. La diferencia principal se encuentra en las masas de las partículas <span class="math notranslate nohighlight">\(Z'\)</span>, <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span>, que para este conjunto son 3,823 TeV, 732 GeV y 378 GeV, respectivamente.</p>
+<p>Para analizar este conjunto de datos, también utilizamos una fracción de los datos. 100,000 eventos, con <span class="pasted-text">0.08</span>% de señal, que es una buena representación del conjunto completo.</p>
+<div class="section" id="datos-pre-procesados">
+<h2><span class="section-number">2.3.1. </span>Datos pre-procesados<a class="headerlink" href="#datos-pre-procesados" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="distribuciones">
+<h3><span class="section-number">2.3.1.1. </span>Distribuciones<a class="headerlink" href="#distribuciones" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Las distribuciones de las variables presentan las mismas características que el conjunto R&amp;D. Sin embargo, es más complicado observar la distribución para los eventos de señal por el poco porcentaje en el conjunto.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/conjunto-BB1_5_0.png" src="../../_images/conjunto-BB1_5_0.png" />
+<img alt="../../_images/conjunto-BB1_5_1.png" src="../../_images/conjunto-BB1_5_1.png" />
+<img alt="../../_images/conjunto-BB1_5_2.png" src="../../_images/conjunto-BB1_5_2.png" />
+<img alt="../../_images/conjunto-BB1_5_3.png" src="../../_images/conjunto-BB1_5_3.png" />
+<img alt="../../_images/conjunto-BB1_5_4.png" src="../../_images/conjunto-BB1_5_4.png" />
+<img alt="../../_images/conjunto-BB1_5_5.png" src="../../_images/conjunto-BB1_5_5.png" />
+<img alt="../../_images/conjunto-BB1_5_6.png" src="../../_images/conjunto-BB1_5_6.png" />
+<img alt="../../_images/conjunto-BB1_5_7.png" src="../../_images/conjunto-BB1_5_7.png" />
+</div>
+</div>
+<p>En las distribuciones de las variables de masa, los picos coinciden con las masas de las partículas de nueva física para este conjunto.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/conjunto-BB1_7_0.png" src="../../_images/conjunto-BB1_7_0.png" />
+<img alt="../../_images/conjunto-BB1_7_1.png" src="../../_images/conjunto-BB1_7_1.png" />
+<img alt="../../_images/conjunto-BB1_7_2.png" src="../../_images/conjunto-BB1_7_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="correlaciones">
+<h3><span class="section-number">2.3.1.2. </span>Correlaciones<a class="headerlink" href="#correlaciones" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Las correlaciones de los datos de fondo son similares a las del conjunto R&amp;D.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/conjunto-BB1_9_0.png" src="../../_images/conjunto-BB1_9_0.png" />
+<img alt="../../_images/conjunto-BB1_9_1.png" src="../../_images/conjunto-BB1_9_1.png" />
+</div>
+</div>
+<p>Para la señal, parece haber una correlación de <span class="math notranslate nohighlight">\(\tau_{21}\_j2\)</span> y <span class="math notranslate nohighlight">\(E\_j2\)</span> con el <span class="math notranslate nohighlight">\(p_T\)</span> del jet secundario. Sin embargo, por la poca cantidad de señal, no es evidente en los gráficos.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../../_images/conjunto-BB1_11_0.png" src="../../_images/conjunto-BB1_11_0.png" />
+<img alt="../../_images/conjunto-BB1_11_1.png" src="../../_images/conjunto-BB1_11_1.png" />
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -267,7 +405,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./capitulos\marco-teorico"
+            path: "./capitulos\analisis-datos"
         },
         predefinedOutput: true
     }
@@ -279,17 +417,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../intro.html" title="anterior página">
+    <a class='left-prev' id="prev-link" href="conjunto-RnD.html" title="anterior página">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">anterior</p>
-            <p class="prev-next-title">Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets: análisis comparativo de algoritmos de clasificación en términos de reproducibilidad y rendimiento</p>
+            <p class="prev-next-title"><span class="section-number">2.2. </span>Conjunto R&amp;D</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="modelo-estandar.html" title="siguiente página">
+    <a class='right-next' id="next-link" href="../referencias/referencias.html" title="siguiente página">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title"><span class="section-number">1.1. </span>El módelo estándar</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Referencias</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
