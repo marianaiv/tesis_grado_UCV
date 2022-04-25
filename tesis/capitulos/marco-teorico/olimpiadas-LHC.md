@@ -34,10 +34,10 @@ El **conjunto R&D** y la **BB1** posee un evento de nueva física $Z'\rightarrow
 
 ```{figure} ./../../figuras/lhco-RnD.png
 ---
-width: 400px
+width: 250px
 name: datos-RnD
 ---
-Diagrama de Feynmann para la señal del conjunto R&D y la BB1. Producción del boson *Z'* de física BSM y su decaimiento a las partículas *X* y *Y * de física BSM. Estas últimas, decayendo a jets.
+Diagrama de Feynmann para la señal del conjunto R&D y la BB1. Producción del boson *Z'* de física BSM y su decaimiento a las partículas *X* y *Y* de física BSM. Estas últimas, decayendo a jets.
 ```
 
 La **BB2** no contiene señal.
@@ -46,7 +46,7 @@ La **BB3** contiene una resonancia pesada (graviton KK) con dos modos de decaimi
 
 ```{figure} ./../../figuras/lhco-BB3.png
 ---
-width: 400px
+width: 250px
 name: lhco-BB3
 ---
 Diagrama de Feynmann para la señal del conjunto BB3. Arriba, el modo de decaimiento a tres jets. Abajo, el modo de decaimiento a dos jets.

@@ -62,7 +62,7 @@ Por último, están los **eventos subyacentes** (UE), que son las interacciones 
 width: 500px
 name: jets-qcd
 ---
-Diagramas de Feynmann que representan la producción de dos jets en colisiones hadrónicas por procesos de QCD{cite}`Mangano:2674114`, construidos a partir de los vértices permitidos ({numref}`qcd-quarkgluon` y {numref}`qcd-gluongluon`)
+Diagramas de Feynmann que representan la producción de dos jets en colisiones hadrónicas por procesos de QCD, construidos a partir de los vértices permitidos {cite}`Mangano:2674114`.
 ```
 A muy altas energías las partículas generadas se puedan dividir para generar más partículas mediante procesos que todavía no se comprenden completamente{cite}`cottingham_greenwood_2007`. Esta lluvia de partículas se dice colimada porque se generan a ángulos pequeños del partón original.
 
