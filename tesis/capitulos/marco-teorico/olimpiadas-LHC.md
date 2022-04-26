@@ -115,3 +115,5 @@ Después de revelar las señales de las cajas negras y publicar las etiquetas de
 - LDA una resonancia no incompatible con 3.8 TeV,
 - PGA detectó una resonancia en 3.9 TeV
 - CWoLa observó una resonancia en 3.5 TeV
+
+En el siguiente capítulo se describirá más en detalle los datos de las olimpiadas y los algoritmos participantes utilizados en este trabajo.
