@@ -22,4 +22,4 @@ chapters:
   - file: capitulos/marco-teorico/aprendizaje-automatico
   - file: capitulos/marco-teorico/reproducibilidad
   - file: capitulos/marco-teorico/olimpiadas-LHC
-- file: capitulos/referencias/referencias 
+#- file: capitulos/referencias/referencias 

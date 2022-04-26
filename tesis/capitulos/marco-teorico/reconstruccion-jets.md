@@ -34,7 +34,7 @@ Se espera que un algoritmo posea ciertas características:
 
 ```{figure} ./../../figuras/jets-colineal.png
 ---
-width: 400px
+width: 300px
 name: jets-colineal
 ---
 Esquema de la estabilidad colineal. La separación de un parton en partones colineales no debe cambiar la configuración de un jet{cite}`10.1088/2053-2563/ab1be6ch3`.
@@ -42,7 +42,7 @@ Esquema de la estabilidad colineal. La separación de un parton en partones coli
 
 ```{figure} ./../../figuras/jets-infrarrojo.png
 ---
-width: 400px
+width: 300px
 name: jets-infrarrojo
 ---
 Esquema de la estabilidad infrarroja. La emisión de un gluon suave entre dos jets no debe resultar en su unión{cite}`10.1088/2053-2563/ab1be6ch3`. 
