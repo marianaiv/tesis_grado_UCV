@@ -51,7 +51,7 @@ name: lhco-BB3
 ---
 Diagrama de Feynmann para la señal del conjunto BB3. Arriba, el modo de decaimiento a tres jets. Abajo, el modo de decaimiento a dos jets.
 ```
-Los conjuntos utilizados en este trabajo son el conjunto R&D y el conjunto BB1. Detalles sobre el contenido de los datos se explicará en la {numref}`datos`.
+Los conjuntos utilizados en este trabajo son el conjunto R&D y el conjunto BB1. Detalles sobre el contenido de los datos se explicará en el capítulo siguiente.
 
 (lhco-participantes)=
 ## Participantes
@@ -116,4 +116,4 @@ Después de revelar las señales de las cajas negras y publicar las etiquetas de
 - PGA detectó una resonancia en 3.9 TeV
 - CWoLa observó una resonancia en 3.5 TeV
 
-En el siguiente capítulo se describirá más en detalle los datos de las olimpiadas y los algoritmos participantes utilizados en este trabajo.
+En el siguiente capítulo se describirá con mayor detalle los datos de las olimpiadas y los algoritmos participantes utilizados en este trabajo.
