@@ -1,28 +1,28 @@
 (lhco)=
 # Olimpiadas LHC 2020
-La búsqueda de física BSM es parte principal del programa de investigación del LHC. Hasta ahora no ha sido exitosa, pero se mejora constantemente. Sin embargo, es evidente que se requieren mejoraras en las herramientas de análisis para que puedan aprovechar la cantidad y complejidad de los datos.
+La búsqueda de física BSM es parte principal del programa de investigación del LHC. Hasta ahora no ha sido exitosa, pero se mejora constantemente. Sin embargo, es evidente que se requieren mejoraras en las herramientas de análisis para que podamos aprovechar la gran cantidad y complejidad de los datos.
 
-Con el fin de mejorar estas herramientas y el análisis de los datos se crearon las olimpiadas LHC (LHCO). Para las olimpiadas, se simulan conjuntos de datos con eventos de nueva física que podrían observarse en el acelerador. El objetivo es que los participantes interpreten los datos en términos de modelos de física BSM.
+Con el fin de mejorar el uso de estas herramientas para análisis de datos, se crearon las olimpiadas LHC (LHCO). Para las olimpiadas, se simulan conjuntos de datos con eventos de nueva física que podrían observarse en el acelerador. El objetivo es que los participantes interpreten los datos en términos de modelos de física BSM.
 
 > "La idea principal es que si no lo puedes hacer para el caso simulado, es mucho menos probable que lo puedas hacer para el caso real. 
 > Hace que las personas aprendan a pensar de manera diferente y aborden el problema de la forma en que habría que abordarlo" 
 > 
 > — Gordy Kane, Universidad de Michigan. Organizador de las LHCO{cite}`lhco_2006`.
 
-Las olimpiadas de 2020 estuvieron enfocadas en el desarrollo técnicas de aprendizaje automático para la búsqueda de partículas resonantes. 
+Las olimpiadas de 2020 estuvieron enfocadas en el desarrollo técnicas de aprendizaje automático para la búsqueda de partículas resonantes de BSM. 
 
-El desarrollo de estas herramientas para su uso en física de altas energías se ha visto limitado porque los datos relacionados a colisiones *pp* no se encuentran públicamente disponibles y son muy diferentes a los datos que se utilizan comúnmente para estudiar estos métodos. Sin embargo, el aprendizaje automático posee un gran potencial para ampliar la búsqueda de nueva física porque permite una aproximación más amplia al problema, como las búsquedas libres de modelo. 
+El desarrollo de estas herramientas para su uso en HEP se ha visto limitado porque los datos relacionados a colisiones *pp* no se encuentran públicamente disponibles y son muy diferentes a los datos que se utilizan comúnmente para estudiar estos métodos. Sin embargo, el aprendizaje automático posee un gran potencial para ampliar la búsqueda de nueva física porque permite una aproximación más amplia al problema, como las búsquedas libres de modelo. 
 
-En el caso de las LHCO 2020, se plantean eventos BSM de una partícula resonante con un ancho de decaimiento pequeño y produzca eventos de múltiples jets. Un ejemplo de esta topología se ilustra a continuación.
+En el caso de las LHCO 2020, se plantean eventos BSM de una partícula resonante con un ancho de decaimiento pequeño y que tenga como producto eventos de múltiples jets. Un ejemplo de esta topología se ilustra a continuación.
 
 ```{figure} ./../../figuras/lhco-topologia.png
 ---
-width: 500px
+width: 400px
 name: lhco-topologia
 ---
 Un tipo de topología que se puede encontrar en los datos de las LHCO 2020. Evento dijet por el decaimiento de una partícula de nueva física en dos partículas de nueva física que decaen a jets. Tomada de {cite}`lhco_2020`.
 ```
-En esta sección se hará un resumen de los algoritmos participantes y los resultados. Los conjuntos de datos se explicarán en detalle más adelante. Para mayor información acerca de cualquiera de los puntos, consultar {cite}`Kasieczka_2021`.
+En esta sección se hará un resumen de los conjuntos de datos, los algoritmos participantes y los resultados.  Para mayor información acerca de cualquiera de los puntos, consultar {cite}`Kasieczka_2021`.
 
 (lhco-datos)=
 ## Conjuntos de datos
@@ -58,7 +58,7 @@ Los conjuntos utilizados en este trabajo son el conjunto R&D y el conjunto BB1. 
 Los participantes reportaron al menos alguno de los siguientes resultados:
 - Un valor p asociado a la falta de nuevas partículas en el conjunto de datos.
 - Una descripción completa de la nueva física: masas y modos de decaimiento de las nuevas partículas.
-- Numero de eventos de señal en el conjunto de datos (antes de cualquier criterio de selección)
+- Numero de eventos de señal en el conjunto de datos (antes de cualquier criterio de selección).
 
 Los modelos están agrupados dependiendo del método utilizado:
 - **(Semi-)Supervisado**: los modelos supervisados necesitan datos etiquetados acerca de la señal para construir sensibilidad.
@@ -110,3 +110,8 @@ Los conjuntos de datos BB2 y BB3 fueron publicados en el verano de 2020. Para la
 
 ### Revelación de las cajas negras
 Después de revelar las señales de las cajas negras y publicar las etiquetas de los eventos para cada caja, algunos modelos enviaron mejoras para el conjunto BB1 únicamente.
+- VRNN y BuHuLaSpa reportaron una mejora en la masa invariante debajo de 4 TeV,
+- Deep Ensemble detectó una resonancia en 3.5 Tev,
+- LDA una resonancia no incompatible con 3.8 TeV,
+- PGA detectó una resonancia en 3.9 TeV
+- CWoLa observó una resonancia en 3.5 TeV
