@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+
+<html lang="spanish">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.6. Reproducibilidad &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="1.7. Olimpiadas LHC 2020" href="olimpiadas-LHC.html" />
+    <link rel="prev" title="1.5. Aprendizaje automático" href="aprendizaje-automatico.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="spanish">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_ucv.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="resumen.html">
+   1. Marco teórico
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="modelo-estandar.html">
+     1.1. El módelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cromodinamica-cuantica.html">
+     1.2. Cromodinámica cuántica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mas-alla-del-ms.html">
+     1.3. Más allá del modelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reconstruccion-jets.html">
+     1.4. Reconstrucción de jets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aprendizaje-automatico.html">
+     1.5. Aprendizaje automático
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.6. Reproducibilidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="olimpiadas-LHC.html">
+     1.7. Olimpiadas LHC 2020
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../referencias/referencias.html">
+   2. Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/capitulos/marco-teorico/reproducibilidad.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
+                    class="fab fa-github"></i>repositorio</button></a>
+        <a class="issues-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/marco-teorico/reproducibilidad.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/marco-teorico/reproducibilidad.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definicion-y-beneficios">
+   1.6.1. Definición y beneficios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#investigacion-reproducible">
+   1.6.2. Investigación reproducible
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#barreras-para-la-reproducibilidad">
+   1.6.3. Barreras para la reproducibilidad
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Reproducibilidad</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definicion-y-beneficios">
+   1.6.1. Definición y beneficios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#investigacion-reproducible">
+   1.6.2. Investigación reproducible
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#barreras-para-la-reproducibilidad">
+   1.6.3. Barreras para la reproducibilidad
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="reproducibilidad">
+<span id="rpd"></span><h1><span class="section-number">1.6. </span>Reproducibilidad<a class="headerlink" href="#reproducibilidad" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En 1973, Robert Merton describió el ethos de la ciencia moderna a través de cuatro características principales<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id98" title="Robert K Merton and Norman William Storer. The sociology of science. University of Chicago Press, 1973.">73</a>]</span>:</p>
+<ul class="simple">
+<li><p><strong>Universalismo</strong>: las pretensiones de verdad, cualquiera que sea su fuente, deben estar sujetas a criterios impersonales preestablecidos, en consonancia con la observación y con el conocimiento previamente confirmado.</p></li>
+<li><p><strong>Comunismo</strong>: los hallazgos de la ciencia son producto de la colaboración social y se asignan a la comunidad. El derecho del científico a &quot;su propiedad&quot; intelectual se limita al reconocimiento y la estima que, si la institución funciona con un mínimo de eficiencia, es más o menos proporcional a la importancia del aporte al fondo común de conocimiento.</p></li>
+<li><p><strong>Desinterés</strong>: la pasión por el conocimiento, la curiosidad ociosa, la preocupación altruista por el beneficio de la humanidad y una multitud de otros motivos especiales se han atribuido al científico.</p></li>
+<li><p><strong>Escepticismo organizado</strong>: el escepticismo organizado es un mandato metodológico e institucional. El investigador científico no preserva la división entre lo que exige un respeto acrítico y lo que puede ser analizado objetivamente.</p></li>
+</ul>
+<p>Desde entonces, el panorama científico ha evolucionado. Hoy en día, el proceso de investigación y experimentación se lleva a cabo por redes complejas de equipos y comunidades de todas partes el mundo, involucrando a una gran cantidad de personas. Sólo en 2020, más de 2.9 millones de artículos de ingeniería e investigación científica fueron publicados mundialmente<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id101" title="Karen White. Publications output: u.s. trends and international comparisons. 2021. URL: https://ncses.nsf.gov/pubs/nsb20214/.">74</a>]</span>. Además, por la disponibilidad de recursos computacionales y de grandes cantidades de datos, se han creado nuevas formas de hacer investigación científica<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id99" title="National Academies of Sciences, Engineering and Medicine. Reproducibility and Replicability in Science. The National Academies Press, Washington, DC, 2019. ISBN 978-0-309-48616-3. URL: https://nap.nationalacademies.org/catalog/25303/reproducibility-and-replicability-in-science, doi:10.17226/25303.">75</a>]</span>.</p>
+<p>Esta evolución trajo consigo retos para mantener las características que definen de la ciencia moderna. En particular, ha habido un foco de interés en los problemas relacionados con la reproducibilidad científica<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id100" title="Monya Baker. 1,500 scientists lift the lid on reproducibility. Nature, 533(7604):452-454, May 2016. URL: https://doi.org/10.1038/533452a, doi:10.1038/533452a.">76</a>]</span>.</p>
+<p>Tomando en cuenta la gran cantidad de publicaciones y las nuevas maneras de hacer investigación, es necesario estudiar las formas más eficientes de diseñar estudios y comunicar resultados para permitir que sean fácilmente comprobables o refutables, y que puedan servir como base para el desarrollo de nuevos conocimientos.</p>
+<div class="section" id="definicion-y-beneficios">
+<span id="rpd-definicion"></span><h2><span class="section-number">1.6.1. </span>Definición y beneficios<a class="headerlink" href="#definicion-y-beneficios" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La definición y los criterios de reproducibilidad varían ampliamente entre las distintas áreas de investigación<span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id102" title="Nature. Reality check on reproducibility. Nature, 533(7604):437-437, May 2016. URL: https://doi.org/10.1038/533437a, doi:10.1038/533437a.">77</a>]</span>. Para efectos de este trabajo, utilizaremos la definición y criterios de reproducibilidad considerados por <a class="reference external" href="https://the-turing-way.netlify.app/welcome.html">The Turing Way</a><span id="id6">[<a class="reference internal" href="../referencias/referencias.html#id103" title="The Turing Way Community. The Turing Way: A handbook for reproducible, ethical and collaborative research. November 2021. This work was supported by The UKRI Strategic Priorities Fund under the EPSRC Grant EP/T001569/1, particularly the &quot;Tools, Practices and Systems&quot; theme within that grant, and by The Alan Turing Institute under the EPSRC grant EP/N510129/1. URL: https://doi.org/10.5281/zenodo.5671094, doi:10.5281/zenodo.5671094.">78</a>]</span>:</p>
+<blockquote>
+<div><p>Un resultado es reproducible cuando los pasos de un análisis específico realizados en un mismo conjunto de datos producen consistentemente la misma respuesta.</p>
+</div></blockquote>
+<p><em>The Turing Way</em> es un manual para hacer ciencia de datos de forma reproducible, ética y colaborativa. Su objetivo es proporcionar la información necesaria para que los investigadores puedan realizar trabajos fáciles de reproducir y reutilizar. Es un proyecto de código abierto (todo el código utilizado es público), de colaboración abierta (cualquier persona puede colaborar), e impulsado por la comunidad.</p>
+<p>Hacer investigación reproducible es necesario para el desarrollo del conocimiento ya que:</p>
+<ul class="simple">
+<li><p>La evidencia de un resultado se fortalece si puede ser reproducido y confirmado por investigadores independientes.</p></li>
+<li><p>Un trabajo reproducible permite que otras investigaciones utilicen más fácilmente el análisis y los resultados para desarrollar conocimiento nuevo.</p></li>
+<li><p>La transparencia también permite mayor colaboración y mayor complejidad en los análisis.</p></li>
+</ul>
+</div>
+<div class="section" id="investigacion-reproducible">
+<span id="rpd-investigacion"></span><h2><span class="section-number">1.6.2. </span>Investigación reproducible<a class="headerlink" href="#investigacion-reproducible" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Dependiendo del tipo de investigación, hay distintas consideraciones que se deben tomar para hacerla reproducible. A continuación, describiremos los criterios de reproducibilidad pertinentes para este trabajo.</p>
+<p>Particularmente, se toma un enfoque de <strong>investigación abierta</strong>, lo que implica que el desarrollo y los pasos de la investigación deben estar <em>públicamente disponibles</em>, ser <em>trasparentes</em> y <em>reutilizable</em>.</p>
+<p>El registro del desarrollo de la investigación se hace mediante el <em>control de versiones</em>. Controlar versiones es una manera de registrar los cambios hechos en un archivo de manera cronológica. En desarrollo de software es común utilizar Git para este propósito, un sistema de control de versiones de código abierto y gratuito.</p>
+<p>Para que estén públicamente disponible los datos utilizados, el código desarrollado y los resultados obtenidos, deben ser accesibles de manera fácil y gratuita. En este proyecto se publican utilizando <a class="reference external" href="https://github.com">GitHub</a>, una plataforma de internet para el alojamiento de desarrollo de software y el control de versiones usando Git.</p>
+<p>Controlar las versiones y publicar cada uno de los pasos de la investigación es un buen inicio para lograr transparencia. Sin embargo, es necesario proporcionar <em>documentación</em> acerca de la información publicada. La documentación engloba los metadatos necesarios para entender el contenido de cada paso de la investigación. Específicamente, es necesario incluir información sobre los datos, instrucciones sobre cómo usar el código y pasos a seguir que se utilizaron para obtener los resultados.</p>
+<p>A nivel de desarrollo de software, la trasparencia y reutilizabilidad requieren consideraciones sobre la <em>calidad del código</em>. Es decir, el código debe ser escrito siguiendo continuamente parámetros preestablecidos, debe estar comentado y se deben desarrollar pruebas para comprobar su funcionamiento. Además, el entorno computacional en el que se llevó a cabo la investigación debe capturarse de tal manera que otros puedan replicarlo. El objetivo es que cualquier persona o ente que quiera reproducir los resultados o utilizar el código pueda hacerlo fácilmente.</p>
+<p>Por último, ninguna investigación es reutilizable si no posee una <em>licencia</em>. Sin licencia todos los derechos pertenecen al autor, es decir, nadie puede usar, copiar, distribuir o modificar el trabajo sin consentimiento. Una licencia da información acerca de las condiciones de uso de cada parte de la investigación.</p>
+<p>Existen distintas licencias según el tipo de contenido<span id="id7">[<a class="reference internal" href="../referencias/referencias.html#id105" title="Choose an open source license. Accessed: 14-04-2022. URL: https://choosealicense.com.">79</a>]</span>. Para este proyecto se escogieron dos tipos de licencia, una para el software desarrollado y otra para los documentos. Para el software se utiliza una licencia <a class="reference external" href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License v3.0</a>, que permite el uso y modificación libre del código, siempre y cuando se utilice de manera abierta y bajo la misma licencia<span id="id8">[<a class="reference internal" href="../referencias/referencias.html#id106" title="GNU Operating System. Gnu general public license. Accessed: 14-04-2022. URL: https://www.gnu.org/licenses/gpl-3.0.en.html.">80</a>]</span>. El resto del proyecto está licenciado bajo <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/deed.es">Creative Commons Attribution 4.0 International</a>, que permite la distribución y modificación del contenido, indicando si se realizaron modificaciones y dando crédito de manera apropiada<span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id107" title="Creative Commons. Atribución 4.0 internacional (cc by 4.0). Accessed: 14-04-2022. URL: https://creativecommons.org/licenses/by/4.0/deed.es.">81</a>]</span>.</p>
+</div>
+<div class="section" id="barreras-para-la-reproducibilidad">
+<span id="rpd-barreras"></span><h2><span class="section-number">1.6.3. </span>Barreras para la reproducibilidad<a class="headerlink" href="#barreras-para-la-reproducibilidad" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>A pesar de que hacer investigación reproducible es beneficioso para la comunidad científica, existe poco incentivo a nivel académico para llevarla a cabo:</p>
+<ul class="simple">
+<li><p>Al publicar todos los pasos de una investigación hay mayor posibilidad de que alguien pueda encontrar errores. Compartir errores no es incentivado por la academia, por lo que puede ser difícil decidir hacer ciencia abierta.</p></li>
+<li><p>El sesgo hacia la publicación de hallazgos positivos o estadísticamente significativos<span id="id10">[<a class="reference internal" href="../referencias/referencias.html#id104" title="Nature Human Behaviour. The importance of no evidence. Nature Human Behaviour, 3(3):197-197, Mar 2019. URL: https://doi.org/10.1038/s41562-019-0569-7, doi:10.1038/s41562-019-0569-7.">82</a>]</span> implica que muchas investigaciones, al no obtener el resultado deseado, son descartadas, desincentivando el proceso de documentación.</p></li>
+<li><p>Las investigaciones reproducibles pueden ser revisadas más a profundidad en el proceso de revisión por pares, por lo que pueden estar sujetas a mayores estándares.</p></li>
+<li><p>El sistema de promoción académica suele recompensar investigaciones novedosas. Publicar una investigación puede ser contraproducente para obtener financiación y promoción ya que facilita que otras investigaciones hagan el mismo trabajo.</p></li>
+</ul>
+<p>Otras barreras están relacionadas a retos técnicos. Por ejemplo, en el área ciencia de datos, la complejidad del análisis y el gran volumen de almacenamiento de los datos dificultan el proceso de documentar y publicar toda la información necesaria para reproducir exactamente un resultado. Además, la tecnología evoluciona rápidamente, por lo que puede ser difícil reproducir resultados que se obtuvieron utilizando software que puede no ser compatible con nuevas herramientas.</p>
+<p>Por último, algunas barreras comunes percibidas por los investigadores también dificultan la decisión de hacer investigaciones reproducibles. Existe la percepción de que requiere un mayor esfuerzo y toma más tiempo, y que es necesario aprender habilidades adicionales. Sin embargo, este tiempo y esfuerzo se compensa con todas las facilidades que proporcionan los métodos de reproducibilidad.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos\marco-teorico"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="aprendizaje-automatico.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">1.5. </span>Aprendizaje automático</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="olimpiadas-LHC.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>Olimpiadas LHC 2020</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Por Mariana Vivas, Universidad Central de Venezuela<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

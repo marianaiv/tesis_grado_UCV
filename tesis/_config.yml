@@ -3,31 +3,53 @@
 # Para saber más sobre este archivo https://jupyterbook.org/customize/config.html
 title: Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets
 author: Mariana Vivas, Universidad Central de Venezuela
-logo: logo_ucv.png
+logo: ./figuras/logo_ucv.png
 
 # Forza la re-ejecución de los notebooks en cada construcción.
 # Ver https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
 
+# Configuración de procesamiento y parsing
+# Ver https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+parse:
+  myst_enable_extensions:  
+    - amsmath
+    - colon_fence
+    # - deflist
+    - dollarmath
+    # - html_admonition
+    # - html_image
+    - linkify
+    # - replacements
+    # - smartquotes
+    - substitution
+    - tasklist
+  myst_url_schemes: [mailto, http, https] # Esquemas de URI que se reconocerán como URL externas en los enlaces de Markdown
+  myst_dmath_double_inline: true  # Permitir mostrar matemáticas ($$) en una línea
+
 # Información sobre donde existe el libro en la web
 repository:
   url: https://github.com/marianaiv/tesis_grado_UCV # Ubicación en línea del libro
   path_to_book: "tesis"  # Ruta opcional al libro, relativa a la raíz del repositorio
+  branch: marco-teorico  # Que rama usar para crear links
 
 # Agregar botones de GitHub al libro
 # Ver https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  use_repository_button: true
-
+  use_repository_button: true # Link al repositorio
+  use_edit_page_button: true  # Si agregar un boton de "editar esta pagina"
+  use_issues_button: true  # Si agregar boton "open an issue"
+  home_page_in_navbar: false   # Si incluir la pagina de inicio en la navegación
+  use_multitoc_numbering: false   # Numeración continua entre partes/capitulos
+  
 #######################################################################################
 # Advanced and power-user settings
 sphinx:
   extra_extensions          :  # A list of extra extensions to load by Sphinx.
+    - sphinx_proof
   config                    :  # key-value pairs to directly over-ride the Sphinx configuration
     language                : spanish
-
-
 
 # Un archivo bibtex para poder crear citas
 bibtex_bibfiles:

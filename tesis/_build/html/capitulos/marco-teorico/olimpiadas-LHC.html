@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+
+<html lang="spanish">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.7. Olimpiadas LHC 2020 &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="2. Referencias" href="../referencias/referencias.html" />
+    <link rel="prev" title="1.6. Reproducibilidad" href="reproducibilidad.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="spanish">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_ucv.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="resumen.html">
+   1. Marco teórico
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="modelo-estandar.html">
+     1.1. El módelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cromodinamica-cuantica.html">
+     1.2. Cromodinámica cuántica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mas-alla-del-ms.html">
+     1.3. Más allá del modelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reconstruccion-jets.html">
+     1.4. Reconstrucción de jets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aprendizaje-automatico.html">
+     1.5. Aprendizaje automático
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reproducibilidad.html">
+     1.6. Reproducibilidad
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.7. Olimpiadas LHC 2020
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../referencias/referencias.html">
+   2. Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/capitulos/marco-teorico/olimpiadas-LHC.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
+                    class="fab fa-github"></i>repositorio</button></a>
+        <a class="issues-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/marco-teorico/olimpiadas-LHC.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/marco-teorico/olimpiadas-LHC.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conjuntos-de-datos">
+   1.7.1. Conjuntos de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#participantes">
+   1.7.2. Participantes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resultados">
+   1.7.3. Resultados
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ml4jets-workshop">
+     1.7.3.1. ML4Jets workshop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verano-2020">
+     1.7.3.2. Verano 2020
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#revelacion-de-las-cajas-negras">
+     1.7.3.3. Revelación de las cajas negras
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Olimpiadas LHC 2020</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conjuntos-de-datos">
+   1.7.1. Conjuntos de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#participantes">
+   1.7.2. Participantes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resultados">
+   1.7.3. Resultados
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ml4jets-workshop">
+     1.7.3.1. ML4Jets workshop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verano-2020">
+     1.7.3.2. Verano 2020
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#revelacion-de-las-cajas-negras">
+     1.7.3.3. Revelación de las cajas negras
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="olimpiadas-lhc-2020">
+<span id="lhco"></span><h1><span class="section-number">1.7. </span>Olimpiadas LHC 2020<a class="headerlink" href="#olimpiadas-lhc-2020" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>La búsqueda de física BSM es parte principal del programa de investigación del LHC. Hasta ahora no ha sido exitosa, pero se mejora constantemente. Sin embargo, es evidente que se requieren mejoraras en las herramientas de análisis para que podamos aprovechar la gran cantidad y complejidad de los datos.</p>
+<p>Con el fin de mejorar el uso de estas herramientas para análisis de datos, se crearon las olimpiadas LHC (LHCO). Para las olimpiadas, se simulan conjuntos de datos con eventos de nueva física que podrían observarse en el acelerador. El objetivo es que los participantes interpreten los datos en términos de modelos de física BSM.</p>
+<blockquote>
+<div><p>&quot;La idea principal es que si no lo puedes hacer para el caso simulado, es mucho menos probable que lo puedas hacer para el caso real.
+Hace que las personas aprendan a pensar de manera diferente y aborden el problema de la forma en que habría que abordarlo&quot;</p>
+<p>— Gordy Kane, Universidad de Michigan. Organizador de las LHCO<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id58" title="Cern - spotlight: the lhc olympics 2006. 2006. URL: https://public-archive.web.cern.ch/en/Spotlight/SpotlightOlympics-en.html.">83</a>]</span>.</p>
+</div></blockquote>
+<p>Las olimpiadas de 2020 estuvieron enfocadas en el desarrollo técnicas de aprendizaje automático para la búsqueda de partículas resonantes de BSM.</p>
+<p>El desarrollo de estas herramientas para su uso en HEP se ha visto limitado porque los datos relacionados a colisiones <em>pp</em> no se encuentran públicamente disponibles y son muy diferentes a los datos que se utilizan comúnmente para estudiar estos métodos. Sin embargo, el aprendizaje automático posee un gran potencial para ampliar la búsqueda de nueva física porque permite una aproximación más amplia al problema, como las búsquedas libres de modelo.</p>
+<p>En el caso de las LHCO 2020, se plantean eventos BSM de una partícula resonante con un ancho de decaimiento pequeño y que tenga como producto eventos de múltiples jets. Un ejemplo de esta topología se ilustra a continuación.</p>
+<div class="figure align-default" id="lhco-topologia">
+<a class="reference internal image-reference" href="../../_images/lhco-topologia.png"><img alt="../../_images/lhco-topologia.png" src="../../_images/lhco-topologia.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Figura 1.17 </span><span class="caption-text">Un tipo de topología que se puede encontrar en los datos de las LHCO 2020. Evento dijet por el decaimiento de una partícula de nueva física en dos partículas de nueva física que decaen a jets. Tomada de <span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id59" title="LHC Olympics 2020. Welcome to the home of the lhc olympics 2020! 2020. URL: https://lhco2020.github.io/homepage/.">84</a>]</span>.</span><a class="headerlink" href="#lhco-topologia" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>En esta sección se hará un resumen de los conjuntos de datos, los algoritmos participantes y los resultados.  Para mayor información acerca de cualquiera de los puntos, consultar <span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">85</a>]</span>.</p>
+<div class="section" id="conjuntos-de-datos">
+<span id="lhco-datos"></span><h2><span class="section-number">1.7.1. </span>Conjuntos de datos<a class="headerlink" href="#conjuntos-de-datos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para las olimpiadas publicaron dos tipos de archivo: una simulación de Monte Carlo del fondo, sin eventos de nueva física o señal, un conjunto de datos con señal para investigación y desarrollo (conjunto R&amp;D) y tres cajas negras(BB1, BB2 y BB3), que pueden o no contener señal.</p>
+<p>Las cajas negras son los conjuntos de datos proporcionado para probar los modelos previamente desarrollados. Su contenido es desconocido para los participante. Una vez dados los resultados de las olimpiadas, se proporcionaron las etiquetas de señal y fondo para estos conjuntos.</p>
+<p>El <strong>conjunto R&amp;D</strong> y la <strong>BB1</strong> posee un evento de nueva física <span class="math notranslate nohighlight">\(Z'\rightarrow XY\)</span> con <span class="math notranslate nohighlight">\(X\rightarrow q\bar{q}\)</span> y <span class="math notranslate nohighlight">\(Y\rightarrow q\bar{q}\)</span> con <span class="math notranslate nohighlight">\(Z'\)</span>, <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> partículas de nueva física.</p>
+<div class="figure align-default" id="datos-rnd">
+<a class="reference internal image-reference" href="../../_images/lhco-RnD.png"><img alt="../../_images/lhco-RnD.png" src="../../_images/lhco-RnD.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-number">Figura 1.18 </span><span class="caption-text">Diagrama de Feynmann para la señal del conjunto R&amp;D y la BB1. Producción del boson <em>Z'</em> de física BSM y su decaimiento a las partículas <em>X</em> y <em>Y</em> de física BSM. Estas últimas, decayendo a jets.</span><a class="headerlink" href="#datos-rnd" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>La <strong>BB2</strong> no contiene señal.</p>
+<p>La <strong>BB3</strong> contiene una resonancia pesada (graviton KK) con dos modos de decaimiento. El primer modo decae a dijets y el segundo a una resonancia neutral más ligera R (el radión IR), más un gluon con <span class="math notranslate nohighlight">\(R\rightarrow gg\)</span>.</p>
+<div class="figure align-default" id="lhco-bb3">
+<a class="reference internal image-reference" href="../../_images/lhco-BB3.png"><img alt="../../_images/lhco-BB3.png" src="../../_images/lhco-BB3.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-number">Figura 1.19 </span><span class="caption-text">Diagrama de Feynmann para la señal del conjunto BB3. Arriba, el modo de decaimiento a tres jets. Abajo, el modo de decaimiento a dos jets.</span><a class="headerlink" href="#lhco-bb3" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Los conjuntos utilizados en este trabajo son el conjunto R&amp;D y el conjunto BB1. Detalles sobre el contenido de los datos se explicará en el capítulo siguiente.</p>
+</div>
+<div class="section" id="participantes">
+<span id="lhco-participantes"></span><h2><span class="section-number">1.7.2. </span>Participantes<a class="headerlink" href="#participantes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los participantes reportaron al menos alguno de los siguientes resultados:</p>
+<ul class="simple">
+<li><p>Un valor p asociado a la falta de nuevas partículas en el conjunto de datos.</p></li>
+<li><p>Una descripción completa de la nueva física: masas y modos de decaimiento de las nuevas partículas.</p></li>
+<li><p>Numero de eventos de señal en el conjunto de datos (antes de cualquier criterio de selección).</p></li>
+</ul>
+<p>Los modelos están agrupados dependiendo del método utilizado:</p>
+<ul class="simple">
+<li><p><strong>(Semi-)Supervisado</strong>: los modelos supervisados necesitan datos etiquetados acerca de la señal para construir sensibilidad.</p></li>
+<li><p><strong>Débilmente supervisado</strong>: utilizan etiquetas ruidosas (posiblemente sin señal/posiblemente sin fondo) en el proceso de entrenamiento.</p></li>
+<li><p><strong>No supervisados</strong>: no necesitan datos etiquetados para el entrenamiento.</p></li>
+</ul>
+<p>En la siguiente tabla se encuentra un <strong>resumen de los participantes</strong>, con el método, referencias y los datos que analizaron:</p>
+<table class="colwidths-auto table" id="lhc-participantes">
+<caption><span class="caption-number">Tabla 1.1 </span><span class="caption-text">Participantes de las LHCO 2020</span><a class="headerlink" href="#lhc-participantes" title="Enlace permanente a esta tabla">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nombre</p></th>
+<th class="head"><p>Método</p></th>
+<th class="head"><p>Referencia</p></th>
+<th class="head"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>VRNN</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/pdf/2105.09274.pdf">Artículo</a>, <a class="reference external" href="https://indico.cern.ch/event/809820/contributions/3632656/attachments/1971110/3278934/AnomalyScore_LHCOlympics.pdf">Presentación</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-odd"><td><p>ANODE</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/pdf/2001.04990.pdf">Artículo</a>, <a class="reference external" href="https://indico.cern.ch/event/809820/contributions/3699483/attachments/1971094/3278905/george_stein_LHCO.pdf">Presentación</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-even"><td><p>BuHuLaSpa</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/pdf/2103.06595.pdf">Artículo</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAN-AE</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/lovaslin/GAN-AE_LHCOlympics">GitHub</a>, <a class="reference external" href="https://github.com/lovaslin/pyBumpHunter">BumpHunter</a>, <a class="reference external" href="https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0">Presentación</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-even"><td><p>GIS</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/pdf/2012.11638.pdf">Artículo</a></p></td>
+<td><p>BB1</p></td>
+</tr>
+<tr class="row-odd"><td><p>LDA</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/bmdillon/lda-jet-substructure">GitHub</a>, <a class="reference external" href="https://arxiv.org/pdf/1904.04200.pdf">Artículo</a>, <a class="reference external" href="https://indico.cern.ch/event/809820/contributions/3632625/attachments/1971084/3278910/ML4Jets_talk_barrydillon.pdf">Presentación</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-even"><td><p>PGAE</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/stsan9/AnomalyDetection4Jets">GitHub</a></p></td>
+<td><p>BB1,2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reg. Likelihoods</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/johannbrehmer/manifold-flow">Github modelo</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-even"><td><p>UCluster</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/ViniciusMikuni/UCluster">Github</a>, <a class="reference external" href="https://arxiv.org/pdf/2010.07106.pdf">Artículo</a></p></td>
+<td><p>BB2,3</p></td>
+</tr>
+<tr class="row-odd"><td><p>CWoLa</p></td>
+<td><p>Débilmente supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/Jackadsa/CWoLa-Hunting/tree/tf2/LHCO-code">GitHub</a></p></td>
+<td><p>BB1,2</p></td>
+</tr>
+<tr class="row-even"><td><p>CWoLa AE Compare</p></td>
+<td><p>Débilmente/No supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/pdf/2104.02092.pdf">Artículo</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tag N' Train</p></td>
+<td><p>Débilmente supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/OzAmram/TagNTrain">GitHub</a>, <a class="reference external" href="https://arxiv.org/pdf/2002.12376.pdf">Artículo</a>, <a class="reference external" href="https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf">Presentación</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-even"><td><p>SALAD</p></td>
+<td><p>Débilmente supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/bnachman/DCTRHunting">GitHub</a>, <a class="reference external" href="https://arxiv.org/abs/2001.05001">Artículo</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-odd"><td><p>SA-CWoLa</p></td>
+<td><p>Débilmente supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/bnachman/DCTRHunting">GitHub</a>, <a class="reference external" href="https://arxiv.org/pdf/2009.02205.pdf">Artículo</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-even"><td><p>Deep Ensemble</p></td>
+<td><p>Semi-supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/FFFreitas/Deep-Ensemble-Anomaly-Detection">GitHub</a></p></td>
+<td><p>BB1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Factorized Topics</p></td>
+<td><p>Semi-supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/nilais/factorized-topic-modeling">GitHub</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-even"><td><p>QUAK</p></td>
+<td><p>Semi-supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/abs/2011.03550">Artículo</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-odd"><td><p>LSTM</p></td>
+<td><p>Semi-supervisado</p></td>
+<td><p>-</p></td>
+<td><p>BB1-3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="resultados">
+<span id="lhco-resultados-cap"></span><h2><span class="section-number">1.7.3. </span>Resultados<a class="headerlink" href="#resultados" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los resultados individuales de cada modelo se encuentran en <span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">85</a>]</span>. Sin embargo, se pueden resumir cronológicamente en tres etapas</p>
+<div class="section" id="ml4jets-workshop">
+<h3><span class="section-number">1.7.3.1. </span>ML4Jets workshop<a class="headerlink" href="#ml4jets-workshop" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Durante este taller se publicó la BB1. En la siguiente figura se resumen los resultados de los nueve participantes de esta etapa:</p>
+<div class="figure align-default" id="lhco-resultados">
+<a class="reference internal image-reference" href="../../_images/lhco-resultados.png"><img alt="../../_images/lhco-resultados.png" src="../../_images/lhco-resultados.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Figura 1.20 </span><span class="caption-text">Resultados de la primera caja negra. En la figura se encuentran las predicciones de la masa resonante (arriba a la izquierda), el número de eventos de señal (arriba a la derecha), la masa de la primera partícula hija (abajo a la izquierda) y de la segunda partícula hija (abajo a la derecha). En un panel más pequeño se encuentra el &quot;pull&quot; <em>(respuesta-verdadera)/incertidumbre</em></span><a class="headerlink" href="#lhco-resultados" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Los modelos LSTM, Tag N Train y GIS identificaron la masa correcta de la resonancia en una ventana de <span class="math notranslate nohighlight">\(\pm 200\)</span> GeV y PCA (análisis de componentes principales) identificó dentro del error. Las predicciones de otros observables fueron logradas únicamente por GIS.</p>
+</div>
+<div class="section" id="verano-2020">
+<h3><span class="section-number">1.7.3.2. </span>Verano 2020<a class="headerlink" href="#verano-2020" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los conjuntos de datos BB2 y BB3 fueron publicados en el verano de 2020. Para la BB2, el modelo LDA fue el único que predijo ausencia de señal. Ningún participante logró detectar la resonancia de la BB3.</p>
+</div>
+<div class="section" id="revelacion-de-las-cajas-negras">
+<h3><span class="section-number">1.7.3.3. </span>Revelación de las cajas negras<a class="headerlink" href="#revelacion-de-las-cajas-negras" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Después de revelar las señales de las cajas negras y publicar las etiquetas de los eventos para cada caja, algunos modelos enviaron mejoras para el conjunto BB1 únicamente.</p>
+<ul class="simple">
+<li><p>VRNN y BuHuLaSpa reportaron una mejora en la masa invariante debajo de 4 TeV,</p></li>
+<li><p>Deep Ensemble detectó una resonancia en 3.5 Tev,</p></li>
+<li><p>LDA una resonancia no incompatible con 3.8 TeV,</p></li>
+<li><p>PGA detectó una resonancia en 3.9 TeV</p></li>
+<li><p>CWoLa observó una resonancia en 3.5 TeV</p></li>
+</ul>
+<p>En el siguiente capítulo se describirá con mayor detalle los datos de las olimpiadas y los algoritmos participantes utilizados en este trabajo.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos\marco-teorico"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="reproducibilidad.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">1.6. </span>Reproducibilidad</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../referencias/referencias.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Referencias</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Por Mariana Vivas, Universidad Central de Venezuela<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
