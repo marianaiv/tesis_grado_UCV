@@ -6,7 +6,7 @@ Los eventos se generaron utilizando *Pythia*, *Herwig++* y *Delphes*. Pythia y H
 
 Cada evento está compuesto por una lista de todos los hadrones ($p_T,\eta,\phi,p_T,\eta,\phi,\dots$), con relleno de ceros hasta 700 hadrones. En caso de tener la etiqueta para el tipo de evento (señal o fondo), esta se encuentra en la última columna. Todos los eventos tienen al menos un jet anti-kT con $R=1.0$, pseudorapidez $|\eta|<2.5$ y momento transversal $p_T > 1.2$ TeV.
 
-Como se mencionó anteriormente, en este trabajo utilizamos el conjunto R&D y el conjunto BB1, descritos a continuación.
+En este trabajo utilizamos el conjunto R&D y el conjunto BB1, descritos a continuación.
 
 ## Conjunto R&D
 Este es el conjunto de datos proporcionado para investigación y desarrollo (Research & Development). Se utiliza para analizar los datos y entrenar modelos supervisados, es decir, contiene una etiqueta que define si un evento es señal (1) o es fondo (0). 

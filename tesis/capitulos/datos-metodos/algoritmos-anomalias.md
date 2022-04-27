@@ -3,8 +3,8 @@
 En este proyecto se trata de resolver un problema de clasificación binaria con los datos de las LHCO 2020, que son altamente desbalanceados. Esto se conoce como una tarea de *detección de anomalías*. 
 
 La implementación de aprendizaje automático en este trabajo está comprendida por los siguientes pasos:
-1. Pre-procesamiento de los datos utilizando `benchtool`, descrito en la {numref}``
-2. Se dividen los datos 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
+1. Pre-procesamiento de los datos utilizando `benchtool`, descrito en la {numref}`bench-pre`
+2. Se dividen los datos en conjuntos mutuamente excluyentes.Los datos se dividen 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
 3. Se ajusta el modelo minimizando una función de pérdida específica, utilizando los datos de entrenamiento. Estas funciones se describirán más adelante.
 4. Se evalúa el rendimiento del modelo calculando la función de pérdida con los datos de prueba.
 
@@ -97,7 +97,7 @@ $$ (ml-nnneurona)
 
 donde $g_i$ es una función conocida como *función de activación* y $\mathbf{h}_i$ representa la transformación iésima de $\mathbf{x}$, llamada *embedding*. $W$ es la matriz de los *pesos* y $\mathbf{b}$ el vector de los *sesgos*.
 
-El objetivo es hallar los pesos y sesgos que optimizan la función de pérdida. Esto se logra utilizando las etiquetas de los datos y calculando el gradiente de la función de pérdida con respecto a los parámetros del modelo. Este prceso se conoce como *retropropagación* y requiere que las funciones sean diferenciables.
+El objetivo es hallar los pesos y sesgos que optimizan la función de pérdida. Esto se logra utilizando las etiquetas de los datos y calculando el gradiente de la función de pérdida con respecto a los parámetros del modelo. Este proceso se conoce como *retropropagación* y requiere que las funciones sean diferenciables.
 
 Las transformaciones se ordenan en capas ({numref}`ml-nn`), donde la salida de una capa es la entrada de la siguiente.
 
@@ -108,7 +108,7 @@ name: ml-nn
 ---
 Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente. De {cite}`Mehta_2019`
 ```
-La tarea de la red depende de su arquitectura. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la *entropía cruzada binaria* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
+La tarea de la red depende de su arquitectura. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la *entropía binaria cruzada* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
 
 ## K-means
 *K-means* es un algoritmo no-supervisado que separa los datos en $K$ grupos con igual varianza. Los grupos están caracterizados por la media de los datos pertenecientes al grupo. Estos se conocen como "centroides" y se representan con $\mu_j${cite}`Kmeans`. 
@@ -122,10 +122,15 @@ $$ (ml-kmeansinertia)
 donde $\mathbf{x}_n$ es la observación enésima y $r_{nk}$ es la asignación. $r_{nk}$ es 1 si $x_n$ pertenece al grupo y 0 de otra forma.
 
 El algoritmo funciona mediante los siguientes pasos:
+
+```{prf:algorithm} K-means
+:label: alg-kmeans
+
 1. Escoger los centroides. En la primera inicialización se escogen puntos aleatorios de los datos.
 2. Asignar cada muestra al centroide más cercano, minimizando $\mathcal{C}$
 3. Crear nuevos centroides tomando el valor medio de todas las muestras asignadas a cada centroide anterior.
 4. Calcular la diferencia entre los centroides anteriores y los nuevos.
+```
 
 Los últimos tres pasos se repiten hasta que la diferencia entre los centroides esté debajo de un umbral, es decir, hasta que los centroides no se muevan significativamente.
 
@@ -134,6 +139,6 @@ Los últimos tres pasos se repiten hasta que la diferencia entre los centroides 
 width: 400px
 name: ml-kmeans
 ---
-Primeras cinco iteraciones de dos inicializaciones diferentes de K-means. De {cite}`Kmeansgif`
+Primeras cinco iteraciones de dos inicializaciones diferentes de K-means. De {cite}`Kmeansgif`.
 ```
 Como la inicialización de los centroides es aleatoria, usualmente se realizan múltiples inicializaciones y se escoge la que resulte en un menor valor de la inercia.

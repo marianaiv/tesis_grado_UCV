@@ -2,13 +2,13 @@
 # Paquete benchtools
 Como se mencionó en la sección anterior anterior, los conjuntos de datos de las LHCO 2020 incluyen todos los hadrones producto de la colisión entre protones. A partir de estos datos, nos interesa reconstruir los jets de cada evento para analizar variables cinemáticas y de subestructura, entrenar algoritmos de aprendizaje automático y compararlos utilizando las métricas mencionadas en la {numref}`ml-metricasderendimiento`, que se explicarán en la {numref}`met`. Sin embargo, para trabajar con 1,000,000 de colisiones, donde hay posibilidad tener los datos de 700 hadrones por evento, con 3 medidas por hadrón (es decir, 2,100,000,000 de variables), es necesario desarrollar algunas herramientas para facilitar su manejo. 
 
-En esta sección se describirá de manera general el paquete `benchtools`, desarrollado para este trabajo. El paquete incluye herramientas para manejar datos, agrupar jets, comparar algoritmos de clasificación binaria, entre otros. Información más detallada sobre el paquete y cómo utilizarlo se puede encontrar en el [repositorio](https://github.com/marianaiv/benchtools).
+En esta sección se describirá de manera general el paquete `benchtools`, desarrollado para este trabajo. El paquete incluye herramientas para el manejo de datos, agrupamiento jets, comparación algoritmos de clasificación binaria, entre otros. Información más detallada sobre el paquete y cómo utilizarlo se puede encontrar en el [repositorio](https://github.com/marianaiv/benchtools).
 
 (bench-herramientas)=
 ## Funciones
 El paquete se puede dividir en dos partes principales: las funciones y el pipeline. Una función es un bloque de código que resuelve un problema concreto y es lo que utilizamos para armar el pipeline. Recibe cero o más argumentos de entrada y devuelve un argumento de salida o realiza una tarea. En el caso de `benchtools`, se agruparon funciones en cinco módulos diferentes de acuerdo a su utilidad. A continuación se describirán brevemente los grupos y las funciones más relevantes.
 
-Las funciones se dividen en los siguientes modulos:
+Las funciones se dividen en los siguientes módulos:
 - **datatools**: funciones para manejar los datos. Por ejemplo, leer datos iterativamente, unir tablas de datos, entre otras. 
 - **substructure**: funciones para calcular variables cinemática y de subestructura de los jets.
 - **clustering**: funciones para pre-procesar los datos. Por ejemplo, agrupar los jets, calcular las variables de un jet, entre otras.
@@ -24,12 +24,19 @@ En *clustering* se encuentra la función que realiza el pre-procesamiento de los
 (bench-pre)=
 ## Pre-procesamiento de datos
 El pre-procesamiento de datos se realiza para obtener variables físicas. Estas variables son las utilizadas por los modelos para entrenamiento y clasificación. Los pasos para pre-procesar son los siguientes:
-1. Cargar una fracción de los datos
-2. Agrupar los jets de cada evento utilizando anti-kt con $R=1$.
-3. Guardar los jets que tengan $p_T>20GeV$
-4. Calcular $p_T$, $m_j$, $\eta$, $\phi$, $E$, $\tau_{21}$ y el número de hadrones en el jet para los dos jets más energéticos. $\Delta R$, $m_{jj}$ utilizando los dos jets principales y el número de hadrones del evento.
-5. Se salvan los datos pre-procesados.
 
+```{prf:algorithm} Pre-procesamiento
+:label: bench-predatos
+
+**Input**: Datos de todos los hadrones de los eventos.
+**Output**: Variables físicas para cada evento.
+
+1. Cargar una fracción de los eventos. Para cada fracción de eventos:
+    1. Agrupar los jets de cada evento utilizando anti-kt con $R=1$.
+    2. Guardar los jets que tengan $p_T>20GeV$
+    3. Calcular $p_T$, $m_j$, $\eta$, $\phi$, $E$, $\tau_{21}$ y el número de hadrones en el jet para los dos jets más energéticos. $\Delta R$, $m_{jj}$ utilizando los dos jets principales y el número de hadrones del evento.
+    4. Guardar las variables calculadas.
+```
 Este proceso se hace iterativamente para fracciones de datos, debido a que cargar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos pre-procesados.
 
 Una tabla con la definición de cada variable calculada se encuentra a continuación:
@@ -52,19 +59,21 @@ Una tabla con la definición de cada variable calculada se encuentra a continuac
 
 (bench-pipeline-cap)=
 ## Pipeline
-En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de `benchtools` procesa los datos, entrena los modelos explicados en la {numref}`ml-algoritmos`, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos específicos se describen a continuación:
+En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de `benchtools` procesa los datos, entrena los modelos explicados en la {numref}`alg`, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos específicos se describen a continuación:
 
-**Entrada**: un archivo con los datos de los eventos y un archivo con la lista de los clasificadores externos a comparar, salvados como un objeto `classifier`.
+```{prf:algorithm} Pipeline
+:label: bench-pipelinealg
 
-**Pasos**:
+**Input**: Datos de los eventos y lista de los clasificadores externos a comparar, salvados como un objeto `classifier`.
+
+**Output**: Imagenes de los plots de las métricas y una tabla con las métricas númericas, así como gráficos de barra de cada variable.
+
 1. Pre-procesar los datos de los eventos.
-2. Escalar los datos según el clasificador a utilizar y entrenar los modelos y salvarlos.
+2. Escalar los datos según el clasificador a utilizar, entrenar los modelos y salvarlos.
 3. Obtener los puntajes y predicciones de cada clasificador.
 4. Cargar los clasificadores externos.
 5. Comparar los algoritmos utilizando las métricas en *metrictools*
-
-**Salida**: archivo con imagenes de los plots de las métricas y una tabla con las métricas númericas, así como gráficos de barra de cada variable para visualizar los resultados.
-
+```
 El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra a continuación:
 
 ```{figure} ./../../figuras/bench-pipeline.png

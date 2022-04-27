@@ -1,6 +1,6 @@
 (met)=
 # Métricas de rendimiento
-Al intentar resolver problemas con aprendizaje automático, es necesario comparar distintos métodos. Esto se hace calculando las métricas de rendimiento mencionadas en la {numref}`ml-metricasderendimiento`. Un resumen de las métricas más comúnes para la tarea de clasificación binaria, y las utilizadas en este trabajo, se presenta a continuación.
+Al intentar resolver problemas utilizando aprendizaje automático, es necesario comparar distintos métodos. Esto se hace calculando las métricas de rendimiento mencionadas en la {numref}`ml-metricasderendimiento`. Un resumen de las métricas más comúnes para la tarea de clasificación binaria, y las utilizadas en este trabajo, se presenta a continuación.
 
 (met-num)=
 ## Métricas numéricas
@@ -71,7 +71,6 @@ name: ml-otrasroc
 ---
 Ejemplos de otras versiones de la curva ROC. A la izquierda la curvas de eficiencia de señal vs. rechazo de fondo. A la derecha, inverso de la eficiencia de fondo vs. eficiencia de señal. De {cite}`Kasieczka_2021`
 ```
-
 La curva ROC y el AUC tienen sus limitaciones{cite}`valassi_2019`:
 - La comparación de dos curvas ROC que se cruzan no es tan evidente, ya que el AUC se construye como una integral que otorga el mismo peso a todas las partes de la curva. Sin embargo, para la clasificación se escoge un punto específico. En este caso, otras métricas se deben utilizar para definir cuál clasificador proporciona mejor rendimiento en la región donde se elija el umbral de decisión.
 - El uso de las curvas ROC puede no ser apropiado para problemas que incluyan datos altamente desbalanceados, debido a que conduce a evaluaciones demasiado optimistas. La curva PR puede ser más informativa en este caso
@@ -90,7 +89,6 @@ name: ml-curvapr
 ---
 Ejemplos de curva precisión-recuperación. De {cite}`valassi_andrea_2018_1405727`
 ```
-
 Análogo al AUC, se utiliza el área bajo la curva PR (AUCPR) y la precisión promedio (AP). La precisión promedio resume la curva PR utilizando la media ponderada de las precisiones logradas en cada umbral, utilizando como peso el aumento en recuperación del umbral anterior{cite}`AP`.
 
 $$
