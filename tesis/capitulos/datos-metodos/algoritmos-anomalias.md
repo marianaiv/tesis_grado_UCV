@@ -4,12 +4,15 @@ En este proyecto se trata de resolver un problema de clasificación binaria con 
 
 La implementación de aprendizaje automático en este trabajo está comprendida por los siguientes pasos:
 1. Pre-procesamiento de los datos utilizando `benchtool`, descrito en la {numref}`bench-pre`
-2. Se dividen los datos en conjuntos mutuamente excluyentes.Los datos se dividen 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
+2. Se dividen los datos en conjuntos mutuamente excluyentes. Los datos se dividen 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
 3. Se ajusta el modelo minimizando una función de pérdida específica, utilizando los datos de entrenamiento. Estas funciones se describirán más adelante.
 4. Se evalúa el rendimiento del modelo calculando la función de pérdida con los datos de prueba.
 
-Se probaron múltiples algoritmos durante el desarrollo de `benchtools` y para este trabajo se escogieron los que lograron un mejor redimiento. A continuación, se explicarán los algoritmos utilizados, enfocándonos en su uso para la tarea de clasificación binaria. Más información sobre cómo se escogieron estos algoritmos se encuentra en la sección de *[notebooks](https://github.com/marianaiv/benchtools/tree/main/notebooks)* del repositorio de `benchtools`.
+Se probaron múltiples algoritmos durante el desarrollo de `benchtools` y para este trabajo se escogieron los que lograron un mejor redimiento. Más información sobre cómo se escogieron estos algoritmos se encuentra en la sección de *[notebooks](https://github.com/marianaiv/benchtools/tree/main/notebooks)* del repositorio de `benchtools`. 
 
+A continuación, se explicarán los algoritmos utilizados, enfocándonos en su uso para la tarea de clasificación binaria. También se resumirán algunos métodos necesarios para explicar más adelante los algoritmos utilizados de las LHCO 2020. La referencia principal de esta sección es {cite}`Mehta_2019`.
+
+(alg-bosques)=
 ## Bosque aleatorio
 Los bosques aleatorios son algoritmos supervisados utilizados ampliamente para tareas complejas de clasificación. Estos algoritmos son ensambles de árboles de decisión.
 
@@ -39,6 +42,7 @@ name: ml-bosquealeatorio
 ---
 Representación visual del funcionamiento de un bosque aleatorio. De {cite}`chauhan_2021`
 ```
+(alg-gbc)=
 ## Clasificador del gradiente del impulso
 
 El clasificador del gradiente del impulso (GBC) usualmente utiliza árboles de regresión como aprendiz débil. Es un modelo supervisado y aditivo que avanza por etapas{cite}`GBC`. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior. Su formulación matemática es la siguiente{cite}`GTBC`.
@@ -65,6 +69,7 @@ $$ (ml-gbcaprendizdebil)
 
 donde $g_i$ es la derivada de la función de pérdida con respecto a su segundo parámetro, evaluada en $F_{m-1}(x)$. La suma en {eq}`ml-gbcaprendizdebil` se minimiza si $h(x_i)$ se ajusta para predecir un valor proporcional al gradiente negativo $−g_i$. Por lo tanto, en cada iteración, el estimador $h_m$ está ajustado para predecir los gradientes negativos de las muestras. Los gradientes se actualizan en cada iteración. Este proceso puede considerarse como una especie de descenso de gradiente en un espacio funcional.
 
+(alg-qda)=
 ## Análisis de discriminante cuadrático
 El análisis de discriminante cuadrático{cite}`QDA` es un clasificador supervisado con un límite de decisión cuadrático. El modelo asume que las densidades condicionales de clase $P(\mathbf{X}|y=k)$, para cada clase $k$, están distribuidas normalmente.
 
@@ -84,10 +89,11 @@ name: ml-qda
 Clasificación con QDA. a) Lods puntos a ser clasificados, b) los límites o fronteras de decisión. La barra de color indica la probabilidad de pertenecer a la clase 1. De {cite}`QDAimg`
 ```
 
+(alg-neural)=
 ## Redes neuronales
 Las redes neuronales son modelos supervisados y no-lineales inspirados en las neuronas. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.
 
-Las redes neuronales se definen mediante una serie de transformaciones que mapean la entrada $x$ a estados "ocultos" $\mathbf{h}_i$. Finalmente, una última transformación mapea estos estados a una función de salida $\mathbf{y}${cite}`Guest_2018`.
+Las redes neuronales se definen mediante una serie de transformaciones que mapean la entrada $x$ a estados "ocultos" $\mathbf{h}_i$. Finalmente, una última transformación mapea estos estados a una función de salida $\mathbf{y}${cite}`Guest_2018`. Esto también se conoce como perceptrón multicapas.
 
 Las transformaciones se pueden escribir matemáticamente como:
 
@@ -95,7 +101,7 @@ $$
     \mathbf{h}_i = g_i(W_i\mathbf{h}_i+\mathbf{b}_i)
 $$ (ml-nnneurona)
 
-donde $g_i$ es una función conocida como *función de activación* y $\mathbf{h}_i$ representa la transformación iésima de $\mathbf{x}$, llamada *embedding*. $W$ es la matriz de los *pesos* y $\mathbf{b}$ el vector de los *sesgos*.
+donde $g_i$ es una función conocida como *función de activación* y $\mathbf{h}_i$ representa la transformación iésima de $\mathbf{x}$, llamada *encaje*. $W$ es la matriz de los *pesos* y $\mathbf{b}$ el vector de los *sesgos*.
 
 El objetivo es hallar los pesos y sesgos que optimizan la función de pérdida. Esto se logra utilizando las etiquetas de los datos y calculando el gradiente de la función de pérdida con respecto a los parámetros del modelo. Este proceso se conoce como *retropropagación* y requiere que las funciones sean diferenciables.
 
@@ -108,8 +114,15 @@ name: ml-nn
 ---
 Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente. De {cite}`Mehta_2019`
 ```
-La tarea de la red depende de su arquitectura. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la *entropía binaria cruzada* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
+La tarea de la red depende de su arquitectura. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la *entropía cruzada binaria* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
 
+$$
+    \mathcal{L}_{BC} = -\frac{1}{N}\sum_{i=1}^N y_i\log(p(y_i))+(1-y_i)\log(1-p(y_1))
+$$ (binary-crossentropy)
+
+donde $N$ es el número de muestras a clasificar, $y_i$ es la etiqueta de la muestra iésima (si es clasificación binaria 0 o 1), y $p(y_i)$ es la probabilidad de que la muestra sea de clase 1. 
+
+(alg-kmeans)=
 ## K-means
 *K-means* es un algoritmo no-supervisado que separa los datos en $K$ grupos con igual varianza. Los grupos están caracterizados por la media de los datos pertenecientes al grupo. Estos se conocen como "centroides" y se representan con $\mu_j${cite}`Kmeans`. 
 
@@ -134,11 +147,35 @@ El algoritmo funciona mediante los siguientes pasos:
 
 Los últimos tres pasos se repiten hasta que la diferencia entre los centroides esté debajo de un umbral, es decir, hasta que los centroides no se muevan significativamente.
 
-```{figure} ./../../figuras/ml-kmeans.webp
----
-width: 400px
-name: ml-kmeans
----
-Primeras cinco iteraciones de dos inicializaciones diferentes de K-means. De {cite}`Kmeansgif`.
-```
 Como la inicialización de los centroides es aleatoria, usualmente se realizan múltiples inicializaciones y se escoge la que resulte en un menor valor de la inercia.
+
+(alg-ae)=
+## Codificador automático
+Los codificadores automáticos (AE) son algoritmos de aprendizaje no supervisado que mapean una entrada una representación comprimida latente y luego vuelve a sí misma. Al aprender como reproducir la salida original, el modelo extrae características de los datos de entrada{cite}`Nakai_2019`.
+
+Estas redes se pueden dividir en dos partes. El codificador, que comprime los datos a un espacio latente, y el decodificador que produce la reconstruccion{cite}`Goodfellow-et-al-2016`. Una medida de qué tan bien funciona el codificador es la diferencia entre la entrada y la salida de acuerdo a alguna métrica de distancia conocida como "error de reconstrucción".
+
+```{figure} ./../../figuras/alg-ae.png
+---
+width: 600px
+name: alg-aefig
+---
+Diagrama del funcionamiento de un codificador automático. La entrada se mapea a una representación de dimensionalidad reducida y luego es reconstruida. De {cite}`PhysRevD.101.075021`.
+```
+Este algoritmo se ha empezado a utilizar en HEP como detector de anomalías. 
+
+Al entrenar el codificador automático en una muestra de eventos de fondo, este va a aprender las características de fondo y se espera que cualquier señal no sea reconstruida correctamente. Así, se puede utilizar un corte en el error de reconstrucción como un umbral de anomalía{cite}`PhysRevD.101.075021`. 
+
+(alg-gan)=
+## Red generativa antagónica
+Una *red generativa antagónica* (GAN) está basada en modelado generativo y en conceptos de teoría de juegos.
+
+El modelado generativo es una tarea de aprendizaje no supervisado que implica que el modelo descubra y aprenda automáticamente las regularidades o patrones en los datos de entrada de tal manera pueda generar nuevos ejemplos que plausiblemente podrían haberse extraído del conjunto de datos original.
+
+La GAN se construye a partir de dos redes neuronales conocidas como *generador* y *discriminador*. 
+
+El generador aproxima una función generadora $G$ que tiene como entrada $\mathbf{z}$ muestreada de un distribución de probabilidad a priori en el espacio latente y devuelve un $\mathbf{x}$ del modelo.
+
+El discriminador aproxima una función discriminadora $D$ que distingue entre muestras $\mathbf{x}$ de los datos y muestras $\mathbf{x}=G(\mathbf{z})$ sintéticas. 
+
+El discriminador se entrena para diferenciar entre las muestras sintéticas y los datos reales y el generador se entrena para engañar al discriminador. Las función de costo del discriminador depende de los parámetros del generador y viceversa. Los modelos se entrenan juntos hasta que el discriminador es engañado una cantidad de veces sobre algún umbral, lo que significa que el generador está generando ejemplos plausibles.
