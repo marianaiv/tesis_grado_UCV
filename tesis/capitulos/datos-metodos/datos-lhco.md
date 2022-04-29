@@ -15,7 +15,7 @@ Consiste en 1,000,0000 de eventos dijet de QCD, o eventos de fondo, y 100,000 ev
 
 ```{figure} ./../../figuras/lhco-RnD.png
 ---
-width: 400px
+width: 300px
 name: datos-RnD
 ---
 Diagrama de Feynmann para la señal del conjunto R&D y la BB1. Producción del boson *Z'* de física BSM y su decaimiento a las partículas *X* y *Y * de física BSM. Estas últimas, decayendo a jets.

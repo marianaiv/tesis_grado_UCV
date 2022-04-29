@@ -76,7 +76,7 @@ En programación, un pipeline consiste en una serie de pasos en los que la salid
 ```
 El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra a continuación:
 
-```{figure} ./../../figuras/bench-pipeline.png
+```{figure} ../../figuras/bench-pipeline.png
 ---
 width: 800px
 name: bench-pipeline
