@@ -22,4 +22,12 @@ chapters:
   - file: capitulos/marco-teorico/aprendizaje-automatico
   - file: capitulos/marco-teorico/reproducibilidad
   - file: capitulos/marco-teorico/olimpiadas-LHC
-#- file: capitulos/referencias/referencias 
+- file: capitulos/datos-metodos/resumen
+  sections:
+  - file: capitulos/datos-metodos/datos-lhco
+  - file: capitulos/datos-metodos/algoritmos-anomalias
+  - file: capitulos/datos-metodos/metricas
+  - file: capitulos/datos-metodos/algoritmos-lhco
+  - file: capitulos/datos-metodos/benchtools
+- file: capitulos/referencias/referencias 
+
