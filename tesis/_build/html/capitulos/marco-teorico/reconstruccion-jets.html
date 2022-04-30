@@ -142,9 +142,46 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../datos-metodos/resumen.html">
+   2. Datos y métodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/datos-lhco.html">
+     2.1. Conjuntos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html">
+     2.2. Algoritmos para detección de anomalías
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/metricas.html">
+     2.3. Métricas de rendimiento
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html">
+     2.4. Algoritmos LHCO 2020
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/benchtools.html">
+     2.5. Paquete benchtools
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../referencias/referencias.html">
-   2. Referencias
+   3. Referencias
   </a>
  </li>
 </ul>
@@ -479,8 +516,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="funciones-de-correlacion-de-energia">
 <h3><span class="section-number">1.4.2.3. </span>Funciones de correlación de energía<a class="headerlink" href="#funciones-de-correlacion-de-energia" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Las funciones de correlación de energía logran esencialmente lo mismo que N-subjettines, sin la necesidad de definir N ejes de referencia <span id="id14">[<a class="reference internal" href="../referencias/referencias.html#id33" title="Simone Marzani, Gregory Soyez, and Michael Spannowsky. Looking Inside Jets: an introduction to jet substructure and boosted-object phenomenology. Springer International Publishing, 2019. URL: https://doi.org/10.1007%2F978-3-030-15709-8, doi:10.1007/978-3-030-15709-8.">59</a>]</span>. Su finalidad es identificar una estructura de N-subjets o depósitos de energía. Las funciones de correlación de energía (ECF) están definidas de la siguiente forma<span id="id15">[<a class="reference internal" href="../referencias/referencias.html#id34" title="Martin Jankowiak and Andrew J. Larkoski. Angular scaling in jets. Journal of High Energy Physics, apr 2012. URL: https://doi.org/10.1007%2Fjhep04%282012%29039, doi:10.1007/jhep04(2012)039.">60</a>, <a class="reference internal" href="../referencias/referencias.html#id35" title="Andrew J. Larkoski, Gavin P. Salam, and Jesse Thaler. Energy correlation functions for jet substructure. Journal of High Energy Physics, jun 2013. URL: https://doi.org/10.1007%2Fjhep06%282013%29108, doi:10.1007/jhep06(2013)108.">61</a>]</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a30a69d4-43e7-4ec3-9f85-45d71f5bef34">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-a30a69d4-43e7-4ec3-9f85-45d71f5bef34" title="Enlace permanente a esta ecuación">¶</a></span>\[\begin{gather}
+<div class="amsmath math notranslate nohighlight" id="equation-94ceed36-877b-4f2e-b60b-5674d0b86740">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-94ceed36-877b-4f2e-b60b-5674d0b86740" title="Enlace permanente a esta ecuación">¶</a></span>\[\begin{gather}
     ECF(1,\beta)=\sum p_{Ti}\\
     ECF(2,\beta)=\sum_{i&lt;j} p_{Ti}p_{Tj}(\Delta R_{ij})^\beta\\
     ECF(3,\beta)=\sum_{i&lt;j&lt;k} p_{Ti}p_{Tj}p_{Tk}(\Delta R_{ij}\Delta R_{jk}\Delta R_{ki})^\beta\\

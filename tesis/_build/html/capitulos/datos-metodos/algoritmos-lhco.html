@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+
+<html lang="spanish">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.4. Algoritmos LHCO 2020 &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="2.5. Paquete benchtools" href="benchtools.html" />
+    <link rel="prev" title="2.3. Métricas de rendimiento" href="metricas.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="spanish">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_ucv.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../marco-teorico/resumen.html">
+   1. Marco teórico
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/modelo-estandar.html">
+     1.1. El módelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/cromodinamica-cuantica.html">
+     1.2. Cromodinámica cuántica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/mas-alla-del-ms.html">
+     1.3. Más allá del modelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html">
+     1.4. Reconstrucción de jets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/aprendizaje-automatico.html">
+     1.5. Aprendizaje automático
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
+     1.6. Reproducibilidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
+     1.7. Olimpiadas LHC 2020
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="resumen.html">
+   2. Datos y métodos
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="datos-lhco.html">
+     2.1. Conjuntos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="algoritmos-anomalias.html">
+     2.2. Algoritmos para detección de anomalías
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="metricas.html">
+     2.3. Métricas de rendimiento
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.4. Algoritmos LHCO 2020
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="benchtools.html">
+     2.5. Paquete benchtools
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../referencias/referencias.html">
+   3. Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/capitulos/datos-metodos/algoritmos-lhco.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
+                    class="fab fa-github"></i>repositorio</button></a>
+        <a class="issues-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/datos-metodos/algoritmos-lhco.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/datos-metodos/algoritmos-lhco.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/marianaiv/tesis_grado_UCV/marco-teorico?urlpath=tree/tesis/capitulos/datos-metodos/algoritmos-lhco.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reproducibilidad">
+   2.4.1. Reproducibilidad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ucluster">
+   2.4.2. UCluster
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gan-ae">
+   2.4.3. GAN-AE
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Algoritmos LHCO 2020</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reproducibilidad">
+   2.4.1. Reproducibilidad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ucluster">
+   2.4.2. UCluster
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gan-ae">
+   2.4.3. GAN-AE
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="algoritmos-lhco-2020">
+<span id="alglhco"></span><h1><span class="section-number">2.4. </span>Algoritmos LHCO 2020<a class="headerlink" href="#algoritmos-lhco-2020" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>El rendimiento de los distintos métodos que utilizaron los participantes de las LHCO 2020 sólo se puede comparar mediante los resultados que obtuvieron. Sin embargo, como se puede observar en la <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html#lhco-resultados"><span class="std std-numref">Figura 1.20</span></a>, la mayoría de los modelos no reportaron el error asociado al resultado obtenido. Más aún, cada participante reportó los resultados y rendimiento del modelo de acuerdo al método utilizado, dificultando la comparación directa de los análisis.</p>
+<p>Uno de los objetivos principales de este trabajo es comparar directamente algunos modelos participantes de las LHCO 2020. Para ello, es necesario poder reproducir el resultado de dichos modelos. Sin embargo, estos deben cumplir múltiples de los requisitos para hacer investigación reproducible explicados en la <a class="reference internal" href="../marco-teorico/reproducibilidad.html#rpd-investigacion"><span class="std std-numref">Sección 1.6.2</span></a>, a manera de asegurar que se pueda obtener el resultado de los modelos en un rango de tiempo adecuado para el desarrollo de este trabajo.</p>
+<p>A continuación, se hablará del análisis de los algoritmos participantes a nivel de la reproducibilidad de sus resultados y se explicarán los modelos a comparar en este trabajo.</p>
+<div class="section" id="reproducibilidad">
+<span id="alglhco-rep"></span><h2><span class="section-number">2.4.1. </span>Reproducibilidad<a class="headerlink" href="#reproducibilidad" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para escoger los algoritmos a comparar, se hizo una revisión extensiva de la información proporcionada por los participantes mencionados en la <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html#lhc-participantes"><span class="std std-numref">Tabla 1.1</span></a>. Como se explica en la <a class="reference internal" href="../marco-teorico/reproducibilidad.html#rpd-investigacion"><span class="std std-numref">Sección 1.6.2</span></a>, para poder reproducir resultados en este contexto es necesario principalmente que se encuentre pública la información sobre el pre-procesamiento de los datos, el código del modelo, instrucciones para utilizarlo, información acerca del entorno computacional y licencia. De cada participante se encontró lo siguiente,</p>
+<table class="colwidths-auto table" id="alglhc-participantesrep">
+<caption><span class="caption-number">Tabla 2.3 </span><span class="caption-text">Información disponible de cada participante de las LHCO 2020</span><a class="headerlink" href="#alglhc-participantesrep" title="Enlace permanente a esta tabla">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Nombre</p></th>
+<th class="text-align:center head"><p>Pre-procesamiento</p></th>
+<th class="text-align:center head"><p>Código</p></th>
+<th class="text-align:center head"><p>Instrucciones</p></th>
+<th class="text-align:center head"><p>Entorno</p></th>
+<th class="text-align:center head"><p>Licencia</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>VRNN</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>ANODE</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>BuHuLaSpa</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>GAN-AE</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>GIS</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>LDA</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>PGAE</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Reg. Likelihoods</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>UCluster</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>CWoLa</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>CWoLa AE Compare</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Tag N' Train</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>SALAD</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>SA-CWoLa</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Deep Ensemble</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Factorized Topics</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>QUAK</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>LSTM</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+</tbody>
+</table>
+<p>Un resumen de general de la información proporcionada por todos los algoritmos se encuentra en la <a class="reference internal" href="#alglhco-repfigure"><span class="std std-numref">Figura 2.11</span></a></p>
+<div class="figure align-default" id="alglhco-repfigure" style="width: 500px">
+<div class="cell_output docutils container">
+<img alt="../../_images/algoritmos-lhco_1_0.png" src="../../_images/algoritmos-lhco_1_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Figura 2.11 </span><span class="caption-text">Resumen de la reproducibilidad de los participantes de las LHCO 2020.</span><a class="headerlink" href="#alglhco-repfigure" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>En la <a class="reference internal" href="#alglhco-repfigure"><span class="std std-numref">Figura 2.11</span></a> se observa que la mayoría de los algoritmos participantes no poseen suficiente información pública para poder reproducir sus resultados, lo que inmmediatamente límita las opciones de modelos a utilizar en este trabajo. De los 18 participantes, sólo <em>UCluster</em> cumple con todas las características. <em>GAN-AE</em>, <em>LDA</em>  y <em>PGAE</em> cumplen con cuatro de las características. Para este trabajo se escogieron <em><strong>UCluster</strong></em> y <em><strong>GAN-AE</strong></em> debido a la simplicidad de la información proporcionada. Los algoritmos se explicarán siguiendo <span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">85</a>]</span>.</p>
+</div>
+<div class="section" id="ucluster">
+<span id="alglhco-ucluster"></span><h2><span class="section-number">2.4.2. </span>UCluster<a class="headerlink" href="#ucluster" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>UCluster (Unsupervised Clustering)<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id114" title="Vinicius Mikuni and Florencia Canelli. Unsupervised clustering for collider physics. Physical Review D, may 2021. URL: https://doi.org/10.1103%2Fphysrevd.103.092007, doi:10.1103/physrevd.103.092007.">106</a>]</span> es un método que agrupa puntos con características similares, inmersos en una representación reducida de los datos de eventos. Esta representación se crea utilizando una red neuronal para reducir la dimensionalidad de los datos. El método es independiente de la arquitectura de la red neuronal.</p>
+<p>Para crear el encjae se hace una <em>clasificación de masa de jet por partícula</em>, es decir, a cada partícula perteneciente a un jet se le asigna una etiqueta proporcional a la masa del jet al que pertenece. Estas etiquetas se crean definiendo 20 intervalos equidistantes entre 10 y 1000 GeV.</p>
+<p>En particular, el modelo debe aprender la masa del jet al que la partícula pertenece y cuáles partículas pertenecen al musmo jet. El modelo utiliza las primeras 100 partículas asociadas a los dos jets más masivos de cada evento y consta de dos tareas, una de clasificación y otra de agrupamiento. La función de pérdida conjunta es:</p>
+<div class="math notranslate nohighlight" id="equation-loss-ucluster">
+<span class="eqno">(2.12)<a class="headerlink" href="#equation-loss-ucluster" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    L = L_{focal} + \beta L_{cluster}.
+\]</div>
+<p>Un valor de <span class="math notranslate nohighlight">\(\beta=10\)</span> se utiliza para darle a las componentes el mismo orden de magnitud relativo.</p>
+<p><span class="math notranslate nohighlight">\(L_{focal}\)</span> hace referencia a la función de pérdida focal, que es comúnmente utilizada para clasificar datos con etiquetas altamente desbalanceadas<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">85</a>]</span>.</p>
+<div class="math notranslate nohighlight" id="equation-focal-loss">
+<span class="eqno">(2.13)<a class="headerlink" href="#equation-focal-loss" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    L_{focal}=-\frac{1}{N}\sum_j^N\sum_m^M y_{j,m}(1-p_{\theta,m}(x_j))^\gamma \log(p_{\theta,m}(x_j))
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(p_{\theta,m}(x_j)\)</span> es la confianza de la red para el evento <span class="math notranslate nohighlight">\(x_j\)</span>, con parámetros entrenables <span class="math notranslate nohighlight">\(\theta\)</span>, de ser clasificado como clase <span class="math notranslate nohighlight">\(m\)</span>. <span class="math notranslate nohighlight">\(y_{j,m}\)</span> es 1 si la clase <span class="math notranslate nohighlight">\(m\)</span> es correctamente asignada al evento <span class="math notranslate nohighlight">\(x_j\)</span> y 0 de otra forma. Utilizaron <span class="math notranslate nohighlight">\(\gamma=2\)</span>.</p>
+<p>La función de pérdida del agrupamiento fue definida como,</p>
+<div class="math notranslate nohighlight" id="equation-cluster-loss">
+<span class="eqno">(2.14)<a class="headerlink" href="#equation-cluster-loss" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    L_{cluster}=\frac{1}{N}\sum_k^K\sum_j^N\|f_\theta(x_j)-\mu_k\|^2\pi_{jk}.
+\]</div>
+<p>La distancia entre el evento <span class="math notranslate nohighlight">\(x_j\)</span> y el centroide <span class="math notranslate nohighlight">\(\mu_k\)</span> se calcula en el espacio de encaje <span class="math notranslate nohighlight">\(f_\theta\)</span>, creado por la clasificación. <span class="math notranslate nohighlight">\(\pi_{jk}\)</span> pesa la importancia de cada evento para el objetivo de agrupación y está definido como:</p>
+<div class="math notranslate nohighlight" id="equation-peso-clusterloss">
+<span class="eqno">(2.15)<a class="headerlink" href="#equation-peso-clusterloss" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    \pi_{jk}=\frac{e^{-\alpha\|f_\theta(x_j)-\mu_k\|}}{\sum_{k'}e^{-\alpha\|f_\theta(x_j)-\mu_k\|}}
+\]</div>
+<p>con el hiperparámetro <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p>El valor inicial de los centroides se hace utilizando el algoritmo K-means, para luego realizar el entrenamiento utilizando la función de pérdida conjunta en la ecuación <a class="reference internal" href="#equation-loss-ucluster">(2.12)</a>.</p>
+<p>Como se mencionó anteriormente, el modelo es libre de la arquitectura de la red neuronal. Sin embargo, la implementación utilizada en las LHCO 2020 utiliza ABCNet, una red basada en grafos donde cada partícula reconstruida es un nodo del grafo. La arquitectura y la capa del encaje se encuentran en el siguiente diagrama,</p>
+<div class="figure align-default" id="bench-abcnet">
+<a class="reference internal image-reference" href="../../_images/bench-ABCNet.png"><img alt="../../_images/bench-ABCNet.png" src="../../_images/bench-ABCNet.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.12 </span><span class="caption-text">Diagrama del pipeline.</span><a class="headerlink" href="#bench-abcnet" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Para crear las GAPLayers se utiliza la distancia entre los 10 vecinos mas cercanos de cada partícula. La primera GAPLayer utiliza la distancia <span class="math notranslate nohighlight">\(\Delta R=\sqrt{\Delta\eta^2+\Delta\phi^2}\)</span> y la segunda utiliza las distancias euclídeas.</p>
+</div>
+<div class="section" id="gan-ae">
+<span id="alglhco-ganae"></span><h2><span class="section-number">2.4.3. </span>GAN-AE<a class="headerlink" href="#gan-ae" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El método GAN-AE intenta asociar un discriminante y un codificador automatico como una red generativa antagónica siguiendo los pasos a continuación:</p>
+<p>La <strong>red discriminativa</strong> es un perceptrón multicapas (MLP). Inicialmente es entrenado utilizando la entropia cruzada binaria (ec.<a class="reference internal" href="algoritmos-anomalias.html#equation-binary-crossentropy">(2.6)</a>) en una muestra mezclada de eventos reconstruidos y originales, con el objetivo de exponer las débilidades del codificador automatico.</p>
+<p>El <strong>codificador automatico</strong> es entrenado utilizando una función de pérdida que combina la reconstrucción del error (en este caso, la distancia euclídea media (MED) entre la entrada y la salida) y la entropía binaria cruzada.</p>
+<div class="math notranslate nohighlight" id="equation-loss-ae">
+<span class="eqno">(2.16)<a class="headerlink" href="#equation-loss-ae" title="Enlace permanente a esta ecuación">¶</a></span>\[  
+    \mathcal{L}_{AE} = \mathcal{L}_{BC}+\epsilon\times\text{MED}+\alpha\times\text{DisCo}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\epsilon\)</span> y <span class="math notranslate nohighlight">\(\alpha\)</span> son hiperparámetros para balancear los pesos de cada término y <span class="math notranslate nohighlight">\(\text{DisCo}\)</span> es la correlación de distancia, para descorrelacionar el error de reconstrucción de la masa invariante. En este caso, <span class="math notranslate nohighlight">\(\mathcal{L}_{BC}\)</span> se evalúa dando eventos reconstruidos a la red discriminativa, pero esta vez con la etiqueta &quot;equivocada&quot;, con el objetivo de engañarla.</p>
+<p>Por último, se evalúa el codificador automatico utilizando una <em>figura de mérito</em>:</p>
+<div class="math notranslate nohighlight" id="equation-fom">
+<span class="eqno">(2.17)<a class="headerlink" href="#equation-fom" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    \text{FoM}=\text{MED}+(1-\text{Media salida MLP}).
+\]</div>
+<p>El término <span class="math notranslate nohighlight">\(1-\text{Media salida MLP}\)</span> es cercano a cero a medida que el codificador automático engaña mejor al MLP.</p>
+<p>Estos tres pasos se repiten en un búcle y una vez que el codificador automatico ha sido entrenado se descarta la red discriminativa. Una vez descartada, el codificador automatico utiliza las distancias euclídeas como característica discriminativa.</p>
+<p>Los participantes utilizaron el método anteriormente descrito en conjunto con <em>BumpHunter</em>, un algoritmo que compara la distribución de los datos con datos de referencia y evalúa el valor p y la significancia de cualquier desviación. Sin embargo, la implementación en este trabajo se limita al uso del algoritmo GAN-AE, que es la parte publicada de este método.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos\datos-metodos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="metricas.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">2.3. </span>Métricas de rendimiento</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="benchtools.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Paquete benchtools</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Por Mariana Vivas, Universidad Central de Venezuela<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
