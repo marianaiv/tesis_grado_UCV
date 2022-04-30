@@ -28,7 +28,7 @@ donde $Q_m$ representa los datos en el nodo $m$ y $p_{mk}$ es la proporción de 
 
 ```{figure} ./../../figuras/ml-arboldecision.png
 ---
-width: 600px
+width: 400px
 name: ml-arboldecision
 ---
 Ejemplo de un árbol de decisión. Para una conjunto de características $\mathbf{x}$, su etiqueta $y$ es predicha, recorriéndolo desde su raíz, pasando por las hojas, siguiendo las ramas que satisface. De {cite}`Mehta_2019`.
@@ -37,7 +37,7 @@ Los ***bosques aleatorios*** son clasificadores que consisten en un ensamble de 
 
 ```{figure} ./../../figuras/ml-bosquealeatorio.png
 ---
-width: 700px
+width: 600px
 name: ml-bosquealeatorio
 ---
 Representación visual del funcionamiento de un bosque aleatorio. De {cite}`chauhan_2021`
@@ -109,7 +109,7 @@ Las transformaciones se ordenan en capas ({numref}`ml-nn`), donde la salida de u
 
 ```{figure} ./../../figuras/ml-nn.png
 ---
-width: 500px
+width: 350px
 name: ml-nn
 ---
 Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente. De {cite}`Mehta_2019`

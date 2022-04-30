@@ -29,5 +29,5 @@ chapters:
   - file: capitulos/datos-metodos/metricas
   - file: capitulos/datos-metodos/algoritmos-lhco
   - file: capitulos/datos-metodos/benchtools
-- file: capitulos/referencias/referencias 
+#- file: capitulos/referencias/referencias 
 

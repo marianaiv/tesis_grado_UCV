@@ -85,3 +85,7 @@ name: bench-pipeline
 Diagrama del pipeline.
 ```
 Las opciones para correr el pipeline se encuentran explicadas en el [repositorio](https://github.com/marianaiv/benchtools). Los resultados de su uso se observarán más adelante.
+
+```{bibliography}
+:style: unsrt
+```
