@@ -38,12 +38,14 @@ $$
     \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}
 $$ (ml-exactitudbalanceada)
 
+En este trabajo se utilizan las métricas descritas en la {numref}`ml-metricas`, salvo la exactitud, que se sustituye por la exactitud balanceada.
+
 (met-plot)=
 ## Métricas gráficas
 Las métricas gráficas más conocidas son la *curva característica de funcionamiento del receptor* (curva ROC) y la *curva precisión-recuperación* (curva PR).
 
 ### Curva ROC
-Los clasificadores usualmente asignan un puntaje $\mathcal{D}$ de manera que una puntuación más alta significa mayor probabilidad de ser señal. La clasificación discreta se logra escogiendo un *punto de operación*, es decir, escogiendo un umbral de decisión $\mathcal{D}_{thr}$, de manera que todas las muestras $\mathcal{D}\geq\mathcal{D}_{thr}$ se clasifican como positivas, o señal, y todas las demás como negativas, o fondo{cite}`valassi_2019`.
+Los clasificadores usualmente asignan un puntaje $\mathcal{D}$ de manera que una puntuación más alta significa mayor probabilidad de ser señal. La clasificación discreta se logra escogiendo un *punto de operación*, es decir, escogiendo un umbral de decisión $\mathcal{D}_{thr}$, de manera que todas las muestras que cumplan $\mathcal{D}\geq\mathcal{D}_{thr}$ se clasifican como positivas, o señal, y todas las demás como negativas, o fondo{cite}`valassi_2019`.
 
 La *curva ROC* se construye graficando la recuperación vs. 1-especificidad para varios umbrales de decisión. En términos de HEP, la eficiencia de señal vs. la eficiencia de fondo. 
 
@@ -54,7 +56,7 @@ name: ml-roc
 ---
 Ilustración de la curva ROC. La diagonal representa a un clasificador aleatorio o que no distingue entre clases. En este caso, el clasificador con la curva azul es mejor distinguiendo entre clases. De MartinThoma, CC0, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Roc-draft-xkcd-style.svg).
 ```
-El *área debajo de la curva* (AUC) representa la habilidad del clasificador para distinguir entre clases.
+El *área bajo de la curva* (AUC) representa la habilidad del clasificador para distinguir entre clases.
 
 $$
     \text{AUC}=\int_0^1\epsilon_s\text{d}\epsilon_b

@@ -4,27 +4,27 @@ En este proyecto se trata de resolver un problema de clasificación binaria con 
 
 La implementación de aprendizaje automático en este trabajo está comprendida por los siguientes pasos:
 1. Pre-procesamiento de los datos utilizando `benchtool`, descrito en la {numref}`bench-pre`
-2. Se dividen los datos en conjuntos mutuamente excluyentes. Los datos se dividen 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
-3. Se ajusta el modelo minimizando una función de pérdida específica, utilizando los datos de entrenamiento. Estas funciones se describirán más adelante.
+2. Se dividen los datos en conjuntos mutuamente excluyentes. 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
+3. Se ajusta el modelo minimizando una función de pérdida específica, utilizando los datos de entrenamiento. Estas funciones se describirán más adelante en esta sección.
 4. Se evalúa el rendimiento del modelo calculando la función de pérdida con los datos de prueba.
 
-Se probaron múltiples algoritmos durante el desarrollo de `benchtools` y para este trabajo se escogieron los que lograron un mejor redimiento. Más información sobre cómo se escogieron estos algoritmos se encuentra en la sección de *[notebooks](https://github.com/marianaiv/benchtools/tree/main/notebooks)* del repositorio de `benchtools`. 
+Los algoritmos utilizados en este trabajo se escogieron a partir de su rendimiento, estudiado durante el desarrollo de las herramientas de análisis de datos. Más información sobre cómo se escogieron estos algoritmos se encuentra en la sección de *[notebooks](https://github.com/marianaiv/benchtools/tree/main/notebooks)* del repositorio de `benchtools`.
 
 A continuación, se explicarán los algoritmos utilizados, enfocándonos en su uso para la tarea de clasificación binaria. También se resumirán algunos métodos necesarios para explicar más adelante los algoritmos utilizados de las LHCO 2020. La referencia principal de esta sección es {cite}`Mehta_2019`.
 
 (alg-bosques)=
 ## Bosque aleatorio
-Los bosques aleatorios son algoritmos supervisados utilizados ampliamente para tareas complejas de clasificación. Estos algoritmos son ensambles de árboles de decisión.
+Los bosques aleatorios son algoritmos supervisados ampliamente utilizados para tareas complejas de clasificación. Estos algoritmos son ensambles de árboles de decisión.
 
 Un **árbol de decisión** utiliza una serie de preguntas para realizar la partición jerárquica de los datos. Su objetivo es hallar un conjunto de reglas que separen naturalmente el espacio de características{cite}`myles_2004`. 
 
-La partición de los datos se hace hallando los parámetros que minimizan el *criterio de impureza*. Uno de los criterios más utilizado es el criterio *Gini*,
+La partición de los datos se hace hallando los parámetros que minimizan el *criterio de impureza*. Uno de los criterios más utilizado es el criterio *Gini*, que mide cuánto ruido tiene una categoría:
 
 $$
     H(Q_m)=\sum_{k} p_{mk}(1-p_{mk})
 $$ (gini)
 
-donde $Q_m$ representa los datos en el nodo *m* y $p_{mk}$ es la proporción de clase *k* observada en el nodo *m*, donde las clases para clasificación binaria son 0 y 1. 
+donde $Q_m$ representa los datos en el nodo $m$ y $p_{mk}$ es la proporción de clase $k$ observada en el nodo $m$, donde las clases para clasificación binaria son 0 y 1. 
 
 ```{figure} ./../../figuras/ml-arboldecision.png
 ---
@@ -33,7 +33,7 @@ name: ml-arboldecision
 ---
 Ejemplo de un árbol de decisión. Para una conjunto de características $\mathbf{x}$, su etiqueta $y$ es predicha, recorriéndolo desde su raíz, pasando por las hojas, siguiendo las ramas que satisface. De {cite}`Mehta_2019`.
 ```
-Los *bosques aleatorios* son clasificadores que consisten en un ensamble de árboles de decisión $\{h(\mathbf{x},\Theta_k),k=1,\dots\}$ donde $\{\Theta_k\}$ son vectores aleatorios e independientes con la misma distribución. Cada árbol emite un voto unitario para la clase más popular dada la entrada $\mathbf{x}${cite}`Breiman:2001hzm`. La clase con más votos es asignada a esta entrada. 
+Los ***bosques aleatorios*** son clasificadores que consisten en un ensamble de árboles de decisión $\{h(\mathbf{x},\Theta_k),k=1,\dots\}$ donde $\{\Theta_k\}$ son vectores aleatorios e independientes con la misma distribución. Cada árbol emite un voto unitario para la clase más popular dada la entrada $\mathbf{x}${cite}`Breiman:2001hzm`. La clase con más votos es asignada a esta entrada. 
 
 ```{figure} ./../../figuras/ml-bosquealeatorio.png
 ---
@@ -45,7 +45,7 @@ Representación visual del funcionamiento de un bosque aleatorio. De {cite}`chau
 (alg-gbc)=
 ## Clasificador del gradiente del impulso
 
-El clasificador del gradiente del impulso (GBC) usualmente utiliza árboles de regresión como aprendiz débil. Es un modelo supervisado y aditivo que avanza por etapas{cite}`GBC`. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior. Su formulación matemática es la siguiente{cite}`GTBC`.
+El clasificador del gradiente del impulso (GBC) usualmente utiliza árboles de regresión como aprendiz débil. Es un modelo supervisado y aditivo que avanza por etapas{cite}`GBC`. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior. Su formulación matemática es la siguiente{cite}`GTBC`:
 
 La predicción $y_i$ del modelo para la entrada $x_i$ está dada por:
 
@@ -53,7 +53,7 @@ $$
     \hat{y}_i=F_M(x_i)=\sum_{m=1}^{M}h_m(x_i)
 $$ (ml-gbcpred)
 
-donde $h_m$ son los aprendices débiles. En el caso de clasificación, el mapeo del valor de $F_M(x_i)$ a una clase o probabilidad es dependiente de la pérdida. La probabilidad de que $x_i$ pertenezca a la clase positiva se modela usando la función sigmoid $p(y_i=|x_i)=\sigma(F_M(x_i))$
+$h_m$ son los aprendices débiles. En el caso de clasificación, el mapeo del valor de $F_M(x_i)$ a una clase o probabilidad es dependiente de la pérdida. La probabilidad de que $x_i$ pertenezca a la clase positiva se modela usando la función sigmoid $p(y_i=|x_i)=\sigma(F_M(x_i))$
 
 El GBC se construye de la siguiente manera:
 
@@ -61,13 +61,13 @@ $$
     F_m(x)=F_{m-1}(x)+h_m(x)
 $$ (ml-gbc)
 
-donde $h_m$ se ajusta para minimizar la suma de las pérdidas dado el ensamble anterior $F_{m-1}$
+$h_m$ se ajusta para minimizar la suma de las pérdidas dado el ensamble anterior $F_{m-1}$
 
 $$
     h_m\approx\text{arg min}_h\sum_{i=1}^{n}h(x_i)g_i
 $$ (ml-gbcaprendizdebil)
 
-donde $g_i$ es la derivada de la función de pérdida con respecto a su segundo parámetro, evaluada en $F_{m-1}(x)$. La suma en {eq}`ml-gbcaprendizdebil` se minimiza si $h(x_i)$ se ajusta para predecir un valor proporcional al gradiente negativo $−g_i$. Por lo tanto, en cada iteración, el estimador $h_m$ está ajustado para predecir los gradientes negativos de las muestras. Los gradientes se actualizan en cada iteración. Este proceso puede considerarse como una especie de descenso de gradiente en un espacio funcional.
+donde $g_i$ es la derivada de la función de pérdida con respecto a su segundo parámetro, evaluada en $F_{m-1}(x)$. La suma en {eq}`ml-gbcaprendizdebil` se minimiza si $h(x_i)$ se ajusta para predecir un valor proporcional al gradiente negativo $−g_i$. Por lo tanto, en cada iteración, el estimador $h_m$ está ajustado para predecir los gradientes negativos de las muestras. Estos gradientes se actualizan en cada iteración. El proceso puede considerarse como una especie de descenso de gradiente en un espacio funcional.
 
 (alg-qda)=
 ## Análisis de discriminante cuadrático
@@ -86,7 +86,7 @@ Donde se selecciona la clase $k$ que maximice esta probabilidad.
 width: 700px
 name: ml-qda
 ---
-Clasificación con QDA. a) Lods puntos a ser clasificados, b) los límites o fronteras de decisión. La barra de color indica la probabilidad de pertenecer a la clase 1. De {cite}`QDAimg`
+Clasificación con QDA. a) Los puntos a ser clasificados, b) los límites o fronteras de decisión. La barra de color indica la probabilidad de pertenecer a la clase 1. De {cite}`QDAimg`
 ```
 
 (alg-neural)=
@@ -120,7 +120,7 @@ $$
     \mathcal{L}_{BC} = -\frac{1}{N}\sum_{i=1}^N y_i\log(p(y_i))+(1-y_i)\log(1-p(y_1))
 $$ (binary-crossentropy)
 
-donde $N$ es el número de muestras a clasificar, $y_i$ es la etiqueta de la muestra iésima (si es clasificación binaria 0 o 1), y $p(y_i)$ es la probabilidad de que la muestra sea de clase 1. 
+donde $N$ es el número de muestras a clasificar, $y_i$ es la etiqueta de la muestra iésima y $p(y_i)$ es la probabilidad de que la muestra sea de clase 1. 
 
 (alg-kmeans)=
 ## K-means
@@ -151,7 +151,7 @@ Como la inicialización de los centroides es aleatoria, usualmente se realizan m
 
 (alg-ae)=
 ## Codificador automático
-Los codificadores automáticos (AE) son algoritmos de aprendizaje no supervisado que mapean una entrada una representación comprimida latente y luego vuelve a sí misma. Al aprender como reproducir la salida original, el modelo extrae características de los datos de entrada{cite}`Nakai_2019`.
+Los codificadores automáticos (AE) son algoritmos de aprendizaje no supervisado que mapean una entrada a una representación comprimida latente y luego vuelve a sí misma. Al aprender como reproducir la salida original, el modelo extrae características de los datos de entrada{cite}`Nakai_2019`.
 
 Estas redes se pueden dividir en dos partes. El codificador, que comprime los datos a un espacio latente, y el decodificador que produce la reconstruccion{cite}`Goodfellow-et-al-2016`. Una medida de qué tan bien funciona el codificador es la diferencia entre la entrada y la salida de acuerdo a alguna métrica de distancia conocida como "error de reconstrucción".
 
@@ -162,9 +162,7 @@ name: alg-aefig
 ---
 Diagrama del funcionamiento de un codificador automático. La entrada se mapea a una representación de dimensionalidad reducida y luego es reconstruida. De {cite}`PhysRevD.101.075021`.
 ```
-Este algoritmo se ha empezado a utilizar en HEP como detector de anomalías. 
-
-Al entrenar el codificador automático en una muestra de eventos de fondo, este va a aprender las características de fondo y se espera que cualquier señal no sea reconstruida correctamente. Así, se puede utilizar un corte en el error de reconstrucción como un umbral de anomalía{cite}`PhysRevD.101.075021`. 
+Este algoritmo se ha empezado a utilizar en HEP como detector de anomalías puesto que, al entrenar el codificador automático en una muestra de eventos de fondo, va a aprender las características de fondo y se espera que un evento de señal no sea reconstruido correctamente. Así, se puede utilizar un corte en el error de reconstrucción como un umbral de anomalía{cite}`PhysRevD.101.075021`. 
 
 (alg-gan)=
 ## Red generativa antagónica
@@ -172,10 +170,6 @@ Una *red generativa antagónica* (GAN) está basada en modelado generativo y en 
 
 El modelado generativo es una tarea de aprendizaje no supervisado que implica que el modelo descubra y aprenda automáticamente las regularidades o patrones en los datos de entrada de tal manera pueda generar nuevos ejemplos que plausiblemente podrían haberse extraído del conjunto de datos original.
 
-La GAN se construye a partir de dos redes neuronales conocidas como *generador* y *discriminador*. 
-
-El generador aproxima una función generadora $G$ que tiene como entrada $\mathbf{z}$ muestreada de un distribución de probabilidad a priori en el espacio latente y devuelve un $\mathbf{x}$ del modelo.
-
-El discriminador aproxima una función discriminadora $D$ que distingue entre muestras $\mathbf{x}$ de los datos y muestras $\mathbf{x}=G(\mathbf{z})$ sintéticas. 
+La GAN se construye a partir de dos redes neuronales conocidas como *generador* y *discriminador*. El generador aproxima una función generadora $G$ que tiene como entrada $\mathbf{z}$ muestreada de un distribución de probabilidad a priori en el espacio latente y devuelve un $\mathbf{x}$ del modelo. El discriminador aproxima una función discriminadora $D$ que distingue entre muestras $\mathbf{x}$ de los datos y muestras $\mathbf{x}=G(\mathbf{z})$ sintéticas. 
 
 El discriminador se entrena para diferenciar entre las muestras sintéticas y los datos reales y el generador se entrena para engañar al discriminador. Las función de costo del discriminador depende de los parámetros del generador y viceversa. Los modelos se entrenan juntos hasta que el discriminador es engañado una cantidad de veces sobre algún umbral, lo que significa que el generador está generando ejemplos plausibles.

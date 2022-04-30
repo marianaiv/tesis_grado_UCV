@@ -1,10 +1,10 @@
 (datos)=
 # Conjuntos de datos
-El estado final de las LHCO 2020 estuvo enfocado en múltiples jets. A pesar de esto, en los conjuntos de datos proporcionan la información de todos los hadrones de cada evento. 
+El estado final de las LHCO 2020 estuvo enfocado en múltiples jets. Los conjuntos de datos públicados contienen la información de todos los hadrones de cada evento. 
 
-Los eventos se generaron utilizando *Pythia*, *Herwig++* y *Delphes*. Pythia y Herwig++ son programas para la generación de eventos de colisión en HEP, categorizados como generadores de eventos Monte Carlo de propósito general. Delphes simula la respuesta de un detector multipropósito.
+Los eventos se generaron utilizando *Pythia*{cite}`Sj_strand_2015`, *Herwig++*{cite}`B_hr_2008` y *Delphes*{cite}`de_Favereau_2014`. Pythia y Herwig++ son programas para la generación de eventos de colisión en HEP, categorizados como generadores de eventos Monte Carlo de propósito general. Delphes simula la respuesta de un detector multipropósito.
 
-Cada evento está compuesto por una lista de todos los hadrones ($p_T,\eta,\phi,p_T,\eta,\phi,\dots$), con relleno de ceros hasta 700 hadrones. En caso de tener la etiqueta para el tipo de evento (señal o fondo), esta se encuentra en la última columna. Todos los eventos tienen al menos un jet anti-kT con $R=1.0$, pseudorapidez $|\eta|<2.5$ y momento transversal $p_T > 1.2$ TeV.
+Cada evento está compuesto por una lista de todos los hadrones ($p_T,\eta,\phi,p_T,\eta,\phi,\dots$), con relleno de ceros hasta 700 hadrones. En caso de tener la etiqueta para el tipo de evento (señal o fondo), esta se encuentra en la última columna. Todos los eventos tienen al menos un jet anti-*kt* con $R=1.0$, pseudorapidez $|\eta|<2.5$ y momento transversal $p_T > 1.2$ TeV.
 
 En este trabajo utilizamos el conjunto R&D y el conjunto BB1, descritos a continuación.
 
