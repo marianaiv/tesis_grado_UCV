@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+
+<html lang="spanish">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.3. Métricas de rendimiento &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="2.4. Algoritmos LHCO 2020" href="algoritmos-lhco.html" />
+    <link rel="prev" title="2.2. Algoritmos para detección de anomalías" href="algoritmos-anomalias.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="spanish">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_ucv.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../marco-teorico/resumen.html">
+   1. Marco teórico
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/modelo-estandar.html">
+     1.1. El módelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/cromodinamica-cuantica.html">
+     1.2. Cromodinámica cuántica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/mas-alla-del-ms.html">
+     1.3. Más allá del modelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html">
+     1.4. Reconstrucción de jets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/aprendizaje-automatico.html">
+     1.5. Aprendizaje automático
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
+     1.6. Reproducibilidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
+     1.7. Olimpiadas LHC 2020
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="resumen.html">
+   2. Datos y métodos
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="datos-lhco.html">
+     2.1. Conjuntos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="algoritmos-anomalias.html">
+     2.2. Algoritmos para detección de anomalías
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.3. Métricas de rendimiento
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="algoritmos-lhco.html">
+     2.4. Algoritmos LHCO 2020
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="benchtools.html">
+     2.5. Paquete benchtools
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../referencias/referencias.html">
+   3. Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/capitulos/datos-metodos/metricas.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
+                    class="fab fa-github"></i>repositorio</button></a>
+        <a class="issues-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/datos-metodos/metricas.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/datos-metodos/metricas.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metricas-numericas">
+   2.3.1. Métricas numéricas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metricas-graficas">
+   2.3.2. Métricas gráficas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#curva-roc">
+     2.3.2.1. Curva ROC
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#curva-pr">
+     2.3.2.2. Curva PR
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mejora-significativa">
+     2.3.2.3. Mejora significativa
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Métricas de rendimiento</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metricas-numericas">
+   2.3.1. Métricas numéricas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metricas-graficas">
+   2.3.2. Métricas gráficas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#curva-roc">
+     2.3.2.1. Curva ROC
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#curva-pr">
+     2.3.2.2. Curva PR
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mejora-significativa">
+     2.3.2.3. Mejora significativa
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="metricas-de-rendimiento">
+<span id="met"></span><h1><span class="section-number">2.3. </span>Métricas de rendimiento<a class="headerlink" href="#metricas-de-rendimiento" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Al intentar resolver problemas utilizando aprendizaje automático, es necesario comparar distintos métodos. Esto se hace calculando las métricas de rendimiento mencionadas en la <a class="reference internal" href="../marco-teorico/aprendizaje-automatico.html#ml-metricasderendimiento"><span class="std std-numref">Sección 1.5.4</span></a>. Un resumen de las métricas más comúnes para la tarea de clasificación binaria, y las utilizadas en este trabajo, se presenta a continuación.</p>
+<div class="section" id="metricas-numericas">
+<span id="met-num"></span><h2><span class="section-number">2.3.1. </span>Métricas numéricas<a class="headerlink" href="#metricas-numericas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La métrica de evaluación primaria es la <em>matriz de confusión</em>. En esta matriz se resumen el número de etiquetas predichas correctamente e incorrectamente.</p>
+<table class="colwidths-auto table" id="ml-matriz-confusion">
+<caption><span class="caption-number">Tabla 2.1 </span><span class="caption-text">Matriz de confusión.</span><a class="headerlink" href="#ml-matriz-confusion" title="Enlace permanente a esta tabla">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Clase: <strong>P</strong>ositivos<br>(HEP: <strong>señal</strong> <span class="math notranslate nohighlight">\(S_{tot}\)</span>)</p></th>
+<th class="head"><p>Clase: <strong>N</strong>egativos<br>(HEP: <strong>fondo</strong> <span class="math notranslate nohighlight">\(B_{tot}\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Clasificado como: <strong>P</strong>ositivos<br>(HEP: <strong>seleccionados</strong>)</p></td>
+<td><p><strong>Verdaderos Positivos (TP)</strong><br>(HEP: señal seleccionada <span class="math notranslate nohighlight">\(S_{sel}\)</span>)</p></td>
+<td><p><strong>Falsos Positivos (FP)</strong><br>(HEP: fondo seleccionado <span class="math notranslate nohighlight">\(B_{sel}\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Clasificado como: <strong>N</strong>egativos<br>(HEP: <strong>rechazados</strong>)</p></td>
+<td><p><strong>Falsos Negativos(FN)</strong><br>(HEP: señal rechazada <span class="math notranslate nohighlight">\(S_{rej}\)</span>)</p></td>
+<td><p><strong>Verdaderos Negativos (TN)</strong><br>(HEP: fondo rechazado <span class="math notranslate nohighlight">\(B_{rej}\)</span>)</p></td>
+</tr>
+</tbody>
+</table>
+<p>La diagonal representa las etiquetas predichas correctamente, mientras que los elementos fuera de la diagonal son las predicciones incorrectas. A partir de los valores de esta matriz se definen el resto de las métricas.</p>
+<p>En la <a class="reference internal" href="#ml-metricas"><span class="std std-numref">Tabla 2.2</span></a> se presenta un resumen de las métricas utilizadas comúnmente para clasificación binaria<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id90" title="Marina Sokolova and Guy Lapalme. A systematic analysis of performance measures for classification tasks. Information Processing &amp; Management, 45(4):427-437, 2009. URL: https://www.sciencedirect.com/science/article/pii/S0306457309000259, doi:https://doi.org/10.1016/j.ipm.2009.03.002.">100</a>]</span>.</p>
+<table class="colwidths-auto table" id="ml-metricas">
+<caption><span class="caption-number">Tabla 2.2 </span><span class="caption-text">Métricas para la clasificación binaria utilizando la notación en la matriz de confusión.</span><a class="headerlink" href="#ml-metricas" title="Enlace permanente a esta tabla">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Métrica</p></th>
+<th class="head"><p>Ecuación</p></th>
+<th class="head"><p>Enfoque de evaluación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Exactitud</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{TP+TN}{TP+FP+FN+TN}\)</span></p></td>
+<td><p>Número correcto de predicciones sobre todas las predicciones hechas</p></td>
+</tr>
+<tr class="row-odd"><td><p>Precisión</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{TP}{TP+FP}\)</span></p></td>
+<td><p>Proporción de tasa de verdaderos positivos</p></td>
+</tr>
+<tr class="row-even"><td><p>Recuperación</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{TP}{TP+FN}\)</span></p></td>
+<td><p>Efectividad del clasificador para identificar etiquetas positivas</p></td>
+</tr>
+<tr class="row-odd"><td><p>Especificidad</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{TN}{TN+FP}\)</span></p></td>
+<td><p>Efectividad del clasificador para identificar etiquetas negativas</p></td>
+</tr>
+<tr class="row-even"><td><p>Puntaje f1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{(\beta^2+1)TP}{(\beta^2+1)TP+\beta^2FN+FP}\)</span></p></td>
+<td><p>Promedio ponderado de precisión y sensibilidad</p></td>
+</tr>
+</tbody>
+</table>
+<p>El nombre de las métricas varía en distintas áreas. En HEP, la recuperación y especificidad se conocen como <em>eficiencia de señal</em> (<span class="math notranslate nohighlight">\(\epsilon_s\)</span>) y <em>rechazo de fondo</em> (<span class="math notranslate nohighlight">\(1-\epsilon_{b}\)</span>), respectivamente. La precisión se conoce como <em>pureza</em> (<span class="math notranslate nohighlight">\(\rho\)</span>)<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id91" title="Andrea Valassi. Fisher information metrics for binary classifier evaluation and training. August 2018. URL: https://doi.org/10.5281/zenodo.1405727, doi:10.5281/zenodo.1405727.">101</a>]</span>.</p>
+<p>Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Sin embargo, se puede utilizar la <em>exactitud balanceada</em>:</p>
+<div class="math notranslate nohighlight" id="equation-ml-exactitudbalanceada">
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-ml-exactitudbalanceada" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}
+\]</div>
+<p>En este trabajo se utilizan las métricas descritas en la <a class="reference internal" href="#ml-metricas"><span class="std std-numref">Tabla 2.2</span></a>, salvo la exactitud, que se sustituye por la exactitud balanceada.</p>
+</div>
+<div class="section" id="metricas-graficas">
+<span id="met-plot"></span><h2><span class="section-number">2.3.2. </span>Métricas gráficas<a class="headerlink" href="#metricas-graficas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las métricas gráficas más conocidas son la <em>curva característica de funcionamiento del receptor</em> (curva ROC) y la <em>curva precisión-recuperación</em> (curva PR).</p>
+<div class="section" id="curva-roc">
+<h3><span class="section-number">2.3.2.1. </span>Curva ROC<a class="headerlink" href="#curva-roc" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los clasificadores usualmente asignan un puntaje <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> de manera que una puntuación más alta significa mayor probabilidad de ser señal. La clasificación discreta se logra escogiendo un <em>punto de operación</em>, es decir, escogiendo un umbral de decisión <span class="math notranslate nohighlight">\(\mathcal{D}_{thr}\)</span>, de manera que todas las muestras que cumplan <span class="math notranslate nohighlight">\(\mathcal{D}\geq\mathcal{D}_{thr}\)</span> se clasifican como positivas, o señal, y todas las demás como negativas, o fondo<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id92" title="Valassi, Andrea. Binary classifier metrics for optimizing hep event selection. EPJ Web of Conferences, 214:06004, 2019. URL: https://doi.org/10.1051/epjconf/201921406004, doi:10.1051/epjconf/201921406004.">102</a>]</span>.</p>
+<p>La <em>curva ROC</em> se construye graficando la recuperación vs. 1-especificidad para varios umbrales de decisión. En términos de HEP, la eficiencia de señal vs. la eficiencia de fondo.</p>
+<div class="figure align-default" id="ml-roc">
+<a class="reference internal image-reference" href="../../_images/ml-roc.png"><img alt="../../_images/ml-roc.png" src="../../_images/ml-roc.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.7 </span><span class="caption-text">Ilustración de la curva ROC. La diagonal representa a un clasificador aleatorio o que no distingue entre clases. En este caso, el clasificador con la curva azul es mejor distinguiendo entre clases. De MartinThoma, CC0, via <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Roc-draft-xkcd-style.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#ml-roc" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>El <em>área bajo de la curva</em> (AUC) representa la habilidad del clasificador para distinguir entre clases.</p>
+<div class="math notranslate nohighlight" id="equation-ml-auc">
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-ml-auc" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    \text{AUC}=\int_0^1\epsilon_s\text{d}\epsilon_b
+\]</div>
+<p>Un valor de AUC de 0.5 indica que la predicción no es mejor que una clasificación aleatoria. Menor a 0.5 indica que el clasificador está clasificando de manera inversa<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id93" title="Matthias Kohl. Performance measures in binary classification. International Journal of Statistics in Medical Research, 1(1):79–81, Oct. 2012. URL: https://lifescienceglobal.com/pms/index.php/ijsmr/article/view/512, doi:10.6000/1929-6029.2012.01.01.08.">103</a>]</span>.</p>
+<p>En HEP se utilizan versiones de esta curva. Es común graficar <strong><em>eficiencia de señal</em> vs. <em>rechazo de fondo</em></strong>, en vez de la curva ROC clásica, y el AUC se calcula en términos de estas variables. También se suele graficar el <strong><em>inverso de la eficiencia de fondo</em> vs. <em>eficiencia de señal</em></strong>.</p>
+<div class="figure align-default" id="ml-otrasroc">
+<a class="reference internal image-reference" href="../../_images/ml-otrasroc.png"><img alt="../../_images/ml-otrasroc.png" src="../../_images/ml-otrasroc.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.8 </span><span class="caption-text">Ejemplos de otras versiones de la curva ROC. A la izquierda la curvas de eficiencia de señal vs. rechazo de fondo. A la derecha, inverso de la eficiencia de fondo vs. eficiencia de señal. De <span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">85</a>]</span></span><a class="headerlink" href="#ml-otrasroc" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>La curva ROC y el AUC tienen sus limitaciones<span id="id6">[<a class="reference internal" href="../referencias/referencias.html#id92" title="Valassi, Andrea. Binary classifier metrics for optimizing hep event selection. EPJ Web of Conferences, 214:06004, 2019. URL: https://doi.org/10.1051/epjconf/201921406004, doi:10.1051/epjconf/201921406004.">102</a>]</span>:</p>
+<ul class="simple">
+<li><p>La comparación de dos curvas ROC que se cruzan no es tan evidente, ya que el AUC se construye como una integral que otorga el mismo peso a todas las partes de la curva. Sin embargo, para la clasificación se escoge un punto específico. En este caso, otras métricas se deben utilizar para definir cuál clasificador proporciona mejor rendimiento en la región donde se elija el umbral de decisión.</p></li>
+<li><p>El uso de las curvas ROC puede no ser apropiado para problemas que incluyan datos altamente desbalanceados, debido a que conduce a evaluaciones demasiado optimistas. La curva PR puede ser más informativa en este caso</p></li>
+</ul>
+</div>
+<div class="section" id="curva-pr">
+<h3><span class="section-number">2.3.2.2. </span>Curva PR<a class="headerlink" href="#curva-pr" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para datos altamente desbalanceados se suele sugerir el uso de la curva PR:</p>
+<blockquote>
+<div><p>Si la proporción de instancias positivas y negativas en un conjunto de prueba cambia, la curva ROC no cambia. [...]Métricas como la exactitud, la precisión, las curvas de aumento y el puntaje F usan valores de ambas columnas de la matriz de confusión. Cuando la distribución de clases cambia, estas métricas también cambian, incluso si el rendimiento del clasificador no cambia. Las curvas ROC se basan en la tasa de TP y FP, en la cual cada dimensión es una proporción de la columna, por lo que no depende de la distribución de clases.</p>
+<p>— ROC Graphs: Notes and Practical Considerations for Data Mining Researchers, 2003<span id="id7">[<a class="reference internal" href="../referencias/referencias.html#id95" title="Tom Fawcett. ROC Graphs: Notes and Practical Considerations for Researchers. Machine Learning, 31:1-38, 01 2004.">104</a>]</span>.</p>
+</div></blockquote>
+<div class="figure align-default" id="ml-curvapr">
+<a class="reference internal image-reference" href="../../_images/ml-curvapr.png"><img alt="../../_images/ml-curvapr.png" src="../../_images/ml-curvapr.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.9 </span><span class="caption-text">Ejemplos de curva precisión-recuperación. De <span id="id8">[<a class="reference internal" href="../referencias/referencias.html#id91" title="Andrea Valassi. Fisher information metrics for binary classifier evaluation and training. August 2018. URL: https://doi.org/10.5281/zenodo.1405727, doi:10.5281/zenodo.1405727.">101</a>]</span></span><a class="headerlink" href="#ml-curvapr" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Análogo al AUC, se utiliza el área bajo la curva PR (AUCPR) y la precisión promedio (AP). La precisión promedio resume la curva PR utilizando la media ponderada de las precisiones logradas en cada umbral, utilizando como peso el aumento en recuperación del umbral anterior<span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id96" title="scikit-learn. Precision-Recall. URL: https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html.">105</a>]</span>.</p>
+<div class="math notranslate nohighlight" id="equation-ml-precisionpromedio">
+<span class="eqno">(2.10)<a class="headerlink" href="#equation-ml-precisionpromedio" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    AP=\sum_n (R_n - R_{n-1})P_n
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(P_n\)</span> y <span class="math notranslate nohighlight">\(R_n\)</span> son la precisión y la recuperación del umbral enésimo.</p>
+</div>
+<div class="section" id="mejora-significativa">
+<h3><span class="section-number">2.3.2.3. </span>Mejora significativa<a class="headerlink" href="#mejora-significativa" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Otra medida utilizada regularmente en HEP es la <em>mejora significativa</em> definida como:</p>
+<div class="math notranslate nohighlight" id="equation-ml-mejorasignificativa">
+<span class="eqno">(2.11)<a class="headerlink" href="#equation-ml-mejorasignificativa" title="Enlace permanente a esta ecuación">¶</a></span>\[
+    \text{Mejora significativa} = \frac{\epsilon_s}{\sqrt{\epsilon_b}}
+\]</div>
+<p>Una mejora significativa = 2 significa que la mejora significativa inicial es amplificada por un factor de 2 después de utilizar la estrategia de clasificación<span id="id10">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">85</a>]</span>.</p>
+<p>Así, se grafica la <em>mejora significativa</em> vs. <em>eficiencia de señal</em> con el fin de visualizar la mejora significativa del clasificador en múltiples umbrales.</p>
+<div class="figure align-default" id="ml-significancia">
+<a class="reference internal image-reference" href="../../_images/ml-significancia.png"><img alt="../../_images/ml-significancia.png" src="../../_images/ml-significancia.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.10 </span><span class="caption-text">Ejemplo de curva de mejora significativa. De <span id="id11">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">85</a>]</span></span><a class="headerlink" href="#ml-significancia" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos\datos-metodos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="algoritmos-anomalias.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">2.2. </span>Algoritmos para detección de anomalías</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="algoritmos-lhco.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>Algoritmos LHCO 2020</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Por Mariana Vivas, Universidad Central de Venezuela<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
