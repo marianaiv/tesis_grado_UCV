@@ -33,4 +33,6 @@ chapters:
   sections:
   - file: capitulos/analisis-datos/conjunto-RnD
   - file: capitulos/analisis-datos/conjunto-BB1
+  - file: capitulos/analisis-datos/clasificacion
+  - file: capitulos/analisis-datos/datos-algoritmos-lhco
 - file: capitulos/referencias/referencias 
