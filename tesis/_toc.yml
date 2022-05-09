@@ -31,8 +31,8 @@ chapters:
   - file: capitulos/datos-metodos/benchtools
 - file: capitulos/analisis-datos/resumen
   sections:
-  - file: capitulos/analisis-datos/conjunto-RnD
-  - file: capitulos/analisis-datos/conjunto-BB1
-  - file: capitulos/analisis-datos/clasificacion
-  - file: capitulos/analisis-datos/datos-algoritmos-lhco
+  - file: capitulos/analisis-datos/datos-sin-preprocesar
+  - file: capitulos/analisis-datos/datos-preprocesados
+  #- file: capitulos/analisis-datos/datos-UCluster
+  #- file: capitulos/analisis-datos/datos-GAN-AE
 - file: capitulos/referencias/referencias 
