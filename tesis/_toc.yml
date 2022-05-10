@@ -34,5 +34,5 @@ chapters:
   - file: capitulos/analisis-datos/datos-sin-preprocesar
   - file: capitulos/analisis-datos/datos-preprocesados
   - file: capitulos/analisis-datos/datos-UCluster
-  #- file: capitulos/analisis-datos/datos-GAN-AE
+  - file: capitulos/analisis-datos/datos-GAN-AE
 - file: capitulos/referencias/referencias 
