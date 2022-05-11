@@ -49,7 +49,7 @@ sphinx:
   extra_extensions          :  # A list of extra extensions to load by Sphinx.
     - sphinx_proof
   config                    :  # key-value pairs to directly over-ride the Sphinx configuration
-    language                : spanish
+    language                : es
 
 # Un archivo bibtex para poder crear citas
 bibtex_bibfiles:
