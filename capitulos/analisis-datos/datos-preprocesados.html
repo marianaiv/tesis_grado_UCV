@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.2. Datos pre-procesados &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="3.3. Datos de UCluster" href="datos-UCluster.html" />
+    <link rel="prev" title="3.1. Datos sin pre-procesar" href="datos-sin-preprocesar.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="es">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_ucv.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../marco-teorico/resumen.html">
+   1. Marco teórico
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/modelo-estandar.html">
+     1.1. El módelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/cromodinamica-cuantica.html">
+     1.2. Cromodinámica cuántica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/mas-alla-del-ms.html">
+     1.3. Más allá del modelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html">
+     1.4. Reconstrucción de jets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/aprendizaje-automatico.html">
+     1.5. Aprendizaje automático
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
+     1.6. Reproducibilidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
+     1.7. Olimpiadas LHC 2020
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../datos-metodos/resumen.html">
+   2. Datos y métodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/datos-lhco.html">
+     2.1. Conjuntos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html">
+     2.2. Algoritmos para detección de anomalías
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/metricas.html">
+     2.3. Métricas de rendimiento
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html">
+     2.4. Algoritmos LHCO 2020
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/benchtools.html">
+     2.5. Paquete benchtools
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="resumen.html">
+   3. Análisis de datos
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="datos-sin-preprocesar.html">
+     3.1. Datos sin pre-procesar
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.2. Datos pre-procesados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="datos-UCluster.html">
+     3.3. Datos de UCluster
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="datos-GAN-AE.html">
+     3.4. Datos de GAN-AE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../referencias/referencias.html">
+   4. Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/capitulos/analisis-datos/datos-preprocesados.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
+                    class="fab fa-github"></i>repositorio</button></a>
+        <a class="issues-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/analisis-datos/datos-preprocesados.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/main/tesis/capitulos/analisis-datos/datos-preprocesados.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/marianaiv/tesis_grado_UCV/main?urlpath=tree/tesis/capitulos/analisis-datos/datos-preprocesados.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribuciones">
+   3.2.1. Distribuciones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correlaciones">
+   3.2.2. Correlaciones
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Datos pre-procesados</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribuciones">
+   3.2.1. Distribuciones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correlaciones">
+   3.2.2. Correlaciones
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="datos-pre-procesados">
+<span id="datospp"></span><h1><span class="section-number">3.2. </span>Datos pre-procesados<a class="headerlink" href="#datos-pre-procesados" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En la sección anterior, analizamos los datos públicados para las LHCO 2020 sin alteración. En esta sección, analizaremos los datos pre-procesados de estos conjuntos.</p>
+<p>Al igual que en la sección anterior, utilizamos los primeros 100,000 eventos de cada conjunto de datos.</p>
+<p>Los datos pre-procesados de los primeros 100,000 eventos se obtienen utilizando <code class="docutils literal notranslate"><span class="pre">build_features</span></code> de <code class="docutils literal notranslate"><span class="pre">benchtools.src.clustering</span></code>, que utiliza la librería <code class="docutils literal notranslate"><span class="pre">pyjet</span></code>. Los detalles del pre-procesamiento se encuentran en la <a class="reference internal" href="../datos-metodos/benchtools.html#bench-pre"><span class="std std-numref">Sección 2.5.2</span></a>.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pre-procesamiento R&amp;D</span>
+<span class="c1"># Esta celda se corre una vez para pre-procesar los datos</span>
+<span class="c1"># Una vez que el archivo existe no vuelve a correr</span>
+<span class="n">build_features</span><span class="p">(</span><span class="n">path_data</span><span class="o">=</span><span class="n">path_data_RnD</span><span class="p">,</span> <span class="n">nbatch</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">outname</span><span class="o">=</span><span class="s1">&#39;RnD-100000&#39;</span><span class="p">,</span> <span class="n">outdir</span><span class="o">=</span><span class="s1">&#39;../../../datos/&#39;</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A file with that name already exists
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pre-procesamiento BB1</span>
+<span class="c1"># Esta celda se corre una vez para pre-procesar los datos</span>
+<span class="c1"># Una vez que el archivo existe no vuelve a correr</span>
+<span class="n">build_features</span><span class="p">(</span><span class="n">path_data</span><span class="o">=</span><span class="n">path_data_BB1</span><span class="p">,</span> <span class="n">nbatch</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">outname</span><span class="o">=</span><span class="s1">&#39;BB1-100000&#39;</span><span class="p">,</span> <span class="n">path_label</span><span class="o">=</span><span class="n">path_key_BB1</span><span class="p">,</span> <span class="n">outdir</span><span class="o">=</span><span class="s1">&#39;../../../datos/&#39;</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A file with that name already exists
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="df-rnd" style="width: 700px">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pT_j1</th>
+      <th>m_j1</th>
+      <th>eta_j1</th>
+      <th>phi_j1</th>
+      <th>E_j1</th>
+      <th>tau_21_j1</th>
+      <th>nhadrons_j1</th>
+      <th>pT_j2</th>
+      <th>m_j2</th>
+      <th>eta_j2</th>
+      <th>phi_j2</th>
+      <th>E_j2</th>
+      <th>tau_21_j2</th>
+      <th>nhadrons_j2</th>
+      <th>m_jj</th>
+      <th>deltaR_j12</th>
+      <th>n_hadrons</th>
+      <th>label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1286.727685</td>
+      <td>106.912129</td>
+      <td>0.185508</td>
+      <td>-2.763676</td>
+      <td>1313.290435</td>
+      <td>0.624659</td>
+      <td>36</td>
+      <td>1283.220733</td>
+      <td>63.164215</td>
+      <td>0.064989</td>
+      <td>0.393688</td>
+      <td>1287.481934</td>
+      <td>0.713248</td>
+      <td>33</td>
+      <td>2580.489568</td>
+      <td>3.159663</td>
+      <td>109.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1354.394070</td>
+      <td>614.269108</td>
+      <td>0.826505</td>
+      <td>1.365524</td>
+      <td>1943.559886</td>
+      <td>0.311688</td>
+      <td>84</td>
+      <td>1325.613761</td>
+      <td>439.064150</td>
+      <td>-0.874319</td>
+      <td>-1.786248</td>
+      <td>1916.370744</td>
+      <td>0.276881</td>
+      <td>97</td>
+      <td>3859.315047</td>
+      <td>3.581406</td>
+      <td>208.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1214.955723</td>
+      <td>645.865619</td>
+      <td>-0.196786</td>
+      <td>2.040545</td>
+      <td>1396.840654</td>
+      <td>0.238205</td>
+      <td>119</td>
+      <td>1072.462085</td>
+      <td>113.768840</td>
+      <td>0.143831</td>
+      <td>-1.090330</td>
+      <td>1089.530630</td>
+      <td>0.726963</td>
+      <td>59</td>
+      <td>2480.769725</td>
+      <td>3.149348</td>
+      <td>196.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1285.227873</td>
+      <td>516.835248</td>
+      <td>0.328693</td>
+      <td>2.975321</td>
+      <td>1450.485926</td>
+      <td>0.013429</td>
+      <td>65</td>
+      <td>1220.251279</td>
+      <td>174.796077</td>
+      <td>0.294854</td>
+      <td>-0.322661</td>
+      <td>1285.618789</td>
+      <td>0.706361</td>
+      <td>89</td>
+      <td>2609.893413</td>
+      <td>3.298155</td>
+      <td>183.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1210.415787</td>
+      <td>129.499352</td>
+      <td>-0.744836</td>
+      <td>-2.883347</td>
+      <td>1567.345300</td>
+      <td>0.423550</td>
+      <td>54</td>
+      <td>1091.785816</td>
+      <td>155.362262</td>
+      <td>1.060534</td>
+      <td>0.264977</td>
+      <td>1772.340209</td>
+      <td>0.787662</td>
+      <td>57</td>
+      <td>3313.488835</td>
+      <td>3.629229</td>
+      <td>169.0</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+<p class="caption"><span class="caption-number">Figura 3.6 </span><span class="caption-text">Primeros 5 eventos de los datos R&amp;D pre-procesados usando <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>.</span><a class="headerlink" href="#df-rnd" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="section" id="distribuciones">
+<span id="datospp-dist"></span><h2><span class="section-number">3.2.1. </span>Distribuciones<a class="headerlink" href="#distribuciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Son de interés las variables que posean diferencias entre eventos de señal y de fondo, puesto que en principio, estas son las variables que los podelos van a utilizar para distinguir entre las clases.</p>
+<div class="figure align-default" id="datospp-vardiff-rnd">
+<a class="reference internal image-reference" href="../../_images/datospp-vardiff-RnD.png"><img alt="../../_images/datospp-vardiff-RnD.png" src="../../_images/datospp-vardiff-RnD.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.7 </span><span class="caption-text">Distribución de <span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(m\)</span> y <span class="math notranslate nohighlight">\(\tau_{21}\)</span> para el conjunto R&amp;D.</span><a class="headerlink" href="#datospp-vardiff-rnd" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Observamos que el <span class="math notranslate nohighlight">\(p_T\)</span> del fondo decae suavemente, lo que indica que los jets más energéticos de eventos de QCD tienden a tener un momento transverso menor a 1500 GeV. Los jets más energéticos de los eventos de señal poseen un <span class="math notranslate nohighlight">\(p_T\)</span> mayor, entre 1500 y 2000 GeV. Esto también se observa en las distribuciones de energía, donde los jets principales de eventos de fondo son más energéticos que los de eventos de señal</p>
+<p>La distribución de masa del jet principal también es diferente. Para el fondo, los jets tienden a ser menos masivos y también decaen suavemente. Sin embargo, en los eventos de señal se observan dos picos alrededor de 100 y 500 GeV. Estas son las masas de las partículas <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> del evento <span class="math notranslate nohighlight">\(Z'\rightarrow XY\)</span> para el conjunt R&amp;D.</p>
+<p>Finalmente, se observa una diferencia en la distribución de la variable <span class="math notranslate nohighlight">\(\tau_{21}\)</span>. De acuerdo a su definición en la ec.<a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#equation-jets-ratio-subjettiness">(1.7)</a>, el valor de esta variable es menor cuando los jets son más consistentes con la subestructura de dos subjets. Por lo tanto, como la señal se agrupa hacia valores más pequeños, los jets de señal son más consistentes con la subestructura de dos subjets.</p>
+<p>Ambos conjuntos presentan distribuciones similares.</p>
+<div class="figure align-default" id="datospp-vardiff-bb1">
+<a class="reference internal image-reference" href="../../_images/datospp-vardiff-BB1.png"><img alt="../../_images/datospp-vardiff-BB1.png" src="../../_images/datospp-vardiff-BB1.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.8 </span><span class="caption-text">Distribución de <span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(m\)</span> y <span class="math notranslate nohighlight">\(\tau_{21}\)</span> para el conjunto BB1.</span><a class="headerlink" href="#datospp-vardiff-bb1" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>La diferencia principal se encuentra en la distribución de la masa del jet. Para el conjunto BB1 los picos de señal están alrededor de 380 y 750 GeV, cercano al valor de las masas de las partículas <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> de este conjunto.</p>
+<p>Las distribuciones de <span class="math notranslate nohighlight">\(\eta\)</span> y el número de hadrones que constituyen el jet principal son más angostas para la señal. El ángulo <span class="math notranslate nohighlight">\(\phi\)</span> de los jets no presenta diferencias marcadas.</p>
+<p>En general, el bajo porcentaje de señal en el conjunto BB1 no permite observar con exactitud la distribución de la señal, pero es evidente la semejanza con el conjunto R&amp;D.</p>
+<div class="figure align-default" id="datospp-vareq-rnd">
+<a class="reference internal image-reference" href="../../_images/datospp-vareq-RnD.png"><img alt="../../_images/datospp-vareq-RnD.png" src="../../_images/datospp-vareq-RnD.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.9 </span><span class="caption-text">Distribución de <span class="math notranslate nohighlight">\(\eta\)</span>, <em>nro. de hadrones</em> y <span class="math notranslate nohighlight">\(\phi\)</span> del jet principal para el conjunto R&amp;D.</span><a class="headerlink" href="#datospp-vareq-rnd" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="figure align-default" id="datospp-vareq-bb1">
+<a class="reference internal image-reference" href="../../_images/datospp-vareq-BB1.png"><img alt="../../_images/datospp-vareq-BB1.png" src="../../_images/datospp-vareq-BB1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.10 </span><span class="caption-text">Distribución de <span class="math notranslate nohighlight">\(\eta\)</span>, <em>nro. de hadrones</em> y <span class="math notranslate nohighlight">\(\phi\)</span> del jet principal para el conjunto BB1.</span><a class="headerlink" href="#datospp-vareq-bb1" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Las distribuciones de estas variables para el jet secundario poseen las mismas características que las del jet principal.</p>
+<div class="figure align-default" id="datospp-jet2-rnd">
+<a class="reference internal image-reference" href="../../_images/datospp-jet2-RnD.png"><img alt="../../_images/datospp-jet2-RnD.png" src="../../_images/datospp-jet2-RnD.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.11 </span><span class="caption-text">Distribución de las variables del jet secundario para el conjunto R&amp;D.</span><a class="headerlink" href="#datospp-jet2-rnd" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="figure align-default" id="datospp-jet2-bb1">
+<a class="reference internal image-reference" href="../../_images/datospp-jet2-BB1.png"><img alt="../../_images/datospp-jet2-BB1.png" src="../../_images/datospp-jet2-BB1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.12 </span><span class="caption-text">Distribución de las variables del jet secundario para el conjunto BB1.</span><a class="headerlink" href="#datospp-jet2-bb1" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Por último, están las variables que relacionan los dos jets principales, <span class="math notranslate nohighlight">\(\Delta R\)</span> y <span class="math notranslate nohighlight">\(m_{jj}\)</span>. En estas variables se observa diferencia entre las distribuciones de señal y de fondo.</p>
+<div class="figure align-default" id="datospp-jetrelations-rnd">
+<a class="reference internal image-reference" href="../../_images/datospp-jetrelations-RnD.png"><img alt="../../_images/datospp-jetrelations-RnD.png" src="../../_images/datospp-jetrelations-RnD.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.13 </span><span class="caption-text">Distribución de las variables <span class="math notranslate nohighlight">\(\Delta R\)</span> y <span class="math notranslate nohighlight">\(m_{jj}\)</span> para el conjunto R&amp;D.</span><a class="headerlink" href="#datospp-jetrelations-rnd" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>La distribución de <span class="math notranslate nohighlight">\(\Delta R\)</span> es más angosta para los eventos de señal. La masa invariante del fondo se encuentra entre 2000 y 3000 GeV, y decae suavemente, mientras que para la señal del conjunto R&amp;D se observa un pico en <span class="pasted-text">3476</span> GeV, consistente con la masa del bosón <span class="math notranslate nohighlight">\(Z'\)</span> de nueva física para el evento de este conjunto de datos. Para el conjunto BB1 se observa un pico en <span class="pasted-text">3673</span>, cerca de la masa de el bosón <span class="math notranslate nohighlight">\(Z'\)</span> para este conjunto.</p>
+<div class="figure align-default" id="datospp-jetrelations-bb1">
+<a class="reference internal image-reference" href="../../_images/datospp-jetrelations-BB1.png"><img alt="../../_images/datospp-jetrelations-BB1.png" src="../../_images/datospp-jetrelations-BB1.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.14 </span><span class="caption-text">Distribución de las variables <span class="math notranslate nohighlight">\(\Delta R\)</span> y <span class="math notranslate nohighlight">\(m_{jj}\)</span> para el conjunto BB1.</span><a class="headerlink" href="#datospp-jetrelations-bb1" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Aunque las variables de masa poseen diferentes distribuciones para señal y fondo, y podrían ser de utilidad para que el modelo aprenda, no serán utilizadas para el entrenamiento ni la clasificación. La idea es que la búsqueda sea lo más libre de modelo posible, por lo que no se desea que los algoritmos aprendan la distribución de masa.</p>
+</div>
+<div class="section" id="correlaciones">
+<span id="datospp-correlaciones"></span><h2><span class="section-number">3.2.2. </span>Correlaciones<a class="headerlink" href="#correlaciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La correlación de las variables que se utilizarán para entrenamiento se pueden observar a continuación.</p>
+<div class="figure align-default" id="datospp-correlaciones-fondo">
+<a class="reference internal image-reference" href="../../_images/datospp-correlaciones-fondo.png"><img alt="../../_images/datospp-correlaciones-fondo.png" src="../../_images/datospp-correlaciones-fondo.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.15 </span><span class="caption-text">Mapa de correlaciones para los eventos de <strong>fondo</strong>.</span><a class="headerlink" href="#datospp-correlaciones-fondo" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="figure align-default" id="datospp-correlaciones-senal">
+<a class="reference internal image-reference" href="../../_images/datospp-correlaciones-señal.png"><img alt="../../_images/datospp-correlaciones-señal.png" src="../../_images/datospp-correlaciones-señal.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.16 </span><span class="caption-text">Mapa de correlaciones para los eventos de <strong>señal</strong>.</span><a class="headerlink" href="#datospp-correlaciones-senal" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>La mayoría de las variables no están correlacionadas. Sin embargo, tanto para la señal como para el fondo, el <span class="math notranslate nohighlight">\(p_T\)</span> de los dos jets principales y <span class="math notranslate nohighlight">\(\phi\)</span> de ambos jets están correlacionados. Para la señal, los <span class="math notranslate nohighlight">\(p_T\)</span> de los jets principales presentan correlaciones negativas con <span class="math notranslate nohighlight">\(\Delta R\)</span>.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/datospp-correlaciones-RnD.png"><img alt="../../_images/datospp-correlaciones-RnD.png" src="../../_images/datospp-correlaciones-RnD.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.17 </span><span class="caption-text">Variables correlacionadas del conjunto R&amp;D.</span><a class="headerlink" href="#id1" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/datospp-correlaciones-BB1.png"><img alt="../../_images/datospp-correlaciones-BB1.png" src="../../_images/datospp-correlaciones-BB1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.18 </span><span class="caption-text">Variables correlacionadas del conjunto BB1.</span><a class="headerlink" href="#id2" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>La correlación del <span class="math notranslate nohighlight">\(p_T\)</span> de los jets es lineal por la naturaleza del evento y del agrupamiento. Se escogieron como jets principales los más energéticos, por lo que el <span class="math notranslate nohighlight">\(p_T\)</span> de los jets secundarios puede ser a lo sumo igual que el de los jets principales. Además, el momento de la colisión se distribuye de acuerdo a los dos productos principales que se formen, manteniendo una relación entre sí.</p>
+<p>Los valores de <span class="math notranslate nohighlight">\(\phi\)</span> también presentan una correlación positiva por la naturaleza del evento. En los eventos dijet, los jets se generan en direcciones opuestas, por lo que la dirección angular del jet principal se relaciona con la del jet secundario. Las demás correlaciones no son evidentes en los gráficos.</p>
+<p>La correlación de los datos puede generar problemas al utilizar algoritmos de aprendizaje automático para regresión. Sin embargo, debido a los modelos que se van a utilizar y a que la tarea es de clasificación, las consideraciones respecto a la correlación de las variables relacionadas al entrenamiento de los modelos no son necesarias.</p>
+<p>Para la señal del conjunto BB1 parece haber una correlación de <span class="math notranslate nohighlight">\(\tau_{21}\_j2\)</span> y <span class="math notranslate nohighlight">\(E\_j2\)</span> con el <span class="math notranslate nohighlight">\(p_T\)</span> del jet secundario. Sin embargo, por la poca cantidad de señal, no es evidente en los gráficos.</p>
+<div class="figure align-default" id="datospp-correlaciones-senal-bb1">
+<a class="reference internal image-reference" href="../../_images/datospp-correlaciones-senal-BB1.png"><img alt="../../_images/datospp-correlaciones-senal-BB1.png" src="../../_images/datospp-correlaciones-senal-BB1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.19 </span><span class="caption-text">Correlaciones de la señal del conjunto BB1 que no se encuentran en el conjunto R&amp;D.</span><a class="headerlink" href="#datospp-correlaciones-senal-bb1" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos\analisis-datos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="datos-sin-preprocesar.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">3.1. </span>Datos sin pre-procesar</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="datos-UCluster.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>Datos de UCluster</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Por Mariana Vivas, Universidad Central de Venezuela<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -33,7 +33,7 @@ La libertad asintótica fue descubierta en 1973 por David Gross, Frank Wilczek y
 
 ```{figure} ./../../figuras/qcd-alphas.png
 ---
-width: 600px
+width: 400px
 name: qcd-alphas
 ---
 Resumen de medidas experimentales de la constante de acople $\alpha_s$ en función de la escala de energía $Q${cite:p}`alphas`.

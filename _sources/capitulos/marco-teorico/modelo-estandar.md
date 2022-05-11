@@ -13,7 +13,7 @@ Las partículas elementales son los bloques de construcción más fundamentales 
 
 ```{figure} ./../../figuras/sm-particulas.png
 ---
-width: 500px
+width: 370px
 name: sm-particulas
 ---
 Contenido de partículas del modelo estándar. Los leptones están organizados de acuerdo a sus generaciones. Autor: Fabsanhvasq, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons.

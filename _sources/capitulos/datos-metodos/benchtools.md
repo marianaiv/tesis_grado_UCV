@@ -44,7 +44,7 @@ Una tabla con la definición de cada variable calculada se encuentra a continuac
 ```{table} Variables calculadas en el pre-procesamiento de los datos
 :name: bench-variables
 
-| Variable         | Definición                                       |
+| Variable         | Descripción                                      |
 |------------------|--------------------------------------------------|
 | $p_T\_j_i$       | Momento transverso                               |
 | $m_j\_j_i$       | Masa invariante                                  |

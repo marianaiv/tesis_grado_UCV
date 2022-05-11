@@ -103,7 +103,7 @@ Entre las motivaciones teóricas de este modelo se encuentra{cite}`Virdee2016-dd
 
 ```{figure} ./../../figuras/bsm-susyunificacion.png
 ---
-width: 500px
+width: 400px
 name: bsm-susyunificacion
 ---
 Evolución de las constantes de acople en función de la energía para el modelo estándar (líneas punteadas) y para MSSM (líneas sólidas). En rojo la interacción electromagnética, en azul la interacción débil y en verde la interacción fuerte. De {cite}`Cornell_2015`
@@ -136,7 +136,7 @@ En el LHC se utilizan haces de protones, por lo que una alta fracción de los ev
 
 ```{figure} ./../../figuras/bsm-dijets.png
 ---
-width: 350px
+width: 250px
 name: bsm-dijets
 ---
 Diagrama de la producción de una resonancia *X* por la interacción de dos partones y su decaimiento. De {cite}`Beresford:2642397`
@@ -175,7 +175,7 @@ Se plantea que en una colisión *pp* un quark puede ser excitado a aun estado su
 
 ```{figure} ./../../figuras/bsm-quark.png
 ---
-width: 400px
+width: 300px
 name: bsm-quark
 ---
 Diagrama de Feynman de la producción de un quark excitado *q\** por la dispersión fuerte de un quark *q* y un gluon *g*, y subsecuente decaimiento a dos jets. De {cite}`Ruiz_2015`.
