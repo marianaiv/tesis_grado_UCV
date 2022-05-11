@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html lang="spanish">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -59,7 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="2. Datos y métodos" href="../datos-metodos/resumen.html" />
     <link rel="prev" title="1.6. Reproducibilidad" href="reproducibilidad.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="spanish">
+    <meta name="docsearch:language" content="es">
     
 
     <!-- Google Analytics -->
@@ -179,9 +180,41 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../analisis-datos/resumen.html">
+   3. Análisis de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-sin-preprocesar.html">
+     3.1. Datos sin pre-procesar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-preprocesados.html">
+     3.2. Datos pre-procesados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-UCluster.html">
+     3.3. Datos de UCluster
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-GAN-AE.html">
+     3.4. Datos de GAN-AE
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../referencias/referencias.html">
-   3. Referencias
+   4. Referencias
   </a>
  </li>
 </ul>
@@ -248,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
             href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/marco-teorico/olimpiadas-LHC.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
-        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/marco-teorico/olimpiadas-LHC.md"><button
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/main/tesis/capitulos/marco-teorico/olimpiadas-LHC.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
     </div>
@@ -371,8 +404,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>La búsqueda de física BSM es parte principal del programa de investigación del LHC. Hasta ahora no ha sido exitosa, pero se mejora constantemente. Sin embargo, es evidente que se requieren mejoraras en las herramientas de análisis para que podamos aprovechar la gran cantidad y complejidad de los datos.</p>
 <p>Con el fin de mejorar el uso de estas herramientas para análisis de datos, se crearon las olimpiadas LHC (LHCO). Para las olimpiadas, se simulan conjuntos de datos con eventos de nueva física que podrían observarse en el acelerador. El objetivo es que los participantes interpreten los datos en términos de modelos de física BSM.</p>
 <blockquote>
-<div><p>&quot;La idea principal es que si no lo puedes hacer para el caso simulado, es mucho menos probable que lo puedas hacer para el caso real.
-Hace que las personas aprendan a pensar de manera diferente y aborden el problema de la forma en que habría que abordarlo&quot;</p>
+<div><p>«La idea principal es que si no lo puedes hacer para el caso simulado, es mucho menos probable que lo puedas hacer para el caso real.
+Hace que las personas aprendan a pensar de manera diferente y aborden el problema de la forma en que habría que abordarlo»</p>
 <p>— Gordy Kane, Universidad de Michigan. Organizador de las LHCO<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id58" title="Cern - spotlight: the lhc olympics 2006. 2006. URL: https://public-archive.web.cern.ch/en/Spotlight/SpotlightOlympics-en.html.">83</a>]</span>.</p>
 </div></blockquote>
 <p>Las olimpiadas de 2020 estuvieron enfocadas en el desarrollo técnicas de aprendizaje automático para la búsqueda de partículas resonantes de BSM.</p>
@@ -390,7 +423,7 @@ Hace que las personas aprendan a pensar de manera diferente y aborden el problem
 <p>El <strong>conjunto R&amp;D</strong> y la <strong>BB1</strong> posee un evento de nueva física <span class="math notranslate nohighlight">\(Z'\rightarrow XY\)</span> con <span class="math notranslate nohighlight">\(X\rightarrow q\bar{q}\)</span> y <span class="math notranslate nohighlight">\(Y\rightarrow q\bar{q}\)</span> con <span class="math notranslate nohighlight">\(Z'\)</span>, <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> partículas de nueva física.</p>
 <div class="figure align-default" id="datos-rnd">
 <a class="reference internal image-reference" href="../../_images/lhco-RnD.png"><img alt="../../_images/lhco-RnD.png" src="../../_images/lhco-RnD.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.18 </span><span class="caption-text">Diagrama de Feynmann para la señal del conjunto R&amp;D y la BB1. Producción del boson <em>Z'</em> de física BSM y su decaimiento a las partículas <em>X</em> y <em>Y</em> de física BSM. Estas últimas, decayendo a jets.</span><a class="headerlink" href="#datos-rnd" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 1.18 </span><span class="caption-text">Diagrama de Feynmann para la señal del conjunto R&amp;D y la BB1. Producción del boson <em>Z”</em> de física BSM y su decaimiento a las partículas <em>X</em> y <em>Y</em> de física BSM. Estas últimas, decayendo a jets.</span><a class="headerlink" href="#datos-rnd" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>La <strong>BB2</strong> no contiene señal.</p>
 <p>La <strong>BB3</strong> contiene una resonancia pesada (graviton KK) con dos modos de decaimiento. El primer modo decae a dijets y el segundo a una resonancia neutral más ligera R (el radión IR), más un gluon con <span class="math notranslate nohighlight">\(R\rightarrow gg\)</span>.</p>
@@ -480,7 +513,7 @@ Hace que las personas aprendan a pensar de manera diferente y aborden el problem
 <td><p><a class="reference external" href="https://arxiv.org/pdf/2104.02092.pdf">Artículo</a></p></td>
 <td><p>R&amp;D</p></td>
 </tr>
-<tr class="row-odd"><td><p>Tag N' Train</p></td>
+<tr class="row-odd"><td><p>Tag N” Train</p></td>
 <td><p>Débilmente supervisado</p></td>
 <td><p><a class="reference external" href="https://github.com/OzAmram/TagNTrain">GitHub</a>, <a class="reference external" href="https://arxiv.org/pdf/2002.12376.pdf">Artículo</a>, <a class="reference external" href="https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf">Presentación</a></p></td>
 <td><p>BB1-3</p></td>
@@ -526,7 +559,7 @@ Hace que las personas aprendan a pensar de manera diferente y aborden el problem
 <p>Durante este taller se publicó la BB1. En la siguiente figura se resumen los resultados de los nueve participantes de esta etapa:</p>
 <div class="figure align-default" id="lhco-resultados">
 <a class="reference internal image-reference" href="../../_images/lhco-resultados.png"><img alt="../../_images/lhco-resultados.png" src="../../_images/lhco-resultados.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.20 </span><span class="caption-text">Resultados de la primera caja negra. En la figura se encuentran las predicciones de la masa resonante (arriba a la izquierda), el número de eventos de señal (arriba a la derecha), la masa de la primera partícula hija (abajo a la izquierda) y de la segunda partícula hija (abajo a la derecha). En un panel más pequeño se encuentra el &quot;pull&quot; <em>(respuesta-verdadera)/incertidumbre</em></span><a class="headerlink" href="#lhco-resultados" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 1.20 </span><span class="caption-text">Resultados de la primera caja negra. En la figura se encuentran las predicciones de la masa resonante (arriba a la izquierda), el número de eventos de señal (arriba a la derecha), la masa de la primera partícula hija (abajo a la izquierda) y de la segunda partícula hija (abajo a la derecha). En un panel más pequeño se encuentra el «pull» <em>(respuesta-verdadera)/incertidumbre</em></span><a class="headerlink" href="#lhco-resultados" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Los modelos LSTM, Tag N Train y GIS identificaron la masa correcta de la resonancia en una ventana de <span class="math notranslate nohighlight">\(\pm 200\)</span> GeV y PCA (análisis de componentes principales) identificó dentro del error. Las predicciones de otros observables fueron logradas únicamente por GIS.</p>
 </div>

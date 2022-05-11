@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html lang="spanish">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -59,7 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="1.6. Reproducibilidad" href="reproducibilidad.html" />
     <link rel="prev" title="1.4. Reconstrucción de jets" href="reconstruccion-jets.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="spanish">
+    <meta name="docsearch:language" content="es">
     
 
     <!-- Google Analytics -->
@@ -179,9 +180,41 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../analisis-datos/resumen.html">
+   3. Análisis de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-sin-preprocesar.html">
+     3.1. Datos sin pre-procesar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-preprocesados.html">
+     3.2. Datos pre-procesados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-UCluster.html">
+     3.3. Datos de UCluster
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-GAN-AE.html">
+     3.4. Datos de GAN-AE
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../referencias/referencias.html">
-   3. Referencias
+   4. Referencias
   </a>
  </li>
 </ul>
@@ -248,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
             href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/marco-teorico/aprendizaje-automatico.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
-        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/marco-teorico/aprendizaje-automatico.md"><button
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/main/tesis/capitulos/marco-teorico/aprendizaje-automatico.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
     </div>
@@ -411,7 +444,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>A continuación, se presentan brevemente conceptos básicos de aprendizaje automático y su uso en HEP, utilizando como referencia<span id="id6">[<a class="reference internal" href="../referencias/referencias.html#id69" title="Pankaj Mehta, Marin Bukov, Ching-Hao Wang, Alexandre G.R. Day, Clint Richardson, Charles K. Fisher, and David J. Schwab. A high-bias, low-variance introduction to machine learning for physicists. Physics Reports, 810:1–124, may 2019. URL: https://doi.org/10.1016%2Fj.physrep.2019.03.001, doi:10.1016/j.physrep.2019.03.001.">67</a>]</span>.</p>
 <div class="section" id="conceptos-basicos">
 <span id="ml-conceptos"></span><h2><span class="section-number">1.5.1. </span>Conceptos básicos<a class="headerlink" href="#conceptos-basicos" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>El aprendizaje automático es un subcampo de la inteligencia artificial que tiene como objetivo el desarrollo de algoritmos que mejoran su desempeño de manera cuantificable en una tarea determinada, &quot;aprendiendo&quot; mediante un proceso de entrenamiento que utiliza grandes conjuntos de datos. El objetivo de un algoritmo de aprendizaje automático es utilizar un conjunto de datos para identificar patrones y tomar decisiones informadas con una mínima intervención humana. Estas técnicas se utilizan para problemas de estimación y predicción, pero en este trabajo nos enfocamos en problemas de predicción.</p>
+<p>El aprendizaje automático es un subcampo de la inteligencia artificial que tiene como objetivo el desarrollo de algoritmos que mejoran su desempeño de manera cuantificable en una tarea determinada, «aprendiendo» mediante un proceso de entrenamiento que utiliza grandes conjuntos de datos. El objetivo de un algoritmo de aprendizaje automático es utilizar un conjunto de datos para identificar patrones y tomar decisiones informadas con una mínima intervención humana. Estas técnicas se utilizan para problemas de estimación y predicción, pero en este trabajo nos enfocamos en problemas de predicción.</p>
 <p>De manera general, un algoritmo de aprendizaje automático utilizado para resolver un problema de predicción se entrena utilizando un conjunto de datos <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> asociados a algún vector <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>. A través del proceso de entrenamiento, aprende un mapeo <span class="math notranslate nohighlight">\(f:\mathbf{x}\longrightarrow y\)</span>, donde <span class="math notranslate nohighlight">\(x\in\mathbf{X}\)</span>. El objetivo es utilizar el mapeo para hacer predicciones <span class="math notranslate nohighlight">\(\hat{y}\)</span> dado un nuevo conjunto de datos <span class="math notranslate nohighlight">\(\hat{x}\)</span>.</p>
 <p>El aprendizaje automático se puede dividir en tres categorías: aprendizaje supervisado, aprendizaje no-supervisado y aprendizaje reforzado. Aunque la distinción es útil, se suelen combinar estos tipos de aprendizaje, por lo que los términos se suelen usar de manera imprecisa y pueden ser confusos. En este proyecto se utilizarán métodos de aprendizaje supervisado y no supervisado.</p>
 </div>
@@ -453,7 +486,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Como se mencionó anteriormente, el uso de aprendizaje automático en HEP es amplio. Sin embargo, este trabajo se enfoca en las técnicas de <em>detección de anomalías</em> y <em>búsquedas libres de modelo</em>.</p>
 <div class="section" id="deteccion-de-anomalias">
 <h3><span class="section-number">1.5.5.1. </span>Detección de anomalías<a class="headerlink" href="#deteccion-de-anomalias" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Hasta ahora no se ha confirmado ninguna señal de nueva física. Parte de la dificultad recae en diferenciar la pequeña cantidad de eventos que podrían ser señales nuevas de los eventos de fondo o que no son de interés. Debido a esto, se ha planteado el uso de algoritmos de detección de anomalías para clasificación de los eventos de señal. La tarea de detección de anomalías tiene como objetivo predecir la categoría a la que pertenece una muestra: &quot;normal&quot; o &quot;anómala&quot;.</p>
+<p>Hasta ahora no se ha confirmado ninguna señal de nueva física. Parte de la dificultad recae en diferenciar la pequeña cantidad de eventos que podrían ser señales nuevas de los eventos de fondo o que no son de interés. Debido a esto, se ha planteado el uso de algoritmos de detección de anomalías para clasificación de los eventos de señal. La tarea de detección de anomalías tiene como objetivo predecir la categoría a la que pertenece una muestra: «normal» o «anómala».</p>
 <p>Las técnicas de detección de anomalías se pueden dividir en dos tipos<span id="id10">[<a class="reference internal" href="../referencias/referencias.html#id89" title="Katherine Fraser, Samuel Homiller, Rashmish K. Mishra, Bryan Ostdiek, and Matthew D. Schwartz. Challenges for unsupervised anomaly detection in particle physics. Journal of High Energy Physics, mar 2022. URL: https://doi.org/10.1007%2Fjhep03%282022%29066, doi:10.1007/jhep03(2022)066.">71</a>]</span>.</p>
 <ul class="simple">
 <li><p>Algunas señales son cualitativamente distintas de del fondo y se utilizan técnicas para caracterizar estos eventos como anómalos.</p></li>
