@@ -117,7 +117,3 @@ Después de revelar las señales de las cajas negras y publicar las etiquetas de
 - CWoLa observó una resonancia en 3.5 TeV
 
 En el siguiente capítulo se describirá con mayor detalle los datos de las olimpiadas y los algoritmos participantes utilizados en este trabajo.
-
-```{bibliography}
-:style: unsrt
-```
