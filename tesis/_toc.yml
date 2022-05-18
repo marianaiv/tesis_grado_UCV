@@ -38,4 +38,5 @@ chapters:
 - file: capitulos/resultados/resumen
   sections:
   - file: capitulos/resultados/clasificacion
+  - file: capitulos/resultados/comparacion-algoritmos
 - file: capitulos/referencias/referencias 
