@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.1. Clasificación de eventos &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="4.2. Comparación de algoritmos" href="comparacion-algoritmos.html" />
+    <link rel="prev" title="4. Resultados" href="resumen.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="es">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_ucv.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../marco-teorico/resumen.html">
+   1. Marco teórico
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/modelo-estandar.html">
+     1.1. El módelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/cromodinamica-cuantica.html">
+     1.2. Cromodinámica cuántica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/mas-alla-del-ms.html">
+     1.3. Más allá del modelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html">
+     1.4. Reconstrucción de jets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/aprendizaje-automatico.html">
+     1.5. Aprendizaje automático
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
+     1.6. Reproducibilidad
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
+     1.7. Olimpiadas LHC 2020
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../datos-metodos/resumen.html">
+   2. Datos y métodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/datos-lhco.html">
+     2.1. Conjuntos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html">
+     2.2. Algoritmos para detección de anomalías
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/metricas.html">
+     2.3. Métricas de rendimiento
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html">
+     2.4. Algoritmos LHCO 2020
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/benchtools.html">
+     2.5. Paquete benchtools
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../analisis-datos/resumen.html">
+   3. Análisis de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-sin-preprocesar.html">
+     3.1. Datos sin pre-procesar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-preprocesados.html">
+     3.2. Datos pre-procesados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-UCluster.html">
+     3.3. Datos de UCluster
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-GAN-AE.html">
+     3.4. Datos de GAN-AE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="resumen.html">
+   4. Resultados
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.1. Clasificación de eventos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="comparacion-algoritmos.html">
+     4.2. Comparación de algoritmos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../referencias/referencias.html">
+   5. Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/capitulos/resultados/clasificacion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
+                    class="fab fa-github"></i>repositorio</button></a>
+        <a class="issues-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/resultados/clasificacion.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/main/tesis/capitulos/resultados/clasificacion.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/marianaiv/tesis_grado_UCV/main?urlpath=tree/tesis/capitulos/resultados/clasificacion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conjunto-r-d">
+   4.1.1. Conjunto R&amp;D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importancia-de-las-caracteristicas">
+     4.1.1.1. Importancia de las características
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribuciones-predichas">
+     4.1.1.2. Distribuciones predichas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conjunto-bb1">
+   4.1.2. Conjunto BB1
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reconstruccion-de-las-variables">
+     4.1.2.1. Reconstrucción de las variables
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Clasificación de eventos</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conjunto-r-d">
+   4.1.1. Conjunto R&amp;D
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importancia-de-las-caracteristicas">
+     4.1.1.1. Importancia de las características
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribuciones-predichas">
+     4.1.1.2. Distribuciones predichas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conjunto-bb1">
+   4.1.2. Conjunto BB1
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reconstruccion-de-las-variables">
+     4.1.2.1. Reconstrucción de las variables
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="clasificacion-de-eventos">
+<span id="clas"></span><h1><span class="section-number">4.1. </span>Clasificación de eventos<a class="headerlink" href="#clasificacion-de-eventos" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Para comparar los algoritmos de las LHCO 2020 utilizamos como base algunos algoritmos sencillos ya implementados en librerías como <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code><span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id115" title="F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, M. Perrot, and E. Duchesnay. Scikit-learn: machine learning in Python. Journal of Machine Learning Research, 12:2825–2830, 2011.">108</a>]</span> y uno programado usando <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id116" title="Martín Abadi et al. TensorFlow: large-scale machine learning on heterogeneous systems. 2015. Software available from tensorflow.org. URL: https://www.tensorflow.org/.">109</a>]</span>.</p>
+<p>En esta sección se observarán algunas de las característica de la clasificación realizada con estos algoritmos. Los modelos utilizados son los presentados en la <a class="reference internal" href="#clas-alg"><span class="std std-numref">Tabla 4.1</span></a>, explicados en la <a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg"><span class="std std-numref">Sección 2.2</span></a>.:</p>
+<table class="colwidths-auto table" id="clas-alg">
+<caption><span class="caption-number">Tabla 4.1 </span><span class="caption-text">Algoritmos utilizados para comparación</span><a class="headerlink" href="#clas-alg" title="Enlace permanente a esta tabla">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Nombre</p></th>
+<th class="text-align:center head"><p>Implementación</p></th>
+<th class="text-align:center head"><p>Tipo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Random Forest Classifier (RFC)</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-bosques"><span class="std std-ref">Bosque aleatorio</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Gradient Boosting Classifier (GBC)</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-gbc"><span class="std std-ref">Clasificador del gradiente del impulso</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Quadratic Discriminant Analysis (QDA)</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-qda"><span class="std std-ref">Análisis de discriminante cuadrático</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>MLP Classifier</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-neural"><span class="std std-ref">Red neuronal</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Tensorflow Classifier</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">tensorflow</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-neural"><span class="std std-ref">Red neuronal</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>KMeans</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-kmeans"><span class="std std-ref">K-means</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="conjunto-r-d">
+<span id="clas-rnd"></span><h2><span class="section-number">4.1.1. </span>Conjunto R&amp;D<a class="headerlink" href="#conjunto-r-d" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los datos del conjunto R&amp;D se dividieron 70% en un conjunto de entrenamiento y 30% en uno de prueba. A continuación se mostrará la importancia de las variables para la clasificación según algunos modelos y se observarán las distribuciones predichas por los modelos para algunas variables utilizando el conjunto de prueba.</p>
+<div class="section" id="importancia-de-las-caracteristicas">
+<h3><span class="section-number">4.1.1.1. </span>Importancia de las características<a class="headerlink" href="#importancia-de-las-caracteristicas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>De los modelos en la <a class="reference internal" href="#clas-alg"><span class="std std-numref">Tabla 4.1</span></a>, RFC y GBC permiten conocer cuáles de las características de los eventos fueron las variables más relevantes. Esto algoritmos asignan puntajes a las variables de acuerdo a su importancia para la clasificación. Un gráfico de estos puntajes se observa en la <a class="reference internal" href="#clas-feature-imp"><span class="std std-numref">Figura 4.1</span></a>.</p>
+<div class="figure align-default" id="clas-feature-imp">
+<a class="reference internal image-reference" href="../../_images/clas-feature-imp.png"><img alt="../../_images/clas-feature-imp.png" src="../../_images/clas-feature-imp.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.1 </span><span class="caption-text">Importancia de las variables utilizadas en el entrenamiento según RFC (izquierda) y GBC (derecha).</span><a class="headerlink" href="#clas-feature-imp" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Las características más relevantes para ambos clasificadores son la variable de subestructura <span class="math notranslate nohighlight">\(\tau_{21}\)</span> y el <span class="math notranslate nohighlight">\(p_T\)</span> de los jets. El número de hadrones de los eventos también es una variable relevante para la clasificación. En general, son de importancia las características que presentan distribuciones diferentes para señal y fondo.</p>
+</div>
+<div class="section" id="distribuciones-predichas">
+<h3><span class="section-number">4.1.1.2. </span>Distribuciones predichas<a class="headerlink" href="#distribuciones-predichas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>De la clasificación con los distintos modelos, se pueden obtener las distribuciones de las variables para observar qué tan cercana es la clasificación a los datos reales. En la <a class="reference internal" href="#clas-variables-dist"><span class="std std-numref">Figura 4.2</span></a> observamos las distribuciones reales y predichas para las variables más importante según la <a class="reference internal" href="#clas-feature-imp"><span class="std std-numref">Figura 4.1</span></a>.</p>
+<div class="figure align-default" id="clas-variables-dist">
+<a class="reference internal image-reference" href="../../_images/clas-variables-dist.png"><img alt="../../_images/clas-variables-dist.png" src="../../_images/clas-variables-dist.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.2 </span><span class="caption-text">Distribución reales y predichas de algunas de las variables más importantes para la clasificación usando el conjunto prueba R&amp;D. Cada fila de imágenes representa un clasificador. De arriba a abajo: Tensorflow Classifier, RFC, GBC, QDA, MLP y KMeans. Por columna, de izquierda a derecha, se encuentras las distribuciones de <span class="math notranslate nohighlight">\(p_T\)</span> del jet secundario, <span class="math notranslate nohighlight">\(\tau_{21}\)</span> del jet principal y el número de hadrones de los eventos.</span><a class="headerlink" href="#clas-variables-dist" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>En la <a class="reference internal" href="#clas-variables-dist"><span class="std std-numref">Figura 4.2</span></a>, vemos que en general, los modelos predicen el fondo con bastante precisión. La distinción entre señal y fondo es lograda en gran medida por los modelos supervisados. Particularmente, vemos que el clasificador de Tensorflow está sobreestimando el fondo y subestimando la señal en todas las variables. Al contrario, RFC, GBC y QDA sobreestiman la señal y subestiman el fondo. El clasificador MLP parece clasificar las clases con mayor precisión.</p>
+<p>El único modelo no-supervisado, Kmeans, logra separar algunos eventos de señal según los gráficos de <span class="math notranslate nohighlight">\(p_T\)</span> y de <span class="math notranslate nohighlight">\(\tau_{12}\)</span>. En el gráfico de número de hadrones vemos que no logra diferenciar entre clases.</p>
+<p>Al graficar algunas de las variables con menor importancia según la <a class="reference internal" href="#clas-feature-imp"><span class="std std-numref">Figura 4.1</span></a>, se observa que los modelos supervisados logran separar señal y fondo (<a class="reference internal" href="#clas-variables-noimp-dist"><span class="std std-numref">Figura 4.3</span></a>).</p>
+<div class="figure align-default" id="clas-variables-noimp-dist">
+<a class="reference internal image-reference" href="../../_images/clas-variables-noimp-dist.png"><img alt="../../_images/clas-variables-noimp-dist.png" src="../../_images/clas-variables-noimp-dist.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.3 </span><span class="caption-text">Distribución de algunas de las variables menos relevantes para la clasificación. Cada fila de imágenes representa un clasificador. De arriba a abajo: Tensorflow Classifier, RFC, GBC, QDA, MLP y KMeans. Por columna, de izquierda a derecha, se encuentras las distribuciones de <span class="math notranslate nohighlight">\(\Delta R\)</span>, <span class="math notranslate nohighlight">\(E\)</span> del jet principal y <span class="math notranslate nohighlight">\(\eta\)</span> del jet principal.</span><a class="headerlink" href="#clas-variables-noimp-dist" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>El modelo de TensorFlow parece ser el más preciso estimando <span class="math notranslate nohighlight">\(\eta\)</span> del jet principal, variable para la cual el clasificador MLP logra separar señal y fondo pero la distribución de la señal predicha está corrida a la izquierda.</p>
+<p>Nuevamente, Kmeans parece diferenciar ligeramente entre clases en algunas variables. En la variable <span class="math notranslate nohighlight">\(\eta\)</span> vemos que no logra distinguir entre señal y fondo.</p>
+<p>En la <a class="reference internal" href="#clas-masa-dist"><span class="std std-numref">Figura 4.4</span></a> podemos ver la predicción de la variable de masa invariante.</p>
+<div class="figure align-default" id="clas-masa-dist">
+<a class="reference internal image-reference" href="../../_images/clas-masa-dist.png"><img alt="../../_images/clas-masa-dist.png" src="../../_images/clas-masa-dist.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.4 </span><span class="caption-text">Distribución la masa invariante. En la fila superior, de izquierda a derecha, las predicciones de: Tensorflow Classifier, RFC, GBC y en la fila inferior: QDA, MLP y KMeans.</span><a class="headerlink" href="#clas-masa-dist" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Las variables de masa no fueron utilizadas para entrenamiento. Sin embargo, los modelos supervisados logran obtener distribuciones cercanas, lo que indica que están realizando correctamente la clasificación.</p>
+<p>El modelo de TensorFlow parece estar subestimando la señal. Los demás modelos supervisados parecen sobreestimar la señal. Kmeans obtiene un pico para la señal correctamente clasificado, pero es evidente que está clasificando algunos eventos de fondo como señal, como se puede notar en el gráfico al observar las distribuciones entre 4000 y 6000 GeV.</p>
+</div>
+</div>
+<div class="section" id="conjunto-bb1">
+<span id="clas-bb1"></span><h2><span class="section-number">4.1.2. </span>Conjunto BB1<a class="headerlink" href="#conjunto-bb1" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El conjunto BB1 se clasifica completamente, utilizando los modelos entrenados con el 70% del conjunto R&amp;D.</p>
+<div class="section" id="reconstruccion-de-las-variables">
+<h3><span class="section-number">4.1.2.1. </span>Reconstrucción de las variables<a class="headerlink" href="#reconstruccion-de-las-variables" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Las distribuciones de las variables más relevantes según la <a class="reference internal" href="#clas-feature-imp"><span class="std std-numref">Figura 4.1</span></a> y las predicciones realizadas con respecto al conjunto BB1, se puede observar en la <a class="reference internal" href="#clas-variables-dist-bb1"><span class="std std-numref">Figura 4.5</span></a>.</p>
+<div class="figure align-default" id="clas-variables-dist-bb1">
+<a class="reference internal image-reference" href="../../_images/clas-variables-dist-BB1.png"><img alt="../../_images/clas-variables-dist-BB1.png" src="../../_images/clas-variables-dist-BB1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.5 </span><span class="caption-text">Distribución de las variables más importantes y las predicciones para el conjunto BB1. Cada fila de imágenes representa un clasificador. De arriba a abajo: Tensorflow Classifier, RFC, GBC, QDA, MLP y KMeans. Por columna, de izquierda a derecha, se encuentras las distribuciones de <span class="math notranslate nohighlight">\(p_T\)</span> del jet secundario, <span class="math notranslate nohighlight">\(\tau_{21}\)</span> del jet principal y el número de hadrones de los eventos.</span><a class="headerlink" href="#clas-variables-dist-bb1" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>El poder de distinción entre señal y fondo de los modelos disminuye al utilizar el conjunto BB1. Como se puede observar en la <a class="reference internal" href="#clas-variables-dist-bb1"><span class="std std-numref">Figura 4.5</span></a>, para RFC, GBC y QDA, las distribuciones predichas del fondo son bastante exactas. Sin embargo, no se logra obtener las distribuciones de la señal; vemos distribuciones de señal que se acercan a la distribución de la señal real contaminadas por eventos de fondo.</p>
+<p>El clasificador de TensorFlow, MLP y KMeans obtienen distribuciones de fondo menos precisas. A su vez, las distribuciones de señal son menos parecidas a las reales. El clasificador de TensorFlow y MLP logran obtener distribuciones del número de hadrones cercanas a las de la señal real, pero para <span class="math notranslate nohighlight">\(p_T\)</span> y <span class="math notranslate nohighlight">\(\tau_{21}\)</span> diferencian poco entre señal y fondo. KMeans diferencia más en la variable <span class="math notranslate nohighlight">\(p_T\)</span> entre clases, mientras que para <span class="math notranslate nohighlight">\(\tau_{21}\)</span> y el número de hadrones no logra distinción entre señal y fondo.</p>
+<p>Las distribuciones predichas de las variables menos relevante se encuentran en la <a class="reference internal" href="#clas-variables-noimp-dist-bb1"><span class="std std-numref">Figura 4.6</span></a>.</p>
+<div class="figure align-default" id="clas-variables-noimp-dist-bb1">
+<a class="reference internal image-reference" href="../../_images/clas-variables-noimp-dist-BB1.png"><img alt="../../_images/clas-variables-noimp-dist-BB1.png" src="../../_images/clas-variables-noimp-dist-BB1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.6 </span><span class="caption-text">Distribución real y predicha de algunas de las variables menos relevantes para la clasificación para el conjunto BB1 . Cada fila de imágenes representa un clasificador. De arriba a abajo: Tensorflow Classifier, RFC, GBC, QDA, MLP y KMeans. Por columna, de izquierda a derecha, se encuentras las distribuciones de <span class="math notranslate nohighlight">\(\Delta R\)</span>, <span class="math notranslate nohighlight">\(E\)</span> del jet principal y <span class="math notranslate nohighlight">\(\eta\)</span> del jet principal.</span><a class="headerlink" href="#clas-variables-noimp-dist-bb1" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>De acuerdo a estas variables, los modelos RFC, GBC y QDA parecen clasificar correctamente una porción significativa de la señal real.</p>
+<p>MLP y el clasificador de TensorFlow obtienen una distribución cercana de <span class="math notranslate nohighlight">\(\eta\)</span> pero no obtienen la distribución de la señal en <span class="math notranslate nohighlight">\(\Delta R\)</span> y <span class="math notranslate nohighlight">\(E\)</span>. KMeans obtiene una mejor separación de los eventos en lo que respecta a <span class="math notranslate nohighlight">\(E\)</span> pero no diferencia entre señal y fondo en <span class="math notranslate nohighlight">\(\Delta R\)</span> y <span class="math notranslate nohighlight">\(\eta\)</span>.</p>
+<p>Por último, observamos las distribuciones de masa invariante obtenidas.</p>
+<div class="figure align-default" id="clas-masa-dist-bb1">
+<a class="reference internal image-reference" href="../../_images/clas-masa-dist-BB1.png"><img alt="../../_images/clas-masa-dist-BB1.png" src="../../_images/clas-masa-dist-BB1.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.7 </span><span class="caption-text">Distribución la masa invariante y la clasificación del conjunto BB1. En la fila superior, de izquierda a derecha, las predicciones de: Tensorflow Classifier, RFC, GBC y en la fila inferior: QDA, MLP y KMeans.</span><a class="headerlink" href="#clas-masa-dist-bb1" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Ninguno de los modelos obtiene la distribución de la señal. RFC y GBC obtienen distribuciones más cercanas a la distribución real de señal y MLP es el modelo que diferencia menos entre señal y fondo para esta variable.</p>
+<p>Aunque la comparación de distribuciones proporciona un punto de partida para la comparación de los algoritmos, es necesario el uso de métricas, porque no es evidente qué algoritmo está realizando una mejor clasificación de los conjuntos de datos.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos\resultados"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="resumen.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Resultados</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="comparacion-algoritmos.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>Comparación de algoritmos</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Por Mariana Vivas, Universidad Central de Venezuela<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
