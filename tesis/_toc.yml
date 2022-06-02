@@ -39,4 +39,6 @@ chapters:
   sections:
   - file: capitulos/resultados/clasificacion
   - file: capitulos/resultados/comparacion-algoritmos
+- file: capitulos/discusion/discusion
+- file: capitulos/conclusion/conclusion
 - file: capitulos/referencias/referencias 
