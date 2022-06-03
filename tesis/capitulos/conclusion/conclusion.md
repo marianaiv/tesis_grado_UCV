@@ -12,3 +12,7 @@ Sin embargo, es evidente que se necesitan estudiar las métricas existentes, y d
 Con respecto a la reproducibilidad, los resultados de ambos modelos fueron sencillos de obtener, a pesar de no tener la información completa del ambiente computacional. A pesar de esto, al no tener la configuración exacta de UCluster, no se garantiza que el resultado obtenido en este trabajo coincida con el obtenido en {cite}`Kasieczka_2021`, lo que puede explicar su bajo rendimiento.
 
 La falta de información disponible para poder reproducir los resultados obtenidos por los participantes de las LHCO 2020, limitó la cantidad de modelos a utilizar en este trabajo, evidenciando que la reproducibilidad en el desarrollo de los métodos de aprendizaje automático para su uso en HEP es una característica esencial para poder estudiar con mayor profundidad, y seguir desarrollando, el uso de estas herramientas en trabajos futuros.
+
+```{bibliography}
+:style: unsrt
+```
