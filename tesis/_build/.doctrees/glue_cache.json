@@ -1,1 +1,113 @@
-{}
+{
+  "capitulos\\analisis-datos\\datos-sin-preprocesar": {
+    "mean_nhad_RnD_sig": {
+      "data": {
+        "application/papermill.record/text/plain": "139.69080472458327"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "mean_nhad_RnD_sig"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "mean_nhad_BB1_sig": {
+      "data": {
+        "application/papermill.record/text/plain": "147.025"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "mean_nhad_BB1_sig"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "mean_nhad_RnD_bkg": {
+      "data": {
+        "application/papermill.record/text/plain": "171.3385711615223"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "mean_nhad_RnD_bkg"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "meanpt_bkg_RnD": {
+      "data": {
+        "application/papermill.record/text/plain": "19.19757850577501"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "meanpt_bkg_RnD"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "meanpt_sig_RnD": {
+      "data": {
+        "application/papermill.record/text/plain": "25.247649677146946"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "meanpt_sig_RnD"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "meanpt_bkg_BB1": {
+      "data": {
+        "application/papermill.record/text/plain": "19.942760435054584"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "meanpt_bkg_BB1"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "df-raw": {
+      "data": {
+        "application/papermill.record/text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>0</th>\n      <th>1</th>\n      <th>2</th>\n      <th>3</th>\n      <th>4</th>\n      <th>5</th>\n      <th>6</th>\n      <th>7</th>\n      <th>8</th>\n      <th>9</th>\n      <th>...</th>\n      <th>2091</th>\n      <th>2092</th>\n      <th>2093</th>\n      <th>2094</th>\n      <th>2095</th>\n      <th>2096</th>\n      <th>2097</th>\n      <th>2098</th>\n      <th>2099</th>\n      <th>2100</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>0.324101</td>\n      <td>-0.361158</td>\n      <td>2.737669</td>\n      <td>0.409859</td>\n      <td>-2.429939</td>\n      <td>0.729830</td>\n      <td>0.867922</td>\n      <td>-2.267777</td>\n      <td>-1.161310</td>\n      <td>0.383031</td>\n      <td>...</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>0.646304</td>\n      <td>-0.539460</td>\n      <td>-1.386258</td>\n      <td>0.471293</td>\n      <td>-1.636572</td>\n      <td>0.751657</td>\n      <td>0.453769</td>\n      <td>-1.099593</td>\n      <td>-0.393405</td>\n      <td>0.485929</td>\n      <td>...</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>0.325172</td>\n      <td>-0.833948</td>\n      <td>2.404844</td>\n      <td>1.295058</td>\n      <td>-2.089618</td>\n      <td>-1.873342</td>\n      <td>0.451272</td>\n      <td>-0.101877</td>\n      <td>2.217348</td>\n      <td>0.461293</td>\n      <td>...</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>0.290918</td>\n      <td>-2.200063</td>\n      <td>1.630132</td>\n      <td>0.565028</td>\n      <td>-1.714345</td>\n      <td>-2.617103</td>\n      <td>0.951042</td>\n      <td>-0.532720</td>\n      <td>2.941473</td>\n      <td>0.896248</td>\n      <td>...</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>0.526330</td>\n      <td>-2.349110</td>\n      <td>-1.745532</td>\n      <td>0.542491</td>\n      <td>-2.080352</td>\n      <td>-3.044045</td>\n      <td>0.390727</td>\n      <td>-1.278563</td>\n      <td>-2.131058</td>\n      <td>2.530358</td>\n      <td>...</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>1.0</td>\n    </tr>\n  </tbody>\n</table>\n<p>5 rows \u00d7 2101 columns</p>\n</div>",
+        "application/papermill.record/text/plain": "       0         1         2         3         4         5         6     \\\n0  0.324101 -0.361158  2.737669  0.409859 -2.429939  0.729830  0.867922   \n1  0.646304 -0.539460 -1.386258  0.471293 -1.636572  0.751657  0.453769   \n2  0.325172 -0.833948  2.404844  1.295058 -2.089618 -1.873342  0.451272   \n3  0.290918 -2.200063  1.630132  0.565028 -1.714345 -2.617103  0.951042   \n4  0.526330 -2.349110 -1.745532  0.542491 -2.080352 -3.044045  0.390727   \n\n       7         8         9     ...  2091  2092  2093  2094  2095  2096  \\\n0 -2.267777 -1.161310  0.383031  ...   0.0   0.0   0.0   0.0   0.0   0.0   \n1 -1.099593 -0.393405  0.485929  ...   0.0   0.0   0.0   0.0   0.0   0.0   \n2 -0.101877  2.217348  0.461293  ...   0.0   0.0   0.0   0.0   0.0   0.0   \n3 -0.532720  2.941473  0.896248  ...   0.0   0.0   0.0   0.0   0.0   0.0   \n4 -1.278563 -2.131058  2.530358  ...   0.0   0.0   0.0   0.0   0.0   0.0   \n\n   2097  2098  2099  2100  \n0   0.0   0.0   0.0   0.0  \n1   0.0   0.0   0.0   0.0  \n2   0.0   0.0   0.0   0.0  \n3   0.0   0.0   0.0   0.0  \n4   0.0   0.0   0.0   1.0  \n\n[5 rows x 2101 columns]"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "df-raw"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "mean_nhad_BB1_bkg": {
+      "data": {
+        "application/papermill.record/text/plain": "173.6753903122498"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "mean_nhad_BB1_bkg"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "meanpt_sig_BB1": {
+      "data": {
+        "application/papermill.record/text/plain": "25.202933721950238"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "meanpt_sig_BB1"
+        }
+      },
+      "output_type": "display_data"
+    }
+  }
+}
