@@ -29,7 +29,7 @@ Por otra parte, las **limitaciones teóricas** hacen referencia a predicciones n
 - *Problema de jerarquía*: Teóricamente, la masa del bosón de Higgs debería ser del orden de la escala de Planck{cite}`Smith_2019`. Sin embargo, el valor experimentar hallado es $10^19$ órdenes de magnitud menor. Para lograr teóricamente el valor experimental, se requiere hacer un ajuste fino que no se considera natural y representa problemas con respecto a la universalidad de la teoría.
 (bsm-nuevafisica)=
 ## Búsqueda de nueva física
-La búsqueda de una teoría del todo, que relacione los fenómenos físicos conocidos y prediga el resultado de cualquier experimento, es un tema en curso en la física, como se puede observar en la {bsm-unificacion}`bsm-unificacion`.
+La búsqueda de una teoría del todo, que relacione los fenómenos físicos conocidos y prediga el resultado de cualquier experimento, es un tema en curso en la física, como se puede observar en la {numref}`bsm-unificacion`.
 
 ```{figure} ./../../figuras/bsm-unificacion.png
 ---
