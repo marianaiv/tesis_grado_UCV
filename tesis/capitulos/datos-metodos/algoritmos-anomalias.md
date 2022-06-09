@@ -174,7 +174,7 @@ Una GAN se construye a partir de dos redes neuronales conocidas como *generador*
 
 $$
     G(\mathbf{z})=\mathbf{\hat{x}}
-$$
+$$(alg-generativa)
 
 donde $\mathbf{z}$ es muestreado a partir de una distribución de probabilidad a priori en un espacio latente y $\mathbf{\hat{x}}$ son las muestras generadas.El discriminador aproxima una función discriminadora $D$ que distingue entre muestras $\mathbf{x}$ de los datos originales y muestras $\mathbf{\hat{x}}$ sintéticas. 
 

@@ -47,24 +47,7 @@ Por ejemplo, el modelo de **supersimetría** (SUSY), específicamente la mínima
 width: 700px
 name: bsm-sparticulas
 ---
-<<<<<<< HEAD
-Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY. De {cite}`york`.
-```
-Entre las motivaciones teóricas de este modelo se encuentra{cite}`Virdee2016-dd`:
-
-- Las contribuciones de las partículas supersimétricas en el cálculo de la masa del bosón de Higgs cancelan las contribuciones de las partículas del modelo estándar, eliminando el problema de jerarquía.
-- Ofrece una ruta para la unificación de las fuerzas fundamentales del modelo estándar en una escala de $10^{15}$ GeV ({numref}`bsm-susyunificacion`).
-- La partícula más ligera predicha por el modelo es estable y eléctricamente neutra, por lo que es un candidato para la materia oscura.
-
-```{figure} ./../../figuras/bsm-susyunificacion.png
----
-width: 400px
-name: bsm-susyunificacion
----
-Evolución de las constantes de acople en función de la energía para el modelo estándar (líneas punteadas) y para MSSM (líneas sólidas). En rojo la interacción electromagnética, en azul la interacción débil y en verde la interacción fuerte. De {cite}`Cornell_2015`
-=======
 Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY {cite}`york`.
->>>>>>> datos-metodos
 ```
 También se han propuesto modelos con **dimensiones espaciales adicionales**, como Kaluza y Klein{cite}`KALUZA_2018,Klein:1926tv`, que propone una quinta dimensión, unificando la relatividad general y el electromagnetismo. Desde entonces, se han estudiado varios modelos que plantean nuevas dimensiones{cite}`P_rez_Lorenzana_2005`.
 
@@ -73,61 +56,7 @@ Entre estos modelos se encuentra la **teoría de cuerdas**, que intenta reconcil
 Sin embargo, las partículas supersimétricas no han sido observadas{cite}`ATLAS_SUSY`, ninguno de los experimentos diseñados para detectar materia oscura ha detectado la partícula ligera que predice SUSY, y no hay evidencia para la unificación de las fuerzas ni para las dimensiones adicionales.
 (bsm-dijes)=
 ## Eventos dijet
-<<<<<<< HEAD
-La búsqueda de nuevas partículas es parte importante de la búsqueda de física BSM. Los modelos explicados anteriormente y muchos otros incluyen en su formulación nuevas partículas que permiten explicar alguna de las limitaciones del modelo estándar.
-
-En el LHC se utilizan haces de protones, por lo que una alta fracción de los eventos de colisión resultan en formación de jets. Para este proyecto es de particular interés la topología de dos jets, o dijet.
-
-```{figure} ./../../figuras/bsm-dijets.png
----
-width: 250px
-name: bsm-dijets
----
-Diagrama de la producción de una resonancia *X* por la interacción de dos partones y su decaimiento. De {cite}`Beresford:2642397`
-```
-Debido a la falta de evidencia de física BSM, existen varios modelos de producción dijet que se utilizan para mejorar y optimizar los métodos de análisis{cite}`Beresford:2642397,Allen:2636572`.
-
-### Mediador Z' de materia oscura
-Para incluir la materia oscura en el modelo estándar, se plantea una *partícula masiva de interacción débil* (WIMP). Sus características principales son:
-- Interactúa principalmente a través de la fuerza nuclear débil y la gravedad.
-- Masa de mayor magnitud que cualquier partícula del modelo estándar.
-- Estable o de larga vida. 
-
-La partícula Z' se acopla a la materia oscura y a todos los quarks del modelo estándar, pero no a los leptones. Debido a que no interactúa con la materia a través de la fuerza electromagnética ni fuerza fuerte, no es visible directamente en los detectores. Por su masa, se movería relativamente lento.
-
-```{figure} ./../../figuras/bsm-wboson.png
----
-width: 500px
-name: bsm-wboson
----
-Diagrama de Feynman para los decaimientos de *Z'*. (a) Decaimiento a dos partículas de materia oscura con ISR. (b) Decaimiento a dijets. De {cite}`Allen:2636572`.
-```
-
-Partículas como estas son parte de varios modelos BSM como SUSY, dimensión extra universal (UED) y little Higgs. Otros modelos postulan un "sector oscuro" de partículas que no interactúan directamente con la materia regular, sino a través de una partículas mediadoras que se acoplan tanto al modelo estándar como a la materia oscura. Estas podrían producirse y ser detectadas en el LHC. La forma en la que se podrían detectar depende del modo de decaimiento. Si el decaimiento es a partículas de materia oscura, se puede detectar como falta de energía. En cambio, si decae a partículas del modelo estándar, sus productos se podrían observar directamente ({numref}`bsm-wboson`).
-
-El modelo Z' es recomendado por ATLAS/CMS Dark Matter Forum{cite}`Abercrombie_2020`.
-
-### Bosón W' pesado
-Algunas teorías que plantean un grupo de gauge adicional introducen un bosón *W'*. Un modelo comúnmente utilizado para análisis es el *modelo estándar secuencial* (SSM). Este nuevo bosón es una versión más pesada del bosón *W* del modelo estándar. La tasa de decaimiento a un estado final de dos quarks ($W'\longrightarrow qq$) es del 75%.
-
-### Quarks excitados
-Los quarks excitados *q\** son característicos de los modelos de quarks complejos{cite}`PhysRevD.42.815`. En estos modelos, los quarks no son partículas fundamentales, más bien son estados ligados de otras partículas. 
-
-Los modelos compuestos buscan abordar la jerarquía de masa de los quarks y la aparente organización de fermiones en generaciones, explicando también el comportamiento de hadrones.
-
-Se plantea que en una colisión *pp* un quark puede ser excitado a aun estado superior mediante la absorción de un gluon y luego radiar un bosón cuando regresa a su estado fundamental.
-
-```{figure} ./../../figuras/bsm-quark.png
----
-width: 300px
-name: bsm-quark
----
-Diagrama de Feynman de la producción de un quark excitado *q\** por la dispersión fuerte de un quark *q* y un gluon *g*, y subsecuente decaimiento a dos jets. De {cite}`Ruiz_2015`.
-```
-Un quark excitado puede decaer a un par quark-gluon ($q^*\longrightarrow qg$). Este decaimiento tiene una tasa de ramificación del $\sim 85\%$.
-=======
 La búsqueda de nuevas partículas es fundamental en la búsqueda de física BSM. Los modelos mencionados anteriormente y muchos otros incluyen en su formulación nuevas partículas que permiten explicar alguna de las limitaciones del modelo estándar. Históricamente, uno de los métodos utilizados para descubrir nuevas partículas es buscar estructuras de resonancia en espectros de masas invariantes de los productos de desintegración de la partícula. 
->>>>>>> datos-metodos
 
 A diferencia de las búsquedas dirigidas a estados finales más complejos, para una topología específica, las búsquedas de resonancia de dos cuerpos solo son sensibles a dos parámetros: la masa de la nueva partícula y la sección transversal de producción. Como resultado, estas búsquedas establecen poderosas restricciones en una variedad de modelos específicos de física BSM{cite}`Kim_2020`. Existen múltiples estados finales de dos cuerpos que se pueden considerar para la búsqueda de física BSM, pero en este trabajo nos enfocamos en el estado final de dos jets o dijet.
 

@@ -26,11 +26,7 @@ donde $Q_m$ representa los datos en el nodo $m$ y $p_{mk}$ es la proporción de 
 
 ```{figure} ./../../figuras/ml-arboldecision.png
 ---
-<<<<<<< HEAD
 width: 450px
-=======
-width: 500px
->>>>>>> datos-metodos
 name: ml-arboldecision
 ---
 Ejemplo de un árbol de decisión. Para una conjunto de características $\mathbf{x}$, su etiqueta $y$ es predicha, recorriéndolo desde su raíz, pasando por las hojas, siguiendo las ramas que satisface {cite}`Mehta_2019`.
@@ -41,11 +37,7 @@ Usualmente, cada árbol emite un voto unitario para la clase más popular dada u
 
 ```{figure} ./../../figuras/ml-bosquealeatorio.png
 ---
-<<<<<<< HEAD
 width: 550px
-=======
-width: 500px
->>>>>>> datos-metodos
 name: ml-bosquealeatorio
 ---
 Representación visual del funcionamiento de un bosque aleatorio {cite}`chauhan_2021`
@@ -182,7 +174,7 @@ Una GAN se construye a partir de dos redes neuronales conocidas como *generador*
 
 $$
     G(\mathbf{z})=\mathbf{\hat{x}}
-$$
+$$(alg-generativa)
 
 donde $\mathbf{z}$ es muestreado a partir de una distribución de probabilidad a priori en un espacio latente y $\mathbf{\hat{x}}$ son las muestras generadas.El discriminador aproxima una función discriminadora $D$ que distingue entre muestras $\mathbf{x}$ de los datos originales y muestras $\mathbf{\hat{x}}$ sintéticas. 
 
