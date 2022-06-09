@@ -1,46 +1,46 @@
 (alg)=
 # Algoritmos para detección de anomalías
-En este proyecto se trata de resolver un problema de clasificación binaria con los datos de las LHCO 2020, que son altamente desbalanceados. Esto se conoce como una tarea de *detección de anomalías*. 
+En este proyecto se trata de resolver un problema de clasificación binaria con los datos de las LHCO 2020, que son altamente desbalanceados. Esto se conoce como una tarea de *detección de anomalías*, que en el caso de este trabajo hace referencia a la detección de los eventos de señal.
 
 La implementación de aprendizaje automático en este trabajo está comprendida por los siguientes pasos:
 1. Pre-procesamiento de los datos utilizando `benchtool`, descrito en la {numref}`bench-pre`
-2. Se dividen los datos en conjuntos mutuamente excluyentes. 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
-3. Se ajusta el modelo minimizando una función de pérdida específica, utilizando los datos de entrenamiento. Estas funciones se describirán más adelante en esta sección.
-4. Se evalúa el rendimiento del modelo calculando la función de pérdida con los datos de prueba.
+2. Divición de los datos en conjuntos mutuamente excluyentes. 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
+3. Ajuste del modelo minimizando una función de pérdida específica, utilizando los datos de entrenamiento. Estas funciones se describirán más adelante en esta sección.
+4. Evaluación del rendimiento del modelo calculando la función de pérdida con los datos de prueba.
 
-Los algoritmos utilizados en este trabajo se escogieron a partir de su rendimiento, estudiado durante el desarrollo de las herramientas de análisis de datos. Más información sobre cómo se escogieron estos algoritmos se encuentra en la sección de *[notebooks](https://github.com/marianaiv/benchtools/tree/main/notebooks)* del repositorio de `benchtools`.
+Los algoritmos utilizados en este trabajo se escogieron a partir de su rendimiento, estudiado durante el desarrollo de las herramientas de análisis de datos. Más información sobre cómo se escogieron estos algoritmos se encuentra en la sección *[notebooks](https://github.com/marianaiv/benchtools/tree/main/notebooks)* del repositorio de `benchtools`.
 
-A continuación, se explicarán los algoritmos utilizados, enfocándonos en su uso para la tarea de clasificación binaria. También se resumirán algunos métodos necesarios para explicar más adelante los algoritmos utilizados de las LHCO 2020. La referencia principal de esta sección es {cite}`Mehta_2019`.
+A continuación, se explicarán los algoritmos utilizados, enfocándonos en su uso para la tarea de clasificación binaria. También se resumirán algunos métodos necesarios para explicar más adelante los algoritmos de las LHCO 2020 utilizados en este trabajo. La referencia principal de esta sección es {cite}`Mehta_2019`.
 
 (alg-bosques)=
 ## Bosque aleatorio
 Los bosques aleatorios son algoritmos supervisados ampliamente utilizados para tareas complejas de clasificación. Estos algoritmos son ensambles de árboles de decisión.
 
-Un **árbol de decisión** utiliza una serie de preguntas para realizar la partición jerárquica de los datos. Su objetivo es hallar un conjunto de reglas que separen naturalmente el espacio de características{cite}`myles_2004`. 
-
-La partición de los datos se hace hallando los parámetros que minimizan el *criterio de impureza*. Uno de los criterios más utilizado es el criterio *Gini*, que mide cuánto ruido tiene una categoría:
+Un **árbol de decisión** utiliza una serie de preguntas para realizar la partición jerárquica de los datos. Su objetivo es hallar un conjunto de reglas que separen naturalmente el espacio de características{cite}`myles_2004`. La partición de los datos se hace hallando los parámetros que minimizan el *criterio de impureza*. Uno de los criterios más utilizado es el criterio *Gini*, que mide cuánto ruido tiene una categoría:
 
 $$
     H(Q_m)=\sum_{k} p_{mk}(1-p_{mk})
 $$ (gini)
 
-donde $Q_m$ representa los datos en el nodo $m$ y $p_{mk}$ es la proporción de clase $k$ observada en el nodo $m$, donde las clases para clasificación binaria son 0 y 1. 
+donde $Q_m$ representa los datos en el nodo $m$ y $p_{mk}$ es la proporción de clase $k$ observada en el nodo $m$, donde las clases para clasificación binaria son 0 y 1. Un diagrama de un árbol de decisión se observa en la {numref}`ml-arboldecision`.
 
 ```{figure} ./../../figuras/ml-arboldecision.png
 ---
-width: 600px
+width: 500px
 name: ml-arboldecision
 ---
-Ejemplo de un árbol de decisión. Para una conjunto de características $\mathbf{x}$, su etiqueta $y$ es predicha, recorriéndolo desde su raíz, pasando por las hojas, siguiendo las ramas que satisface. De {cite}`Mehta_2019`.
+Ejemplo de un árbol de decisión. Para una conjunto de características $\mathbf{x}$, su etiqueta $y$ es predicha, recorriéndolo desde su raíz, pasando por las hojas, siguiendo las ramas que satisface {cite}`Mehta_2019`.
 ```
-Los ***bosques aleatorios*** son clasificadores que consisten en un ensamble de árboles de decisión $\{h(\mathbf{x},\Theta_k),k=1,\dots\}$ donde $\{\Theta_k\}$ son vectores aleatorios e independientes con la misma distribución. Cada árbol emite un voto unitario para la clase más popular dada la entrada $\mathbf{x}${cite}`Breiman:2001hzm`. La clase con más votos es asignada a esta entrada. 
+Para crear un ensamble de árboles de decisión y obtener un bosque aleatorio, se deben utilizar procesos de aleatorización, con el propósito de disminuir la correlación entre los árboles y así, disminuir la varianza. Usualmente se utilizan en conjunto dos métodos. Los subconjutos de datos utilizados para entrenar cada árbol se obtienen del conjunto de entrenamiento mediante bootstrapping, un método de muestreo con remplazo. Luego, en la construcción de los árboles de decisión, en cada nodo se utiliza un subconjunto aleatorio de las características de entrada. 
+
+Usualmente, cada árbol emite un voto unitario para la clase más popular dada una entrada y la clase con más votos es asignada a esta entrada{cite}`Breiman:2001hzm`, como se observa en la {numref}`ml-bosquealeatorio`. Sin embargo, la implementación utilizada en este trabajo combina los árboles individuales promediando su predicción probabilística{cite}`RFC`.
 
 ```{figure} ./../../figuras/ml-bosquealeatorio.png
 ---
-width: 700px
+width: 500px
 name: ml-bosquealeatorio
 ---
-Representación visual del funcionamiento de un bosque aleatorio. De {cite}`chauhan_2021`
+Representación visual del funcionamiento de un bosque aleatorio {cite}`chauhan_2021`
 ```
 (alg-gbc)=
 ## Clasificador del gradiente del impulso
@@ -67,7 +67,7 @@ $$
     h_m\approx\text{arg min}_h\sum_{i=1}^{n}h(x_i)g_i
 $$ (ml-gbcaprendizdebil)
 
-donde $g_i$ es la derivada de la función de pérdida con respecto a su segundo parámetro, evaluada en $F_{m-1}(x)$. La suma en {eq}`ml-gbcaprendizdebil` se minimiza si $h(x_i)$ se ajusta para predecir un valor proporcional al gradiente negativo $−g_i$. Por lo tanto, en cada iteración, el estimador $h_m$ está ajustado para predecir los gradientes negativos de las muestras. Estos gradientes se actualizan en cada iteración. El proceso puede considerarse como una especie de descenso de gradiente en un espacio funcional.
+donde $g_i$ es la derivada de la función de pérdida con respecto a su segundo parámetro, evaluada en $F_{m-1}(x)$. La suma en la ec.{eq}`ml-gbcaprendizdebil` se minimiza si $h(x_i)$ se ajusta para predecir un valor proporcional al gradiente negativo $−g_i$. Por lo tanto, en cada iteración, el estimador $h_m$ está ajustado para predecir los gradientes negativos de las muestras. Estos gradientes se actualizan en cada iteración. El proceso puede considerarse como una especie de descenso de gradiente en un espacio funcional.
 
 (alg-qda)=
 ## Análisis de discriminante cuadrático
@@ -79,11 +79,11 @@ $$
     P(y=k|x) = \frac{P(x|y=k)P(y=k)}{P(x)}
 $$
 
-Donde se selecciona la clase $k$ que maximice esta probabilidad.
+Donde se selecciona la clase $k$ que maximice esta probabilidad. Un ejemplo de clasificación utilizando este método se observa en la {numref}`ml-qda`.
 
 ```{figure} ./../../figuras/ml-qda.png
 ---
-width: 700px
+width: 500px
 name: ml-qda
 ---
 Clasificación con QDA. a) Los puntos a ser clasificados, b) los límites o fronteras de decisión. La barra de color indica la probabilidad de pertenecer a la clase 1. De {cite}`QDAimg`
@@ -105,11 +105,11 @@ donde $g_i$ es una función conocida como *función de activación* y $\mathbf{h
 
 El objetivo es hallar los pesos y sesgos que optimizan la función de pérdida. Esto se logra utilizando las etiquetas de los datos y calculando el gradiente de la función de pérdida con respecto a los parámetros del modelo. Este proceso se conoce como *retropropagación* y requiere que las funciones sean diferenciables.
 
-Las transformaciones se ordenan en capas ({numref}`ml-nn`), donde la salida de una capa es la entrada de la siguiente.
+Las transformaciones se ordenan en capas, como se observa en la {numref}`ml-nn`, donde la salida de una capa es la entrada de la siguiente.
 
 ```{figure} ./../../figuras/ml-nn.png
 ---
-width: 500px
+width: 400px
 name: ml-nn
 ---
 Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente. De {cite}`Mehta_2019`
@@ -124,12 +124,12 @@ donde $N$ es el número de muestras a clasificar, $y_i$ es la etiqueta de la mue
 
 (alg-kmeans)=
 ## K-means
-*K-means* es un algoritmo no-supervisado que separa los datos en $K$ grupos con igual varianza. Los grupos están caracterizados por la media de los datos pertenecientes al grupo. Estos se conocen como "centroides" y se representan con $\mu_j${cite}`Kmeans`. 
+*K-means* es un algoritmo no-supervisado que separa los datos en $K$ grupos con igual varianza. Los grupos están caracterizados por la media de los datos pertenecientes al grupo. Estos se conocen como "centroides" y se representan con $\mu_k${cite}`Kmeans`. 
 
 El objetivo del algoritmo es minimizar la *inercia* o *criterio de suma de cuadrados* dentro del grupo, definida como: 
 
 $$
-    \mathcal{C}(\{x,\mathbf{\mu}\})=\sum_{k=1}^{K}\sum_{n=1}^{N}r_{nk}(\mathbf{x}_n-\mu_k)^2
+    \mathcal{C}(\{x,\mu\})=\sum_{k=1}^{K}\sum_{n=1}^{N}r_{nk}(\mathbf{x}_n-\mu_k)^2
 $$ (ml-kmeansinertia)
 
 donde $\mathbf{x}_n$ es la observación enésima y $r_{nk}$ es la asignación. $r_{nk}$ es 1 si $x_n$ pertenece al grupo y 0 de otra forma.
@@ -160,7 +160,7 @@ Estas redes se pueden dividir en dos partes. El codificador, que comprime los da
 width: 600px
 name: alg-aefig
 ---
-Diagrama del funcionamiento de un codificador automático. La entrada se mapea a una representación de dimensionalidad reducida y luego es reconstruida. De {cite}`PhysRevD.101.075021`.
+Diagrama del funcionamiento de un codificador automático. La entrada se mapea a una representación de dimensionalidad reducida y luego es reconstruida {cite}`PhysRevD.101.075021`.
 ```
 Este algoritmo se ha empezado a utilizar en HEP como detector de anomalías puesto que, al entrenar el codificador automático en una muestra de eventos de fondo, va a aprender las características de fondo y se espera que un evento de señal no sea reconstruido correctamente. Así, se puede utilizar un corte en el error de reconstrucción como un umbral de anomalía{cite}`PhysRevD.101.075021`. 
 
@@ -168,8 +168,14 @@ Este algoritmo se ha empezado a utilizar en HEP como detector de anomalías pues
 ## Red generativa antagónica
 Una *red generativa antagónica* (GAN) está basada en modelado generativo y en conceptos de teoría de juegos.
 
-El modelado generativo es una tarea de aprendizaje no supervisado que implica que el modelo descubra y aprenda automáticamente las regularidades o patrones en los datos de entrada de tal manera pueda generar nuevos ejemplos que plausiblemente podrían haberse extraído del conjunto de datos original.
+El modelado generativo es una tarea de aprendizaje no supervisado en la que los modelos aprenden automáticamente regularidades o patrones en los datos de entrada, con el objetivo de generar nuevos ejemplos que podrían haberse extraído del conjunto de datos original.
 
-La GAN se construye a partir de dos redes neuronales conocidas como *generador* y *discriminador*. El generador aproxima una función generadora $G$ que tiene como entrada $\mathbf{z}$ muestreada de un distribución de probabilidad a priori en el espacio latente y devuelve un $\mathbf{x}$ del modelo. El discriminador aproxima una función discriminadora $D$ que distingue entre muestras $\mathbf{x}$ de los datos y muestras $\mathbf{x}=G(\mathbf{z})$ sintéticas. 
+Una GAN se construye a partir de dos redes neuronales conocidas como *generador* y *discriminador*. El generador aproxima una función generadora $G(z)$,
+
+$$
+    G(\mathbf{z})=\mathbf{\hat{x}}
+$$
+
+donde $\mathbf{z}$ es muestreado a partir de una distribución de probabilidad a priori en un espacio latente y $\mathbf{\hat{x}}$ son las muestras generadas.El discriminador aproxima una función discriminadora $D$ que distingue entre muestras $\mathbf{x}$ de los datos originales y muestras $\mathbf{\hat{x}}$ sintéticas. 
 
 El discriminador se entrena para diferenciar entre las muestras sintéticas y los datos reales y el generador se entrena para engañar al discriminador. Las función de costo del discriminador depende de los parámetros del generador y viceversa. Los modelos se entrenan juntos hasta que el discriminador es engañado una cantidad de veces sobre algún umbral, lo que significa que el generador está generando ejemplos plausibles.

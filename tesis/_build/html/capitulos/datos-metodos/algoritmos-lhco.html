@@ -351,12 +351,115 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="algoritmos-lhco-2020">
 <span id="alglhco"></span><h1><span class="section-number">2.4. </span>Algoritmos LHCO 2020<a class="headerlink" href="#algoritmos-lhco-2020" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>El rendimiento de los distintos métodos que utilizaron los participantes de las LHCO 2020 sólo se puede comparar mediante los resultados que obtuvieron. Sin embargo, como se puede observar en la <code class="xref std std-numref docutils literal notranslate"><span class="pre">lhco-resultados</span></code>, la mayoría de los modelos no reportaron el error asociado al resultado obtenido. Más aún, cada participante reportó los resultados y rendimiento del modelo de acuerdo al método utilizado, dificultando la comparación directa de los análisis.</p>
-<p>Uno de los objetivos principales de este trabajo es comparar directamente algunos modelos participantes de las LHCO 2020. Para ello, es necesario poder reproducir el resultado de dichos modelos. Sin embargo, estos deben cumplir múltiples de los requisitos para hacer investigación reproducible explicados en la <a class="reference internal" href="../marco-teorico/reproducibilidad.html#rpd-investigacion"><span class="std std-numref">Sección 1.7.2</span></a>, a manera de asegurar que se pueda obtener el resultado de los modelos en un rango de tiempo adecuado para el desarrollo de este trabajo.</p>
+<p>Como se mencionó en la <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html#lhco"><span class="std std-numref">Sección 1.6</span></a>, en las LHCO 2020 participaron 18 algoritmos agrupados dependiendo del tipo de método utilizados. En la <a class="reference internal" href="#lhc-participantes"><span class="std std-numref">Tabla 2.2</span></a> se encuentra un <strong>resumen de los participantes</strong>, con el método, referencias y los datos que analizaron.</p>
+<table class="colwidths-auto table" id="lhc-participantes">
+<caption><span class="caption-number">Tabla 2.2 </span><span class="caption-text">Participantes de las LHCO 2020</span><a class="headerlink" href="#lhc-participantes" title="Enlace permanente a esta tabla">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Nombre</p></th>
+<th class="head"><p>Método</p></th>
+<th class="head"><p>Referencia</p></th>
+<th class="head"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>VRNN</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/pdf/2105.09274.pdf">Artículo</a>, <a class="reference external" href="https://indico.cern.ch/event/809820/contributions/3632656/attachments/1971110/3278934/AnomalyScore_LHCOlympics.pdf">Presentación</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-odd"><td><p>ANODE</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/pdf/2001.04990.pdf">Artículo</a>, <a class="reference external" href="https://indico.cern.ch/event/809820/contributions/3699483/attachments/1971094/3278905/george_stein_LHCO.pdf">Presentación</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-even"><td><p>BuHuLaSpa</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/pdf/2103.06595.pdf">Artículo</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-odd"><td><p>GAN-AE</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/lovaslin/GAN-AE_LHCOlympics">GitHub</a>, <a class="reference external" href="https://github.com/lovaslin/pyBumpHunter">BumpHunter</a>, <a class="reference external" href="https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0">Presentación</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-even"><td><p>GIS</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/pdf/2012.11638.pdf">Artículo</a></p></td>
+<td><p>BB1</p></td>
+</tr>
+<tr class="row-odd"><td><p>LDA</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/bmdillon/lda-jet-substructure">GitHub</a>, <a class="reference external" href="https://arxiv.org/pdf/1904.04200.pdf">Artículo</a>, <a class="reference external" href="https://indico.cern.ch/event/809820/contributions/3632625/attachments/1971084/3278910/ML4Jets_talk_barrydillon.pdf">Presentación</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-even"><td><p>PGAE</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/stsan9/AnomalyDetection4Jets">GitHub</a></p></td>
+<td><p>BB1,2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reg. Likelihoods</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/johannbrehmer/manifold-flow">Github modelo</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-even"><td><p>UCluster</p></td>
+<td><p>No supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/ViniciusMikuni/UCluster">Github</a>, <a class="reference external" href="https://arxiv.org/pdf/2010.07106.pdf">Artículo</a></p></td>
+<td><p>BB2,3</p></td>
+</tr>
+<tr class="row-odd"><td><p>CWoLa</p></td>
+<td><p>Débilmente supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/Jackadsa/CWoLa-Hunting/tree/tf2/LHCO-code">GitHub</a></p></td>
+<td><p>BB1,2</p></td>
+</tr>
+<tr class="row-even"><td><p>CWoLa AE Compare</p></td>
+<td><p>Débilmente/No supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/pdf/2104.02092.pdf">Artículo</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tag N' Train</p></td>
+<td><p>Débilmente supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/OzAmram/TagNTrain">GitHub</a>, <a class="reference external" href="https://arxiv.org/pdf/2002.12376.pdf">Artículo</a>, <a class="reference external" href="https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf">Presentación</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-even"><td><p>SALAD</p></td>
+<td><p>Débilmente supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/bnachman/DCTRHunting">GitHub</a>, <a class="reference external" href="https://arxiv.org/abs/2001.05001">Artículo</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-odd"><td><p>SA-CWoLa</p></td>
+<td><p>Débilmente supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/bnachman/DCTRHunting">GitHub</a>, <a class="reference external" href="https://arxiv.org/pdf/2009.02205.pdf">Artículo</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-even"><td><p>Deep Ensemble</p></td>
+<td><p>Semi-supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/FFFreitas/Deep-Ensemble-Anomaly-Detection">GitHub</a></p></td>
+<td><p>BB1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Factorized Topics</p></td>
+<td><p>Semi-supervisado</p></td>
+<td><p><a class="reference external" href="https://github.com/nilais/factorized-topic-modeling">GitHub</a></p></td>
+<td><p>R&amp;D</p></td>
+</tr>
+<tr class="row-even"><td><p>QUAK</p></td>
+<td><p>Semi-supervisado</p></td>
+<td><p><a class="reference external" href="https://arxiv.org/abs/2011.03550">Artículo</a></p></td>
+<td><p>BB1-3</p></td>
+</tr>
+<tr class="row-odd"><td><p>LSTM</p></td>
+<td><p>Semi-supervisado</p></td>
+<td><p>-</p></td>
+<td><p>BB1-3</p></td>
+</tr>
+</tbody>
+</table>
+<p>El rendimiento de los participantes se puede comparar únicamente a través de los resultados obtenidos. Sin embargo, los participantes analizaron diferentes conjuntos de datos, no todos reportaron un valor p, las masas de las partículas y el número de eventos de señal, y algunos resultados fueron reportados sin error. Además, los reportes referentes al rendimiento del modelo se hicieron en distintos formatos, de acuerdo al método utilizado. Por lo tanto, la comparación directa de los algoritmos es complicada.</p>
+<p>Uno de los objetivos principales de este trabajo es comparar directamente algunos modelos participantes de las LHCO 2020. Para ello, es necesario poder reproducir el resultado de dichos modelos. Sin embargo, estos deben cumplir múltiples de los requisitos para hacer investigación reproducible, explicados en la <a class="reference internal" href="../marco-teorico/reproducibilidad.html#rpd-investigacion"><span class="std std-numref">Sección 1.7.2</span></a>, para asegurar que se pueda obtener el resultado de los modelos en un tiempo adecuado para el desarrollo de este trabajo.</p>
 <p>A continuación, se hablará del análisis de los algoritmos participantes a nivel de la reproducibilidad de sus resultados y se explicarán los modelos a comparar en este trabajo.</p>
 <div class="section" id="reproducibilidad">
 <span id="alglhco-rep"></span><h2><span class="section-number">2.4.1. </span>Reproducibilidad<a class="headerlink" href="#reproducibilidad" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Para escoger los algoritmos a comparar, se hizo una revisión extensiva de la información proporcionada por los participantes mencionados en la <code class="xref std std-numref docutils literal notranslate"><span class="pre">lhc-participantes</span></code>. Como se explica en la <a class="reference internal" href="../marco-teorico/reproducibilidad.html#rpd-investigacion"><span class="std std-numref">Sección 1.7.2</span></a>, para poder reproducir resultados en este contexto es necesario principalmente que se encuentre pública la información sobre el pre-procesamiento de los datos, el código del modelo, instrucciones para utilizarlo, información acerca del entorno computacional y licencia. De cada participante se encontró lo siguiente,</p>
+<p>Para escoger los algoritmos a comparar, se hizo una revisión extensiva de la información proporcionada por los participantes mencionados en la <a class="reference internal" href="#lhc-participantes"><span class="std std-numref">Tabla 2.2</span></a>. Como se explica en la <a class="reference internal" href="../marco-teorico/reproducibilidad.html#rpd-investigacion"><span class="std std-numref">Sección 1.7.2</span></a>, para poder reproducir resultados en este contexto, es necesario, principalmente, que se encuentre pública la información sobre el pre-procesamiento de los datos, el código del modelo, instrucciones para utilizarlo, información del entorno computacional y licencia. Un resumen de la información prporcionada por cada participante se encuentra en la <a class="reference internal" href="#alglhc-participantesrep"><span class="std std-numref">Tabla 2.3</span></a>,</p>
 <table class="colwidths-auto table" id="alglhc-participantesrep">
 <caption><span class="caption-number">Tabla 2.3 </span><span class="caption-text">Información disponible de cada participante de las LHCO 2020</span><a class="headerlink" href="#alglhc-participantesrep" title="Enlace permanente a esta tabla">¶</a></caption>
 <thead>
@@ -497,20 +600,18 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-<p>Un resumen de general de la información proporcionada por todos los algoritmos se encuentra en la <a class="reference internal" href="#alglhco-repfigure"><span class="std std-numref">Figura 2.11</span></a></p>
-<div class="figure align-default" id="alglhco-repfigure" style="width: 500px">
-<div class="cell_output docutils container">
-<img alt="../../_images/algoritmos-lhco_1_0.png" src="../../_images/algoritmos-lhco_1_0.png" />
+<p>Un resumen de general de la información proporcionada por todos los algoritmos se encuentra en la <a class="reference internal" href="#alglhco-repfigure"><span class="std std-numref">Figura 2.12</span></a></p>
+<div class="figure align-default" id="alglhco-repfigure">
+<a class="reference internal image-reference" href="../../_images/alglhco-repfigure.png"><img alt="../../_images/alglhco-repfigure.png" src="../../_images/alglhco-repfigure.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.12 </span><span class="caption-text">Resumen de la reproducibilidad de los participantes de las LHCO 2020.</span><a class="headerlink" href="#alglhco-repfigure" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p class="caption"><span class="caption-number">Figura 2.11 </span><span class="caption-text">Resumen de la reproducibilidad de los participantes de las LHCO 2020.</span><a class="headerlink" href="#alglhco-repfigure" title="Enlace permanente a esta imagen">¶</a></p>
-</div>
-<p>En la <a class="reference internal" href="#alglhco-repfigure"><span class="std std-numref">Figura 2.11</span></a> se observa que la mayoría de los algoritmos participantes no poseen suficiente información pública para poder reproducir sus resultados, lo que inmmediatamente límita las opciones de modelos a utilizar en este trabajo. De los 18 participantes, sólo <em>UCluster</em> cumple con todas las características. <em>GAN-AE</em>, <em>LDA</em>  y <em>PGAE</em> cumplen con cuatro de las características. Para este trabajo se escogieron <em><strong>UCluster</strong></em> y <em><strong>GAN-AE</strong></em> debido a la simplicidad de la información proporcionada. Los algoritmos se explicarán siguiendo <span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">72</a>]</span>.</p>
+<p>En la <a class="reference internal" href="#alglhco-repfigure"><span class="std std-numref">Figura 2.12</span></a> se observa que la mayoría de los algoritmos participantes no poseen suficiente información pública para poder reproducir sus resultados, lo que inmmediatamente límita las opciones de modelos a utilizar en este trabajo. De los 18 participantes, sólo <em>UCluster</em> cumple con todas las características. <em>GAN-AE</em>, <em>LDA</em>  y <em>PGAE</em> cumplen con cuatro de las características. Para este trabajo se escogieron <em><strong>UCluster</strong></em> y <em><strong>GAN-AE</strong></em> debido a la simplicidad de la información proporcionada. Los algoritmos se explicarán siguiendo <span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">72</a>]</span>.</p>
 </div>
 <div class="section" id="ucluster">
 <span id="alglhco-ucluster"></span><h2><span class="section-number">2.4.2. </span>UCluster<a class="headerlink" href="#ucluster" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>UCluster (Unsupervised Clustering)<span id="id2">[]</span> es un método que agrupa puntos con características similares, inmersos en una representación reducida de los datos de eventos. Esta representación se crea utilizando una red neuronal para reducir la dimensionalidad de los datos. El método es independiente de la arquitectura de la red neuronal.</p>
-<p>Para crear el encjae se hace una <em>clasificación de masa de jet por partícula</em>, es decir, a cada partícula perteneciente a un jet se le asigna una etiqueta proporcional a la masa del jet al que pertenece. Estas etiquetas se crean definiendo 20 intervalos equidistantes entre 10 y 1000 GeV.</p>
-<p>En particular, el modelo debe aprender la masa del jet al que la partícula pertenece y cuáles partículas pertenecen al musmo jet. El modelo utiliza las primeras 100 partículas asociadas a los dos jets más masivos de cada evento y consta de dos tareas, una de clasificación y otra de agrupamiento. La función de pérdida conjunta es:</p>
+<p>UCluster (Unsupervised Clustering)<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id108" title="Vinicius Mikuni and Florencia Canelli. Unsupervised clustering for collider physics. Physical Review D, may 2021. URL: https://doi.org/10.1103%2Fphysrevd.103.092007, doi:10.1103/physrevd.103.092007.">107</a>]</span> es un método que reduce la dimensionalidad de los datos utilizando una red neuronal, con el objetivo de retener las propiedades principales del evento de colisión, y agrupa puntos inmersos en este espacio que poseean características similares. El método es independiente de la arquitectura de la red neuronal.</p>
+<p>Para crear la representación reducida de los datos (o encaje), se hace una <em>clasificación de masa de jet por partícula</em>, es decir, a cada partícula perteneciente a un jet se le asigna una etiqueta proporcional a la masa del jet al que pertenece. Estas etiquetas se crean definiendo 20 intervalos equidistantes entre 10 y 1000 GeV.</p>
+<p>En particular, el modelo debe aprender la masa del jet al que la partícula pertenece y cuáles partículas pertenecen al musmo jet. El algoritmo utiliza las primeras 100 partículas asociadas a los dos jets más masivos de cada evento y consta de dos tareas, una de clasificación y otra de agrupamiento. La función de pérdida conjunta es:</p>
 <div class="math notranslate nohighlight" id="equation-loss-ucluster">
 <span class="eqno">(2.12)<a class="headerlink" href="#equation-loss-ucluster" title="Enlace permanente a esta ecuación">¶</a></span>\[
     L = L_{focal} + \beta L_{cluster}.
@@ -521,7 +622,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="eqno">(2.13)<a class="headerlink" href="#equation-focal-loss" title="Enlace permanente a esta ecuación">¶</a></span>\[
     L_{focal}=-\frac{1}{N}\sum_j^N\sum_m^M y_{j,m}(1-p_{\theta,m}(x_j))^\gamma \log(p_{\theta,m}(x_j))
 \]</div>
-<p>donde <span class="math notranslate nohighlight">\(p_{\theta,m}(x_j)\)</span> es la confianza de la red para el evento <span class="math notranslate nohighlight">\(x_j\)</span>, con parámetros entrenables <span class="math notranslate nohighlight">\(\theta\)</span>, de ser clasificado como clase <span class="math notranslate nohighlight">\(m\)</span>. <span class="math notranslate nohighlight">\(y_{j,m}\)</span> es 1 si la clase <span class="math notranslate nohighlight">\(m\)</span> es correctamente asignada al evento <span class="math notranslate nohighlight">\(x_j\)</span> y 0 de otra forma. Utilizaron <span class="math notranslate nohighlight">\(\gamma=2\)</span>.</p>
+<p>donde <span class="math notranslate nohighlight">\(p_{\theta,m}(x_j)\)</span> es la confianza de la red para el evento <span class="math notranslate nohighlight">\(x_j\)</span>, con parámetros entrenables <span class="math notranslate nohighlight">\(\theta\)</span>, de ser clasificado como clase <span class="math notranslate nohighlight">\(m\)</span>. <span class="math notranslate nohighlight">\(y_{j,m}\)</span> es 1 si la clase <span class="math notranslate nohighlight">\(m\)</span> es correctamente asignada al evento <span class="math notranslate nohighlight">\(x_j\)</span> y 0 de otra forma. Para las LHCO 2020, los participantes fijaron el parámetro <span class="math notranslate nohighlight">\(\gamma=2\)</span>.</p>
 <p>La función de pérdida del agrupamiento fue definida como,</p>
 <div class="math notranslate nohighlight" id="equation-cluster-loss">
 <span class="eqno">(2.14)<a class="headerlink" href="#equation-cluster-loss" title="Enlace permanente a esta ecuación">¶</a></span>\[
@@ -536,8 +637,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>El valor inicial de los centroides se hace utilizando el algoritmo K-means, para luego realizar el entrenamiento utilizando la función de pérdida conjunta en la ecuación <a class="reference internal" href="#equation-loss-ucluster">(2.12)</a>.</p>
 <p>Como se mencionó anteriormente, el modelo es libre de la arquitectura de la red neuronal. Sin embargo, la implementación utilizada en las LHCO 2020 utiliza ABCNet, una red basada en grafos donde cada partícula reconstruida es un nodo del grafo. La arquitectura y la capa del encaje se encuentran en el siguiente diagrama,</p>
 <div class="figure align-default" id="bench-abcnet">
-<a class="reference internal image-reference" href="../../_images/bench-ABCNet.png"><img alt="../../_images/bench-ABCNet.png" src="../../_images/bench-ABCNet.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.12 </span><span class="caption-text">Diagrama del pipeline.</span><a class="headerlink" href="#bench-abcnet" title="Enlace permanente a esta imagen">¶</a></p>
+<a class="reference internal image-reference" href="../../_images/bench-ABCNet.png"><img alt="../../_images/bench-ABCNet.png" src="../../_images/bench-ABCNet.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.13 </span><span class="caption-text">Diagrama del pipeline.</span><a class="headerlink" href="#bench-abcnet" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Para crear las GAPLayers se utiliza la distancia entre los 10 vecinos mas cercanos de cada partícula. La primera GAPLayer utiliza la distancia <span class="math notranslate nohighlight">\(\Delta R=\sqrt{\Delta\eta^2+\Delta\phi^2}\)</span> y la segunda utiliza las distancias euclídeas.</p>
 </div>
@@ -545,7 +646,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span id="alglhco-ganae"></span><h2><span class="section-number">2.4.3. </span>GAN-AE<a class="headerlink" href="#gan-ae" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El método GAN-AE intenta asociar un discriminante y un codificador automatico como una red generativa antagónica siguiendo los pasos a continuación:</p>
 <p>La <strong>red discriminativa</strong> es un perceptrón multicapas (MLP). Inicialmente es entrenado utilizando la entropia cruzada binaria (ec.<a class="reference internal" href="algoritmos-anomalias.html#equation-binary-crossentropy">(2.6)</a>) en una muestra mezclada de eventos reconstruidos y originales, con el objetivo de exponer las débilidades del codificador automatico.</p>
-<p>El <strong>codificador automatico</strong> es entrenado utilizando una función de pérdida que combina la reconstrucción del error (en este caso, la distancia euclídea media (MED) entre la entrada y la salida) y la entropía binaria cruzada.</p>
+<p>El <strong>codificador automatico</strong> es entrenado utilizando una función de pérdida que combina la reconstrucción del error (en este caso, la distancia euclídea media (MED, por sus siglas en inglés) entre la entrada y la salida) y la entropía binaria cruzada.</p>
 <div class="math notranslate nohighlight" id="equation-loss-ae">
 <span class="eqno">(2.16)<a class="headerlink" href="#equation-loss-ae" title="Enlace permanente a esta ecuación">¶</a></span>\[  
     \mathcal{L}_{AE} = \mathcal{L}_{BC}+\epsilon\times\text{MED}+\alpha\times\text{DisCo}
@@ -557,7 +658,7 @@ const thebe_selector_output = ".output, .cell_output"
     \text{FoM}=\text{MED}+(1-\text{Media salida MLP}).
 \]</div>
 <p>El término <span class="math notranslate nohighlight">\(1-\text{Media salida MLP}\)</span> es cercano a cero a medida que el codificador automático engaña mejor al MLP.</p>
-<p>Estos tres pasos se repiten en un búcle y una vez que el codificador automatico ha sido entrenado se descarta la red discriminativa. Una vez descartada, el codificador automatico utiliza las distancias euclídeas como característica discriminativa.</p>
+<p>Estos tres pasos se repiten en un búcle y una vez que el codificador automatico ha sido entrenado se descarta la red discriminativa. Una vez descartada, el codificador automatico utiliza las MED como característica discriminativa.</p>
 <p>Los participantes utilizaron el método anteriormente descrito en conjunto con <em>BumpHunter</em>, un algoritmo que compara la distribución de los datos con datos de referencia y evalúa el valor p y la significancia de cualquier desviación. Sin embargo, la implementación en este trabajo se limita al uso del algoritmo GAN-AE, que es la parte publicada de este método.</p>
 </div>
 </div>

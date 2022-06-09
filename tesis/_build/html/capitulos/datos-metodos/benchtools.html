@@ -360,23 +360,23 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>Input</strong>: Datos de todos los hadrones de los eventos.</p>
 <p><strong>Output</strong>: Variables físicas para cada evento.</p>
 <ol class="simple">
-<li><p>Cargar una fracción de los eventos. Para cada fracción de eventos:</p>
+<li><p>Importar una fracción de los eventos. Para cada fracción de eventos:</p>
 <ol class="simple">
 <li><p>Agrupar los jets de cada evento utilizando anti-kt con <span class="math notranslate nohighlight">\(R=1\)</span>.</p></li>
-<li><p>Guardar los jets que tengan <span class="math notranslate nohighlight">\(p_T&gt;20GeV\)</span></p></li>
+<li><p>Seleccionar los jets que tengan <span class="math notranslate nohighlight">\(p_T&gt;20GeV\)</span></p></li>
 <li><p>Calcular <span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(m_j\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(\tau_{21}\)</span> y el número de hadrones constituyentes, para los dos jets más energéticos. <span class="math notranslate nohighlight">\(\Delta R\)</span>, <span class="math notranslate nohighlight">\(m_{jj}\)</span> utilizando los dos jets principales y el número de hadrones del evento.</p></li>
-<li><p>Guardar las variables calculadas.</p></li>
+<li><p>Guardar las variables calculadas en un marco de datos.</p></li>
 </ol>
 </li>
 </ol>
 </div>
-</div><p>Este proceso se hace iterativamente para fracciones de datos, debido a que cargar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos pre-procesados.</p>
-<p>Una tabla con la definición de cada variable calculada se encuentra a continuación:</p>
+</div><p>Este proceso se hace iterativamente para fracciones de datos, debido a que importar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos pre-procesados.</p>
+<p>Una tabla con la descripción de cada variable calculada se encuentra <a class="reference internal" href="#bench-variables"><span class="std std-numref">Tabla 2.4</span></a>:</p>
 <table class="colwidths-auto table" id="bench-variables">
 <caption><span class="caption-number">Tabla 2.4 </span><span class="caption-text">Variables calculadas en el pre-procesamiento de los datos</span><a class="headerlink" href="#bench-variables" title="Enlace permanente a esta tabla">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable</p></th>
-<th class="head"><p>Definición</p></th>
+<th class="head"><p>Descripción</p></th>
 </tr>
 </thead>
 <tbody>
@@ -415,7 +415,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="pipeline">
 <span id="bench-pipeline-cap"></span><h2><span class="section-number">2.5.3. </span>Pipeline<a class="headerlink" href="#pipeline" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code> procesa los datos, entrena los modelos explicados en la <a class="reference internal" href="algoritmos-anomalias.html#alg"><span class="std std-numref">Sección 2.2</span></a>, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos específicos se describen a continuación:</p>
+<p>En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code> procesa los datos, entrena los modelos explicados en la <a class="reference internal" href="algoritmos-anomalias.html#alg"><span class="std std-numref">Sección 2.2</span></a>, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos se describen a continuación:</p>
 <div class="proof algorithm admonition" id="bench-pipelinealg">
 <p class="admonition-title"><span class="caption-number">Algorithm 2.3 </span> (Pipeline)</p>
 <div class="algorithm-content section" id="proof-content">
@@ -423,16 +423,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>Output</strong>: Imagenes de los plots de las métricas y una tabla con las métricas númericas, así como gráficos de barra de cada variable.</p>
 <ol class="simple">
 <li><p>Pre-procesar los datos de los eventos.</p></li>
-<li><p>Escalar los datos según el clasificador a utilizar, entrenar los modelos y salvarlos.</p></li>
-<li><p>Obtener los puntajes y predicciones de cada clasificador.</p></li>
-<li><p>Cargar los clasificadores externos.</p></li>
+<li><p>Transformar los datos para que estén confinados en un rango de valores según el clasificador a utilizar, entrenar los modelos y salvarlos.</p></li>
+<li><p>Evaluar los puntajes y predicciones de cada clasificador.</p></li>
+<li><p>Importar las clasificaciones externas.</p></li>
 <li><p>Comparar los algoritmos utilizando las métricas en <em>metrictools</em></p></li>
 </ol>
 </div>
-</div><p>El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra a continuación:</p>
+</div><p>El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra la <a class="reference internal" href="#bench-pipeline"><span class="std std-numref">Figura 2.14</span></a>.</p>
 <div class="figure align-default" id="bench-pipeline">
 <a class="reference internal image-reference" href="../../_images/bench-pipeline.png"><img alt="../../_images/bench-pipeline.png" src="../../_images/bench-pipeline.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.13 </span><span class="caption-text">Diagrama del pipeline.</span><a class="headerlink" href="#bench-pipeline" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 2.14 </span><span class="caption-text">Diagrama del pipeline.</span><a class="headerlink" href="#bench-pipeline" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Las opciones para correr el pipeline se encuentran explicadas en el <a class="reference external" href="https://github.com/marianaiv/benchtools">repositorio</a>. Los resultados de su uso se observarán más adelante.</p>
 </div>
