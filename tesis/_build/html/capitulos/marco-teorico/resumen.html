@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html lang="spanish">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -57,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="1.1. El módelo estándar" href="modelo-estandar.html" />
     <link rel="prev" title="Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets: análisis comparativo de algoritmos de clasificación en términos de reproducibilidad y rendimiento" href="../../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="spanish">
+    <meta name="docsearch:language" content="es">
     
 
     <!-- Google Analytics -->
@@ -177,9 +178,41 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../analisis-datos/resumen.html">
+   3. Exploración de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-sin-preprocesar.html">
+     3.1. Datos sin pre-procesar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-preprocesados.html">
+     3.2. Datos pre-procesados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-UCluster.html">
+     3.3. Datos de UCluster
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-GAN-AE.html">
+     3.4. Datos de GAN-AE
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../referencias/referencias.html">
-   3. Referencias
+   4. Referencias
   </a>
  </li>
 </ul>
@@ -246,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
             href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/marco-teorico/resumen.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
-        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/marco-teorico/resumen.md"><button
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/main/tesis/capitulos/marco-teorico/resumen.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
     </div>
@@ -288,7 +321,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h1><span class="section-number">1. </span>Marco teórico<a class="headerlink" href="#marco-teorico" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>El modelo estándar de física de partículas es una de las teorías más éxitosas de la física moderna. Describe tres de las cuatro interacciones conocidas y clasifica los componentes más fundamentales de la materia. A pesar de su éxito, posee múltiples limitaciones, por lo que la búsqueda de física más allá del modelo estándar (BSM, por sus siglas en inglés) es uno de los ejes principales de investigación en el Gran Colisionador de Hadrones (LHC, por sus siglas en inglés). En la última decada se ha utilizado aprendizaje automático para mejorar la búsqueda de nueva física. Sin embargo, debido al gran volumen de datos que se utilizan hoy en día y su complejidad, el desarrollo y uso de estas herramientas presenta múltiples retos.</p>
 <p>La primera sección de este capítulo resume algunos conceptos básicos del modelo estándar. Seguidamente, nos enfocamos en la cromodinámica cuántica y los aspectos que conducen a la formación de jets. Las limitaciones del modelo se resumen en la <a class="reference internal" href="mas-alla-del-ms.html#bsm"><span class="std std-numref">Sección 1.3</span></a>, en conjunto con las teorías BSM que se han planteado para solucionar estos problemas. También se resumen algunos modelos BSM que plantean nuevas partículas que se podrían producir en colisiones <em>pp</em> y decaen a dos jets, la topología de estudio de este trabajo. Para poder estudiar los eventos de jets, hace falta reconstruirlos, por lo que en la <a class="reference internal" href="reconstruccion-jets.html#jets"><span class="std std-numref">Sección 1.4</span></a> se describen los algoritmos utilizados para su reconstrucción y algunas de las variables que los caracterizan.</p>
-<p>El uso de aprendizaje automático en búsqueda de nueva física es amplio. Un resumen de conceptos básicos y el uso de estas herramientas se encuentra en la <a class="reference internal" href="aprendizaje-automatico.html#ml"><span class="std std-numref">Sección 1.5</span></a>. En la <a class="reference internal" href="reproducibilidad.html#rpd"><span class="std std-numref">Sección 1.7</span></a> se discute brevemente la reproducibilidad y las consideraciones que se deben que tener al utilizar estos nuevos métodos para hacer investigación científica. Finalmente, se introducen las olimpiadas LHC 2020, donde se investigó el uso de aprendizaje automático para búsqueda de nuevas partículas.</p>
+<p>El uso de aprendizaje automático en búsqueda de nueva física es amplio. Un resumen de conceptos básicos y el uso de estas herramientas se encuentra en la <a class="reference internal" href="aprendizaje-automatico.html#ml"><span class="std std-numref">Sección 1.5</span></a>. En la <a class="reference internal" href="olimpiadas-LHC.html#lhco"><span class="std std-numref">Sección 1.6</span></a> se introducen las olimpiadas LHC 2020, donde se investigó el uso de aprendizaje automático para búsqueda de nuevas partículas. Finalmente, en la <a class="reference internal" href="reproducibilidad.html#rpd"><span class="std std-numref">Sección 1.7</span></a> se discute brevemente la reproducibilidad y las consideraciones que se deben que tener al utilizar estos nuevos métodos para hacer investigación científica.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>

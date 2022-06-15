@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html lang="spanish">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -59,7 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="2.5. Paquete benchtools" href="benchtools.html" />
     <link rel="prev" title="2.3. Métricas de rendimiento" href="metricas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="spanish">
+    <meta name="docsearch:language" content="es">
     
 
     <!-- Google Analytics -->
@@ -179,9 +180,41 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../analisis-datos/resumen.html">
+   3. Análisis de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-sin-preprocesar.html">
+     3.1. Datos sin pre-procesar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-preprocesados.html">
+     3.2. Datos pre-procesados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-UCluster.html">
+     3.3. Datos de UCluster
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-GAN-AE.html">
+     3.4. Datos de GAN-AE
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../referencias/referencias.html">
-   3. Referencias
+   4. Referencias
   </a>
  </li>
 </ul>
@@ -248,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
             href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/datos-metodos/algoritmos-lhco.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
-        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/datos-metodos/algoritmos-lhco.ipynb"><button
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/main/tesis/capitulos/datos-metodos/algoritmos-lhco.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
     </div>
@@ -268,7 +301,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/marianaiv/tesis_grado_UCV/marco-teorico?urlpath=tree/tesis/capitulos/datos-metodos/algoritmos-lhco.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/marianaiv/tesis_grado_UCV/main?urlpath=tree/tesis/capitulos/datos-metodos/algoritmos-lhco.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -417,7 +450,7 @@ const thebe_selector_output = ".output, .cell_output"
 <td><p><a class="reference external" href="https://arxiv.org/pdf/2104.02092.pdf">Artículo</a></p></td>
 <td><p>R&amp;D</p></td>
 </tr>
-<tr class="row-odd"><td><p>Tag N' Train</p></td>
+<tr class="row-odd"><td><p>Tag N” Train</p></td>
 <td><p>Débilmente supervisado</p></td>
 <td><p><a class="reference external" href="https://github.com/OzAmram/TagNTrain">GitHub</a>, <a class="reference external" href="https://arxiv.org/pdf/2002.12376.pdf">Artículo</a>, <a class="reference external" href="https://indico.cern.ch/event/809820/contributions/3632634/attachments/1970254/3277173/TagNTrain_ML4Jets.pdf">Presentación</a></p></td>
 <td><p>BB1-3</p></td>
@@ -549,7 +582,7 @@ const thebe_selector_output = ".output, .cell_output"
 <td class="text-align:center"><p>-</p></td>
 <td class="text-align:center"><p>-</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>Tag N' Train</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>Tag N” Train</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\checkmark\)</span></p></td>
 <td class="text-align:center"><p>-</p></td>
@@ -613,32 +646,32 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Para crear la representación reducida de los datos (o encaje), se hace una <em>clasificación de masa de jet por partícula</em>, es decir, a cada partícula perteneciente a un jet se le asigna una etiqueta proporcional a la masa del jet al que pertenece. Estas etiquetas se crean definiendo 20 intervalos equidistantes entre 10 y 1000 GeV.</p>
 <p>En particular, el modelo debe aprender la masa del jet al que la partícula pertenece y cuáles partículas pertenecen al musmo jet. El algoritmo utiliza las primeras 100 partículas asociadas a los dos jets más masivos de cada evento y consta de dos tareas, una de clasificación y otra de agrupamiento. La función de pérdida conjunta es:</p>
 <div class="math notranslate nohighlight" id="equation-loss-ucluster">
-<span class="eqno">(2.12)<a class="headerlink" href="#equation-loss-ucluster" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<span class="eqno">(2.13)<a class="headerlink" href="#equation-loss-ucluster" title="Enlace permanente a esta ecuación">¶</a></span>\[
     L = L_{focal} + \beta L_{cluster}.
 \]</div>
 <p>Un valor de <span class="math notranslate nohighlight">\(\beta=10\)</span> se utiliza para darle a las componentes el mismo orden de magnitud relativo.</p>
 <p><span class="math notranslate nohighlight">\(L_{focal}\)</span> hace referencia a la función de pérdida focal, que es comúnmente utilizada para clasificar datos con etiquetas altamente desbalanceadas<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">72</a>]</span>.</p>
 <div class="math notranslate nohighlight" id="equation-focal-loss">
-<span class="eqno">(2.13)<a class="headerlink" href="#equation-focal-loss" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<span class="eqno">(2.14)<a class="headerlink" href="#equation-focal-loss" title="Enlace permanente a esta ecuación">¶</a></span>\[
     L_{focal}=-\frac{1}{N}\sum_j^N\sum_m^M y_{j,m}(1-p_{\theta,m}(x_j))^\gamma \log(p_{\theta,m}(x_j))
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(p_{\theta,m}(x_j)\)</span> es la confianza de la red para el evento <span class="math notranslate nohighlight">\(x_j\)</span>, con parámetros entrenables <span class="math notranslate nohighlight">\(\theta\)</span>, de ser clasificado como clase <span class="math notranslate nohighlight">\(m\)</span>. <span class="math notranslate nohighlight">\(y_{j,m}\)</span> es 1 si la clase <span class="math notranslate nohighlight">\(m\)</span> es correctamente asignada al evento <span class="math notranslate nohighlight">\(x_j\)</span> y 0 de otra forma. Para las LHCO 2020, los participantes fijaron el parámetro <span class="math notranslate nohighlight">\(\gamma=2\)</span>.</p>
 <p>La función de pérdida del agrupamiento fue definida como,</p>
 <div class="math notranslate nohighlight" id="equation-cluster-loss">
-<span class="eqno">(2.14)<a class="headerlink" href="#equation-cluster-loss" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<span class="eqno">(2.15)<a class="headerlink" href="#equation-cluster-loss" title="Enlace permanente a esta ecuación">¶</a></span>\[
     L_{cluster}=\frac{1}{N}\sum_k^K\sum_j^N\|f_\theta(x_j)-\mu_k\|^2\pi_{jk}.
 \]</div>
 <p>La distancia entre el evento <span class="math notranslate nohighlight">\(x_j\)</span> y el centroide <span class="math notranslate nohighlight">\(\mu_k\)</span> se calcula en el espacio de encaje <span class="math notranslate nohighlight">\(f_\theta\)</span>, creado por la clasificación. <span class="math notranslate nohighlight">\(\pi_{jk}\)</span> pesa la importancia de cada evento para el objetivo de agrupación y está definido como:</p>
 <div class="math notranslate nohighlight" id="equation-peso-clusterloss">
-<span class="eqno">(2.15)<a class="headerlink" href="#equation-peso-clusterloss" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<span class="eqno">(2.16)<a class="headerlink" href="#equation-peso-clusterloss" title="Enlace permanente a esta ecuación">¶</a></span>\[
     \pi_{jk}=\frac{e^{-\alpha\|f_\theta(x_j)-\mu_k\|}}{\sum_{k'}e^{-\alpha\|f_\theta(x_j)-\mu_k\|}}
 \]</div>
 <p>con el hiperparámetro <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
-<p>El valor inicial de los centroides se hace utilizando el algoritmo K-means, para luego realizar el entrenamiento utilizando la función de pérdida conjunta en la ecuación <a class="reference internal" href="#equation-loss-ucluster">(2.12)</a>.</p>
-<p>Como se mencionó anteriormente, el modelo es libre de la arquitectura de la red neuronal. Sin embargo, la implementación utilizada en las LHCO 2020 utiliza ABCNet, una red basada en grafos donde cada partícula reconstruida es un nodo del grafo. La arquitectura y la capa del encaje se encuentran en el siguiente diagrama,</p>
+<p>El valor inicial de los centroides se hace utilizando el algoritmo K-means, para luego realizar el entrenamiento utilizando la función de pérdida conjunta en la ecuación <a class="reference internal" href="#equation-loss-ucluster">(2.13)</a>.</p>
+<p>Como se mencionó anteriormente, el modelo es libre de la arquitectura de la red neuronal. Sin embargo, la implementación utilizada en las LHCO 2020 utiliza ABCNet, una red basada en grafos donde cada partícula reconstruida es un nodo del grafo. La arquitectura y la capa del encaje se encuentran en el diagrama en la <a class="reference internal" href="#bench-abcnet"><span class="std std-numref">Figura 2.13</span></a>,</p>
 <div class="figure align-default" id="bench-abcnet">
 <a class="reference internal image-reference" href="../../_images/bench-ABCNet.png"><img alt="../../_images/bench-ABCNet.png" src="../../_images/bench-ABCNet.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.13 </span><span class="caption-text">Diagrama del pipeline.</span><a class="headerlink" href="#bench-abcnet" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 2.13 </span><span class="caption-text">Diagrama de la red ABCNet utilizada por UCluster.</span><a class="headerlink" href="#bench-abcnet" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Para crear las GAPLayers se utiliza la distancia entre los 10 vecinos mas cercanos de cada partícula. La primera GAPLayer utiliza la distancia <span class="math notranslate nohighlight">\(\Delta R=\sqrt{\Delta\eta^2+\Delta\phi^2}\)</span> y la segunda utiliza las distancias euclídeas.</p>
 </div>
@@ -648,13 +681,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p>La <strong>red discriminativa</strong> es un perceptrón multicapas (MLP). Inicialmente es entrenado utilizando la entropia cruzada binaria (ec.<a class="reference internal" href="algoritmos-anomalias.html#equation-binary-crossentropy">(2.6)</a>) en una muestra mezclada de eventos reconstruidos y originales, con el objetivo de exponer las débilidades del codificador automatico.</p>
 <p>El <strong>codificador automatico</strong> es entrenado utilizando una función de pérdida que combina la reconstrucción del error (en este caso, la distancia euclídea media (MED, por sus siglas en inglés) entre la entrada y la salida) y la entropía binaria cruzada.</p>
 <div class="math notranslate nohighlight" id="equation-loss-ae">
-<span class="eqno">(2.16)<a class="headerlink" href="#equation-loss-ae" title="Enlace permanente a esta ecuación">¶</a></span>\[  
+<span class="eqno">(2.17)<a class="headerlink" href="#equation-loss-ae" title="Enlace permanente a esta ecuación">¶</a></span>\[  
     \mathcal{L}_{AE} = \mathcal{L}_{BC}+\epsilon\times\text{MED}+\alpha\times\text{DisCo}
 \]</div>
-<p>donde <span class="math notranslate nohighlight">\(\epsilon\)</span> y <span class="math notranslate nohighlight">\(\alpha\)</span> son hiperparámetros para balancear los pesos de cada término y <span class="math notranslate nohighlight">\(\text{DisCo}\)</span> es la correlación de distancia, para descorrelacionar el error de reconstrucción de la masa invariante. En este caso, <span class="math notranslate nohighlight">\(\mathcal{L}_{BC}\)</span> se evalúa dando eventos reconstruidos a la red discriminativa, pero esta vez con la etiqueta &quot;equivocada&quot;, con el objetivo de engañarla.</p>
+<p>donde <span class="math notranslate nohighlight">\(\epsilon\)</span> y <span class="math notranslate nohighlight">\(\alpha\)</span> son hiperparámetros para balancear los pesos de cada término y <span class="math notranslate nohighlight">\(\text{DisCo}\)</span> es la correlación de distancia, para descorrelacionar el error de reconstrucción de la masa invariante. En este caso, <span class="math notranslate nohighlight">\(\mathcal{L}_{BC}\)</span> se evalúa dando eventos reconstruidos a la red discriminativa, pero esta vez con la etiqueta «equivocada», con el objetivo de engañarla.</p>
 <p>Por último, se evalúa el codificador automatico utilizando una <em>figura de mérito</em>:</p>
 <div class="math notranslate nohighlight" id="equation-fom">
-<span class="eqno">(2.17)<a class="headerlink" href="#equation-fom" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<span class="eqno">(2.18)<a class="headerlink" href="#equation-fom" title="Enlace permanente a esta ecuación">¶</a></span>\[
     \text{FoM}=\text{MED}+(1-\text{Media salida MLP}).
 \]</div>
 <p>El término <span class="math notranslate nohighlight">\(1-\text{Media salida MLP}\)</span> es cercano a cero a medida que el codificador automático engaña mejor al MLP.</p>

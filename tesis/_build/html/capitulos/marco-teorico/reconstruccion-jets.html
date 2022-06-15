@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html lang="spanish">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,6 +44,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -59,7 +60,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="1.5. Aprendizaje automático" href="aprendizaje-automatico.html" />
     <link rel="prev" title="1.3. Más allá del modelo estándar" href="mas-alla-del-ms.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="spanish">
+    <meta name="docsearch:language" content="es">
     
 
     <!-- Google Analytics -->
@@ -179,9 +180,41 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../analisis-datos/resumen.html">
+   3. Exploración de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-sin-preprocesar.html">
+     3.1. Datos sin pre-procesar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-preprocesados.html">
+     3.2. Datos pre-procesados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-UCluster.html">
+     3.3. Datos de UCluster
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-GAN-AE.html">
+     3.4. Datos de GAN-AE
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../referencias/referencias.html">
-   3. Referencias
+   4. Referencias
   </a>
  </li>
 </ul>
@@ -248,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
             href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/marco-teorico/reconstruccion-jets.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
-        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/marco-teorico/reconstruccion-jets.md"><button
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/main/tesis/capitulos/marco-teorico/reconstruccion-jets.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
     </div>
@@ -398,12 +431,12 @@ const thebe_selector_output = ".output, .cell_output"
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\theta\)</span> es el ángulo polar entre los constituyentes y el haz de protones entrantes. Los valores de pseudorapidez indican directamente a qué distancia del centro del detector se produce una partícula y varían de menos a más infinito dentro de la geometría del detector. Este sistema de coordenadas del detector se muestra en la <a class="reference internal" href="#jets-coordenadas"><span class="std std-numref">Figura 1.10</span></a>, junto con la conversión de ángulo polar a pseudorapidez.</p>
 <div class="figure align-default" id="jets-coordenadas">
-<a class="reference internal image-reference" href="../../_images/jets-coordenadas.png"><img alt="../../_images/jets-coordenadas.png" src="../../_images/jets-coordenadas.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../../_images/jets-coordenadas.png"><img alt="../../_images/jets-coordenadas.png" src="../../_images/jets-coordenadas.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Figura 1.10 </span><span class="caption-text">Ilustración del sistema de coordenadas utilizado en los experimentos del LHC (izquierda) y una conversión entre el ángulo polar y la pseudorapidez (derecha). El eje z se encuentra a lo largo de la dirección del haz de protones entrante, y el ángulo azimutal <span class="math notranslate nohighlight">\(\phi\)</span> se define con respecto al plano x–y, como es usual. La pseudorapidez <span class="math notranslate nohighlight">\(\eta\)</span> se define para aprovechar la simetría cilíndrica, y aumenta de valor a medida que nos alejamos del centro del detector<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id18" title="Zachary L Marshall. A Measurement of Jet Shapes in Proton-Proton Collisions at 7.0 TeV Center-of-Mass Energy with the ATLAS Detector at the Large Hadron Collider. PhD thesis, California Institute of Technology, 2010. Presented on 09 Nov 2010. URL: https://cds.cern.ch/record/1308447.">19</a>]</span>.</span><a class="headerlink" href="#jets-coordenadas" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Los jets se pueden reconstruir a partir de objetos experimentales, como depósitos de energía en calorímetros y trayectorias de partículas cargadas, o de objetos teóricos, como partones y hadrones obtenidos mediante simulaciones.</p>
 <div class="figure align-default" id="jets-types">
-<a class="reference internal image-reference" href="../../_images/jets-types.png"><img alt="../../_images/jets-types.png" src="../../_images/jets-types.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/jets-types.png"><img alt="../../_images/jets-types.png" src="../../_images/jets-types.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Figura 1.11 </span><span class="caption-text">Esquema que muestra los diferentes tipos de jet. Se producen partículas de color por la dispersión fuerte, creando partículas de color neutro en la fragmentación. Estas partículas pueden producir distintas señales en los detectores<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id4" title="Reina Coromoto Camacho Toro. Search of new resonances decaying into top quark pairs with the ATLAS detector at the LHC and jet calibration studies. Theses, Université Blaise Pascal - Clermont-Ferrand II, July 2012. URL: https://tel.archives-ouvertes.fr/tel-00818796.">10</a>]</span>.</span><a class="headerlink" href="#jets-types" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Se espera que un algoritmo posea ciertas características:</p>
@@ -491,14 +524,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p>La subestructura de un jet puede analizarse para diferenciar si el jet proviene de un gluon, un quark, un bosón que decae hadrónicamente o partículas masivas aún no descubiertas.</p>
 <div class="figure align-default" id="jets-diagramajets">
 <a class="reference internal image-reference" href="../../_images/jets-diagramajets.png"><img alt="../../_images/jets-diagramajets.png" src="../../_images/jets-diagramajets.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.14 </span><span class="caption-text">Representación de jets producto de: quarks y gluones (arriba a la izquierda), quark bottom (arriba en el centro), y topologías de jets impulsados: bosones de alto pT <em>W</em> y <em>Z</em> (arriba a la derecha), boson de Higgs (abajo a la izquierda) y quark top (abajo a la derecha) decayendo a un estado final de quarks<span id="id14">[<a class="reference internal" href="../referencias/referencias.html#id113" title="Eric A. Moreno, Thong Q. Nguyen, Jean-Roch Vlimant, Olmo Cerri, Harvey B. Newman, Avikar Periwal, Maria Spiropulu, Javier M. Duarte, and Maurizio Pierini. Interaction networks for the identification of boosted $h\ensuremath \rightarrow b\overline b$ decays. Phys. Rev. D, 102:012010, Jul 2020. URL: https://link.aps.org/doi/10.1103/PhysRevD.102.012010, doi:10.1103/PhysRevD.102.012010.">57</a>]</span>.</span><a class="headerlink" href="#jets-diagramajets" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 1.14 </span><span class="caption-text">Representación de jets producto de: quarks y gluones (arriba a la izquierda), quark bottom (arriba en el centro), y topologías de jets impulsados: bosones de alto pT <em>W</em> y <em>Z</em> (arriba a la derecha), boson de Higgs (abajo a la izquierda) y quark top (abajo a la derecha) decayendo a un estado final de quarks<span id="id14">[<a class="reference internal" href="../referencias/referencias.html#id116" title="Eric A. Moreno, Thong Q. Nguyen, Jean-Roch Vlimant, Olmo Cerri, Harvey B. Newman, Avikar Periwal, Maria Spiropulu, Javier M. Duarte, and Maurizio Pierini. Interaction networks for the identification of boosted $h\ensuremath \rightarrow b\overline b$ decays. Phys. Rev. D, 102:012010, Jul 2020. URL: https://link.aps.org/doi/10.1103/PhysRevD.102.012010, doi:10.1103/PhysRevD.102.012010.">57</a>]</span>.</span><a class="headerlink" href="#jets-diagramajets" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Como se observa en la <a class="reference internal" href="#jets-diagramajets"><span class="std std-numref">Figura 1.14</span></a>, a alto momento transverso, un boson, un quark top e inclusive una partícula de nueva física que decaiga a dos o más quarks, puede ser reconstruida como un jet único, debido a que los productos de decaimiento se encuentran muy cercanos.</p>
 <p>A continuación se describirán algunas de las variables que se calculan para diferenciar entre jets provenientes de distintas partículas, utilizando como referencia <span id="id15">[<a class="reference internal" href="../referencias/referencias.html#id32" title="Deepak Kar. Advanced topic: jet substructure. In Experimental Particle Physics, 2053-2563, pages 8-1 to 8-28. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch8, doi:10.1088/2053-2563/ab1be6ch8.">58</a>]</span>.</p>
 <div class="section" id="masa">
 <h3><span class="section-number">1.4.2.1. </span>Masa<a class="headerlink" href="#masa" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet calculada a partir del cuadri-momento de cada constituyente.</p>
-<p>La distribución de masa del jet se utiliza para diferenciar jets provenientes de partículas masivas con alto momento transverso, que se caracterizan por una distribución mas angosta y alta, de fondo que cae suavemente, debido a jets ordinarios de quarks y gluones<span id="id16">[<a class="reference internal" href="../referencias/referencias.html#id113" title="Eric A. Moreno, Thong Q. Nguyen, Jean-Roch Vlimant, Olmo Cerri, Harvey B. Newman, Avikar Periwal, Maria Spiropulu, Javier M. Duarte, and Maurizio Pierini. Interaction networks for the identification of boosted $h\ensuremath \rightarrow b\overline b$ decays. Phys. Rev. D, 102:012010, Jul 2020. URL: https://link.aps.org/doi/10.1103/PhysRevD.102.012010, doi:10.1103/PhysRevD.102.012010.">57</a>]</span>.</p>
+<p>La distribución de masa del jet se utiliza para diferenciar jets provenientes de partículas masivas con alto momento transverso, que se caracterizan por una distribución mas angosta y alta, de fondo que cae suavemente, debido a jets ordinarios de quarks y gluones<span id="id16">[<a class="reference internal" href="../referencias/referencias.html#id116" title="Eric A. Moreno, Thong Q. Nguyen, Jean-Roch Vlimant, Olmo Cerri, Harvey B. Newman, Avikar Periwal, Maria Spiropulu, Javier M. Duarte, and Maurizio Pierini. Interaction networks for the identification of boosted $h\ensuremath \rightarrow b\overline b$ decays. Phys. Rev. D, 102:012010, Jul 2020. URL: https://link.aps.org/doi/10.1103/PhysRevD.102.012010, doi:10.1103/PhysRevD.102.012010.">57</a>]</span>.</p>
 </div>
 <div class="section" id="n-subjettiness">
 <h3><span class="section-number">1.4.2.2. </span>N-subjettiness<a class="headerlink" href="#n-subjettiness" title="Enlazar permanentemente con este título">¶</a></h3>

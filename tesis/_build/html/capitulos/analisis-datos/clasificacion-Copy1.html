@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clasificación de eventos &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="es">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_ucv.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../marco-teorico/resumen.html">
+   1. Marco teórico
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/modelo-estandar.html">
+     1.1. El módelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/cromodinamica-cuantica.html">
+     1.2. Cromodinámica cuántica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/mas-alla-del-ms.html">
+     1.3. Más allá del modelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html">
+     1.6. Reconstrucción de jets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/aprendizaje-automatico.html">
+     1.7. Aprendizaje automático
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
+     1.8. El uso del aprendizaje automático y las Olimpiadas LHC 2020
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
+     1.9. Olimpiadas LHC 2020 y la importancia de la reproducibilidad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../datos-metodos/resumen.html">
+   2. Datos y métodos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/datos-lhco.html">
+     2.1. Conjuntos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html">
+     2.2. Algoritmos para detección de anomalías
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/metricas.html">
+     2.3. Métricas de rendimiento
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html">
+     2.4. Algoritmos LHCO 2020
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datos-metodos/benchtools.html">
+     2.5. Paquete benchtools
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="resumen.html">
+   3. Análisis de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="datos-sin-preprocesar.html">
+     3.1. Datos sin pre-procesar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="datos-preprocesados.html">
+     3.2. Datos pre-procesados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="datos-UCluster.html">
+     3.3. Datos de UCluster
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="datos-GAN-AE.html">
+     3.4. Datos de GAN-AE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../referencias/referencias.html">
+   4. Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/capitulos/analisis-datos/clasificacion-Copy1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
+                    class="fab fa-github"></i>repositorio</button></a>
+        <a class="issues-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/analisis-datos/clasificacion-Copy1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/main/tesis/capitulos/analisis-datos/clasificacion-Copy1.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/marianaiv/tesis_grado_UCV/main?urlpath=tree/tesis/capitulos/analisis-datos/clasificacion-Copy1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importancia-de-las-caracteristicas">
+   Importancia de las características
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reconstruccion-de-distribuciones">
+   Reconstrucción de distribuciones
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Clasificación de eventos</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importancia-de-las-caracteristicas">
+   Importancia de las características
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reconstruccion-de-distribuciones">
+   Reconstrucción de distribuciones
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="clasificacion-de-eventos">
+<span id="clas"></span><h1>Clasificación de eventos<a class="headerlink" href="#clasificacion-de-eventos" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Uno de los objetivos principales de este trabajo es comparar algoritmos participantes en las LHCO 2020. Para ello, utilizamos como base algunos algoritmos sencillos ya implementados en librerías como <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code><span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id109" title="F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, M. Perrot, and E. Duchesnay. Scikit-learn: machine learning in Python. Journal of Machine Learning Research, 12:2825–2830, 2011.">110</a>]</span> y uno programado usando <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code><span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id110" title="Martín Abadi et al. TensorFlow: large-scale machine learning on heterogeneous systems. 2015. Software available from tensorflow.org. URL: https://www.tensorflow.org/.">111</a>]</span>.</p>
+<p>En esta sección se observarán algunas de las característica de la clasificación con estos algoritmos. Los modelos que se utilizan en esta sección son:</p>
+<table class="colwidths-auto table" id="clas-alg">
+<caption><span class="caption-text">Algoritmos utilizados para comparación</span><a class="headerlink" href="#clas-alg" title="Enlace permanente a esta tabla">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Nombre</p></th>
+<th class="text-align:center head"><p>Implementación</p></th>
+<th class="text-align:center head"><p>Tipo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Random Forest Classifier (RFC)</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-bosques"><span class="std std-ref">Bosque aleatorio</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Gradient Boosting Classifier (GBC)</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-gbc"><span class="std std-ref">Clasificador del gradiente del impulso</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Quadratic Discriminant Analysis (QDA)</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-qda"><span class="std std-ref">Análisis de discriminante cuadrático</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>MLP Classifier</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-neural"><span class="std std-ref">Red neuronal</span></a></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Tensorflow Classifier</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">tensorflow</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-neural"><span class="std std-ref">Red neuronal</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>KMeans</p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code></p></td>
+<td class="text-align:center"><p><a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg-kmeans"><span class="std std-ref">K-means</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<p>explicados en la <a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg"><span class="std std-numref">Sección 2.2</span></a>.</p>
+<p>Para este análisis, se utilizó un subconjunto de 500,000 eventos del conjunto de datos R&amp;D.</p>
+<div class="section" id="importancia-de-las-caracteristicas">
+<span id="clas-importancia"></span><h2>Importancia de las características<a class="headerlink" href="#importancia-de-las-caracteristicas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Por la forma en la que clasifican, algunos modelos permiten conocer cuáles de las características de los eventos fueron las variables más relevantes para la clasificación. De los modelos en la <code class="xref std std-numref docutils literal notranslate"><span class="pre">clas-alg</span></code>, RFC y GBC asignan puntajes a las variables de acuerdo a su importancia.</p>
+<p>De los modelos entrenados, se puede obtener la importancia de cada variable. Un gráfico de estos puntajes se observa en la <code class="xref std std-numref docutils literal notranslate"> <span class="pre">y</span> <span class="pre">la</span> <span class="pre">{numref}</span></code> para RFC y GBC, respectivamente.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># En esta celda graficamos las características más importantes para los modelos</span>
+
+<span class="c1"># Obtenemos las características más importantes</span>
+<span class="c1"># models[x][y] : x = 1(random forest), 2(gradient boosting); y = 0(nombre del modelo), 1(modelo entrenado) </span>
+<span class="n">fi_rf</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">fi_gb</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1"># Redondeamos los puntajes</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">fi_rf</span><span class="p">,</span> <span class="n">fi_gb</span><span class="p">]</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="p">[[</span> <span class="nb">round</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">weight</span> <span class="p">]</span> <span class="k">for</span> <span class="n">weight</span> <span class="ow">in</span> <span class="n">weights</span><span class="p">]</span>
+<span class="c1"># Obtenemos los nombres de los modelos</span>
+<span class="n">names_fi</span> <span class="o">=</span> <span class="p">[</span><span class="n">models</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">models</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
+<span class="c1"># Obtenemos los nombres de las características</span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1"># Juntamos los puntajes con las características en tuplas</span>
+<span class="n">importance</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">weight</span> <span class="ow">in</span> <span class="n">weights</span><span class="p">:</span>
+    <span class="n">f_i</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">weight</span><span class="p">))</span>
+    <span class="n">importance</span><span class="p">[</span><span class="n">names_fi</span><span class="p">[</span><span class="n">ii</span><span class="p">]]</span> <span class="o">=</span> <span class="n">f_i</span>
+    <span class="n">ii</span> <span class="o">+=</span><span class="mi">1</span>
+
+<span class="c1"># Graficamos en un bucle </span>
+<span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]</span>
+<span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">scores</span> <span class="ow">in</span> <span class="n">importance</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+    <span class="c1"># Ordenamos de menor a mayor</span>
+    <span class="n">scores</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+
+    <span class="c1"># Salvamos los nombres y su puntaje separados</span>
+    <span class="c1"># y revertimos las tuplas para tener de mayor a menor puntaje </span>
+    <span class="n">features</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">scores</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">scores</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">x_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">features</span><span class="p">))</span> 
+
+    <span class="c1"># Graficamos</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">x_pos</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span><span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">x_pos</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Feature importance&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Feature importance: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">ii</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/clasificacion-Copy1_10_0.png" src="../../_images/clasificacion-Copy1_10_0.png" />
+<img alt="../../_images/clasificacion-Copy1_10_1.png" src="../../_images/clasificacion-Copy1_10_1.png" />
+</div>
+</div>
+<p>Notamos que las características más relevantes para ambos clasificadores son la variable <span class="math notranslate nohighlight">\(\tau_{21}\)</span> y el <span class="math notranslate nohighlight">\(p_T\)</span> de los jets. En general, son relevantes las características que presentan distribuciones diferentes para señal y fondo.</p>
+</div>
+<div class="section" id="reconstruccion-de-distribuciones">
+<span id="clas-reconstruccion"></span><h2>Reconstrucción de distribuciones<a class="headerlink" href="#reconstruccion-de-distribuciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>De la clasificación con los distintos modelos, se pueden reconstruir las variables para observar cómo están clasificando los algoritmos.</p>
+<p>En la <code class="xref std std-numref docutils literal notranslate"><span class="pre">observamos</span> <span class="pre">las</span> <span class="pre">variables</span> <span class="pre">más</span> <span class="pre">importante</span> <span class="pre">para</span> <span class="pre">clasificación</span> <span class="pre">de</span> <span class="pre">acuerdo</span> <span class="pre">a</span> <span class="pre">{numref}</span></code>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># En esta celda graficamos la masa invariante predicha</span>
+<span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;pT_j2&#39;</span><span class="p">,</span> <span class="s1">&#39;tau_21_j1&#39;</span><span class="p">,</span> <span class="s1">&#39;tau_21_j2&#39;</span><span class="p">,</span> <span class="s1">&#39;n_hadrons&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">clfs</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
+        <span class="c1"># Obtenemos predicciones como pandas Series</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">pred</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ypred&#39;</span><span class="p">)</span>
+        <span class="c1"># Obtenemos las etiquetas como pandas Serie</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;ytest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Juntamos las masas, las predicciones y las etiquetas</span>
+        <span class="n">X_plot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_test</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">X_test_m</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">pred</span><span class="p">,</span> <span class="n">label</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># Graficamos</span>
+        <span class="n">pred_test_hist</span><span class="p">(</span><span class="n">X_plot</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">ypred</span><span class="o">=</span><span class="s1">&#39;ypred&#39;</span><span class="p">,</span> <span class="n">ytest</span><span class="o">=</span><span class="s1">&#39;ytest&#39;</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: distribución de </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">variable</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">del</span> <span class="n">X_plot</span><span class="p">,</span> <span class="n">pred</span><span class="p">,</span> <span class="n">label</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/clasificacion-Copy1_12_0.png" src="../../_images/clasificacion-Copy1_12_0.png" />
+<img alt="../../_images/clasificacion-Copy1_12_1.png" src="../../_images/clasificacion-Copy1_12_1.png" />
+<img alt="../../_images/clasificacion-Copy1_12_2.png" src="../../_images/clasificacion-Copy1_12_2.png" />
+<img alt="../../_images/clasificacion-Copy1_12_3.png" src="../../_images/clasificacion-Copy1_12_3.png" />
+<img alt="../../_images/clasificacion-Copy1_12_4.png" src="../../_images/clasificacion-Copy1_12_4.png" />
+<img alt="../../_images/clasificacion-Copy1_12_5.png" src="../../_images/clasificacion-Copy1_12_5.png" />
+<img alt="../../_images/clasificacion-Copy1_12_6.png" src="../../_images/clasificacion-Copy1_12_6.png" />
+<img alt="../../_images/clasificacion-Copy1_12_7.png" src="../../_images/clasificacion-Copy1_12_7.png" />
+<img alt="../../_images/clasificacion-Copy1_12_8.png" src="../../_images/clasificacion-Copy1_12_8.png" />
+<img alt="../../_images/clasificacion-Copy1_12_9.png" src="../../_images/clasificacion-Copy1_12_9.png" />
+<img alt="../../_images/clasificacion-Copy1_12_10.png" src="../../_images/clasificacion-Copy1_12_10.png" />
+<img alt="../../_images/clasificacion-Copy1_12_11.png" src="../../_images/clasificacion-Copy1_12_11.png" />
+<img alt="../../_images/clasificacion-Copy1_12_12.png" src="../../_images/clasificacion-Copy1_12_12.png" />
+<img alt="../../_images/clasificacion-Copy1_12_13.png" src="../../_images/clasificacion-Copy1_12_13.png" />
+<img alt="../../_images/clasificacion-Copy1_12_14.png" src="../../_images/clasificacion-Copy1_12_14.png" />
+<img alt="../../_images/clasificacion-Copy1_12_15.png" src="../../_images/clasificacion-Copy1_12_15.png" />
+<img alt="../../_images/clasificacion-Copy1_12_16.png" src="../../_images/clasificacion-Copy1_12_16.png" />
+<img alt="../../_images/clasificacion-Copy1_12_17.png" src="../../_images/clasificacion-Copy1_12_17.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtenemos los datos de todos los clasificadores</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">clf</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="n">clfs</span><span class="p">]</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">clf</span><span class="o">.</span><span class="n">score</span> <span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="n">clfs</span><span class="p">]</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="p">[</span><span class="n">clf</span><span class="o">.</span><span class="n">pred</span> <span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="n">clfs</span><span class="p">]</span>      
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">clf</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="n">clfs</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Graficamos algunos plots</span>
+<span class="n">rejection_plot</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">probs</span><span class="o">=</span><span class="n">scores</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">precision_recall_plot</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">probs</span><span class="o">=</span><span class="n">scores</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/clasificacion-Copy1_16_0.png" src="../../_images/clasificacion-Copy1_16_0.png" />
+<img alt="../../_images/clasificacion-Copy1_16_1.png" src="../../_images/clasificacion-Copy1_16_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos\analisis-datos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Por Mariana Vivas, Universidad Central de Venezuela<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

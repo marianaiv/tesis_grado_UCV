@@ -29,4 +29,10 @@ chapters:
   - file: capitulos/datos-metodos/metricas
   - file: capitulos/datos-metodos/algoritmos-lhco
   - file: capitulos/datos-metodos/benchtools
+- file: capitulos/analisis-datos/resumen
+  sections:
+  - file: capitulos/analisis-datos/datos-sin-preprocesar
+  - file: capitulos/analisis-datos/datos-preprocesados
+  - file: capitulos/analisis-datos/datos-UCluster
+  - file: capitulos/analisis-datos/datos-GAN-AE
 - file: capitulos/referencias/referencias 

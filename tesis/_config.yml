@@ -32,7 +32,7 @@ parse:
 repository:
   url: https://github.com/marianaiv/tesis_grado_UCV # Ubicación en línea del libro
   path_to_book: "tesis"  # Ruta opcional al libro, relativa a la raíz del repositorio
-  branch: marco-teorico  # Que rama usar para crear links
+  branch: main  # Que rama usar para crear links
 
 # Agregar botones de GitHub al libro
 # Ver https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
@@ -42,6 +42,7 @@ html:
   use_issues_button: true  # Si agregar boton "open an issue"
   home_page_in_navbar: false   # Si incluir la pagina de inicio en la navegación
   use_multitoc_numbering: false   # Numeración continua entre partes/capitulos
+
   
 #######################################################################################
 # Advanced and power-user settings
@@ -49,7 +50,7 @@ sphinx:
   extra_extensions          :  # A list of extra extensions to load by Sphinx.
     - sphinx_proof
   config                    :  # key-value pairs to directly over-ride the Sphinx configuration
-    language                : spanish
+    language                : es
 
 # Un archivo bibtex para poder crear citas
 bibtex_bibfiles:

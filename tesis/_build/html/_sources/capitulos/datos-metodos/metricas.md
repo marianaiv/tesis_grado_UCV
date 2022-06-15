@@ -50,7 +50,7 @@ La *curva ROC* se construye graficando la recuperación vs. 1-especificidad para
 
 ```{figure} ./../../figuras/ml-roc.png
 ---
-width: 600px
+width: 400px
 name: ml-roc
 ---
 Ilustración de la curva ROC. La diagonal representa a un clasificador aleatorio o que no distingue entre clases. En este caso, el clasificador con la curva azul es mejor distinguiendo entre clases{cite}`ROC_curve`.
@@ -86,7 +86,7 @@ Para datos altamente desbalanceados se suele sugerir el uso de la curva PR:
 Para obtenerla se grafica la precisión vs. la recuperación, como se observa en la {numref}`ml-curvapr`.
 ```{figure} ./../../figuras/ml-curvapr.png
 ---
-width: 500px
+width: 400px
 name: ml-curvapr
 ---
 Ejemplos de curvas precisión-recuperación {cite}`valassi_andrea_2018_1405727`
@@ -112,7 +112,7 @@ Así, se grafica la *mejora de la significancia* vs. *eficiencia de señal* con 
 
 ```{figure} ./../../figuras/ml-significancia.png
 ---
-width: 500px
+width: 400px
 name: ml-significancia
 ---
 Ejemplo de curva de mejora de la significancia {cite}`Kasieczka_2021`

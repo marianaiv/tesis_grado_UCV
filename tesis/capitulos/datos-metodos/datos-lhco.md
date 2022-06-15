@@ -25,4 +25,4 @@ Los eventos de este conjunto de datos se produjeron utilizando Pythia y Delphes.
 ## Caja negra 1 (BB1)
 Este conjunto posee la misma señal que el conjunto R&D pero con masas para *Z'*, *X* y *Y* de 3.823 TeV, 732 GeV y 378 GeV. Consiste en 1,000,000 de eventos, de los cuales 834 son señal.
 
-Los eventos de fondo en la caja negra 1 son diferentes a los del conjunto R&D. Algunas configuraciones de Pythia y Delphes fueron cambiadas y se encuentran descritas en {cite}`Kasieczka_2021`.
+Los eventos de fondo en la caja negra 1 son diferentes a los del conjunto R&D. Algunas configuraciones de Pythia y Delphes difieren de las utilizadas para producir los datos del conjunto R&D, y se encuentran descritas en {cite}`Kasieczka_2021`.
