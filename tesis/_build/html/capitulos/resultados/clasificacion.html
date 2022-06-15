@@ -132,13 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
-     1.6. Reproducibilidad
+    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
+     1.6. El uso del aprendizaje automático y las Olimpiadas LHC 2020
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
-     1.7. Olimpiadas LHC 2020
+    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
+     1.7. Olimpiadas LHC 2020 y la importancia de la reproducibilidad
     </a>
    </li>
   </ul>
@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../analisis-datos/resumen.html">
-   3. Análisis de datos
+   3. Exploración de datos
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -237,6 +237,14 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../conclusion/conclusion.html">
    6. Conclusión
+<<<<<<< HEAD
+=======
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../referencias/referencias.html">
+   7. Referencias
+>>>>>>> discusion-conclusion
   </a>
  </li>
 </ul>
@@ -434,7 +442,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="clasificacion-de-eventos">
 <span id="clas"></span><h1><span class="section-number">4.1. </span>Clasificación de eventos<a class="headerlink" href="#clasificacion-de-eventos" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Para comparar los algoritmos de las LHCO 2020 utilizamos como base algunos algoritmos sencillos ya implementados en librerías como <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code><span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id115" title="F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, M. Perrot, and E. Duchesnay. Scikit-learn: machine learning in Python. Journal of Machine Learning Research, 12:2825–2830, 2011.">108</a>]</span> y uno programado usando <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id116" title="Martín Abadi et al. TensorFlow: large-scale machine learning on heterogeneous systems. 2015. Software available from tensorflow.org. URL: https://www.tensorflow.org/.">109</a>]</span>.</p>
+<p>Para comparar los algoritmos de las LHCO 2020 utilizamos como base algunos algoritmos sencillos ya implementados en librerías como <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code><span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id109" title="F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, M. Perrot, and E. Duchesnay. Scikit-learn: machine learning in Python. Journal of Machine Learning Research, 12:2825–2830, 2011.">109</a>]</span> y uno programado usando <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id110" title="Martín Abadi et al. TensorFlow: large-scale machine learning on heterogeneous systems. 2015. Software available from tensorflow.org. URL: https://www.tensorflow.org/.">110</a>]</span>.</p>
 <p>En esta sección se observarán algunas de las característica de la clasificación realizada con estos algoritmos. Los modelos utilizados son los presentados en la <a class="reference internal" href="#clas-alg"><span class="std std-numref">Tabla 4.1</span></a>, explicados en la <a class="reference internal" href="../datos-metodos/algoritmos-anomalias.html#alg"><span class="std std-numref">Sección 2.2</span></a>.:</p>
 <table class="colwidths-auto table" id="clas-alg">
 <caption><span class="caption-number">Tabla 4.1 </span><span class="caption-text">Algoritmos utilizados para comparación</span><a class="headerlink" href="#clas-alg" title="Enlace permanente a esta tabla">¶</a></caption>
@@ -490,15 +498,13 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="../../_images/clas-variables-dist.png"><img alt="../../_images/clas-variables-dist.png" src="../../_images/clas-variables-dist.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Figura 4.2 </span><span class="caption-text">Distribución reales y predichas de algunas de las variables más importantes para la clasificación usando el conjunto prueba R&amp;D. Cada fila de imágenes representa un clasificador. De arriba a abajo: Tensorflow Classifier, RFC, GBC, QDA, MLP y KMeans. Por columna, de izquierda a derecha, se encuentras las distribuciones de <span class="math notranslate nohighlight">\(p_T\)</span> del jet secundario, <span class="math notranslate nohighlight">\(\tau_{21}\)</span> del jet principal y el número de hadrones de los eventos.</span><a class="headerlink" href="#clas-variables-dist" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>En la <a class="reference internal" href="#clas-variables-dist"><span class="std std-numref">Figura 4.2</span></a>, vemos que en general, los modelos predicen el fondo con bastante precisión. La distinción entre señal y fondo es lograda en gran medida por los modelos supervisados. Particularmente, vemos que el clasificador de Tensorflow está sobreestimando el fondo y subestimando la señal en todas las variables. Al contrario, RFC, GBC y QDA sobreestiman la señal y subestiman el fondo. El clasificador MLP parece clasificar las clases con mayor precisión.</p>
-<p>El único modelo no-supervisado, Kmeans, logra separar algunos eventos de señal según los gráficos de <span class="math notranslate nohighlight">\(p_T\)</span> y de <span class="math notranslate nohighlight">\(\tau_{12}\)</span>. En el gráfico de número de hadrones vemos que no logra diferenciar entre clases.</p>
+<p>Vemos que en general, los modelos predicen el fondo con bastante precisión. La distinción entre señal y fondo es lograda en gran medida por los modelos supervisados. Particularmente, vemos que el clasificador de Tensorflow está sobreestimando el fondo y subestimando la señal en todas las variables. Al contrario, RFC, GBC y QDA sobreestiman la señal y subestiman el fondo. El clasificador MLP parece clasificar las clases con mayor precisión. El único modelo no-supervisado, Kmeans, logra separar algunos eventos de señal según los gráficos de <span class="math notranslate nohighlight">\(p_T\)</span> y de <span class="math notranslate nohighlight">\(\tau_{12}\)</span>. En el gráfico de número de hadrones vemos que no logra diferenciar entre clases.</p>
 <p>Al graficar algunas de las variables con menor importancia según la <a class="reference internal" href="#clas-feature-imp"><span class="std std-numref">Figura 4.1</span></a>, se observa que los modelos supervisados logran separar señal y fondo (<a class="reference internal" href="#clas-variables-noimp-dist"><span class="std std-numref">Figura 4.3</span></a>).</p>
 <div class="figure align-default" id="clas-variables-noimp-dist">
 <a class="reference internal image-reference" href="../../_images/clas-variables-noimp-dist.png"><img alt="../../_images/clas-variables-noimp-dist.png" src="../../_images/clas-variables-noimp-dist.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Figura 4.3 </span><span class="caption-text">Distribución de algunas de las variables menos relevantes para la clasificación. Cada fila de imágenes representa un clasificador. De arriba a abajo: Tensorflow Classifier, RFC, GBC, QDA, MLP y KMeans. Por columna, de izquierda a derecha, se encuentras las distribuciones de <span class="math notranslate nohighlight">\(\Delta R\)</span>, <span class="math notranslate nohighlight">\(E\)</span> del jet principal y <span class="math notranslate nohighlight">\(\eta\)</span> del jet principal.</span><a class="headerlink" href="#clas-variables-noimp-dist" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>El modelo de TensorFlow parece ser el más preciso estimando <span class="math notranslate nohighlight">\(\eta\)</span> del jet principal, variable para la cual el clasificador MLP logra separar señal y fondo pero la distribución de la señal predicha está corrida a la izquierda.</p>
-<p>Nuevamente, Kmeans parece diferenciar ligeramente entre clases en algunas variables. En la variable <span class="math notranslate nohighlight">\(\eta\)</span> vemos que no logra distinguir entre señal y fondo.</p>
+<p>El modelo de TensorFlow parece ser el más preciso estimando <span class="math notranslate nohighlight">\(\eta\)</span> del jet principal, variable para la cual el clasificador MLP logra separar señal y fondo pero la distribución de la señal predicha está corrida a la izquierda. Nuevamente, Kmeans parece diferenciar ligeramente entre clases en algunas variables. En la variable <span class="math notranslate nohighlight">\(\eta\)</span> vemos que no logra distinguir entre señal y fondo.</p>
 <p>En la <a class="reference internal" href="#clas-masa-dist"><span class="std std-numref">Figura 4.4</span></a> podemos ver la predicción de la variable de masa invariante.</p>
 <div class="figure align-default" id="clas-masa-dist">
 <a class="reference internal image-reference" href="../../_images/clas-masa-dist.png"><img alt="../../_images/clas-masa-dist.png" src="../../_images/clas-masa-dist.png" style="width: 100%;" /></a>

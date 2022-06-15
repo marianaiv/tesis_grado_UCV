@@ -32,35 +32,35 @@ El pre-procesamiento de datos se realiza para obtener variables físicas. Estas 
 
 **Output**: Variables físicas para cada evento.
 
-1. Cargar una fracción de los eventos. Para cada fracción de eventos:
+1. Importar una fracción de los eventos. Para cada fracción de eventos:
     1. Agrupar los jets de cada evento utilizando anti-kt con $R=1$.
-    2. Guardar los jets que tengan $p_T>20GeV$
+    2. Seleccionar los jets que tengan $p_T>20GeV$
     3. Calcular $p_T$, $m_j$, $\eta$, $\phi$, $E$, $\tau_{21}$ y el número de hadrones constituyentes, para los dos jets más energéticos. $\Delta R$, $m_{jj}$ utilizando los dos jets principales y el número de hadrones del evento.
-    4. Guardar las variables calculadas.
+    4. Guardar las variables calculadas en un marco de datos.
 ```
-Este proceso se hace iterativamente para fracciones de datos, debido a que cargar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos pre-procesados.
+Este proceso se hace iterativamente para fracciones de datos, debido a que importar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos pre-procesados.
 
-Una tabla con la definición de cada variable calculada se encuentra a continuación:
-```{table} Variables calculadas en el pre-procesamiento de los datos
+Una tabla con la descripción de cada variable calculada se encuentra {numref}`bench-variables`:
+```{table} Variables calculadas en el pre-procesamiento de los datos. Las variables se calculan para i=1,2, que representan el jet principal y secundario, respectivamente.
 :name: bench-variables
 
-| Variable         | Descripción                                      |
-|------------------|--------------------------------------------------|
-| $p_T\_j_i$       | Momento transverso                               |
-| $m_j\_j_i$       | Masa invariante                                  |
-| $\eta\_j_i$      | Pseudorapidez (ec. {eq}`jets-eta`)               |
-| $\phi\_j_i$      | Ángulo polar en el plano transverso              |
-| $E\_j_i$         | Energía                                          |
-| $\tau_{21}\_j_i$ | Subjetiness (ec. {eq}`jets-ratio_subjettiness`)  |
-| n_hadrons_$j_i$  | Número de hadrones                               |
-| $\Delta R$       | Distancia angular entre los dos jets principales |
-| $m_{jj}$         | Masa invariante de los dos jets principales      |
-| n_hadrons        | Número de hadrones del evento                    |
+| Variable         | Descripción                                                 |
+|------------------|-------------------------------------------------------------|
+| $p_T\_j_i$       | Momento transverso del jet *i*                              |
+| $m_j\_j_i$       | Masa del jet *i*                                            |
+| $\eta\_j_i$      | Pseudorapidez del jet *i*(ec. {eq}`jets-eta`)               |
+| $\phi\_j_i$      | Ángulo azimutal en el plano transverso del jet *i*          |
+| $E\_j_i$         | Energía del jet *i*                                         |
+| $\tau_{21}\_j_i$ | Subjetiness del jet *i* (ec. {eq}`jets-ratio_subjettiness`) |
+| n_hadrons_$j_i$  | Número de hadrones constituyentes del jet *i*               |
+| $\Delta R$       | Distancia angular entre los dos jets principales            |
+| $m_{jj}$         | Masa invariante de los dos jets principales                 |
+| n_hadrons        | Número de hadrones del evento                               |
 ```
 
 (bench-pipeline-cap)=
 ## Pipeline
-En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de `benchtools` procesa los datos, entrena los modelos explicados en la {numref}`alg`, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos específicos se describen a continuación:
+En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de `benchtools` procesa los datos, entrena los modelos explicados en la {numref}`alg`, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos se describen a continuación:
 
 ```{prf:algorithm} Pipeline
 :label: bench-pipelinealg
@@ -70,12 +70,14 @@ En programación, un pipeline consiste en una serie de pasos en los que la salid
 **Output**: Imagenes de los plots de las métricas y una tabla con las métricas númericas, así como gráficos de barra de cada variable.
 
 1. Pre-procesar los datos de los eventos.
-2. Escalar los datos según el clasificador a utilizar, entrenar los modelos y salvarlos.
-3. Obtener los puntajes y predicciones de cada clasificador.
-4. Cargar los clasificadores externos.
+2. Transformar los datos para que estén confinados en un rango de valores según el clasificador a utilizar, entrenar los modelos y salvarlos.
+3. Evaluar los puntajes y predicciones de cada clasificador.
+4. Importar las clasificaciones externas.
 5. Comparar los algoritmos utilizando las métricas en *metrictools*
 ```
-El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra a continuación:
+Para entrenar los modelos, se utilizan las variables descritas en {numref}`bench-variables`, a excepción de $m_{jj}$ y $m_{ji}$, para evitar que los modelos aprendan la masa de las partículas, y obtener una clasificación lo más libre posible de modelo.
+
+El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra la {numref}`bench-pipeline`.
 
 ```{figure} ../../figuras/bench-pipeline.png
 ---
@@ -84,4 +86,4 @@ name: bench-pipeline
 ---
 Diagrama del pipeline.
 ```
-Las opciones para correr el pipeline se encuentran explicadas en el [repositorio](https://github.com/marianaiv/benchtools). Los resultados de su uso se observarán más adelante.
+Las opciones para correr el pipeline se encuentran explicadas en el [repositorio](https://github.com/marianaiv/benchtools). Los resultados de su uso se observarán en la {numref}`comp`.
