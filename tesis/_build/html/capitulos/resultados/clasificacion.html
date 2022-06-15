@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="4.2. Comparación de algoritmos" href="comparacion-algoritmos.html" />
+    <link rel="next" title="&lt;no title&gt;" href="comparacion-algoritmos.html" />
     <link rel="prev" title="4. Resultados" href="resumen.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="es">
@@ -227,16 +227,16 @@ const thebe_selector_output = ".output, .cell_output"
      4.1. Clasificación de eventos
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="comparacion-algoritmos.html">
-     4.2. Comparación de algoritmos
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../referencias/referencias.html">
-   5. Referencias
+  <a class="reference internal" href="../discusion/discusion.html">
+   5. Discusión de resultados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../conclusion/conclusion.html">
+   6. Conclusión
   </a>
  </li>
 </ul>
@@ -487,14 +487,14 @@ const thebe_selector_output = ".output, .cell_output"
 <h3><span class="section-number">4.1.1.2. </span>Distribuciones predichas<a class="headerlink" href="#distribuciones-predichas" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>De la clasificación con los distintos modelos, se pueden obtener las distribuciones de las variables para observar qué tan cercana es la clasificación a los datos reales. En la <a class="reference internal" href="#clas-variables-dist"><span class="std std-numref">Figura 4.2</span></a> observamos las distribuciones reales y predichas para las variables más importante según la <a class="reference internal" href="#clas-feature-imp"><span class="std std-numref">Figura 4.1</span></a>.</p>
 <div class="figure align-default" id="clas-variables-dist">
-<a class="reference internal image-reference" href="../../_images/clas-variables-dist.png"><img alt="../../_images/clas-variables-dist.png" src="../../_images/clas-variables-dist.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../_images/clas-variables-dist.png"><img alt="../../_images/clas-variables-dist.png" src="../../_images/clas-variables-dist.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Figura 4.2 </span><span class="caption-text">Distribución reales y predichas de algunas de las variables más importantes para la clasificación usando el conjunto prueba R&amp;D. Cada fila de imágenes representa un clasificador. De arriba a abajo: Tensorflow Classifier, RFC, GBC, QDA, MLP y KMeans. Por columna, de izquierda a derecha, se encuentras las distribuciones de <span class="math notranslate nohighlight">\(p_T\)</span> del jet secundario, <span class="math notranslate nohighlight">\(\tau_{21}\)</span> del jet principal y el número de hadrones de los eventos.</span><a class="headerlink" href="#clas-variables-dist" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>En la <a class="reference internal" href="#clas-variables-dist"><span class="std std-numref">Figura 4.2</span></a>, vemos que en general, los modelos predicen el fondo con bastante precisión. La distinción entre señal y fondo es lograda en gran medida por los modelos supervisados. Particularmente, vemos que el clasificador de Tensorflow está sobreestimando el fondo y subestimando la señal en todas las variables. Al contrario, RFC, GBC y QDA sobreestiman la señal y subestiman el fondo. El clasificador MLP parece clasificar las clases con mayor precisión.</p>
 <p>El único modelo no-supervisado, Kmeans, logra separar algunos eventos de señal según los gráficos de <span class="math notranslate nohighlight">\(p_T\)</span> y de <span class="math notranslate nohighlight">\(\tau_{12}\)</span>. En el gráfico de número de hadrones vemos que no logra diferenciar entre clases.</p>
 <p>Al graficar algunas de las variables con menor importancia según la <a class="reference internal" href="#clas-feature-imp"><span class="std std-numref">Figura 4.1</span></a>, se observa que los modelos supervisados logran separar señal y fondo (<a class="reference internal" href="#clas-variables-noimp-dist"><span class="std std-numref">Figura 4.3</span></a>).</p>
 <div class="figure align-default" id="clas-variables-noimp-dist">
-<a class="reference internal image-reference" href="../../_images/clas-variables-noimp-dist.png"><img alt="../../_images/clas-variables-noimp-dist.png" src="../../_images/clas-variables-noimp-dist.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../_images/clas-variables-noimp-dist.png"><img alt="../../_images/clas-variables-noimp-dist.png" src="../../_images/clas-variables-noimp-dist.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Figura 4.3 </span><span class="caption-text">Distribución de algunas de las variables menos relevantes para la clasificación. Cada fila de imágenes representa un clasificador. De arriba a abajo: Tensorflow Classifier, RFC, GBC, QDA, MLP y KMeans. Por columna, de izquierda a derecha, se encuentras las distribuciones de <span class="math notranslate nohighlight">\(\Delta R\)</span>, <span class="math notranslate nohighlight">\(E\)</span> del jet principal y <span class="math notranslate nohighlight">\(\eta\)</span> del jet principal.</span><a class="headerlink" href="#clas-variables-noimp-dist" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>El modelo de TensorFlow parece ser el más preciso estimando <span class="math notranslate nohighlight">\(\eta\)</span> del jet principal, variable para la cual el clasificador MLP logra separar señal y fondo pero la distribución de la señal predicha está corrida a la izquierda.</p>
@@ -515,14 +515,14 @@ const thebe_selector_output = ".output, .cell_output"
 <h3><span class="section-number">4.1.2.1. </span>Reconstrucción de las variables<a class="headerlink" href="#reconstruccion-de-las-variables" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Las distribuciones de las variables más relevantes según la <a class="reference internal" href="#clas-feature-imp"><span class="std std-numref">Figura 4.1</span></a> y las predicciones realizadas con respecto al conjunto BB1, se puede observar en la <a class="reference internal" href="#clas-variables-dist-bb1"><span class="std std-numref">Figura 4.5</span></a>.</p>
 <div class="figure align-default" id="clas-variables-dist-bb1">
-<a class="reference internal image-reference" href="../../_images/clas-variables-dist-BB1.png"><img alt="../../_images/clas-variables-dist-BB1.png" src="../../_images/clas-variables-dist-BB1.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../_images/clas-variables-dist-BB1.png"><img alt="../../_images/clas-variables-dist-BB1.png" src="../../_images/clas-variables-dist-BB1.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Figura 4.5 </span><span class="caption-text">Distribución de las variables más importantes y las predicciones para el conjunto BB1. Cada fila de imágenes representa un clasificador. De arriba a abajo: Tensorflow Classifier, RFC, GBC, QDA, MLP y KMeans. Por columna, de izquierda a derecha, se encuentras las distribuciones de <span class="math notranslate nohighlight">\(p_T\)</span> del jet secundario, <span class="math notranslate nohighlight">\(\tau_{21}\)</span> del jet principal y el número de hadrones de los eventos.</span><a class="headerlink" href="#clas-variables-dist-bb1" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>El poder de distinción entre señal y fondo de los modelos disminuye al utilizar el conjunto BB1. Como se puede observar en la <a class="reference internal" href="#clas-variables-dist-bb1"><span class="std std-numref">Figura 4.5</span></a>, para RFC, GBC y QDA, las distribuciones predichas del fondo son bastante exactas. Sin embargo, no se logra obtener las distribuciones de la señal; vemos distribuciones de señal que se acercan a la distribución de la señal real contaminadas por eventos de fondo.</p>
 <p>El clasificador de TensorFlow, MLP y KMeans obtienen distribuciones de fondo menos precisas. A su vez, las distribuciones de señal son menos parecidas a las reales. El clasificador de TensorFlow y MLP logran obtener distribuciones del número de hadrones cercanas a las de la señal real, pero para <span class="math notranslate nohighlight">\(p_T\)</span> y <span class="math notranslate nohighlight">\(\tau_{21}\)</span> diferencian poco entre señal y fondo. KMeans diferencia más en la variable <span class="math notranslate nohighlight">\(p_T\)</span> entre clases, mientras que para <span class="math notranslate nohighlight">\(\tau_{21}\)</span> y el número de hadrones no logra distinción entre señal y fondo.</p>
 <p>Las distribuciones predichas de las variables menos relevante se encuentran en la <a class="reference internal" href="#clas-variables-noimp-dist-bb1"><span class="std std-numref">Figura 4.6</span></a>.</p>
 <div class="figure align-default" id="clas-variables-noimp-dist-bb1">
-<a class="reference internal image-reference" href="../../_images/clas-variables-noimp-dist-BB1.png"><img alt="../../_images/clas-variables-noimp-dist-BB1.png" src="../../_images/clas-variables-noimp-dist-BB1.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../_images/clas-variables-noimp-dist-BB1.png"><img alt="../../_images/clas-variables-noimp-dist-BB1.png" src="../../_images/clas-variables-noimp-dist-BB1.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Figura 4.6 </span><span class="caption-text">Distribución real y predicha de algunas de las variables menos relevantes para la clasificación para el conjunto BB1 . Cada fila de imágenes representa un clasificador. De arriba a abajo: Tensorflow Classifier, RFC, GBC, QDA, MLP y KMeans. Por columna, de izquierda a derecha, se encuentras las distribuciones de <span class="math notranslate nohighlight">\(\Delta R\)</span>, <span class="math notranslate nohighlight">\(E\)</span> del jet principal y <span class="math notranslate nohighlight">\(\eta\)</span> del jet principal.</span><a class="headerlink" href="#clas-variables-noimp-dist-bb1" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>De acuerdo a estas variables, los modelos RFC, GBC y QDA parecen clasificar correctamente una porción significativa de la señal real.</p>
@@ -573,7 +573,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class='right-next' id="next-link" href="comparacion-algoritmos.html" title="siguiente página">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title"><span class="section-number">4.2. </span>Comparación de algoritmos</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

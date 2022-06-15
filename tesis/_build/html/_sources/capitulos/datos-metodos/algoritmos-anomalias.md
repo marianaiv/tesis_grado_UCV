@@ -109,7 +109,7 @@ Las transformaciones se ordenan en capas ({numref}`ml-nn`), donde la salida de u
 
 ```{figure} ./../../figuras/ml-nn.png
 ---
-width: 500px
+width: 350px
 name: ml-nn
 ---
 Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente. De {cite}`Mehta_2019`
