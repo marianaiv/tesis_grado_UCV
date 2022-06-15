@@ -29,4 +29,4 @@ Los participantes reportaron al menos alguno de los siguientes resultados:
 - Una descripción completa de la nueva física: masas y modos de decaimiento de las nuevas partículas.
 - Numero de eventos de señal en el conjunto de datos (antes de cualquier criterio de selección).
 
-Participaron 18 modelos, que fueron agrupados dependiendo del método utilizado: 9 modelos no supervisados, 5 modelos débilmente supervisados y 4 modelos semi-supervisados o supervisados. Una descripción detallada de los modelos a utilizar en este trabajo se encuentra en la {numref}`alglhco`.Los resultados individuales de cada modelo, así como una descripción detallada de cada aspecto de la competencia, se encuentra en {cite}`Kasieczka_2021`.
+Participaron 18 modelos, que fueron agrupados dependiendo del método utilizado: 9 modelos no supervisados, 5 modelos débilmente supervisados y 4 modelos semi-supervisados o supervisados. Una descripción detallada de los modelos a utilizar en este trabajo se encuentra en la {numref}`alglhco`.Los resultados individuales de cada modelo, así como mayor información acerca de cada aspecto de la competencia, se encuentra en {cite}`Kasieczka_2021`.
