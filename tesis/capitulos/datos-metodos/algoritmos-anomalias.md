@@ -26,7 +26,11 @@ donde $Q_m$ representa los datos en el nodo $m$ y $p_{mk}$ es la proporción de 
 
 ```{figure} ./../../figuras/ml-arboldecision.png
 ---
+<<<<<<< HEAD
+width: 500px
+=======
 width: 450px
+>>>>>>> analisis-datos
 name: ml-arboldecision
 ---
 Ejemplo de un árbol de decisión. Para una conjunto de características $\mathbf{x}$, su etiqueta $y$ es predicha, recorriéndolo desde su raíz, pasando por las hojas, siguiendo las ramas que satisface {cite}`Mehta_2019`.
@@ -37,7 +41,11 @@ Usualmente, cada árbol emite un voto unitario para la clase más popular dada u
 
 ```{figure} ./../../figuras/ml-bosquealeatorio.png
 ---
+<<<<<<< HEAD
+width: 500px
+=======
 width: 550px
+>>>>>>> analisis-datos
 name: ml-bosquealeatorio
 ---
 Representación visual del funcionamiento de un bosque aleatorio {cite}`chauhan_2021`

@@ -41,21 +41,21 @@ El pre-procesamiento de datos se realiza para obtener variables físicas. Estas 
 Este proceso se hace iterativamente para fracciones de datos, debido a que importar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos pre-procesados.
 
 Una tabla con la descripción de cada variable calculada se encuentra {numref}`bench-variables`:
-```{table} Variables calculadas en el pre-procesamiento de los datos
+```{table} Variables calculadas en el pre-procesamiento de los datos. Las variables se calculan para i=1,2, que representan el jet principal y secundario, respectivamente.
 :name: bench-variables
 
-| Variable         | Descripción                                      |
-|------------------|--------------------------------------------------|
-| $p_T\_j_i$       | Momento transverso                               |
-| $m_j\_j_i$       | Masa invariante                                  |
-| $\eta\_j_i$      | Pseudorapidez (ec. {eq}`jets-eta`)               |
-| $\phi\_j_i$      | Ángulo polar en el plano transverso              |
-| $E\_j_i$         | Energía                                          |
-| $\tau_{21}\_j_i$ | Subjetiness (ec. {eq}`jets-ratio_subjettiness`)  |
-| n_hadrons_$j_i$  | Número de hadrones                               |
-| $\Delta R$       | Distancia angular entre los dos jets principales |
-| $m_{jj}$         | Masa invariante de los dos jets principales      |
-| n_hadrons        | Número de hadrones del evento                    |
+| Variable         | Descripción                                                 |
+|------------------|-------------------------------------------------------------|
+| $p_T\_j_i$       | Momento transverso del jet *i*                              |
+| $m_j\_j_i$       | Masa del jet *i*                                            |
+| $\eta\_j_i$      | Pseudorapidez del jet *i*(ec. {eq}`jets-eta`)               |
+| $\phi\_j_i$      | Ángulo azimutal en el plano transverso del jet *i*          |
+| $E\_j_i$         | Energía del jet *i*                                         |
+| $\tau_{21}\_j_i$ | Subjetiness del jet *i* (ec. {eq}`jets-ratio_subjettiness`) |
+| n_hadrons_$j_i$  | Número de hadrones constituyentes del jet *i*               |
+| $\Delta R$       | Distancia angular entre los dos jets principales            |
+| $m_{jj}$         | Masa invariante de los dos jets principales                 |
+| n_hadrons        | Número de hadrones del evento                               |
 ```
 
 (bench-pipeline-cap)=
@@ -75,6 +75,8 @@ En programación, un pipeline consiste en una serie de pasos en los que la salid
 4. Importar las clasificaciones externas.
 5. Comparar los algoritmos utilizando las métricas en *metrictools*
 ```
+Para entrenar los modelos, se utilizan las variables descritas en {numref}`bench-variables`, a excepción de $m_{jj}$ y $m_{ji}$, para evitar que los modelos aprendan la masa de las partículas, y obtener una clasificación lo más libre posible de modelo.
+
 El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra la {numref}`bench-pipeline`.
 
 ```{figure} ../../figuras/bench-pipeline.png
@@ -84,4 +86,4 @@ name: bench-pipeline
 ---
 Diagrama del pipeline.
 ```
-Las opciones para correr el pipeline se encuentran explicadas en el [repositorio](https://github.com/marianaiv/benchtools). Los resultados de su uso se observarán más adelante.
+Las opciones para correr el pipeline se encuentran explicadas en el [repositorio](https://github.com/marianaiv/benchtools). Los resultados de su uso se observarán en la {numref}`comp`.
