@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 # Análisis de datos
 El análisis de datos es parte fundamental de la implementación de técnicas de aprendizaje automático, puesto que ayuda a escoger las mejores herramientas para aproximarse al problema. En este capítulo realizaremos un análisis de los datos que se utilizan en el trabajo. 
 
 En la primera sección, se mostrarán las distribuciones de los datos del conjunto R&D y el conjunto BB1 sin procesar. Seguidamente, se presentarán las distribuciones y correlaciones de las variables obtenidas al pre-procesar los datos utilizando `benchtools`. Por último, se analizarán los datos pre-procesados para UCluster y GAN-AE.
+=======
+# Exploración de datos
+La exploración de los datos es parte fundamental de la implementación de técnicas de aprendizaje automático, puesto que ayuda a escoger las mejores herramientas para aproximarse al problema que se quiera resolver. En este capítulo, realizaremos un análisis de los datos que se utilizan en el trabajo, el conjunto R&D y BB1, descritos en la {numref}`datos`. 
+
+En la primera sección, se mostrarán las distribuciones de los datos del conjunto R&D y el conjunto BB1 sin procesar. Seguidamente, se presentarán las distribuciones y correlaciones de las variables obtenidas al pre-procesar los datos utilizando `benchtools`. Por último, se analizarán los datos pre-procesados para UCluster y GAN-AE, algoritmos descritos en la {numref}`alglhco`.
+>>>>>>> analisis-datos

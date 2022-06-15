@@ -452,7 +452,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>El nombre de las métricas varía en distintas áreas. En HEP, la recuperación y especificidad se conocen como <em>eficiencia de señal</em> (<span class="math notranslate nohighlight">\(\epsilon_s\)</span>) y <em>rechazo de fondo</em> (<span class="math notranslate nohighlight">\(1-\epsilon_{b}\)</span>), respectivamente. La precisión se conoce como <em>pureza</em> (<span class="math notranslate nohighlight">\(\rho\)</span>)<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id85" title="Andrea Valassi. Fisher information metrics for binary classifier evaluation and training. August 2018. URL: https://doi.org/10.5281/zenodo.1405727, doi:10.5281/zenodo.1405727.">101</a>]</span>.</p>
 <p>Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Sin embargo, se puede utilizar la <em>exactitud balanceada</em>:</p>
 <div class="math notranslate nohighlight" id="equation-ml-exactitudbalanceada">
-<span class="eqno">(2.8)<a class="headerlink" href="#equation-ml-exactitudbalanceada" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-ml-exactitudbalanceada" title="Enlace permanente a esta ecuación">¶</a></span>\[
     \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}
 \]</div>
 <p>En este trabajo se utilizan las métricas descritas en la <a class="reference internal" href="#met-metricas"><span class="std std-numref">Tabla 2.1</span></a>, salvo la exactitud, que se sustituye por la exactitud balanceada.</p>
@@ -466,16 +466,21 @@ const thebe_selector_output = ".output, .cell_output"
 <p>La <em>curva ROC</em> se construye graficando la recuperación vs. 1-especificidad para varios umbrales de decisión. En términos de HEP, la eficiencia de señal vs. la eficiencia de fondo. Una ilustración de estas curvas se observa en la <a class="reference internal" href="#ml-roc"><span class="std std-numref">Figura 2.8</span></a>.</p>
 <div class="figure align-default" id="ml-roc">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <a class="reference internal image-reference" href="../../_images/ml-roc.png"><img alt="../../_images/ml-roc.png" src="../../_images/ml-roc.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Figura 2.7 </span><span class="caption-text">Ilustración de la curva ROC. La diagonal representa a un clasificador aleatorio o que no distingue entre clases. En este caso, el clasificador con la curva azul es mejor distinguiendo entre clases. De MartinThoma, CC0, via <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Roc-draft-xkcd-style.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#ml-roc" title="Enlace permanente a esta imagen">¶</a></p>
 =======
 <a class="reference internal image-reference" href="../../_images/ml-roc.png"><img alt="../../_images/ml-roc.png" src="../../_images/ml-roc.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Figura 2.8 </span><span class="caption-text">Ilustración de la curva ROC. La diagonal representa a un clasificador aleatorio o que no distingue entre clases. En este caso, el clasificador con la curva azul es mejor distinguiendo entre clases<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id122" title="Wikimedia Commons contributors. File:roc-draft-xkcd-style.svg. 2021. URL: https://commons.wikimedia.org/w/index.php?title=File:Roc-draft-xkcd-style.svg&amp;oldid=588966985.">103</a>]</span>.</span><a class="headerlink" href="#ml-roc" title="Enlace permanente a esta imagen">¶</a></p>
 >>>>>>> datos-metodos
+=======
+<a class="reference internal image-reference" href="../../_images/ml-roc.png"><img alt="../../_images/ml-roc.png" src="../../_images/ml-roc.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.8 </span><span class="caption-text">Ilustración de la curva ROC. La diagonal representa a un clasificador aleatorio o que no distingue entre clases. En este caso, el clasificador con la curva azul es mejor distinguiendo entre clases<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id125" title="Wikimedia Commons contributors. File:roc-draft-xkcd-style.svg. 2021. URL: https://commons.wikimedia.org/w/index.php?title=File:Roc-draft-xkcd-style.svg&amp;oldid=588966985.">103</a>]</span>.</span><a class="headerlink" href="#ml-roc" title="Enlace permanente a esta imagen">¶</a></p>
+>>>>>>> analisis-datos
 </div>
 <p>El <em>área bajo de la curva</em> (AUC, por sus siglas en inglés) representa la habilidad del clasificador para distinguir entre clases.</p>
 <div class="math notranslate nohighlight" id="equation-ml-auc">
-<span class="eqno">(2.9)<a class="headerlink" href="#equation-ml-auc" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<span class="eqno">(2.10)<a class="headerlink" href="#equation-ml-auc" title="Enlace permanente a esta ecuación">¶</a></span>\[
     \text{AUC}=\int_0^1\epsilon_s\text{d}\epsilon_b
 \]</div>
 <p>Un valor de AUC de 0.5 indica que la predicción no es mejor que una clasificación aleatoria. Menor a 0.5 indica que el clasificador está clasificando de manera inversa<span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id87" title="Matthias Kohl. Performance measures in binary classification. International Journal of Statistics in Medical Research, 1(1):79–81, Oct. 2012. URL: https://lifescienceglobal.com/pms/index.php/ijsmr/article/view/512, doi:10.6000/1929-6029.2012.01.01.08.">104</a>]</span>.</p>
@@ -495,6 +500,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Para datos altamente desbalanceados se suele sugerir el uso de la curva PR:</p>
 <blockquote>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div><p>Si la proporción de instancias positivas y negativas en un conjunto de prueba cambia, la curva ROC no cambia. […]Métricas como la exactitud, la precisión, las curvas de aumento y el puntaje F usan valores de ambas columnas de la matriz de confusión. Cuando la distribución de clases cambia, estas métricas también cambian, incluso si el rendimiento del clasificador no cambia. Las curvas ROC se basan en la tasa de TP y FP, en la cual cada dimensión es una proporción de la columna, por lo que no depende de la distribución de clases.</p>
 <p>— ROC Graphs: Notes and Practical Considerations for Data Mining Researchers, 2003<span id="id7">[<a class="reference internal" href="../referencias/referencias.html#id95" title="Tom Fawcett. ROC Graphs: Notes and Practical Considerations for Researchers. Machine Learning, 31:1-38, 01 2004.">104</a>]</span>.</p>
 =======
@@ -511,10 +517,19 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="../../_images/ml-curvapr.png"><img alt="../../_images/ml-curvapr.png" src="../../_images/ml-curvapr.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Figura 2.10 </span><span class="caption-text">Ejemplos de curvas precisión-recuperación <span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id85" title="Andrea Valassi. Fisher information metrics for binary classifier evaluation and training. August 2018. URL: https://doi.org/10.5281/zenodo.1405727, doi:10.5281/zenodo.1405727.">101</a>]</span></span><a class="headerlink" href="#ml-curvapr" title="Enlace permanente a esta imagen">¶</a></p>
 >>>>>>> datos-metodos
+=======
+<div><p>Si la proporción de instancias positivas y negativas en un conjunto de prueba cambia, la curva ROC no cambia. […]Métricas como la exactitud, la precisión, las curvas de aumento y el puntaje F usan valores de ambas columnas de la matriz de confusión. Cuando la distribución de clases cambia, estas métricas también cambian, incluso si el rendimiento del clasificador no cambia. Las curvas ROC se basan en la tasa de TP y FP, en la cual cada dimensión es una proporción de la columna, por lo que no depende de la distribución de clases.</p>
+<p>— ROC Graphs: Notes and Practical Considerations for Data Mining Researchers, 2003<span id="id8">[<a class="reference internal" href="../referencias/referencias.html#id89" title="Tom Fawcett. ROC Graphs: Notes and Practical Considerations for Researchers. Machine Learning, 31:1-38, 01 2004.">105</a>]</span>.</p>
+</div></blockquote>
+<p>Para obtenerla se grafica la precisión vs. la recuperación, como se observa en la <a class="reference internal" href="#ml-curvapr"><span class="std std-numref">Figura 2.10</span></a>.</p>
+<div class="figure align-default" id="ml-curvapr">
+<a class="reference internal image-reference" href="../../_images/ml-curvapr.png"><img alt="../../_images/ml-curvapr.png" src="../../_images/ml-curvapr.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.10 </span><span class="caption-text">Ejemplos de curvas precisión-recuperación <span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id85" title="Andrea Valassi. Fisher information metrics for binary classifier evaluation and training. August 2018. URL: https://doi.org/10.5281/zenodo.1405727, doi:10.5281/zenodo.1405727.">101</a>]</span></span><a class="headerlink" href="#ml-curvapr" title="Enlace permanente a esta imagen">¶</a></p>
+>>>>>>> analisis-datos
 </div>
 <p>Análogo al AUC, se utiliza el área bajo la curva PR (AUCPR) y la precisión promedio (AP). La precisión promedio resume la curva PR utilizando la media ponderada de las precisiones logradas en cada umbral, utilizando como peso el aumento en recuperación del umbral anterior<span id="id10">[<a class="reference internal" href="../referencias/referencias.html#id90" title="scikit-learn. Precision-Recall. URL: https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html.">106</a>]</span>.</p>
 <div class="math notranslate nohighlight" id="equation-ml-precisionpromedio">
-<span class="eqno">(2.10)<a class="headerlink" href="#equation-ml-precisionpromedio" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<span class="eqno">(2.11)<a class="headerlink" href="#equation-ml-precisionpromedio" title="Enlace permanente a esta ecuación">¶</a></span>\[
     AP=\sum_n (R_n - R_{n-1})P_n
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(P_n\)</span> y <span class="math notranslate nohighlight">\(R_n\)</span> son la precisión y la recuperación del umbral enésimo.</p>
@@ -523,12 +538,13 @@ const thebe_selector_output = ".output, .cell_output"
 <h3><span class="section-number">2.3.2.3. </span>Mejora de la significancia<a class="headerlink" href="#mejora-de-la-significancia" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Otra medida utilizada regularmente en HEP es la <em>mejora de la significancia</em> definida como:</p>
 <div class="math notranslate nohighlight" id="equation-ml-mejoradelasignificancia">
-<span class="eqno">(2.11)<a class="headerlink" href="#equation-ml-mejoradelasignificancia" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<span class="eqno">(2.12)<a class="headerlink" href="#equation-ml-mejoradelasignificancia" title="Enlace permanente a esta ecuación">¶</a></span>\[
     \text{Mejora de la significancia} = \frac{\epsilon_s}{\sqrt{\epsilon_b}}
 \]</div>
 <p>Una mejora de la significancia igual 2 significa que la mejora de la significancia inicial es amplificada por un factor de 2 después de utilizar la estrategia de clasificación<span id="id11">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">72</a>]</span>.</p>
 <p>Así, se grafica la <em>mejora de la significancia</em> vs. <em>eficiencia de señal</em> con el fin de visualizar la mejora de la significancia del clasificador en múltiples umbrales. Un ejemplo de esta curva se observa en la <a class="reference internal" href="#ml-significancia"><span class="std std-numref">Figura 2.11</span></a></p>
 <div class="figure align-default" id="ml-significancia">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <a class="reference internal image-reference" href="../../_images/ml-significancia.png"><img alt="../../_images/ml-significancia.png" src="../../_images/ml-significancia.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Figura 2.10 </span><span class="caption-text">Ejemplo de curva de mejora significativa. De <span id="id11">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">85</a>]</span></span><a class="headerlink" href="#ml-significancia" title="Enlace permanente a esta imagen">¶</a></p>
@@ -536,6 +552,10 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="../../_images/ml-significancia.png"><img alt="../../_images/ml-significancia.png" src="../../_images/ml-significancia.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-number">Figura 2.11 </span><span class="caption-text">Ejemplo de curva de mejora de la significancia <span id="id12">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">72</a>]</span></span><a class="headerlink" href="#ml-significancia" title="Enlace permanente a esta imagen">¶</a></p>
 >>>>>>> datos-metodos
+=======
+<a class="reference internal image-reference" href="../../_images/ml-significancia.png"><img alt="../../_images/ml-significancia.png" src="../../_images/ml-significancia.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.11 </span><span class="caption-text">Ejemplo de curva de mejora de la significancia <span id="id12">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">72</a>]</span></span><a class="headerlink" href="#ml-significancia" title="Enlace permanente a esta imagen">¶</a></p>
+>>>>>>> analisis-datos
 </div>
 </div>
 </div>

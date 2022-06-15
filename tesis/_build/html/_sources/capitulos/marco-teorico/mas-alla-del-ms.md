@@ -2,7 +2,7 @@
 # Más allá del modelo estándar
 A pesar de que en los últimos 40 años se han verificado exitosamente múltiples predicciones hechas a partir del modelo estándar{cite}`Kobayashi_2021,NAP6045`, es evidente que no es una teoría final debido a que no explica varios fenómenos observados experimentalmente. A partir de estas limitaciones, se han planteado múltiples teorías que intentan responder las preguntas para las que el modelo estándar no tiene explicación. Estás teorías se conocen como teorías *más allá del modelo estándar* (BSM) y su verificación/refutación es uno de los objetivos del programa del LHC.
 
-El LHC{cite}`Evans:2008zzb` es el acelerador de partícula más grande y de mayor energía del mundo, siendo el experimento de colisionador principal en física de altas energías. Se encuentra ubicado en el laboratorio europeo de física de partículas CERN en la frontera Franco-Suiza, cerca de Geneva en Suiza. Consiste en un anillo de 27 kilometros de circunferencia conformado por imanes superconductores con estructuras aceleradoras que aumentan la energía de las partículas a lo largo del camino. Fue diseñado para acelerar protones o iones a altas energías y producir una alta tasa de colisiones, y es utilizado principalmente para para probar predicciones teóricas en física de partículas, particularmente aquellas asociadas al modelo estándar.
+El LHC{cite}`Evans:2008zzb` es el acelerador de partícula más grande y de mayor energía del mundo, siendo el experimento de colisionador principal en física de altas energías. Se encuentra ubicado en el laboratorio europeo de física de partículas CERN en la frontera Franco-Suiza, cerca de Geneva en Suiza. Consiste en un anillo de 27 kilometros de circunferencia conformado por imanes superconductores con estructuras aceleradoras que aumentan la energía de las partículas a lo largo del camino. Fue diseñado para acelerar protones o iones a altas energías y producir una alta tasa de colisiones, y es utilizado principalmente para para probar predicciones teóricas en física de partículas, especialmente aquellas asociadas al modelo estándar.
 
 En esta sección se explicarán algunas de las limitaciones que presenta el modelo estándar. Seguido de esto, se presentarán las teorías BSM más conocidas y, más específicamente, teorías BSM relacionadas a eventos dijet, la topología a estudiar en este trabajo.
 (bsm-limitaciones)=
@@ -48,6 +48,7 @@ width: 700px
 name: bsm-sparticulas
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
 Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY. De {cite}`york`.
 ```
 Entre las motivaciones teóricas de este modelo se encuentra{cite}`Virdee2016-dd`:
@@ -65,6 +66,9 @@ Evolución de las constantes de acople en función de la energía para el modelo
 =======
 Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY {cite}`york`.
 >>>>>>> datos-metodos
+=======
+Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY {cite}`york`.
+>>>>>>> analisis-datos
 ```
 También se han propuesto modelos con **dimensiones espaciales adicionales**, como Kaluza y Klein{cite}`KALUZA_2018,Klein:1926tv`, que propone una quinta dimensión, unificando la relatividad general y el electromagnetismo. Desde entonces, se han estudiado varios modelos que plantean nuevas dimensiones{cite}`P_rez_Lorenzana_2005`.
 
@@ -73,6 +77,7 @@ Entre estos modelos se encuentra la **teoría de cuerdas**, que intenta reconcil
 Sin embargo, las partículas supersimétricas no han sido observadas{cite}`ATLAS_SUSY`, ninguno de los experimentos diseñados para detectar materia oscura ha detectado la partícula ligera que predice SUSY, y no hay evidencia para la unificación de las fuerzas ni para las dimensiones adicionales.
 (bsm-dijes)=
 ## Eventos dijet
+<<<<<<< HEAD
 <<<<<<< HEAD
 La búsqueda de nuevas partículas es parte importante de la búsqueda de física BSM. Los modelos explicados anteriormente y muchos otros incluyen en su formulación nuevas partículas que permiten explicar alguna de las limitaciones del modelo estándar.
 
@@ -128,6 +133,9 @@ Un quark excitado puede decaer a un par quark-gluon ($q^*\longrightarrow qg$). E
 =======
 La búsqueda de nuevas partículas es fundamental en la búsqueda de física BSM. Los modelos mencionados anteriormente y muchos otros incluyen en su formulación nuevas partículas que permiten explicar alguna de las limitaciones del modelo estándar. Históricamente, uno de los métodos utilizados para descubrir nuevas partículas es buscar estructuras de resonancia en espectros de masas invariantes de los productos de desintegración de la partícula. 
 >>>>>>> datos-metodos
+=======
+La búsqueda de nuevas partículas es fundamental en la búsqueda de física BSM. Los modelos mencionados anteriormente y muchos otros incluyen en su formulación nuevas partículas que permiten explicar alguna de las limitaciones del modelo estándar. Históricamente, uno de los métodos utilizados para descubrir nuevas partículas es buscar estructuras de resonancia en espectros de masas invariantes de los productos de desintegración de la partícula. 
+>>>>>>> analisis-datos
 
 A diferencia de las búsquedas dirigidas a estados finales más complejos, para una topología específica, las búsquedas de resonancia de dos cuerpos solo son sensibles a dos parámetros: la masa de la nueva partícula y la sección transversal de producción. Como resultado, estas búsquedas establecen poderosas restricciones en una variedad de modelos específicos de física BSM{cite}`Kim_2020`. Existen múltiples estados finales de dos cuerpos que se pueden considerar para la búsqueda de física BSM, pero en este trabajo nos enfocamos en el estado final de dos jets o dijet.
 
@@ -135,4 +143,4 @@ En el LHC, una alta fracción de los eventos de colisión resultan en la formaci
 
 La búsqueda de resonancias dijet tienen una larga historia en los colisionadores de hadrones que data desde 1980. Más recientemente, desde 2015, por los experimentos ATLAS y CMS en el CERN en colisiones *pp* a energías de centro de masa de 13 TeV{cite}`Sirunyan_2020,Aaboud_2017,Aad_2016`. Todas las búsquedas realizadas hasta ahora no han encontrado evidencia de nuevas resonancias. Sin embargo, con el aumento de energía de centro de masa del LHC, se vuelven accesibles mayores masas. Además, con el aumento en el tamaño del conjunto de datos, también aumenta la sensibilidad a resonancias con secciones transversales pequeñas. La energía del centro de masa y el tamaño del conjunto de datos son los factores clave que determinan la sensibilidad de la búsqueda, y ambos han aumentado significativamente con el tiempo{cite}`Beresford:2642397`.
 
-En {cite}`Kim_2020` se pueden hallar múltiples modelos de partículas de nueva física que decaen a dos cuerpos, y específicamente, que decaen a dos jets, además de información sobre el estado actual de su búsqueda. Entre estos, se encuentra el modelo utilizado para generar los datos que se usan en este trabajo. Se trata de un modelo de la forma $A\rightarrow BC$ donde $A$, $B$ y $C$ son partículas BSM, y $B$ y $C$ decaen a partículas similares del modelo estándar. En el caso partícular de este trabjo, $B$ y $C$ decaen a dos quarks, por lo que $A$ se podría tratar de un escalar de octeto de color{cite}`Bai_2018` o de un bosón Z pesado. Los datos usados en este trabajo consideran un bosón Z pesado.
+En {cite}`Kim_2020` se pueden hallar múltiples modelos de partículas de nueva física que decaen a dos cuerpos, y específicamente, que decaen a dos jets, además de información sobre el estado actual de su búsqueda. Entre estos, se encuentra el modelo utilizado para generar los datos que se usan en este trabajo. Se trata de un modelo de la forma $A\rightarrow BC$ donde $A$, $B$ y $C$ son partículas BSM, y $B$ y $C$ decaen a partículas similares del modelo estándar. En los datos usados en este trabajo, $B$ y $C$ decaen a dos quarks y $A$ es un bosón Z pesado{cite}`Langacker_2009`.

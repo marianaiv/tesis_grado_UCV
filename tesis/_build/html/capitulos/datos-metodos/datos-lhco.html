@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../analisis-datos/resumen.html">
-   3. Análisis de datos
+   3. Exploración de datos
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -377,9 +377,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p>El estado final de las LHCO 2020 estuvo enfocado en múltiples jets. Los conjuntos de datos públicados contienen la información de todos los hadrones de cada evento.</p>
 <p>Los eventos se generaron utilizando <em>Pythia</em><span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id105" title="Torbjörn Sjöstrand et al. An introduction to PYTHIA 8.2. Computer Physics Communications, 191:159–177, jun 2015. URL: https://doi.org/10.1016%2Fj.cpc.2015.01.024, doi:10.1016/j.cpc.2015.01.024.">83</a>]</span>, <em>Herwig++</em><span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id106" title="Manuel Bähr et al. Herwig$\mathplus $$\mathplus $ physics and manual. The European Physical Journal C, 58(4):639–707, nov 2008. URL: https://doi.org/10.1140%2Fepjc%2Fs10052-008-0798-9, doi:10.1140/epjc/s10052-008-0798-9.">84</a>]</span> y <em>Delphes</em><span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id107" title="J. de Favereau, and C. Delaere, P. Demin, A. Giammanco, V. Lema\^ıtre, A. Mertens, and M. Selvaggi. DELPHES 3: a modular framework for fast simulation of a generic collider experiment. Journal of High Energy Physics, feb 2014. URL: https://doi.org/10.1007%2Fjhep02%282014%29057, doi:10.1007/jhep02(2014)057.">85</a>]</span>. Pythia y Herwig++ son programas para la generación de eventos de colisión en HEP, categorizados como generadores de eventos Monte Carlo de propósito general. Delphes simula la respuesta de un detector multipropósito.</p>
 <p>Cada evento está compuesto por una lista de todos los hadrones y su cinemática (<span class="math notranslate nohighlight">\(p_T,\eta,\phi\)</span>), con posibilidad de obtener hasta 700 hadrones por evento. En caso de tener la etiqueta para el tipo de evento (señal o fondo), esta se encuentra en la última columna. Todos los eventos tienen al menos un jet anti-<em>kt</em> con <span class="math notranslate nohighlight">\(R=1.0\)</span>, pseudorapidez <span class="math notranslate nohighlight">\(|\eta|&lt;2.5\)</span> y momento transversal <span class="math notranslate nohighlight">\(p_T &gt; 1.2\)</span> TeV.</p>
-<p>En este trabajo utilizamos el conjunto R&amp;D<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id120" title="Gregor Kasieczka, Ben Nachman, and David Shih. R&amp;D Dataset for LHC Olympics 2020 Anomaly Detection Challenge. April 2019. URL: https://doi.org/10.5281/zenodo.2629073, doi:10.5281/zenodo.2629073.">86</a>]</span> y el conjunto BB1<span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id121" title="Gregor Kasieczka, Benjamin Nachman, and David Shih. Official Datasets for LHC Olympics 2020 Anomaly Detection Challenge. November 2019. URL: https://doi.org/10.5281/zenodo.4536624, doi:10.5281/zenodo.4536624.">87</a>]</span>, descritos a continuación.</p>
+<p>En este trabajo utilizamos el conjunto R&amp;D<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id122" title="Gregor Kasieczka, Ben Nachman, and David Shih. R&amp;D Dataset for LHC Olympics 2020 Anomaly Detection Challenge. April 2019. URL: https://doi.org/10.5281/zenodo.2629073, doi:10.5281/zenodo.2629073.">86</a>]</span> y el conjunto BB1<span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id123" title="Gregor Kasieczka, Benjamin Nachman, and David Shih. Official Datasets for LHC Olympics 2020 Anomaly Detection Challenge. November 2019. URL: https://doi.org/10.5281/zenodo.4536624, doi:10.5281/zenodo.4536624.">87</a>]</span>, descritos a continuación.</p>
 <div class="section" id="conjunto-r-d">
 <h2><span class="section-number">2.1.1. </span>Conjunto R&amp;D<a class="headerlink" href="#conjunto-r-d" title="Enlazar permanentemente con este título">¶</a></h2>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <p>Este es el conjunto de datos proporcionado para investigación y desarrollo (Research &amp; Development). Se utiliza para analizar los datos y entrenar modelos supervisados, es decir, contiene una etiqueta que define si un evento es señal (1) o es fondo (0).</p>
 <p>Consiste en 1,000,0000 de eventos dijet de QCD, o eventos de fondo, y 100,000 eventos de BSM, o de señal, <span class="math notranslate nohighlight">\(Z'\rightarrow XY\)</span> con <span class="math notranslate nohighlight">\(X\rightarrow q\bar{q}\)</span> y <span class="math notranslate nohighlight">\(Y\rightarrow q\bar{q}\)</span>. Las masas de las partículas <em>Z”</em>, <em>X</em> y <em>Y</em> son 3.5 TeV, 500 GeV y 100 GeV, respectivamente.</p>
@@ -387,17 +388,24 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="../../_images/lhco-RnD.png"><img alt="../../_images/lhco-RnD.png" src="../../_images/lhco-RnD.png" style="width: 300px;" /></a>
 <p class="caption"><span class="caption-number">Figura 2.1 </span><span class="caption-text">Diagrama de Feynmann para la señal del conjunto R&amp;D y la BB1. Producción del boson <em>Z”</em> de física BSM y su decaimiento a las partículas <em>X</em> y *Y * de física BSM. Estas últimas, decayendo a jets.</span><a class="headerlink" href="#datos-rnd" title="Enlace permanente a esta imagen">¶</a></p>
 =======
+=======
+>>>>>>> analisis-datos
 <p>Este es el conjunto de datos proporcionado para investigación y desarrollo de los métodos de aprendizaje automático (R&amp;D, por sus siglas en inglés). Se utiliza para analizar los datos y entrenar modelos supervisados, es decir, contiene una etiqueta que define si un evento es señal (1) o es fondo (0).</p>
-<p>Consiste en 1,000,0000 de eventos dijet de QCD, o eventos de fondo, y 100,000 eventos de BSM, o de señal, <span class="math notranslate nohighlight">\(Z'\rightarrow XY\)</span> con <span class="math notranslate nohighlight">\(X\rightarrow q\bar{q}\)</span> y <span class="math notranslate nohighlight">\(Y\rightarrow q\bar{q}\)</span> (<a class="reference internal" href="#datos-rnd"><span class="std std-numref">Figura 2.1</span></a>). Las masas de las partículas <em>Z'</em>, <em>X</em> y <em>Y</em> son 3.5 TeV, 500 GeV y 100 GeV, respectivamente.</p>
+<p>Consiste en 1,000,0000 de eventos dijet de QCD, o eventos de fondo, y 100,000 eventos de BSM, o de señal, <span class="math notranslate nohighlight">\(Z'\rightarrow XY\)</span> con <span class="math notranslate nohighlight">\(X\rightarrow q\bar{q}\)</span> y <span class="math notranslate nohighlight">\(Y\rightarrow q\bar{q}\)</span> (<a class="reference internal" href="#datos-rnd"><span class="std std-numref">Figura 2.1</span></a>). Las masas de las partículas <em>Z”</em>, <em>X</em> y <em>Y</em> son 3.5 TeV, 500 GeV y 100 GeV, respectivamente.</p>
 <div class="figure align-default" id="datos-rnd">
 <a class="reference internal image-reference" href="../../_images/lhco-RnD.png"><img alt="../../_images/lhco-RnD.png" src="../../_images/lhco-RnD.png" style="width: 300px;" /></a>
+<<<<<<< HEAD
 <p class="caption"><span class="caption-number">Figura 2.1 </span><span class="caption-text">Diagrama de Feynmann para la señal del conjunto R&amp;D y la BB1. Producción del boson <em>Z'</em> de física BSM y su decaimiento a las partículas <em>X</em> y <em>Y</em> de física BSM. Estas últimas, decayendo a jets.</span><a class="headerlink" href="#datos-rnd" title="Enlace permanente a esta imagen">¶</a></p>
 >>>>>>> datos-metodos
+=======
+<p class="caption"><span class="caption-number">Figura 2.1 </span><span class="caption-text">Diagrama de Feynmann para la señal del conjunto R&amp;D y la BB1. Producción del boson <em>Z”</em> de física BSM y su decaimiento a las partículas <em>X</em> y <em>Y</em> de física BSM. Estas últimas, decayendo a jets.</span><a class="headerlink" href="#datos-rnd" title="Enlace permanente a esta imagen">¶</a></p>
+>>>>>>> analisis-datos
 </div>
 <p>Los eventos de este conjunto de datos se produjeron utilizando Pythia y Delphes.</p>
 </div>
 <div class="section" id="caja-negra-1-bb1">
 <h2><span class="section-number">2.1.2. </span>Caja negra 1 (BB1)<a class="headerlink" href="#caja-negra-1-bb1" title="Enlazar permanentemente con este título">¶</a></h2>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <p>Este conjunto posee la misma señal que el conjunto R&amp;D pero con masas para <em>Z”</em>, <em>X</em> y <em>Y</em> de 3.823 TeV, 732 GeV y 378 GeV. Consiste en 1,000,000 de eventos, de los cuales 834 son señal.</p>
 <p>Los eventos de fondo en la caja negra 1 son diferentes a los del conjunto R&amp;D. Algunas configuraciones por defecto de Pythia y Delphes fueron cambiadas.</p>
@@ -405,6 +413,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Este conjunto posee la misma señal que el conjunto R&amp;D pero con masas para <em>Z'</em>, <em>X</em> y <em>Y</em> de 3.823 TeV, 732 GeV y 378 GeV. Consiste en 1,000,000 de eventos, de los cuales 834 son señal.</p>
 <p>Los eventos de fondo en la caja negra 1 son diferentes a los del conjunto R&amp;D. Algunas configuraciones de Pythia y Delphes fueron cambiadas y se encuentran descritas en <span id="id6">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">72</a>]</span>.</p>
 >>>>>>> datos-metodos
+=======
+<p>Este conjunto posee la misma señal que el conjunto R&amp;D pero con masas para <em>Z”</em>, <em>X</em> y <em>Y</em> de 3.823 TeV, 732 GeV y 378 GeV. Consiste en 1,000,000 de eventos, de los cuales 834 son señal.</p>
+<p>Los eventos de fondo en la caja negra 1 son diferentes a los del conjunto R&amp;D. Algunas configuraciones de Pythia y Delphes difieren de las utilizadas para producir los datos del conjunto R&amp;D, y se encuentran descritas en <span id="id6">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">72</a>]</span>.</p>
+>>>>>>> analisis-datos
 </div>
 </div>
 

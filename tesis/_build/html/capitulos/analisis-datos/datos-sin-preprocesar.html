@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
     <link rel="next" title="3.2. Datos pre-procesados" href="datos-preprocesados.html" />
-    <link rel="prev" title="3. Análisis de datos" href="resumen.html" />
+    <link rel="prev" title="3. Exploración de datos" href="resumen.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="es">
     
@@ -132,13 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
-     1.6. Reproducibilidad
+    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
+     1.6. El uso del aprendizaje automático y las Olimpiadas LHC 2020
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
-     1.7. Olimpiadas LHC 2020
+    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
+     1.7. Olimpiadas LHC 2020 y la importancia de la reproducibilidad
     </a>
    </li>
   </ul>
@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="resumen.html">
-   3. Análisis de datos
+   3. Exploración de datos
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -396,16 +396,15 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="datos-sin-pre-procesar">
 <span id="rawdata"></span><h1><span class="section-number">3.1. </span>Datos sin pre-procesar<a class="headerlink" href="#datos-sin-pre-procesar" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Los conjuntos de datos utilizados en este trabajo, como se explica en la <a class="reference internal" href="../datos-metodos/datos-lhco.html#datos"><span class="std std-numref">Sección 2.1</span></a>, poseen la misma señal, pero las partículas BSM poseen masas diferentes en cada conjunto, y los conjuntos tienen distinta proporción de eventos de señal. En esta sección se realizará una breve exploración de los datos R&amp;D y BB1 publicados para las LHCO 2020.</p>
+<p>Los dos conjuntos de datos utilizados en este trabajo, como se explica en la <a class="reference internal" href="../datos-metodos/datos-lhco.html#datos"><span class="std std-numref">Sección 2.1</span></a>, poseen la misma señal de nueva física. Se diferencian por las masas de las partículas BSM y las fracciones de eventos de señal y fondo. En esta sección se realizará una breve exploración de los datos R&amp;D y BB1 publicados para las LHCO 2020.</p>
 <div class="margin figure align-default" id="rawdata-senal">
 <img alt="../../_images/lhco-RnD.png" src="../../_images/lhco-RnD.png" />
 <p class="caption"><span class="caption-number">Figura 3.1 </span><span class="caption-text">Diagrama de Feynmann para la señal.</span><a class="headerlink" href="#rawdata-senal" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>Para esta sección, utilizamos los primeros 100,000 eventos de cada conjunto.</p>
+<p>Para esta sección, utilizamos los primeros 100,000 eventos de cada conjunto de datos por dos razones: utilizar todos los eventos no es posible porque requiere una gran cantidad de memoria y 100,000 eventos es suficiente para observar las distribuciones de los datos. Los datos utilizados representan el 9% y el 10% de los eventos del conjunto R&amp;D y BB1, respectivamente, y poseen la misma proporción de señal y fondo que cada uno de conjuntos en su totalidad.</p>
 <div class="section" id="estructura">
 <span id="rawdata-estruc"></span><h2><span class="section-number">3.1.1. </span>Estructura<a class="headerlink" href="#estructura" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>El conjunto de datos R&amp;D publicado para las olimpiadas posee un evento por fila, con la información de <span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span> y <span class="math notranslate nohighlight">\(\phi\)</span> para cada hadron del evento, como se muestra en <a class="reference internal" href="#rawdata-rawdataframe"><span class="std std-numref">Tabla 3.1</span></a>. Los datos del conjunto BB1 se organizan de igual forma, a excepción de la última columna, que fue
-publicada en un archivo a parte del conjunto.</p>
+<p>El conjunto de datos R&amp;D y BB1 publicados para las olimpiadas posee un evento por fila, con la información de <span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span> y <span class="math notranslate nohighlight">\(\phi\)</span> para cada hadrón del evento, como se muestra en <a class="reference internal" href="#rawdata-rawdataframe"><span class="std std-numref">Tabla 3.1</span></a>. La diferencia entre ambos archivos es que el conjunto R&amp;D en la última columna la etiqueta del evento (señal o fondo), mientras que para el conjunto BB1 la etiqueta se encuentra en un archivo aparte.</p>
 <table class="colwidths-auto table" id="rawdata-rawdataframe">
 <caption><span class="caption-number">Tabla 3.1 </span><span class="caption-text">Estructura del conjunto de datos R&amp;D. Cada fila es un evento y la última columna hace referencia a si el evento es fondo (0) o señal (1).</span><a class="headerlink" href="#rawdata-rawdataframe" title="Enlace permanente a esta tabla">¶</a></caption>
 <thead>
@@ -453,8 +452,8 @@ publicada en un archivo a parte del conjunto.</p>
 </tr>
 </tbody>
 </table>
-<p>El conjunto R&amp;D posee 1,000,000 de eventos de fondo y 100,000 de señal (aproximadamente 9.09% de los eventos son señal). En este conjunto las partículas <span class="math notranslate nohighlight">\(Z'\)</span>, <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> poseen masas de 3.5 TeV, 500 GeV y 100 GeV, respectivamente.</p>
-<p>En el conjunto BB1 las partículas <span class="math notranslate nohighlight">\(Z'\)</span>, <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> poseen masas de 3,823 TeV, 732 GeV y 378 GeV, respectivamente. El porcentaje de señal es menor en este conjunto, de 1,000,000, 834 son señal, es decir, el 0.08%.</p>
+<p>El conjunto R&amp;D posee 1,000,000 de eventos de fondo y 100,000 de señal (aproximadamente 9.09% de los eventos son señal). En este conjunto las partículas <span class="math notranslate nohighlight">\(Z'\)</span>, <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> tienen masas de 3.5 TeV, 500 GeV y 100 GeV, respectivamente. En el conjunto BB1, las partículas <span class="math notranslate nohighlight">\(Z'\)</span>, <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> tienen masas de 3,823 TeV, 732 GeV y 378 GeV, respectivamente, con un porcentaje de señal menor. De 1,000,000, 834 son señal, es decir, el 0.08% es señal.</p>
+<p>La información de los primeros 5 eventos del conjunto R&amp;D se puede observar en la <a class="reference internal" href="#df-raw"><span class="std std-numref">Figura 3.2</span></a>.</p>
 <div class="figure align-default" id="df-raw" style="width: 600px">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -623,9 +622,9 @@ publicada en un archivo a parte del conjunto.</p>
 </table>
 <p>5 rows × 2101 columns</p>
 </div></div></div>
-<p class="caption"><span class="caption-number">Figura 3.2 </span><span class="caption-text">Primeros 5 eventos de los datos R&amp;D.</span><a class="headerlink" href="#df-raw" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.2 </span><span class="caption-text">Primeros 5 eventos de los datos R&amp;D. Cada fila representa un evento y cada columna representa una medida de la cinemática de un hadrón, como se muestra en la <a class="reference internal" href="#rawdata-rawdataframe"><span class="std std-numref">Tabla 3.1</span></a>. La columna 2100 representa la etiqueta del evento (señal o fondo).</span><a class="headerlink" href="#df-raw" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>En general, cada evento tiene un número distinto de hadrones. Por ejemplo, para los primeros eventos del conjunto R&amp;D se tienen:</p>
+<p>En general, cada evento tiene un número distinto de hadrónes. Por ejemplo, para los primeros eventos del conjunto R&amp;D se tienen:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Evento 0: 109 hadrones
@@ -641,11 +640,11 @@ Evento 4: 169 hadrones
 <div class="section" id="distribuciones">
 <span id="rawdata-dist"></span><h2><span class="section-number">3.1.2. </span>Distribuciones<a class="headerlink" href="#distribuciones" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Para ambos conjuntos, las distribuciones de los datos son similares, a excepción de la evidente diferencia entre la proporción de eventos de señal.</p>
-<div class="figure align-default" id="rawdata-nhadrones">
+<div class="figure align-default" id="rawdata-nhadones">
 <a class="reference internal image-reference" href="../../_images/rawdata-nhadrones.png"><img alt="../../_images/rawdata-nhadrones.png" src="../../_images/rawdata-nhadrones.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.3 </span><span class="caption-text">Distribución del número de hadrones para eventos de señal y fondo. A la izquierda el conjunto R&amp;D y a la derecha el conjunto BB1.</span><a class="headerlink" href="#rawdata-nhadrones" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.3 </span><span class="caption-text">Distribución del número de hadrones para eventos de señal y fondo. A la izquierda el conjunto R&amp;D y a la derecha el conjunto BB1.</span><a class="headerlink" href="#rawdata-nhadones" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>El conjunto R&amp;D posee una media de número de hadrones para la señal de <span class="pasted-text">140</span> y para el fondo de <span class="pasted-text">171</span>. El conjunto BB1 es similar, con un número de hadrones medio de <span class="pasted-text">147</span> y <span class="pasted-text">174</span> para señal y fondo, respectivamente. En general, los eventos de señal producen menos hadrones.</p>
+<p>Como se puede ver en la <a class="reference internal" href="#rawdata-nhadones"><span class="std std-numref">Figura 3.3</span></a>, el conjunto R&amp;D posee una media de <span class="pasted-text">140</span> hadrones por evento para la señal, y de <span class="pasted-text">171</span> hadrones por evento para el fondo. El conjunto BB1 es similar, con una media de <span class="pasted-text">147</span> y <span class="pasted-text">174</span> hadrones por evento para señal y fondo, respectivamente. En general, los eventos de señal producen menos hadrones.</p>
 <p>Las distribuciones de la media de las variables <span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span> y <span class="math notranslate nohighlight">\(\phi\)</span> por evento se puede observar en las <a class="reference internal" href="#rawdata-meanrnd"><span class="std std-numref">Figura 3.4</span></a> y <a class="reference internal" href="#rawdata-meanbb1"><span class="std std-numref">Figura 3.5</span></a>, para el conjunto R&amp;D y el conjunto BB1, respectivamente.</p>
 <div class="figure align-default" id="rawdata-meanrnd">
 <a class="reference internal image-reference" href="../../_images/rawdata-means-RnD.png"><img alt="../../_images/rawdata-means-RnD.png" src="../../_images/rawdata-means-RnD.png" style="width: 100%;" /></a>
@@ -655,8 +654,8 @@ Evento 4: 169 hadrones
 <a class="reference internal image-reference" href="../../_images/rawdata-means-BB1.png"><img alt="../../_images/rawdata-means-BB1.png" src="../../_images/rawdata-means-BB1.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-number">Figura 3.5 </span><span class="caption-text">Distribución de la media de <span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span> y <span class="math notranslate nohighlight">\(\phi\)</span> para los eventos del conjunto BB1.</span><a class="headerlink" href="#rawdata-meanbb1" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>Las distribuciones se observan mejor para la señal en la <a class="reference internal" href="#rawdata-meanrnd"><span class="std std-numref">Figura 3.4</span></a>, debido que hay mayor cantidad de eventos de señal. <span class="math notranslate nohighlight">\(\phi\)</span> y <span class="math notranslate nohighlight">\(\eta\)</span> no parecen diferir notablemente entre eventos de señal y fondo. Sin embargo, se observa que los valores de <span class="math notranslate nohighlight">\(p_T\)</span> difieren, siendo los de señal mayor que los de fondo.</p>
-<p>En el caso del conjunto R&amp;D se tiene una media de <span class="math notranslate nohighlight">\(p_T\)</span> de <span class="pasted-text">25</span> y <span class="pasted-text">19</span> para señal y fondo, respectivamente. Para el conjunto BB1 las medias son de <span class="pasted-text">25</span> y <span class="pasted-text">20</span>. En general, la media de <span class="math notranslate nohighlight">\(p_T\)</span> de los eventos de señal es mayor.</p>
+<p>Las distribuciones de la señal son más claras en la <a class="reference internal" href="#rawdata-meanrnd"><span class="std std-numref">Figura 3.4</span></a> que en la <a class="reference internal" href="#rawdata-meanbb1"><span class="std std-numref">Figura 3.5</span></a>, debido a que hay mayor cantidad de eventos de señal. <span class="math notranslate nohighlight">\(\phi\)</span> y <span class="math notranslate nohighlight">\(\eta\)</span> no parecen diferir notablemente entre eventos de señal y fondo. Sin embargo, se observa que los valores de <span class="math notranslate nohighlight">\(p_T\)</span> difieren, siendo el <span class="math notranslate nohighlight">\(p_T\)</span> de los eventos de señal mayor que el <span class="math notranslate nohighlight">\(p_T\)</span> de los eventos de fondo.</p>
+<p>En el caso del conjunto R&amp;D, se tiene una media de <span class="math notranslate nohighlight">\(p_T\)</span> de <span class="pasted-text">25</span> y <span class="pasted-text">19</span> GeV para señal y fondo, respectivamente. Para el conjunto BB1 las medias son de <span class="pasted-text">25</span> y <span class="pasted-text">20</span> GeV. En general, la media de <span class="math notranslate nohighlight">\(p_T\)</span> de los eventos de señal es mayor.</p>
 </div>
 </div>
 
@@ -689,7 +688,7 @@ Evento 4: 169 hadrones
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">anterior</p>
-            <p class="prev-next-title"><span class="section-number">3. </span>Análisis de datos</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Exploración de datos</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="datos-preprocesados.html" title="siguiente página">

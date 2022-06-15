@@ -18,7 +18,7 @@ donde $\theta$ es el ángulo polar entre los constituyentes y el haz de protones
 
 ```{figure} ./../../figuras/jets-coordenadas.png
 ---
-width: 500px
+width: 600px
 name: jets-coordenadas
 ---
 Ilustración del sistema de coordenadas utilizado en los experimentos del LHC (izquierda) y una conversión entre el ángulo polar y la pseudorapidez (derecha). El eje z se encuentra a lo largo de la dirección del haz de protones entrante, y el ángulo azimutal $\phi$ se define con respecto al plano x–y, como es usual. La pseudorapidez $\eta$ se define para aprovechar la simetría cilíndrica, y aumenta de valor a medida que nos alejamos del centro del detector{cite}`Marshall:1308447`.
@@ -27,7 +27,7 @@ Los jets se pueden reconstruir a partir de objetos experimentales, como depósit
 
 ```{figure} ./../../figuras/jets-types.png
 ---
-width: 700px
+width: 600px
 name: jets-types
 ---
 Esquema que muestra los diferentes tipos de jet. Se producen partículas de color por la dispersión fuerte, creando partículas de color neutro en la fragmentación. Estas partículas pueden producir distintas señales en los detectores{cite}`camachotoro:tel-00818796`.
