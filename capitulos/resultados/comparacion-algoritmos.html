@@ -130,13 +130,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
-     1.6. Reproducibilidad
+    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
+     1.6. El uso del aprendizaje automático y las Olimpiadas LHC 2020
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
-     1.7. Olimpiadas LHC 2020
+    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
+     1.7. Olimpiadas LHC 2020 y la importancia de la reproducibilidad
     </a>
    </li>
   </ul>
@@ -180,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../analisis-datos/resumen.html">
-   3. Análisis de datos
+   3. Exploración de datos
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -364,8 +364,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metricas-graficas">
-     4.2.1.2. Métricas gráficas
+    <a class="reference internal nav-link" href="#metricas-bidimensionales">
+     4.2.1.2. Métricas bidimensionales
     </a>
    </li>
   </ul>
@@ -382,7 +382,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     4.2.2.2. Métricas gráficas
+     4.2.2.2. Métricas bidimensionales
     </a>
    </li>
   </ul>
@@ -418,8 +418,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#metricas-graficas">
-     4.2.1.2. Métricas gráficas
+    <a class="reference internal nav-link" href="#metricas-bidimensionales">
+     4.2.1.2. Métricas bidimensionales
     </a>
    </li>
   </ul>
@@ -436,7 +436,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     4.2.2.2. Métricas gráficas
+     4.2.2.2. Métricas bidimensionales
     </a>
    </li>
   </ul>
@@ -452,14 +452,13 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="comparacion-de-algoritmos">
 <span id="comp"></span><h1><span class="section-number">4.2. </span>Comparación de algoritmos<a class="headerlink" href="#comparacion-de-algoritmos" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>El rendimiento de los algoritmos utilizados anteriormente no puede ser comparado directamente mediante las ditribuciones de las predicciones para cada variable. Como vimos en la sección anterior, un algoritmo puede parecer ajustar muy bien a los datos en una variable pero no en otra. Por esto, utilizamos las métricas explicadas en la <a class="reference internal" href="../datos-metodos/metricas.html#met"><span class="std std-numref">Sección 2.3</span></a> para comparar directamente el rendimiento de los algoritmos.</p>
-<p>En esta sección se compararán los algoritmos utilizados en la sección anterior, agregando UCluster y GAN-AE.</p>
-<p>Usualmente, del conjunto R&amp;D se obtendrían las métricas de rendimiento con el fin de configurar los modelos para que realicen la mejor clasificación posible. Sin embargo, en el caso de este trabajo, comparamos el rendimiento de los algoritmos al clasificar un subconjunto del conjunto utilizado para entrenamiento y al clasificar un conjunto ligeramente distinto, en este caso el conjunto R&amp;D y BB1, respectivamente.</p>
-<p>Los resultados presentados en esta sección se obtuvieron utilizando el pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>.</p>
+<p>El rendimiento de los algoritmos utilizados anteriormente no puede ser comparado directamente mediante las ditribuciones de las predicciones para cada variable. Como vimos en la sección anterior, un algoritmo puede parecer ajustar muy bien a los datos en una variable pero no en otra. Por esto, utilizamos las métricas explicadas en la <a class="reference internal" href="../datos-metodos/metricas.html#met"><span class="std std-numref">Sección 2.3</span></a> para comparar directamente el rendimiento de los algoritmos. En esta sección se compararán los algoritmos utilizados en la sección anterior, agregando UCluster y GAN-AE.</p>
+<p>Usualmente, del conjunto R&amp;D se obtendrían las métricas de rendimiento con el fin de configurar los modelos para que realicen la mejor clasificación posible. Sin embargo, en este trabajo, comparamos el rendimiento de los algoritmos al clasificar un subconjunto del conjunto R&amp;D utilizado para entrenamiento y luego al clasificar un conjunto ligeramente distinto, el conjunto BB1.</p>
+<p>Los resultados presentados en esta sección se obtuvieron utilizando el pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>, descrito en la <a class="reference internal" href="../datos-metodos/benchtools.html#bench-pipeline-cap"><span class="std std-numref">Sección 2.5.3</span></a>.</p>
 <div class="section" id="conjunto-r-d">
 <span id="comp-rnd"></span><h2><span class="section-number">4.2.1. </span>Conjunto R&amp;D<a class="headerlink" href="#conjunto-r-d" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>En la sección anterior, se mostraron las distribuciones predichas de algunas variables utilizando el conjunto R&amp;D con el objetivo de tener una idea general de cómo están clasificando los algoritmos y para poder asociar esta clasificación a las métricas que se mostrarán a continuación.</p>
-<p>Es necesario acotar que la clasificación realizada por los algoritmos de las LHCO 2020 para el conjunto R&amp;D no se realiza utilizando exactamente el mismo subconjunto de datos utilizado con los demás algoritmos. Aunque es el mismo conjunto de datos, la distribución de los subconjuntos de entrenamiento y prueba varían para los algoritmos de las olimpiadas de acuerdo al código publicado. Sin embargo, la proporción de datos es la misma para todos los métodos.</p>
+<p>Es necesario acotar, que la clasificación realizada por los algoritmos de las LHCO 2020 para el conjunto R&amp;D no se lleva a cabo utilizando exactamente el mismo subconjunto de datos con todos los modelos. Aunque es el mismo conjunto, los subconjuntos de entrenamiento y prueba varían para los algoritmos de las olimpiadas de acuerdo al código publicado por los participantes. Sin embargo, la proporción de datos de los conjuntos es la misma para todos los métodos.</p>
 <div class="section" id="metricas-numericas">
 <h3><span class="section-number">4.2.1.1. </span>Métricas numéricas<a class="headerlink" href="#metricas-numericas" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>En la <a class="reference internal" href="#comp-metricas-num-rnd"><span class="std std-numref">Figura 4.8</span></a> se observa una comparación visual de las métricas numéricas: <em>exactitud balanceada</em>, <em>precisión</em>, <em>recuperación</em> y <em>puntaje f1</em>.</p>
@@ -468,12 +467,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="caption"><span class="caption-number">Figura 4.8 </span><span class="caption-text">Diagramas de barras de las métricas numéricas obtenidas utilizando el pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code> para el conjunto R&amp;D. De izquierda a derecha, en la fila superior: exactitud balanceada y precisión. En la fila inferior: recuperación y puntaje f1.</span><a class="headerlink" href="#comp-metricas-num-rnd" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Todos los modelos obtuvieron un puntaje de exactitud balanceada mayor a 70%, lo que se considera alto. Sin embargo, observamos que la precisión y la recuperación varía entre los clasificadores.</p>
-<p>Los modelos supervisados QDA, GB y RFC obtuvieron altos puntajes de precisión pero bajos puntajes de recuperación. Esto significa que los algoritmos clasifican pocos eventos como señal, pero estas clasificaciones son mayormente correctas. En contraste, el modelo MLP obtuvo un alto puntaje de precisión y recuperación.</p>
-<p>Por otra parte el modelos de TensorFlow, obtuvo un menor puntaje de precisión pero el mayor puntaje de recuperación. Es decir, clasifica mas eventos como señal, clasificando eventos de fondo incorrectamente, pero logra clasificar la mayoría de los eventos de señal con la etiqueta correcta.</p>
-<p>Los modelos no supervisados KMeans, UCluster y GAN-AE son los modelos con menor precisión pero mayor recuperación. Es decir, están etiquetando una mayor cantidad de eventos de fondo incorrectamente como señal, pero entre los eventos etiquetados como señal se encuentra la mayor parte de los eventos de señal real.</p>
-<p>La media armónica de estas dos métricas se observa en el gráfico del puntaje f1, donde en general los modelos supervisados obtuvieron puntajes más altos que los modelos no supervisados.</p>
-<p>El mayor puntaje f1 fue obtenido por MLP. Sin embargo, el mayor puntaje de precisión lo obtuvo RFC y el mayor puntaje de recuperación lo obtuvo el modelo de TensorFlow, que también obtuvo el mayor puntaje de exactitud balanceada.</p>
-<p>Los menores puntajes fueron obtenidos por UCluster, con la menor precisión y menor puntaje f1, y por GBC, con el menor puntaje de exactitud balanceada y recuperación.</p>
+<p>Los modelos supervisados QDA, GB y RFC obtuvieron altos puntajes de precisión pero bajos puntajes de recuperación. Esto significa que los algoritmos clasifican pocos eventos como señal, pero estas clasificaciones son mayormente correctas. En contraste, el modelo MLP obtuvo un alto puntaje de precisión y recuperación. Por otra parte el modelos de TensorFlow, obtuvo un menor puntaje de precisión pero el mayor puntaje de recuperación. Es decir, clasifica mas eventos como señal, clasificando eventos de fondo incorrectamente, pero logra clasificar la mayoría de los eventos de señal con la etiqueta correcta.</p>
+<p>Los modelos no supervisados KMeans, UCluster y GAN-AE son los modelos con menor precisión pero mayor recuperación. Es decir, están etiquetando una mayor cantidad de eventos de fondo incorrectamente como señal, pero entre los eventos etiquetados como señal, se encuentra la mayor parte de los eventos de señal real.</p>
+<p>La media armónica de estas dos métricas se observa en el gráfico del puntaje f1, donde, en general, los modelos supervisados obtuvieron puntajes más altos que los modelos no supervisados.</p>
+<p>El mayor puntaje f1 fue alcanzado por MLP. Por otra parte, el mayor puntaje de precisión lo logró RFC y el mayor puntaje de recuperación lo consiguió el modelo de TensorFlow, que también obtuvo el mayor puntaje de exactitud balanceada. Los menores puntajes fueron obtenidos por UCluster, con la menor precisión y menor puntaje f1, y por GBC, con el menor puntaje de exactitud balanceada y recuperación.</p>
 <p>Un resumen de los valores numéricos obtenidos se encuentran en la <a class="reference internal" href="#comp-metricasnumericas-rnd"><span class="std std-numref">Tabla 4.2</span></a>.</p>
 <table class="colwidths-auto table" id="comp-metricasnumericas-rnd">
 <caption><span class="caption-number">Tabla 4.2 </span><span class="caption-text">Métricas numéricas obtenidas con el pipeline de <em>benchtools</em> para el conjunto R&amp;D.</span><a class="headerlink" href="#comp-metricasnumericas-rnd" title="Enlace permanente a esta tabla">¶</a></caption>
@@ -537,13 +534,13 @@ const thebe_selector_output = ".output, .cell_output"
 </tbody>
 </table>
 </div>
-<div class="section" id="metricas-graficas">
-<h3><span class="section-number">4.2.1.2. </span>Métricas gráficas<a class="headerlink" href="#metricas-graficas" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Las métricas gráficas obtenidas con el pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code> son la eficiencia de señal vs. rechazo de fondo, la ROC inversa, la curva precisión recuperación y la mejora significativa.</p>
-<p>De acuerdo a todas las métricas gráficas, el modelo MLP es el que tiene un mejor rendimiento, con un AUC de 0.975 y una precisión promedio de 0.862 (<a class="reference internal" href="#comp-metricas-graf-rnd"><span class="std std-numref">Figura 4.9</span></a>).</p>
+<div class="section" id="metricas-bidimensionales">
+<h3><span class="section-number">4.2.1.2. </span>Métricas bidimensionales<a class="headerlink" href="#metricas-bidimensionales" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Las métricas bidimensionales obtenidas con el pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code> son la eficiencia de señal vs. rechazo de fondo, la ROC inversa, la curva precisión recuperación y la mejora significativa.</p>
+<p>De acuerdo a todas las métricas bidimensionales, el modelo MLP es el que tiene un mejor rendimiento, con un AUC de 0.975 y una precisión promedio de 0.862 (<a class="reference internal" href="#comp-metricas-graf-rnd"><span class="std std-numref">Figura 4.9</span></a>).</p>
 <div class="figure align-default" id="comp-metricas-graf-rnd">
 <a class="reference internal image-reference" href="../../_images/comp-metricas-graf-RnD.png"><img alt="../../_images/comp-metricas-graf-RnD.png" src="../../_images/comp-metricas-graf-RnD.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.9 </span><span class="caption-text">Metricas gráficas para la clasificación del conjunto R&amp;D. De izquierda derecha, en la fila superior: eficiencia de señal vs. rechazo de fondo, ROC inversa, y en la fila inferior: precisión-recuperación y mejora significativa.</span><a class="headerlink" href="#comp-metricas-graf-rnd" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.9 </span><span class="caption-text">Metricas bidimensionales para la clasificación del conjunto R&amp;D. De izquierda derecha, en la fila superior: eficiencia de señal vs. rechazo de fondo, ROC inversa, y en la fila inferior: precisión-recuperación y mejora significativa.</span><a class="headerlink" href="#comp-metricas-graf-rnd" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Del gráfico de eficiencia de señal vs. rechazo de fondo y del gráfico de precisión-recuperación, observamos que el clasificador de TensorFlow se encuentra en segundo lugar con un AUC de 0.969 y una precisión media de 0.832. Sin embargo, en los gráficos de la curva ROC inversa y de mejora significativa, no es evidente cuál da un mejor resultado entre el clasificador de TensorFlow y RFC.</p>
 <p>Seguido de estos modelos, se encuentran GBC y QDA en todas las métricas.</p>
@@ -629,11 +626,11 @@ const thebe_selector_output = ".output, .cell_output"
 </table>
 </div>
 <div class="section" id="id2">
-<h3><span class="section-number">4.2.2.2. </span>Métricas gráficas<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Las métricas gráficas también varían con respecto a las obtenidas utilizando el conjunto R&amp;D. Los resultados se observan en la <a class="reference internal" href="#comp-metricas-graf-bb1"><span class="std std-numref">Figura 4.11</span></a>.</p>
+<h3><span class="section-number">4.2.2.2. </span>Métricas bidimensionales<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Las métricas bidimensionales también varían con respecto a las obtenidas utilizando el conjunto R&amp;D. Los resultados se observan en la <a class="reference internal" href="#comp-metricas-graf-bb1"><span class="std std-numref">Figura 4.11</span></a>.</p>
 <div class="figure align-default" id="comp-metricas-graf-bb1">
 <a class="reference internal image-reference" href="../../_images/comp-metricas-graf-BB1.png"><img alt="../../_images/comp-metricas-graf-BB1.png" src="../../_images/comp-metricas-graf-BB1.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.11 </span><span class="caption-text">Metricas gráficas obtenidas para el conjunto BB1. De izquierda derecha, en la fila superior: eficiencia de señal vs. rechazo de fondo, ROC inversa, y en la fila inferior: precisión-recuperación y mejora significativa.</span><a class="headerlink" href="#comp-metricas-graf-bb1" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.11 </span><span class="caption-text">Metricas bidimensionales obtenidas para el conjunto BB1. De izquierda derecha, en la fila superior: eficiencia de señal vs. rechazo de fondo, ROC inversa, y en la fila inferior: precisión-recuperación y mejora significativa.</span><a class="headerlink" href="#comp-metricas-graf-bb1" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>En todos los gráficos, es evidente que GAN-AE tiene un mejor rendimiento en este conjunto de datos. Así mismo, los clasificadores con el menor rendimiento son KMeans y UCluster.</p>
 <p>De acuerdo al gráfico de eficiencia de señal vs. rechazo de fondo, el algoritmo con mejores resultados después de GAN-AE es MLP, con un AUC de 0.953. Seguido a estos modelos, no es evidente cuál da un mejor resultado entre GBC y RFC y entre QDA y el clasificador de TensorFlow. De acuerdo al AUC, a MLP le sigue GBC, RFC, el clasificador de TensorFlow y QDA.</p>

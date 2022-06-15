@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="1.6. Reproducibilidad" href="reproducibilidad.html" />
+    <link rel="next" title="1.6. El uso del aprendizaje automático y las Olimpiadas LHC 2020" href="olimpiadas-LHC.html" />
     <link rel="prev" title="1.4. Reconstrucción de jets" href="reconstruccion-jets.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="es">
@@ -132,13 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="reproducibilidad.html">
-     1.6. Reproducibilidad
+    <a class="reference internal" href="olimpiadas-LHC.html">
+     1.6. El uso del aprendizaje automático y las Olimpiadas LHC 2020
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="olimpiadas-LHC.html">
-     1.7. Olimpiadas LHC 2020
+    <a class="reference internal" href="reproducibilidad.html">
+     1.7. Olimpiadas LHC 2020 y la importancia de la reproducibilidad
     </a>
    </li>
   </ul>
@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../analisis-datos/resumen.html">
-   3. Análisis de datos
+   3. Exploración de datos
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -227,11 +227,26 @@ const thebe_selector_output = ".output, .cell_output"
      4.1. Clasificación de eventos
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../resultados/comparacion-algoritmos.html">
+     4.2. Comparación de algoritmos
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../discusion/discusion.html">
+   5. Discusión de resultados
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../conclusion/conclusion.html">
+   6. Conclusión
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../referencias/referencias.html">
-   5. Referencias
+   7. Referencias
   </a>
  </li>
 </ul>
@@ -340,7 +355,7 @@ const thebe_selector_output = ".output, .cell_output"
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#impulso">
-       Impulso
+       1.5.2.1.1. Impulso
       </a>
      </li>
     </ul>
@@ -353,23 +368,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metricas-de-rendimiento">
-   1.5.4. Métricas de rendimiento
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aprendizaje-automatico-en-hep">
-   1.5.5. Aprendizaje automático en HEP
+   1.5.4. Aprendizaje automático en HEP
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#deteccion-de-anomalias">
-     1.5.5.1. Detección de anomalías
+     1.5.4.1. Detección de anomalías
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#busquedas-de-nueva-fisica-independiente-de-modelo">
-     1.5.5.2. Búsquedas de nueva física independiente de modelo
+     1.5.4.2. Búsquedas de nueva física independiente de modelo
     </a>
    </li>
   </ul>
@@ -411,7 +421,7 @@ const thebe_selector_output = ".output, .cell_output"
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#impulso">
-       Impulso
+       1.5.2.1.1. Impulso
       </a>
      </li>
     </ul>
@@ -424,23 +434,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metricas-de-rendimiento">
-   1.5.4. Métricas de rendimiento
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aprendizaje-automatico-en-hep">
-   1.5.5. Aprendizaje automático en HEP
+   1.5.4. Aprendizaje automático en HEP
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#deteccion-de-anomalias">
-     1.5.5.1. Detección de anomalías
+     1.5.4.1. Detección de anomalías
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#busquedas-de-nueva-fisica-independiente-de-modelo">
-     1.5.5.2. Búsquedas de nueva física independiente de modelo
+     1.5.4.2. Búsquedas de nueva física independiente de modelo
     </a>
    </li>
   </ul>
@@ -457,8 +462,8 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="aprendizaje-automatico">
 <span id="ml"></span><h1><span class="section-number">1.5. </span>Aprendizaje automático<a class="headerlink" href="#aprendizaje-automatico" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>En física de altas energías (HEP) los datos obtenidos de experimentos son sumamente complejos y de grandes dimensiones. A medida que alcanzamos mayores energías en los aceleradores de partículas, conseguimos nuevos desafíos debido al aumento en el tamaño de los eventos, el volumen de datos y su complejidad. Por esto, en la última década ha habido un enfoque en el estudio y la mejora de métodos y herramientas de análisis de datos, puesto que el alcance de los experimentos puede ser limitado por el rendimiento de algoritmos y de recursos computacionales. El aprendizaje automático es una herramienta que promete algunas soluciones a estos problemas.</p>
-<p>Estos métodos han encontrado múltiples aplicaciones en HEP. Por ejemplo, en reconstrucción de hits y trayectorias en los detectores, identificación de partículas, clasificación y selección de eventos a nivel de detectores, simulaciones, procesamiento de datos, detección de anomalías, búsquedas independientes de modelo, entre otros<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id68" title="Dimitri Bourilkov. Machine and deep learning applications in particle physics. International Journal of Modern Physics A, 34(35):1930019, dec 2019. URL: https://doi.org/10.1142%2Fs0217751x19300199, doi:10.1142/s0217751x19300199.">62</a>, <a class="reference internal" href="../referencias/referencias.html#id83" title="Dan Guest, Kyle Cranmer, and Daniel Whiteson. Deep learning and its application to LHC physics. Annual Review of Nuclear and Particle Science, 68(1):161–181, oct 2018. URL: https://doi.org/10.1146%2Fannurev-nucl-101917-021019, doi:10.1146/annurev-nucl-101917-021019.">63</a>]</span>.  Notablemente, estas herramientas han tenido un gran impacto en la medición de la masa del quark top<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id87" title="Pushpalatha C. Bhat, Harrison B. Prosper, and Scott S. Snyder. Bayesian analysis of multisource data. Physics Letters B, 407:73–78, 1997. doi:10.1016/S0370-2693(97)00723-5.">64</a>]</span> en 1997 y el descubrimiento del bosón de Higgs<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id11" title="Aad et al. Observation of a new particle in the search for the standard model higgs boson with the atlas detector at the lhc. Physics Letters B, 716(1):1-29, 2012. URL: https://www.sciencedirect.com/science/article/pii/S037026931200857X, doi:https://doi.org/10.1016/j.physletb.2012.08.020.">1</a>, <a class="reference internal" href="../referencias/referencias.html#id10" title="Chatrchyan et al. Observation of a new boson at a mass of 125 gev with the cms experiment at the lhc. Physics Letters B, 716(1):30-61, 2012. URL: https://www.sciencedirect.com/science/article/pii/S0370269312008581, doi:https://doi.org/10.1016/j.physletb.2012.08.021.">2</a>]</span> en 2012<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id88" title="Fabricio Jimenez. Model independent searches for New Physics using Machine Learning at the ATLAS experiment. Theses, Université Clermont Auvergne [2017-2020], September 2019. URL: https://tel.archives-ouvertes.fr/tel-02402488.">65</a>]</span>. Un resumen al día del uso de aprendizaje automático en HEP se puede encontrar en <em><a class="reference external" href="https://iml-wg.github.io/HEPML-LivingReview/">A Living Review of Machine Learning for Particle Physics</a></em><span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id71" title="HEP ML Community. A Living Review of Machine Learning for Particle Physics. URL: https://iml-wg.github.io/HEPML-LivingReview/.">66</a>]</span>.</p>
-<p>A continuación, se presentan brevemente conceptos básicos de aprendizaje automático y su uso en HEP, utilizando como referencia<span id="id6">[<a class="reference internal" href="../referencias/referencias.html#id69" title="Pankaj Mehta, Marin Bukov, Ching-Hao Wang, Alexandre G.R. Day, Clint Richardson, Charles K. Fisher, and David J. Schwab. A high-bias, low-variance introduction to machine learning for physicists. Physics Reports, 810:1–124, may 2019. URL: https://doi.org/10.1016%2Fj.physrep.2019.03.001, doi:10.1016/j.physrep.2019.03.001.">67</a>]</span>.</p>
+<p>Estos métodos han encontrado múltiples aplicaciones en HEP. Por ejemplo, en reconstrucción de hits y trayectorias en los detectores, identificación de partículas, clasificación y selección de eventos a nivel de detectores, simulaciones, procesamiento de datos, detección de anomalías, búsquedas independientes de modelo, entre otros<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id62" title="Dimitri Bourilkov. Machine and deep learning applications in particle physics. International Journal of Modern Physics A, 34(35):1930019, dec 2019. URL: https://doi.org/10.1142%2Fs0217751x19300199, doi:10.1142/s0217751x19300199.">59</a>, <a class="reference internal" href="../referencias/referencias.html#id77" title="Dan Guest, Kyle Cranmer, and Daniel Whiteson. Deep learning and its application to LHC physics. Annual Review of Nuclear and Particle Science, 68(1):161–181, oct 2018. URL: https://doi.org/10.1146%2Fannurev-nucl-101917-021019, doi:10.1146/annurev-nucl-101917-021019.">60</a>]</span>.  Notablemente, estas herramientas han tenido un gran impacto en la medición de la masa del quark top<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id81" title="Pushpalatha C. Bhat, Harrison B. Prosper, and Scott S. Snyder. Bayesian analysis of multisource data. Physics Letters B, 407:73–78, 1997. doi:10.1016/S0370-2693(97)00723-5.">61</a>]</span> en 1997 y el descubrimiento del bosón de Higgs<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id11" title="Aad et al. Observation of a new particle in the search for the standard model higgs boson with the atlas detector at the lhc. Physics Letters B, 716(1):1-29, 2012. URL: https://www.sciencedirect.com/science/article/pii/S037026931200857X, doi:https://doi.org/10.1016/j.physletb.2012.08.020.">3</a>, <a class="reference internal" href="../referencias/referencias.html#id10" title="Chatrchyan et al. Observation of a new boson at a mass of 125 gev with the cms experiment at the lhc. Physics Letters B, 716(1):30-61, 2012. URL: https://www.sciencedirect.com/science/article/pii/S0370269312008581, doi:https://doi.org/10.1016/j.physletb.2012.08.021.">4</a>]</span> en 2012<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id82" title="Fabricio Jimenez. Model independent searches for New Physics using Machine Learning at the ATLAS experiment. Theses, Université Clermont Auvergne [2017-2020], September 2019. URL: https://tel.archives-ouvertes.fr/tel-02402488.">62</a>]</span>. Un resumen al día del uso de aprendizaje automático en HEP se puede encontrar en <em><a class="reference external" href="https://iml-wg.github.io/HEPML-LivingReview/">A Living Review of Machine Learning for Particle Physics</a></em><span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id65" title="HEP ML Community. A Living Review of Machine Learning for Particle Physics. URL: https://iml-wg.github.io/HEPML-LivingReview/.">63</a>]</span>.</p>
+<p>A continuación, se presentan brevemente conceptos básicos de aprendizaje automático y su uso en HEP, utilizando como referencia<span id="id6">[<a class="reference internal" href="../referencias/referencias.html#id63" title="Pankaj Mehta, Marin Bukov, Ching-Hao Wang, Alexandre G.R. Day, Clint Richardson, Charles K. Fisher, and David J. Schwab. A high-bias, low-variance introduction to machine learning for physicists. Physics Reports, 810:1–124, may 2019. URL: https://doi.org/10.1016%2Fj.physrep.2019.03.001, doi:10.1016/j.physrep.2019.03.001.">64</a>]</span>.</p>
 <div class="section" id="conceptos-basicos">
 <span id="ml-conceptos"></span><h2><span class="section-number">1.5.1. </span>Conceptos básicos<a class="headerlink" href="#conceptos-basicos" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El aprendizaje automático es un subcampo de la inteligencia artificial que tiene como objetivo el desarrollo de algoritmos que mejoran su desempeño de manera cuantificable en una tarea determinada, «aprendiendo» mediante un proceso de entrenamiento que utiliza grandes conjuntos de datos. El objetivo de un algoritmo de aprendizaje automático es utilizar un conjunto de datos para identificar patrones y tomar decisiones informadas con una mínima intervención humana. Estas técnicas se utilizan para problemas de estimación y predicción, pero en este trabajo nos enfocamos en problemas de predicción.</p>
@@ -467,22 +472,17 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="aprendizaje-supervisado">
 <span id="ml-supervisado"></span><h2><span class="section-number">1.5.2. </span>Aprendizaje supervisado<a class="headerlink" href="#aprendizaje-supervisado" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>El aprendizaje supervisado se refiere al aprendizaje a partir de datos etiquetados (por ejemplo, en HEP podría ser datos etiquetados como <em>contiene señal</em> o <em>no contiene señal</em>). Las tareas comunes incluyen <em>clasificación</em>, cuando el objetivo de aprendizaje <span class="math notranslate nohighlight">\(y\)</span> es discreto y finito, y <em>regresión</em>, cuando <span class="math notranslate nohighlight">\(y\)</span> es continuo o discreto e infinito<span id="id7">[<a class="reference internal" href="../referencias/referencias.html#id70" title="Karagiorgi et al. Machine learning in the search for new fundamental physics. 2021. URL: https://arxiv.org/abs/2112.03769, doi:10.48550/ARXIV.2112.03769.">68</a>]</span>. En este trabajo nos enfocamos en la tarea de clasificación.</p>
+<p>El aprendizaje supervisado se refiere al aprendizaje a partir de datos etiquetados (por ejemplo, en HEP podría ser datos etiquetados como <em>contiene señal</em> o <em>no contiene señal</em>). Las tareas comunes incluyen <em>clasificación</em>, cuando el objetivo de aprendizaje <span class="math notranslate nohighlight">\(y\)</span> es discreto y finito, y <em>regresión</em>, cuando <span class="math notranslate nohighlight">\(y\)</span> es continuo o discreto e infinito<span id="id7">[<a class="reference internal" href="../referencias/referencias.html#id64" title="Karagiorgi et al. Machine learning in the search for new fundamental physics. 2021. URL: https://arxiv.org/abs/2112.03769, doi:10.48550/ARXIV.2112.03769.">65</a>]</span>. En este trabajo nos enfocamos en la tarea de clasificación.</p>
 <p>Los algoritmos supervisados mayormente utilizados suelen ser modelos combinados de algoritmos más simples. Estos algoritmos se combinan utilizando <em>métodos de ensamble</em>.</p>
 <div class="section" id="metodos-de-ensamble">
 <h3><span class="section-number">1.5.2.1. </span>Métodos de ensamble<a class="headerlink" href="#metodos-de-ensamble" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Los <em>métodos de ensamble</em> utilizan conjuntos de algoritmos de aprendizaje automático cuyas decisiones se combinan para mejorar el rendimiento del sistema en general. Se ha probado que solucionan deficiencias estadísticas, computacionales y de representación. Las razones para utilizarlos están explicadas en <span id="id8">[<a class="reference internal" href="../referencias/referencias.html#id79" title="Gilles Louppe. Understanding random forests: from theory to practice. 2015. arXiv:1407.7502.">69</a>]</span>:</p>
-<ol class="simple">
-<li><p><strong>Estadística</strong>: Cuando el conjunto de aprendizaje es muy pequeño, el algoritmo de aprendizaje normalmente puede encontrar varios modelos en el espacio de hipótesis <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> que resultan en el mismo rendimiento. Siempre que sus predicciones no estén correlacionadas, promediar varios modelos reduce el riesgo de elegir la hipótesis incorrecta.</p></li>
-<li><p><strong>Computacional</strong>: Muchos algoritmos de aprendizaje se basan en suposiciones o búsquedas locales que pueden atascarse en los óptimos locales. Un conjunto formado por modelos individuales construidos a partir de muchos puntos de partida diferentes puede proporcionar una mejor aproximación de la verdadera función desconocida, que cualquier aproximación de los modelos individuales.</p></li>
-<li><p><strong>Representacional</strong>: En la mayoría de los casos, para un conjunto de aprendizaje de tamaño finito, la verdadera función no puede ser representada por ninguno de los modelos candidatos en <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>. Al combinar varios modelos en un conjunto, puede ser posible expandir el espacio de funciones representables y modelar mejor la verdadera función.</p></li>
-</ol>
+<p>Los <em>métodos de ensamble</em> utilizan conjuntos de algoritmos de aprendizaje automático cuyas decisiones se combinan para mejorar el rendimiento del sistema en general. Se ha probado que solucionan deficiencias estadísticas, computacionales y de representación<span id="id8">[<a class="reference internal" href="../referencias/referencias.html#id72" title="Gilles Louppe. Understanding random forests: from theory to practice. 2015. arXiv:1407.7502.">66</a>]</span>.</p>
 <p>Existen varios métodos de ensamble, pero, de acuerdo a los algoritmos utilizados en este trabajo, es de interés el método de <em>impulso</em>.</p>
 <div class="section" id="impulso">
-<h4>Impulso<a class="headerlink" href="#impulso" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>El <em>impulso</em> es un tipo de método de ensamble basado en la idea de que hallar varias reglas generales aproximadas puede ser más sencillo que hallar una regla general altamente precisa<span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id77" title="Robert E. Schapire. The Boosting Approach to Machine Learning: An Overview, pages 149–171. Springer New York, New York, NY, 2003. URL: https://doi.org/10.1007/978-0-387-21579-2_9, doi:10.1007/978-0-387-21579-2_9.">70</a>]</span>. Este método se aplica utilizando un conjunto de algoritmos con poca precisión o <em>aprendices débiles</em> <span class="math notranslate nohighlight">\(\{g_k(\mathbf{x})\}\)</span>. Inicialmente, un aprendiz débil halla una regla aproximada haciendo uso de un subconjunto de los datos destinados al entrenamiento del modelo. A cada clasificador se le asocia un peso <span class="math notranslate nohighlight">\(\alpha_k\)</span> que indica cuánto contribuye al clasificador general. El clasificador general se puede expresar matemáticamente como:</p>
+<h4><span class="section-number">1.5.2.1.1. </span>Impulso<a class="headerlink" href="#impulso" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>El <em>impulso</em> es un tipo de método de ensamble basado en la idea de que hallar varias reglas generales aproximadas puede ser más sencillo que hallar una regla general altamente precisa<span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id70" title="Robert E. Schapire. The Boosting Approach to Machine Learning: An Overview, pages 149–171. Springer New York, New York, NY, 2003. URL: https://doi.org/10.1007/978-0-387-21579-2_9, doi:10.1007/978-0-387-21579-2_9.">67</a>]</span>. Este método se aplica utilizando un conjunto de algoritmos con poca precisión o <em>aprendices débiles</em> <span class="math notranslate nohighlight">\(\{g_k(\mathbf{x})\}\)</span>. Inicialmente, un aprendiz débil halla una regla aproximada haciendo uso de un subconjunto de los datos destinados al entrenamiento del modelo. A cada clasificador se le asocia un peso <span class="math notranslate nohighlight">\(\alpha_k\)</span> que indica cuánto contribuye al clasificador general. El clasificador general se puede expresar matemáticamente como:</p>
 <div class="math notranslate nohighlight" id="equation-ml-boosting">
-<span class="eqno">(1.11)<a class="headerlink" href="#equation-ml-boosting" title="Enlace permanente a esta ecuación">¶</a></span>\[
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-ml-boosting" title="Enlace permanente a esta ecuación">¶</a></span>\[
     g_A(\mathbf{x})=\sum_{K=1}^{M} \alpha_K g_K(\mathbf{x})
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\sum_k \alpha_k=1\)</span>.</p>
@@ -493,18 +493,13 @@ const thebe_selector_output = ".output, .cell_output"
 <span id="ml-nosupervisado"></span><h2><span class="section-number">1.5.3. </span>Aprendizaje no-supervisado<a class="headerlink" href="#aprendizaje-no-supervisado" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Estos algoritmos funcionan descubriendo patrones ocultos o grupos en los datos. Ejemplos de tareas comunes de algoritmos no-supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo, detección de anomalías y clasificación.</p>
 </div>
-<div class="section" id="metricas-de-rendimiento">
-<span id="ml-metricasderendimiento"></span><h2><span class="section-number">1.5.4. </span>Métricas de rendimiento<a class="headerlink" href="#metricas-de-rendimiento" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>La clasificación es una de las tareas más comunes en el aprendizaje automático. Sin embargo, no existe un algoritmo que funcione mejor para todos los problemas; cada algoritmo tiene ventajas y desventajas. Por lo tanto, requerimos formas de medir el grado en que la clasificación sugerida y la real coinciden.</p>
-<p>Algunas métricas númericas comúnes son la exactitud, precisión, recuperación, especificidad y puntaje f1. También se utilizan métricas gráficas como la <em>curva característica de funcionamiento del receptor</em> (curva ROC) y la <em>curva precisión-recuperación</em> (curva PR). El uso de estas métricas depende del problema de clasificación específico. Un resumen general de las métricas se presentará más adelante, en la {numref}``.</p>
-</div>
 <div class="section" id="aprendizaje-automatico-en-hep">
-<span id="ml-hep"></span><h2><span class="section-number">1.5.5. </span>Aprendizaje automático en HEP<a class="headerlink" href="#aprendizaje-automatico-en-hep" title="Enlazar permanentemente con este título">¶</a></h2>
+<span id="ml-hep"></span><h2><span class="section-number">1.5.4. </span>Aprendizaje automático en HEP<a class="headerlink" href="#aprendizaje-automatico-en-hep" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Como se mencionó anteriormente, el uso de aprendizaje automático en HEP es amplio. Sin embargo, este trabajo se enfoca en las técnicas de <em>detección de anomalías</em> y <em>búsquedas libres de modelo</em>.</p>
 <div class="section" id="deteccion-de-anomalias">
-<h3><span class="section-number">1.5.5.1. </span>Detección de anomalías<a class="headerlink" href="#deteccion-de-anomalias" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3><span class="section-number">1.5.4.1. </span>Detección de anomalías<a class="headerlink" href="#deteccion-de-anomalias" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Hasta ahora no se ha confirmado ninguna señal de nueva física. Parte de la dificultad recae en diferenciar la pequeña cantidad de eventos que podrían ser señales nuevas de los eventos de fondo o que no son de interés. Debido a esto, se ha planteado el uso de algoritmos de detección de anomalías para clasificación de los eventos de señal. La tarea de detección de anomalías tiene como objetivo predecir la categoría a la que pertenece una muestra: «normal» o «anómala».</p>
-<p>Las técnicas de detección de anomalías se pueden dividir en dos tipos<span id="id10">[<a class="reference internal" href="../referencias/referencias.html#id89" title="Katherine Fraser, Samuel Homiller, Rashmish K. Mishra, Bryan Ostdiek, and Matthew D. Schwartz. Challenges for unsupervised anomaly detection in particle physics. Journal of High Energy Physics, mar 2022. URL: https://doi.org/10.1007%2Fjhep03%282022%29066, doi:10.1007/jhep03(2022)066.">71</a>]</span>.</p>
+<p>Las técnicas de detección de anomalías se pueden dividir en dos tipos<span id="id10">[<a class="reference internal" href="../referencias/referencias.html#id83" title="Katherine Fraser, Samuel Homiller, Rashmish K. Mishra, Bryan Ostdiek, and Matthew D. Schwartz. Challenges for unsupervised anomaly detection in particle physics. Journal of High Energy Physics, mar 2022. URL: https://doi.org/10.1007%2Fjhep03%282022%29066, doi:10.1007/jhep03(2022)066.">68</a>]</span>.</p>
 <ul class="simple">
 <li><p>Algunas señales son cualitativamente distintas de del fondo y se utilizan técnicas para caracterizar estos eventos como anómalos.</p></li>
 <li><p>Algunos eventos de señal son similares a los de fondo, por lo que se explota información sobre la distribución de probabilidad esperada del fondo para hallar señal.</p></li>
@@ -512,10 +507,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Este último caso es el que se trata en este proyecto y los detalles se discutirán en la <a class="reference internal" href="olimpiadas-LHC.html#lhco"><span class="std std-ref">última sección</span></a> de este capítulo.</p>
 </div>
 <div class="section" id="busquedas-de-nueva-fisica-independiente-de-modelo">
-<h3><span class="section-number">1.5.5.2. </span>Búsquedas de nueva física independiente de modelo<a class="headerlink" href="#busquedas-de-nueva-fisica-independiente-de-modelo" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>La mayor parte de la búsqueda de nueva física está guiada por modelos específicos de BSM, supersimetría o materia oscura. Sin embargo, con la introducción del aprendizaje automático, se han propuesto métodos para la búsqueda independiente de modelo. El objetivo general de estas búsquedas es que sean lo más agnósticas posibles al proceso físico subyacente que puede ser responsable de la señal de nueva física<span id="id11">[<a class="reference internal" href="../referencias/referencias.html#id88" title="Fabricio Jimenez. Model independent searches for New Physics using Machine Learning at the ATLAS experiment. Theses, Université Clermont Auvergne [2017-2020], September 2019. URL: https://tel.archives-ouvertes.fr/tel-02402488.">65</a>]</span>.</p>
-<p>Un ejemplo de una búsqueda independiente de modelo es <span id="id12">[<a class="reference internal" href="../referencias/referencias.html#id86" title="Andrea De Simone and Thomas Jacques. Guiding new physics searches with unsupervised learning. The European Physical Journal C, mar 2019. URL: https://doi.org/10.1140%2Fepjc%2Fs10052-019-6787-3, doi:10.1140/epjc/s10052-019-6787-3.">72</a>]</span>, donde se plantea el uso de aprendizaje no supervisado para comparar las distribuciones de densidad de probabilidad de dos muestras: simulaciones de eventos del modelo estándar, o lo que sería el fondo para las búsquedas de nueva física, y datos reales.</p>
-<p>Una búsqueda de este tipo es<span id="id13">[<a class="reference internal" href="../referencias/referencias.html#id89" title="Katherine Fraser, Samuel Homiller, Rashmish K. Mishra, Bryan Ostdiek, and Matthew D. Schwartz. Challenges for unsupervised anomaly detection in particle physics. Journal of High Energy Physics, mar 2022. URL: https://doi.org/10.1007%2Fjhep03%282022%29066, doi:10.1007/jhep03(2022)066.">71</a>]</span>:</p>
+<h3><span class="section-number">1.5.4.2. </span>Búsquedas de nueva física independiente de modelo<a class="headerlink" href="#busquedas-de-nueva-fisica-independiente-de-modelo" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La mayor parte de la búsqueda de nueva física está guiada por modelos específicos de BSM, supersimetría o materia oscura. Sin embargo, con la introducción del aprendizaje automático, se han propuesto métodos para la búsqueda independiente de modelo. El objetivo general de estas búsquedas es que sean lo más agnósticas posibles al proceso físico subyacente que puede ser responsable de la señal de nueva física<span id="id11">[<a class="reference internal" href="../referencias/referencias.html#id82" title="Fabricio Jimenez. Model independent searches for New Physics using Machine Learning at the ATLAS experiment. Theses, Université Clermont Auvergne [2017-2020], September 2019. URL: https://tel.archives-ouvertes.fr/tel-02402488.">62</a>]</span>.</p>
+<p>Un ejemplo de una búsqueda independiente de modelo es <span id="id12">[<a class="reference internal" href="../referencias/referencias.html#id80" title="Andrea De Simone and Thomas Jacques. Guiding new physics searches with unsupervised learning. The European Physical Journal C, mar 2019. URL: https://doi.org/10.1140%2Fepjc%2Fs10052-019-6787-3, doi:10.1140/epjc/s10052-019-6787-3.">69</a>]</span>, donde se plantea el uso de aprendizaje no supervisado para comparar las distribuciones de densidad de probabilidad de dos muestras: simulaciones de eventos del modelo estándar, o lo que sería el fondo para las búsquedas de nueva física, y datos reales.</p>
+<p>Una búsqueda de este tipo es<span id="id13">[<a class="reference internal" href="../referencias/referencias.html#id83" title="Katherine Fraser, Samuel Homiller, Rashmish K. Mishra, Bryan Ostdiek, and Matthew D. Schwartz. Challenges for unsupervised anomaly detection in particle physics. Journal of High Energy Physics, mar 2022. URL: https://doi.org/10.1007%2Fjhep03%282022%29066, doi:10.1007/jhep03(2022)066.">68</a>]</span>:</p>
 <ul class="simple">
 <li><p><em>Libre de modelo</em>: sin suposiciones sobre las densidades</p></li>
 <li><p><em>No-paramétrica</em>: compara las densidades como un todo, no valores específicos asociados a estas.</p></li>
@@ -558,10 +553,10 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-title"><span class="section-number">1.4. </span>Reconstrucción de jets</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="reproducibilidad.html" title="siguiente página">
+    <a class='right-next' id="next-link" href="olimpiadas-LHC.html" title="siguiente página">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title"><span class="section-number">1.6. </span>Reproducibilidad</p>
+        <p class="prev-next-title"><span class="section-number">1.6. </span>El uso del aprendizaje automático y las Olimpiadas LHC 2020</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

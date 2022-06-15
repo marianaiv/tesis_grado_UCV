@@ -1,6 +1,6 @@
 (qcd)=
 # Cromodinámica cuántica
-Como se mencionó en la [sección anterior](ms-interacciones), la cromodinámica cuántica (QCD) es la teoría de la interacción fuerte y describe la dinámica de los quarks y gluones. Es una teoría cuántica de campos no-Abeliana asociada al grupo de simetría $SU(3)_C$ y construida en analogía a la electrodinámica cuántica{cite:p}`Sutton2016-eh`.
+Como se mencionó en la [sección anterior](ms-interacciones), la cromodinámica cuántica (QCD, por sus siglas en inglés) es la teoría de la interacción fuerte y describe la dinámica de los quarks y gluones. Es una teoría cuántica de campos no-Abeliana asociada al grupo de simetría $SU(3)_C$ y construida en analogía a la electrodinámica cuántica{cite:p}`Sutton2016-eh`.
 
 El bosón predicho por la teoría es el gluon. Al igual que el fotón, es una partícula no-masiva de espín 1 que interactúa con partículas que poseen *carga de color*. La carga de color es el análogo a la carga eléctrica y es el número cuántico conservado en la teoría. Existen tres tipos de carga para los quarks: rojo, verde y azul (para los anti-quarks: anti-rojo, anti-verde y anti-azul). 
 
@@ -51,11 +51,11 @@ En colisiones hadrónicas altamente energéticas, la libertad asintótica y el c
 
 En la colisión de dos protones altamente energéticos, existe una alta tasa de probabilidad de formación de jets. Un diagrama de la formación de un jet se encuentra en la {numref}`jets-desarrollo` y los procesos que intervienen se explican a continuación, utilizando como referencia {cite}`HARRIS_2011,Beresford:2642397`.
 
-El proceso principal es la **dispersión fuerte**: los protones colisionan a altas energías y se produce una interacción con alta transferencia de momento $Q$ entre los constituyentes o partones de los protones. En la dispersión fuerte se puede crear una partícula resonante de corta vida o puede suceder un proceso de QCD estándar ({numref}`jets-qcd`). Luego, se generan otras partículas mediante decaimientos o procesos de QCD. Por la libertad asintótica, los partones se comportan como partículas libres y la teoría de perturbación es válida para este proceso
+El proceso principal es la **dispersión fuerte**: los protones colisionan a altas energías y se produce una interacción con alta transferencia de momento $Q$ entre los gluones o quarks dentro de los protones, conocidos como partones. En la dispersión fuerte se puede crear una partícula resonante de corta vida o puede suceder un proceso de QCD estándar ({numref}`jets-qcd`). Luego, se generan otras partículas mediante decaimientos o procesos de QCD. Por la libertad asintótica, los partones se comportan como partículas libres y la teoría de perturbación es válida para este proceso
 
-También se consideran procesos de **radiación de estado inicial** (ISR) y **radiación de estado final** (FSR): las partículas entrantes y salientes pueden radiar otras partículas. 
+También se consideran procesos de **radiación de estado inicial** (ISR, por sus siglas en inglés) y **radiación de estado final** (FSR, por sus siglas en inglés): las partículas entrantes y salientes pueden radiar otras partículas. 
 
-Por último, están las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas, que se conocen como **eventos subyacentes** (UE).
+Por último, están las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas, que se conocen como **eventos subyacentes** (UE, por sus siglas en inglés).
 
 ```{figure} ./../../figuras/jets-qcd.png
 ---
@@ -68,7 +68,7 @@ A muy altas energías las partículas generadas se pueden dividir para generar m
 
 La evolución perturbativa del jet se detendrá una vez que las partículas alcancen bajas energías. A bajas energías, el confinamiento domina el proceso y las partículas creadas se unen para formar partículas de color neutro. Este proceso no-perturbativo se conoce como **hadronización** y ocurre técnicamente fuera del radio del protón{cite}`10.1088/2053-2563/ab1be6ch4`. La hadronización, en conjunto con la radiación de estado final, se conoce como **fragmentación**. A la colección de todos los hadrones resultantes cerca de la dirección del partón original se le llama jet{cite}`burgess_moore_2013_hadronic`.
 
-El proceso explicado anteriormente se muestra en el siguiente diagrama:
+El proceso explicado anteriormente se muestra en la {numref}`jets-desarrollo`:
 
 ```{figure} ./../../figuras/jets-formacion.png
 ---

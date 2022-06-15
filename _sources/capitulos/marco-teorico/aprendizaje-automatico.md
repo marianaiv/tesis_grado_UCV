@@ -21,11 +21,7 @@ El aprendizaje supervisado se refiere al aprendizaje a partir de datos etiquetad
 Los algoritmos supervisados mayormente utilizados suelen ser modelos combinados de algoritmos más simples. Estos algoritmos se combinan utilizando *métodos de ensamble*.
 
 ### Métodos de ensamble 
-Los *métodos de ensamble* utilizan conjuntos de algoritmos de aprendizaje automático cuyas decisiones se combinan para mejorar el rendimiento del sistema en general. Se ha probado que solucionan deficiencias estadísticas, computacionales y de representación. Las razones para utilizarlos están explicadas en {cite}`louppe2015understanding`:
-
-1. **Estadística**: Cuando el conjunto de aprendizaje es muy pequeño, el algoritmo de aprendizaje normalmente puede encontrar varios modelos en el espacio de hipótesis $\mathcal{H}$ que resultan en el mismo rendimiento. Siempre que sus predicciones no estén correlacionadas, promediar varios modelos reduce el riesgo de elegir la hipótesis incorrecta.
-2. **Computacional**: Muchos algoritmos de aprendizaje se basan en suposiciones o búsquedas locales que pueden atascarse en los óptimos locales. Un conjunto formado por modelos individuales construidos a partir de muchos puntos de partida diferentes puede proporcionar una mejor aproximación de la verdadera función desconocida, que cualquier aproximación de los modelos individuales.
-3. **Representacional**: En la mayoría de los casos, para un conjunto de aprendizaje de tamaño finito, la verdadera función no puede ser representada por ninguno de los modelos candidatos en $\mathcal{H}$. Al combinar varios modelos en un conjunto, puede ser posible expandir el espacio de funciones representables y modelar mejor la verdadera función.
+Los *métodos de ensamble* utilizan conjuntos de algoritmos de aprendizaje automático cuyas decisiones se combinan para mejorar el rendimiento del sistema en general. Se ha probado que solucionan deficiencias estadísticas, computacionales y de representación{cite}`louppe2015understanding`.
 
 Existen varios métodos de ensamble, pero, de acuerdo a los algoritmos utilizados en este trabajo, es de interés el método de *impulso*.
 #### Impulso
@@ -39,13 +35,7 @@ donde $\sum_k \alpha_k=1$.
 
 (ml-nosupervisado)=
 ## Aprendizaje no-supervisado
-Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Estos algoritmos funcionan descubriendo patrones ocultos o grupos en los datos. Ejemplos de tareas comunes de algoritmos no-supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo, detección de anomalías y clasificación. 
-
-(ml-metricasderendimiento)=
-## Métricas de rendimiento
-La clasificación es una de las tareas más comunes en el aprendizaje automático. Sin embargo, no existe un algoritmo que funcione mejor para todos los problemas; cada algoritmo tiene ventajas y desventajas. Por lo tanto, requerimos formas de medir el grado en que la clasificación sugerida y la real coinciden. 
-
-Algunas métricas númericas comúnes son la exactitud, precisión, recuperación, especificidad y puntaje f1. También se utilizan métricas gráficas como la *curva característica de funcionamiento del receptor* (curva ROC) y la *curva precisión-recuperación* (curva PR). El uso de estas métricas depende del problema de clasificación específico. Un resumen general de las métricas se presentará más adelante, en la {numref}``.
+Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Estos algoritmos funcionan descubriendo patrones ocultos o grupos en los datos. Ejemplos de tareas comunes de algoritmos no-supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo, detección de anomalías y clasificación.
 
 (ml-HEP)=
 ## Aprendizaje automático en HEP

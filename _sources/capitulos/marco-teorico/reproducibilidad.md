@@ -1,5 +1,5 @@
 (rpd)=
-# Reproducibilidad
+# Olimpiadas LHC 2020 y la importancia de la reproducibilidad
 En 1973, Robert Merton describió el ethos de la ciencia moderna a través de cuatro características principales{cite}`merton_storer_1973`:
 - **Universalismo**: las pretensiones de verdad, cualquiera que sea su fuente, deben estar sujetas a criterios impersonales preestablecidos, en consonancia con la observación y con el conocimiento previamente confirmado.
 - **Comunismo**: los hallazgos de la ciencia son producto de la colaboración social y se asignan a la comunidad. El derecho del científico a "su propiedad" intelectual se limita al reconocimiento y la estima que, si la institución funciona con un mínimo de eficiencia, es más o menos proporcional a la importancia del aporte al fondo común de conocimiento.
@@ -44,11 +44,11 @@ Existen distintas licencias según el tipo de contenido{cite}`choosealicense`. P
 
 (rpd-barreras)=
 ## Barreras para la reproducibilidad
-A pesar de que hacer investigación reproducible es beneficioso para la comunidad científica, existe poco incentivo a nivel académico para llevarla a cabo:
+A pesar de que hacer investigación reproducible es beneficioso para la comunidad científica, no siempre se incentivan estas prácticas de manera activa. Algunas de las razones que se presentan son:
 - Al publicar todos los pasos de una investigación hay mayor posibilidad de que alguien pueda encontrar errores. Compartir errores no es incentivado por la academia, por lo que puede ser difícil decidir hacer ciencia abierta.
 - El sesgo hacia la publicación de hallazgos positivos o estadísticamente significativos{cite}`nature_noevidence` implica que muchas investigaciones, al no obtener el resultado deseado, son descartadas, desincentivando el proceso de documentación.
 - Las investigaciones reproducibles pueden ser revisadas más a profundidad en el proceso de revisión por pares, por lo que pueden estar sujetas a mayores estándares.
-- El sistema de promoción académica suele recompensar investigaciones novedosas. Publicar una investigación puede ser contraproducente para obtener financiación y promoción ya que facilita que otras investigaciones hagan el mismo trabajo.
+- El sistema de promoción académica suele recompensar investigaciones novedosas. Publicar una investigación facilita que otras investigaciones hagan el mismo trabajo, por lo que puede ser más difícil obtener financiación y promoción.
 
 Otras barreras están relacionadas a retos técnicos. Por ejemplo, en el área ciencia de datos, la complejidad del análisis y el gran volumen de almacenamiento de los datos dificultan el proceso de documentar y publicar toda la información necesaria para reproducir exactamente un resultado. Además, la tecnología evoluciona rápidamente, por lo que puede ser difícil reproducir resultados que se obtuvieron utilizando software que puede no ser compatible con nuevas herramientas. 
 
