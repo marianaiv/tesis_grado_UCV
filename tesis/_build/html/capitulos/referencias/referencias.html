@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+
+<html lang="spanish">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Referencias &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="prev" title="1.7. Olimpiadas LHC 2020 y la importancia de la reproducibilidad" href="../marco-teorico/reproducibilidad.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="spanish">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_ucv.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../marco-teorico/resumen.html">
+   1. Marco teórico
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/modelo-estandar.html">
+     1.1. El módelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/cromodinamica-cuantica.html">
+     1.2. Cromodinámica cuántica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/mas-alla-del-ms.html">
+     1.3. Más allá del modelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html">
+     1.4. Reconstrucción de jets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/aprendizaje-automatico.html">
+     1.5. Aprendizaje automático
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
+     1.6. El uso del aprendizaje automático y las Olimpiadas LHC 2020
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
+     1.7. Olimpiadas LHC 2020 y la importancia de la reproducibilidad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/capitulos/referencias/referencias.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
+                    class="fab fa-github"></i>repositorio</button></a>
+        <a class="issues-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/referencias/referencias.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/referencias/referencias.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Referencias</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="referencias">
+<h1><span class="section-number">2. </span>Referencias<a class="headerlink" href="#referencias" title="Enlazar permanentemente con este título">¶</a></h1>
+<p id="id1"><dl class="citation">
+<dt class="label" id="id102"><span class="brackets">1</span></dt>
+<dd><p>G. Aad and others. The ATLAS Experiment at the CERN Large Hadron Collider. <em>JINST</em>, 3:S08003, 2008. <a class="reference external" href="https://doi.org/10.1088/1748-0221/3/08/S08003">doi:10.1088/1748-0221/3/08/S08003</a>.</p>
+</dd>
+<dt class="label" id="id103"><span class="brackets">2</span></dt>
+<dd><p>S. Chatrchyan and others. The CMS Experiment at the CERN LHC. <em>JINST</em>, 3:S08004, 2008. <a class="reference external" href="https://doi.org/10.1088/1748-0221/3/08/S08004">doi:10.1088/1748-0221/3/08/S08004</a>.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">3</span></dt>
+<dd><p>Aad et al. Observation of a new particle in the search for the standard model higgs boson with the atlas detector at the lhc. <em>Physics Letters B</em>, 716(1):1–29, 2012. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S037026931200857X">https://www.sciencedirect.com/science/article/pii/S037026931200857X</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.physletb.2012.08.020">doi:https://doi.org/10.1016/j.physletb.2012.08.020</a>.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">4</span></dt>
+<dd><p>Chatrchyan et al. Observation of a new boson at a mass of 125 gev with the cms experiment at the lhc. <em>Physics Letters B</em>, 716(1):30–61, 2012. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0370269312008581">https://www.sciencedirect.com/science/article/pii/S0370269312008581</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.physletb.2012.08.021">doi:https://doi.org/10.1016/j.physletb.2012.08.021</a>.</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets">5</span></dt>
+<dd><p>Aad et al. Combined Measurement of the Higgs Boson Mass in $pp$ Collisions at $\sqrt s=7$ and 8 TeV with the ATLAS and CMS Experiments. <em>Physical Review Letters</em>, 114:191803, May 2015. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevLett.114.191803">https://link.aps.org/doi/10.1103/PhysRevLett.114.191803</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.114.191803">doi:10.1103/PhysRevLett.114.191803</a>.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">6</span></dt>
+<dd><p>Lydia Audrey Beresford. <em>Searches for Dijet Resonances using $\sqrt s = 13$ TeV proton–proton collision data recorded by the ATLAS detector at the Large Hadron Collider. Dijet Resognance Searches with the ATLAS detector at 13 TeV and jet punch-through corrections</em>. PhD thesis, University of Oxford, 2017. URL: <a class="reference external" href="https://cds.cern.ch/record/2642397">https://cds.cern.ch/record/2642397</a>, <a class="reference external" href="https://doi.org/10.1007/978-3-319-97520-7">doi:10.1007/978-3-319-97520-7</a>.</p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">7</span></dt>
+<dd><p>Guido Altarelli. The standard model of particle physics. 2005. <a class="reference external" href="https://arxiv.org/abs/hep-ph/0510281">arXiv:hep-ph/0510281</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">8</span></dt>
+<dd><p>T. Morii, C. S. Lim, and S. N. Mukherjee. <em>Introduction</em>. World Scientific, 2004.</p>
+</dd>
+<dt class="label" id="id104"><span class="brackets">9</span></dt>
+<dd><p>Wikimedia Commons contributors. File:modelo estándar.svg. 2022. URL: <a class="reference external" href="https://commons.wikimedia.org/w/index.php?title=File:Modelo_Est%C3%A1ndar.svg&amp;oldid=627837863">https://commons.wikimedia.org/w/index.php?title=File:Modelo_Est%C3%A1ndar.svg&amp;oldid=627837863</a>.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets">10</span></dt>
+<dd><p>Reina Coromoto Camacho Toro. <em>Search of new resonances decaying into top quark pairs with the ATLAS detector at the LHC and jet calibration studies</em>. Theses, Université Blaise Pascal - Clermont-Ferrand II, July 2012. URL: <a class="reference external" href="https://tel.archives-ouvertes.fr/tel-00818796">https://tel.archives-ouvertes.fr/tel-00818796</a>.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">11</span></dt>
+<dd><p>C. P. Burgess and Guy D. Moore. <em>The standard model: general features</em>. Cambridge Univ. Press, 2013.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">12</span></dt>
+<dd><p>Peter W. Higgs. Broken symmetries and the masses of gauge bosons. <em>Physical Review Letters</em>, 13:508–509, Oct 1964. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevLett.13.508">https://link.aps.org/doi/10.1103/PhysRevLett.13.508</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.13.508">doi:10.1103/PhysRevLett.13.508</a>.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">13</span></dt>
+<dd><p>F. Englert and R. Brout. Broken symmetry and the mass of gauge vector mesons. <em>Physical Review Letters</em>, 13:321–323, Aug 1964. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevLett.13.321">https://link.aps.org/doi/10.1103/PhysRevLett.13.321</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.13.321">doi:10.1103/PhysRevLett.13.321</a>.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets">14</span></dt>
+<dd><p>C Sutton. Quantum Chromodynamics. Oct 2016. [Online; accessed 24. Mar. 2022]. URL: <a class="reference external" href="https://www.britannica.com/science/quantum-chromodynamics">https://www.britannica.com/science/quantum-chromodynamics</a>.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets">15</span></dt>
+<dd><p>David Griffiths. <em>Feynmann Rules for Chromodynamics</em>. John Wiley &amp; Sons, Inc., 1987.</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets">16</span></dt>
+<dd><p>The Nobel Prize. The Nobel Prize in Physics 2004. URL: <a class="reference external" href="https://www.nobelprize.org/prizes/physics/2004/summary/">https://www.nobelprize.org/prizes/physics/2004/summary/</a> (visited on 2022-03-25).</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets">17</span></dt>
+<dd><p>Bethke, Siegfried, Dissertori, Günther, and Salam, Gavin. World summary of $\alpha _s$(2015). <em>EPJ Web of Conferences</em>, 120:07005, 2016. URL: <a class="reference external" href="https://doi.org/10.1051/epjconf/201612007005">https://doi.org/10.1051/epjconf/201612007005</a>, <a class="reference external" href="https://doi.org/10.1051/epjconf/201612007005">doi:10.1051/epjconf/201612007005</a>.</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets">18</span></dt>
+<dd><p>M Mangano. QCD and the physics of Hadronic Collisions. <em>CERN Yellow Reports: School Proceedings</em>, 4:27–62. 36 p, 2018. URL: <a class="reference external" href="http://cds.cern.ch/record/2674114">http://cds.cern.ch/record/2674114</a>, <a class="reference external" href="https://doi.org/10.23730/CYRSP-2018-004.27">doi:10.23730/CYRSP-2018-004.27</a>.</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets">19</span></dt>
+<dd><p>Zachary L Marshall. <em>A Measurement of Jet Shapes in Proton-Proton Collisions at 7.0 TeV Center-of-Mass Energy with the ATLAS Detector at the Large Hadron Collider</em>. PhD thesis, California Institute of Technology, 2010. Presented on 09 Nov 2010. URL: <a class="reference external" href="https://cds.cern.ch/record/1308447">https://cds.cern.ch/record/1308447</a>.</p>
+</dd>
+<dt class="label" id="id17"><span class="brackets">20</span></dt>
+<dd><p>ROBERT M. HARRIS and KONSTANTINOS KOUSOURIS. SEARCHES FOR DIJET RESONANCES AT HADRON COLLIDERS. <em>International Journal of Modern Physics A</em>, 26(30n31):5005–5055, dec 2011. URL: <a class="reference external" href="https://doi.org/10.1142%2Fs0217751x11054905">https://doi.org/10.1142%2Fs0217751x11054905</a>, <a class="reference external" href="https://doi.org/10.1142/s0217751x11054905">doi:10.1142/s0217751x11054905</a>.</p>
+</dd>
+<dt class="label" id="id20"><span class="brackets">21</span></dt>
+<dd><p>W. N Cottingham and D. A Greenwood. <em>An introduction to the standard model of particle physics</em>. Cambridge University Press, 2007.</p>
+</dd>
+<dt class="label" id="id22"><span class="brackets">22</span></dt>
+<dd><p>Deepak Kar. Theoretical view of collisions and simulating them. In <em>Experimental Particle Physics</em>, 2053-2563, pages 4–1 to 4–40. IOP Publishing, 2019. URL: <a class="reference external" href="https://dx.doi.org/10.1088/2053-2563/ab1be6ch4">https://dx.doi.org/10.1088/2053-2563/ab1be6ch4</a>, <a class="reference external" href="https://doi.org/10.1088/2053-2563/ab1be6ch4">doi:10.1088/2053-2563/ab1be6ch4</a>.</p>
+</dd>
+<dt class="label" id="id21"><span class="brackets">23</span></dt>
+<dd><p>C. P. Burgess and Guy D. Moore. <em>Hadronic Interactions</em>. Cambridge Univ. Press, 2013.</p>
+</dd>
+<dt class="label" id="id36"><span class="brackets">24</span></dt>
+<dd><p>Tomio Kobayashi. Experimental verification of the standard model of particle physics. <em>Proceedings of the Japan Academy, Series B</em>, 97:211–235, 05 2021. <a class="reference external" href="https://doi.org/10.2183/pjab.97.013">doi:10.2183/pjab.97.013</a>.</p>
+</dd>
+<dt class="label" id="id37"><span class="brackets">25</span></dt>
+<dd><p>National Research Council. <em>The Past 25 Years: Establishing the Standard Model</em>. The National Academies Press, 1998. URL: <a class="reference external" href="https://nap.nationalacademies.org/catalog/6045/elementary-particle-physics-revealing-the-secrets-of-energy-and-matter">https://nap.nationalacademies.org/catalog/6045/elementary-particle-physics-revealing-the-secrets-of-energy-and-matter</a>, <a class="reference external" href="https://doi.org/10.17226/6045">doi:10.17226/6045</a>.</p>
+</dd>
+<dt class="label" id="id105"><span class="brackets">26</span></dt>
+<dd><p><strong>missing author in Evans:2008zzb</strong></p>
+</dd>
+<dt class="label" id="id38"><span class="brackets">27</span></dt>
+<dd><p>Matthew Philip Mccullough. Beyond the Standard Model. CERN Summer School Lectures. 2019. Accessed 01/04/22. URL: <a class="reference external" href="https://summerstudent.web.cern.ch/lectures-2019/beyond-standard-model">https://summerstudent.web.cern.ch/lectures-2019/beyond-standard-model</a>.</p>
+</dd>
+<dt class="label" id="id40"><span class="brackets">28</span></dt>
+<dd><p>Andre de Gouvea. Neutrino masses and mixing - theory. 2009. URL: <a class="reference external" href="https://arxiv.org/abs/0902.4656">https://arxiv.org/abs/0902.4656</a>, <a class="reference external" href="https://doi.org/10.48550/ARXIV.0902.4656">doi:10.48550/ARXIV.0902.4656</a>.</p>
+</dd>
+<dt class="label" id="id41"><span class="brackets">29</span></dt>
+<dd><p>John Ellis. Outstanding questions: physics beyond the standard model. <em>Philos. Trans. A Math. Phys. Eng. Sci.</em>, 370(1961):818–830, feb 2012.</p>
+</dd>
+<dt class="label" id="id42"><span class="brackets">30</span></dt>
+<dd><p>Michael Paul Gough. Beyond lcdm: bits join the dark side. 2016. <a class="reference external" href="https://arxiv.org/abs/arXiv:1607.00330">arXiv:arXiv:1607.00330</a>.</p>
+</dd>
+<dt class="label" id="id45"><span class="brackets">31</span></dt>
+<dd><p>Michael Creutz. Cp violation in qcd. 2018. URL: <a class="reference external" href="https://arxiv.org/abs/1810.03543">https://arxiv.org/abs/1810.03543</a>, <a class="reference external" href="https://doi.org/10.48550/ARXIV.1810.03543">doi:10.48550/ARXIV.1810.03543</a>.</p>
+</dd>
+<dt class="label" id="id46"><span class="brackets">32</span></dt>
+<dd><p>Thomas Mannel. Theory and phenomenology of CP violation. <em>Nuclear Physics B - Proceedings Supplements</em>, 167:115–119, 2007. <a class="reference external" href="https://doi.org/10.1016/j.nuclphysbps.2006.12.083">doi:10.1016/j.nuclphysbps.2006.12.083</a>.</p>
+</dd>
+<dt class="label" id="id47"><span class="brackets">33</span></dt>
+<dd><p>Emily Smith. The hierarchy problem. 2019. Accessed 02/04/22. URL: <a class="reference external" href="https://homes.psd.uchicago.edu/~sethi/Teaching/P445-S2019/Emily_Smith_QFT_III_Final_Paper.pdf">https://homes.psd.uchicago.edu/~sethi/Teaching/P445-S2019/Emily_Smith_QFT_III_Final_Paper.pdf</a>.</p>
+</dd>
+<dt class="label" id="id49"><span class="brackets">34</span></dt>
+<dd><p>Glenn Elert. The physics hypertextbook: beyond the standard model. 1998. Accessed 02/04/2022. URL: <a class="reference external" href="https://physics.info/beyond/">https://physics.info/beyond/</a>.</p>
+</dd>
+<dt class="label" id="id48"><span class="brackets">35</span></dt>
+<dd><p>T S Virdee. Beyond the standard model of particle physics. <em>Philosophical Transactions of The Royal Society A Mathematical Physical and Engineering Sciences</em>, 374(2075):20150259, August 2016.</p>
+</dd>
+<dt class="label" id="id52"><span class="brackets">36</span></dt>
+<dd><p>York University. Beyond the standard model. Accessed 02/04/2022. URL: <a class="reference external" href="https://hep.info.yorku.ca/beyond-the-standard-model/">https://hep.info.yorku.ca/beyond-the-standard-model/</a>.</p>
+</dd>
+<dt class="label" id="id53"><span class="brackets">37</span></dt>
+<dd><p>TH. KALUZA. On the unification problem in physics. <em>International Journal of Modern Physics D</em>, 27(14):1870001, oct 2018. URL: <a class="reference external" href="https://doi.org/10.1142%2Fs0218271818700017">https://doi.org/10.1142%2Fs0218271818700017</a>, <a class="reference external" href="https://doi.org/10.1142/s0218271818700017">doi:10.1142/s0218271818700017</a>.</p>
+</dd>
+<dt class="label" id="id54"><span class="brackets">38</span></dt>
+<dd><p>Oskar Klein. Quantum Theory and Five-Dimensional Theory of Relativity. (In German and English). <em>Zeitschrift für Physik A Hadrons and nuclei</em>, 37:895–906, 1926. <a class="reference external" href="https://doi.org/10.1007/BF01397481">doi:10.1007/BF01397481</a>.</p>
+</dd>
+<dt class="label" id="id56"><span class="brackets">39</span></dt>
+<dd><p>Abdel Pérez-Lorenzana. An introduction to extra dimensions. <em>Journal of Physics: Conference Series</em>, 18:224–269, jan 2005. URL: <a class="reference external" href="https://doi.org/10.1088/1742-6596/18/1/006">https://doi.org/10.1088/1742-6596/18/1/006</a>, <a class="reference external" href="https://doi.org/10.1088/1742-6596/18/1/006">doi:10.1088/1742-6596/18/1/006</a>.</p>
+</dd>
+<dt class="label" id="id57"><span class="brackets">40</span></dt>
+<dd><p>Kevin Wray. An introduction to string theory. 2011. Accessed 03/04/2022. URL: <a class="reference external" href="https://math.berkeley.edu/~kwray/papers/string_theory.pdf">https://math.berkeley.edu/~kwray/papers/string_theory.pdf</a>.</p>
+</dd>
+<dt class="label" id="id50"><span class="brackets">41</span></dt>
+<dd><p>ATLAS Collaboration. SUSY March 2022 Summary Plot Update. 2022. URL: <a class="reference external" href="https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2022-013/">https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2022-013/</a>.</p>
+</dd>
+<dt class="label" id="id107"><span class="brackets">42</span></dt>
+<dd><p>Jeong Han Kim, Kyoungchul Kong, Benjamin Nachman, and Daniel Whiteson. The motivation and status of two-body resonance decays after the LHC run 2 and beyond. <em>Journal of High Energy Physics</em>, apr 2020. URL: <a class="reference external" href="https://doi.org/10.1007%2Fjhep04%282020%29030">https://doi.org/10.1007%2Fjhep04%282020%29030</a>, <a class="reference external" href="https://doi.org/10.1007/jhep04(2020)030">doi:10.1007/jhep04(2020)030</a>.</p>
+</dd>
+<dt class="label" id="id111"><span class="brackets">43</span></dt>
+<dd><p>Robert M. Harris. Search for new particles decaying to dijets, bb\=, and tt\= at CDF. In <em>AIP Conference Proceedings</em>. AIP, 1996. URL: <a class="reference external" href="https://doi.org/10.1063%2F1.49662">https://doi.org/10.1063%2F1.49662</a>, <a class="reference external" href="https://doi.org/10.1063/1.49662">doi:10.1063/1.49662</a>.</p>
+</dd>
+<dt class="label" id="id108"><span class="brackets">44</span></dt>
+<dd><p>A. M. Sirunyan et al. Search for high mass dijet resonances with a new background prediction method in proton-proton collisions at \textdollar \textdollar  \sqrt$\lbrace $s$\rbrace $ \textdollar \textdollar  = 13 TeV. <em>Journal of High Energy Physics</em>, may 2020. URL: <a class="reference external" href="https://doi.org/10.1007%2Fjhep05%282020%29033">https://doi.org/10.1007%2Fjhep05%282020%29033</a>, <a class="reference external" href="https://doi.org/10.1007/jhep05(2020)033">doi:10.1007/jhep05(2020)033</a>.</p>
+</dd>
+<dt class="label" id="id109"><span class="brackets">45</span></dt>
+<dd><p>M. Aaboud et al. Search for New Phenomena in Dijet Events using 139 fb$^−1$ of $pp$ collisions at $\sqrt s$ = 13TeV collected with the ATLAS Detector. <em>Physical Review D</em>, sep 2017. URL: <a class="reference external" href="https://doi.org/10.1103%2Fphysrevd.96.052004">https://doi.org/10.1103%2Fphysrevd.96.052004</a>, <a class="reference external" href="https://doi.org/10.1103/physrevd.96.052004">doi:10.1103/physrevd.96.052004</a>.</p>
+</dd>
+<dt class="label" id="id110"><span class="brackets">46</span></dt>
+<dd><p>G. Aad et al. Search for New Phenomena in Dijet Mass and Angular Distributions with the ATLAS Detector at √s = 13 TeV. <em>Physics Letters B</em>, 754:302–322, mar 2016. URL: <a class="reference external" href="https://doi.org/10.1016%2Fj.physletb.2016.01.032">https://doi.org/10.1016%2Fj.physletb.2016.01.032</a>, <a class="reference external" href="https://doi.org/10.1016/j.physletb.2016.01.032">doi:10.1016/j.physletb.2016.01.032</a>.</p>
+</dd>
+<dt class="label" id="id112"><span class="brackets">47</span></dt>
+<dd><p>Yang Bai and Bogdan A. Dobrescu. Collider tests of the renormalizable coloron model. <em>Journal of High Energy Physics</em>, apr 2018. URL: <a class="reference external" href="https://doi.org/10.1007%2Fjhep04%282018%29114">https://doi.org/10.1007%2Fjhep04%282018%29114</a>, <a class="reference external" href="https://doi.org/10.1007/jhep04(2018)114">doi:10.1007/jhep04(2018)114</a>.</p>
+</dd>
+<dt class="label" id="id23"><span class="brackets">48</span></dt>
+<dd><p>Deepak Kar. Analysis objects. In <em>Experimental Particle Physics</em>, 2053-2563, pages 3–1 to 3–32. IOP Publishing, 2019. URL: <a class="reference external" href="https://dx.doi.org/10.1088/2053-2563/ab1be6ch3">https://dx.doi.org/10.1088/2053-2563/ab1be6ch3</a>, <a class="reference external" href="https://doi.org/10.1088/2053-2563/ab1be6ch3">doi:10.1088/2053-2563/ab1be6ch3</a>.</p>
+</dd>
+<dt class="label" id="id24"><span class="brackets">49</span></dt>
+<dd><p>John E. Huth and others. Toward a standardization of jet definitions. In <em>1990 DPF Summer Study on High-energy Physics: Research Directions for the Decade (Snowmass 90)</em>, 0134–136. 12 1990.</p>
+</dd>
+<dt class="label" id="id25"><span class="brackets">50</span></dt>
+<dd><p>Ryan Atkin. Review of jet reconstruction algorithms. <em>Journal of Physics: Conference Series</em>, 645:012008, oct 2015. URL: <a class="reference external" href="https://doi.org/10.1088/1742-6596/645/1/012008">https://doi.org/10.1088/1742-6596/645/1/012008</a>, <a class="reference external" href="https://doi.org/10.1088/1742-6596/645/1/012008">doi:10.1088/1742-6596/645/1/012008</a>.</p>
+</dd>
+<dt class="label" id="id27"><span class="brackets">51</span></dt>
+<dd><p>Philipp Schieferdecker. Jet algorithms. 4 2009. URL: <a class="reference external" href="https://twiki.cern.ch/twiki/pub/Sandbox/Lecture/Philipp_Schieferdeckers_Lecture.pdf">https://twiki.cern.ch/twiki/pub/Sandbox/Lecture/Philipp_Schieferdeckers_Lecture.pdf</a>.</p>
+</dd>
+<dt class="label" id="id26"><span class="brackets">52</span></dt>
+<dd><p>Gavin P Salam and Grégory Soyez. A practical seedless infrared-safe cone jet algorithm. <em>Journal of High Energy Physics</em>, 2007(05):086–086, may 2007. URL: <a class="reference external" href="https://doi.org/10.1088%2F1126-6708%2F2007%2F05%2F086">https://doi.org/10.1088%2F1126-6708%2F2007%2F05%2F086</a>, <a class="reference external" href="https://doi.org/10.1088/1126-6708/2007/05/086">doi:10.1088/1126-6708/2007/05/086</a>.</p>
+</dd>
+<dt class="label" id="id30"><span class="brackets">53</span></dt>
+<dd><p>Stephen D. Ellis and Davison E. Soper. Successive combination jet algorithm for hadron collisions. <em>Physical Review D</em>, 48:3160–3166, Oct 1993. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevD.48.3160">https://link.aps.org/doi/10.1103/PhysRevD.48.3160</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevD.48.3160">doi:10.1103/PhysRevD.48.3160</a>.</p>
+</dd>
+<dt class="label" id="id29"><span class="brackets">54</span></dt>
+<dd><p>Matteo Cacciari, Gavin P Salam, and Gregory Soyez. The anti-ktjet clustering algorithm. <em>Journal of High Energy Physics</em>, 2008(04):063–063, apr 2008. URL: <a class="reference external" href="https://doi.org/10.1088/1126-6708/2008/04/063">https://doi.org/10.1088/1126-6708/2008/04/063</a>, <a class="reference external" href="https://doi.org/10.1088/1126-6708/2008/04/063">doi:10.1088/1126-6708/2008/04/063</a>.</p>
+</dd>
+<dt class="label" id="id31"><span class="brackets">55</span></dt>
+<dd><p>Yu.L Dokshitzer, G.D Leder, S Moretti, and B.R Webber. Better jet clustering algorithms. <em>Journal of High Energy Physics</em>, 1997(08):001–001, aug 1997. URL: <a class="reference external" href="https://doi.org/10.1088/1126-6708/1997/08/001">https://doi.org/10.1088/1126-6708/1997/08/001</a>, <a class="reference external" href="https://doi.org/10.1088/1126-6708/1997/08/001">doi:10.1088/1126-6708/1997/08/001</a>.</p>
+</dd>
+<dt class="label" id="id28"><span class="brackets">56</span></dt>
+<dd><p>Matteo Cacciari, Gavin P. Salam, and Gregory Soyez. FastJet user manual. <em>The European Physical Journal C</em>, mar 2012. URL: <a class="reference external" href="https://doi.org/10.1140%2Fepjc%2Fs10052-012-1896-2">https://doi.org/10.1140%2Fepjc%2Fs10052-012-1896-2</a>, <a class="reference external" href="https://doi.org/10.1140/epjc/s10052-012-1896-2">doi:10.1140/epjc/s10052-012-1896-2</a>.</p>
+</dd>
+<dt class="label" id="id106"><span class="brackets">57</span></dt>
+<dd><p>Eric A. Moreno, Thong Q. Nguyen, Jean-Roch Vlimant, Olmo Cerri, Harvey B. Newman, Avikar Periwal, Maria Spiropulu, Javier M. Duarte, and Maurizio Pierini. Interaction networks for the identification of boosted $h\ensuremath \rightarrow b\overline b$ decays. <em>Phys. Rev. D</em>, 102:012010, Jul 2020. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevD.102.012010">https://link.aps.org/doi/10.1103/PhysRevD.102.012010</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevD.102.012010">doi:10.1103/PhysRevD.102.012010</a>.</p>
+</dd>
+<dt class="label" id="id32"><span class="brackets">58</span></dt>
+<dd><p>Deepak Kar. Advanced topic: jet substructure. In <em>Experimental Particle Physics</em>, 2053-2563, pages 8–1 to 8–28. IOP Publishing, 2019. URL: <a class="reference external" href="https://dx.doi.org/10.1088/2053-2563/ab1be6ch8">https://dx.doi.org/10.1088/2053-2563/ab1be6ch8</a>, <a class="reference external" href="https://doi.org/10.1088/2053-2563/ab1be6ch8">doi:10.1088/2053-2563/ab1be6ch8</a>.</p>
+</dd>
+<dt class="label" id="id62"><span class="brackets">59</span></dt>
+<dd><p>Dimitri Bourilkov. Machine and deep learning applications in particle physics. <em>International Journal of Modern Physics A</em>, 34(35):1930019, dec 2019. URL: <a class="reference external" href="https://doi.org/10.1142%2Fs0217751x19300199">https://doi.org/10.1142%2Fs0217751x19300199</a>, <a class="reference external" href="https://doi.org/10.1142/s0217751x19300199">doi:10.1142/s0217751x19300199</a>.</p>
+</dd>
+<dt class="label" id="id77"><span class="brackets">60</span></dt>
+<dd><p>Dan Guest, Kyle Cranmer, and Daniel Whiteson. Deep learning and its application to LHC physics. <em>Annual Review of Nuclear and Particle Science</em>, 68(1):161–181, oct 2018. URL: <a class="reference external" href="https://doi.org/10.1146%2Fannurev-nucl-101917-021019">https://doi.org/10.1146%2Fannurev-nucl-101917-021019</a>, <a class="reference external" href="https://doi.org/10.1146/annurev-nucl-101917-021019">doi:10.1146/annurev-nucl-101917-021019</a>.</p>
+</dd>
+<dt class="label" id="id81"><span class="brackets">61</span></dt>
+<dd><p>Pushpalatha C. Bhat, Harrison B. Prosper, and Scott S. Snyder. Bayesian analysis of multisource data. <em>Physics Letters B</em>, 407:73–78, 1997. <a class="reference external" href="https://doi.org/10.1016/S0370-2693(97)00723-5">doi:10.1016/S0370-2693(97)00723-5</a>.</p>
+</dd>
+<dt class="label" id="id82"><span class="brackets">62</span></dt>
+<dd><p>Fabricio Jimenez. <em>Model independent searches for New Physics using Machine Learning at the ATLAS experiment</em>. Theses, Université Clermont Auvergne [2017-2020], September 2019. URL: <a class="reference external" href="https://tel.archives-ouvertes.fr/tel-02402488">https://tel.archives-ouvertes.fr/tel-02402488</a>.</p>
+</dd>
+<dt class="label" id="id65"><span class="brackets">63</span></dt>
+<dd><p>HEP ML Community. A Living Review of Machine Learning for Particle Physics. URL: <a class="reference external" href="https://iml-wg.github.io/HEPML-LivingReview/">https://iml-wg.github.io/HEPML-LivingReview/</a>.</p>
+</dd>
+<dt class="label" id="id63"><span class="brackets">64</span></dt>
+<dd><p>Pankaj Mehta, Marin Bukov, Ching-Hao Wang, Alexandre G.R. Day, Clint Richardson, Charles K. Fisher, and David J. Schwab. A high-bias, low-variance introduction to machine learning for physicists. <em>Physics Reports</em>, 810:1–124, may 2019. URL: <a class="reference external" href="https://doi.org/10.1016%2Fj.physrep.2019.03.001">https://doi.org/10.1016%2Fj.physrep.2019.03.001</a>, <a class="reference external" href="https://doi.org/10.1016/j.physrep.2019.03.001">doi:10.1016/j.physrep.2019.03.001</a>.</p>
+</dd>
+<dt class="label" id="id64"><span class="brackets">65</span></dt>
+<dd><p>Karagiorgi et al. Machine learning in the search for new fundamental physics. 2021. URL: <a class="reference external" href="https://arxiv.org/abs/2112.03769">https://arxiv.org/abs/2112.03769</a>, <a class="reference external" href="https://doi.org/10.48550/ARXIV.2112.03769">doi:10.48550/ARXIV.2112.03769</a>.</p>
+</dd>
+<dt class="label" id="id73"><span class="brackets">66</span></dt>
+<dd><p>Gilles Louppe. Understanding random forests: from theory to practice. 2015. <a class="reference external" href="https://arxiv.org/abs/1407.7502">arXiv:1407.7502</a>.</p>
+</dd>
+<dt class="label" id="id71"><span class="brackets">67</span></dt>
+<dd><p>Robert E. Schapire. <em>The Boosting Approach to Machine Learning: An Overview</em>, pages 149–171. Springer New York, New York, NY, 2003. URL: <a class="reference external" href="https://doi.org/10.1007/978-0-387-21579-2_9">https://doi.org/10.1007/978-0-387-21579-2_9</a>, <a class="reference external" href="https://doi.org/10.1007/978-0-387-21579-2_9">doi:10.1007/978-0-387-21579-2_9</a>.</p>
+</dd>
+<dt class="label" id="id83"><span class="brackets">68</span></dt>
+<dd><p>Katherine Fraser, Samuel Homiller, Rashmish K. Mishra, Bryan Ostdiek, and Matthew D. Schwartz. Challenges for unsupervised anomaly detection in particle physics. <em>Journal of High Energy Physics</em>, mar 2022. URL: <a class="reference external" href="https://doi.org/10.1007%2Fjhep03%282022%29066">https://doi.org/10.1007%2Fjhep03%282022%29066</a>, <a class="reference external" href="https://doi.org/10.1007/jhep03(2022)066">doi:10.1007/jhep03(2022)066</a>.</p>
+</dd>
+<dt class="label" id="id80"><span class="brackets">69</span></dt>
+<dd><p>Andrea De Simone and Thomas Jacques. Guiding new physics searches with unsupervised learning. <em>The European Physical Journal C</em>, mar 2019. URL: <a class="reference external" href="https://doi.org/10.1140%2Fepjc%2Fs10052-019-6787-3">https://doi.org/10.1140%2Fepjc%2Fs10052-019-6787-3</a>, <a class="reference external" href="https://doi.org/10.1140/epjc/s10052-019-6787-3">doi:10.1140/epjc/s10052-019-6787-3</a>.</p>
+</dd>
+<dt class="label" id="id58"><span class="brackets">70</span></dt>
+<dd><p>Cern - spotlight: the lhc olympics 2006. 2006. URL: <a class="reference external" href="https://public-archive.web.cern.ch/en/Spotlight/SpotlightOlympics-en.html">https://public-archive.web.cern.ch/en/Spotlight/SpotlightOlympics-en.html</a>.</p>
+</dd>
+<dt class="label" id="id59"><span class="brackets">71</span></dt>
+<dd><p>LHC Olympics 2020. Welcome to the home of the lhc olympics 2020! 2020. URL: <a class="reference external" href="https://lhco2020.github.io/homepage/">https://lhco2020.github.io/homepage/</a>.</p>
+</dd>
+<dt class="label" id="id60"><span class="brackets">72</span></dt>
+<dd><p>Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. <em>Reports on Progress in Physics</em>, 84(12):124201, dec 2021. URL: <a class="reference external" href="https://doi.org/10.1088%2F1361-6633%2Fac36b9">https://doi.org/10.1088%2F1361-6633%2Fac36b9</a>, <a class="reference external" href="https://doi.org/10.1088/1361-6633/ac36b9">doi:10.1088/1361-6633/ac36b9</a>.</p>
+</dd>
+<dt class="label" id="id92"><span class="brackets">73</span></dt>
+<dd><p>Robert K Merton and Norman William Storer. <em>The sociology of science</em>. University of Chicago Press, 1973.</p>
+</dd>
+<dt class="label" id="id95"><span class="brackets">74</span></dt>
+<dd><p>Karen White. Publications output: u.s. trends and international comparisons. 2021. URL: <a class="reference external" href="https://ncses.nsf.gov/pubs/nsb20214/">https://ncses.nsf.gov/pubs/nsb20214/</a>.</p>
+</dd>
+<dt class="label" id="id93"><span class="brackets">75</span></dt>
+<dd><p>National Academies of Sciences, Engineering and Medicine. <em>Reproducibility and Replicability in Science</em>. The National Academies Press, Washington, DC, 2019. ISBN 978-0-309-48616-3. URL: <a class="reference external" href="https://nap.nationalacademies.org/catalog/25303/reproducibility-and-replicability-in-science">https://nap.nationalacademies.org/catalog/25303/reproducibility-and-replicability-in-science</a>, <a class="reference external" href="https://doi.org/10.17226/25303">doi:10.17226/25303</a>.</p>
+</dd>
+<dt class="label" id="id94"><span class="brackets">76</span></dt>
+<dd><p>Monya Baker. 1,500 scientists lift the lid on reproducibility. <em>Nature</em>, 533(7604):452–454, May 2016. URL: <a class="reference external" href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>, <a class="reference external" href="https://doi.org/10.1038/533452a">doi:10.1038/533452a</a>.</p>
+</dd>
+<dt class="label" id="id96"><span class="brackets">77</span></dt>
+<dd><p>Nature. Reality check on reproducibility. <em>Nature</em>, 533(7604):437–437, May 2016. URL: <a class="reference external" href="https://doi.org/10.1038/533437a">https://doi.org/10.1038/533437a</a>, <a class="reference external" href="https://doi.org/10.1038/533437a">doi:10.1038/533437a</a>.</p>
+</dd>
+<dt class="label" id="id97"><span class="brackets">78</span></dt>
+<dd><p>The Turing Way Community. The Turing Way: A handbook for reproducible, ethical and collaborative research. November 2021. This work was supported by The UKRI Strategic Priorities Fund under the EPSRC Grant EP/T001569/1, particularly the &quot;Tools, Practices and Systems&quot; theme within that grant, and by The Alan Turing Institute under the EPSRC grant EP/N510129/1. URL: <a class="reference external" href="https://doi.org/10.5281/zenodo.5671094">https://doi.org/10.5281/zenodo.5671094</a>, <a class="reference external" href="https://doi.org/10.5281/zenodo.5671094">doi:10.5281/zenodo.5671094</a>.</p>
+</dd>
+<dt class="label" id="id99"><span class="brackets">79</span></dt>
+<dd><p>Choose an open source license. Accessed: 14-04-2022. URL: <a class="reference external" href="https://choosealicense.com">https://choosealicense.com</a>.</p>
+</dd>
+<dt class="label" id="id100"><span class="brackets">80</span></dt>
+<dd><p>GNU Operating System. Gnu general public license. Accessed: 14-04-2022. URL: <a class="reference external" href="https://www.gnu.org/licenses/gpl-3.0.en.html">https://www.gnu.org/licenses/gpl-3.0.en.html</a>.</p>
+</dd>
+<dt class="label" id="id101"><span class="brackets">81</span></dt>
+<dd><p>Creative Commons. Atribución 4.0 internacional (cc by 4.0). Accessed: 14-04-2022. URL: <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/deed.es">https://creativecommons.org/licenses/by/4.0/deed.es</a>.</p>
+</dd>
+<dt class="label" id="id98"><span class="brackets">82</span></dt>
+<dd><p>Nature Human Behaviour. The importance of no evidence. <em>Nature Human Behaviour</em>, 3(3):197–197, Mar 2019. URL: <a class="reference external" href="https://doi.org/10.1038/s41562-019-0569-7">https://doi.org/10.1038/s41562-019-0569-7</a>, <a class="reference external" href="https://doi.org/10.1038/s41562-019-0569-7">doi:10.1038/s41562-019-0569-7</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos\referencias"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../marco-teorico/reproducibilidad.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">1.7. </span>Olimpiadas LHC 2020 y la importancia de la reproducibilidad</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Por Mariana Vivas, Universidad Central de Venezuela<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

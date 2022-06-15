@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+
+<html lang="spanish">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.2. Cromodinámica cuántica &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="1.3. Más allá del modelo estándar" href="mas-alla-del-ms.html" />
+    <link rel="prev" title="1.1. El módelo estándar" href="modelo-estandar.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="spanish">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo_ucv.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="resumen.html">
+   1. Marco teórico
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="modelo-estandar.html">
+     1.1. El módelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.2. Cromodinámica cuántica
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="mas-alla-del-ms.html">
+     1.3. Más allá del modelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reconstruccion-jets.html">
+     1.4. Reconstrucción de jets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aprendizaje-automatico.html">
+     1.5. Aprendizaje automático
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="olimpiadas-LHC.html">
+     1.6. El uso del aprendizaje automático y las Olimpiadas LHC 2020
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reproducibilidad.html">
+     1.7. Olimpiadas LHC 2020 y la importancia de la reproducibilidad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../referencias/referencias.html">
+   2. Referencias
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/capitulos/marco-teorico/cromodinamica-cuantica.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
+                    class="fab fa-github"></i>repositorio</button></a>
+        <a class="issues-button"
+            href="https://github.com/marianaiv/tesis_grado_UCV/issues/new?title=Issue%20on%20page%20%2Fcapitulos/marco-teorico/cromodinamica-cuantica.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
+        <a class="edit-button" href="https://github.com/marianaiv/tesis_grado_UCV/edit/marco-teorico/tesis/capitulos/marco-teorico/cromodinamica-cuantica.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#libertad-asintotica">
+   1.2.1. Libertad asintótica
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confinamiento">
+   1.2.2. Confinamiento
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formacion-de-jets">
+   1.2.3. Formación de jets
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Cromodinámica cuántica</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#libertad-asintotica">
+   1.2.1. Libertad asintótica
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confinamiento">
+   1.2.2. Confinamiento
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formacion-de-jets">
+   1.2.3. Formación de jets
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="cromodinamica-cuantica">
+<span id="qcd"></span><h1><span class="section-number">1.2. </span>Cromodinámica cuántica<a class="headerlink" href="#cromodinamica-cuantica" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Como se mencionó en la <a class="reference internal" href="modelo-estandar.html#ms-interacciones"><span class="std std-ref">sección anterior</span></a>, la cromodinámica cuántica (QCD, por sus siglas en inglés) es la teoría de la interacción fuerte y describe la dinámica de los quarks y gluones. Es una teoría cuántica de campos no-Abeliana asociada al grupo de simetría <span class="math notranslate nohighlight">\(SU(3)_C\)</span> y construida en analogía a la electrodinámica cuántica<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id13" title="C Sutton. Quantum Chromodynamics. Oct 2016. [Online; accessed 24. Mar. 2022]. URL: https://www.britannica.com/science/quantum-chromodynamics.">14</a>]</span>.</p>
+<p>El bosón predicho por la teoría es el gluon. Al igual que el fotón, es una partícula no-masiva de espín 1 que interactúa con partículas que poseen <em>carga de color</em>. La carga de color es el análogo a la carga eléctrica y es el número cuántico conservado en la teoría. Existen tres tipos de carga para los quarks: rojo, verde y azul (para los anti-quarks: anti-rojo, anti-verde y anti-azul).</p>
+<p>Los gluones poseen carga de color, contrario a los fotones que no poseen carga eléctrica. Existen ocho gluones con superposiciones de cargas de color. Así, los gluones median la interacción fuerte pero también interactúan entre sí, haciendo que el análisis de QCD sea más complejo.</p>
+<p>Los vértices de interacción permitidos por la cromodinámica cuántica son el acople quark-gluon, <span class="math notranslate nohighlight">\(gq\bar{q}\)</span>, como se observa en la <a class="reference internal" href="#qcd-quarkgluon"><span class="std std-numref">Figura 1.2</span></a>, y la interacción propia de tres y cuatro gluones, <em>ggg</em> y <em>gggg</em>, que se puede observar en la <a class="reference internal" href="#qcd-gluongluon"><span class="std std-numref">Figura 1.3</span></a>.</p>
+<div class="figure align-default" id="qcd-quarkgluon">
+<a class="reference internal image-reference" href="../../_images/qcd-quarkgluon.png"><img alt="../../_images/qcd-quarkgluon.png" src="../../_images/qcd-quarkgluon.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-number">Figura 1.2 </span><span class="caption-text">Vértice de interacción <span class="math notranslate nohighlight">\(gq\bar{q}\)</span>. En este vértice en particular, un quark con carga de color rojo (<span class="math notranslate nohighlight">\(r\)</span>) cambia a un quark con carga de color azul (<span class="math notranslate nohighlight">\(b\)</span>) emitiendo un gluon rojo-antiazul (<span class="math notranslate nohighlight">\(r\bar{b}\)</span>)<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id14" title="David Griffiths. Feynmann Rules for Chromodynamics. John Wiley &amp; Sons, Inc., 1987.">15</a>]</span>.</span><a class="headerlink" href="#qcd-quarkgluon" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="figure align-default" id="qcd-gluongluon">
+<a class="reference internal image-reference" href="../../_images/qcd-gluongluon.png"><img alt="../../_images/qcd-gluongluon.png" src="../../_images/qcd-gluongluon.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Figura 1.3 </span><span class="caption-text">Vértice de interacción permitidos en QCD. De izquierda a derecha, interacción propia de tres y cuatro gluones<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id14" title="David Griffiths. Feynmann Rules for Chromodynamics. John Wiley &amp; Sons, Inc., 1987.">15</a>]</span>.</span><a class="headerlink" href="#qcd-gluongluon" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>En teoría de campos, el acople efectivo de un vértice de interacción es modificado por la interacción<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id2" title="Guido Altarelli. The standard model of particle physics. 2005. arXiv:hep-ph/0510281.">7</a>]</span>. Como resultado la intensidad de la fuerza depende del cuadrimomento al cuadrado (<span class="math notranslate nohighlight">\(Q^2\)</span>) entre los participantes. La medida de intensidad de la interacción es la constante de acople de QCD <span class="math notranslate nohighlight">\(\alpha_s\)</span>(<span class="math notranslate nohighlight">\(Q^2\)</span>). El acople es grande para pequeños valores de <span class="math notranslate nohighlight">\(Q\)</span> y disminuye a medida que <span class="math notranslate nohighlight">\(Q\)</span> aumenta. Esto se conoce como confinamiento y libertad asintótica, respectivamente.</p>
+<div class="section" id="libertad-asintotica">
+<span id="qcd-libertadasintotica"></span><h2><span class="section-number">1.2.1. </span>Libertad asintótica<a class="headerlink" href="#libertad-asintotica" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>La libertad asintótica explica que a altas energías las partículas dentro de un hadrón se comportan como libres. El comportamiento de la constante de acople de QCD es contrario al de QED. La libertad asintótica se refiere a que el acople efectivo disminuye al aumentar <span class="math notranslate nohighlight">\(Q\)</span> y desaparece asintóticamente (<a class="reference internal" href="#qcd-alphas"><span class="std std-numref">Figura 1.4</span></a>). Por lo tanto, en regiones donde <span class="math notranslate nohighlight">\(Q\)</span> es grande, o a distancias pequeñas, <span class="math notranslate nohighlight">\(\alpha_s\)</span> es pequeño, es decir, las interacciones de QCD son débiles para valores grandes de <span class="math notranslate nohighlight">\(Q\)</span>. Esto implica que la teoría de perturbación puede ser utilizada para calcular observables.</p>
+<p>La libertad asintótica fue descubierta en 1973 por David Gross, Frank Wilczek y David Politzer. Por ello obtuvieron el premio Nobel de física en 2004<span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id15" title="The Nobel Prize. The Nobel Prize in Physics 2004. URL: https://www.nobelprize.org/prizes/physics/2004/summary/ (visited on 2022-03-25).">16</a>]</span>.</p>
+<div class="figure align-default" id="qcd-alphas">
+<a class="reference internal image-reference" href="../../_images/qcd-alphas.png"><img alt="../../_images/qcd-alphas.png" src="../../_images/qcd-alphas.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Figura 1.4 </span><span class="caption-text">Resumen de medidas experimentales de la constante de acople <span class="math notranslate nohighlight">\(\alpha_s\)</span> en función de la escala de energía <span class="math notranslate nohighlight">\(Q\)</span><span id="id6">[<a class="reference internal" href="../referencias/referencias.html#id16" title="Bethke, Siegfried, Dissertori, Günther, and Salam, Gavin. World summary of $\alpha _s$(2015). EPJ Web of Conferences, 120:07005, 2016. URL: https://doi.org/10.1051/epjconf/201612007005, doi:10.1051/epjconf/201612007005.">17</a>]</span>.</span><a class="headerlink" href="#qcd-alphas" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+</div>
+<div class="section" id="confinamiento">
+<span id="qcd-confinamiento"></span><h2><span class="section-number">1.2.2. </span>Confinamiento<a class="headerlink" href="#confinamiento" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Contrario al concepto de libertad asintótica se encuentra el confinamiento. La fuerza de la interacción, o constante de acople <span class="math notranslate nohighlight">\(\alpha_S\)</span>, aumenta a largas distancias o pequeñas transferencias de momento <span class="math notranslate nohighlight">\(Q\)</span>, como se puede observar en la <a class="reference internal" href="#qcd-alphas"><span class="std std-numref">Figura 1.4</span></a>. Esta propiedad explica la imposibilidad de separar partículas con carga de color, es decir, explica por qué no se observan quarks y gluones libres. También explica que los hadrones se encuentren en estados compuestos de quarks estrechamente unidos y de carga de color neutra. Por ejemplo, al intentar separar un mesón neutro conformado por un quark y un anti-quark, la energía crece hasta que se crean pares de quarks y anti-quarks a partir del vacío y se forman nuevos mesones neutros en lugar de obtener quarks libres</p>
+<p>El aumento de la constante de acople implica que donde <span class="math notranslate nohighlight">\(Q\)</span> es pequeño, o a distancias grandes, los cálculos con teoría de perturbación ya no son válidos; esta región se conoce como no-perturbativa.</p>
+</div>
+<div class="section" id="formacion-de-jets">
+<span id="qcd-jets"></span><h2><span class="section-number">1.2.3. </span>Formación de jets<a class="headerlink" href="#formacion-de-jets" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En colisiones hadrónicas altamente energéticas, la libertad asintótica y el confinamiento son los conceptos principales que explican la formación de jets, el proceso con mayor tasa de producción en colisiones hadrónicas<span id="id7">[<a class="reference internal" href="../referencias/referencias.html#id19" title="M Mangano. QCD and the physics of Hadronic Collisions. CERN Yellow Reports: School Proceedings, 4:27-62. 36 p, 2018. URL: http://cds.cern.ch/record/2674114, doi:10.23730/CYRSP-2018-004.27.">18</a>]</span> y el objeto de estudio de este trabajo. Los jets son lluvias de partículas colimadas, conformadas principalmente por hadrones, pero también por fotones y leptones. Debido a su alta tasa de producción, los jets se han vuelto objetivo de estudio para &quot;redescubrir&quot; procesos esperados del modelo estándar, garantizar que los detectores se comporten correctamente<span id="id8">[<a class="reference internal" href="../referencias/referencias.html#id18" title="Zachary L Marshall. A Measurement of Jet Shapes in Proton-Proton Collisions at 7.0 TeV Center-of-Mass Energy with the ATLAS Detector at the Large Hadron Collider. PhD thesis, California Institute of Technology, 2010. Presented on 09 Nov 2010. URL: https://cds.cern.ch/record/1308447.">19</a>]</span> y buscar nueva física. A continuación se explicará la formación de jets a partir de colisiones protón-protón (<em>pp</em>).</p>
+<p>En la colisión de dos protones altamente energéticos, existe una alta tasa de probabilidad de formación de jets. Un diagrama de la formación de un jet se encuentra en la <a class="reference internal" href="#jets-desarrollo"><span class="std std-numref">Figura 1.6</span></a> y los procesos que intervienen se explican a continuación, utilizando como referencia <span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id5" title="Lydia Audrey Beresford. Searches for Dijet Resonances using $\sqrt s = 13$ TeV proton–proton collision data recorded by the ATLAS detector at the Large Hadron Collider. Dijet Resognance Searches with the ATLAS detector at 13 TeV and jet punch-through corrections. PhD thesis, University of Oxford, 2017. URL: https://cds.cern.ch/record/2642397, doi:10.1007/978-3-319-97520-7.">6</a>, <a class="reference internal" href="../referencias/referencias.html#id17" title="ROBERT M. HARRIS and KONSTANTINOS KOUSOURIS. SEARCHES FOR DIJET RESONANCES AT HADRON COLLIDERS. International Journal of Modern Physics A, 26(30n31):5005–5055, dec 2011. URL: https://doi.org/10.1142%2Fs0217751x11054905, doi:10.1142/s0217751x11054905.">20</a>]</span>.</p>
+<p>El proceso principal es la <strong>dispersión fuerte</strong>: los protones colisionan a altas energías y se produce una interacción con alta transferencia de momento <span class="math notranslate nohighlight">\(Q\)</span> entre los gluones o quarks dentro de los protones, conocidos como partones. En la dispersión fuerte se puede crear una partícula resonante de corta vida o puede suceder un proceso de QCD estándar (<a class="reference internal" href="#jets-qcd"><span class="std std-numref">Figura 1.5</span></a>). Luego, se generan otras partículas mediante decaimientos o procesos de QCD. Por la libertad asintótica, los partones se comportan como partículas libres y la teoría de perturbación es válida para este proceso</p>
+<p>También se consideran procesos de <strong>radiación de estado inicial</strong> (ISR, por sus siglas en inglés) y <strong>radiación de estado final</strong> (FSR, por sus siglas en inglés): las partículas entrantes y salientes pueden radiar otras partículas.</p>
+<p>Por último, están las interacciones entre partones que no participan en la dispersión fuerte y que pueden generar otras partículas, que se conocen como <strong>eventos subyacentes</strong> (UE, por sus siglas en inglés).</p>
+<div class="figure align-default" id="jets-qcd">
+<a class="reference internal image-reference" href="../../_images/jets-qcd.png"><img alt="../../_images/jets-qcd.png" src="../../_images/jets-qcd.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Figura 1.5 </span><span class="caption-text">Diagramas de Feynmann que representan la producción de dos jets en colisiones hadrónicas por procesos de QCD, construidos a partir de los vértices permitidos <span id="id10">[<a class="reference internal" href="../referencias/referencias.html#id19" title="M Mangano. QCD and the physics of Hadronic Collisions. CERN Yellow Reports: School Proceedings, 4:27-62. 36 p, 2018. URL: http://cds.cern.ch/record/2674114, doi:10.23730/CYRSP-2018-004.27.">18</a>]</span>.</span><a class="headerlink" href="#jets-qcd" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>A muy altas energías las partículas generadas se pueden dividir para generar más partículas mediante procesos que todavía no se comprenden completamente<span id="id11">[<a class="reference internal" href="../referencias/referencias.html#id20" title="W. N Cottingham and D. A Greenwood. An introduction to the standard model of particle physics. Cambridge University Press, 2007.">21</a>]</span>. Esta lluvia de partículas se dice colimada porque las partículas se generan a ángulos pequeños del partón original.</p>
+<p>La evolución perturbativa del jet se detendrá una vez que las partículas alcancen bajas energías. A bajas energías, el confinamiento domina el proceso y las partículas creadas se unen para formar partículas de color neutro. Este proceso no-perturbativo se conoce como <strong>hadronización</strong> y ocurre técnicamente fuera del radio del protón<span id="id12">[<a class="reference internal" href="../referencias/referencias.html#id22" title="Deepak Kar. Theoretical view of collisions and simulating them. In Experimental Particle Physics, 2053-2563, pages 4-1 to 4-40. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch4, doi:10.1088/2053-2563/ab1be6ch4.">22</a>]</span>. La hadronización, en conjunto con la radiación de estado final, se conoce como <strong>fragmentación</strong>. A la colección de todos los hadrones resultantes cerca de la dirección del partón original se le llama jet<span id="id13">[<a class="reference internal" href="../referencias/referencias.html#id21" title="C. P. Burgess and Guy D. Moore. Hadronic Interactions. Cambridge Univ. Press, 2013.">23</a>]</span>.</p>
+<p>El proceso explicado anteriormente se muestra en la <a class="reference internal" href="#jets-desarrollo"><span class="std std-numref">Figura 1.6</span></a>:</p>
+<div class="figure align-default" id="jets-desarrollo">
+<a class="reference internal image-reference" href="../../_images/jets-formacion.png"><img alt="../../_images/jets-formacion.png" src="../../_images/jets-formacion.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Figura 1.6 </span><span class="caption-text">Esquema de la formación de jets<span id="id14">[<a class="reference internal" href="../referencias/referencias.html#id4" title="Reina Coromoto Camacho Toro. Search of new resonances decaying into top quark pairs with the ATLAS detector at the LHC and jet calibration studies. Theses, Université Blaise Pascal - Clermont-Ferrand II, July 2012. URL: https://tel.archives-ouvertes.fr/tel-00818796.">10</a>]</span>.</span><a class="headerlink" href="#jets-desarrollo" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>A pesar de ser un proceso complejo, en primera aproximación, las propiedades cinemáticas de un jet son las mismas que las del parton original.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./capitulos\marco-teorico"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="modelo-estandar.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title"><span class="section-number">1.1. </span>El módelo estándar</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="mas-alla-del-ms.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>Más allá del modelo estándar</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Por Mariana Vivas, Universidad Central de Venezuela<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
