@@ -164,13 +164,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../datos-metodos/metricas.html">
-     2.3. Métricas de rendimiento
+    <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html">
+     2.3. Algoritmos LHCO 2020
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html">
-     2.4. Algoritmos LHCO 2020
+    <a class="reference internal" href="../datos-metodos/metricas.html">
+     2.4. Métricas de rendimiento
     </a>
    </li>
    <li class="toctree-l2">
@@ -455,7 +455,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="agrupamiento-de-jets">
 <span id="jets-agrupamiento"></span><h2><span class="section-number">1.4.1. </span>Agrupamiento de jets<a class="headerlink" href="#agrupamiento-de-jets" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>La definición de un jet no es única. De hecho, la existencia de un jet es dependiente de la regla matemática que lo define. Esta regla matemática agrupa los constituyentes del jet de acuerdo a propiedades cinemáticas y se conoce como <em>algoritmo de agrupamiento de jets</em>. A continuación, se explicará acerca de estos algoritmos siguiendo<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id18" title="Zachary L Marshall. A Measurement of Jet Shapes in Proton-Proton Collisions at 7.0 TeV Center-of-Mass Energy with the ATLAS Detector at the Large Hadron Collider. PhD thesis, California Institute of Technology, 2010. Presented on 09 Nov 2010. URL: https://cds.cern.ch/record/1308447.">19</a>, <a class="reference internal" href="../referencias/referencias.html#id23" title="Deepak Kar. Analysis objects. In Experimental Particle Physics, 2053-2563, pages 3-1 to 3-32. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch3, doi:10.1088/2053-2563/ab1be6ch3.">48</a>, <a class="reference internal" href="../referencias/referencias.html#id24" title="John E. Huth and others. Toward a standardization of jet definitions. In 1990 DPF Summer Study on High-energy Physics: Research Directions for the Decade (Snowmass 90), 0134–136. 12 1990.">49</a>]</span></p>
-<p>De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de hadrones del estado final con cuadrimomento <span class="math notranslate nohighlight">\(\{p_1^{had},p_2^{had},\dots,p_n^{had}\}\)</span> a un conjunto de jets con cuadrimomento <span class="math notranslate nohighlight">\(\{p_1^{jet},p_2^{jet},\dots,p_m^{jet}\}\)</span>, donde usualmente <span class="math notranslate nohighlight">\(m&lt;n\)</span>. El momento de cada jet es la suma de los momentos de las partículas que lo constituyen y la suma vectorial define el eje del jet.</p>
+<p>De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de hadrones del estado final con cuadrimomento <span class="math notranslate nohighlight">\(\{p_1^{had},p_2^{had},\dots,p_n^{had}\}\)</span> a un conjunto de jets con cuadrimomento <span class="math notranslate nohighlight">\(\{p_1^{jet},p_2^{jet},\dots,p_m^{jet}\}\)</span>, donde <span class="math notranslate nohighlight">\(m&lt;n\)</span>. El momento de cada jet es la suma de los momentos de las partículas que lo constituyen y la suma vectorial define el eje del jet.</p>
 <p>Todos los algoritmos agrupan objetos cercanos en <span class="math notranslate nohighlight">\(\phi\)</span>, el ángulo azimutal alrededor del eje del haz, y la pseudo-rapidez <span class="math notranslate nohighlight">\(\eta\)</span>, definida como:</p>
 <div class="math notranslate nohighlight" id="equation-jets-eta">
 <span class="eqno">(1.1)<a class="headerlink" href="#equation-jets-eta" title="Enlace permanente a esta ecuación">¶</a></span>\[
@@ -476,7 +476,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Ser robusto con respecto al tipo de datos de entrada.</p></li>
 <li><p>Teóricamente, debe ser <em>colinealmente estable</em>: la separación de un partón en dos partones colineales no debe cambiar el resultado del agrupamiento del jet (<a class="reference internal" href="#jets-colineal"><span class="std std-numref">Figura 1.12</span></a>).</p></li>
 <li><p>Cumplir con la <em>estabilidad infrarroja</em>: la radiación de un gluon suave no debe cambiar el agrupamiento (<a class="reference internal" href="#jets-infrarrojo"><span class="std std-numref">Figura 1.13</span></a>).</p></li>
-<li><p>Baja sensibilidad a los UE y el pileup (PU), que son señales remanentes de otras colisiones.</p></li>
+<li><p>Baja sensibilidad a los UE y el pileup (PU, por sus siglas en inglés), que son señales remanentes de otras colisiones.</p></li>
 <li><p>Fácil de utilizar en cálculos teóricos y análisis experimentales, así como computacionalmente rápidos de ejecutar.</p></li>
 </ul>
 <div class="figure align-default" id="jets-colineal">
@@ -509,8 +509,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ol>
 </div>
-</div><p>Estos pasos se repiten hasta estos pasos hasta que no haya semillas sobre un umbral de energía escogido.</p>
-<p>Ejemplos de algoritmos de cono son: <em>Midpoint Cone</em>, utilizado en Tevatron, <em>Iterative Cone</em> y <em>SISCone</em><span id="id8">[<a class="reference internal" href="../referencias/referencias.html#id26" title="Gavin P Salam and Grégory Soyez. A practical seedless infrared-safe cone jet algorithm. Journal of High Energy Physics, 2007(05):086–086, may 2007. URL: https://doi.org/10.1088%2F1126-6708%2F2007%2F05%2F086, doi:10.1088/1126-6708/2007/05/086.">52</a>]</span>, utilizados anteriormente por CMS.</p>
+</div><p>Estos pasos se repiten hasta que no haya semillas sobre un umbral de energía escogido.</p>
+<p>Ejemplos de algoritmos de cono son: <em>Midpoint Cone</em>, utilizado en Tevatron, <em>Iterative Cone</em> y <em>SISCone</em><span id="id8">[<a class="reference internal" href="../referencias/referencias.html#id26" title="Gavin P Salam and Grégory Soyez. A practical seedless infrared-safe cone jet algorithm. Journal of High Energy Physics, 2007(05):086–086, may 2007. URL: https://doi.org/10.1088%2F1126-6708%2F2007%2F05%2F086, doi:10.1088/1126-6708/2007/05/086.">52</a>]</span>.</p>
 </div>
 <div class="section" id="recombinacion-secuencial">
 <h4><span class="section-number">1.4.1.1.2. </span>Recombinación secuencial<a class="headerlink" href="#recombinacion-secuencial" title="Enlazar permanentemente con este título">¶</a></h4>
@@ -562,7 +562,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>A continuación se describirán algunas de las variables que se calculan para diferenciar entre jets provenientes de distintas partículas, utilizando como referencia <span id="id15">[<a class="reference internal" href="../referencias/referencias.html#id32" title="Deepak Kar. Advanced topic: jet substructure. In Experimental Particle Physics, 2053-2563, pages 8-1 to 8-28. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch8, doi:10.1088/2053-2563/ab1be6ch8.">58</a>]</span>.</p>
 <div class="section" id="masa">
 <h3><span class="section-number">1.4.2.1. </span>Masa<a class="headerlink" href="#masa" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet calculada a partir del cuadri-momento de cada constituyente.</p>
+<p>La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet, calculada a partir del cuadri-momento de cada constituyente.</p>
 <p>La distribución de masa del jet se utiliza para diferenciar jets provenientes de partículas masivas con alto momento transverso, que se caracterizan por una distribución mas angosta y alta, de fondo que cae suavemente, debido a jets ordinarios de quarks y gluones<span id="id16">[<a class="reference internal" href="../referencias/referencias.html#id116" title="Eric A. Moreno, Thong Q. Nguyen, Jean-Roch Vlimant, Olmo Cerri, Harvey B. Newman, Avikar Periwal, Maria Spiropulu, Javier M. Duarte, and Maurizio Pierini. Interaction networks for the identification of boosted $h\ensuremath \rightarrow b\overline b$ decays. Phys. Rev. D, 102:012010, Jul 2020. URL: https://link.aps.org/doi/10.1103/PhysRevD.102.012010, doi:10.1103/PhysRevD.102.012010.">57</a>]</span>.</p>
 </div>
 <div class="section" id="n-subjettiness">

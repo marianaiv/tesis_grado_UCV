@@ -26,8 +26,8 @@ chapters:
   sections:
   - file: capitulos/datos-metodos/datos-lhco
   - file: capitulos/datos-metodos/algoritmos-anomalias
-  - file: capitulos/datos-metodos/metricas
   - file: capitulos/datos-metodos/algoritmos-lhco
+  - file: capitulos/datos-metodos/metricas
   - file: capitulos/datos-metodos/benchtools
 - file: capitulos/analisis-datos/resumen
   sections:

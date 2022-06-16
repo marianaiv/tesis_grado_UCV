@@ -4,8 +4,8 @@ En este proyecto se trata de resolver un problema de clasificación binaria con 
 
 La implementación de aprendizaje automático en este trabajo está comprendida por los siguientes pasos:
 1. Pre-procesamiento de los datos utilizando `benchtool`, descrito en la {numref}`bench-pre`
-2. Divición de los datos en conjuntos mutuamente excluyentes. 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
-3. Ajuste del modelo minimizando una función de pérdida específica, utilizando los datos de entrenamiento. Las funciones se describirán más adelante en esta sección.
+2. División de los datos en conjuntos mutuamente excluyentes, 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
+3. Ajuste de los modelos minimizando una función de pérdida específica para cada uno, utilizando los datos de entrenamiento. Las funciones se describirán más adelante en esta sección.
 4. Evaluación del rendimiento del modelo calculando la función de pérdida con los datos de prueba.
 
 Los algoritmos utilizados en este trabajo se escogieron a partir de su rendimiento, estudiado durante el desarrollo de las herramientas de análisis de datos. Más información sobre cómo se escogieron estos algoritmos se encuentra en la sección *[notebooks](https://github.com/marianaiv/benchtools/tree/main/notebooks)* del repositorio de `benchtools`.

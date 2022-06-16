@@ -162,13 +162,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../datos-metodos/metricas.html">
-     2.3. Métricas de rendimiento
+    <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html">
+     2.3. Algoritmos LHCO 2020
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html">
-     2.4. Algoritmos LHCO 2020
+    <a class="reference internal" href="../datos-metodos/metricas.html">
+     2.4. Métricas de rendimiento
     </a>
    </li>
    <li class="toctree-l2">
@@ -351,7 +351,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="el-uso-del-aprendizaje-automatico-y-las-olimpiadas-lhc-2020">
 <span id="lhco"></span><h1><span class="section-number">1.6. </span>El uso del aprendizaje automático y las Olimpiadas LHC 2020<a class="headerlink" href="#el-uso-del-aprendizaje-automatico-y-las-olimpiadas-lhc-2020" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>La búsqueda de física BSM es parte principal del programa de investigación del LHC. Hasta ahora no ha sido exitosa, pero se mejora constantemente. Sin embargo, es evidente que se requiere perfeccionar las herramientas de análisis para que podamos aprovechar la gran cantidad y complejidad de los datos.</p>
+<p>Hasta ahora la búsqueda de nueva física no ha sido exitosa, pero se mejora constantemente. Sin embargo, es evidente que se requiere perfeccionar las herramientas de análisis para que podamos aprovechar la gran cantidad y complejidad de los datos.</p>
 <p>Con el fin de mejorar el uso de estas herramientas para análisis de datos, se crearon las olimpiadas LHC (LHCO). Para esta competencia, se simulan conjuntos de datos con eventos de nueva física que podrían observarse en el acelerador, con el objetivo de que los participantes interpreten los datos en términos de modelos de física BSM.</p>
 <blockquote>
 <div><p>«La idea principal es que si no lo puedes hacer para el caso simulado, es mucho menos probable que lo puedas hacer para el caso real.
@@ -359,20 +359,20 @@ Hace que las personas aprendan a pensar de manera diferente y aborden el problem
 <p>— Gordy Kane, Universidad de Michigan. Organizador de las LHCO<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id58" title="Cern - spotlight: the lhc olympics 2006. 2006. URL: https://public-archive.web.cern.ch/en/Spotlight/SpotlightOlympics-en.html.">70</a>]</span>.</p>
 </div></blockquote>
 <p>Las olimpiadas de 2020 estuvieron enfocadas en el desarrollo técnicas de aprendizaje automático para la búsqueda de partículas resonantes de BSM.</p>
-<p>El desarrollo de estas herramientas para su uso en HEP se ha visto limitado porque los datos relacionados a colisiones <em>pp</em> no se encuentran públicamente disponibles y son muy diferentes a los datos que se utilizan comúnmente para estudiar estos métodos. Sin embargo, el aprendizaje automático posee un gran potencial para ampliar la búsqueda de nueva física porque permite una aproximación más amplia al problema, como las búsquedas libres de modelo.</p>
-<p>En el caso de las LHCO 2020, se plantean eventos BSM de una partícula resonante con un ancho de decaimiento pequeño y que tenga como producto eventos de múltiples jets. Un ejemplo de esta topología se ilustra a continuación.</p>
+<p>El desarrollo de estas herramientas para su uso en HEP se ha visto limitado porque los datos relacionados a colisiones <em>pp</em> no se encuentran públicamente disponibles y son muy diferentes a los datos que se utilizan comúnmente para estudiar estos métodos. Sin embargo, es de interés el desarrollo de métodos de aprendizaje automático en HEP, puesto que poseen un gran potencial para ampliar la búsqueda de nueva física, permitiendo una aproximación más general al problema, como las búsquedas libres de modelo.</p>
+<p>En las LHCO 2020, se plantean eventos BSM de una partícula resonante con un ancho de decaimiento pequeño y que tenga como producto eventos de múltiples jets. Un ejemplo de esta topología se muestra en la <a class="reference internal" href="#lhco-topologia"><span class="std std-numref">Figura 1.15</span></a>.</p>
 <div class="figure align-default" id="lhco-topologia">
 <a class="reference internal image-reference" href="../../_images/lhco-topologia.png"><img alt="../../_images/lhco-topologia.png" src="../../_images/lhco-topologia.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Figura 1.15 </span><span class="caption-text">Un tipo de topología que se puede encontrar en los datos de las LHCO 2020. Evento dijet por el decaimiento de una partícula de nueva física en dos partículas de nueva física que decaen a jets <span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id59" title="LHC Olympics 2020. Welcome to the home of the lhc olympics 2020! 2020. URL: https://lhco2020.github.io/homepage/.">71</a>]</span>.</span><a class="headerlink" href="#lhco-topologia" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>Para las LHCO 2020 se desarrollaron múltiples conjuntos de datos: una simulación de Monte Carlo del fondo, sin eventos de nueva física o señal, un conjunto de datos con señal para investigación y desarrollo (conjunto R&amp;D) y tres cajas negras que pueden o no contener señal. Las cajas negras son los conjuntos de datos proporcionado para probar los modelos previamente desarrollados y su contenido es desconocido para los participante. Una vez dados los resultados de las olimpiadas, se proporcionaron las etiquetas de señal y fondo para estos conjuntos. Para este trabajo se utilizó el conjunto R&amp;D y la caja negra 1. Detalles acerca de estos cojuntos de datos se discuten en la <a class="reference internal" href="../datos-metodos/datos-lhco.html#datos"><span class="std std-numref">Sección 2.1</span></a>.</p>
+<p>Para las LHCO 2020 se desarrollaron múltiples conjuntos de datos: una simulación de Monte Carlo del fondo, sin eventos de nueva física o señal, un conjunto de datos con señal para investigación y desarrollo (conjunto R&amp;D) y tres cajas negras que pueden o no contener señal. Las cajas negras son los conjuntos de datos proporcionado para probar los modelos previamente desarrollados y su contenido es desconocido para los participante. Para este trabajo se utilizó el conjunto R&amp;D y la caja negra 1. Detalles acerca de estos cojuntos de datos se discuten en la <a class="reference internal" href="../datos-metodos/datos-lhco.html#datos"><span class="std std-numref">Sección 2.1</span></a>.</p>
 <p>Los participantes reportaron al menos alguno de los siguientes resultados:</p>
 <ul class="simple">
 <li><p>Un valor p asociado a la falta de nuevas partículas en el conjunto de datos.</p></li>
 <li><p>Una descripción completa de la nueva física: masas y modos de decaimiento de las nuevas partículas.</p></li>
 <li><p>Numero de eventos de señal en el conjunto de datos (antes de cualquier criterio de selección).</p></li>
 </ul>
-<p>Participaron 18 modelos, que fueron agrupados dependiendo del método utilizado: 9 modelos no supervisados, 5 modelos débilmente supervisados y 4 modelos semi-supervisados o supervisados. Una descripción detallada de los modelos a utilizar en este trabajo se encuentra en la <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html#alglhco"><span class="std std-numref">Sección 2.4</span></a>.Los resultados individuales de cada modelo, así como mayor información acerca de cada aspecto de la competencia, se encuentra en <span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">72</a>]</span>.</p>
+<p>Participaron 18 modelos, que fueron agrupados dependiendo del método utilizado: 9 modelos no supervisados, 5 modelos débilmente supervisados y 4 modelos semi-supervisados o supervisados. Una descripción detallada de los modelos a utilizar en este trabajo se encuentra en la <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html#alglhco"><span class="std std-numref">Sección 2.3</span></a>. Los resultados individuales de cada modelo, así como mayor información acerca de cada aspecto de la competencia, se encuentra en <span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">72</a>]</span>.</p>
 </div>
 
     <script type="text/x-thebe-config">

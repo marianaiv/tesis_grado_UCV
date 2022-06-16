@@ -6,7 +6,7 @@ Como se explicó en la {numref}`qcd-jets`, la formación de un jet resulta en m�
 ## Agrupamiento de jets
 La definición de un jet no es única. De hecho, la existencia de un jet es dependiente de la regla matemática que lo define. Esta regla matemática agrupa los constituyentes del jet de acuerdo a propiedades cinemáticas y se conoce como *algoritmo de agrupamiento de jets*. A continuación, se explicará acerca de estos algoritmos siguiendo{cite}`10.1088/2053-2563/ab1be6ch3,Marshall:1308447,Huth:1990mi`
 
-De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de hadrones del estado final con cuadrimomento $\{p_1^{had},p_2^{had},\dots,p_n^{had}\}$ a un conjunto de jets con cuadrimomento $\{p_1^{jet},p_2^{jet},\dots,p_m^{jet}\}$, donde usualmente $m<n$. El momento de cada jet es la suma de los momentos de las partículas que lo constituyen y la suma vectorial define el eje del jet.
+De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de hadrones del estado final con cuadrimomento $\{p_1^{had},p_2^{had},\dots,p_n^{had}\}$ a un conjunto de jets con cuadrimomento $\{p_1^{jet},p_2^{jet},\dots,p_m^{jet}\}$, donde $m<n$. El momento de cada jet es la suma de los momentos de las partículas que lo constituyen y la suma vectorial define el eje del jet.
 
 Todos los algoritmos agrupan objetos cercanos en $\phi$, el ángulo azimutal alrededor del eje del haz, y la pseudo-rapidez $\eta$, definida como: 
 
@@ -36,7 +36,7 @@ Se espera que un algoritmo posea ciertas características:
 - Ser robusto con respecto al tipo de datos de entrada.
 - Teóricamente, debe ser *colinealmente estable*: la separación de un partón en dos partones colineales no debe cambiar el resultado del agrupamiento del jet ({numref}`jets-colineal`).
 - Cumplir con la *estabilidad infrarroja*: la radiación de un gluon suave no debe cambiar el agrupamiento ({numref}`jets-infrarrojo`).
-- Baja sensibilidad a los UE y el pileup (PU), que son señales remanentes de otras colisiones.
+- Baja sensibilidad a los UE y el pileup (PU, por sus siglas en inglés), que son señales remanentes de otras colisiones.
 - Fácil de utilizar en cálculos teóricos y análisis experimentales, así como computacionalmente rápidos de ejecutar.
 
 ```{figure} ./../../figuras/jets-colineal.png
@@ -73,9 +73,9 @@ Se puede pensar que su aproximación es de arriba hacia abajo. En general, un al
 	1. *Si el eje del del jet de prueba y la semilla coinciden*: El jet de prueba se toma como jet
     2. *De otra forma*: Se repiten los pasos anteriores con el eje del jet de prueba como semilla.
 ```
-Estos pasos se repiten hasta estos pasos hasta que no haya semillas sobre un umbral de energía escogido.
+Estos pasos se repiten hasta que no haya semillas sobre un umbral de energía escogido.
 
-Ejemplos de algoritmos de cono son: *Midpoint Cone*, utilizado en Tevatron, *Iterative Cone* y *SISCone*{cite}`Salam_2007`, utilizados anteriormente por CMS.
+Ejemplos de algoritmos de cono son: *Midpoint Cone*, utilizado en Tevatron, *Iterative Cone* y *SISCone*{cite}`Salam_2007`.
 #### Recombinación secuencial
 Los algoritmos de recombinación secuencial asumen que los constituyentes de un jet poseen una pequeña diferencia en el momento transverso. Por esto, las partículas son agrupadas en el espacio de momento, resultando en jets con fluctuaciones en el espacio $(\eta-\phi)${cite}`Atkin_2015`.  
 
@@ -130,7 +130,7 @@ Como se observa en la {numref}`jets-diagramajets`, a alto momento transverso, un
 
 A continuación se describirán algunas de las variables que se calculan para diferenciar entre jets provenientes de distintas partículas, utilizando como referencia {cite}`10.1088/2053-2563/ab1be6ch8`.
 ### Masa
-La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet calculada a partir del cuadri-momento de cada constituyente. 
+La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet, calculada a partir del cuadri-momento de cada constituyente. 
 
 La distribución de masa del jet se utiliza para diferenciar jets provenientes de partículas masivas con alto momento transverso, que se caracterizan por una distribución mas angosta y alta, de fondo que cae suavemente, debido a jets ordinarios de quarks y gluones{cite}`PhysRevD.102.012010`. 
 ### N-subjettiness

@@ -31,13 +31,13 @@ En la {numref}`met-metricas` se presenta un resumen de las métricas numéricas 
 ```
 El nombre de las métricas varía en distintas áreas. En HEP, la recuperación y especificidad se conocen como *eficiencia de señal* ($\epsilon_s$) y *rechazo de fondo* ($1-\epsilon_{b}$), respectivamente. La precisión se conoce como *pureza* ($\rho$){cite}`valassi_andrea_2018_1405727`.
 
-Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Sin embargo, se puede utilizar la *exactitud balanceada*:
+Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Alternativamente, se puede usar la *exactitud balanceada*:
 
 $$
     \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}
 $$ (ml-exactitudbalanceada)
 
-En este trabajo se utilizan las métricas descritas en la {numref}`met-metricas`, salvo la exactitud, que se sustituye por la exactitud balanceada.
+En este trabajo se utilizan las métricas descritas en la {numref}`met-metricas`, salvo la exactitud, que se sustituye por la exactitud balanceada, y la especificidad.
 
 (met-plot)=
 ## Métricas bidimensionales
@@ -83,7 +83,7 @@ Para datos altamente desbalanceados se suele sugerir el uso de la curva PR:
 >
 > — ROC Graphs: Notes and Practical Considerations for Data Mining Researchers, 2003{cite}`Fawcett_2004`.
 
-Para obtenerla se grafica la precisión vs. la recuperación, como se observa en la {numref}`ml-curvapr`.
+Para obtenerla, se grafica la precisión vs. la recuperación, como se observa en la {numref}`ml-curvapr`.
 ```{figure} ./../../figuras/ml-curvapr.png
 ---
 width: 400px
