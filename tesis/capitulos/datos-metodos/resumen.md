@@ -1,3 +1,4 @@
+(datymet)=
 # Datos y métodos
 Las LHCO 2020 representan un punto de partida para estudiar el uso de aprendizaje automático en búsquedas BSM libres de modelo. Los datos publicados y los algoritmos participantes proporcionan un amplio espectro de posibles investigaciones sobre el uso de estas herramientas para buscar anomalías en HEP. Este trabajo tiene como objetivo comparar directamente algoritmos de las LHCO 2020 y algoritmos más sencilos utilizados para la tarea de clasificación de eventos, usando métricas de rendimiento asociadas a esta tarea.
 
