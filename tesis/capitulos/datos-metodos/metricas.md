@@ -63,6 +63,8 @@ $$ (ml-auc)
 
 Un valor de AUC de 0.5 indica que la predicción no es mejor que una clasificación aleatoria. Menor a 0.5 indica que el clasificador está clasificando de manera inversa{cite}`Kohl_2012`.
 
+Los clasificadores de agrupamiento, como K-Means, no asignan puntuaciones relacionadas a la probabilidad de ser señal. Sin embargo, asignan distancias entre los datos, representados como puntos, y los centroides. En este trabajo, se tomó la distancia hacia el centroide de señal como el puntaje relacionado a la probabilidad de ser señal, de manera que los puntos más cercanos al centroide de señal poseen un puntaje mayor que los puntos más lejanos. Esta consideración se realizó para la curva ROC y las demás métricas bidimensionales.
+
 En HEP se utilizan versiones de esta curva. Es común graficar ***eficiencia de señal* vs. *rechazo de fondo***, en vez de la curva ROC clásica, y el AUC se calcula en términos de estas variables. También se suele graficar el ***inverso de la eficiencia de fondo* vs. *eficiencia de señal***. Ejemplos de ambas curvas se observan en la {numref}`ml-otrasroc`.
 
 ```{figure} ./../../figuras/ml-otrasroc.png

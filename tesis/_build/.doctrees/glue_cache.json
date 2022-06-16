@@ -1,38 +1,110 @@
 {
-  "capitulos\\analisis-datos\\datos-preprocesados": {
-    "mjj-BB1": {
+  "capitulos\\analisis-datos\\datos-sin-preprocesar": {
+    "mean_nhad_RnD_sig": {
       "data": {
-        "text/plain": "3670.46231528546"
-      },
-      "metadata": {
-        "scrapbook": {
-          "mime_prefix": "",
-          "name": "mjj-BB1"
-        }
-      },
-      "output_type": "display_data"
-    },
-    "df-RnD": {
-      "data": {
-        "application/papermill.record/text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>pT_j1</th>\n      <th>m_j1</th>\n      <th>eta_j1</th>\n      <th>phi_j1</th>\n      <th>E_j1</th>\n      <th>tau_21_j1</th>\n      <th>nhadrons_j1</th>\n      <th>pT_j2</th>\n      <th>m_j2</th>\n      <th>eta_j2</th>\n      <th>phi_j2</th>\n      <th>E_j2</th>\n      <th>tau_21_j2</th>\n      <th>nhadrons_j2</th>\n      <th>m_jj</th>\n      <th>deltaR_j12</th>\n      <th>n_hadrons</th>\n      <th>label</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>1286.727685</td>\n      <td>106.912129</td>\n      <td>0.185508</td>\n      <td>-2.763676</td>\n      <td>1313.290435</td>\n      <td>0.624659</td>\n      <td>36</td>\n      <td>1283.220733</td>\n      <td>63.164215</td>\n      <td>0.064989</td>\n      <td>0.393688</td>\n      <td>1287.481934</td>\n      <td>0.713248</td>\n      <td>33</td>\n      <td>2580.489568</td>\n      <td>3.159663</td>\n      <td>109.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>1354.394070</td>\n      <td>614.269108</td>\n      <td>0.826505</td>\n      <td>1.365524</td>\n      <td>1943.559886</td>\n      <td>0.311688</td>\n      <td>84</td>\n      <td>1325.613761</td>\n      <td>439.064150</td>\n      <td>-0.874319</td>\n      <td>-1.786248</td>\n      <td>1916.370744</td>\n      <td>0.276881</td>\n      <td>97</td>\n      <td>3859.315047</td>\n      <td>3.581406</td>\n      <td>208.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>1214.955723</td>\n      <td>645.865619</td>\n      <td>-0.196786</td>\n      <td>2.040545</td>\n      <td>1396.840654</td>\n      <td>0.238205</td>\n      <td>119</td>\n      <td>1072.462085</td>\n      <td>113.768840</td>\n      <td>0.143831</td>\n      <td>-1.090330</td>\n      <td>1089.530630</td>\n      <td>0.726963</td>\n      <td>59</td>\n      <td>2480.769725</td>\n      <td>3.149348</td>\n      <td>196.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>1285.227873</td>\n      <td>516.835248</td>\n      <td>0.328693</td>\n      <td>2.975321</td>\n      <td>1450.485926</td>\n      <td>0.013429</td>\n      <td>65</td>\n      <td>1220.251279</td>\n      <td>174.796077</td>\n      <td>0.294854</td>\n      <td>-0.322661</td>\n      <td>1285.618789</td>\n      <td>0.706361</td>\n      <td>89</td>\n      <td>2609.893413</td>\n      <td>3.298155</td>\n      <td>183.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>1210.415787</td>\n      <td>129.499352</td>\n      <td>-0.744836</td>\n      <td>-2.883347</td>\n      <td>1567.345300</td>\n      <td>0.423550</td>\n      <td>54</td>\n      <td>1091.785816</td>\n      <td>155.362262</td>\n      <td>1.060534</td>\n      <td>0.264977</td>\n      <td>1772.340209</td>\n      <td>0.787662</td>\n      <td>57</td>\n      <td>3313.488835</td>\n      <td>3.629229</td>\n      <td>169.0</td>\n      <td>1.0</td>\n    </tr>\n  </tbody>\n</table>\n</div>",
-        "application/papermill.record/text/plain": "         pT_j1        m_j1    eta_j1    phi_j1         E_j1  tau_21_j1  \\\n0  1286.727685  106.912129  0.185508 -2.763676  1313.290435   0.624659   \n1  1354.394070  614.269108  0.826505  1.365524  1943.559886   0.311688   \n2  1214.955723  645.865619 -0.196786  2.040545  1396.840654   0.238205   \n3  1285.227873  516.835248  0.328693  2.975321  1450.485926   0.013429   \n4  1210.415787  129.499352 -0.744836 -2.883347  1567.345300   0.423550   \n\n   nhadrons_j1        pT_j2        m_j2    eta_j2    phi_j2         E_j2  \\\n0           36  1283.220733   63.164215  0.064989  0.393688  1287.481934   \n1           84  1325.613761  439.064150 -0.874319 -1.786248  1916.370744   \n2          119  1072.462085  113.768840  0.143831 -1.090330  1089.530630   \n3           65  1220.251279  174.796077  0.294854 -0.322661  1285.618789   \n4           54  1091.785816  155.362262  1.060534  0.264977  1772.340209   \n\n   tau_21_j2  nhadrons_j2         m_jj  deltaR_j12  n_hadrons  label  \n0   0.713248           33  2580.489568    3.159663      109.0    0.0  \n1   0.276881           97  3859.315047    3.581406      208.0    0.0  \n2   0.726963           59  2480.769725    3.149348      196.0    0.0  \n3   0.706361           89  2609.893413    3.298155      183.0    0.0  \n4   0.787662           57  3313.488835    3.629229      169.0    1.0  "
+        "application/papermill.record/text/plain": "139.69080472458327"
       },
       "metadata": {
         "scrapbook": {
           "mime_prefix": "application/papermill.record/",
-          "name": "df-RnD"
+          "name": "mean_nhad_RnD_sig"
         }
       },
       "output_type": "display_data"
     },
-    "mjj-RnD": {
+    "df-raw": {
       "data": {
-        "text/plain": "3476.93849410142"
+        "application/papermill.record/text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>0</th>\n      <th>1</th>\n      <th>2</th>\n      <th>3</th>\n      <th>4</th>\n      <th>5</th>\n      <th>6</th>\n      <th>7</th>\n      <th>8</th>\n      <th>9</th>\n      <th>...</th>\n      <th>2091</th>\n      <th>2092</th>\n      <th>2093</th>\n      <th>2094</th>\n      <th>2095</th>\n      <th>2096</th>\n      <th>2097</th>\n      <th>2098</th>\n      <th>2099</th>\n      <th>2100</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>0.324101</td>\n      <td>-0.361158</td>\n      <td>2.737669</td>\n      <td>0.409859</td>\n      <td>-2.429939</td>\n      <td>0.729830</td>\n      <td>0.867922</td>\n      <td>-2.267777</td>\n      <td>-1.161310</td>\n      <td>0.383031</td>\n      <td>...</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>0.646304</td>\n      <td>-0.539460</td>\n      <td>-1.386258</td>\n      <td>0.471293</td>\n      <td>-1.636572</td>\n      <td>0.751657</td>\n      <td>0.453769</td>\n      <td>-1.099593</td>\n      <td>-0.393405</td>\n      <td>0.485929</td>\n      <td>...</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>0.325172</td>\n      <td>-0.833948</td>\n      <td>2.404844</td>\n      <td>1.295058</td>\n      <td>-2.089618</td>\n      <td>-1.873342</td>\n      <td>0.451272</td>\n      <td>-0.101877</td>\n      <td>2.217348</td>\n      <td>0.461293</td>\n      <td>...</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>0.290918</td>\n      <td>-2.200063</td>\n      <td>1.630132</td>\n      <td>0.565028</td>\n      <td>-1.714345</td>\n      <td>-2.617103</td>\n      <td>0.951042</td>\n      <td>-0.532720</td>\n      <td>2.941473</td>\n      <td>0.896248</td>\n      <td>...</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>0.526330</td>\n      <td>-2.349110</td>\n      <td>-1.745532</td>\n      <td>0.542491</td>\n      <td>-2.080352</td>\n      <td>-3.044045</td>\n      <td>0.390727</td>\n      <td>-1.278563</td>\n      <td>-2.131058</td>\n      <td>2.530358</td>\n      <td>...</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>0.0</td>\n      <td>1.0</td>\n    </tr>\n  </tbody>\n</table>\n<p>5 rows \u00d7 2101 columns</p>\n</div>",
+        "application/papermill.record/text/plain": "       0         1         2         3         4         5         6     \\\n0  0.324101 -0.361158  2.737669  0.409859 -2.429939  0.729830  0.867922   \n1  0.646304 -0.539460 -1.386258  0.471293 -1.636572  0.751657  0.453769   \n2  0.325172 -0.833948  2.404844  1.295058 -2.089618 -1.873342  0.451272   \n3  0.290918 -2.200063  1.630132  0.565028 -1.714345 -2.617103  0.951042   \n4  0.526330 -2.349110 -1.745532  0.542491 -2.080352 -3.044045  0.390727   \n\n       7         8         9     ...  2091  2092  2093  2094  2095  2096  \\\n0 -2.267777 -1.161310  0.383031  ...   0.0   0.0   0.0   0.0   0.0   0.0   \n1 -1.099593 -0.393405  0.485929  ...   0.0   0.0   0.0   0.0   0.0   0.0   \n2 -0.101877  2.217348  0.461293  ...   0.0   0.0   0.0   0.0   0.0   0.0   \n3 -0.532720  2.941473  0.896248  ...   0.0   0.0   0.0   0.0   0.0   0.0   \n4 -1.278563 -2.131058  2.530358  ...   0.0   0.0   0.0   0.0   0.0   0.0   \n\n   2097  2098  2099  2100  \n0   0.0   0.0   0.0   0.0  \n1   0.0   0.0   0.0   0.0  \n2   0.0   0.0   0.0   0.0  \n3   0.0   0.0   0.0   0.0  \n4   0.0   0.0   0.0   1.0  \n\n[5 rows x 2101 columns]"
       },
       "metadata": {
         "scrapbook": {
-          "mime_prefix": "",
-          "name": "mjj-RnD"
+          "mime_prefix": "application/papermill.record/",
+          "name": "df-raw"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "meanpt_bkg_BB1": {
+      "data": {
+        "application/papermill.record/text/plain": "19.942760435054584"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "meanpt_bkg_BB1"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "mean_nhad_RnD_bkg": {
+      "data": {
+        "application/papermill.record/text/plain": "171.3385711615223"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "mean_nhad_RnD_bkg"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "meanpt_sig_BB1": {
+      "data": {
+        "application/papermill.record/text/plain": "25.202933721950238"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "meanpt_sig_BB1"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "mean_nhad_BB1_sig": {
+      "data": {
+        "application/papermill.record/text/plain": "147.025"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "mean_nhad_BB1_sig"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "mean_nhad_BB1_bkg": {
+      "data": {
+        "application/papermill.record/text/plain": "173.6753903122498"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "mean_nhad_BB1_bkg"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "meanpt_bkg_RnD": {
+      "data": {
+        "application/papermill.record/text/plain": "19.19757850577501"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "meanpt_bkg_RnD"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "meanpt_sig_RnD": {
+      "data": {
+        "application/papermill.record/text/plain": "25.247649677146946"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "meanpt_sig_RnD"
         }
       },
       "output_type": "display_data"
