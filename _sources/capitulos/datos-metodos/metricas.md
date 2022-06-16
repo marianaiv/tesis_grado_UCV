@@ -31,13 +31,13 @@ En la {numref}`met-metricas` se presenta un resumen de las métricas numéricas 
 ```
 El nombre de las métricas varía en distintas áreas. En HEP, la recuperación y especificidad se conocen como *eficiencia de señal* ($\epsilon_s$) y *rechazo de fondo* ($1-\epsilon_{b}$), respectivamente. La precisión se conoce como *pureza* ($\rho$){cite}`valassi_andrea_2018_1405727`.
 
-Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Sin embargo, se puede utilizar la *exactitud balanceada*:
+Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Alternativamente, se puede usar la *exactitud balanceada*:
 
 $$
     \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}
 $$ (ml-exactitudbalanceada)
 
-En este trabajo se utilizan las métricas descritas en la {numref}`met-metricas`, salvo la exactitud, que se sustituye por la exactitud balanceada.
+En este trabajo se utilizan las métricas descritas en la {numref}`met-metricas`, salvo la exactitud, que se sustituye por la exactitud balanceada, y la especificidad.
 
 (met-plot)=
 ## Métricas bidimensionales
@@ -63,6 +63,8 @@ $$ (ml-auc)
 
 Un valor de AUC de 0.5 indica que la predicción no es mejor que una clasificación aleatoria. Menor a 0.5 indica que el clasificador está clasificando de manera inversa{cite}`Kohl_2012`.
 
+Los clasificadores de agrupamiento, como K-Means, no asignan puntuaciones relacionadas a la probabilidad de ser señal. Sin embargo, asignan distancias entre los datos, representados como puntos, y los centroides. En este trabajo, se tomó la distancia hacia el centroide de señal como el puntaje relacionado a la probabilidad de ser señal, de manera que los puntos más cercanos al centroide de señal poseen un puntaje mayor que los puntos más lejanos. Esta consideración se realizó para la curva ROC y las demás métricas bidimensionales.
+
 En HEP se utilizan versiones de esta curva. Es común graficar ***eficiencia de señal* vs. *rechazo de fondo***, en vez de la curva ROC clásica, y el AUC se calcula en términos de estas variables. También se suele graficar el ***inverso de la eficiencia de fondo* vs. *eficiencia de señal***. Ejemplos de ambas curvas se observan en la {numref}`ml-otrasroc`.
 
 ```{figure} ./../../figuras/ml-otrasroc.png
@@ -83,7 +85,7 @@ Para datos altamente desbalanceados se suele sugerir el uso de la curva PR:
 >
 > — ROC Graphs: Notes and Practical Considerations for Data Mining Researchers, 2003{cite}`Fawcett_2004`.
 
-Para obtenerla se grafica la precisión vs. la recuperación, como se observa en la {numref}`ml-curvapr`.
+Para obtenerla, se grafica la precisión vs. la recuperación, como se observa en la {numref}`ml-curvapr`.
 ```{figure} ./../../figuras/ml-curvapr.png
 ---
 width: 400px
