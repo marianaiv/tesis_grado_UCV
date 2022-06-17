@@ -13,6 +13,7 @@ root: intro
 options:
   numbered: 5
 chapters:
+- file: capitulos/introduccion
 - file: capitulos/marco-teorico/resumen
   sections:
   - file: capitulos/marco-teorico/modelo-estandar
@@ -26,8 +27,8 @@ chapters:
   sections:
   - file: capitulos/datos-metodos/datos-lhco
   - file: capitulos/datos-metodos/algoritmos-anomalias
-  - file: capitulos/datos-metodos/metricas
   - file: capitulos/datos-metodos/algoritmos-lhco
+  - file: capitulos/datos-metodos/metricas
   - file: capitulos/datos-metodos/benchtools
 - file: capitulos/analisis-datos/resumen
   sections:

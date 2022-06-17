@@ -1,26 +1,52 @@
 (jets)=
 # Reconstrucción de jets
+<<<<<<< HEAD
 Como se explicó en la {numref}`qcd-jets`, la formación de un jet resulta en múltiples partículas de color neutro. Las características de estas partículas del estado final es lo que se mide en los detectores, es decir, es la información que se obtiene de los jets. Por lo tanto, para analizar los eventos de jets es necesario reconstruirlos. En esta sección se explicarán los métodos más conocidos para reconstruirlos y algunas de las variables que se utilizan para analizarlos. 
+=======
+Como se explicó en la {numref}`qcd-jets`, la formación de un jet resulta en múltiples partículas de color neutro. Las características de estas partículas del estado final es lo que se mide en los detectores, es decir, es la información que se obtiene de los jets. Por lo tanto, para analizar los eventos de jets es necesario reconstruirlos. En esta sección se explicarán los métodos más conocidos para reconstruirlos y algunas de las variables que se utilizan para caracterizarlos. 
+>>>>>>> correcciones-1
 
 (jets-agrupamiento)=
 ## Agrupamiento de jets
 La definición de un jet no es única. De hecho, la existencia de un jet es dependiente de la regla matemática que lo define. Esta regla matemática agrupa los constituyentes del jet de acuerdo a propiedades cinemáticas y se conoce como *algoritmo de agrupamiento de jets*. A continuación, se explicará acerca de estos algoritmos siguiendo{cite}`10.1088/2053-2563/ab1be6ch3,Marshall:1308447,Huth:1990mi`
 
+<<<<<<< HEAD
 De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de hadrones del estado final con cuadrimomento $\{p_1^{had},p_2^{had},\dots,p_n^{had}\}$ a un conjunto de jets con cuadrimomento $\{p_1^{jet},p_2^{jet},\dots,p_m^{jet}\}$, donde usualmente $m<n$. El momento de cada jet es la suma de los momentos de las partículas que lo constituyen y la suma vectorial define el eje del jet.
 
 Todos los algoritmos agrupan objetos cercanos alrededor del ángulo polar de los protones entrantes $\phi$ y la pseudo-rapidez $\eta$, definida como: 
+=======
+De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de hadrones del estado final con cuadrimomento $\{p_1^{had},p_2^{had},\dots,p_n^{had}\}$ a un conjunto de jets con cuadrimomento $\{p_1^{jet},p_2^{jet},\dots,p_m^{jet}\}$, donde $m<n$. El momento de cada jet es la suma de los momentos de las partículas que lo constituyen y la suma vectorial define el eje del jet.
+
+Todos los algoritmos agrupan objetos cercanos en $\phi$, el ángulo azimutal alrededor del eje del haz, y la pseudo-rapidez $\eta$, definida como: 
+>>>>>>> correcciones-1
 
 $$
     \eta\equiv -\ln\left[\tan\left(\frac{\theta}{2}\right)\right]
 $$ (jets-eta)
 
+<<<<<<< HEAD
 donde $\theta$ es el ángulo azimutal entre los constituyentes y los protones entrantes.
 
+=======
+donde $\theta$ es el ángulo polar entre los constituyentes y el haz de protones entrantes. Los valores de pseudorapidez indican directamente a qué distancia del centro del detector se produce una partícula y varían de menos a más infinito dentro de la geometría del detector. Este sistema de coordenadas del detector se muestra en la {numref}`jets-coordenadas`, junto con la conversión de ángulo polar a pseudorapidez.
+
+```{figure} ./../../figuras/jets-coordenadas.png
+---
+width: 600px
+name: jets-coordenadas
+---
+Ilustración del sistema de coordenadas utilizado en los experimentos del LHC (izquierda) y una conversión entre el ángulo polar y la pseudorapidez (derecha). El eje z se encuentra a lo largo de la dirección del haz de protones entrante, y el ángulo azimutal $\phi$ se define con respecto al plano x–y, como es usual. La pseudorapidez $\eta$ se define para aprovechar la simetría cilíndrica, y aumenta de valor a medida que nos alejamos del centro del detector{cite}`Marshall:1308447`.
+```
+>>>>>>> correcciones-1
 Los jets se pueden reconstruir a partir de objetos experimentales, como depósitos de energía en calorímetros y trayectorias de partículas cargadas, o de objetos teóricos, como partones y hadrones obtenidos mediante simulaciones.
 
 ```{figure} ./../../figuras/jets-types.png
 ---
+<<<<<<< HEAD
 width: 700px
+=======
+width: 600px
+>>>>>>> correcciones-1
 name: jets-types
 ---
 Esquema que muestra los diferentes tipos de jet. Se producen partículas de color por la dispersión fuerte, creando partículas de color neutro en la fragmentación. Estas partículas pueden producir distintas señales en los detectores{cite}`camachotoro:tel-00818796`.
@@ -29,12 +55,20 @@ Se espera que un algoritmo posea ciertas características:
 - Ser robusto con respecto al tipo de datos de entrada.
 - Teóricamente, debe ser *colinealmente estable*: la separación de un partón en dos partones colineales no debe cambiar el resultado del agrupamiento del jet ({numref}`jets-colineal`).
 - Cumplir con la *estabilidad infrarroja*: la radiación de un gluon suave no debe cambiar el agrupamiento ({numref}`jets-infrarrojo`).
+<<<<<<< HEAD
 - Baja sensibilidad a los UE y el pileup (PU), que son señales remanentes de otras colisiones.
+=======
+- Baja sensibilidad a los UE y el pileup (PU, por sus siglas en inglés), que son señales remanentes de otras colisiones.
+>>>>>>> correcciones-1
 - Fácil de utilizar en cálculos teóricos y análisis experimentales, así como computacionalmente rápidos de ejecutar.
 
 ```{figure} ./../../figuras/jets-colineal.png
 ---
+<<<<<<< HEAD
 width: 300px
+=======
+width: 400px
+>>>>>>> correcciones-1
 name: jets-colineal
 ---
 Esquema de la estabilidad colineal. La separación de un parton en partones colineales no debe cambiar la configuración de un jet{cite}`10.1088/2053-2563/ab1be6ch3`.
@@ -42,7 +76,11 @@ Esquema de la estabilidad colineal. La separación de un parton en partones coli
 
 ```{figure} ./../../figuras/jets-infrarrojo.png
 ---
+<<<<<<< HEAD
 width: 300px
+=======
+width: 400px
+>>>>>>> correcciones-1
 name: jets-infrarrojo
 ---
 Esquema de la estabilidad infrarroja. La emisión de un gluon suave entre dos jets no debe resultar en su unión{cite}`10.1088/2053-2563/ab1be6ch3`. 
@@ -66,9 +104,15 @@ Se puede pensar que su aproximación es de arriba hacia abajo. En general, un al
 	1. *Si el eje del del jet de prueba y la semilla coinciden*: El jet de prueba se toma como jet
     2. *De otra forma*: Se repiten los pasos anteriores con el eje del jet de prueba como semilla.
 ```
+<<<<<<< HEAD
 Estos pasos se repiten hasta estos pasos hasta que no haya semillas sobre un umbral de energía escogido.
 
 Ejemplos de algoritmos de cono son: *Midpoint Cone*, utilizado en Tevatron, *Iterative Cone* y *SISCone*{cite}`Salam_2007`, utilizados anteriormente por CMS.
+=======
+Estos pasos se repiten hasta que no haya semillas sobre un umbral de energía escogido.
+
+Ejemplos de algoritmos de cono son: *Midpoint Cone*, utilizado en Tevatron, *Iterative Cone* y *SISCone*{cite}`Salam_2007`.
+>>>>>>> correcciones-1
 #### Recombinación secuencial
 Los algoritmos de recombinación secuencial asumen que los constituyentes de un jet poseen una pequeña diferencia en el momento transverso. Por esto, las partículas son agrupadas en el espacio de momento, resultando en jets con fluctuaciones en el espacio $(\eta-\phi)${cite}`Atkin_2015`.  
 
@@ -106,6 +150,7 @@ Los algoritmos de recombinación utilizados son:
 - ***Anti-kt***{cite}`Cacciari_2008`: para este algoritmo $p=-1$. Contrario al *kt*, es poco sensible a los UE y el PU. En este algoritmo el agrupamiento no está relacionada a la manera en la que los partones se dividen.
 - **Cambridge/Aachen**{cite}`Dokshitzer_1997`: para este algoritmo $p=0$. Es el mejor para estudiar la subestructura de los jets, pero su implementación es más complicada. También es susceptible a los UE y el PU. 
 
+<<<<<<< HEAD
 Los algoritmos de recombinación son los más utilizados desde su implementación en el programa *FastJet*{cite}`FastJet`, un paquete de C++ que proporciona herramientas para agrupar y analizar jets.
 
 (jets-subestructura)=
@@ -115,6 +160,28 @@ La subestructura de un jet puede analizarse para diferenciar si el jet proviene 
 ### Masa
 La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet calculada a partir del cuadri-momento de cada constituyente.
 
+=======
+Los algoritmos de recombinación son los más utilizados desde su implementación en el programa *FastJet*{cite}`FastJet`, un paquete de C++ que proporciona herramientas para agrupar y analizar jets. En este trabajo se agrupan los jets utilizando el algoritmo anti-kt.
+
+(jets-subestructura)=
+## Variables de subestructura
+La subestructura de un jet puede analizarse para diferenciar si el jet proviene de un gluon, un quark, un bosón que decae hadrónicamente o partículas masivas aún no descubiertas.
+ 
+```{figure} ./../../figuras/jets-diagramajets.png
+---
+width: 500px
+name: jets-diagramajets
+---
+Representación de jets producto de: quarks y gluones (arriba a la izquierda), quark bottom (arriba en el centro), y topologías de jets impulsados: bosones de alto pT *W* y *Z* (arriba a la derecha), boson de Higgs (abajo a la izquierda) y quark top (abajo a la derecha) decayendo a un estado final de quarks{cite}`PhysRevD.102.012010`.
+```
+Como se observa en la {numref}`jets-diagramajets`, a alto momento transverso, un boson, un quark top e inclusive una partícula de nueva física que decaiga a dos o más quarks, puede ser reconstruida como un jet único, debido a que los productos de decaimiento se encuentran muy cercanos.
+
+A continuación se describirán algunas de las variables que se calculan para diferenciar entre jets provenientes de distintas partículas, utilizando como referencia {cite}`10.1088/2053-2563/ab1be6ch8`.
+### Masa
+La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet, calculada a partir del cuadri-momento de cada constituyente. 
+
+La distribución de masa del jet se utiliza para diferenciar jets provenientes de partículas masivas con alto momento transverso, que se caracterizan por una distribución mas angosta y alta, de fondo que cae suavemente, debido a jets ordinarios de quarks y gluones{cite}`PhysRevD.102.012010`. 
+>>>>>>> correcciones-1
 ### N-subjettiness
 Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet. Para lograr esto, se hace un agrupamiento exclusivo de N jets, utilizando los constituyentes del jet, y se calcula la variable $\tau_N$,
 
@@ -128,6 +195,7 @@ $$
     \tau_{N,N-1}=\frac{\tau_{N}}{\tau_{N-1}}
 $$ (jets-ratio_subjettiness)
 
+<<<<<<< HEAD
 Un jet con N-1 subjets tendrá un valor de $\tau_{N,N-1}$ mayor a un jet conformado por N o más subjets.
 
 ### Funciones de correlación de energía
@@ -156,3 +224,6 @@ $$
 $$ (jets-ecf_double)
 
 Existen otras proporciones{cite}`Marzani_2019` y se construyen para amplificar características específicas de los jets.
+=======
+Un jet con N-1 subjets tendrá un valor de $\tau_{N,N-1}$ mayor a un jet conformado por N o más subjets.
+>>>>>>> correcciones-1

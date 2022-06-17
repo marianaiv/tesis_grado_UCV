@@ -4,8 +4,8 @@ En este proyecto se trata de resolver un problema de clasificación binaria con 
 
 La implementación de aprendizaje automático en este trabajo está comprendida por los siguientes pasos:
 1. Pre-procesamiento de los datos utilizando `benchtool`, descrito en la {numref}`bench-pre`
-2. Divición de los datos en conjuntos mutuamente excluyentes. 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
-3. Ajuste del modelo minimizando una función de pérdida específica, utilizando los datos de entrenamiento. Las funciones se describirán más adelante en esta sección.
+2. División de los datos en conjuntos mutuamente excluyentes, 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
+3. Ajuste de los modelos minimizando una función de pérdida específica para cada uno, utilizando los datos de entrenamiento. Las funciones se describirán más adelante en esta sección.
 4. Evaluación del rendimiento del modelo calculando la función de pérdida con los datos de prueba.
 
 Los algoritmos utilizados en este trabajo se escogieron a partir de su rendimiento, estudiado durante el desarrollo de las herramientas de análisis de datos. Más información sobre cómo se escogieron estos algoritmos se encuentra en la sección *[notebooks](https://github.com/marianaiv/benchtools/tree/main/notebooks)* del repositorio de `benchtools`.
@@ -31,7 +31,7 @@ name: ml-arboldecision
 ---
 Ejemplo de un árbol de decisión. Para una conjunto de características $\mathbf{x}$, su etiqueta $y$ es predicha, recorriéndolo desde su raíz, pasando por las hojas, siguiendo las ramas que satisface {cite}`Mehta_2019`.
 ```
-Para crear un ensamble de árboles de decisión y obtener un bosque aleatorio, se deben utilizar procesos de aleatorización, con el propósito de disminuir la correlación entre los árboles y así, disminuir la varianza. Usualmente se utilizan en conjunto dos métodos. Los subconjutos de datos utilizados para entrenar cada árbol se obtienen del conjunto de entrenamiento mediante bootstrapping, un método de muestreo con remplazo. Luego, en la construcción de los árboles de decisión, en cada nodo se utiliza un subconjunto aleatorio de las características de entrada. 
+Para crear un ensamble de árboles de decisión y obtener un bosque aleatorio, se deben utilizar procesos de aleatorización. Usualmente se utilizan en conjunto dos métodos. Los subconjutos de datos utilizados para entrenar cada árbol se obtienen del conjunto de entrenamiento mediante bootstrapping, un método de muestreo con remplazo. Luego, en la construcción de los árboles de decisión, en cada nodo se utiliza un subconjunto aleatorio de las características de entrada. 
 
 Usualmente, cada árbol emite un voto unitario para la clase más popular dada una entrada y la clase con más votos es asignada a esta entrada{cite}`Breiman:2001hzm`, como se observa en la {numref}`ml-bosquealeatorio`. Sin embargo, la implementación utilizada en este trabajo combina los árboles individuales promediando su predicción probabilística{cite}`RFC`.
 
@@ -43,9 +43,9 @@ name: ml-bosquealeatorio
 Representación visual del funcionamiento de un bosque aleatorio {cite}`chauhan_2021`
 ```
 (alg-gbc)=
-## Clasificador del gradiente del impulso
+## Potenciación del gradiente
 
-El clasificador del gradiente del impulso (GBC) usualmente utiliza árboles de regresión como aprendiz débil. Es un modelo supervisado y aditivo que avanza por etapas{cite}`GBC`. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior. Su formulación matemática es la siguiente{cite}`GTBC`:
+El clasificador de potenciación del gradiente (GBC, por sus siglas en inglés) es un modelo supervisado que utiliza árboles de regresión como aprendiz débil. Es un modelo supervisado y aditivo que avanza por etapas{cite}`GBC`. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior. Su formulación matemática es la siguiente{cite}`GTBC`:
 
 La predicción $y_i$ del modelo para la entrada $x_i$ está dada por:
 
@@ -53,7 +53,11 @@ $$
     \hat{y}_i=F_M(x_i)=\sum_{m=1}^{M}h_m(x_i)
 $$ (ml-gbcpred)
 
-$h_m$ son los aprendices débiles. En el caso de clasificación, el mapeo del valor de $F_M(x_i)$ a una clase o probabilidad es dependiente de la pérdida. La probabilidad de que $x_i$ pertenezca a la clase positiva se modela usando la función sigmoid $p(y_i=|x_i)=\sigma(F_M(x_i))$
+$h_m$ son los aprendices débiles. En el caso de clasificación, el mapeo del valor de $F_M(x_i)$ a una clase o probabilidad es dependiente de la pérdida. La probabilidad de que $x_i$ pertenezca a la clase positiva se modela usando la función sigmoid, 
+
+$$
+    p(y_i=|x_i)=\sigma(F_M(x_i))
+$$ (ml-gbcsigmoid)
 
 El GBC se construye de la siguiente manera:
 
@@ -61,7 +65,7 @@ $$
     F_m(x)=F_{m-1}(x)+h_m(x)
 $$ (ml-gbc)
 
-$h_m$ se ajusta para minimizar la suma de las pérdidas dado el ensamble anterior $F_{m-1}$
+y $h_m$ se ajusta para minimizar la suma de las pérdidas dado el ensamble anterior $F_{m-1}$,
 
 $$
     h_m\approx\text{arg min}_h\sum_{i=1}^{n}h(x_i)g_i
@@ -79,7 +83,7 @@ $$
     P(y=k|x) = \frac{P(x|y=k)P(y=k)}{P(x)}
 $$
 
-Donde se selecciona la clase $k$ que maximice esta probabilidad. Un ejemplo de clasificación utilizando este método se observa en la {numref}`ml-qda`.
+donde se selecciona la clase $k$ que maximice esta probabilidad. Un ejemplo de clasificación utilizando este método se observa en la {numref}`ml-qda`.
 
 ```{figure} ./../../figuras/ml-qda.png
 ---
@@ -93,9 +97,7 @@ Clasificación con QDA. a) Los puntos a ser clasificados, b) los límites o fron
 ## Redes neuronales
 Las redes neuronales son modelos supervisados y no-lineales inspirados en las neuronas. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.
 
-Las redes neuronales se definen mediante una serie de transformaciones que mapean la entrada $x$ a estados "ocultos" $\mathbf{h}_i$. Finalmente, una última transformación mapea estos estados a una función de salida $\mathbf{y}${cite}`Guest_2018`. Esto también se conoce como perceptrón multicapas.
-
-Las transformaciones se pueden escribir matemáticamente como:
+Las redes neuronales se definen mediante una serie de transformaciones que mapean la entrada $x$ a estados "ocultos" $\mathbf{h}_i$. Finalmente, una última transformación mapea estos estados a una función de salida $\mathbf{y}${cite}`Guest_2018`. Esto también se conoce como perceptrón multicapas. Las transformaciones se pueden escribir matemáticamente como:
 
 $$
     \mathbf{h}_i = g_i(W_i\mathbf{h}_i+\mathbf{b}_i)
@@ -151,7 +153,7 @@ Como la inicialización de los centroides es aleatoria, usualmente se realizan m
 
 (alg-ae)=
 ## Codificador automático
-Los codificadores automáticos (AE) son algoritmos de aprendizaje no supervisado que mapean una entrada a una representación comprimida latente y luego vuelve a sí misma. Al aprender como reproducir la salida original, el modelo extrae características de los datos de entrada{cite}`Nakai_2019`.
+Los codificadores automáticos (AE) son algoritmos de aprendizaje no supervisado que mapean una entrada a una representación comprimida latente y luego vuelve a sí misma, como se representa en la {numref}`alg-aefig`. Al aprender como reproducir la salida original, el modelo extrae características de los datos de entrada{cite}`Nakai_2019`.
 
 Estas redes se pueden dividir en dos partes. El codificador, que comprime los datos a un espacio latente, y el decodificador que produce la reconstruccion{cite}`Goodfellow-et-al-2016`. Una medida de qué tan bien funciona el codificador es la diferencia entre la entrada y la salida de acuerdo a alguna métrica de distancia conocida como "error de reconstrucción".
 
@@ -162,11 +164,11 @@ name: alg-aefig
 ---
 Diagrama del funcionamiento de un codificador automático. La entrada se mapea a una representación de dimensionalidad reducida y luego es reconstruida {cite}`PhysRevD.101.075021`.
 ```
-Este algoritmo se ha empezado a utilizar en HEP como detector de anomalías puesto que, al entrenar el codificador automático en una muestra de eventos de fondo, va a aprender las características de fondo y se espera que un evento de señal no sea reconstruido correctamente. Así, se puede utilizar un corte en el error de reconstrucción como un umbral de anomalía{cite}`PhysRevD.101.075021`. 
+Este algoritmo se ha empezado a utilizar en HEP como detector de anomalías puesto que, al entrenar el codificador automático en una muestra de eventos de fondo, va a aprender las características de fondo, y se espera que un evento de señal no sea reconstruido correctamente. Así, se puede utilizar un corte en el error de reconstrucción como un umbral de anomalía{cite}`PhysRevD.101.075021`. 
 
 (alg-gan)=
 ## Red generativa antagónica
-Una *red generativa antagónica* (GAN) está basada en modelado generativo y en conceptos de teoría de juegos.
+Una *red generativa antagónica* (GAN, por sus siglas en inglés) está basada en modelado generativo y en conceptos de teoría de juegos.
 
 El modelado generativo es una tarea de aprendizaje no supervisado en la que los modelos aprenden automáticamente regularidades o patrones en los datos de entrada, con el objetivo de generar nuevos ejemplos que podrían haberse extraído del conjunto de datos original.
 
@@ -176,6 +178,6 @@ $$
     G(\mathbf{z})=\mathbf{\hat{x}}
 $$(alg-generativa)
 
-donde $\mathbf{z}$ es muestreado a partir de una distribución de probabilidad a priori en un espacio latente y $\mathbf{\hat{x}}$ son las muestras generadas.El discriminador aproxima una función discriminadora $D$ que distingue entre muestras $\mathbf{x}$ de los datos originales y muestras $\mathbf{\hat{x}}$ sintéticas. 
+donde $\mathbf{z}$ es muestreado a partir de una distribución de probabilidad a priori en un espacio latente y $\mathbf{\hat{x}}$ son las muestras generadas. El discriminador aproxima una función discriminadora que distingue entre muestras $\mathbf{x}$ de los datos originales y muestras $\mathbf{\hat{x}}$ sintéticas. 
 
-El discriminador se entrena para diferenciar entre las muestras sintéticas y los datos reales y el generador se entrena para engañar al discriminador. Las función de costo del discriminador depende de los parámetros del generador y viceversa. Los modelos se entrenan juntos hasta que el discriminador es engañado una cantidad de veces sobre algún umbral, lo que significa que el generador está generando ejemplos plausibles.
+El discriminador se entrena para diferenciar entre las muestras sintéticas y los datos reales y el generador para engañar al discriminador. Las función de costo del discriminador depende de los parámetros del generador y viceversa. Los modelos se entrenan juntos hasta que el discriminador es engañado una cantidad de veces sobre algún umbral, lo que significa que el generador está generando ejemplos plausibles.
