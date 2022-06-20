@@ -39,7 +39,7 @@ Específicamente, el pipeline se utilizó para el conjunto R&D de la siguiente f
 ```
 benchtools_run --RD --all_data --training --ext_clf ext-RnD.txt --name RnD
 ```
-Y luego para el conjunto BB1:
+Y luego, para el conjunto BB1:
 ```
 benchtools_run --box 1 --all_data --ext_clf ext-BB1.txt --name BB1
 ```
