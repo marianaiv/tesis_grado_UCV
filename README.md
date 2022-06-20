@@ -1,9 +1,11 @@
 <h1 align="center">Trabajo especial de grado</h1>
 
-> En este repositorio se encuentra la tesis de grado de Mariana Vivas para la licenciatura en física en la Universidad Central de Venezuela (UCV)
+> En este repositorio se encuentra la [tesis de grado de Mariana Vivas](https://marianaiv.github.io/tesis_grado_UCV/intro.html), requisito parcial para obtener la licenciatura en física en la Universidad Central de Venezuela (UCV)
+
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ## Contenido del repositorio
-El contenido de este repositorio se encuentra organizado de la siguiente forma:
+El repositorio se encuentra organizado de la siguiente forma:
 * :bar_chart: [Análisis](Analisis): Datos y código utilizado para obtener los resultados.
 * :pencil2: [Notas](Notas): Documentos relacionados con el desarrollo del proyecto. 
 * :book: [Tesis](Tesis): Aquí se encuentra el documento de la tesis.
@@ -21,27 +23,53 @@ El contenido de este repositorio se encuentra organizado de la siguiente forma:
    * Desarrollar un programa que caracterice algoritmos de clasificación para eventos de múltiples jets.
    * Hacer una investigación reproducible bajo los lineamientos de [The Turing Way](https://the-turing-way.netlify.app/welcome.html).
 
-### Resumen
-
-**Este proyecto se plantea a partir de la necesidad de buscar nueva física** para responder las preguntas que surgen del modelo estándar. 
-
-El modelo estándar no explica la gravedad, la materia oscura o energía oscura, la masa de los neutrinos, la asimetría materia-antimateria, por qué hay tres generaciones de quarks y leptones o la aparente jerarquía de masas, el valor de la masa del bosón de Higgs, entre otros. Debido a esto, la búsqueda de física más allá del modelo estándar ha sido uno de los ejes principales de investigación en distintos centros de investigación, como en el Gran Colisionador de Hadrones (o LHC por sus siglas en inglés). 
-
-Hasta ahora, la búqueda de nueva física no ha sido exitosa. En el caso particular del LHC, la gran cantidad de datos que se generan y la complejidad de los mismos dificultan su análisis. **Se requiere una herramienta de búsqueda que sea capaz de aprovechar la gran cantidad de datos que se generan y que pueda buscar con cierta independencia de modelo. Las redes neuronales cumplen estas características** y han sido estudiadas en las olimpiadas LHC 2020, utilizando eventos de múltiples jets simulados. 
-
-En la olimpiadas, los participantes desarrollaron algoritmos de clasificación utilizando estas técnicas para la búsqueda de nuevas partículas. Sin embargo, los resultados de los algoritmos no son directamente comparables; no es evidente cuál aproximación da un mejor resultado.
-
-A partir de esto, **se plantea un proyecto en el que se desarrolle una herramienta que proporcione información sobre el rendimiento de algoritmos de clasificación** de eventos de dijets de manera comparativa. El proyecto está divido en dos partes: 
-*	El desarrollo de la herramienta de comparación que se utilizará para hacer este análisis.
-*	El análisis de algunos algoritmos que participaron en las LHCO 2020 a partir de algunas métricas de reproducibilidad y rendimiento.
-
-Para desarrollar la herramienta de comparación es necesario estudiar la topología de dijet, hacer un análisis de los datos con Python utilizando herramientas de agrupación de jets y la implementación algoritmos sencillos de aprendizaje automático para comparar con los algoritmos escogidos de la competencia. Con esto desarrolla un pipeline que compare los algoritmos sencillos con los resultados reproducidos de los algoritmos de la competencia y luego se utiliza este para hacer el análisis comparativo.
-
-**Se requiere que la investigación se haga de manera reproducible por la naturaleza de los datos y algoritmos a utilizar en el proyecto**, que son open source. Por esto, se siguen los lineamientos planteados en The Turing Way, un manual para hacer ciencia de datos de forma reproducible, ética y colaborativa. Esto permitirá que los resultados obtenidos se puedan utilizar fácilmente, de manera que signifique un aporte útil para esta comunidad y cualquier ente interesado en el estudio de estos métodos.
-
+El **trabajo completo** se encuentra en un Jupyter Book publicado en [este link](https://marianaiv.github.io/tesis_grado_UCV/intro.html)
 
 ### Tutores
-| Nombre | Role | email | Github | 
+| Nombre | Role | Email | Github | 
 | --- | --- | --- | --- |
 | Reina Camacho Toro | Investigadora en LPNHE/CNRS  | [reina.camacho@cern.ch](mailto:reina.camacho@cern.ch) | [@camachoreina](https://camachoreina.github.io) |
 | Camila Rangel Smith | Investigadora científica de datos en El Instituto Alan Turing | [crangelsmith@turing.ac.uk](mailto:crangelsmith@turing.ac.uk) |[@crangelsmith](https://github.com/crangelsmith) |
+| José Antonio López | Universidad Central de Venezuela | [jal.ccs@gmail.com](mailto:jal.ccs@gmail.com) |- |
+
+## Reproducción de resultados
+La [comparación de los algoritmos](https://marianaiv.github.io/tesis_grado_UCV/capitulos/resultados/comparacion-algoritmos.html) se realiza utilizando `benchtool`, el paquete de herramientas basado en Python desarrollado para este trabajo. Instrucciones sobre como instalar el paquete y utilizar el pipeline de `benchtools` se encuentran en el archivo README [del repositorio](https://github.com/marianaiv/benchtools).
+
+Específicamente, el pipeline se utilizó para el conjunto R&D de la siguiente forma:
+``
+benchtools_run --RD --all_data --training --ext_clf ext-RnD.txt --name RnD
+``
+Y luego para el conjunto BB1:
+``
+benchtools_run --box 1 --all_data --ext_clf ext-BB1.txt --name BB1
+``
+## Construcción del Jupyter Book
+El documento del trabajo se realizó en un [Jupyter Book](https://jupyterbook.org/en/stable/intro.html). Para usarlo y construirlos se siguen los pasos a continuación:
+
+Primero, hay que clonar el repositorio.
+```
+git clone https://github.com/marianaiv/tesis_grado_UCV.git
+```
+Entramos al repositorio.
+```
+cd tesis_grado_UCV
+```
+Creamos un ambiente virtual con el archivo eviroment.yml (agregado proximamente*) usando conda y lo activamos.
+```
+conda env create -f environment.yml
+conda activate tesis_UCV
+```
+Construimos el book:
+```
+jb build tesis
+```
+
+Para construir el documento en latex:
+```
+git checkout latexpdf
+jb build tesis --builder pdflatex
+```
+## Licencia
+El contenido del trabajo escrito está licenciado bajo [Licencia Internacional Pública de Atribución-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/legalcode.es).
+
+El código está licenciado bajo [GNU General Public License v3.0 (GNU GPLv3)](https://choosealicense.com/licenses/gpl-3.0/).
