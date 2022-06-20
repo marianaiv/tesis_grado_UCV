@@ -36,13 +36,13 @@ El **trabajo completo** se encuentra en un Jupyter Book publicado en [este link]
 La [comparación de los algoritmos](https://marianaiv.github.io/tesis_grado_UCV/capitulos/resultados/comparacion-algoritmos.html) se realiza utilizando `benchtool`, el paquete de herramientas basado en Python desarrollado para este trabajo. Instrucciones sobre como instalar el paquete y utilizar el pipeline de `benchtools` se encuentran en el archivo README [del repositorio](https://github.com/marianaiv/benchtools).
 
 Específicamente, el pipeline se utilizó para el conjunto R&D de la siguiente forma:
-``
+```
 benchtools_run --RD --all_data --training --ext_clf ext-RnD.txt --name RnD
-``
+```
 Y luego para el conjunto BB1:
-``
+```
 benchtools_run --box 1 --all_data --ext_clf ext-BB1.txt --name BB1
-``
+```
 ## Construcción del Jupyter Book
 El documento del trabajo se realizó en un [Jupyter Book](https://jupyterbook.org/en/stable/intro.html). Para usarlo y construirlos se siguen los pasos a continuación:
 
