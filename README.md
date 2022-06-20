@@ -15,17 +15,16 @@
 ## Sobre el proyecto <a name="about_project"></a>
 
 ### Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets: análisis comparativo de algoritmos de clasificación en términos de reproducibilidad y rendimiento
-### Objetivos 
-* Objetivo general: 
-   * Búsqueda de nueva física utilizando jets y aprendizaje automático bajo un concepto de investigación reproducible.  
-* Objetivos específicos:  
-   * Analizar datos de eventos de múltiples jets de nueva física simulados para las [olimpiadas LHC 2020](https://lhco2020.github.io/homepage/).
-   * Aplicar y comparar diferentes algoritmos de clasificación sencillos: supervisados y no supervisados.
-   * Analizar comparativamente alguno de los algoritmos de clasificación participantes en las [olimpiadas LHC 2020](https://lhco2020.github.io/homepage/).
-   * Desarrollar un programa que caracterice algoritmos de clasificación para eventos de múltiples jets.
-   * Hacer una investigación reproducible bajo los lineamientos de [The Turing Way](https://the-turing-way.netlify.app/welcome.html).
 
-El **trabajo completo** se encuentra en un Jupyter Book publicado en [este link](https://marianaiv.github.io/tesis_grado_UCV/intro.html)
+El trabajo tiene como objetivo la busqueda de nuevas partículas en eventos con lluvias colimadas de partículas de color neutro, conocidas como jets. Esta topología es particularmente interesante porque los jets son la firma experimental de los quarks y gluones, los componentes más pequeños de la materia, y múltiples teorías más allá del modelo estándar plantean nuevas partículas que decaen a jets. Además, son eventos muy común en colisiones protón-protón altamente energéticas. 
+
+En el proyecto, se exploran técnicas de aprendizaje automático para la búsqueda de nueva física en eventos de dos jets, o dijet, y se desarrollan herramientas para determinar el rendimiento de diferentes métodos. Se comparan métodos sencillos implementados en librerias de Python, con dos modelos más complejos participantes en las [olimpiadas LHC 2020](https://lhco2020.github.io/homepage/), una competencia para estudiar el uso de técnicas de detección de anomalías en la búsqueda de nueva física. 
+
+Todo el trabajo se realizó en el contexto de ciencia abierta y reproducible, siguiendo [The Turing Way](https://the-turing-way.netlify.app/welcome). 
+
+Las herramientas computacionales desarrolladas para el análisis se pueden encontrar [este repositorio](https://github.com/marianaiv/benchtools/tree/main). 
+
+El **trabajo completo** se encuentra en un Jupyter Book publicado en [este sitio web](https://marianaiv.github.io/tesis_grado_UCV/intro.html)
 
 ### Tutores
 | Nombre | Role | Email | Github | 
