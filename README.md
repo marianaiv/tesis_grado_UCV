@@ -1,6 +1,6 @@
 <h1 align="center">Trabajo especial de grado</h1>
 
-> En este repositorio se encuentra la [tesis de grado de Mariana Vivas](https://marianaiv.github.io/tesis_grado_UCV/intro.html), requisito parcial para obtener la licenciatura en física en la Universidad Central de Venezuela (UCV)
+> En este repositorio se encuentra el [trabajo especial de grado de Mariana Vivas](https://marianaiv.github.io/tesis_grado_UCV/intro.html), requisito parcial para obtener la licenciatura en física en la Universidad Central de Venezuela (UCV)
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
