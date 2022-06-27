@@ -2,8 +2,6 @@
 # Más allá del modelo estándar
 A pesar de que en los últimos 40 años se han verificado exitosamente múltiples predicciones hechas a partir del modelo estándar{cite}`Kobayashi_2021,NAP6045`, es evidente que no es una teoría final debido a que no explica varios fenómenos observados experimentalmente. A partir de estas limitaciones, se han planteado múltiples teorías que intentan responder las preguntas para las que el modelo estándar no tiene explicación. Estás teorías se conocen como teorías *más allá del modelo estándar* (BSM) y su verificación/refutación es uno de los objetivos del programa del LHC.
 
-El LHC{cite}`Evans:2008zzb` es el acelerador de partícula más grande y de mayor energía del mundo, siendo el experimento de colisionador principal en física de altas energías. Se encuentra ubicado en el laboratorio europeo de física de partículas CERN en la frontera Franco-Suiza, cerca de Geneva en Suiza. Consiste en un anillo de 27 kilometros de circunferencia conformado por imanes superconductores con estructuras aceleradoras que aumentan la energía de las partículas a lo largo del camino. Fue diseñado para acelerar protones o iones a altas energías y producir una alta tasa de colisiones, y es utilizado principalmente para probar predicciones teóricas en física de partículas, especialmente aquellas asociadas al modelo estándar.
-
 En esta sección se describirán algunas de las limitaciones que presenta el modelo estándar, teorías BSM que intentan resolver estas limitaciones y la búsqueda de nueva física en eventos de dos jets, la topología a estudiar en este trabajo.
 (bsm-limitaciones)=
 ## Limitaciones del modelo estándar
