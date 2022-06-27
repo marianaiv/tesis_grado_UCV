@@ -4,7 +4,7 @@ La cromodinámica cuántica (QCD, por sus siglas en inglés) es la teoría de la
 
 El bosón predicho por la teoría es el gluon. Al igual que el fotón, es una partícula no-masiva de espín 1 que interactúa con partículas que poseen *carga de color*. La carga de color es el análogo a la carga eléctrica y es el número cuántico conservado en la teoría. Existen tres tipos de carga para los quarks: rojo, verde y azul (para los anti-quarks: anti-rojo, anti-verde y anti-azul). 
 
-Los gluones poseen carga de color, contrario a los fotones que no poseen carga eléctrica. Existen ocho gluones con superposiciones de cargas de color. Así, los gluones median la interacción fuerte pero también interactúan entre sí, haciendo que el análisis de QCD sea más complejo. 
+Los gluones poseen carga de color, en contraste con los fotones que no poseen carga eléctrica. Existen ocho gluones con superposiciones de cargas de color. Los gluones median la interacción fuerte pero también interactúan entre sí, haciendo que el análisis de QCD sea más complejo. 
 
 Los vértices de interacción permitidos por la cromodinámica cuántica son el acople quark-gluon, $gq\bar{q}$, como se observa en la {numref}`qcd-quarkgluon`, y la interacción propia de tres y cuatro gluones, *ggg* y *gggg*, que se puede observar en la {numref}`qcd-gluongluon`.
 

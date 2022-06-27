@@ -356,6 +356,11 @@ const thebe_selector_output = ".output, .cell_output"
    2.7.3. Barreras para la reproducibilidad
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#olimpiadas-lhc-2020">
+   2.7.4. Olimpiadas LHC 2020
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -389,6 +394,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#barreras-para-la-reproducibilidad">
    2.7.3. Barreras para la reproducibilidad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#olimpiadas-lhc-2020">
+   2.7.4. Olimpiadas LHC 2020
   </a>
  </li>
 </ul>
@@ -430,8 +440,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Dependiendo del tipo de investigación, hay distintas consideraciones que se deben tomar para hacerla reproducible. A continuación, describiremos los criterios de reproducibilidad pertinentes para este trabajo. Particularmente, se toma un enfoque de <strong>investigación abierta</strong>, lo que implica que el desarrollo y los pasos de la investigación deben estar <em>públicamente disponibles</em>, ser <em>trasparentes</em> y <em>reutilizable</em>.</p>
 <p>El registro del desarrollo de la investigación se hace mediante el <em>control de versiones</em>. Controlar versiones es una manera de registrar los cambios hechos en un archivo de manera cronológica. En desarrollo de software es común utilizar Git para este propósito, un sistema de control de versiones de código abierto y gratuito.</p>
 <p>Para los datos utilizados, el código desarrollado y los resultados obtenidos estén públicamente disponible, deben ser accesibles de manera fácil y gratuita. En este proyecto se publican utilizando <a class="reference external" href="https://github.com">GitHub</a>, una plataforma de internet para el alojamiento de desarrollo de software y el control de versiones usando Git.</p>
-<p>Controlar las versiones y publicar cada uno de los pasos de la investigación es un buen inicio para lograr transparencia. Sin embargo, es necesario proporcionar <em>documentación</em> acerca de la información publicada. La documentación engloba los metadatos necesarios para entender el contenido de cada paso de la investigación. Específicamente, es necesario incluir información sobre los datos, instrucciones sobre cómo usar el código y pasos a seguir que se utilizaron para obtener los resultados.</p>
-<p>A nivel de desarrollo de software, la trasparencia y reutilizabilidad requieren consideraciones sobre la <em>calidad del código</em>. Es decir, el código debe ser escrito siguiendo continuamente parámetros preestablecidos, debe estar comentado y se deben desarrollar pruebas para comprobar su funcionamiento. Además, el entorno computacional en el que se llevó a cabo la investigación debe capturarse de tal manera que otros puedan replicarlo. El objetivo es que cualquier persona o ente que quiera reproducir los resultados o utilizar el código pueda hacerlo fácilmente.</p>
+<p>Controlar las versiones y publicar cada uno de los pasos de la investigación es un buen inicio para lograr transparencia. A nivel de desarrollo de software, la trasparencia y reutilizabilidad requieren consideraciones sobre la <em>calidad del código</em>. Es decir, el código debe ser escrito siguiendo continuamente parámetros preestablecidos, debe estar comentado y se deben desarrollar pruebas para comprobar su funcionamiento. Además, el entorno computacional en el que se llevó a cabo la investigación debe capturarse de tal manera que otros puedan replicarlo. El objetivo es que cualquier persona o ente que quiera reproducir los resultados o utilizar el código pueda hacerlo fácilmente.</p>
+<p>La <em>documentación</em> es un factor fundamental a la hora de hacer investigación abierta y reproducible. Esta engloba la publicación de los metadatos necesarios para entender el contenido de cada paso de la investigación. Específicamente, incluye información sobre los datos, instrucciones para usar el código y los pasos a seguir para obtener el resultado de la investigación, así como cualquier información que se considere necesaria para reproducir resultados o entender documentos relacionados al trabajo.</p>
 <p>Por último, ninguna investigación es reutilizable si no posee una <em>licencia</em>. Sin licencia todos los derechos pertenecen al autor, es decir, nadie puede usar, copiar, distribuir o modificar el trabajo sin consentimiento. Una licencia da información acerca de las condiciones de uso de cada parte de la investigación. Existen distintas licencias según el tipo de contenido<span id="id7">[<a class="reference internal" href="../referencias/referencias.html#id99" title="Choose an open source license. Accessed: 14-04-2022. URL: https://choosealicense.com.">79</a>]</span>. Para este proyecto se escogieron dos tipos de licencia, una para el software desarrollado y otra para los documentos. Para el software se utiliza una licencia <a class="reference external" href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License v3.0</a>, que permite el uso y modificación libre del código, siempre y cuando se utilice de manera abierta y bajo la misma licencia<span id="id8">[<a class="reference internal" href="../referencias/referencias.html#id100" title="GNU Operating System. Gnu general public license. Accessed: 14-04-2022. URL: https://www.gnu.org/licenses/gpl-3.0.en.html.">80</a>]</span>. El resto del proyecto está licenciado bajo <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/deed.es">Creative Commons Attribution 4.0 International</a>, que permite la distribución y modificación del contenido, indicando si se realizaron modificaciones y dando crédito de manera apropiada<span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id101" title="Creative Commons. Atribución 4.0 internacional (cc by 4.0). Accessed: 14-04-2022. URL: https://creativecommons.org/licenses/by/4.0/deed.es.">81</a>]</span>.</p>
 </div>
 <div class="section" id="barreras-para-la-reproducibilidad">
@@ -445,6 +455,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>Otras barreras están relacionadas a retos técnicos. Por ejemplo, en el área ciencia de datos, la complejidad del análisis y el gran volumen de almacenamiento de datos dificultan el proceso de documentar y publicar toda la información necesaria para reproducir un resultado. Además, la tecnología evoluciona rápidamente, por lo que puede ser difícil reproducir resultados que se obtuvieron utilizando software que puede no ser compatible con nuevas herramientas.</p>
 <p>Por último, algunas barreras comunes percibidas por los investigadores también dificultan la decisión de hacer investigaciones reproducibles. Existe la percepción de que requiere un mayor esfuerzo y toma más tiempo, y que es necesario aprender habilidades adicionales. Sin embargo, este tiempo y esfuerzo se compensa con todas las facilidades que proporcionan los métodos de reproducibilidad.</p>
+</div>
+<div class="section" id="olimpiadas-lhc-2020">
+<span id="rpd-lhco"></span><h2><span class="section-number">2.7.4. </span>Olimpiadas LHC 2020<a class="headerlink" href="#olimpiadas-lhc-2020" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Las barreras mencionadas anteriormente pueden afectar la reproducibilidad de trabajos que utilizan nuevas herramientas para el análisis de datos, como los métodos de aprendizaje automático. En el caso particular de las olimpiadas LHC 2020, donde se estudia el uso de estas herramientas como una forma innovadora para realizar búsquedas de nueva física, es esencial considerar la reproducibilidad de los resultados.</p>
+<p>El desarrollo de nuevos métodos de análisis requiere que estos puedan ser validados por otras investigacione, de manera se compruebe su utilidad. Además, como se mencionó anteriormente, el hacer investigación reproducible permite mayor complejidad en el análisis y mayor colaboración, características fundamentales para el desarrollo de nuevo conocimiento, tomando en cuenta los retos particulares relacionados al uso de estos métodos en HEP: el gran volumen de datos y la complejidad de los eventos de colisión. Estos problemas son afrontados por grandes equipos de investigadores que trabajan con un fin común, por lo que facilitar la comprensión de los métodos desarrollados es de gran importancia.</p>
+<p>Más adelante en este trabajo, en la <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html#alglhco-rep"><span class="std std-numref">Sección 3.3.1</span></a>, se discutirá el nivel de reproducibilidad de esta competencia.</p>
 </div>
 </div>
 

@@ -1,3 +1,4 @@
+(exp-datos)=
 # Exploración de datos
 La exploración de los datos es parte fundamental de la implementación de técnicas de aprendizaje automático, puesto que ayuda a escoger las mejores herramientas para aproximarse al problema que se quiera resolver. En este capítulo, realizaremos una exploración de los datos usados en el trabajo: el conjunto R&D y BB1, descritos en la {numref}`datos`. 
 
