@@ -457,13 +457,12 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="comparacion-de-algoritmos">
 <span id="comp"></span><h1><span class="section-number">5.2. </span>Comparación de algoritmos<a class="headerlink" href="#comparacion-de-algoritmos" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>El rendimiento de los algoritmos utilizados anteriormente no puede ser comparado directamente mediante las ditribuciones de las predicciones para cada variable. Como se evidencia en la sección anterior, un algoritmo puede parecer ajustar muy bien a los datos en una variable, pero no en otra. Por ello, utilizamos las métricas explicadas en la <a class="reference internal" href="../datos-metodos/metricas.html#met"><span class="std std-numref">Sección 3.4</span></a> para comparar directamente el rendimiento de los algoritmos. En esta sección se compararán los algoritmos utilizados en la sección anterior, agregando UCluster y GAN-AE.</p>
-<p>Usualmente, del conjunto R&amp;D se obtendrían las métricas de rendimiento con el fin de configurar los modelos para que realicen la mejor clasificación posible. Sin embargo, en este trabajo, comparamos el rendimiento de los algoritmos al clasificar un subconjunto del conjunto R&amp;D, el conjutno utilizado para entrenamiento, y luego al clasificar un conjunto ligeramente distinto, el conjunto BB1.</p>
+<p>El rendimiento de los algoritmos utilizados anteriormente no puede ser comparado directamente por las ditribuciones de las variables de acuerdo a la clasificación realizada por los modelos. Como se evidencia en la sección anterior, un algoritmo puede parecer ajustar muy bien a los datos en una variable, pero no en otra. Por ello, utilizamos las métricas explicadas en la <a class="reference internal" href="../datos-metodos/metricas.html#met"><span class="std std-numref">Sección 3.4</span></a> para comparar directamente el rendimiento de los algoritmos. En esta sección se compararán los algoritmos utilizados en la sección anterior, agregando UCluster y GAN-AE.</p>
 <p>Los resultados presentados en esta sección se obtuvieron utilizando el pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>, descrito en la <a class="reference internal" href="../datos-metodos/benchtools.html#bench-pipeline-cap"><span class="std std-numref">Sección 3.5.3</span></a>.</p>
 <div class="section" id="conjunto-r-d">
 <span id="comp-rnd"></span><h2><span class="section-number">5.2.1. </span>Conjunto R&amp;D<a class="headerlink" href="#conjunto-r-d" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En la sección anterior, se mostraron las distribuciones predichas de algunas variables utilizando el conjunto R&amp;D con el objetivo de tener una idea general de cómo están clasificando los algoritmos y para poder asociar esta clasificación a las métricas que se mostrarán a continuación.</p>
-<p>Es necesario acotar, que la clasificación realizada por los algoritmos de las LHCO 2020 para el conjunto R&amp;D no se lleva a cabo utilizando exactamente el mismo subconjunto de datos con todos los modelos. Aunque es el mismo conjunto, los subconjuntos de entrenamiento y prueba varían para los algoritmos de las olimpiadas de acuerdo al código publicado por los participantes. Sin embargo, la proporción de datos de los conjuntos es la misma para todos los métodos; las metricas a continuación representan la clasificación de 30% del conjunto y no fue utilizado para entrenamiento.</p>
+<p>En la sección anterior, se mostraron las distribuciones de algunas variables de acuerdo a la clasificación realizada por cada modelo. Esto se hizo con el objetivo de tener una idea general de cómo están clasificando los algoritmos y para poder asociar esta clasificación a las métricas que se mostrarán a continuación.</p>
+<p>La clasificación realizada por los algoritmos de las LHCO 2020 para el conjunto R&amp;D no se lleva a cabo utilizando el mismo subconjunto de datos en todos los modelos. Los subconjuntos de entrenamiento y prueba varían para los algoritmos de las olimpiadas de acuerdo al código publicado por los participantes. Sin embargo, el subconjunto para utilizado para calcular las métricas a continuación no fue utilizado para entrenamiento en ninguno de los modelos.</p>
 <div class="section" id="metricas-numericas">
 <h3><span class="section-number">5.2.1.1. </span>Métricas numéricas<a class="headerlink" href="#metricas-numericas" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>En la <a class="reference internal" href="#comp-metricas-num-rnd"><span class="std std-numref">Figura 5.8</span></a> se observa una comparación visual de las métricas numéricas: <em>exactitud balanceada</em>, <em>precisión</em>, <em>recuperación</em> y <em>puntaje f1</em>.</p>
@@ -476,6 +475,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Los modelos no supervisados KMeans, UCluster y GAN-AE son los modelos con menor precisión pero mayor recuperación. Es decir, están etiquetando una mayor cantidad de eventos de fondo incorrectamente como señal, pero entre los eventos etiquetados como señal, se encuentra la mayor parte de los eventos de señal real.</p>
 <p>La media armónica de estas dos métricas se observa en el gráfico del puntaje f1, donde, en general, los modelos supervisados obtuvieron puntajes más altos que los modelos no supervisados.</p>
 <p>El mayor puntaje f1 fue alcanzado por MLP. Por otra parte, el mayor puntaje de precisión lo logró RFC y el mayor puntaje de recuperación lo consiguió el modelo de TensorFlow, que también obtuvo el mayor puntaje de exactitud balanceada. Los menores puntajes fueron obtenidos por UCluster, con la menor precisión y menor puntaje f1, y por GBC, con el menor puntaje de exactitud balanceada y recuperación.</p>
+<p>Los modelos supervisados obtienen una mejor clasificación porque poseen más información en el momento del aprendizaje, puesto que utilizan las etiquetas de los eventos, mientras que los modelos no supervisados requieren estructura en los datos de entrenamiento. Si el conjunto de datos original no posee esta estructura naturalmente, se debería lograr mediante el pre-procesamiento. Sin embargo, el pre-procesamiento de los tres modelos no-supervisados no logró una estructura suficientemente significativa como para obtener una mejor clasificación que las de los modelos supervisados.</p>
+<p>Se consideró una clasificación aleatoria en la que un modelo predice que el 50% de los eventos son señal y el 50% son fondo, aleatoriamente. La clasificación aleatoria obtuvo los menores puntajes excepto en la precisión y el puntaje f1, donde UCluster obtuvo menor puntaje. En general, los modelos clasifican mejor que un clasificador aleatorio, salvo UCluster.</p>
 <p>Un resumen de los valores numéricos obtenidos se encuentran en la <a class="reference internal" href="#comp-metricasnumericas-rnd"><span class="std std-numref">Tabla 5.2</span></a>.</p>
 <table class="colwidths-auto table" id="comp-metricasnumericas-rnd">
 <caption><span class="caption-number">Tabla 5.2 </span><span class="caption-text">Métricas numéricas obtenidas con el pipeline de <em>benchtools</em> para el conjunto R&amp;D.</span><a class="headerlink" href="#comp-metricasnumericas-rnd" title="Enlace permanente a esta tabla">¶</a></caption>
@@ -488,49 +489,55 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>TensorflowClassifier</p></td>
+<tr class="row-even"><td class="text-align:center"><p>Random classification</p></td>
+<td class="text-align:center"><p>0.4991</p></td>
+<td class="text-align:center"><p>0.0906</p></td>
+<td class="text-align:center"><p>0.1534</p></td>
+<td class="text-align:center"><p>0.4984</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>TensorflowClassifier</p></td>
 <td class="text-align:center"><p>0.9076</p></td>
 <td class="text-align:center"><p>0.5033</p></td>
 <td class="text-align:center"><p>0.9044</p></td>
 <td class="text-align:center"><p>0.6467</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>RandomForestClassifier</p></td>
+<tr class="row-even"><td class="text-align:center"><p>RandomForestClassifier</p></td>
 <td class="text-align:center"><p>0.8127</p></td>
 <td class="text-align:center"><p>0.8556</p></td>
 <td class="text-align:center"><p>0.6362</p></td>
 <td class="text-align:center"><p>0.7298</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>GradientBoostingClassifier</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>GradientBoostingClassifier</p></td>
 <td class="text-align:center"><p>0.7930</p></td>
 <td class="text-align:center"><p>0.8145</p></td>
 <td class="text-align:center"><p>0.5997</p></td>
 <td class="text-align:center"><p>0.6908</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>QuadraticDiscriminantAnalysis</p></td>
+<tr class="row-even"><td class="text-align:center"><p>QuadraticDiscriminantAnalysis</p></td>
 <td class="text-align:center"><p>0.8146</p></td>
 <td class="text-align:center"><p>0.6973</p></td>
 <td class="text-align:center"><p>0.6578</p></td>
 <td class="text-align:center"><p>0.6770</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>MLPClassifier</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>MLPClassifier</p></td>
 <td class="text-align:center"><p>0.8623</p></td>
 <td class="text-align:center"><p>0.8391</p></td>
 <td class="text-align:center"><p>0.7388</p></td>
 <td class="text-align:center"><p>0.7858</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>KMeans</p></td>
+<tr class="row-even"><td class="text-align:center"><p>KMeans</p></td>
 <td class="text-align:center"><p>0.7934</p></td>
 <td class="text-align:center"><p>0.2551</p></td>
 <td class="text-align:center"><p>0.8288</p></td>
 <td class="text-align:center"><p>0.3901</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>GAN-AE</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>GAN-AE</p></td>
 <td class="text-align:center"><p>0.7950</p></td>
 <td class="text-align:center"><p>0.3962</p></td>
 <td class="text-align:center"><p>0.8431</p></td>
 <td class="text-align:center"><p>0.5391</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>UCluster</p></td>
+<tr class="row-even"><td class="text-align:center"><p>UCluster</p></td>
 <td class="text-align:center"><p>0.8073</p></td>
 <td class="text-align:center"><p>0.0308</p></td>
 <td class="text-align:center"><p>0.8921</p></td>
@@ -541,16 +548,17 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="metricas-bidimensionales">
 <h3><span class="section-number">5.2.1.2. </span>Métricas bidimensionales<a class="headerlink" href="#metricas-bidimensionales" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Las métricas bidimensionales obtenidas con el pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code> son la eficiencia de señal vs. rechazo de fondo, la ROC inversa, la curva precisión recuperación y la mejora significativa.</p>
-<p>De acuerdo a todas las métricas bidimensionales, el modelo MLP es el que tiene un mejor rendimiento, con un AUC de 0.975 y una precisión promedio de 0.862 (<a class="reference internal" href="#comp-metricas-graf-rnd"><span class="std std-numref">Figura 5.9</span></a>).</p>
+<p>En la sección anterior se consideró la clasificación después de cortar en un umbral específico para cada clasificador. A continuación, observaremos las métricas bidimensionales, que proporcionan información más general del rendimiento de los algoritmos, porque se obtiene el rendimiento para múltiples umbrales.</p>
+<p>Las métricas bidimensionales obtenidas con el pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code> son la <em>eficiencia de señal vs. rechazo de fondo</em>, la <em>ROC inversa</em>, la <em>curva precisión recuperación</em> y la <em>mejora de la significancia</em>.</p>
+<p>De acuerdo a todas las métricas bidimensionales, el modelo MLP es el que tiene un mejor rendimiento al clasificar el conjunto R&amp;D, con un AUC de 0.975 y una precisión promedio de 0.862, como se observa en la <a class="reference internal" href="#comp-metricas-graf-rnd"><span class="std std-numref">Figura 5.9</span></a>.</p>
 <div class="figure align-default" id="comp-metricas-graf-rnd">
 <a class="reference internal image-reference" href="../../_images/comp-metricas-graf-RnD.png"><img alt="../../_images/comp-metricas-graf-RnD.png" src="../../_images/comp-metricas-graf-RnD.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Figura 5.9 </span><span class="caption-text">Metricas bidimensionales para la clasificación del conjunto R&amp;D. De izquierda derecha, en la fila superior: eficiencia de señal vs. rechazo de fondo, ROC inversa, y en la fila inferior: precisión-recuperación y mejora significativa.</span><a class="headerlink" href="#comp-metricas-graf-rnd" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>Del gráfico de eficiencia de señal vs. rechazo de fondo y del gráfico de precisión-recuperación, observamos que el clasificador de TensorFlow se encuentra en segundo lugar con un AUC de 0.969 y una precisión media de 0.832. Sin embargo, en los gráficos de la curva ROC inversa y de mejora significativa, no es evidente cuál da un mejor resultado entre el clasificador de TensorFlow y RFC. Seguido de estos modelos, se encuentran GBC y QDA en todas las métricas.</p>
-<p>Por último, las curvas de los modelos UCluster y GAN-AE se cruzan múltiples veces en los gráficos de eficiencia de señal vs. rechazo de fondo, la ROC inversa y la mejora significativa, por lo que es difícil determinar cuál de los algoritmos da un mejor resultado. De acuerdo al AUC, GAN-AE da un mejor resultado que UCluster. Sin embargo, según la curva de precisión-recuperación, GAN-AE tiene un mejor resultado, con una precisión media de 0.521, mientras que la clasificación de UCluster da una precisión promedio de 0.060.</p>
-<p>Por último, KMeans obtuvo el menor AUC y la curva de este modelo se encuentra por debajo de todos los demás modelos en todos los gráficos, excepto el de precisión-recuperación. De acuerdo a este gráfico, KMeans obtiene un mejor resultado que UCluster, con una precisión promedio de 0.130.</p>
-<p>En el caso de este trabajo, es de interés conocer qué tan bien funcionan los algoritmos para separar señal y fondo en conjuntos de datos desconocidos para los modelos, con algunas variaciones en las distribuciones, como lo es el conjunto BB1.</p>
+<p>Del gráfico de eficiencia de señal vs. rechazo de fondo y del gráfico de precisión-recuperación, observamos que el clasificador de TensorFlow se encuentra en segundo lugar con un AUC de 0.969 y una precisión media de 0.832. Seguido de estos modelos, se encuentran RFC, GBC y QDA en todas las métricas.</p>
+<p>Los modelos no supervisados obtuvieron menores puntajes que los clasificados. De acuerdo al AUC, GAN-AE obtiene un mejor resultado que UCluster, con 0.866 y 0.865, respectivamente. GAN-AE también obtiene un mejor resultado según la curva de precisión-recuperación, con una precisión media de 0.521, mientras que la clasificación de UCluster da una precisión media de 0.060.</p>
+<p>Por último, KMeans obtuvo el menor AUC y la curva de este modelo se encuentra por debajo de todos los demás modelos en todos los gráficos, excepto el de precisión-recuperación. De acuerdo a este gráfico, KMeans obtiene un mejor resultado que UCluster, con una precisión promedio de 0.130 y 0.060, respectivamente.</p>
+<p>En este trabajo, es de interés conocer qué tan bien funcionan los algoritmos al clasificar señal y fondo en conjuntos de datos desconocidos para los modelos, con variaciones en las distribuciones de masa, como el conjunto BB1.</p>
 </div>
 </div>
 <div class="section" id="conjunto-bb1">
@@ -563,10 +571,10 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="../../_images/comp-metricas-num-BB1.png"><img alt="../../_images/comp-metricas-num-BB1.png" src="../../_images/comp-metricas-num-BB1.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-number">Figura 5.10 </span><span class="caption-text">Diagramas de barras de las métricas numéricas obtenidas utilizando el pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code> para el conjunto BB1. De izquierda a derecha, en la fila superior: exactitud balanceada y precisión. En la fila inferior: recuperación y puntaje f1.</span><a class="headerlink" href="#comp-metricas-num-bb1" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>La exactitud balanceada sigue siendo alta para todos los algoritmos.</p>
-<p>La precisión disminuyó notablemente para todos los modelos. En este conjunto, la mayor precisión fue lograda por RFC con un 3% de precisión, contrario a la precisión obtenida para el conjunto R&amp;D, de 86%. Esto implica que los algoritmos clasifican más eventos de fondo incorrectamente, o menos eventos de señal correctamente, en el conjunto BB1.</p>
-<p>La recuperación aumentó para los modelos GBC, GAN-AE y UClueste. Para UCluster, GAN-AE, KMeas y el clasificador de TensorFlow, la recuperación se mantuvo cercana o sobre el 80%. La baja precisión y alta recuperación indica que los modelos están clasificando una gran cantidad de eventos de fondo como señal. Sin embargo, en estos eventos clasificados como señal, logran clasificar la señal real.</p>
+<p>La exactitud balanceada sigue siendo alta para todos los algoritmos. La precisión disminuyó notablemente para todos los modelos. En este conjunto, la mayor precisión fue lograda por RFC con un 3% de precisión, contrario a la precisión obtenida para el conjunto R&amp;D, de 86%. Esto implica que los algoritmos clasifican más eventos de fondo incorrectamente, o menos eventos de señal correctamente, en el conjunto BB1.</p>
+<p>La recuperación aumentó para los modelos GBC, GAN-AE y UCluster. Para UCluster, GAN-AE, KMeas y el clasificador de TensorFlow, la recuperación se mantuvo cercana o sobre el 80%. La baja precisión y alta recuperación indica que los modelos están clasificando una gran cantidad de eventos de fondo como señal. Sin embargo, en estos eventos clasificados como señal, logran clasificar la señal real.</p>
 <p>Debido a la baja precisión, el puntaje f1 se vio afectado y disminuyó notablemente para todos los clasificadores. El clasificador con mayor puntaje es RFC, con un puntaje f1 de 0.05, mientras que en el conjunto R&amp;D obtuvo 0.73.</p>
+<p>Nuevamente, el clasificador aleatorio obtuvo métricas más bajas que todos los modelos, excepto en la precisión y el puntaje f1, donde UCluster obtuvo las métricas más bajas.</p>
 <table class="colwidths-auto table" id="comp-metricasnumericas-bb1">
 <caption><span class="caption-number">Tabla 5.3 </span><span class="caption-text">Métricas numéricas obtenidas con el pipeline de <em>benchtools</em> para el conjunto BB1.</span><a class="headerlink" href="#comp-metricasnumericas-bb1" title="Enlace permanente a esta tabla">¶</a></caption>
 <thead>
@@ -578,49 +586,55 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>TensorflowClassifier</p></td>
+<tr class="row-even"><td class="text-align:center"><p>Random classification</p></td>
+<td class="text-align:center"><p>0.4994</p></td>
+<td class="text-align:center"><p>0.0008</p></td>
+<td class="text-align:center"><p>0.0017</p></td>
+<td class="text-align:center"><p>0.4988</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>TensorflowClassifier</p></td>
 <td class="text-align:center"><p>0.8418</p></td>
 <td class="text-align:center"><p>0.0049</p></td>
 <td class="text-align:center"><p>0.0096</p></td>
 <td class="text-align:center"><p>0.8249</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>RandomForestClassifier</p></td>
+<tr class="row-even"><td class="text-align:center"><p>RandomForestClassifier</p></td>
 <td class="text-align:center"><p>0.7005</p></td>
 <td class="text-align:center"><p>0.0362</p></td>
 <td class="text-align:center"><p>0.0666</p></td>
 <td class="text-align:center"><p>0.4101</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>GradientBoostingClassifier</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>GradientBoostingClassifier</p></td>
 <td class="text-align:center"><p>0.7164</p></td>
 <td class="text-align:center"><p>0.0367</p></td>
 <td class="text-align:center"><p>0.0678</p></td>
 <td class="text-align:center"><p>0.4424</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>QuadraticDiscriminantAnalysis</p></td>
+<tr class="row-even"><td class="text-align:center"><p>QuadraticDiscriminantAnalysis</p></td>
 <td class="text-align:center"><p>0.6894</p></td>
 <td class="text-align:center"><p>0.0264</p></td>
 <td class="text-align:center"><p>0.0495</p></td>
 <td class="text-align:center"><p>0.3909</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>MLPClassifier</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>MLPClassifier</p></td>
 <td class="text-align:center"><p>0.8143</p></td>
 <td class="text-align:center"><p>0.0028</p></td>
 <td class="text-align:center"><p>0.0055</p></td>
 <td class="text-align:center"><p>0.9005</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>KMeans</p></td>
+<tr class="row-even"><td class="text-align:center"><p>KMeans</p></td>
 <td class="text-align:center"><p>0.8094</p></td>
 <td class="text-align:center"><p>0.0039</p></td>
 <td class="text-align:center"><p>0.0078</p></td>
 <td class="text-align:center"><p>0.7854</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>GAN-AE</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>GAN-AE</p></td>
 <td class="text-align:center"><p>0.9091</p></td>
 <td class="text-align:center"><p>0.0201</p></td>
 <td class="text-align:center"><p>0.0393</p></td>
 <td class="text-align:center"><p>0.8752</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>UCluster</p></td>
+<tr class="row-even"><td class="text-align:center"><p>UCluster</p></td>
 <td class="text-align:center"><p>0.8070</p></td>
 <td class="text-align:center"><p>0.0002</p></td>
 <td class="text-align:center"><p>0.0003</p></td>
@@ -636,10 +650,10 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="../../_images/comp-metricas-graf-BB1.png"><img alt="../../_images/comp-metricas-graf-BB1.png" src="../../_images/comp-metricas-graf-BB1.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Figura 5.11 </span><span class="caption-text">Metricas bidimensionales obtenidas para el conjunto BB1. De izquierda derecha, en la fila superior: eficiencia de señal vs. rechazo de fondo, ROC inversa, y en la fila inferior: precisión-recuperación y mejora significativa.</span><a class="headerlink" href="#comp-metricas-graf-bb1" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>En todos los gráficos, es evidente que GAN-AE tiene un mejor rendimiento en este conjunto de datos. Así mismo, los clasificadores con el menor rendimiento son KMeans y UCluster.</p>
-<p>De acuerdo al gráfico de eficiencia de señal vs. rechazo de fondo, el algoritmo con mejores resultados después de GAN-AE es MLP, con un AUC de 0.953. Seguido a estos modelos, no es evidente cuál da un mejor resultado entre GBC y RFC y entre QDA y el clasificador de TensorFlow. De acuerdo al AUC, a MLP le sigue GBC, RFC, el clasificador de TensorFlow y QDA.</p>
-<p>Sin embargo, en el gráfico de ROC inversa, las curvas de los modelos GBC, QDA, MLP, RFC y el clasificador de TensorFlow se cruzan multiples veces, dificultando diferenciar cuál de los clasificadores tiene un mejor rendimiento.</p>
-<p>De la métrica de precisión-recuperación, GBC, el clasificador de TensorFlow y QDA obtuviero una mayor precisión promedio que el modelo MLP. Este mismo orden de los modelos se obtiene en el gráfico de mejora significativa.</p>
+<p>En todos los gráficos, es evidente que GAN-AE tiene un mejor rendimiento en este conjunto de datos. Asimismo, los clasificadores con menor rendimiento son KMeans y UCluster. Que un modelo no-supervisado haya logrado una mejor clasificación en este conjunto indica que tiene una mejor capacidad de generalización. Esta capacidad de generalización no se observó en los modelos supervisados porque se utilizaron variables depedientes de la masa, que además forman parte de las variables más importantes para la clasificación.</p>
+<p>De acuerdo al gráfico de eficiencia de señal vs. rechazo de fondo, el algoritmo con mejores resultados después de GAN-AE es MLP, con un AUC de 0.953. Seguido a estos modelos, no es evidente cuál da un mejor resultado entre GBC y RFC y entre QDA y el clasificador de TensorFlow. De acuerdo al AUC, a MLP le sigue GBC, RFC, el clasificador de TensorFlow, QDA y RFC. Los algoritmos no supervisados KMeans y UCluster son los que tuvieron menor rendimiento, donde UCluster obtuvo el rendimiento más bajo.</p>
+<p>De la métrica de precisión-recuperación también se obtuvo un mejor resultado para GAN-AE, seguido de GBC, el clasificador de TensorFlow y QDA, que obtuviero una mayor precisión promedio que el modelo MLP. A este le sigue RFC y por último los modelos no-supervisados KMeans y UCluster, donde UCluster obtuvo la menor presición promedio, de 0.000. Este mismo orden de redimiento de los modelos se obtiene en el gráfico de mejora significativa.</p>
+<p>En general, las curvas de UCluster y KMeans se mantienen cercanas a las de un clasificador aleatorio, excepto en el gráfico de eficiencia de señal vs. rechazo de fondo, donde se obtienen curvas que indican una clasificación mejor a la del clasificador aleatorio.</p>
 </div>
 </div>
 </div>

@@ -31,8 +31,6 @@ El modelo estándar describe tres de las cuatro interacciones fundamentales dond
 
 Los **bosones** son las partículas intermediarias de las interacciones. Poseen espín entero y siguen la estadística de Einstein-Bose. El modelo estándar incluye tres bosones de espín 1 y un bosón de espín 0. Los bosones de espín 1 están asociados a las interacciones fundamentales incluidas en el modelo: el foton $\gamma$, el gluon $g$ y los bosones $W^+$, $W^-$ y $Z^0$. El bosón de espín 0 conocido como el bosón de Higgs, es un bosón escalar y masivo, que es la manifestación experimental del campo escalar de Higgs, responsable de dar masa a los fermiones y bosones, mediante el rompimiento de la simetría $SU(2)_I\times U(1)_Y${cite:p}`PhysRevLett.13.508,PhysRevLett.13.321`, lo que se conoce como el mecanismo de Brout–Englert–Higgs. El bosón de Higgs interactúa con todas las partículas masivas (excepto los neutrinos), por lo que se predice que tiene interacción propia. 
 
-Esto completa el contenido de partículas del modelo estándar.
-
 (ms-interacciones)=
 ## Interacciones
 Las interacciones fundamentales descritas por el modelo estándar son: la interacción electromagnética, la interacción débil y la interacción fuerte. La cuarta fuerza fundamental, la gravedad, no está incluida en la teoría y su impacto en procesos de partículas fundamentales a las energías accesibles es despreciable.

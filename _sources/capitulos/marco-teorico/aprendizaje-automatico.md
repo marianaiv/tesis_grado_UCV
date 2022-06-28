@@ -1,6 +1,6 @@
 (ml)=
 # Aprendizaje automático
-A medida que alcanzamos mayores energías en los aceleradores de partículas, conseguimos nuevos desafíos debido al aumento en el tamaño de los eventos, el volumen de datos y su complejidad. Por esto, en la última década ha habido un enfoque en el estudio y la mejora de métodos y herramientas de análisis de datos, puesto que el alcance de los experimentos puede ser limitado por el rendimiento de algoritmos y de recursos computacionales. El aprendizaje automático es una herramienta que promete algunas soluciones a estos problemas.
+A medida que alcanzamos mayor luminosidad en los aceleradores de partículas, conseguimos nuevos desafíos debido al aumento en el tamaño de los eventos, el volumen de datos y su complejidad. Por esto, en la última década ha habido un enfoque en el estudio y la mejora de métodos y herramientas de análisis de datos, puesto que el alcance de los experimentos puede ser limitado por el rendimiento de algoritmos y de recursos computacionales. El aprendizaje automático es una herramienta que promete algunas soluciones a estos problemas.
 
 Estos métodos han encontrado múltiples aplicaciones en HEP{cite}`Bourilkov_2019,Guest_2018`.  Notablemente, estas herramientas han tenido un gran impacto en la medición de la masa del quark top{cite}`Bhat:1997rc` en 1997 y el descubrimiento del bosón de Higgs{cite}`201230,20121` en 2012{cite}`jimenez:tel-02402488`. Un resumen al día del uso de aprendizaje automático en HEP se puede encontrar en *[A Living Review of Machine Learning for Particle Physics](https://iml-wg.github.io/HEPML-LivingReview/)*{cite}`hepmllivingreview`.
 
@@ -21,7 +21,7 @@ El aprendizaje supervisado se refiere al aprendizaje a partir de datos etiquetad
 Los algoritmos supervisados comúnmente utilizados suelen ser modelos combinados de algoritmos más simples. Estos algoritmos se combinan utilizando *métodos de ensamble*.
 
 ### Métodos de ensamble 
-Los *métodos de ensamble* utilizan conjuntos de algoritmos de aprendizaje automático cuyas decisiones se combinan para mejorar el rendimiento del sistema en general. Se ha probado que solucionan deficiencias estadísticas, computacionales y de representación{cite}`louppe2015understanding`.
+Los *métodos de ensamble* utilizan conjuntos de algoritmos de aprendizaje automático cuyas decisiones se combinan para mejorar el rendimiento del sistema en general. Se ha probado que solucionan deficiencias estadísticas y computacionales, y expanden el espacio de funciones posibles, permitiendo modelar mejor una función{cite}`louppe2015understanding`.
 
 Existen varios métodos de ensamble, pero, de acuerdo a los algoritmos utilizados en este trabajo, es de interés el método de *impulso*.
 #### Impulso
@@ -53,7 +53,7 @@ Este último caso es el que se trata en este proyecto, y los detalles se discuti
 ### Búsquedas de nueva física independiente de modelo
 La mayor parte de la búsqueda de nueva física está guiada por modelos específicos de BSM, supersimetría o materia oscura. Sin embargo, con la introducción del aprendizaje automático, se han propuesto métodos para la búsqueda independiente de modelo. El objetivo general de estas búsquedas es que sean lo más agnósticas posibles al proceso físico subyacente que puede ser responsable de la señal de nueva física{cite}`jimenez:tel-02402488`.
 
-Un ejemplo de una búsqueda independiente de modelo es {cite}`De_Simone_2019`, donde se plantea el uso de aprendizaje no supervisado para comparar las distribuciones de densidad de probabilidad de dos muestras: simulaciones de eventos del modelo estándar, o lo que sería el fondo para las búsquedas de nueva física, y datos reales.
+Un ejemplo de una búsqueda independiente de modelo es {cite}`De_Simone_2019`, donde se plantea el uso de aprendizaje no supervisado para comparar las distribuciones de densidad de probabilidad, de dos muestras: simulaciones de eventos del modelo estándar, o lo que sería el fondo para las búsquedas de nueva física, y datos reales. Típicamente, se utilizan distribuciones de variables cinemáticas o de estructura de los eventos para este tipo de búsquedas.
 
 Una búsqueda de este tipo es{cite}`Fraser_2022`:
 - *Libre de modelo*: sin suposiciones sobre las densidades
