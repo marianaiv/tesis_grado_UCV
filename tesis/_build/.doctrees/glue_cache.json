@@ -1,5 +1,17 @@
 {
   "capitulos\\analisis-datos\\datos-preprocesados": {
+    "mjj-RnD": {
+      "data": {
+        "text/plain": "3476.93849410142"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "",
+          "name": "mjj-RnD"
+        }
+      },
+      "output_type": "display_data"
+    },
     "mjj-BB1": {
       "data": {
         "text/plain": "3670.46231528546"
@@ -21,18 +33,6 @@
         "scrapbook": {
           "mime_prefix": "application/papermill.record/",
           "name": "df-RnD"
-        }
-      },
-      "output_type": "display_data"
-    },
-    "mjj-RnD": {
-      "data": {
-        "text/plain": "3476.93849410142"
-      },
-      "metadata": {
-        "scrapbook": {
-          "mime_prefix": "",
-          "name": "mjj-RnD"
         }
       },
       "output_type": "display_data"
