@@ -40,7 +40,7 @@ Usualmente, cada árbol emite un voto unitario para la clase más popular dada u
 width: 550px
 name: ml-bosquealeatorio
 ---
-Representación visual del funcionamiento de un bosque aleatorio {cite}`chauhan_2021`
+Representación visual del funcionamiento de un bosque aleatorio {cite}`tibco_rf`.
 ```
 (alg-gbc)=
 ## Potenciación del gradiente
