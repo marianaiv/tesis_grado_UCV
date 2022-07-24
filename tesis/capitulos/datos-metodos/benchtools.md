@@ -13,7 +13,7 @@ Las funciones se dividen en los siguientes módulos:
 - **substructure**: funciones para calcular variables cinemática y de subestructura de los jets.
 - **clustering**: funciones para pre-procesar los datos. Por ejemplo, agrupar los jets, calcular las variables de un jet, entre otras.
 - **plotools**: funciones para graficar datos. La característica principal es que se grafican los datos separando la señal del fondo.
-- **metrictools**: funciones para calcular métricas de redimiento de algoritmos de clasificación binaria.
+- **metrictools**: funciones para calcular métricas de rendimiento de algoritmos de clasificación binaria.
 
 Las funciones en *datatools* y *substructure* son utilizadas principalmente en otras funciones y su contenido no se discutirá en este trabajo. Las funciones en *plotools* se utilizarán más adelante y se observará su funcionamiento, por lo que omitiremos su explicación.
 
@@ -73,9 +73,9 @@ En programación, un pipeline consiste en una serie de pasos en los que la salid
 2. Transformar los datos para que estén confinados en un rango de valores según el clasificador a utilizar, entrenar los modelos y salvarlos.
 3. Evaluar los puntajes y predicciones de cada clasificador.
 4. Importar las clasificaciones externas.
-5. Comparar los algoritmos utilizando las métricas en *metrictools*
+5. Comparar los algoritmos utilizando las métricas en *metrictools*.
 ```
-Para entrenar los modelos, se utilizan las variables descritas en {numref}`bench-variables`, a excepción de $m_{jj}$ y $m_{ji}$, para evitar que los modelos aprendan la masa de las partículas, y obtener una clasificación lo más libre de modelo posible.
+Para entrenar los modelos, se utilizan las variables descritas en la {numref}`bench-variables`, a excepción de $m_{jj}$ y $m_{ji}$, para evitar que los modelos aprendan la masa de las partículas, y obtener una clasificación lo más libre de modelo posible.
 
 El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra la {numref}`bench-pipeline`.
 
@@ -84,6 +84,6 @@ El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama 
 width: 800px
 name: bench-pipeline
 ---
-Diagrama del pipeline.
+Diagrama del pipeline de `benchtools`.
 ```
 Las opciones para correr el pipeline se encuentran explicadas en el [repositorio](https://github.com/marianaiv/benchtools). Los resultados de su uso se observarán en la {numref}`comp`.
