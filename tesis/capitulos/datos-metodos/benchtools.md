@@ -25,7 +25,7 @@ En *clustering* se encuentra la función que realiza el pre-procesamiento de los
 ## Pre-procesamiento de datos
 El pre-procesamiento de datos se realiza para obtener variables físicas a partir de los datos de los jets. Estas variables son utilizadas por los modelos para entrenamiento y clasificación. Los pasos para pre-procesar son los siguientes:
 
-```{prf:algorithm} Pre-procesamiento
+```{prf:algorithm} Pre-procesamiento de *benchtools*
 :label: bench-predatos
 
 **Input**: Datos de todos los hadrones de los eventos.
@@ -40,8 +40,8 @@ El pre-procesamiento de datos se realiza para obtener variables físicas a parti
 ```
 Este proceso se hace paralelamente para fracciones de datos, debido a que importar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos pre-procesados.
 
-Una tabla con la descripción de cada variable calculada se encuentra {numref}`bench-variables`:
-```{table} Variables calculadas en el pre-procesamiento de los datos. Las variables se calculan para i=1,2, que representan el jet principal y secundario, respectivamente.
+Una tabla con la descripción de cada variable calculada se encuentra {numref}`bench-variables`.
+```{table} Variables calculadas en el pre-procesamiento de los datos. Las variables se calculan para *i*=1,2, que representan el jet principal y secundario, respectivamente.
 :name: bench-variables
 
 | Variable         | Descripción                                                 |
@@ -62,7 +62,7 @@ Una tabla con la descripción de cada variable calculada se encuentra {numref}`b
 ## Pipeline
 En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de `benchtools` pre-procesa los datos, entrena los modelos explicados en la {numref}`alg`, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos se describen a continuación:
 
-```{prf:algorithm} Pipeline
+```{prf:algorithm} Pipeline de *benchtools*
 :label: bench-pipelinealg
 
 **Input**: Datos de los eventos y lista de los clasificadores externos a comparar, salvados como un objeto `classifier`.
