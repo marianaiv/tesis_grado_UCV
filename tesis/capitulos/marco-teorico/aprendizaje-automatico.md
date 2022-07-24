@@ -18,7 +18,7 @@ El aprendizaje automático se puede dividir en tres categorías: aprendizaje sup
 ## Aprendizaje supervisado
 El aprendizaje supervisado se refiere al aprendizaje a partir de datos etiquetados (por ejemplo, en HEP podría ser datos etiquetados como *contiene señal* o *no contiene señal*). Las tareas comunes incluyen *clasificación*, cuando el objetivo de aprendizaje $y$ es discreto y finito, y *regresión*, cuando $y$ es continuo o discreto e infinito{cite}`Karagiorgi_2021`. En este trabajo nos enfocamos en la tarea de clasificación.
 
-Los algoritmos supervisados comúnmente utilizados suelen ser modelos combinados de algoritmos más simples. Estos algoritmos se combinan utilizando *métodos de ensamble*.
+Los algoritmos supervisados más utilizados, suelen ser modelos combinados de algoritmos más simples. Estos algoritmos se combinan utilizando *métodos de ensamble*.
 
 ### Métodos de ensamble 
 Los *métodos de ensamble* utilizan conjuntos de algoritmos de aprendizaje automático cuyas decisiones se combinan para mejorar el rendimiento del sistema en general. Se ha probado que solucionan deficiencias estadísticas y computacionales, y expanden el espacio de funciones posibles, permitiendo modelar mejor una función{cite}`louppe2015understanding`.
