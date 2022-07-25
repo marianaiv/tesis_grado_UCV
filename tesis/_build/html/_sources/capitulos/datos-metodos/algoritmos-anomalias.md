@@ -3,10 +3,10 @@
 En este proyecto se trata de resolver un problema de clasificación binaria con los datos de las LHCO 2020, que son altamente desbalanceados. Esto se conoce como una tarea de *detección de anomalías*, que en el caso de este trabajo hace referencia a la detección de los eventos de señal.
 
 La implementación de aprendizaje automático en este trabajo está comprendida por los siguientes pasos:
-1. Pre-procesamiento de los datos utilizando `benchtool`, descrito en la {numref}`bench-pre`
+1. Preprocesamiento de los datos utilizando `benchtool`, descrito en la {numref}`bench-pre`.
 2. División de los datos en conjuntos mutuamente excluyentes, 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
 3. Ajuste de los modelos minimizando una función de pérdida específica para cada uno, utilizando los datos de entrenamiento. Las funciones se describirán más adelante en esta sección.
-4. Evaluación del rendimiento del modelo calculando la función de pérdida con los datos de prueba.
+4. Evaluación del rendimiento del modelo, calculando la función de pérdida con los datos de prueba.
 
 Los algoritmos utilizados en este trabajo se escogieron a partir de su rendimiento, estudiado durante el desarrollo de las herramientas de análisis de datos. Más información sobre cómo se escogieron estos algoritmos se encuentra en la sección *[notebooks](https://github.com/marianaiv/benchtools/tree/main/notebooks)* del repositorio de `benchtools`.
 
@@ -31,7 +31,7 @@ name: ml-arboldecision
 ---
 Ejemplo de un árbol de decisión. Para una conjunto de características $\mathbf{x}$, su etiqueta $y$ es predicha, recorriéndolo desde su raíz, pasando por las hojas, siguiendo las ramas que satisface {cite}`Mehta_2019`.
 ```
-Para crear un ensamble de árboles de decisión y obtener un bosque aleatorio, se deben utilizar procesos de aleatorización. Usualmente se utilizan en conjunto dos métodos. Los subconjutos de datos utilizados para entrenar cada árbol se obtienen del conjunto de entrenamiento mediante bootstrapping, un método de muestreo con remplazo. Luego, en la construcción de los árboles de decisión, en cada nodo se utiliza un subconjunto aleatorio de las características de entrada. 
+Para crear un ensamble de árboles de decisión y obtener un bosque aleatorio, se deben utilizar procesos de aleatorización. Usualmente se utilizan en conjunto dos métodos. Los subconjuntos de datos utilizados para entrenar cada árbol se obtienen del conjunto de entrenamiento mediante bootstrapping, un método de muestreo con remplazo. Luego, en la construcción de los árboles de decisión, en cada nodo se utiliza un subconjunto aleatorio de las características de entrada. 
 
 Usualmente, cada árbol emite un voto unitario para la clase más popular dada una entrada y la clase con más votos es asignada a esta entrada{cite}`Breiman:2001hzm`, como se observa en la {numref}`ml-bosquealeatorio`. Sin embargo, la implementación utilizada en este trabajo combina los árboles individuales promediando su predicción probabilística{cite}`RFC`.
 
@@ -81,7 +81,7 @@ Las predicciones para cada muestra de entrenamiento $x$ se obtienen utilizando e
 
 $$
     P(y=k|x) = \frac{P(x|y=k)P(y=k)}{P(x)}
-$$
+$$ (ml-qdabayes)
 
 donde se selecciona la clase $k$ que maximice esta probabilidad. Un ejemplo de clasificación utilizando este método se observa en la {numref}`ml-qda`.
 
@@ -90,7 +90,7 @@ donde se selecciona la clase $k$ que maximice esta probabilidad. Un ejemplo de c
 width: 500px
 name: ml-qda
 ---
-Clasificación con QDA. a) Los puntos a ser clasificados, b) los límites o fronteras de decisión. La barra de color indica la probabilidad de pertenecer a la clase 1. De {cite}`QDAimg`
+Clasificación con QDA. a) Los puntos a ser clasificados, b) los límites o fronteras de decisión. La barra de color indica la probabilidad de pertenecer a la clase 1{cite}`QDAimg`
 ```
 
 (alg-neural)=
@@ -114,7 +114,7 @@ Las transformaciones se ordenan en capas, como se observa en la {numref}`ml-nn`,
 width: 400px
 name: ml-nn
 ---
-Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente. De {cite}`Mehta_2019`
+Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente{cite}`Mehta_2019`
 ```
 La tarea de la red depende de su arquitectura. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la *entropía cruzada binaria* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
 
@@ -142,7 +142,7 @@ El algoritmo funciona mediante los siguientes pasos:
 :label: alg-kmeans
 
 1. Escoger los centroides. En la primera inicialización se escogen puntos aleatorios de los datos.
-2. Asignar cada muestra al centroide más cercano, minimizando $\mathcal{C}$
+2. Asignar cada muestra al centroide más cercano, minimizando $\mathcal{C}$.
 3. Crear nuevos centroides tomando el valor medio de todas las muestras asignadas a cada centroide anterior.
 4. Calcular la diferencia entre los centroides anteriores y los nuevos.
 ```
@@ -153,9 +153,9 @@ Como la inicialización de los centroides es aleatoria, usualmente se realizan m
 
 (alg-ae)=
 ## Codificador automático
-Los codificadores automáticos (AE) son algoritmos de aprendizaje no supervisado que mapean una entrada a una representación comprimida latente y luego vuelve a sí misma, como se representa en la {numref}`alg-aefig`. Al aprender como reproducir la salida original, el modelo extrae características de los datos de entrada{cite}`Nakai_2019`.
+Los codificadores automáticos (AE, por sus siglas en inglés) son algoritmos de aprendizaje no supervisado que mapean una entrada a una representación comprimida latente y luego vuelve a sí misma, como se representa en la {numref}`alg-aefig`. Al aprender como reproducir la salida original, el modelo extrae características de los datos de entrada{cite}`Nakai_2019`.
 
-Estas redes se pueden dividir en dos partes. El codificador, que comprime los datos a un espacio latente, y el decodificador que produce la reconstruccion{cite}`Goodfellow-et-al-2016`. Una medida de qué tan bien funciona el codificador es la diferencia entre la entrada y la salida de acuerdo a alguna métrica de distancia conocida como "error de reconstrucción".
+Estas redes se pueden dividir en dos partes. El codificador, que comprime los datos a un espacio latente, y el decodificador que produce la reconstrucción{cite}`Goodfellow-et-al-2016`. Una medida de qué tan bien funciona el codificador es la diferencia entre la entrada y la salida de acuerdo a alguna métrica de distancia conocida como "error de reconstrucción".
 
 ```{figure} ./../../figuras/alg-ae.png
 ---
@@ -180,4 +180,4 @@ $$(alg-generativa)
 
 donde $\mathbf{z}$ es muestreado a partir de una distribución de probabilidad a priori en un espacio latente y $\mathbf{\hat{x}}$ son las muestras generadas. El discriminador aproxima una función discriminadora que distingue entre muestras $\mathbf{x}$ de los datos originales y muestras $\mathbf{\hat{x}}$ sintéticas. 
 
-El discriminador se entrena para diferenciar entre las muestras sintéticas y los datos reales y el generador para engañar al discriminador. Las función de costo del discriminador depende de los parámetros del generador y viceversa. Los modelos se entrenan juntos hasta que el discriminador es engañado una cantidad de veces sobre algún umbral, lo que significa que el generador está generando ejemplos plausibles.
+El discriminador se entrena para diferenciar entre las muestras sintéticas y los datos reales y el generador para engañar al discriminador. La función de costo del discriminador depende de los parámetros del generador y viceversa. Los modelos se entrenan juntos hasta que el discriminador es engañado una cantidad de veces sobre algún umbral, lo que significa que el generador está generando ejemplos plausibles.

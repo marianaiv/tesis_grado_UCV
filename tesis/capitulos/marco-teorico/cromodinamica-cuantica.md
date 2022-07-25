@@ -1,8 +1,8 @@
 (qcd)=
 # Cromodinámica cuántica
-La cromodinámica cuántica (QCD, por sus siglas en inglés) es la teoría de la interacción fuerte y describe la dinámica de los quarks y gluones. Es una teoría cuántica de campos no-Abeliana asociada al grupo de simetría $SU(3)_C$ y construida en analogía a la electrodinámica cuántica{cite:p}`Sutton2016-eh`.
+La cromodinámica cuántica (QCD, por sus siglas en inglés) es la teoría de la interacción fuerte y describe la dinámica de los quarks y gluones. Es una teoría cuántica de campos no Abeliana asociada al grupo de simetría $SU(3)_C$ y construida en analogía a la electrodinámica cuántica{cite:p}`Sutton2016-eh`.
 
-El bosón predicho por la teoría es el gluon. Al igual que el fotón, es una partícula no-masiva de espín 1 que interactúa con partículas que poseen *carga de color*. La carga de color es el análogo a la carga eléctrica y es el número cuántico conservado en la teoría. Existen tres tipos de carga para los quarks: rojo, verde y azul (para los anti-quarks: anti-rojo, anti-verde y anti-azul). 
+El bosón predicho por la teoría es el gluon. Al igual que el fotón, es una partícula no masiva de espín 1 que interactúa con partículas que poseen *carga de color*. La carga de color es el análogo a la carga eléctrica y es el número cuántico conservado en la teoría. Existen tres tipos de carga para los quarks: rojo, verde y azul (para los anti-quarks: anti-rojo, anti-verde y anti-azul). 
 
 Los gluones poseen carga de color, en contraste con los fotones que no poseen carga eléctrica. Existen ocho gluones con superposiciones de cargas de color. Los gluones median la interacción fuerte pero también interactúan entre sí, haciendo que el análisis de QCD sea más complejo. 
 
@@ -43,7 +43,7 @@ Resumen de medidas experimentales de la constante de acople $\alpha_s$ en funci�
 ## Confinamiento
 Contrario al concepto de libertad asintótica se encuentra el confinamiento. La fuerza de la interacción, o constante de acople $\alpha_S$, aumenta a largas distancias o pequeñas transferencias de momento $Q$, como se puede observar en la {numref}`qcd-alphas`. Esta propiedad explica la imposibilidad de separar partículas con carga de color, es decir, explica por qué no se observan quarks y gluones libres. También explica que los hadrones se encuentren en estados compuestos de quarks estrechamente unidos y de carga de color neutra. Por ejemplo, al intentar separar un mesón neutro conformado por un quark y un anti-quark, la energía crece hasta que se crean pares de quarks y anti-quarks a partir del vacío y se forman nuevos mesones neutros en lugar de obtener quarks libres
 
-El aumento de la constante de acople implica que donde $Q$ es pequeño, o a distancias grandes, los cálculos con teoría de perturbación ya no son válidos; esta región se conoce como no-perturbativa.
+El aumento de la constante de acople implica que donde $Q$ es pequeño, o a distancias grandes, los cálculos con teoría de perturbación ya no son válidos; esta región se conoce como no perturbativa.
 
 (qcd-jets)=
 ## Formación de jets
@@ -64,7 +64,7 @@ Diagramas de Feynmann que representan la producción de dos jets en colisiones h
 ```
 A muy altas energías las partículas generadas se pueden dividir para generar más partículas mediante procesos que todavía no se comprenden completamente{cite}`cottingham_greenwood_2007`. Esta lluvia de partículas se dice colimada porque las partículas se generan a ángulos pequeños del partón original.
 
-La evolución perturbativa del jet se detendrá una vez que las partículas alcancen bajas energías. A bajas energías, el confinamiento domina el proceso y las partículas creadas se unen para formar partículas de color neutro. Este proceso no-perturbativo se conoce como **hadronización** y ocurre técnicamente fuera del radio del protón{cite}`10.1088/2053-2563/ab1be6ch4`. La hadronización, en conjunto con la radiación de estado final, se conoce como **fragmentación**. A la colección de todos los hadrones resultantes cerca de la dirección del partón original se le llama jet{cite}`burgess_moore_2013_hadronic`.
+La evolución perturbativa del jet se detendrá una vez que las partículas alcancen bajas energías. A bajas energías, el confinamiento domina el proceso y las partículas creadas se unen para formar partículas de color neutro. Este proceso no perturbativo se conoce como **hadronización** y ocurre técnicamente fuera del radio del protón{cite}`10.1088/2053-2563/ab1be6ch4`. La hadronización, en conjunto con la radiación de estado final, se conoce como **fragmentación**. A la colección de todos los hadrones resultantes cerca de la dirección del partón original se le llama jet{cite}`burgess_moore_2013_hadronic`.
 
 El proceso explicado anteriormente se muestra en la {numref}`jets-desarrollo`:
 
