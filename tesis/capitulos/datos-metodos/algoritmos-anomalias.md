@@ -3,7 +3,7 @@
 En este proyecto se trata de resolver un problema de clasificación binaria con los datos de las LHCO 2020, que son altamente desbalanceados. Esto se conoce como una tarea de *detección de anomalías*, que en el caso de este trabajo hace referencia a la detección de los eventos de señal.
 
 La implementación de aprendizaje automático en este trabajo está comprendida por los siguientes pasos:
-1. Pre-procesamiento de los datos utilizando `benchtool`, descrito en la {numref}`bench-pre`.
+1. Preprocesamiento de los datos utilizando `benchtool`, descrito en la {numref}`bench-pre`.
 2. División de los datos en conjuntos mutuamente excluyentes, 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
 3. Ajuste de los modelos minimizando una función de pérdida específica para cada uno, utilizando los datos de entrenamiento. Las funciones se describirán más adelante en esta sección.
 4. Evaluación del rendimiento del modelo, calculando la función de pérdida con los datos de prueba.

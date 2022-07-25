@@ -11,7 +11,7 @@ El paquete se puede dividir en dos partes principales: las funciones y el pipeli
 Las funciones se dividen en los siguientes módulos:
 - **datatools**: funciones para manejar los datos. Por ejemplo, leer datos iterativamente, unir tablas de datos, entre otras. 
 - **substructure**: funciones para calcular variables cinemática y de subestructura de los jets.
-- **clustering**: funciones para pre-procesar los datos. Por ejemplo, agrupar los jets, calcular las variables de un jet, entre otras.
+- **clustering**: funciones para preprocesar los datos. Por ejemplo, agrupar los jets, calcular las variables de un jet, entre otras.
 - **plotools**: funciones para graficar datos. La característica principal es que se grafican los datos separando la señal del fondo.
 - **metrictools**: funciones para calcular métricas de rendimiento de algoritmos de clasificación binaria.
 
@@ -19,13 +19,13 @@ Las funciones en *datatools* y *substructure* son utilizadas principalmente en o
 
 En *metrictools* hay múltiples funciones que calculan y grafican las métricas de rendimiento. Para calcular las métricas numéricas, en general se va a utilizar `compare_metrics`, que calcula la exactitud balanceada, la precisión, el puntaje f1 y la recuperación para múltiples clasificadores. Las métricas bidimensionales incluidas en el paquete son la curva ROC y sus variaciones (ROC inversa y eficiencia de señal vs. rechazo de fondo), la curva PR y la curva de mejora significativa. Por último, en este archivo se encuentra una clase `clasificador`, que se utiliza para guardar los resultados de la clasificación en un objeto que contenga el nombre del clasificador, el puntaje de cada evento asociado a la probabilidad de ser señal, la etiqueta binaria predicha para cada evento y la etiqueta real.
 
-En *clustering* se encuentra la función que realiza el pre-procesamiento de los datos, `build_features`, y las funciones que la confoman.
+En *clustering* se encuentra la función que realiza el preprocesamiento de los datos, `build_features`, y las funciones que la confoman.
 
 (bench-pre)=
-## Pre-procesamiento de datos
-El pre-procesamiento de datos se realiza para obtener variables físicas a partir de los datos de los jets. Estas variables son utilizadas por los modelos para entrenamiento y clasificación. Los pasos para pre-procesar son los siguientes:
+## Preprocesamiento de datos
+El preprocesamiento de datos se realiza para obtener variables físicas a partir de los datos de los jets. Estas variables son utilizadas por los modelos para entrenamiento y clasificación. Los pasos para preprocesar son los siguientes:
 
-```{prf:algorithm} Pre-procesamiento de *benchtools*
+```{prf:algorithm} Preprocesamiento de *benchtools*
 :label: bench-predatos
 
 **Input**: Datos de todos los hadrones de los eventos.
@@ -38,10 +38,10 @@ El pre-procesamiento de datos se realiza para obtener variables físicas a parti
     3. Calcular $p_T$, $m_j$, $\eta$, $\phi$, $E$, $\tau_{21}$ y el número de hadrones constituyentes, para los dos jets más energéticos. $\Delta R$, $m_{jj}$ utilizando los dos jets principales y el número de hadrones del evento.
     4. Guardar las variables calculadas en un marco de datos.
 ```
-Este proceso se hace paralelamente para fracciones de datos, debido a que importar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos pre-procesados.
+Este proceso se hace paralelamente para fracciones de datos, debido a que importar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos preprocesados.
 
 Una tabla con la descripción de cada variable calculada se encuentra {numref}`bench-variables`.
-```{table} Variables calculadas en el pre-procesamiento de los datos. Las variables se calculan para *i*=1,2, que representan el jet principal y secundario, respectivamente.
+```{table} Variables calculadas en el preprocesamiento de los datos. Las variables se calculan para *i*=1,2, que representan el jet principal y secundario, respectivamente.
 :name: bench-variables
 
 | Variable         | Descripción                                                 |
@@ -60,7 +60,7 @@ Una tabla con la descripción de cada variable calculada se encuentra {numref}`b
 
 (bench-pipeline-cap)=
 ## Pipeline
-En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de `benchtools` pre-procesa los datos, entrena los modelos explicados en la {numref}`alg`, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos se describen a continuación:
+En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de `benchtools` preprocesa los datos, entrena los modelos explicados en la {numref}`alg`, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos se describen a continuación:
 
 ```{prf:algorithm} Pipeline de *benchtools*
 :label: bench-pipelinealg
@@ -69,7 +69,7 @@ En programación, un pipeline consiste en una serie de pasos en los que la salid
 
 **Output**: Imagenes de los gráficos de las métricas y una tabla con las métricas númericas, así como gráficos de barra de cada variable.
 
-1. Pre-procesar los datos de los eventos.
+1. Preprocesar los datos de los eventos.
 2. Transformar los datos para que estén confinados en un rango de valores según el clasificador a utilizar, entrenar los modelos y salvarlos.
 3. Evaluar los puntajes y predicciones de cada clasificador.
 4. Importar las clasificaciones externas.
