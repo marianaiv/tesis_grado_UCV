@@ -75,4 +75,4 @@ name: jets-desarrollo
 ---
 Esquema de la formación de jets{cite}`camachotoro:tel-00818796`.
 ```
-A pesar de ser un proceso complejo, en primera aproximación, las propiedades cinemáticas de un jet son las mismas que las del parton original.
+A pesar de ser un proceso complejo, en primera aproximación, las propiedades cinemáticas de un jet son las mismas que las del partón original.

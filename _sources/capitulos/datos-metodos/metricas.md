@@ -1,6 +1,6 @@
 (met)=
 # Métricas de rendimiento
-La clasificación es una de las tareas más comunes en el aprendizaje automático. Sin embargo, no existe un algoritmo que funcione mejor para todos los problemas; cada algoritmo tiene ventajas y desventajas. Por lo tanto, requerimos formas de medir el grado en que la clasificación sugerida y la real coinciden. Un resumen de las métricas más comúnes para la tarea de clasificación binaria, y las utilizadas en este trabajo, se presenta a continuación.
+La clasificación es una de las tareas más comunes en el aprendizaje automático. Sin embargo, no existe un algoritmo que funcione mejor para todos los problemas; cada algoritmo tiene ventajas y desventajas. Por lo tanto, requerimos formas de medir el grado en que la clasificación sugerida y la real coinciden. Un resumen de las métricas más comunes para la tarea de clasificación binaria, y las utilizadas en este trabajo, se presenta a continuación.
 
 (met-num)=
 ## Métricas numéricas
@@ -41,7 +41,7 @@ En este trabajo se utilizan las métricas descritas en la {numref}`met-metricas`
 
 (met-plot)=
 ## Métricas bidimensionales
-Las métricas bidimensionales más conocidas son la *curva característica de funcionamiento del receptor* (curva ROC) y la *curva precisión-recuperación* (curva PR).
+Las métricas bidimensionales más conocidas son la *curva característica de funcionamiento del receptor* (curva ROC, por sus siglas en inglés) y la *curva precisión-recuperación* (curva PR).
 
 ### Curva ROC
 Los clasificadores usualmente asignan un puntaje $\mathcal{D}$ de manera que una puntuación más alta significa mayor probabilidad de ser señal. La clasificación discreta se logra escogiendo un *punto de operación*, es decir, escogiendo un umbral de decisión $\mathcal{D}_{thr}$, de manera que todas las muestras que cumplan $\mathcal{D}\geq\mathcal{D}_{thr}$ se clasifican como positivas, o señal, y todas las demás como negativas, o fondo{cite}`valassi_2019`.
@@ -72,7 +72,7 @@ En HEP se utilizan versiones de esta curva. Es común graficar ***eficiencia de 
 width: 800px
 name: ml-otrasroc
 ---
-Ejemplos de otras versiones de la curva ROC. A la izquierda la curvas de eficiencia de señal vs. rechazo de fondo. A la derecha, inverso de la eficiencia de fondo vs. eficiencia de señal{cite}`Kasieczka_2021`
+Ejemplos de otras versiones de la curva ROC. A la izquierda la curvas de eficiencia de señal vs. rechazo de fondo. A la derecha, inverso de la eficiencia de fondo vs. eficiencia de señal{cite}`Kasieczka_2021`.
 ```
 La curva ROC y el AUC tienen sus limitaciones{cite}`valassi_2019`:
 - La comparación de dos curvas ROC que se cruzan no es tan evidente, ya que el AUC se construye como una integral que otorga el mismo peso a todas las partes de la curva. Sin embargo, para la clasificación se escoge un punto específico. En este caso, otras métricas se deben utilizar para definir cuál clasificador proporciona mejor rendimiento en la región donde se elija el umbral de decisión.
@@ -91,7 +91,7 @@ Para obtenerla, se grafica la precisión vs. la recuperación, como se observa e
 width: 400px
 name: ml-curvapr
 ---
-Ejemplos de curvas precisión-recuperación {cite}`valassi_andrea_2018_1405727`
+Ejemplos de curvas precisión-recuperación{cite}`valassi_andrea_2018_1405727`.
 ```
 Análogo al AUC, se utiliza el área bajo la curva PR (AUCPR) y la precisión promedio (AP). La precisión promedio resume la curva PR utilizando la media ponderada de las precisiones logradas en cada umbral, utilizando como peso el aumento en recuperación del umbral anterior{cite}`AP`.
 
@@ -108,9 +108,9 @@ $$
     \text{Mejora de la significancia} = \frac{\epsilon_s}{\sqrt{\epsilon_b}}
 $$ (ml-mejoradelasignificancia)
 
-Una mejora de la significancia igual 2 significa que la mejora de la significancia inicial es amplificada por un factor de 2 después de utilizar la estrategia de clasificación{cite}`Kasieczka_2021`.
+Una mejora de la significancia igual a 2 significa que la mejora de la significancia inicial es amplificada por un factor de 2 después de utilizar la estrategia de clasificación{cite}`Kasieczka_2021`.
 
-Así, se grafica la *mejora de la significancia* vs. *eficiencia de señal* con el fin de visualizar la mejora de la significancia del clasificador en múltiples umbrales. Un ejemplo de esta curva se observa en la {numref}`ml-significancia`
+Así, se grafica la *mejora de la significancia* vs. *eficiencia de señal* con el fin de visualizar la mejora de la significancia del clasificador en múltiples umbrales. Un ejemplo de esta curva se observa en la {numref}`ml-significancia`.
 
 ```{figure} ./../../figuras/ml-significancia.png
 ---

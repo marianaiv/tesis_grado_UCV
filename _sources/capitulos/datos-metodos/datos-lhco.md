@@ -16,13 +16,13 @@ Esta compuesto por 1,000,0000 de eventos dijet de QCD, o eventos de fondo, y 100
 width: 300px
 name: datos-RnD
 ---
-Diagrama de Feynmann para la señal del conjunto R&D y la BB1. Producción del boson *Z\'* de física BSM y su decaimiento a las partículas *X* y *Y* de física BSM. Estas últimas, decayendo a jets.
+Diagrama de Feynmann para la señal del conjunto R&D y la BB1. Producción del bosón $Z'$ de física BSM y su decaimiento a las partículas $X$ y $Y$ de física BSM. Estas últimas, decayendo a jets.
 ```
-Las masas de las partículas $Z\'$, $X$ y $Y$ son 3.5 TeV, 500 GeV y 100 GeV, respectivamente. 
+Las masas de las partículas $Z'$, $X$ y $Y$ son 3.5 TeV, 500 GeV y 100 GeV, respectivamente. 
 
 Los eventos de este conjunto de datos se produjeron utilizando Pythia y Delphes.
 
 ## Caja negra 1 (BB1)
-Este conjunto posee la misma señal que el conjunto R&D, pero con masas para $Z\'$, $X$ y $Y$ de 3.823 TeV, 732 GeV y 378 GeV. Contiene 1,000,000 de eventos, de los cuales 834 son señal.
+Este conjunto posee la misma señal que el conjunto R&D, pero con masas para $Z'$, $X$ y $Y$ de 3.823 TeV, 732 GeV y 378 GeV. Contiene 1,000,000 de eventos, de los cuales 834 son señal.
 
 Los eventos de fondo en la caja negra 1 son diferentes a los del conjunto R&D. Algunas configuraciones de Pythia y Delphes difieren de las utilizadas para producir los datos del conjunto R&D, y se encuentran descritas en {cite}`Kasieczka_2021`.

@@ -5,12 +5,12 @@ A pesar de que en los últimos 40 años se han verificado exitosamente múltiple
 En esta sección se describirán algunas de las limitaciones que presenta el modelo estándar, teorías BSM que intentan resolver estas limitaciones y la búsqueda de nueva física en eventos de dos jets, la topología a estudiar en este trabajo.
 (bsm-limitaciones)=
 ## Limitaciones del modelo estándar
-Las limitaciones del modelo estándar se pueden separar en *fenomenológicas* y *teóricas*. A continuación se describiran algunas de estas siguiendo {cite}`BSMlectures`.
+Las limitaciones del modelo estándar se pueden separar en *fenomenológicas* y *teóricas*. A continuación, se describirán algunas de estas siguiendo {cite}`BSMlectures`.
  
 Las *limitaciones fenomenológicas* indican inconsistencias de la teoría con observaciones experimentales o observaciones experimentales que el modelo estándar no puede explicar. Algunas de estas son:
 
-- **Asimetría materia-antemateria**: De acuerdo al modelo estándar, en el universo temprano se debio crear igual cantidad de materia que de antimateria. Sin embargo, se observa mucha mas matería que antimateria y la teoría no explica esta asimetría.
-- **Masa de los neutrinos**: no se conoce el mecanismo mediante el cual los neutrinos adquieren masa y no se explica por qué la brecha entre la masa de los neutrinos y cualquier otro fermión cargado es mucho más grande que entre cualquier otro par de fermiones{cite}`deGouvea_2009` ({numref}`bsm-neutrinos`)
+- **Asimetría materia-antimateria**: De acuerdo al modelo estándar, en el universo temprano se debió crear igual cantidad de materia que de antimateria. Sin embargo, se observa mucha más materia que antimateria y la teoría no explica esta asimetría.
+- **Masa de los neutrinos**: no se conoce el mecanismo mediante el cual los neutrinos adquieren masa y no se explica por qué la brecha entre la masa de los neutrinos y cualquier otro fermión cargado es mucho más grande que entre cualquier otro par de fermiones{cite}`deGouvea_2009` ({numref}`bsm-neutrinos`).
 - **Materia oscura y energía oscura**: la existencia de la materia oscura se ha inferido por los efectos gravitacionales que tiene en la materia visible{cite}`Ellis2012-rh` y la energía oscura se utiliza para explicar la tasa de expansión del universo y su aceleración{cite}`1607.00330`. La naturaleza de ambas no está incluida en el modelo estándar.
 
 ```{figure} ./../../figuras/bsm-neutrinos.png
@@ -38,7 +38,7 @@ Secuencia histórica de la unificación de leyes físicas {cite}`Elert_1998`.
 ```
 Se cree que el modelo estándar es una aproximación a bajas energías que unifica las cuatro interacciones fundamentales. Hasta ahora, no se ha propuesto una teoría que logre este objetivo. Sin embargo, existen teorías que intentan explicar los fenómenos que el modelo estándar no explica.
 
-Por ejemplo, el modelo de **supersimetría** (SUSY), específicamente la mínima extensión supersimétrica del modelo estándar (MSSM), duplica el espectro de masa al agregar partículas supersimétricas, o spartículas, como se ilustra en la {numref}`bsm-sparticulas`. Se plantea con la motivación teórica de eliminar el problema de jerarquía, unificar las fuerzas fundamentales y ofrece un candidato para la materia oscura {cite}`Virdee2016-dd`. 
+Por ejemplo, el modelo de **supersimetría** (SUSY, por sus siglas en inglés), específicamente la mínima extensión supersimétrica del modelo estándar (MSSM, por sus siglas en inglés), duplica el espectro de masa al agregar partículas supersimétricas, o spartículas, como se ilustra en la {numref}`bsm-sparticulas`. Se plantea con la motivación teórica de eliminar el problema de jerarquía, unificar las fuerzas fundamentales y ofrece un candidato para la materia oscura {cite}`Virdee2016-dd`. 
 
 ```{figure} ./../../figuras/bsm-sparticulas.png
 ---
@@ -52,7 +52,7 @@ También se han propuesto modelos con **dimensiones espaciales adicionales**, co
 Entre estos modelos se encuentra la **teoría de cuerdas**, que intenta reconciliar la relatividad general con el modelo estándar{cite}`Wray_2011`. Esta teoría solo funciona con dimensiones adicionales e incluye partículas supersimétricas que podrían ser realmente masivas.
 
 Sin embargo, las partículas supersimétricas no han sido observadas{cite}`ATLAS_SUSY`, ninguno de los experimentos diseñados para detectar materia oscura ha detectado la partícula ligera que predice SUSY, y no hay evidencia para la unificación de las fuerzas ni para las dimensiones adicionales.
-(bsm-dijes)=
+(bsm-dijets)=
 ## Eventos dijet
 La búsqueda de nuevas partículas es fundamental en la búsqueda de física BSM. Los modelos mencionados anteriormente y muchos otros incluyen en su formulación nuevas partículas que permiten explicar alguna de las limitaciones del modelo estándar. Históricamente, uno de los métodos utilizados para descubrir nuevas partículas es la búsqueda de estructuras de resonancia en espectros de masas invariantes de los productos de desintegración de la partícula. 
 
