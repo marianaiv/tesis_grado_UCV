@@ -95,7 +95,7 @@ Clasificación con QDA. a) Los puntos a ser clasificados, b) los límites o fron
 
 (alg-neural)=
 ## Redes neuronales
-Las redes neuronales son modelos supervisados y no-lineales inspirados en las neuronas. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.
+Las redes neuronales son modelos supervisados y no lineales inspirados en las neuronas. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.
 
 Las redes neuronales se definen mediante una serie de transformaciones que mapean la entrada $x$ a estados "ocultos" $\mathbf{h}_i$. Finalmente, una última transformación mapea estos estados a una función de salida $\mathbf{y}${cite}`Guest_2018`. Esto también se conoce como perceptrón multicapas. Las transformaciones se pueden escribir matemáticamente como:
 
@@ -126,7 +126,7 @@ donde $N$ es el número de muestras a clasificar, $y_i$ es la etiqueta de la mue
 
 (alg-kmeans)=
 ## K-means
-*K-means* es un algoritmo no-supervisado que separa los datos en $K$ grupos con igual varianza. Los grupos están caracterizados por la media de los datos pertenecientes al grupo. Estos se conocen como "centroides" y se representan con $\mu_k${cite}`Kmeans`. 
+*K-means* es un algoritmo no supervisado que separa los datos en $K$ grupos con igual varianza. Los grupos están caracterizados por la media de los datos pertenecientes al grupo. Estos se conocen como "centroides" y se representan con $\mu_k${cite}`Kmeans`. 
 
 El objetivo del algoritmo es minimizar la *inercia* o *criterio de suma de cuadrados* dentro del grupo, definida como: 
 
