@@ -12,7 +12,7 @@ Las olimpiadas de 2020 estuvieron enfocadas en el desarrollo técnicas de detecc
 
 ```{figure} ./../../figuras/lhco-topologia.png
 ---
-width: 400px
+width: 500px
 name: lhco-topologia
 ---
 Un tipo de topología que se puede encontrar en los datos de las LHCO 2020. Evento dijet por el decaimiento de una partícula de nueva física en dos partículas de nueva física que decaen a jets {cite}`lhco_2020`.

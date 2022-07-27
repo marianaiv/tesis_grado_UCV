@@ -41,7 +41,7 @@ Se espera que un algoritmo posea ciertas características:
 
 ```{figure} ./../../figuras/jets-colineal.png
 ---
-width: 400px
+width: 350px
 name: jets-colineal
 ---
 Esquema de la estabilidad colineal. La separación de un partón en partones colineales no debe cambiar la configuración de un jet{cite}`10.1088/2053-2563/ab1be6ch3`.
@@ -49,7 +49,7 @@ Esquema de la estabilidad colineal. La separación de un partón en partones col
 
 ```{figure} ./../../figuras/jets-infrarrojo.png
 ---
-width: 400px
+width: 350px
 name: jets-infrarrojo
 ---
 Esquema de la estabilidad infrarroja. La emisión de un gluon suave entre dos jets no debe resultar en su unión{cite}`10.1088/2053-2563/ab1be6ch3`. 
@@ -148,7 +148,7 @@ Un jet con N-1 subjets tendrá un valor de $\tau_{N,N-1}$ mayor a un jet conform
 
 ```{figure} ./../../figuras/jets-tau.png
 ---
-width: 300px
+width: 350px
 name: jets-tau
 ---
 Distribuciones de $\tau_{21}$ para jets de quarks y gluones, o fondo, y de una señal de nueva física con jets que tienen subestructura de 2 o más jets.

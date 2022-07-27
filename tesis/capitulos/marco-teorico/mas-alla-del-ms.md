@@ -42,7 +42,7 @@ Por ejemplo, el modelo de **supersimetría** (SUSY, por sus siglas en inglés), 
 
 ```{figure} ./../../figuras/bsm-sparticulas.png
 ---
-width: 700px
+width: 600px
 name: bsm-sparticulas
 ---
 Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY {cite}`york`.

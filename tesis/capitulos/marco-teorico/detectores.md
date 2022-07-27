@@ -8,7 +8,7 @@ El detector de trazas tiene como objetivo medir la trayectoria de las partícula
 
 ```{figure} ./../../figuras/det-atlas.png
 ---
-width: 500px
+width: 600px
 name: det-atlas
 ---
 Diagrama esquemático de un detector de propósito general, mostrando cómo diferentes subdetectores detectan diferentes partículas{cite}`Pequenao:1505342`.
