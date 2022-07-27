@@ -12,7 +12,7 @@ El aprendizaje automático es un subcampo de la inteligencia artificial que tien
 
 De manera general, un algoritmo de aprendizaje automático utilizado para resolver un problema de predicción se entrena utilizando un conjunto de datos $\mathbf{X}$ asociados a algún vector $\mathbf{y}$. A través del proceso de entrenamiento, aprende un mapeo $f:\mathbf{x}\longrightarrow y$, donde $x\in\mathbf{X}$. El objetivo es utilizar el mapeo para hacer predicciones $\hat{y}$ dado un nuevo conjunto de datos $\hat{x}$.
 
-El aprendizaje automático se puede dividir en tres categorías: aprendizaje supervisado, aprendizaje no-supervisado y aprendizaje reforzado. Aunque la distinción es útil, se suelen combinar estos tipos de aprendizaje, por lo que los términos se suelen usar de manera imprecisa y pueden ser confusos. En este proyecto se utilizarán métodos de aprendizaje supervisado y no supervisado.
+El aprendizaje automático se puede dividir en tres categorías: aprendizaje supervisado, aprendizaje no supervisado y aprendizaje reforzado. Aunque la distinción es útil, se suelen combinar estos tipos de aprendizaje, por lo que los términos se suelen usar de manera imprecisa y pueden ser confusos. En este proyecto se utilizarán métodos de aprendizaje supervisado y no supervisado.
 
 (ml-supervisado)=
 ## Aprendizaje supervisado
@@ -34,8 +34,8 @@ $$ (ml-boosting)
 donde $\sum_k \alpha_k=1$.
 
 (ml-nosupervisado)=
-## Aprendizaje no-supervisado
-Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Estos algoritmos funcionan descubriendo patrones ocultos o grupos en los datos. Ejemplos de tareas comunes de algoritmos no-supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo, detección de anomalías y clasificación.
+## Aprendizaje no supervisado
+Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Estos algoritmos funcionan descubriendo patrones ocultos o grupos en los datos. Ejemplos de tareas comunes de algoritmos no supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo, detección de anomalías y clasificación.
 
 (ml-HEP)=
 ## Aprendizaje automático en HEP
@@ -57,7 +57,7 @@ Un ejemplo de una búsqueda independiente de modelo es {cite}`De_Simone_2019`, d
 
 Una búsqueda de este tipo es{cite}`Fraser_2022`:
 - *Libre de modelo*: sin suposiciones sobre las densidades
-- *No-paramétrica*: compara las densidades como un todo, no valores específicos asociados a estas.
-- *No-clasificada*: usa la dimensionalidad completa de la información.
+- *No paramétrica*: compara las densidades como un todo, no valores específicos asociados a estas.
+- *No clasificada*: usa la dimensionalidad completa de la información.
 
-La relación entre la detección de anomalías y la búsqueda libre de modelo es evidente, ya que el objetivo en ambos casos es realizar una búsqueda no-específica, o más general, de eventos de nueva física.
+La relación entre la detección de anomalías y la búsqueda libre de modelo es evidente, ya que el objetivo en ambos casos es realizar una búsqueda no específica, o más general, de eventos de nueva física.

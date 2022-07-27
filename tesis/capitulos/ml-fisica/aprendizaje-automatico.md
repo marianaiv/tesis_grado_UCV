@@ -2,7 +2,7 @@
 # Aprendizaje automático
 A medida que alcanzamos mayor luminosidad en los aceleradores de partículas, conseguimos nuevos desafíos debido al aumento en el tamaño de los eventos, el volumen de datos y su complejidad. Por esto, en la última década ha habido un enfoque en el estudio y la mejora de métodos y herramientas de análisis de datos, puesto que el alcance de los experimentos puede ser limitado por el rendimiento de algoritmos y de recursos computacionales. El aprendizaje automático es una herramienta que promete algunas soluciones a estos problemas.
 
-Estos métodos han encontrado múltiples aplicaciones en HEP{cite}`Bourilkov_2019,Guest_2018`.  Notablemente, estas herramientas han tenido un gran impacto en la medición de la masa del quark top{cite}`Bhat:1997rc` en 1997 y el descubrimiento del bosón de Higgs{cite}`201230,20121` en 2012{cite}`jimenez:tel-02402488`. Un resumen al día del uso de aprendizaje automático en HEP se puede encontrar en *[A Living Review of Machine Learning for Particle Physics](https://iml-wg.github.io/HEPML-LivingReview/)*{cite}`hepmllivingreview`.
+Estos métodos han encontrado múltiples aplicaciones en HEP{cite}`Bourilkov_2019,Guest_2018`. Notablemente, estas herramientas han tenido un gran impacto en la medición de la masa del quark top{cite}`Bhat:1997rc` en 1997 y el descubrimiento del bosón de Higgs{cite}`201230,20121` en 2012{cite}`jimenez:tel-02402488`. Un resumen al día del uso de aprendizaje automático en HEP se puede encontrar en *[A Living Review of Machine Learning for Particle Physics](https://iml-wg.github.io/HEPML-LivingReview/)*{cite}`hepmllivingreview`.
 
 A continuación, se presentan brevemente conceptos básicos de aprendizaje automático y su uso en HEP, utilizando como referencia{cite}`Mehta_2019`.
 
@@ -45,10 +45,10 @@ Como se mencionó anteriormente, el uso de aprendizaje automático en HEP es amp
 Hasta ahora no se ha confirmado ninguna señal de nueva física. Parte de la dificultad recae en diferenciar la pequeña cantidad de eventos que podrían ser señales nuevas de los eventos de fondo o que no son de interés. Debido a esto, se ha planteado el uso de algoritmos de detección de anomalías para la clasificación de los eventos de señal. La tarea de detección de anomalías tiene como objetivo predecir la categoría a la que pertenece una muestra: "normal" o "anómala".
 
 Las técnicas de detección de anomalías se pueden dividir en dos tipos{cite}`Fraser_2022`. 
-- Algunas señales son cualitativamente distintas de del fondo y se utilizan técnicas para caracterizar estos eventos como anómalos. 
+- Algunas señales son cualitativamente distintas del fondo y se utilizan técnicas para caracterizar estos eventos como anómalos. 
 - Algunos eventos de señal son similares a los de fondo, por lo que se explota información sobre la distribución de probabilidad esperada del fondo para hallar señal. 
 
-Este último caso es el que se trata en este proyecto, y los detalles se discutirán en la [última sección](lhco) de este capítulo.
+El primer caso es el que se trata en este proyecto, y los detalles se discutirán en la [última sección](lhco) de este capítulo.
 
 ### Búsquedas de nueva física independiente de modelo
 La mayor parte de la búsqueda de nueva física está guiada por modelos específicos de BSM, supersimetría o materia oscura. Sin embargo, con la introducción del aprendizaje automático, se han propuesto métodos para la búsqueda independiente de modelo. El objetivo general de estas búsquedas es que sean lo más agnósticas posibles al proceso físico subyacente que puede ser responsable de la señal de nueva física{cite}`jimenez:tel-02402488`.

@@ -60,9 +60,9 @@ Por último, están las interacciones entre partones que no participan en la dis
 width: 500px
 name: jets-qcd
 ---
-Diagramas de Feynmann que representan la producción de dos jets en colisiones hadrónicas por procesos de QCD, construidos a partir de los vértices permitidos {cite}`Mangano:2674114`.
+Diagramas de Feynman que representan la producción de dos jets en colisiones hadrónicas por procesos de QCD, construidos a partir de los vértices permitidos {cite}`Mangano:2674114`.
 ```
-A muy altas energías las partículas generadas se pueden dividir para generar más partículas mediante procesos que todavía no se comprenden completamente{cite}`cottingham_greenwood_2007`. Esta lluvia de partículas se dice colimada porque las partículas se generan a ángulos pequeños del partón original.
+A muy altas energías las partículas generadas se pueden dividir para generar más partículas. Esta lluvia de partículas se dice colimada porque las partículas se generan a ángulos pequeños del partón original.
 
 La evolución perturbativa del jet se detendrá una vez que las partículas alcancen bajas energías. A bajas energías, el confinamiento domina el proceso y las partículas creadas se unen para formar partículas de color neutro. Este proceso no perturbativo se conoce como **hadronización** y ocurre técnicamente fuera del radio del protón{cite}`10.1088/2053-2563/ab1be6ch4`. La hadronización, en conjunto con la radiación de estado final, se conoce como **fragmentación**. A la colección de todos los hadrones resultantes cerca de la dirección del partón original se le llama jet{cite}`burgess_moore_2013_hadronic`.
 

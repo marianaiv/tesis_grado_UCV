@@ -1,6 +1,6 @@
 (jets)=
 # Reconstrucción de jets
-Como se explicó en la {numref}`qcd-jets`, la formación de un jet resulta en múltiples partículas de color neutro. Las características de estas partículas del estado final es lo que se mide en los detectores, es decir, es la información que se obtiene de los jets. Por lo tanto, para analizar los eventos de jets es necesario reconstruirlos. En esta sección se explicarán los métodos más conocidos para reconstruirlos y algunas de las variables que se utilizan para caracterizarlos. 
+Como se explicó en la {numref}`qcd-jets`, la formación de un jet resulta en múltiples partículas de color neutro. Las características de estas partículas del estado final es lo que se mide en los detectores, es decir, es la información que se obtiene de los jets. Por lo tanto, para analizar los eventos de jets es necesario reconstruirlos. En esta sección se explicarán los algoritmos más conocidos para reconstruirlos y algunas de las variables que se utilizan para caracterizarlos. 
 
 (jets-agrupamiento)=
 ## Agrupamiento de jets
@@ -113,7 +113,7 @@ Los algoritmos de recombinación utilizados son:
 - ***Anti-kt***{cite}`Cacciari_2008`: para este algoritmo $p=-1$. Contrario al *kt*, es poco sensible a los UE y el PU. En este algoritmo el agrupamiento no está relacionada a la manera en la que los partones se dividen.
 - ***Cambridge/Aachen***{cite}`Dokshitzer_1997`: para este algoritmo $p=0$. Es el mejor para estudiar la subestructura de los jets, pero su implementación es más complicada. También es susceptible a los UE y el PU. 
 
-Los algoritmos de recombinación son los más utilizados desde su implementación en el programa *FastJet*{cite}`FastJet`, un paquete de C++ que proporciona herramientas para agrupar y analizar jets. En este trabajo se agrupan los jets utilizando el algoritmo anti-kt.
+Los algoritmos de recombinación son los más utilizados en la actualidad desde su implementación en el programa *FastJet*{cite}`FastJet`, un paquete de C++ que proporciona herramientas para agrupar y analizar jets. En este trabajo se agrupan los jets utilizando el algoritmo anti-kt.
 
 (jets-subestructura)=
 ## Variables de subestructura
@@ -132,7 +132,7 @@ La masa es la variable mas evidente para discriminar entre jets provenientes de 
 
 La distribución de masa del jet se utiliza para diferenciar jets provenientes de partículas masivas con alto momento transverso, que se caracterizan por una distribución mas angosta y alta, de fondo que cae suavemente, debido a jets ordinarios de quarks y gluones{cite}`PhysRevD.102.012010`. 
 ### N-subjettiness
-Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet. Para lograr esto, se hace un agrupamiento exclusivo de N jets, utilizando los constituyentes del jet, y se calcula la variable $\tau_N$,
+Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet{cite}`10.1088/2053-2563/ab1be6ch5`. Para lograr esto, se hace un agrupamiento exclusivo de N jets, utilizando los constituyentes del jet, y se calcula la variable $\tau_N$,
 
 $$
     \tau_N = \left(\frac{1}{d_0}\right)\sum_{i=0}^{i=N} p_{Ti} \times \Delta R_{min,i}
@@ -144,4 +144,12 @@ $$
     \tau_{N,N-1}=\frac{\tau_{N}}{\tau_{N-1}}
 $$ (jets-ratio_subjettiness)
 
-Un jet con N-1 subjets tendrá un valor de $\tau_{N,N-1}$ mayor a un jet conformado por N o más subjets.
+Un jet con N-1 subjets tendrá un valor de $\tau_{N,N-1}$ mayor a un jet conformado por N o más subjets. En la {numref}`jets-tau`, se presenta un ejemplo de la distribución de $\tau_{21}$ para jets provinientes de quarks y gluones, o fondo, y la distribución de una señal de nueva física que decae a jets con una subestructura de 2 o más subjets.
+
+```{figure} ./../../figuras/jets-tau.png
+---
+width: 300px
+name: jets-tau
+---
+Distribuciones de $\tau_{21}$ para jets de quarks y gluones, o fondo, y de una señal de nueva física con jets que tienen subestructura de 2 o más jets.
+```

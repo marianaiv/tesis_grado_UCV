@@ -369,7 +369,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aprendizaje-no-supervisado">
-   2.5.3. Aprendizaje no-supervisado
+   2.5.3. Aprendizaje no supervisado
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -435,7 +435,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aprendizaje-no-supervisado">
-   2.5.3. Aprendizaje no-supervisado
+   2.5.3. Aprendizaje no supervisado
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -473,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span id="ml-conceptos"></span><h2><span class="section-number">2.5.1. </span>Conceptos básicos<a class="headerlink" href="#conceptos-basicos" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El aprendizaje automático es un subcampo de la inteligencia artificial que tiene como objetivo el desarrollo de algoritmos que mejoran su desempeño de manera cuantificable en una tarea determinada, «aprendiendo» mediante un proceso de entrenamiento que utiliza grandes conjuntos de datos. El objetivo de un algoritmo de aprendizaje automático es utilizar un conjunto de datos para identificar patrones y tomar decisiones informadas, con una mínima intervención humana. Estas técnicas se utilizan para problemas de estimación y predicción, pero en este trabajo nos enfocamos en problemas de predicción.</p>
 <p>De manera general, un algoritmo de aprendizaje automático utilizado para resolver un problema de predicción se entrena utilizando un conjunto de datos <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> asociados a algún vector <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>. A través del proceso de entrenamiento, aprende un mapeo <span class="math notranslate nohighlight">\(f:\mathbf{x}\longrightarrow y\)</span>, donde <span class="math notranslate nohighlight">\(x\in\mathbf{X}\)</span>. El objetivo es utilizar el mapeo para hacer predicciones <span class="math notranslate nohighlight">\(\hat{y}\)</span> dado un nuevo conjunto de datos <span class="math notranslate nohighlight">\(\hat{x}\)</span>.</p>
-<p>El aprendizaje automático se puede dividir en tres categorías: aprendizaje supervisado, aprendizaje no-supervisado y aprendizaje reforzado. Aunque la distinción es útil, se suelen combinar estos tipos de aprendizaje, por lo que los términos se suelen usar de manera imprecisa y pueden ser confusos. En este proyecto se utilizarán métodos de aprendizaje supervisado y no supervisado.</p>
+<p>El aprendizaje automático se puede dividir en tres categorías: aprendizaje supervisado, aprendizaje no supervisado y aprendizaje reforzado. Aunque la distinción es útil, se suelen combinar estos tipos de aprendizaje, por lo que los términos se suelen usar de manera imprecisa y pueden ser confusos. En este proyecto se utilizarán métodos de aprendizaje supervisado y no supervisado.</p>
 </div>
 <div class="section" id="aprendizaje-supervisado">
 <span id="ml-supervisado"></span><h2><span class="section-number">2.5.2. </span>Aprendizaje supervisado<a class="headerlink" href="#aprendizaje-supervisado" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -495,8 +495,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="aprendizaje-no-supervisado">
-<span id="ml-nosupervisado"></span><h2><span class="section-number">2.5.3. </span>Aprendizaje no-supervisado<a class="headerlink" href="#aprendizaje-no-supervisado" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Estos algoritmos funcionan descubriendo patrones ocultos o grupos en los datos. Ejemplos de tareas comunes de algoritmos no-supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo, detección de anomalías y clasificación.</p>
+<span id="ml-nosupervisado"></span><h2><span class="section-number">2.5.3. </span>Aprendizaje no supervisado<a class="headerlink" href="#aprendizaje-no-supervisado" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Este tipo de aprendizaje se ocupa de hallar patrones y estructuras en datos no etiquetados. Estos algoritmos funcionan descubriendo patrones ocultos o grupos en los datos. Ejemplos de tareas comunes de algoritmos no supervisados incluyen agrupamiento, reducción de dimensiones, modelado generativo, detección de anomalías y clasificación.</p>
 </div>
 <div class="section" id="aprendizaje-automatico-en-hep">
 <span id="ml-hep"></span><h2><span class="section-number">2.5.4. </span>Aprendizaje automático en HEP<a class="headerlink" href="#aprendizaje-automatico-en-hep" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -518,10 +518,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Una búsqueda de este tipo es<span id="id13">[<a class="reference internal" href="../referencias/referencias.html#id83" title="Katherine Fraser, Samuel Homiller, Rashmish K. Mishra, Bryan Ostdiek, and Matthew D. Schwartz. Challenges for unsupervised anomaly detection in particle physics. Journal of High Energy Physics, mar 2022. URL: https://doi.org/10.1007%2Fjhep03%282022%29066, doi:10.1007/jhep03(2022)066.">68</a>]</span>:</p>
 <ul class="simple">
 <li><p><em>Libre de modelo</em>: sin suposiciones sobre las densidades</p></li>
-<li><p><em>No-paramétrica</em>: compara las densidades como un todo, no valores específicos asociados a estas.</p></li>
-<li><p><em>No-clasificada</em>: usa la dimensionalidad completa de la información.</p></li>
+<li><p><em>No paramétrica</em>: compara las densidades como un todo, no valores específicos asociados a estas.</p></li>
+<li><p><em>No clasificada</em>: usa la dimensionalidad completa de la información.</p></li>
 </ul>
-<p>La relación entre la detección de anomalías y la búsqueda libre de modelo es evidente, ya que el objetivo en ambos casos es realizar una búsqueda no-específica, o más general, de eventos de nueva física.</p>
+<p>La relación entre la detección de anomalías y la búsqueda libre de modelo es evidente, ya que el objetivo en ambos casos es realizar una búsqueda no específica, o más general, de eventos de nueva física.</p>
 </div>
 </div>
 </div>

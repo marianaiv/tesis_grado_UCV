@@ -19,10 +19,13 @@ chapters:
   - file: capitulos/marco-teorico/modelo-estandar
   - file: capitulos/marco-teorico/cromodinamica-cuantica
   - file: capitulos/marco-teorico/mas-alla-del-ms
+  - file: capitulos/marco-teorico/detectores
   - file: capitulos/marco-teorico/reconstruccion-jets
-  - file: capitulos/marco-teorico/aprendizaje-automatico
-  - file: capitulos/marco-teorico/olimpiadas-LHC
-  - file: capitulos/marco-teorico/reproducibilidad
+- file: capitulos/ml-fisica/resumen
+  sections:
+  - file: capitulos/ml-fisica/aprendizaje-automatico
+  - file: capitulos/ml-fisica/olimpiadas-LHC
+  - file: capitulos/ml-fisica/reproducibilidad
 - file: capitulos/datos-metodos/resumen
   sections:
   - file: capitulos/datos-metodos/datos-lhco
