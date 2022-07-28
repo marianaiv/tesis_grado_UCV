@@ -12,6 +12,8 @@ El aprendizaje automático es un subcampo de la inteligencia artificial que tien
 
 De manera general, un algoritmo de aprendizaje automático utilizado para resolver un problema de predicción se entrena utilizando un conjunto de datos $\mathbf{X}$ asociados a algún vector $\mathbf{y}$. A través del proceso de entrenamiento, aprende un mapeo $f:\mathbf{x}\longrightarrow y$, donde $x\in\mathbf{X}$. El objetivo es utilizar el mapeo para hacer predicciones $\hat{y}$ dado un nuevo conjunto de datos $\hat{x}$.
 
+En el proceso de entrenamiento, los modelos calculan una *función de pérdida* que varía para cada modelo. La función de pérdida es utilizada por los algoritmos para evaluar qué tan bien modelan los datos. El modelo aprende ajustando parámetros para minimizar el resultado de la función de pérdida.
+
 El aprendizaje automático se puede dividir en tres categorías: aprendizaje supervisado, aprendizaje no supervisado y aprendizaje reforzado. Aunque la distinción es útil, se suelen combinar estos tipos de aprendizaje, por lo que los términos se suelen usar de manera imprecisa y pueden ser confusos. En este proyecto se utilizarán métodos de aprendizaje supervisado y no supervisado.
 
 (ml-supervisado)=

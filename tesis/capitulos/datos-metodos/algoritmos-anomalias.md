@@ -16,7 +16,9 @@ A continuación, se explicarán los algoritmos utilizados, enfocándonos en su u
 ## Bosque aleatorio
 Los bosques aleatorios son algoritmos supervisados ampliamente utilizados para tareas complejas de clasificación. Estos algoritmos son ensambles de árboles de decisión.
 
-Un **árbol de decisión** utiliza una serie de preguntas para realizar la partición jerárquica de los datos. Su objetivo es hallar un conjunto de reglas que separen naturalmente el espacio de características{cite}`myles_2004`. La partición de los datos se hace hallando los parámetros que minimizan el *criterio de impureza*. Uno de los criterios más utilizado es el criterio *Gini*, que mide cuánto ruido tiene una categoría:
+Un **árbol de decisión** utiliza una serie de preguntas para realizar la partición jerárquica de los datos con el objetivo de hallar un conjunto de reglas que separen el espacio de características{cite}`myles_2004`. El árbol de decisión utiliza las variables del conjunto de datos para crear preguntas con respuestas booleanas y dividir continuamente el conjunto de datos hasta aislar todos los puntos de datos que pertenecen a cada clase. Este proceso organiza los datos en una estructura de árbol. Cada vez que haces una pregunta estás agregando un nodo al árbol.
+
+Los árboles de decisión utilizan funciones de pérdida que evalúan la partición de los datos en función de la pureza de los nodos resultantes, una función de pérdida que compara la distribución de clases antes y después de la división{cite}`tan2005introduction`. Esto se conoce como *criterio de impureza*. Uno de los criterios más utilizado es el criterio *Gini*, que mide cuánto ruido tiene una categoría:
 
 $$
     H(Q_m)=\sum_{k} p_{mk}(1-p_{mk})
@@ -45,9 +47,17 @@ Representación visual del funcionamiento de un bosque aleatorio {cite}`tibco_rf
 (alg-gbc)=
 ## Potenciación del gradiente
 
-El clasificador de potenciación del gradiente (GBC, por sus siglas en inglés) es un modelo supervisado que utiliza árboles de regresión como aprendiz débil. Es un modelo supervisado y aditivo que avanza por etapas{cite}`GBC`. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior. Su formulación matemática es la siguiente{cite}`GTBC`:
+El clasificador de potenciación del gradiente (GBC, por sus siglas en inglés) es un modelo supervisado que utiliza árboles de regresión como aprendiz débil. Es un modelo supervisado y aditivo que avanza por etapas{cite}`GBC`. En cada etapa, se ajusta el árbol al error residual, es decir, el error asociado al árbol anterior, con el objetivo de minimizar el error, como se muestra en la {numref}`ml-gbc`. 
 
-La predicción $y_i$ del modelo para la entrada $x_i$ está dada por:
+```{figure} ./../../figuras/ml-gbc.png
+---
+width: 40px
+name: ml-gbc
+---
+Diagrama del ensamble de árboles de decisión para formar un GBC{cite}`Pal_2020`.
+```
+
+Su formulación matemática es la siguiente{cite}`GTBC`: la predicción $y_i$ del modelo para la entrada $x_i$ está dada por:
 
 $$
     \hat{y}_i=F_M(x_i)=\sum_{m=1}^{M}h_m(x_i)
@@ -75,7 +85,7 @@ donde $g_i$ es la derivada de la función de pérdida con respecto a su segundo 
 
 (alg-qda)=
 ## Análisis de discriminante cuadrático
-El análisis de discriminante cuadrático{cite}`QDA` es un clasificador supervisado con un límite de decisión cuadrático. El modelo asume que las densidades condicionales de clase $P(\mathbf{X}|y=k)$, para cada clase $k$, están distribuidas normalmente.
+El análisis de discriminante cuadrático (QDA, por sus siglas en inglés){cite}`QDA` es un clasificador supervisado con un límite de decisión cuadrático. El modelo asume que las densidades condicionales de clase $P(\mathbf{X}|y=k)$, para cada clase $k$, están distribuidas normalmente.
 
 Las predicciones para cada muestra de entrenamiento $x$ se obtienen utilizando el teorema de Bayes:
 
@@ -95,9 +105,7 @@ Clasificación con QDA. a) Los puntos a ser clasificados, b) los límites o fron
 
 (alg-neural)=
 ## Redes neuronales
-Las redes neuronales son modelos supervisados y no lineales inspirados en las neuronas. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.
-
-Las redes neuronales se definen mediante una serie de transformaciones que mapean la entrada $x$ a estados "ocultos" $\mathbf{h}_i$. Finalmente, una última transformación mapea estos estados a una función de salida $\mathbf{y}${cite}`Guest_2018`. Esto también se conoce como perceptrón multicapas. Las transformaciones se pueden escribir matemáticamente como:
+Las redes neuronales (NN, por sus siglas en inglés) son modelos supervisados y no lineales inspirados en las neuronas. Se definen mediante una serie de transformaciones que mapean la entrada $x$ a estados "ocultos" $\mathbf{h}_i$. Finalmente, una última transformación mapea estos estados a una función de salida $\mathbf{y}${cite}`Guest_2018`. Esto también se conoce como perceptrón multicapas. Las transformaciones se pueden escribir matemáticamente como:
 
 $$
     \mathbf{h}_i = g_i(W_i\mathbf{h}_i+\mathbf{b}_i)
@@ -116,7 +124,7 @@ name: ml-nn
 ---
 Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente{cite}`Mehta_2019`
 ```
-La tarea de la red depende de su arquitectura. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la *entropía cruzada binaria* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
+La tarea de la red depende de su arquitectura. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la *entropía cruzada binaria* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
 
 $$
     \mathcal{L}_{BC} = -\frac{1}{N}\sum_{i=1}^N y_i\log(p(y_i))+(1-y_i)\log(1-p(y_1))
@@ -153,7 +161,7 @@ Como la inicialización de los centroides es aleatoria, usualmente se realizan m
 
 (alg-ae)=
 ## Codificador automático
-Los codificadores automáticos (AE, por sus siglas en inglés) son algoritmos de aprendizaje no supervisado que mapean una entrada a una representación comprimida latente y luego vuelve a sí misma, como se representa en la {numref}`alg-aefig`. Al aprender como reproducir la salida original, el modelo extrae características de los datos de entrada{cite}`Nakai_2019`.
+Los codificadores automáticos (AE, por sus siglas en inglés) son redes neuronales de aprendizaje no supervisado que mapean una entrada a una representación comprimida en un encaje, o espacio latente, y luego vuelve a sí misma, como se representa en la {numref}`alg-aefig`. Al aprender como reproducir la salida original, el modelo extrae características de los datos de entrada{cite}`Nakai_2019`.
 
 Estas redes se pueden dividir en dos partes. El codificador, que comprime los datos a un espacio latente, y el decodificador que produce la reconstrucción{cite}`Goodfellow-et-al-2016`. Una medida de qué tan bien funciona el codificador es la diferencia entre la entrada y la salida de acuerdo a alguna métrica de distancia conocida como "error de reconstrucción".
 
@@ -180,4 +188,4 @@ $$(alg-generativa)
 
 donde $\mathbf{z}$ es muestreado a partir de una distribución de probabilidad a priori en un espacio latente y $\mathbf{\hat{x}}$ son las muestras generadas. El discriminador aproxima una función discriminadora que distingue entre muestras $\mathbf{x}$ de los datos originales y muestras $\mathbf{\hat{x}}$ sintéticas. 
 
-El discriminador se entrena para diferenciar entre las muestras sintéticas y los datos reales y el generador para engañar al discriminador. La función de costo del discriminador depende de los parámetros del generador y viceversa. Los modelos se entrenan juntos hasta que el discriminador es engañado una cantidad de veces sobre algún umbral, lo que significa que el generador está generando ejemplos plausibles.
+El discriminador se entrena para diferenciar entre las muestras sintéticas y los datos reales y el generador para engañar al discriminador. La función de pérdida del discriminador depende de los parámetros del generador y viceversa. Los modelos se entrenan juntos hasta que el discriminador es engañado una cantidad de veces sobre algún umbral, lo que significa que el generador está generando ejemplos plausibles.

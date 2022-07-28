@@ -1,8 +1,8 @@
 (bench)=
 # Paquete benchtools
-Como se mencionó en la {numref}`datos`, los conjuntos de datos de las LHCO 2020 incluyen todos los hadrones producto de la colisión entre protones. A partir de estos datos, nos interesa reconstruir los jets de cada evento para analizar variables cinemáticas y de subestructura, entrenar los algoritmos explicados en la {numref}`alg` y compararlos utilizando las métricas explicadas en la {numref}`met`. Sin embargo, para trabajar con 1,000,000 de colisiones, donde hay posibilidad tener los datos de 700 hadrones por evento, con 3 medidas por hadrón (es decir, 2,100,000,000 de variables), es necesario desarrollar algunas herramientas para facilitar su manejo. 
+Como se mencionó en la {numref}`datos`, los conjuntos de datos de las LHCO 2020 incluyen todos los hadrones producto de la colisión entre protones. A partir de estos datos, nos interesa reconstruir los jets de cada evento para analizar variables cinemáticas y de subestructura (definidas en la {numref}`jets-subestructura`), entrenar los algoritmos explicados en la {numref}`alg` y compararlos utilizando las métricas explicadas en la {numref}`met`. Sin embargo, para trabajar con 1,000,000 de colisiones, donde hay posibilidad tener los datos de 700 hadrones por evento, con 3 medidas por hadrón (es decir, 2,100,000,000 de variables), es necesario desarrollar algunas herramientas para facilitar su manejo. 
 
-En esta sección, se describirá de manera general el paquete de software basado en Python `benchtools`, desarrollado para este trabajo. El paquete incluye herramientas para el manejo de datos, agrupamiento jets, comparación de algoritmos de clasificación binaria, entre otros. Información más detallada sobre el paquete y cómo utilizarlo se puede encontrar en el [repositorio](https://github.com/marianaiv/benchtools).
+En esta sección, se describirá de manera general el paquete de software basado en Python `benchtools`, desarrollado para este trabajo. El paquete incluye herramientas para el manejo de datos, agrupamiento jets, comparación de algoritmos de clasificación binaria, entre otros. Información más detallada sobre el paquete y cómo utilizarlo se puede encontrar en el [repositorio](https://github.com/marianaiv/benchtools), donde se publicó de manera abierta el código utilizado, siguiendo los lineamientos planteados en la {numref}`rpd`.
 
 (bench-herramientas)=
 ## Funciones
@@ -44,18 +44,18 @@ Una tabla con la descripción de cada variable calculada se encuentra {numref}`b
 ```{table} Variables calculadas en el preprocesamiento de los datos. Las variables se calculan para *i*=1,2, que representan el jet principal y secundario, respectivamente.
 :name: bench-variables
 
-| Variable         | Descripción                                                 |
-|------------------|-------------------------------------------------------------|
-| $p_T\_j_i$       | Momento transverso del jet *i*                              |
-| $m_j\_j_i$       | Masa invariante del jet *i*                                 |
-| $\eta\_j_i$      | Pseudorapidez del jet *i*(ec. {eq}`jets-eta`)               |
-| $\phi\_j_i$      | Ángulo azimutal en el plano transverso del jet *i*          |
-| $E\_j_i$         | Energía del jet *i*                                         |
-| $\tau_{21}\_j_i$ | Subjetiness del jet *i* (ec. {eq}`jets-ratio_subjettiness`) |
-| n_hadrons_$j_i$  | Número de hadrones constituyentes del jet *i*               |
-| $\Delta R$       | Distancia angular entre los dos jets principales            |
-| $m_{jj}$         | Masa invariante de los dos jets principales                 |
-| n_hadrons        | Número de hadrones del evento                               |
+| Variable         | Descripción                                                         |
+|------------------|---------------------------------------------------------------------|
+| $p_T\_j_i$       | Momento transversal del jet *i*                                     |
+| $m_j\_j_i$       | Masa invariante del jet *i*                                         |
+| $\eta\_j_i$      | Pseudorapidez del jet *i*(ec.{eq}`jets-eta`)                        |
+| $\phi\_j_i$      | Ángulo azimutal en el plano transverso del jet *i*                  |
+| $E\_j_i$         | Energía del jet *i*                                                 |
+| $\tau_{21}\_j_i$ | Subjetiness del jet *i* (ec.{eq}`jets-ratio_subjettiness`)          |
+| n_hadrons_$j_i$  | Número de hadrones constituyentes del jet *i*                       |
+| $\Delta R$       | Distancia angular entre los dos jets principales (ec.{eq}`delta-R`) |
+| $m_{jj}$         | Masa invariante de los dos jets principales                         |
+| n_hadrons        | Número de hadrones del evento                                       |
 ```
 
 (bench-pipeline-cap)=
