@@ -1,6 +1,6 @@
 (met)=
 # Métricas de rendimiento
-La clasificación es una de las tareas más comunes en el aprendizaje automático. Sin embargo, no existe un algoritmo que funcione mejor para todos los problemas; cada algoritmo tiene ventajas y desventajas. Por lo tanto, requerimos formas de medir el grado en que la clasificación sugerida y la real coinciden. Un resumen de las métricas más comunes para la tarea de clasificación binaria, y las utilizadas en este trabajo, se presenta a continuación.
+La clasificación es una de las tareas más comunes en el aprendizaje automático. Sin embargo, no existe un algoritmo que funcione mejor para todos los problemas; cada algoritmo tiene ventajas y desventajas. Por lo tanto, requerimos formas de medir el grado en que la clasificación obtenida con un algoritmo y las etiquetas reales de los datos coinciden. Un resumen de las métricas más comunes para la tarea de **clasificación binaria**, y las utilizadas en este trabajo, se presenta a continuación.
 
 (met-num)=
 ## Métricas numéricas
@@ -31,7 +31,7 @@ En la {numref}`met-metricas` se presenta un resumen de las métricas numéricas 
 ```
 El nombre de las métricas varía en distintas áreas. En HEP, la recuperación y especificidad se conocen como *eficiencia de señal* ($\epsilon_s$) y *rechazo de fondo* ($1-\epsilon_{b}$), respectivamente. La precisión se conoce como *pureza* ($\rho$){cite}`valassi_andrea_2018_1405727`.
 
-Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Alternativamente, se puede usar la *exactitud balanceada*:
+Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, es decir, datos con una desproporción significativa entre el número de ejemplos de cada clase, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Alternativamente, se puede usar la *exactitud balanceada*:
 
 $$
     \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}

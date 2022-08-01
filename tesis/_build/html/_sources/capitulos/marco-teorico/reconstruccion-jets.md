@@ -23,6 +23,12 @@ name: jets-coordenadas
 ---
 Ilustración del sistema de coordenadas utilizado en los experimentos del LHC (izquierda) y una conversión entre el ángulo polar y la pseudorapidez (derecha). El eje z se encuentra a lo largo de la dirección del haz de protones entrante, y el ángulo azimutal $\phi$ se define con respecto al plano x–y, como es usual. La pseudorapidez $\eta$ se define para aprovechar la simetría cilíndrica, y aumenta de valor a medida que nos alejamos del centro del detector{cite}`Marshall:1308447`.
 ```
+La distancia angular entre dos objetos en el detector está dada en función de $\eta$ y $\phi$,
+
+$$
+    \Delta R = \sqrt{\Delta\eta^2+\Delta\phi^2}.
+$$ (delta-R)
+
 Los jets se pueden reconstruir a partir de objetos experimentales, como depósitos de energía en calorímetros y trayectorias de partículas cargadas ({numref}`jets-types`), o de objetos teóricos, como partones y hadrones obtenidos mediante simulaciones.
 
 ```{figure} ./../../figuras/jets-types.png
@@ -130,7 +136,15 @@ Como se observa en la {numref}`jets-diagramajets`, a alto momento transverso, un
 ### Masa
 La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet, calculada a partir del cuadri-momento de cada constituyente. 
 
-La distribución de masa del jet se utiliza para diferenciar jets provenientes de partículas masivas con alto momento transverso, que se caracterizan por una distribución mas angosta y alta, de fondo que cae suavemente, debido a jets ordinarios de quarks y gluones{cite}`PhysRevD.102.012010`. 
+La distribución de masa del jet se utiliza para diferenciar jets provenientes de partículas masivas con alto momento transverso, que se caracterizan por una distribución mas angosta y alta, de fondo que cae suavemente, debido a jets ordinarios de quarks y gluones{cite}`PhysRevD.102.012010`. En la {numref}`jets-masa`, se presenta un ejemplo de la distribución de la masa del jet principal de eventos provenientes de quarks y gluones, o fondo, y para una señal de nueva física con partículas de 500 y 100 GeV que decaen a jets.
+
+```{figure} ./../../figuras/jets-masa.png
+---
+width: 350px
+name: jets-masa
+---
+Distribuciones de la masa del jet principal para jets de quarks y gluones, o fondo, y de una señal de nueva física con partículas de 500 y 100 GeV.
+```
 ### N-subjettiness
 Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet{cite}`10.1088/2053-2563/ab1be6ch5`. Para lograr esto, se hace un agrupamiento exclusivo de N jets, utilizando los constituyentes del jet, y se calcula la variable $\tau_N$,
 
@@ -144,7 +158,7 @@ $$
     \tau_{N,N-1}=\frac{\tau_{N}}{\tau_{N-1}}
 $$ (jets-ratio_subjettiness)
 
-Un jet con N-1 subjets tendrá un valor de $\tau_{N,N-1}$ mayor a un jet conformado por N o más subjets. En la {numref}`jets-tau`, se presenta un ejemplo de la distribución de $\tau_{21}$ para jets provinientes de quarks y gluones, o fondo, y la distribución de una señal de nueva física que decae a jets con una subestructura de 2 o más subjets.
+Un jet con N-1 subjets tendrá un valor de $\tau_{N,N-1}$ mayor a un jet conformado por N o más subjets. En la {numref}`jets-tau`, se presenta un ejemplo de la distribución de $\tau_{21}$ para jets provenientes de quarks y gluones, o fondo, y para una señal de nueva física que decae a jets con una subestructura de 2 o más subjets.
 
 ```{figure} ./../../figuras/jets-tau.png
 ---
