@@ -127,15 +127,20 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/detectores.html">
+     2.4. Detectores de partículas
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html">
-     2.4. Reconstrucción de jets
+     2.5. Reconstrucción de jets
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ml-fisica/resumen.html">
-   3. Aprendizaje automático en la búsqueda de nueva física
+   3. Aprendizaje automático para la búsqueda de nueva física
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -426,7 +431,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>El preprocesamiento de los datos de cada participante de las LHCO 2020 es distinto. Algunos métodos requieren la creación de imágenes, otros el cálculo de variables, y las variables a utilizar también depende de cada algoritmo. En esta sección vamos a analizar el preprocesamiento de los datos hecho para UCluster utilizando el conjunto R&amp;D.</p>
 <div class="section" id="distribuciones">
 <span id="ducluster-dist"></span><h2><span class="section-number">5.3.1. </span>Distribuciones<a class="headerlink" href="#distribuciones" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>Las variables de los datos preprocesados por UCluster se describen en la <a class="reference internal" href="#datoslhco-ucluster-variables"><span class="std std-numref">Tabla 5.2</span></a><span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id108" title="Vinicius Mikuni and Florencia Canelli. Unsupervised clustering for collider physics. Physical Review D, may 2021. URL: https://doi.org/10.1103%2Fphysrevd.103.092007, doi:10.1103/physrevd.103.092007.">102</a>]</span>:</p>
+<p>Las variables de los datos preprocesados por UCluster se describen en la <a class="reference internal" href="#datoslhco-ucluster-variables"><span class="std std-numref">Tabla 5.2</span></a><span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id108" title="Vinicius Mikuni and Florencia Canelli. Unsupervised clustering for collider physics. Physical Review D, may 2021. URL: https://doi.org/10.1103%2Fphysrevd.103.092007, doi:10.1103/physrevd.103.092007.">107</a>]</span>:</p>
 <table class="colwidths-auto table" id="datoslhco-ucluster-variables">
 <caption><span class="caption-number">Tabla 5.2 </span><span class="caption-text">Definición de las variables utilizadas por UCluster para entrenamiento y clasificación.</span><a class="headerlink" href="#datoslhco-ucluster-variables" title="Enlace permanente a esta tabla">¶</a></caption>
 <thead>
@@ -441,14 +446,14 @@ const thebe_selector_output = ".output, .cell_output"
 <tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Delta\phi\)</span></p></td>
 <td class="text-align:center"><p>Diferencia entre el ángulo azimutal del constituyente y del jet</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\log{p_T}\)</span></p></td>
-<td class="text-align:center"><p>Logaritmo del <span class="math notranslate nohighlight">\(p_T\)</span> del constituyente</p></td>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\log{pT}\)</span></p></td>
+<td class="text-align:center"><p>Logaritmo del <span class="math notranslate nohighlight">\(pT\)</span> del constituyente</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\log{E}\)</span></p></td>
 <td class="text-align:center"><p>Logaritmo de la <span class="math notranslate nohighlight">\(E\)</span> del constituyente</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\log\frac{p_T}{p_{T_{jet}}}\)</span></p></td>
-<td class="text-align:center"><p>Logaritmo de la relación entre el <span class="math notranslate nohighlight">\(p_T\)</span> del constituyente y el <span class="math notranslate nohighlight">\(p_T\)</span> del jet</p></td>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\log\frac{pT}{pT_{jet}}\)</span></p></td>
+<td class="text-align:center"><p>Logaritmo de la relación entre el <span class="math notranslate nohighlight">\(pT\)</span> del constituyente y el <span class="math notranslate nohighlight">\(pT\)</span> del jet</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\log\frac{E}{E_{jet}}\)</span></p></td>
 <td class="text-align:center"><p>Logaritmo de la relación entre la <span class="math notranslate nohighlight">\(E\)</span> del constituyente y la <span class="math notranslate nohighlight">\(E\)</span> del jet</p></td>
@@ -461,7 +466,7 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-<p>La distribución de estas variables se encuentra en la <a class="reference internal" href="#ducluster-dist-data"><span class="std std-numref">Figura 5.19</span></a>. La distribución de <span class="math notranslate nohighlight">\(\eta\)</span> es igual para señal y fondo. <span class="math notranslate nohighlight">\(\phi\)</span> y <span class="math notranslate nohighlight">\(\Delta R\)</span> poseen una distribución de señal más angosta y con una mayor densidad de eventos que el fondo, por lo explicado en la <a class="reference internal" href="datos-preprocesados.html#datospp-dist"><span class="std std-numref">Sección 5.2.1</span></a>. Las distribuciones relacionadas a <span class="math notranslate nohighlight">\(p_T\)</span> y <span class="math notranslate nohighlight">\(E\)</span> son similares, y se observan diferencias entre señal y fondo. En ambas variables, los picos de los eventos de señal se encuentran en valores mayores de <span class="math notranslate nohighlight">\(p_T\)</span> que los de fondo, debido a la mayor energía de la interacción, como se observó en los datos preprocesados por <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>.</p>
+<p>La distribución de estas variables se encuentra en la <a class="reference internal" href="#ducluster-dist-data"><span class="std std-numref">Figura 5.19</span></a>. La distribución de <span class="math notranslate nohighlight">\(\eta\)</span> es igual para señal y fondo. <span class="math notranslate nohighlight">\(\phi\)</span> y <span class="math notranslate nohighlight">\(\Delta R\)</span> poseen una distribución de señal más angosta y con una mayor densidad de eventos que el fondo, por lo explicado en la <a class="reference internal" href="datos-preprocesados.html#datospp-dist"><span class="std std-numref">Sección 5.2.1</span></a>. Las distribuciones relacionadas a <span class="math notranslate nohighlight">\(pT\)</span> y <span class="math notranslate nohighlight">\(E\)</span> son similares, y se observan diferencias entre señal y fondo. En ambas variables, los picos de los eventos de señal se encuentran en valores mayores de <span class="math notranslate nohighlight">\(pT\)</span> que los de fondo, debido a la mayor energía de la interacción, como se observó en los datos preprocesados por <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>.</p>
 <div class="figure align-default" id="ducluster-dist-data">
 <a class="reference internal image-reference" href="../../_images/dUCluster-dist-data.png"><img alt="../../_images/dUCluster-dist-data.png" src="../../_images/dUCluster-dist-data.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-number">Figura 5.19 </span><span class="caption-text">Distribución de las variables en la <a class="reference internal" href="#datoslhco-ucluster-variables"><span class="std std-numref">Tabla 5.2</span></a>.</span><a class="headerlink" href="#ducluster-dist-data" title="Enlace permanente a esta imagen">¶</a></p>
@@ -471,7 +476,7 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="../../_images/dUCluster-dist-global.png"><img alt="../../_images/dUCluster-dist-global.png" src="../../_images/dUCluster-dist-global.png" style="width: 70%;" /></a>
 <p class="caption"><span class="caption-number">Figura 5.20 </span><span class="caption-text">Distribución de las variables para parametrizar la red de UCluster.</span><a class="headerlink" href="#ducluster-dist-global" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>El conjunto de datos preprocesados también posee un conjunto <em>label</em>, que hace referencia a las etiquetas de masa asignadas a los constituyentes de los jets. De la reconstrucción de esta variable, considerando el rango de masa utilizado por el método<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">73</a>]</span>, se obtiene la <a class="reference internal" href="#ducluster-label"><span class="std std-numref">Figura 5.21</span></a>, donde se observan dos picos en la distribución de señal, alrededor de la masa de las partículas <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> del conjunto R&amp;D.</p>
+<p>Como se explicó en la <a class="reference internal" href="../datos-metodos/algoritmos-lhco.html#alglhco-ucluster"><span class="std std-numref">Sección 4.3.2</span></a>, el algoritmo realiza una clasificación de masa por partícula para crear la representación reducida. Por lo tanto, el conjunto de datos preprocesados posee un conjunto <em>label</em>, que hace referencia a las etiquetas de masa asignadas a los constituyentes de los jet. De la reconstrucción de esta variable, considerando el rango de masa utilizado por el método<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">75</a>]</span>, se pueden obtener las masas de las partículas <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> del conjunto de datos, como se muestra en la <a class="reference internal" href="#ducluster-label"><span class="std std-numref">Figura 5.21</span></a>, donde se observan dos picos en la distribución de señal, alrededor de la masa de las partículas.</p>
 <div class="figure align-default" id="ducluster-label">
 <a class="reference internal image-reference" href="../../_images/dUCluster-label.png"><img alt="../../_images/dUCluster-label.png" src="../../_images/dUCluster-label.png" style="width: 50%;" /></a>
 <p class="caption"><span class="caption-number">Figura 5.21 </span><span class="caption-text">Distribución de la media de las etiquetas de masa asignadas a los constituyentes de los jets. Los picos de la señal coinciden con la masa de las partículas <span class="math notranslate nohighlight">\(X\)</span> y <span class="math notranslate nohighlight">\(Y\)</span> para el conjunto analizado.</span><a class="headerlink" href="#ducluster-label" title="Enlace permanente a esta imagen">¶</a></p>
@@ -484,10 +489,10 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="../../_images/dUCluster-correlaciones.png"><img alt="../../_images/dUCluster-correlaciones.png" src="../../_images/dUCluster-correlaciones.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Figura 5.22 </span><span class="caption-text">Correlaciones de las variables obtenidas del preprocesamiento realizado para UCluster.</span><a class="headerlink" href="#ducluster-correlaciones" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>Se observa que en los eventos de señal y fondo existen correlaciones fuertes entre <span class="math notranslate nohighlight">\(ratio\_E\)</span> y <span class="math notranslate nohighlight">\(ratio\_pT\)</span> y entre <span class="math notranslate nohighlight">\(E\)</span> y <span class="math notranslate nohighlight">\(pT\)</span>. Esta relación es natural debido a que <span class="math notranslate nohighlight">\(E\)</span> se calcula con las componentes del momento. En el fondo, se observan correlaciones entre la masa del jet principal y secundario con <span class="math notranslate nohighlight">\(pT\)</span>. Sin embargo, no son evidentes en la <a class="reference internal" href="#ducluster-bkgcorr"><span class="std std-numref">Figura 5.23</span></a>.</p>
+<p>Se observa que en los eventos de señal y fondo existen correlaciones fuertes entre <span class="math notranslate nohighlight">\(\log{\frac{E}{E_{jet}}}\)</span> y <span class="math notranslate nohighlight">\(\log{\frac{p_T}{pT_{jet}}}\)</span> y entre <span class="math notranslate nohighlight">\(\log{(E)}\)</span> y <span class="math notranslate nohighlight">\(log{(pT)}\)</span>. Esta relación es natural debido a que <span class="math notranslate nohighlight">\(E\)</span> se calcula con las componentes del momento. En el fondo, se observan correlaciones entre la masa del jet principal y secundario con <span class="math notranslate nohighlight">\(pT\)</span>. Sin embargo, no son evidentes en la <a class="reference internal" href="#ducluster-bkgcorr"><span class="std std-numref">Figura 5.23</span></a>.</p>
 <div class="figure align-default" id="ducluster-bkgcorr">
 <a class="reference internal image-reference" href="../../_images/dUCluster-bkgcorr.png"><img alt="../../_images/dUCluster-bkgcorr.png" src="../../_images/dUCluster-bkgcorr.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.23 </span><span class="caption-text">Correlaciones de las masa de los jets principales con <span class="math notranslate nohighlight">\(ratio\_pT\)</span>.</span><a class="headerlink" href="#ducluster-bkgcorr" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 5.23 </span><span class="caption-text">Correlaciones de las masa de los jets principales con <span class="math notranslate nohighlight">\(\log{\frac{p_T}{p_{T_{jet}}}}\)</span>.</span><a class="headerlink" href="#ducluster-bkgcorr" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 </div>

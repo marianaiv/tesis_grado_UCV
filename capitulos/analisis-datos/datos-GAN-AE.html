@@ -127,15 +127,20 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/detectores.html">
+     2.4. Detectores de partículas
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html">
-     2.4. Reconstrucción de jets
+     2.5. Reconstrucción de jets
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ml-fisica/resumen.html">
-   3. Aprendizaje automático en la búsqueda de nueva física
+   3. Aprendizaje automático para la búsqueda de nueva física
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -423,28 +428,28 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="datos-de-gan-ae">
 <span id="dganae"></span><h1><span class="section-number">5.4. </span>Datos de GAN-AE<a class="headerlink" href="#datos-de-gan-ae" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Las variables obtenidas en el preprocesamiento de GAN-AE para los dos jets principales son<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id111" title="J. Donini, I. Dinu, and L. Vaslin. LHC Olympics Results Report. 2020. Accessed: 09-04-2022. URL: https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0.">111</a>]</span>:</p>
+<p>Las variables obtenidas en el preprocesamiento de GAN-AE para los dos jets principales son<span id="id1">[<a class="reference internal" href="../referencias/referencias.html#id111" title="J. Donini, I. Dinu, and L. Vaslin. LHC Olympics Results Report. 2020. Accessed: 09-04-2022. URL: https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0.">118</a>]</span>:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(m\)</span> y <span class="math notranslate nohighlight">\(E\)</span>.</p></li>
-<li><p>El número de subjets inclusivos y exclusivos (<span class="math notranslate nohighlight">\(nisb\)</span>, <span class="math notranslate nohighlight">\(nesb\)</span>, respectivamente) del evento y el número de constituyentes.</p></li>
+<li><p><span class="math notranslate nohighlight">\(pT\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(m\)</span> y <span class="math notranslate nohighlight">\(E\)</span>.</p></li>
+<li><p>El número de subjets inclusivos y exclusivos del evento y el número de constituyentes.</p></li>
 <li><p>Subjettiness: <span class="math notranslate nohighlight">\(\tau_1\)</span>, <span class="math notranslate nohighlight">\(\tau_2\)</span>, <span class="math notranslate nohighlight">\(\tau_3\)</span>, <span class="math notranslate nohighlight">\(\tau_{32}\)</span> y <span class="math notranslate nohighlight">\(\tau_{21}\)</span></p></li>
 <li><p>Anillos de energía definidos como <span class="math notranslate nohighlight">\(\left(\sum E_{const}/E_{jet}\right)\)</span> con <span class="math notranslate nohighlight">\(\Delta R(jet, constit) \in \left[R_{jet}(i/n);R_{jet}((i+1)/n)\right]\)</span> y <span class="math notranslate nohighlight">\(n = 1,2,\dots,10\)</span>.</p></li>
 </ul>
 <p>Y del evento:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(m_{jj}\)</span> y número de jets <span class="math notranslate nohighlight">\(n_{jets}\)</span> con <span class="math notranslate nohighlight">\(p_T\geq20\)</span> GeV</p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{jj}\)</span> y número de jets <span class="math notranslate nohighlight">\(n_{jets}\)</span> con <span class="math notranslate nohighlight">\(pT\geq20\)</span> GeV</p></li>
 </ul>
 <div class="section" id="distribuciones">
 <span id="dganae-dist"></span><h2><span class="section-number">5.4.1. </span>Distribuciones<a class="headerlink" href="#distribuciones" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>GAN-AE utiliza una gran cantidad de variables. En la <a class="reference internal" href="#dganae-dist-importance"><span class="std std-numref">Figura 5.24</span></a> se muestran las distribuciones de las características más importantes para la clasificación de acuerdo con <span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id111" title="J. Donini, I. Dinu, and L. Vaslin. LHC Olympics Results Report. 2020. Accessed: 09-04-2022. URL: https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0.">111</a>]</span>.</p>
+<p>GAN-AE utiliza una gran cantidad de variables. En la <a class="reference internal" href="#dganae-dist-importance"><span class="std std-numref">Figura 5.24</span></a> se muestran las distribuciones de las características más importantes para la clasificación de acuerdo con <span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id111" title="J. Donini, I. Dinu, and L. Vaslin. LHC Olympics Results Report. 2020. Accessed: 09-04-2022. URL: https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0.">118</a>]</span>.</p>
 <div class="figure align-default" id="dganae-dist-importance">
 <a class="reference internal image-reference" href="../../_images/dGANAE-dist-importance.png"><img alt="../../_images/dGANAE-dist-importance.png" src="../../_images/dGANAE-dist-importance.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.24 </span><span class="caption-text">Distribución de las variables más importantes según <span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id111" title="J. Donini, I. Dinu, and L. Vaslin. LHC Olympics Results Report. 2020. Accessed: 09-04-2022. URL: https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0.">111</a>]</span>. Masa invariante y masa, <span class="math notranslate nohighlight">\(p_T\)</span> y <span class="math notranslate nohighlight">\(\tau_{21}\)</span> de los dos jets principales.</span><a class="headerlink" href="#dganae-dist-importance" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 5.24 </span><span class="caption-text">Distribución de las variables más importantes según <span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id111" title="J. Donini, I. Dinu, and L. Vaslin. LHC Olympics Results Report. 2020. Accessed: 09-04-2022. URL: https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0.">118</a>]</span>. Masa invariante y masa, <span class="math notranslate nohighlight">\(pT\)</span> y <span class="math notranslate nohighlight">\(\tau_{21}\)</span> de los dos jets principales.</span><a class="headerlink" href="#dganae-dist-importance" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>Las distribuciones de la masa invariante, el <span class="math notranslate nohighlight">\(p_T\)</span> de los dos jets principales y la masa de los dos jets principales en la <a class="reference internal" href="#dganae-dist-importance"><span class="std std-numref">Figura 5.24</span></a> son iguales a las obtenidas en la <a class="reference internal" href="datos-preprocesados.html#datospp-dist"><span class="std std-numref">Sección 5.2.1</span></a> para el conjunto R&amp;D, el conjunto utilizado en este análisis. <span class="math notranslate nohighlight">\(\tau_{21}\)</span> de los dos jets principales son similares a lo obtenido con <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>.</p>
+<p>Las distribuciones de la masa invariante, el <span class="math notranslate nohighlight">\(pT\)</span> de los dos jets principales y la masa de los dos jets principales en la <a class="reference internal" href="#dganae-dist-importance"><span class="std std-numref">Figura 5.24</span></a> son iguales a las obtenidas en la <a class="reference internal" href="datos-preprocesados.html#datospp-dist"><span class="std std-numref">Sección 5.2.1</span></a> para el conjunto R&amp;D, el conjunto utilizado en este análisis. <span class="math notranslate nohighlight">\(\tau_{21}\)</span> de los dos jets principales son similares a lo obtenido con <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>.</p>
 <div class="figure align-default" id="dganae-dist-importance-diff">
 <a class="reference internal image-reference" href="../../_images/dGANAE-dist-importance-diff.png"><img alt="../../_images/dGANAE-dist-importance-diff.png" src="../../_images/dGANAE-dist-importance-diff.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.25 </span><span class="caption-text">Distribución de las variables más importantes según <span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id111" title="J. Donini, I. Dinu, and L. Vaslin. LHC Olympics Results Report. 2020. Accessed: 09-04-2022. URL: https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0.">111</a>]</span>. Número de subjets inclusivos y <span class="math notranslate nohighlight">\(\tau_1\)</span> para el jet secundario.</span><a class="headerlink" href="#dganae-dist-importance-diff" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 5.25 </span><span class="caption-text">Distribución de las variables más importantes según <span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id111" title="J. Donini, I. Dinu, and L. Vaslin. LHC Olympics Results Report. 2020. Accessed: 09-04-2022. URL: https://www.dropbox.com/s/mml3xk6c4ecd9qr/lhco_lpc%20-%20Ioan%20Dinu.pdf?dl=0.">118</a>]</span>. Número de subjets inclusivos del jet principal y secundario y <span class="math notranslate nohighlight">\(\tau_1\)</span> del jet secundario.</span><a class="headerlink" href="#dganae-dist-importance-diff" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Por otra parte, en la <a class="reference internal" href="#dganae-dist-importance-diff"><span class="std std-numref">Figura 5.25</span></a>, observamos que la distribución del número de subjets inclusivos de los dos jets principales es diferente para señal y fondo; en general, la señal posee menos subjets. Las distribuciones del fondo y la señal de <span class="math notranslate nohighlight">\(\tau_1\)</span> para el jet secundario son similares, siendo la distribución de la señal un poco mas ancha, porque los jets de fondo son más consistentes con la subestructura de un jet, como se discutió en la <a class="reference internal" href="datos-preprocesados.html#datospp"><span class="std std-numref">Sección 5.2</span></a>.</p>
 </div>
@@ -458,7 +463,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Sin embargo, las correlaciones en los eventos de señal no son evidentes en la <a class="reference internal" href="#dganae-corr-scatter"><span class="std std-numref">Figura 5.27</span></a>.</p>
 <div class="figure align-default" id="dganae-corr-scatter">
 <a class="reference internal image-reference" href="../../_images/dGANAE-corr-scatter.png"><img alt="../../_images/dGANAE-corr-scatter.png" src="../../_images/dGANAE-corr-scatter.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.27 </span><span class="caption-text">Correlación de el número de jets inclusivos del jet secundario con la masa del jet principal y el tercer anillo de energía y la energía del jet principal.</span><a class="headerlink" href="#dganae-corr-scatter" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 5.27 </span><span class="caption-text">Correlación del número de jets inclusivos del jet secundario y la masa del jet principal y del tercer anillo de energía y la energía del jet principal.</span><a class="headerlink" href="#dganae-corr-scatter" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 </div>

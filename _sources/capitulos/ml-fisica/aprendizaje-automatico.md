@@ -12,6 +12,8 @@ El aprendizaje automático es un subcampo de la inteligencia artificial que tien
 
 De manera general, un algoritmo de aprendizaje automático utilizado para resolver un problema de predicción se entrena utilizando un conjunto de datos $\mathbf{X}$ asociados a algún vector $\mathbf{y}$. A través del proceso de entrenamiento, aprende un mapeo $f:\mathbf{x}\longrightarrow y$, donde $x\in\mathbf{X}$. El objetivo es utilizar el mapeo para hacer predicciones $\hat{y}$ dado un nuevo conjunto de datos $\hat{x}$.
 
+En el proceso de entrenamiento, los modelos calculan una *función de pérdida* que varía para cada modelo. La función de pérdida es utilizada por los algoritmos para evaluar qué tan bien modelan los datos. El modelo aprende ajustando parámetros para minimizar el resultado de la función de pérdida.
+
 El aprendizaje automático se puede dividir en tres categorías: aprendizaje supervisado, aprendizaje no supervisado y aprendizaje reforzado. Aunque la distinción es útil, se suelen combinar estos tipos de aprendizaje, por lo que los términos se suelen usar de manera imprecisa y pueden ser confusos. En este proyecto se utilizarán métodos de aprendizaje supervisado y no supervisado.
 
 (ml-supervisado)=
@@ -45,7 +47,7 @@ Como se mencionó anteriormente, el uso de aprendizaje automático en HEP es amp
 Hasta ahora no se ha confirmado ninguna señal de nueva física. Parte de la dificultad recae en diferenciar la pequeña cantidad de eventos que podrían ser señales nuevas de los eventos de fondo o que no son de interés. Debido a esto, se ha planteado el uso de algoritmos de detección de anomalías para la clasificación de los eventos de señal. La tarea de detección de anomalías tiene como objetivo predecir la categoría a la que pertenece una muestra: "normal" o "anómala".
 
 Las técnicas de detección de anomalías se pueden dividir en dos tipos{cite}`Fraser_2022`. 
-- Algunas señales son cualitativamente distintas del fondo y se utilizan técnicas para caracterizar estos eventos como anómalos. 
+- Algunas señales son cualitativamente distintas del fondo y se utilizan técnicas para caracterizar eventos individuales como anómalos. 
 - Algunos eventos de señal son similares a los de fondo, por lo que se explota información sobre la distribución de probabilidad esperada del fondo para hallar señal. 
 
 El primer caso es el que se trata en este proyecto, y los detalles se discutirán en la [última sección](lhco) de este capítulo.

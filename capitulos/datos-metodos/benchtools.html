@@ -127,15 +127,20 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/detectores.html">
+     2.4. Detectores de partículas
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html">
-     2.4. Reconstrucción de jets
+     2.5. Reconstrucción de jets
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ml-fisica/resumen.html">
-   3. Aprendizaje automático en la búsqueda de nueva física
+   3. Aprendizaje automático para la búsqueda de nueva física
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -416,8 +421,8 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="paquete-benchtools">
 <span id="bench"></span><h1><span class="section-number">4.5. </span>Paquete benchtools<a class="headerlink" href="#paquete-benchtools" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Como se mencionó en la <a class="reference internal" href="datos-lhco.html#datos"><span class="std std-numref">Sección 4.1</span></a>, los conjuntos de datos de las LHCO 2020 incluyen todos los hadrones producto de la colisión entre protones. A partir de estos datos, nos interesa reconstruir los jets de cada evento para analizar variables cinemáticas y de subestructura, entrenar los algoritmos explicados en la <a class="reference internal" href="algoritmos-anomalias.html#alg"><span class="std std-numref">Sección 4.2</span></a> y compararlos utilizando las métricas explicadas en la <a class="reference internal" href="metricas.html#met"><span class="std std-numref">Sección 4.4</span></a>. Sin embargo, para trabajar con 1,000,000 de colisiones, donde hay posibilidad tener los datos de 700 hadrones por evento, con 3 medidas por hadrón (es decir, 2,100,000,000 de variables), es necesario desarrollar algunas herramientas para facilitar su manejo.</p>
-<p>En esta sección, se describirá de manera general el paquete de software basado en Python <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>, desarrollado para este trabajo. El paquete incluye herramientas para el manejo de datos, agrupamiento jets, comparación de algoritmos de clasificación binaria, entre otros. Información más detallada sobre el paquete y cómo utilizarlo se puede encontrar en el <a class="reference external" href="https://github.com/marianaiv/benchtools">repositorio</a>.</p>
+<p>Como se mencionó en la <a class="reference internal" href="datos-lhco.html#datos"><span class="std std-numref">Sección 4.1</span></a>, los conjuntos de datos de las LHCO 2020 incluyen todos los hadrones producto de la colisión entre protones. A partir de estos datos, nos interesa reconstruir los jets de cada evento para analizar variables cinemáticas y de subestructura (definidas en la <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#jets-subestructura"><span class="std std-numref">Sección 2.5.2</span></a>), entrenar los algoritmos explicados en la <a class="reference internal" href="algoritmos-anomalias.html#alg"><span class="std std-numref">Sección 4.2</span></a> y compararlos utilizando las métricas explicadas en la <a class="reference internal" href="metricas.html#met"><span class="std std-numref">Sección 4.4</span></a>. Sin embargo, para trabajar con 1,000,000 de colisiones, donde hay posibilidad tener los datos de 700 hadrones por evento, con 3 medidas por hadrón (es decir, 2,100,000,000 de variables), es necesario desarrollar algunas herramientas para facilitar su manejo.</p>
+<p>En esta sección, se describirá de manera general el paquete de software basado en Python <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>, desarrollado para este trabajo. El paquete incluye herramientas para el manejo de datos, agrupamiento jets, comparación de algoritmos de clasificación binaria, entre otros. Información más detallada sobre el paquete y cómo utilizarlo se puede encontrar en el <a class="reference external" href="https://github.com/marianaiv/benchtools">repositorio</a>, donde se publicó de manera abierta el código utilizado, siguiendo los lineamientos planteados en la <a class="reference internal" href="../ml-fisica/reproducibilidad.html#rpd"><span class="std std-numref">Sección 3.3</span></a>.</p>
 <div class="section" id="funciones">
 <span id="bench-herramientas"></span><h2><span class="section-number">4.5.1. </span>Funciones<a class="headerlink" href="#funciones" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El paquete se puede dividir en dos partes principales: las funciones y el pipeline. Una función es un bloque de código que resuelve un problema concreto y es lo que utilizamos para armar el pipeline. Recibe cero o más argumentos de entrada y devuelve un argumento de salida o realiza una tarea. En el caso de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>, se agruparon funciones en cinco módulos diferentes de acuerdo a su utilidad.</p>
@@ -445,15 +450,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Importar una fracción de los eventos. Para cada fracción de eventos:</p>
 <ol class="simple">
 <li><p>Agrupar los jets de cada evento utilizando anti-kt con <span class="math notranslate nohighlight">\(R=1\)</span>.</p></li>
-<li><p>Seleccionar los jets que tengan <span class="math notranslate nohighlight">\(p_T&gt;20GeV\)</span></p></li>
-<li><p>Calcular <span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(m_j\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(\tau_{21}\)</span> y el número de hadrones constituyentes, para los dos jets más energéticos. <span class="math notranslate nohighlight">\(\Delta R\)</span>, <span class="math notranslate nohighlight">\(m_{jj}\)</span> utilizando los dos jets principales y el número de hadrones del evento.</p></li>
+<li><p>Seleccionar los jets que tengan <span class="math notranslate nohighlight">\(pT&gt;20GeV\)</span></p></li>
+<li><p>Calcular <span class="math notranslate nohighlight">\(pT\)</span>, <span class="math notranslate nohighlight">\(m_j\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(\tau_{21}\)</span> y el número de hadrones constituyentes, para los dos jets más energéticos. <span class="math notranslate nohighlight">\(\Delta R\)</span>, <span class="math notranslate nohighlight">\(m_{jj}\)</span> utilizando los dos jets principales y el número de hadrones del evento.</p></li>
 <li><p>Guardar las variables calculadas en un marco de datos.</p></li>
 </ol>
 </li>
 </ol>
 </div>
 </div><p>Este proceso se hace paralelamente para fracciones de datos, debido a que importar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos preprocesados.</p>
-<p>Una tabla con la descripción de cada variable calculada se encuentra <a class="reference internal" href="#bench-variables"><span class="std std-numref">Tabla 4.4</span></a>.</p>
+<p>La descripción de cada variable calculada se encuentra <a class="reference internal" href="#bench-variables"><span class="std std-numref">Tabla 4.4</span></a>.</p>
 <table class="colwidths-auto table" id="bench-variables">
 <caption><span class="caption-number">Tabla 4.4 </span><span class="caption-text">Variables calculadas en el preprocesamiento de los datos. Las variables se calculan para <em>i</em>=1,2, que representan el jet principal y secundario, respectivamente.</span><a class="headerlink" href="#bench-variables" title="Enlace permanente a esta tabla">¶</a></caption>
 <thead>
@@ -462,38 +467,42 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_T\_j_i\)</span></p></td>
-<td><p>Momento transverso del jet <em>i</em></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(pT_{ji}\)</span></p></td>
+<td><p>Momento transversal del jet <em>i</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(m_j\_j_i\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(m_{ji}\)</span></p></td>
 <td><p>Masa invariante del jet <em>i</em></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\eta\_j_i\)</span></p></td>
-<td><p>Pseudorapidez del jet <em>i</em>(ec. <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#equation-jets-eta">(2.1)</a>)</p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\eta_{ji}\)</span></p></td>
+<td><p>Pseudorapidez del jet <em>i</em>(ec.<a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#equation-jets-eta">(2.1)</a>)</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\phi\_j_i\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\phi_{ji}\)</span></p></td>
 <td><p>Ángulo azimutal en el plano transverso del jet <em>i</em></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(E\_j_i\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(E_{ji}\)</span></p></td>
 <td><p>Energía del jet <em>i</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\tau_{21}\_j_i\)</span></p></td>
-<td><p>Subjetiness del jet <em>i</em> (ec. <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#equation-jets-ratio-subjettiness">(2.5)</a>)</p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\tau_{21,ji}\)</span></p></td>
+<td><p>Subjetiness del jet <em>i</em> (ec.<a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#equation-jets-ratio-subjettiness">(2.6)</a>)</p></td>
 </tr>
-<tr class="row-even"><td><p>n_hadrons_<span class="math notranslate nohighlight">\(j_i\)</span></p></td>
+<tr class="row-even"><td><p>nro. hadrones <span class="math notranslate nohighlight">\(ji\)</span></p></td>
 <td><p>Número de hadrones constituyentes del jet <em>i</em></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Delta R\)</span></p></td>
-<td><p>Distancia angular entre los dos jets principales</p></td>
+<td><p>Distancia angular entre los dos jets principales (ec.<a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#equation-delta-r">(2.2)</a>)</p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(m_{jj}\)</span></p></td>
 <td><p>Masa invariante de los dos jets principales</p></td>
 </tr>
-<tr class="row-odd"><td><p>n_hadrons</p></td>
+<tr class="row-odd"><td><p>nro. hadrones</p></td>
 <td><p>Número de hadrones del evento</p></td>
 </tr>
 </tbody>
 </table>
+<p>La masa invariante de los dos jets <span class="math notranslate nohighlight">\(m_{jj}\)</span> está definida como:
+$<span class="math notranslate nohighlight">\(
+    m_{jj}= \sqrt{(E_{j1}+E_{j2})-|p_{j1}+p_{j2}|^2}
+\)</span>$ (masa invariante)</p>
 </div>
 <div class="section" id="pipeline">
 <span id="bench-pipeline-cap"></span><h2><span class="section-number">4.5.3. </span>Pipeline<a class="headerlink" href="#pipeline" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -512,10 +521,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ol>
 </div>
 </div><p>Para entrenar los modelos, se utilizan las variables descritas en la <a class="reference internal" href="#bench-variables"><span class="std std-numref">Tabla 4.4</span></a>, a excepción de <span class="math notranslate nohighlight">\(m_{jj}\)</span> y <span class="math notranslate nohighlight">\(m_{ji}\)</span>, para evitar que los modelos aprendan la masa de las partículas, y obtener una clasificación lo más libre de modelo posible.</p>
-<p>El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra la <a class="reference internal" href="#bench-pipeline"><span class="std std-numref">Figura 4.13</span></a>.</p>
+<p>El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra la <a class="reference internal" href="#bench-pipeline"><span class="std std-numref">Figura 4.14</span></a>.</p>
 <div class="figure align-default" id="bench-pipeline">
 <a class="reference internal image-reference" href="../../_images/bench-pipeline.png"><img alt="../../_images/bench-pipeline.png" src="../../_images/bench-pipeline.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.13 </span><span class="caption-text">Diagrama del pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>.</span><a class="headerlink" href="#bench-pipeline" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.14 </span><span class="caption-text">Diagrama del pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>.</span><a class="headerlink" href="#bench-pipeline" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Las opciones para correr el pipeline se encuentran explicadas en el <a class="reference external" href="https://github.com/marianaiv/benchtools">repositorio</a>. Los resultados de su uso se observarán en la <a class="reference internal" href="../resultados/comparacion-algoritmos.html#comp"><span class="std std-numref">Sección 6.2</span></a>.</p>
 </div>
