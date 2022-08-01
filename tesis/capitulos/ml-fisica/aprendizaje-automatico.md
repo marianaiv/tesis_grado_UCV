@@ -47,7 +47,7 @@ Como se mencionó anteriormente, el uso de aprendizaje automático en HEP es amp
 Hasta ahora no se ha confirmado ninguna señal de nueva física. Parte de la dificultad recae en diferenciar la pequeña cantidad de eventos que podrían ser señales nuevas de los eventos de fondo o que no son de interés. Debido a esto, se ha planteado el uso de algoritmos de detección de anomalías para la clasificación de los eventos de señal. La tarea de detección de anomalías tiene como objetivo predecir la categoría a la que pertenece una muestra: "normal" o "anómala".
 
 Las técnicas de detección de anomalías se pueden dividir en dos tipos{cite}`Fraser_2022`. 
-- Algunas señales son cualitativamente distintas del fondo y se utilizan técnicas para caracterizar estos eventos como anómalos. 
+- Algunas señales son cualitativamente distintas del fondo y se utilizan técnicas para caracterizar eventos individuales como anómalos. 
 - Algunos eventos de señal son similares a los de fondo, por lo que se explota información sobre la distribución de probabilidad esperada del fondo para hallar señal. 
 
 El primer caso es el que se trata en este proyecto, y los detalles se discutirán en la [última sección](lhco) de este capítulo.

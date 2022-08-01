@@ -23,7 +23,7 @@ name: jets-coordenadas
 ---
 Ilustración del sistema de coordenadas utilizado en los experimentos del LHC (izquierda) y una conversión entre el ángulo polar y la pseudorapidez (derecha). El eje z se encuentra a lo largo de la dirección del haz de protones entrante, y el ángulo azimutal $\phi$ se define con respecto al plano x–y, como es usual. La pseudorapidez $\eta$ se define para aprovechar la simetría cilíndrica, y aumenta de valor a medida que nos alejamos del centro del detector{cite}`Marshall:1308447`.
 ```
-Así, la distancia angular entre dos objetos en el detector está dada en función de $\eta$ y $\phi$,
+La distancia angular entre dos objetos en el detector está dada en función de $\eta$ y $\phi$,
 
 $$
     \Delta R = \sqrt{\Delta\eta^2+\Delta\phi^2}.

@@ -34,29 +34,35 @@ El preprocesamiento de datos se realiza para obtener variables físicas a partir
 
 1. Importar una fracción de los eventos. Para cada fracción de eventos:
     1. Agrupar los jets de cada evento utilizando anti-kt con $R=1$.
-    2. Seleccionar los jets que tengan $p_T>20GeV$
-    3. Calcular $p_T$, $m_j$, $\eta$, $\phi$, $E$, $\tau_{21}$ y el número de hadrones constituyentes, para los dos jets más energéticos. $\Delta R$, $m_{jj}$ utilizando los dos jets principales y el número de hadrones del evento.
+    2. Seleccionar los jets que tengan $pT>20GeV$
+    3. Calcular $pT$, $m_j$, $\eta$, $\phi$, $E$, $\tau_{21}$ y el número de hadrones constituyentes, para los dos jets más energéticos. $\Delta R$, $m_{jj}$ utilizando los dos jets principales y el número de hadrones del evento.
     4. Guardar las variables calculadas en un marco de datos.
 ```
 Este proceso se hace paralelamente para fracciones de datos, debido a que importar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos preprocesados.
 
-Una tabla con la descripción de cada variable calculada se encuentra {numref}`bench-variables`.
+La descripción de cada variable calculada se encuentra {numref}`bench-variables`.
+
 ```{table} Variables calculadas en el preprocesamiento de los datos. Las variables se calculan para *i*=1,2, que representan el jet principal y secundario, respectivamente.
 :name: bench-variables
 
-| Variable         | Descripción                                                         |
-|------------------|---------------------------------------------------------------------|
-| $p_T\_j_i$       | Momento transversal del jet *i*                                     |
-| $m_j\_j_i$       | Masa invariante del jet *i*                                         |
-| $\eta\_j_i$      | Pseudorapidez del jet *i*(ec.{eq}`jets-eta`)                        |
-| $\phi\_j_i$      | Ángulo azimutal en el plano transverso del jet *i*                  |
-| $E\_j_i$         | Energía del jet *i*                                                 |
-| $\tau_{21}\_j_i$ | Subjetiness del jet *i* (ec.{eq}`jets-ratio_subjettiness`)          |
-| n_hadrons_$j_i$  | Número de hadrones constituyentes del jet *i*                       |
-| $\Delta R$       | Distancia angular entre los dos jets principales (ec.{eq}`delta-R`) |
-| $m_{jj}$         | Masa invariante de los dos jets principales                         |
-| n_hadrons        | Número de hadrones del evento                                       |
+| Variable          | Descripción                                                         |
+|-------------------|---------------------------------------------------------------------|
+| $pT_{ji}$         | Momento transversal del jet *i*                                     |
+| $m_{ji}$          | Masa invariante del jet *i*                                         |
+| $\eta_{ji}$       | Pseudorapidez del jet *i*(ec.{eq}`jets-eta`)                        |
+| $\phi_{ji}$       | Ángulo azimutal en el plano transverso del jet *i*                  |
+| $E_{ji}$          | Energía del jet *i*                                                 |
+| $\tau_{21,ji}$    | Subjetiness del jet *i* (ec.{eq}`jets-ratio_subjettiness`)          |
+| nro. hadrones $ji$| Número de hadrones constituyentes del jet *i*                       |
+| $\Delta R$        | Distancia angular entre los dos jets principales (ec.{eq}`delta-R`) |
+| $m_{jj}$          | Masa invariante de los dos jets principales                         |
+| nro. hadrones     | Número de hadrones del evento                                       |
 ```
+
+La masa invariante de los dos jets $m_{jj}$ está definida como:
+$$
+    m_{jj}= \sqrt{(E_{j1}+E_{j2})-|p_{j1}+p_{j2}|^2}
+$$ (masa invariante)
 
 (bench-pipeline-cap)=
 ## Pipeline

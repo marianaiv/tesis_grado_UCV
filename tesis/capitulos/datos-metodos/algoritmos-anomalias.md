@@ -5,7 +5,7 @@ En este proyecto se trata de resolver un problema de clasificación binaria con 
 La implementación de aprendizaje automático en este trabajo está comprendida por los siguientes pasos:
 1. Preprocesamiento de los datos utilizando `benchtool`, descrito en la {numref}`bench-pre`.
 2. División de los datos en conjuntos mutuamente excluyentes, 70% en un conjunto de entrenamiento y 30% en uno de prueba. 
-3. Ajuste de los modelos minimizando una función de pérdida específica para cada uno, utilizando los datos de entrenamiento. Las funciones se describirán más adelante en esta sección.
+3. Ajuste de los modelos minimizando una función de pérdida específica para cada uno (ver {numref}`ml-conceptos`), utilizando los datos de entrenamiento.
 4. Evaluación del rendimiento del modelo, calculando la función de pérdida con los datos de prueba.
 
 Los algoritmos utilizados en este trabajo se escogieron a partir de su rendimiento, estudiado durante el desarrollo de las herramientas de análisis de datos. Más información sobre cómo se escogieron estos algoritmos se encuentra en la sección *[notebooks](https://github.com/marianaiv/benchtools/tree/main/notebooks)* del repositorio de `benchtools`.
@@ -85,9 +85,7 @@ donde $g_i$ es la derivada de la función de pérdida con respecto a su segundo 
 
 (alg-qda)=
 ## Análisis de discriminante cuadrático
-El análisis de discriminante cuadrático (QDA, por sus siglas en inglés){cite}`QDA` es un clasificador supervisado con un límite de decisión cuadrático. El modelo asume que las densidades condicionales de clase $P(\mathbf{X}|y=k)$, para cada clase $k$, están distribuidas normalmente.
-
-Las predicciones para cada muestra de entrenamiento $x$ se obtienen utilizando el teorema de Bayes:
+El análisis de discriminante cuadrático (QDA, por sus siglas en inglés){cite}`QDA` es un clasificador supervisado con un límite de decisión cuadrático. El modelo asume que las densidades condicionales de clase $P(\mathbf{X}|y=k)$, para cada clase $k$, están distribuidas normalmente. Las predicciones para cada muestra de entrenamiento $x$ se obtienen utilizando el teorema de Bayes:
 
 $$
     P(y=k|x) = \frac{P(x|y=k)P(y=k)}{P(x)}
@@ -155,9 +153,7 @@ El algoritmo funciona mediante los siguientes pasos:
 4. Calcular la diferencia entre los centroides anteriores y los nuevos.
 ```
 
-Los últimos tres pasos se repiten hasta que la diferencia entre los centroides esté debajo de un umbral, es decir, hasta que los centroides no se muevan significativamente.
-
-Como la inicialización de los centroides es aleatoria, usualmente se realizan múltiples inicializaciones y se escoge la que resulte en un menor valor de la inercia.
+Los últimos tres pasos se repiten hasta que la diferencia entre los centroides esté debajo de un umbral, es decir, hasta que los centroides no se muevan significativamente. Como la inicialización de los centroides es aleatoria, usualmente se realizan múltiples inicializaciones y se escoge la que resulte en un menor valor de la inercia.
 
 (alg-ae)=
 ## Codificador automático
