@@ -11,7 +11,7 @@ De manera general, un algoritmo de agrupamiento hace un mapeo del conjunto de ha
 Todos los algoritmos agrupan objetos cercanos en $\phi$, el ángulo azimutal alrededor del eje del haz, y la pseudorapidez $\eta$, definida como: 
 
 $$
-    \eta\equiv -\ln\left[\tan\left(\frac{\theta}{2}\right)\right]
+    \eta\equiv -\ln\left[\tan\left(\frac{\theta}{2}\right)\right],
 $$ (jets-eta)
 
 donde $\theta$ es el ángulo polar entre los constituyentes y el haz de protones entrantes. Los valores de pseudorapidez indican directamente a qué distancia del centro del detector se produce una partícula y varían de menos a más infinito dentro de la geometría del detector. Este sistema de coordenadas del detector se muestra en la {numref}`jets-coordenadas`, junto con la conversión de ángulo polar a pseudorapidez.
@@ -88,7 +88,7 @@ Los algoritmos de recombinación secuencial asumen que los constituyentes de un 
 En general, los algoritmos de recombinación secuencial utilizan las siguientes medidas de distancia entre dos constituyentes:
 
 $$
-    d_{ij} = min(p_{Ti}^{2p},p_{Tj}^{2p})\times \frac{\Delta R_{ij}^2}{R}
+    d_{ij} = min(p_{Ti}^{2p},p_{Tj}^{2p})\times \frac{\Delta R_{ij}^2}{R},
 $$ (dist_const)
 
 donde $p_T$ es el momento transverso de las partículas, $\Delta R_{ij} = \sqrt{(\eta_i-\eta_j)^2+(\phi_i-\phi_j)^2}$ es la distancia entre dos constituyentes en el espacio $(\eta-\phi)$, $R$ es el radio final del jet, usualmente entre 0.4-0.7 y $p$ es un parámetro referente al tipo de algoritmo.
@@ -96,7 +96,7 @@ donde $p_T$ es el momento transverso de las partículas, $\Delta R_{ij} = \sqrt{
 También utilizan la distancia entre el eje del haz y el constituyente detectado:
 
 $$
-    d_{iB}=p_{Ti}^{2p}
+    d_{iB}=p_{Ti}^{2p}.
 $$ (dist_eje)
 
 Se puede pensar que el funcionamiento de estos algoritmos es de abajo hacia arriba:
@@ -134,7 +134,7 @@ Representación de jets producto de: quarks y gluones (arriba a la izquierda), q
 ```
 Como se observa en la {numref}`jets-diagramajets`, a alto momento transverso, un bosón, un quark top e inclusive una partícula de nueva física que decaiga a dos o más quarks, puede ser reconstruida como un jet único debido a que los productos de decaimiento se encuentran muy cercanos. A continuación se describirán algunas de las variables que se calculan para diferenciar entre jets provenientes de distintas partículas, utilizando como referencia {cite}`10.1088/2053-2563/ab1be6ch8`.
 ### Masa
-La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet, calculada a partir del cuadri-momento de cada constituyente. 
+La masa es la variable más evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet, calculada a partir del cuadri-momento de cada constituyente. 
 
 La distribución de masa del jet se utiliza para diferenciar jets provenientes de partículas masivas con alto momento transverso, que se caracterizan por una distribución mas angosta y alta, de fondo que cae suavemente, debido a jets ordinarios de quarks y gluones{cite}`PhysRevD.102.012010`. En la {numref}`jets-masa`, se presenta un ejemplo de la distribución de la masa del jet principal de eventos provenientes de quarks y gluones, o fondo, y para una señal de nueva física con partículas de 500 y 100 GeV que decaen a jets.
 
@@ -149,13 +149,13 @@ Distribuciones de la masa del jet principal para jets de quarks y gluones, o fon
 Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet{cite}`10.1088/2053-2563/ab1be6ch5`. Para lograr esto, se hace un agrupamiento exclusivo de N jets, utilizando los constituyentes del jet, y se calcula la variable $\tau_N$,
 
 $$
-    \tau_N = \left(\frac{1}{d_0}\right)\sum_{i=0}^{i=N} p_{Ti} \times \Delta R_{min,i}
+    \tau_N = \left(\frac{1}{d_0}\right)\sum_{i=0}^{i=N} p_{Ti} \times \Delta R_{min,i},
 $$ (jets-subjettiness) 
 
 donde $\Delta R_{min,i}$ es la menor distancia entre el constituyente *i* del subjet más cercano y $d_0$ es la suma de $p_T$ de todos los constituyentes multiplicada por el radio del jet, para obtener $0<\tau_N<1$. Un valor menor de $\tau_N$ corresponde a una cantidad de subjets igual a N o menor, mientras que un valor mayor indica más de N subjets. Sin embargo, se prefiere utilizar variables adimensionales:
 
 $$
-    \tau_{N,N-1}=\frac{\tau_{N}}{\tau_{N-1}}
+    \tau_{N,N-1}=\frac{\tau_{N}}{\tau_{N-1}}.
 $$ (jets-ratio_subjettiness)
 
 Un jet con N-1 subjets tendrá un valor de $\tau_{N,N-1}$ mayor a un jet conformado por N o más subjets. En la {numref}`jets-tau`, se presenta un ejemplo de la distribución de $\tau_{21}$ para jets provenientes de quarks y gluones, o fondo, y para una señal de nueva física que decae a jets con una subestructura de 2 o más subjets.

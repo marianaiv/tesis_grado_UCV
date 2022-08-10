@@ -16,12 +16,12 @@ A continuación, se explicarán los algoritmos utilizados, enfocándonos en su u
 ## Bosque aleatorio
 Los bosques aleatorios son algoritmos supervisados ampliamente utilizados para tareas complejas de clasificación. Estos algoritmos son ensambles de árboles de decisión.
 
-Un **árbol de decisión** utiliza una serie de preguntas para realizar la partición jerárquica de los datos con el objetivo de hallar un conjunto de reglas que separen el espacio de características{cite}`myles_2004`. El árbol de decisión utiliza las variables del conjunto de datos para crear preguntas con respuestas booleanas y dividir continuamente el conjunto de datos hasta aislar todos los puntos de datos que pertenecen a cada clase. Este proceso organiza los datos en una estructura de árbol. Cada vez que haces una pregunta estás agregando un nodo al árbol.
+Un **árbol de decisión** utiliza una serie de preguntas para realizar la partición jerárquica de los datos con el objetivo de hallar un conjunto de reglas que separen el espacio de características{cite}`myles_2004`. El árbol de decisión utiliza las variables del conjunto de datos para crear preguntas con respuestas booleanas y dividir continuamente el conjunto de datos hasta aislar todos los puntos de datos que pertenecen a cada clase. Este proceso organiza los datos en una estructura de árbol. Cada vez que se hace una pregunta se está agregando un nodo al árbol.
 
 Los árboles de decisión utilizan funciones de pérdida que evalúan la partición de los datos en función de la pureza de los nodos resultantes, una función de pérdida que compara la distribución de clases antes y después de la división{cite}`tan2005introduction`. Esto se conoce como *criterio de impureza*. Uno de los criterios más utilizado es el criterio *Gini*, que mide cuánto ruido tiene una categoría:
 
 $$
-    H(Q_m)=\sum_{k} p_{mk}(1-p_{mk})
+    H(Q_m)=\sum_{k} p_{mk}(1-p_{mk}),
 $$ (gini)
 
 donde $Q_m$ representa los datos en el nodo $m$ y $p_{mk}$ es la proporción de clase $k$ observada en el nodo $m$, donde las clases para clasificación binaria son 0 y 1. Un diagrama de un árbol de decisión se observa en la {numref}`ml-arboldecision`.
@@ -60,25 +60,25 @@ Diagrama del ensamble de árboles de decisión para formar un GBC{cite}`Pal_2020
 Su formulación matemática es la siguiente{cite}`GTBC`: la predicción $y_i$ del modelo para la entrada $x_i$ está dada por:
 
 $$
-    \hat{y}_i=F_M(x_i)=\sum_{m=1}^{M}h_m(x_i)
+    \hat{y}_i=F_M(x_i)=\sum_{m=1}^{M}h_m(x_i),
 $$ (ml-gbcpred)
 
-$h_m$ son los aprendices débiles. En el caso de clasificación, el mapeo del valor de $F_M(x_i)$ a una clase o probabilidad es dependiente de la pérdida. La probabilidad de que $x_i$ pertenezca a la clase positiva se modela usando la función sigmoid, 
+donde $h_m$ son los aprendices débiles. En el caso de clasificación, el mapeo del valor de $F_M(x_i)$ a una clase o probabilidad es dependiente de la pérdida. La probabilidad de que $x_i$ pertenezca a la clase positiva se modela usando la función sigmoide, 
 
 $$
-    p(y_i=|x_i)=\sigma(F_M(x_i))
+    p(y_i=|x_i)=\sigma(F_M(x_i)).
 $$ (ml-gbcsigmoid)
 
 El GBC se construye de la siguiente manera:
 
 $$
-    F_m(x)=F_{m-1}(x)+h_m(x)
+    F_m(x)=F_{m-1}(x)+h_m(x),
 $$ (ml-gbc)
 
 y $h_m$ se ajusta para minimizar la suma de las pérdidas dado el ensamble anterior $F_{m-1}$,
 
 $$
-    h_m\approx\text{arg min}_h\sum_{i=1}^{n}h(x_i)g_i
+    h_m\approx\text{arg min}_h\sum_{i=1}^{n}h(x_i)g_i,
 $$ (ml-gbcaprendizdebil)
 
 donde $g_i$ es la derivada de la función de pérdida con respecto a su segundo parámetro, evaluada en $F_{m-1}(x)$. La suma en la ec.{eq}`ml-gbcaprendizdebil` se minimiza si $h(x_i)$ se ajusta para predecir un valor proporcional al gradiente negativo $−g_i$. Por lo tanto, en cada iteración, el estimador $h_m$ está ajustado para predecir los gradientes negativos de las muestras. Estos gradientes se actualizan en cada iteración. El proceso puede considerarse como una especie de descenso de gradiente en un espacio funcional.
@@ -88,7 +88,7 @@ donde $g_i$ es la derivada de la función de pérdida con respecto a su segundo 
 El análisis de discriminante cuadrático (QDA, por sus siglas en inglés){cite}`QDA` es un clasificador supervisado con un límite de decisión cuadrático. El modelo asume que las densidades condicionales de clase $P(\mathbf{X}|y=k)$, para cada clase $k$, están distribuidas normalmente. Las predicciones para cada muestra de entrenamiento $x$ se obtienen utilizando el teorema de Bayes:
 
 $$
-    P(y=k|x) = \frac{P(x|y=k)P(y=k)}{P(x)}
+    P(y=k|x) = \frac{P(x|y=k)P(y=k)}{P(x)},
 $$ (ml-qdabayes)
 
 donde se selecciona la clase $k$ que maximice esta probabilidad. Un ejemplo de clasificación utilizando este método se observa en la {numref}`ml-qda`.
@@ -106,7 +106,7 @@ Clasificación con QDA. a) Los puntos a ser clasificados, b) los límites o fron
 Las redes neuronales (NN, por sus siglas en inglés) son modelos supervisados y no lineales inspirados en las neuronas. Se definen mediante una serie de transformaciones que mapean la entrada $x$ a estados "ocultos" $\mathbf{h}_i$. Finalmente, una última transformación mapea estos estados a una función de salida $\mathbf{y}${cite}`Guest_2018`. Esto también se conoce como perceptrón multicapas. Las transformaciones se pueden escribir matemáticamente como:
 
 $$
-    \mathbf{h}_i = g_i(W_i\mathbf{h}_i+\mathbf{b}_i)
+    \mathbf{h}_i = g_i(W_i\mathbf{h}_i+\mathbf{b}_i),
 $$ (ml-nnneurona)
 
 donde $g_i$ es una función conocida como *función de activación* y $\mathbf{h}_i$ representa la transformación iésima de $\mathbf{x}$, llamada *encaje*. $W$ es la matriz de los *pesos* y $\mathbf{b}$ el vector de los *sesgos*.
@@ -122,10 +122,10 @@ name: ml-nn
 ---
 Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente{cite}`Mehta_2019`
 ```
-La tarea de la red depende de su arquitectura. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la *entropía cruzada binaria* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
+La tarea de la red depende de su arquitectura. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoide como función de activación de la última transformación. Se suele utilizar la *entropía cruzada binaria* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
 
 $$
-    \mathcal{L}_{BC} = -\frac{1}{N}\sum_{i=1}^N y_i\log(p(y_i))+(1-y_i)\log(1-p(y_1))
+    \mathcal{L}_{BC} = -\frac{1}{N}\sum_{i=1}^N y_i\log(p(y_i))+(1-y_i)\log(1-p(y_1)),
 $$ (binary-crossentropy)
 
 donde $N$ es el número de muestras a clasificar, $y_i$ es la etiqueta de la muestra iésima y $p(y_i)$ es la probabilidad de que la muestra sea de clase 1. 
@@ -137,7 +137,7 @@ donde $N$ es el número de muestras a clasificar, $y_i$ es la etiqueta de la mue
 El objetivo del algoritmo es minimizar la *inercia* o *criterio de suma de cuadrados* dentro del grupo, definida como: 
 
 $$
-    \mathcal{C}(\{x,\mu\})=\sum_{k=1}^{K}\sum_{n=1}^{N}r_{nk}(\mathbf{x}_n-\mu_k)^2
+    \mathcal{C}(\{x,\mu\})=\sum_{k=1}^{K}\sum_{n=1}^{N}r_{nk}(\mathbf{x}_n-\mu_k)^2,
 $$ (ml-kmeansinertia)
 
 donde $\mathbf{x}_n$ es la observación enésima y $r_{nk}$ es la asignación. $r_{nk}$ es 1 si $x_n$ pertenece al grupo y 0 de otra forma.
@@ -179,7 +179,7 @@ El modelado generativo es una tarea de aprendizaje no supervisado en la que los 
 Una GAN se construye a partir de dos redes neuronales conocidas como *generador* y *discriminador*. El generador aproxima una función generadora $G(z)$,
 
 $$
-    G(\mathbf{z})=\mathbf{\hat{x}}
+    G(\mathbf{z})=\mathbf{\hat{x}},
 $$(alg-generativa)
 
 donde $\mathbf{z}$ es muestreado a partir de una distribución de probabilidad a priori en un espacio latente y $\mathbf{\hat{x}}$ son las muestras generadas. El discriminador aproxima una función discriminadora que distingue entre muestras $\mathbf{x}$ de los datos originales y muestras $\mathbf{\hat{x}}$ sintéticas. 

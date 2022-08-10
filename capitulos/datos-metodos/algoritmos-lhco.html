@@ -701,12 +701,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p>En particular, el modelo debe aprender la masa del jet al que la partícula pertenece y cuáles partículas pertenecen al mismo jet. El algoritmo utiliza las primeras 100 partículas asociadas a los dos jets más masivos de cada evento y consta de dos tareas: una de clasificación y otra de agrupamiento. La función de pérdida conjunta es:</p>
 <div class="math notranslate nohighlight" id="equation-loss-ucluster">
 <span class="eqno">(4.11)<a class="headerlink" href="#equation-loss-ucluster" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    L = L_{focal} + \beta L_{cluster}
+    L = L_{focal} + \beta L_{cluster}.
 \]</div>
 <p>Un valor de <span class="math notranslate nohighlight">\(\beta=10\)</span> se utiliza para darle a las componentes el mismo orden de magnitud relativo. <span class="math notranslate nohighlight">\(L_{focal}\)</span> hace referencia a la función de pérdida focal, que es comúnmente utilizada para clasificar datos con etiquetas altamente desbalanceadas<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">75</a>]</span>.</p>
 <div class="math notranslate nohighlight" id="equation-focal-loss">
 <span class="eqno">(4.12)<a class="headerlink" href="#equation-focal-loss" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    L_{focal}=-\frac{1}{N}\sum_j^N\sum_m^M y_{j,m}(1-p_{\theta,m}(x_j))^\gamma \log(p_{\theta,m}(x_j))
+    L_{focal}=-\frac{1}{N}\sum_j^N\sum_m^M y_{j,m}(1-p_{\theta,m}(x_j))^\gamma \log(p_{\theta,m}(x_j)),
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(p_{\theta,m}(x_j)\)</span> es la confianza de la red para el evento <span class="math notranslate nohighlight">\(x_j\)</span>, con parámetros entrenables <span class="math notranslate nohighlight">\(\theta\)</span>, de ser clasificado como clase <span class="math notranslate nohighlight">\(m\)</span>. <span class="math notranslate nohighlight">\(y_{j,m}\)</span> es 1 si la clase <span class="math notranslate nohighlight">\(m\)</span> es correctamente asignada al evento <span class="math notranslate nohighlight">\(x_j\)</span> y 0 de otra forma. Para las LHCO 2020, los participantes fijaron el parámetro <span class="math notranslate nohighlight">\(\gamma=2\)</span>.</p>
 <p>La función de pérdida del agrupamiento fue definida como,</p>
@@ -717,7 +717,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>La distancia entre el evento <span class="math notranslate nohighlight">\(x_j\)</span> y el centroide <span class="math notranslate nohighlight">\(\mu_k\)</span> se calcula en el espacio de encaje <span class="math notranslate nohighlight">\(f_\theta\)</span>, creado por la clasificación. <span class="math notranslate nohighlight">\(\pi_{jk}\)</span> pesa la importancia de cada evento para el objetivo de agrupación y está definido como:</p>
 <div class="math notranslate nohighlight" id="equation-peso-clusterloss">
 <span class="eqno">(4.14)<a class="headerlink" href="#equation-peso-clusterloss" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \pi_{jk}=\frac{e^{-\alpha\|f_\theta(x_j)-\mu_k\|}}{\sum_{k'}e^{-\alpha\|f_\theta(x_j)-\mu_k\|}}
+    \pi_{jk}=\frac{e^{-\alpha\|f_\theta(x_j)-\mu_k\|}}{\sum_{k'}e^{-\alpha\|f_\theta(x_j)-\mu_k\|}},
 \]</div>
 <p>con el hiperparámetro <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
 <p>El valor inicial de los centroides se obtiene utilizando el algoritmo K-means, para luego realizar el entrenamiento utilizando la función de pérdida conjunta en la ecuación <a class="reference internal" href="#equation-loss-ucluster">(4.11)</a>.</p>
@@ -727,10 +727,10 @@ const thebe_selector_output = ".output, .cell_output"
 <span id="alglhco-ganae"></span><h2><span class="section-number">4.3.3. </span>GAN-AE<a class="headerlink" href="#gan-ae" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El método GAN-AE intenta asociar un discriminante y un codificador automático como una red generativa antagónica siguiendo los pasos a continuación:</p>
 <p>La <strong>red discriminativa</strong> es un perceptrón multicapas (MLP). Inicialmente es entrenado utilizando la entropía cruzada binaria (ec.<a class="reference internal" href="algoritmos-anomalias.html#equation-binary-crossentropy">(4.8)</a>) en una muestra mezclada de eventos reconstruidos y originales, con el objetivo de exponer las debilidades del codificador automático.</p>
-<p>El <strong>codificador automático</strong> es entrenado utilizando una función de pérdida que combina la reconstrucción del error (en este caso, la distancia euclídea media (MED, por sus siglas en inglés) entre la entrada y la salida) y la entropía binaria cruzada.</p>
+<p>El <strong>codificador automático</strong> es entrenado utilizando una función de pérdida que combina la reconstrucción del error, en este caso, la distancia euclídea media (MED, por sus siglas en inglés) entre la entrada y la salida y la entropía binaria cruzada.</p>
 <div class="math notranslate nohighlight" id="equation-loss-ae">
 <span class="eqno">(4.15)<a class="headerlink" href="#equation-loss-ae" title="Enlace permanente a esta ecuación">¶</a></span>\[  
-    \mathcal{L}_{AE} = \mathcal{L}_{BC}+\epsilon\times\text{MED}+\alpha\times\text{DisCo}
+    \mathcal{L}_{AE} = \mathcal{L}_{BC}+\epsilon\times\text{MED}+\alpha\times\text{DisCo},
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\epsilon\)</span> y <span class="math notranslate nohighlight">\(\alpha\)</span> son hiperparámetros para balancear los pesos de cada término y <span class="math notranslate nohighlight">\(\text{DisCo}\)</span> es la correlación de distancia, para decorrelacionar el error de reconstrucción de la masa invariante. En este caso, <span class="math notranslate nohighlight">\(\mathcal{L}_{BC}\)</span> se evalúa dando eventos reconstruidos a la red discriminativa, pero esta vez con la etiqueta «equivocada», con el objetivo de engañarla.</p>
 <p>Por último, se evalúa el codificador automático utilizando una <em>figura de mérito</em>:</p>

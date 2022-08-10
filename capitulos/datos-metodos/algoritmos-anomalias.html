@@ -474,11 +474,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="bosque-aleatorio">
 <span id="alg-bosques"></span><h2><span class="section-number">4.2.1. </span>Bosque aleatorio<a class="headerlink" href="#bosque-aleatorio" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>Los bosques aleatorios son algoritmos supervisados ampliamente utilizados para tareas complejas de clasificación. Estos algoritmos son ensambles de árboles de decisión.</p>
-<p>Un <strong>árbol de decisión</strong> utiliza una serie de preguntas para realizar la partición jerárquica de los datos con el objetivo de hallar un conjunto de reglas que separen el espacio de características<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id67" title="Anthony J. Myles, Robert N. Feudale, Yang Liu, Nathaniel A. Woody, and Steven D. Brown. An introduction to decision tree modeling. Journal of Chemometrics, 18(6):275-285, 2004. doi:10.1002/cem.873.">93</a>]</span>. El árbol de decisión utiliza las variables del conjunto de datos para crear preguntas con respuestas booleanas y dividir continuamente el conjunto de datos hasta aislar todos los puntos de datos que pertenecen a cada clase. Este proceso organiza los datos en una estructura de árbol. Cada vez que haces una pregunta estás agregando un nodo al árbol.</p>
+<p>Un <strong>árbol de decisión</strong> utiliza una serie de preguntas para realizar la partición jerárquica de los datos con el objetivo de hallar un conjunto de reglas que separen el espacio de características<span id="id2">[<a class="reference internal" href="../referencias/referencias.html#id67" title="Anthony J. Myles, Robert N. Feudale, Yang Liu, Nathaniel A. Woody, and Steven D. Brown. An introduction to decision tree modeling. Journal of Chemometrics, 18(6):275-285, 2004. doi:10.1002/cem.873.">93</a>]</span>. El árbol de decisión utiliza las variables del conjunto de datos para crear preguntas con respuestas booleanas y dividir continuamente el conjunto de datos hasta aislar todos los puntos de datos que pertenecen a cada clase. Este proceso organiza los datos en una estructura de árbol. Cada vez que se hace una pregunta se está agregando un nodo al árbol.</p>
 <p>Los árboles de decisión utilizan funciones de pérdida que evalúan la partición de los datos en función de la pureza de los nodos resultantes, una función de pérdida que compara la distribución de clases antes y después de la división<span id="id3">[<a class="reference internal" href="../referencias/referencias.html#id135" title="Pang-Ning Tan, Michael Steinbach, and Vipin Kumar. Introduction to Data Mining. Addison Wesley, May 2005. ISBN 0321321367.">94</a>]</span>. Esto se conoce como <em>criterio de impureza</em>. Uno de los criterios más utilizado es el criterio <em>Gini</em>, que mide cuánto ruido tiene una categoría:</p>
 <div class="math notranslate nohighlight" id="equation-gini">
 <span class="eqno">(4.1)<a class="headerlink" href="#equation-gini" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    H(Q_m)=\sum_{k} p_{mk}(1-p_{mk})
+    H(Q_m)=\sum_{k} p_{mk}(1-p_{mk}),
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(Q_m\)</span> representa los datos en el nodo <span class="math notranslate nohighlight">\(m\)</span> y <span class="math notranslate nohighlight">\(p_{mk}\)</span> es la proporción de clase <span class="math notranslate nohighlight">\(k\)</span> observada en el nodo <span class="math notranslate nohighlight">\(m\)</span>, donde las clases para clasificación binaria son 0 y 1. Un diagrama de un árbol de decisión se observa en la <a class="reference internal" href="#ml-arboldecision"><span class="std std-numref">Figura 4.2</span></a>.</p>
 <div class="figure align-default" id="ml-arboldecision">
@@ -502,22 +502,22 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Su formulación matemática es la siguiente<span id="id10">[<a class="reference internal" href="../referencias/referencias.html#id74" title="scikit-learn documentation. Ensemble methods: gradient tree boosting. URL: https://scikit-learn.org/stable/modules/ensemble.html#gradient-tree-boosting.">100</a>]</span>: la predicción <span class="math notranslate nohighlight">\(y_i\)</span> del modelo para la entrada <span class="math notranslate nohighlight">\(x_i\)</span> está dada por:</p>
 <div class="math notranslate nohighlight" id="equation-ml-gbcpred">
 <span class="eqno">(4.2)<a class="headerlink" href="#equation-ml-gbcpred" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \hat{y}_i=F_M(x_i)=\sum_{m=1}^{M}h_m(x_i)
+    \hat{y}_i=F_M(x_i)=\sum_{m=1}^{M}h_m(x_i),
 \]</div>
-<p><span class="math notranslate nohighlight">\(h_m\)</span> son los aprendices débiles. En el caso de clasificación, el mapeo del valor de <span class="math notranslate nohighlight">\(F_M(x_i)\)</span> a una clase o probabilidad es dependiente de la pérdida. La probabilidad de que <span class="math notranslate nohighlight">\(x_i\)</span> pertenezca a la clase positiva se modela usando la función sigmoid,</p>
+<p>donde <span class="math notranslate nohighlight">\(h_m\)</span> son los aprendices débiles. En el caso de clasificación, el mapeo del valor de <span class="math notranslate nohighlight">\(F_M(x_i)\)</span> a una clase o probabilidad es dependiente de la pérdida. La probabilidad de que <span class="math notranslate nohighlight">\(x_i\)</span> pertenezca a la clase positiva se modela usando la función sigmoide,</p>
 <div class="math notranslate nohighlight" id="equation-ml-gbcsigmoid">
 <span class="eqno">(4.3)<a class="headerlink" href="#equation-ml-gbcsigmoid" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    p(y_i=|x_i)=\sigma(F_M(x_i))
+    p(y_i=|x_i)=\sigma(F_M(x_i)).
 \]</div>
 <p>El GBC se construye de la siguiente manera:</p>
 <div class="math notranslate nohighlight" id="equation-ml-gbc">
 <span class="eqno">(4.4)<a class="headerlink" href="#equation-ml-gbc" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    F_m(x)=F_{m-1}(x)+h_m(x)
+    F_m(x)=F_{m-1}(x)+h_m(x),
 \]</div>
 <p>y <span class="math notranslate nohighlight">\(h_m\)</span> se ajusta para minimizar la suma de las pérdidas dado el ensamble anterior <span class="math notranslate nohighlight">\(F_{m-1}\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-ml-gbcaprendizdebil">
 <span class="eqno">(4.5)<a class="headerlink" href="#equation-ml-gbcaprendizdebil" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    h_m\approx\text{arg min}_h\sum_{i=1}^{n}h(x_i)g_i
+    h_m\approx\text{arg min}_h\sum_{i=1}^{n}h(x_i)g_i,
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(g_i\)</span> es la derivada de la función de pérdida con respecto a su segundo parámetro, evaluada en <span class="math notranslate nohighlight">\(F_{m-1}(x)\)</span>. La suma en la ec.<a class="reference internal" href="#equation-ml-gbcaprendizdebil">(4.5)</a> se minimiza si <span class="math notranslate nohighlight">\(h(x_i)\)</span> se ajusta para predecir un valor proporcional al gradiente negativo <span class="math notranslate nohighlight">\(−g_i\)</span>. Por lo tanto, en cada iteración, el estimador <span class="math notranslate nohighlight">\(h_m\)</span> está ajustado para predecir los gradientes negativos de las muestras. Estos gradientes se actualizan en cada iteración. El proceso puede considerarse como una especie de descenso de gradiente en un espacio funcional.</p>
 </div>
@@ -526,7 +526,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>El análisis de discriminante cuadrático (QDA, por sus siglas en inglés)<span id="id11">[<a class="reference internal" href="../referencias/referencias.html#id75" title="1.2. linear and quadratic discriminant analysis. Accessed: 08-04-2022. URL: scikit-learn.org/stable/modules/lda_qda.html.">101</a>]</span> es un clasificador supervisado con un límite de decisión cuadrático. El modelo asume que las densidades condicionales de clase <span class="math notranslate nohighlight">\(P(\mathbf{X}|y=k)\)</span>, para cada clase <span class="math notranslate nohighlight">\(k\)</span>, están distribuidas normalmente. Las predicciones para cada muestra de entrenamiento <span class="math notranslate nohighlight">\(x\)</span> se obtienen utilizando el teorema de Bayes:</p>
 <div class="math notranslate nohighlight" id="equation-ml-qdabayes">
 <span class="eqno">(4.6)<a class="headerlink" href="#equation-ml-qdabayes" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    P(y=k|x) = \frac{P(x|y=k)P(y=k)}{P(x)}
+    P(y=k|x) = \frac{P(x|y=k)P(y=k)}{P(x)},
 \]</div>
 <p>donde se selecciona la clase <span class="math notranslate nohighlight">\(k\)</span> que maximice esta probabilidad. Un ejemplo de clasificación utilizando este método se observa en la <a class="reference internal" href="#ml-qda"><span class="std std-numref">Figura 4.5</span></a>.</p>
 <div class="figure align-default" id="ml-qda">
@@ -539,7 +539,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Las redes neuronales (NN, por sus siglas en inglés) son modelos supervisados y no lineales inspirados en las neuronas. Se definen mediante una serie de transformaciones que mapean la entrada <span class="math notranslate nohighlight">\(x\)</span> a estados «ocultos» <span class="math notranslate nohighlight">\(\mathbf{h}_i\)</span>. Finalmente, una última transformación mapea estos estados a una función de salida <span class="math notranslate nohighlight">\(\mathbf{y}\)</span><span id="id13">[<a class="reference internal" href="../referencias/referencias.html#id77" title="Dan Guest, Kyle Cranmer, and Daniel Whiteson. Deep learning and its application to LHC physics. Annual Review of Nuclear and Particle Science, 68(1):161–181, oct 2018. URL: https://doi.org/10.1146%2Fannurev-nucl-101917-021019, doi:10.1146/annurev-nucl-101917-021019.">64</a>]</span>. Esto también se conoce como perceptrón multicapas. Las transformaciones se pueden escribir matemáticamente como:</p>
 <div class="math notranslate nohighlight" id="equation-ml-nnneurona">
 <span class="eqno">(4.7)<a class="headerlink" href="#equation-ml-nnneurona" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \mathbf{h}_i = g_i(W_i\mathbf{h}_i+\mathbf{b}_i)
+    \mathbf{h}_i = g_i(W_i\mathbf{h}_i+\mathbf{b}_i),
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(g_i\)</span> es una función conocida como <em>función de activación</em> y <span class="math notranslate nohighlight">\(\mathbf{h}_i\)</span> representa la transformación iésima de <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, llamada <em>encaje</em>. <span class="math notranslate nohighlight">\(W\)</span> es la matriz de los <em>pesos</em> y <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> el vector de los <em>sesgos</em>.</p>
 <p>El objetivo es hallar los pesos y sesgos que optimizan la función de pérdida. Esto se logra utilizando las etiquetas de los datos y calculando el gradiente de la función de pérdida con respecto a los parámetros del modelo. Este proceso se conoce como <em>retropropagación</em> y requiere que las funciones sean diferenciables.</p>
@@ -548,10 +548,10 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="../../_images/ml-nn.png"><img alt="../../_images/ml-nn.png" src="../../_images/ml-nn.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Figura 4.6 </span><span class="caption-text">Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente<span id="id14">[<a class="reference internal" href="../referencias/referencias.html#id63" title="Pankaj Mehta, Marin Bukov, Ching-Hao Wang, Alexandre G.R. Day, Clint Richardson, Charles K. Fisher, and David J. Schwab. A high-bias, low-variance introduction to machine learning for physicists. Physics Reports, 810:1–124, may 2019. URL: https://doi.org/10.1016%2Fj.physrep.2019.03.001, doi:10.1016/j.physrep.2019.03.001.">68</a>]</span></span><a class="headerlink" href="#ml-nn" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>La tarea de la red depende de su arquitectura. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoid como función de activación de la última transformación. Se suele utilizar la <em>entropía cruzada binaria</em> como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales.</p>
+<p>La tarea de la red depende de su arquitectura. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoide como función de activación de la última transformación. Se suele utilizar la <em>entropía cruzada binaria</em> como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales.</p>
 <div class="math notranslate nohighlight" id="equation-binary-crossentropy">
 <span class="eqno">(4.8)<a class="headerlink" href="#equation-binary-crossentropy" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \mathcal{L}_{BC} = -\frac{1}{N}\sum_{i=1}^N y_i\log(p(y_i))+(1-y_i)\log(1-p(y_1))
+    \mathcal{L}_{BC} = -\frac{1}{N}\sum_{i=1}^N y_i\log(p(y_i))+(1-y_i)\log(1-p(y_1)),
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(N\)</span> es el número de muestras a clasificar, <span class="math notranslate nohighlight">\(y_i\)</span> es la etiqueta de la muestra iésima y <span class="math notranslate nohighlight">\(p(y_i)\)</span> es la probabilidad de que la muestra sea de clase 1.</p>
 </div>
@@ -561,7 +561,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>El objetivo del algoritmo es minimizar la <em>inercia</em> o <em>criterio de suma de cuadrados</em> dentro del grupo, definida como:</p>
 <div class="math notranslate nohighlight" id="equation-ml-kmeansinertia">
 <span class="eqno">(4.9)<a class="headerlink" href="#equation-ml-kmeansinertia" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \mathcal{C}(\{x,\mu\})=\sum_{k=1}^{K}\sum_{n=1}^{N}r_{nk}(\mathbf{x}_n-\mu_k)^2
+    \mathcal{C}(\{x,\mu\})=\sum_{k=1}^{K}\sum_{n=1}^{N}r_{nk}(\mathbf{x}_n-\mu_k)^2,
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\mathbf{x}_n\)</span> es la observación enésima y <span class="math notranslate nohighlight">\(r_{nk}\)</span> es la asignación. <span class="math notranslate nohighlight">\(r_{nk}\)</span> es 1 si <span class="math notranslate nohighlight">\(x_n\)</span> pertenece al grupo y 0 de otra forma.</p>
 <p>El algoritmo funciona mediante los siguientes pasos:</p>
@@ -594,7 +594,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Una GAN se construye a partir de dos redes neuronales conocidas como <em>generador</em> y <em>discriminador</em>. El generador aproxima una función generadora <span class="math notranslate nohighlight">\(G(z)\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-alg-generativa">
 <span class="eqno">(4.10)<a class="headerlink" href="#equation-alg-generativa" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    G(\mathbf{z})=\mathbf{\hat{x}}
+    G(\mathbf{z})=\mathbf{\hat{x}},
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\mathbf{z}\)</span> es muestreado a partir de una distribución de probabilidad a priori en un espacio latente y <span class="math notranslate nohighlight">\(\mathbf{\hat{x}}\)</span> son las muestras generadas. El discriminador aproxima una función discriminadora que distingue entre muestras <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> de los datos originales y muestras <span class="math notranslate nohighlight">\(\mathbf{\hat{x}}\)</span> sintéticas.</p>
 <p>El discriminador se entrena para diferenciar entre las muestras sintéticas y los datos reales y el generador para engañar al discriminador. La función de pérdida del discriminador depende de los parámetros del generador y viceversa. Los modelos se entrenan juntos hasta que el discriminador es engañado una cantidad de veces sobre algún umbral, lo que significa que el generador está generando ejemplos plausibles.</p>

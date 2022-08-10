@@ -24,11 +24,11 @@ Hacer investigación reproducible es necesario para el desarrollo del conocimien
 
 (rpd-investigacion)=
 ## Investigación reproducible
-Dependiendo del tipo de investigación, hay distintas consideraciones que se deben tomar para hacerla reproducible. A continuación, describiremos los criterios de reproducibilidad pertinentes para este trabajo. Particularmente, se toma un enfoque de **investigación abierta**, lo que implica que el desarrollo y los pasos de la investigación deben estar *públicamente disponibles*, ser *transparentes* y *reutilizable*. 
+Dependiendo del tipo de investigación, hay distintas consideraciones que se deben tomar para hacerla reproducible. A continuación, describiremos los criterios de reproducibilidad pertinentes para este trabajo. Particularmente, se toma un enfoque de **investigación abierta**, lo que implica que el desarrollo y los pasos de la investigación deben estar *públicamente disponibles*, ser *transparentes* y *reutilizables*. 
 
 El registro del desarrollo de la investigación se hace mediante el *control de versiones*. Controlar versiones es una manera de registrar los cambios hechos en un archivo de manera cronológica. En desarrollo de software es común utilizar Git{cite}`chacon2014pro` para este propósito, un sistema de control de versiones de código abierto y gratuito.
 
-Para los datos utilizados, el código desarrollado y los resultados obtenidos estén públicamente disponible, deben ser accesibles de manera fácil y gratuita. En este proyecto se publican utilizando [GitHub](https://github.com), una plataforma de internet para el alojamiento de desarrollo de software y el control de versiones usando Git.
+Para que los datos utilizados, el código desarrollado y los resultados obtenidos estén públicamente disponibles, deben ser accesibles de manera fácil y gratuita. En este proyecto se publican utilizando [GitHub](https://github.com), una plataforma de internet para el alojamiento de desarrollo de software y el control de versiones usando Git.
 
 Controlar las versiones y publicar cada uno de los pasos de la investigación es un buen inicio para lograr transparencia. A nivel de desarrollo de software, la transparencia y reutilizabilidad requieren consideraciones sobre la *calidad del código*. Es decir, el código debe ser escrito siguiendo continuamente parámetros preestablecidos, debe estar comentado y se deben desarrollar pruebas para comprobar su funcionamiento. Además, el entorno computacional en el que se llevó a cabo la investigación debe capturarse de tal manera que otros puedan replicarlo. El objetivo es que cualquier persona o ente que quiera reproducir los resultados o utilizar el código pueda hacerlo fácilmente.
 

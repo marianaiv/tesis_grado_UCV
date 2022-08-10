@@ -570,7 +570,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
-<span class="n">bkg_sig_hist</span><span class="p">(</span><span class="n">df_RnD</span><span class="p">,</span> <span class="s1">&#39;m_j1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;m (GeV)&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Events density&#39;</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">bkg_sig_hist</span><span class="p">(</span><span class="n">df_RnD</span><span class="p">,</span> <span class="s1">&#39;m_j1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;m (GeV)&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Densidad de eventos&#39;</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Distribución de la masa del jet principal&#39;</span><span class="p">)</span>
 <span class="c1">#plt.savefig(&#39;../../figuras/jets-tau.png&#39;, bbox_inches=&#39;tight&#39;, facecolor=fig.get_facecolor(),edgecolor=&#39;none&#39;)</span>
 </pre></div>
@@ -584,6 +584,25 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <img alt="../_images/random_2_2.png" src="../_images/random_2_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">bkg_sig_hist</span><span class="p">(</span><span class="n">df_RnD</span><span class="p">,</span> <span class="s1">&#39;tau_21_j1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;m (GeV)&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Densidad de eventos&#39;</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Distribución de $\tau_</span><span class="si">{21}</span><span class="s1">$ del jet principal&#39;</span><span class="p">)</span>
+<span class="c1">#plt.savefig(&#39;../../figuras/jets-tau.png&#39;, bbox_inches=&#39;tight&#39;, facecolor=fig.get_facecolor(),edgecolor=&#39;none&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Distribución de $\\tau_{21}$ del jet principal&#39;)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="../_images/random_3_2.png" src="../_images/random_3_2.png" />
 </div>
 </div>
 

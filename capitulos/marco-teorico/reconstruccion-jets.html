@@ -481,7 +481,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Todos los algoritmos agrupan objetos cercanos en <span class="math notranslate nohighlight">\(\phi\)</span>, el ángulo azimutal alrededor del eje del haz, y la pseudorapidez <span class="math notranslate nohighlight">\(\eta\)</span>, definida como:</p>
 <div class="math notranslate nohighlight" id="equation-jets-eta">
 <span class="eqno">(2.1)<a class="headerlink" href="#equation-jets-eta" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \eta\equiv -\ln\left[\tan\left(\frac{\theta}{2}\right)\right]
+    \eta\equiv -\ln\left[\tan\left(\frac{\theta}{2}\right)\right],
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\theta\)</span> es el ángulo polar entre los constituyentes y el haz de protones entrantes. Los valores de pseudorapidez indican directamente a qué distancia del centro del detector se produce una partícula y varían de menos a más infinito dentro de la geometría del detector. Este sistema de coordenadas del detector se muestra en la <a class="reference internal" href="#jets-coordenadas"><span class="std std-numref">Figura 2.13</span></a>, junto con la conversión de ángulo polar a pseudorapidez.</p>
 <div class="figure align-default" id="jets-coordenadas">
@@ -545,13 +545,13 @@ const thebe_selector_output = ".output, .cell_output"
 <p>En general, los algoritmos de recombinación secuencial utilizan las siguientes medidas de distancia entre dos constituyentes:</p>
 <div class="math notranslate nohighlight" id="equation-dist-const">
 <span class="eqno">(2.3)<a class="headerlink" href="#equation-dist-const" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    d_{ij} = min(p_{Ti}^{2p},p_{Tj}^{2p})\times \frac{\Delta R_{ij}^2}{R}
+    d_{ij} = min(p_{Ti}^{2p},p_{Tj}^{2p})\times \frac{\Delta R_{ij}^2}{R},
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(p_T\)</span> es el momento transverso de las partículas, <span class="math notranslate nohighlight">\(\Delta R_{ij} = \sqrt{(\eta_i-\eta_j)^2+(\phi_i-\phi_j)^2}\)</span> es la distancia entre dos constituyentes en el espacio <span class="math notranslate nohighlight">\((\eta-\phi)\)</span>, <span class="math notranslate nohighlight">\(R\)</span> es el radio final del jet, usualmente entre 0.4-0.7 y <span class="math notranslate nohighlight">\(p\)</span> es un parámetro referente al tipo de algoritmo.</p>
 <p>También utilizan la distancia entre el eje del haz y el constituyente detectado:</p>
 <div class="math notranslate nohighlight" id="equation-dist-eje">
 <span class="eqno">(2.4)<a class="headerlink" href="#equation-dist-eje" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    d_{iB}=p_{Ti}^{2p}
+    d_{iB}=p_{Ti}^{2p}.
 \]</div>
 <p>Se puede pensar que el funcionamiento de estos algoritmos es de abajo hacia arriba:</p>
 <div class="proof algorithm admonition" id="jets-algsecuencial">
@@ -588,7 +588,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Como se observa en la <a class="reference internal" href="#jets-diagramajets"><span class="std std-numref">Figura 2.17</span></a>, a alto momento transverso, un bosón, un quark top e inclusive una partícula de nueva física que decaiga a dos o más quarks, puede ser reconstruida como un jet único debido a que los productos de decaimiento se encuentran muy cercanos. A continuación se describirán algunas de las variables que se calculan para diferenciar entre jets provenientes de distintas partículas, utilizando como referencia <span id="id15">[<a class="reference internal" href="../referencias/referencias.html#id32" title="Deepak Kar. Advanced topic: jet substructure. In Experimental Particle Physics, 2053-2563, pages 8-1 to 8-28. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch8, doi:10.1088/2053-2563/ab1be6ch8.">61</a>]</span>.</p>
 <div class="section" id="masa">
 <h3><span class="section-number">2.5.2.1. </span>Masa<a class="headerlink" href="#masa" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>La masa es la variable mas evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet, calculada a partir del cuadri-momento de cada constituyente.</p>
+<p>La masa es la variable más evidente para discriminar entre jets provenientes de distintas partículas. La masa de un jet es cercana a la masa de la partícula de la cual se origina, asumiendo que los productos del decaimiento están contenidos en el jet. Está definida como la suma de la masa invariante de todos los constituyentes del jet, calculada a partir del cuadri-momento de cada constituyente.</p>
 <p>La distribución de masa del jet se utiliza para diferenciar jets provenientes de partículas masivas con alto momento transverso, que se caracterizan por una distribución mas angosta y alta, de fondo que cae suavemente, debido a jets ordinarios de quarks y gluones<span id="id16">[<a class="reference internal" href="../referencias/referencias.html#id116" title="Eric A. Moreno, Thong Q. Nguyen, Jean-Roch Vlimant, Olmo Cerri, Harvey B. Newman, Avikar Periwal, Maria Spiropulu, Javier M. Duarte, and Maurizio Pierini. Interaction networks for the identification of boosted $h\ensuremath \rightarrow b\overline b$ decays. Phys. Rev. D, 102:012010, Jul 2020. URL: https://link.aps.org/doi/10.1103/PhysRevD.102.012010, doi:10.1103/PhysRevD.102.012010.">60</a>]</span>. En la <a class="reference internal" href="#jets-masa"><span class="std std-numref">Figura 2.18</span></a>, se presenta un ejemplo de la distribución de la masa del jet principal de eventos provenientes de quarks y gluones, o fondo, y para una señal de nueva física con partículas de 500 y 100 GeV que decaen a jets.</p>
 <div class="figure align-default" id="jets-masa">
 <a class="reference internal image-reference" href="../../_images/jets-masa.png"><img alt="../../_images/jets-masa.png" src="../../_images/jets-masa.png" style="width: 350px;" /></a>
@@ -600,12 +600,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Esta variable intenta diferenciar jets de acuerdo al número N de subjets que conforman un jet<span id="id17">[<a class="reference internal" href="../referencias/referencias.html#id129" title="Deepak Kar. Analysis. In Experimental Particle Physics, 2053-2563, pages 5-1 to 5-51. IOP Publishing, 2019. URL: https://dx.doi.org/10.1088/2053-2563/ab1be6ch5, doi:10.1088/2053-2563/ab1be6ch5.">62</a>]</span>. Para lograr esto, se hace un agrupamiento exclusivo de N jets, utilizando los constituyentes del jet, y se calcula la variable <span class="math notranslate nohighlight">\(\tau_N\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-jets-subjettiness">
 <span class="eqno">(2.5)<a class="headerlink" href="#equation-jets-subjettiness" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \tau_N = \left(\frac{1}{d_0}\right)\sum_{i=0}^{i=N} p_{Ti} \times \Delta R_{min,i}
+    \tau_N = \left(\frac{1}{d_0}\right)\sum_{i=0}^{i=N} p_{Ti} \times \Delta R_{min,i},
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\Delta R_{min,i}\)</span> es la menor distancia entre el constituyente <em>i</em> del subjet más cercano y <span class="math notranslate nohighlight">\(d_0\)</span> es la suma de <span class="math notranslate nohighlight">\(p_T\)</span> de todos los constituyentes multiplicada por el radio del jet, para obtener <span class="math notranslate nohighlight">\(0&lt;\tau_N&lt;1\)</span>. Un valor menor de <span class="math notranslate nohighlight">\(\tau_N\)</span> corresponde a una cantidad de subjets igual a N o menor, mientras que un valor mayor indica más de N subjets. Sin embargo, se prefiere utilizar variables adimensionales:</p>
 <div class="math notranslate nohighlight" id="equation-jets-ratio-subjettiness">
 <span class="eqno">(2.6)<a class="headerlink" href="#equation-jets-ratio-subjettiness" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \tau_{N,N-1}=\frac{\tau_{N}}{\tau_{N-1}}
+    \tau_{N,N-1}=\frac{\tau_{N}}{\tau_{N-1}}.
 \]</div>
 <p>Un jet con N-1 subjets tendrá un valor de <span class="math notranslate nohighlight">\(\tau_{N,N-1}\)</span> mayor a un jet conformado por N o más subjets. En la <a class="reference internal" href="#jets-tau"><span class="std std-numref">Figura 2.19</span></a>, se presenta un ejemplo de la distribución de <span class="math notranslate nohighlight">\(\tau_{21}\)</span> para jets provenientes de quarks y gluones, o fondo, y para una señal de nueva física que decae a jets con una subestructura de 2 o más subjets.</p>
 <div class="figure align-default" id="jets-tau">

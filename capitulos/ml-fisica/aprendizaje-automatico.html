@@ -506,7 +506,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>El <em>impulso</em> es un tipo de método de ensamble basado en la idea de que hallar varias reglas generales aproximadas puede ser más sencillo que hallar una regla general altamente precisa<span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id70" title="Robert E. Schapire. The Boosting Approach to Machine Learning: An Overview, pages 149–171. Springer New York, New York, NY, 2003. URL: https://doi.org/10.1007/978-0-387-21579-2_9, doi:10.1007/978-0-387-21579-2_9.">71</a>]</span>. Este método se aplica utilizando un conjunto de algoritmos con poca precisión o <em>aprendices débiles</em> <span class="math notranslate nohighlight">\(\{g_k(\mathbf{x})\}\)</span>. Inicialmente, un aprendiz débil halla una regla aproximada haciendo uso de un subconjunto de los datos destinados al entrenamiento del modelo. A cada clasificador se le asocia un peso <span class="math notranslate nohighlight">\(\alpha_k\)</span> que indica cuánto contribuye al clasificador general. El clasificador general se puede expresar matemáticamente como:</p>
 <div class="math notranslate nohighlight" id="equation-ml-boosting">
 <span class="eqno">(3.1)<a class="headerlink" href="#equation-ml-boosting" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    g_A(\mathbf{x})=\sum_{K=1}^{M} \alpha_K g_K(\mathbf{x})
+    g_A(\mathbf{x})=\sum_{K=1}^{M} \alpha_K g_K(\mathbf{x}),
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\sum_k \alpha_k=1\)</span>.</p>
 </div>
@@ -527,7 +527,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Algunas señales son cualitativamente distintas del fondo y se utilizan técnicas para caracterizar eventos individuales como anómalos.</p></li>
 <li><p>Algunos eventos de señal son similares a los de fondo, por lo que se explota información sobre la distribución de probabilidad esperada del fondo para hallar señal.</p></li>
 </ul>
-<p>El primer caso es el que se trata en este proyecto, y los detalles se discutirán en la <a class="reference internal" href="olimpiadas-LHC.html#lhco"><span class="std std-ref">última sección</span></a> de este capítulo.</p>
+<p>El primer caso es el que se trata en este proyecto, y los detalles se discutirán en la <a class="reference internal" href="olimpiadas-LHC.html#lhco"><span class="std std-numref">Sección 3.2</span></a> de este capítulo.</p>
 </div>
 <div class="section" id="busquedas-de-nueva-fisica-independiente-de-modelo">
 <h3><span class="section-number">3.1.4.2. </span>Búsquedas de nueva física independiente de modelo<a class="headerlink" href="#busquedas-de-nueva-fisica-independiente-de-modelo" title="Enlazar permanentemente con este título">¶</a></h3>
