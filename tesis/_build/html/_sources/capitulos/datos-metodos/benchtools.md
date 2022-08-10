@@ -61,7 +61,7 @@ La descripción de cada variable calculada se encuentra {numref}`bench-variables
 
 La masa invariante de los dos jets $m_{jj}$ está definida como:
 $$
-    m_{jj}= \sqrt{(E_{j1}+E_{j2})-|p_{j1}+p_{j2}|^2}
+    m_{jj}= \sqrt{(E_{j1}+E_{j2})-|p_{j1}+p_{j2}|^2}.
 $$ (masa invariante)
 
 (bench-pipeline-cap)=

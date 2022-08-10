@@ -1,6 +1,6 @@
 (datos)=
 # Conjuntos de datos
-El estado final de las LHCO 2020 estuvo enfocado en múltiples jets. Los eventos se generaron utilizando *Pythia*{cite}`Sj_strand_2015`, *Herwig++*{cite}`B_hr_2008` y *Delphes*{cite}`de_Favereau_2014`. Pythia y Herwig++ son programas para la generación de eventos de colisión en HEP, categorizados como generadores de eventos Monte Carlo de propósito general. Delphes simula la respuesta de un detector multipropósito, explicados en la {numref}`det`.
+El estado final de las LHCO 2020 estuvo enfocado en múltiples jets. Los eventos se generaron utilizando *Pythia*{cite}`Sj_strand_2015`, *Herwig++*{cite}`B_hr_2008` y *Delphes*{cite}`de_Favereau_2014`. Pythia y Herwig++ son programas para la generación de eventos de colisión en HEP, categorizados como generadores de eventos Monte Carlo de propósito general. Delphes simula la respuesta de un detector multipropósito, explicado en la {numref}`det`.
 
 Cada evento está compuesto por una lista de todos los hadrones y su cinemática ($p_T,\eta,\phi$), con posibilidad de obtener hasta 700 hadrones por evento. En caso de tener la etiqueta para el tipo de evento (señal o fondo), esta se encuentra en la última columna. Todos los eventos tienen al menos un jet anti-*kt* con $R=1.0$, pseudorapidez $|\eta|<2.5$ y momento transversal $p_T > 1.2$ TeV.
 

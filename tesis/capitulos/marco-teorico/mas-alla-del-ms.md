@@ -24,7 +24,7 @@ Por otra parte, las *limitaciones teóricas* hacen referencia a predicciones no 
 - **Descripción cuántica de la gravedad**: la fuerza gravitatoria no está incluida en el modelo estándar y no se ha logrado construir una teoría cuántica de campos que reconcilie la gravedad con la física de partículas debido a que la relatividad general no es renormalizable.
 - **Origen de las masas/mezclas**: el modelo estándar no explica el origen del mecanismo de Brout–Englert–Higgs, solo se sabe que es necesario para poder coincidir con las observaciones experimentales. Además, la masa de los fermiones ({numref}`bsm-neutrinos`) y los ángulos de mezcla de los quarks parecen presentar un patrón. Estos sólo representan parámetros en el modelo y no se entiende por qué presentan una estructura.
 - **Problema CP fuerte**: En la QCD se predice violación carga-paridad (*CP*){cite}`Creutz_2018,Mannel:2007zz`, pero esto no se ha observado experimentalmente.
-- **Problema de jerarquía**: Teóricamente, la masa del bosón de Higgs debería ser del orden de la escala de Planck{cite}`Smith_2019`. Sin embargo, el valor experimentar hallado es $10^19$ órdenes de magnitud menor. Para lograr teóricamente el valor experimental, se requiere hacer un ajuste fino que no se considera natural y representa problemas con respecto a la universalidad de la teoría.
+- **Problema de jerarquía**: Teóricamente, la masa del bosón de Higgs debería ser del orden de la escala de Planck{cite}`Smith_2019`. Sin embargo, el valor experimentar hallado es $10^{19}$ órdenes de magnitud menor. Para lograr teóricamente el valor experimental, se requiere hacer un ajuste fino que no se considera natural y representa problemas con respecto a la universalidad de la teoría.
 (bsm-nuevafisica)=
 ## Búsqueda de nueva física
 La búsqueda de una teoría del todo, que relacione los fenómenos físicos conocidos y prediga el resultado de cualquier experimento, es un tema en curso en la física, como se puede observar en la {numref}`bsm-unificacion`.
@@ -49,7 +49,7 @@ Diagrama ilustrativo de las partículas supersimétricas planteadas por SUSY {ci
 ```
 También se han propuesto modelos con **dimensiones espaciales adicionales**, como Kaluza y Klein{cite}`KALUZA_2018,Klein:1926tv`, que propone una quinta dimensión, unificando la relatividad general y el electromagnetismo. Desde entonces, se han estudiado varios modelos que plantean nuevas dimensiones{cite}`P_rez_Lorenzana_2005`.
 
-Entre estos modelos se encuentra la **teoría de cuerdas**, que intenta reconciliar la relatividad general con el modelo estándar{cite}`Wray_2011`. Esta teoría solo funciona con dimensiones adicionales e incluye partículas supersimétricas que podrían ser realmente masivas.
+Entre estos modelos se encuentra la **teoría de cuerdas**, que intenta reconciliar la relatividad general con el modelo estándar{cite}`Wray_2011`. Esta teoría predice la existencia de dimensiones adicionales e incluye partículas supersimétricas que podrían ser realmente masivas.
 
 Sin embargo, las partículas supersimétricas no han sido observadas{cite}`ATLAS_SUSY`, ninguno de los experimentos diseñados para detectar materia oscura ha detectado la partícula ligera que predice SUSY, y hasta ahora no hay evidencia para la unificación de las fuerzas ni para las dimensiones adicionales.
 (bsm-dijets)=

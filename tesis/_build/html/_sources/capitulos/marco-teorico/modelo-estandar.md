@@ -3,7 +3,7 @@
 
 El modelo estándar de física de partículas es la teoría que intenta describir las partículas elementales y sus interacciones mediante tres de las cuatro fuerzas fundamentales: la interacción electromagnética, la interacción débil y la interacción fuerte. Es una teoría cuántica relativista de campos en la cual las partículas corresponden a excitaciones de campos.
 
-Se desarrolló por etapas a lo largo de la segunda mitad del siglo XX, con la formulación actual finalizada a mediados de la década de 1970. Desde entonces, ha sido probado por múltiples experimentos sin desviación significativas entre lo observado experimentalmente y lo predicho. Hoy en día se considera al modelo estándar como uno de los más grandes éxitos de la física moderna.
+Se desarrolló por etapas a lo largo de la segunda mitad del siglo XX, con la formulación actual finalizada a mediados de la década de 1970. Desde entonces, ha sido probado por múltiples experimentos sin desviaciones significativas entre lo observado experimentalmente y lo predicho. Hoy en día se considera al modelo estándar como uno de los más grandes éxitos de la física moderna.
 
 A continuación, se proporcionará una breve descripción del modelo estándar. A menos que se indique lo contrario, las referencias bibliográficas utilizadas en esta sección y la siguiente son {cite:p}`Beresford:2642397,altarelli2005standard,morii_lim_mukherjee_2004`. 
 

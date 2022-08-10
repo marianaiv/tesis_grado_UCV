@@ -34,7 +34,7 @@ El nombre de las métricas varía en distintas áreas. En HEP, la recuperación 
 Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, es decir, datos con una desproporción significativa entre el número de ejemplos de cada clase, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Alternativamente, se puede usar la *exactitud balanceada*:
 
 $$
-    \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}
+    \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}.
 $$ (ml-exactitudbalanceada)
 
 En este trabajo se utilizan las métricas descritas en la {numref}`met-metricas`, salvo la exactitud, que se sustituye por la exactitud balanceada, y la especificidad.
@@ -55,10 +55,10 @@ name: ml-roc
 ---
 Ilustración de la curva ROC. La diagonal representa a un clasificador aleatorio o que no distingue entre clases. En este caso, el clasificador con la curva azul es mejor distinguiendo entre clases{cite}`ROC_curve`.
 ```
-El *área bajo de la curva* (AUC, por sus siglas en inglés) representa la habilidad del clasificador para distinguir entre clases.
+El *área bajo de la curva* (AUC, por sus siglas en inglés) representa la habilidad del clasificador para distinguir entre clases,
 
 $$
-    \text{AUC}=\int_0^1\epsilon_s\text{d}\epsilon_b
+    \text{AUC}=\int_0^1\epsilon_s\text{d}\epsilon_b.
 $$ (ml-auc)
 
 Un valor de AUC de 0.5 indica que la predicción no es mejor que una clasificación aleatoria. Menor a 0.5 indica que el clasificador está clasificando de manera inversa{cite}`Kohl_2012`.
@@ -96,7 +96,7 @@ Ejemplos de curvas precisión-recuperación{cite}`valassi_andrea_2018_1405727`.
 Análogo al AUC, se utiliza el área bajo la curva PR (AUCPR, por sus siglas en inglés) y la precisión promedio (AP, por sus siglas en inglés). La precisión promedio resume la curva PR utilizando la media ponderada de las precisiones logradas en cada umbral, usando como peso el aumento en recuperación del umbral anterior{cite}`AP`.
 
 $$
-    AP=\sum_n (R_n - R_{n-1})P_n
+    AP=\sum_n (R_n - R_{n-1})P_n,
 $$ (ml-precisionpromedio)
 
 donde $P_n$ y $R_n$ son la precisión y la recuperación del umbral enésimo.
@@ -105,7 +105,7 @@ donde $P_n$ y $R_n$ son la precisión y la recuperación del umbral enésimo.
 Otra medida utilizada regularmente en HEP es la *mejora de la significancia*, definida como:
 
 $$
-    \text{Mejora de la significancia} = \frac{\epsilon_s}{\sqrt{\epsilon_b}}
+    \text{Mejora de la significancia} = \frac{\epsilon_s}{\sqrt{\epsilon_b}}.
 $$ (ml-mejoradelasignificancia)
 
 Una mejora de la significancia igual a 2 significa que la mejora de la significancia inicial es amplificada por un factor de 2 después de utilizar la estrategia de clasificación{cite}`Kasieczka_2021`.

@@ -490,7 +490,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Las métricas utilizadas dependen del problema de clasificación. Para datos altamente desbalanceados, es decir, datos con una desproporción significativa entre el número de ejemplos de cada clase, se descarta la exactitud ya que puede resultar en valores altos a pesar de estar prediciendo incorrectamente la etiqueta para la clase minoritaria. Alternativamente, se puede usar la <em>exactitud balanceada</em>:</p>
 <div class="math notranslate nohighlight" id="equation-ml-exactitudbalanceada">
 <span class="eqno">(4.17)<a class="headerlink" href="#equation-ml-exactitudbalanceada" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}
+    \text{Exactitud balanceada}= \frac{\text{eficiencia de señal}+\text{rechazo de fondo}}{2}.
 \]</div>
 <p>En este trabajo se utilizan las métricas descritas en la <a class="reference internal" href="#met-metricas"><span class="std std-numref">Tabla 4.3</span></a>, salvo la exactitud, que se sustituye por la exactitud balanceada, y la especificidad.</p>
 </div>
@@ -505,10 +505,10 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="../../_images/ml-roc.png"><img alt="../../_images/ml-roc.png" src="../../_images/ml-roc.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Figura 4.10 </span><span class="caption-text">Ilustración de la curva ROC. La diagonal representa a un clasificador aleatorio o que no distingue entre clases. En este caso, el clasificador con la curva azul es mejor distinguiendo entre clases<span id="id4">[<a class="reference internal" href="../referencias/referencias.html#id124" title="Wikimedia Commons contributors. File:roc-draft-xkcd-style.svg. 2021. URL: https://commons.wikimedia.org/w/index.php?title=File:Roc-draft-xkcd-style.svg&amp;oldid=588966985.">113</a>]</span>.</span><a class="headerlink" href="#ml-roc" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>El <em>área bajo de la curva</em> (AUC, por sus siglas en inglés) representa la habilidad del clasificador para distinguir entre clases.</p>
+<p>El <em>área bajo de la curva</em> (AUC, por sus siglas en inglés) representa la habilidad del clasificador para distinguir entre clases,</p>
 <div class="math notranslate nohighlight" id="equation-ml-auc">
 <span class="eqno">(4.18)<a class="headerlink" href="#equation-ml-auc" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \text{AUC}=\int_0^1\epsilon_s\text{d}\epsilon_b
+    \text{AUC}=\int_0^1\epsilon_s\text{d}\epsilon_b.
 \]</div>
 <p>Un valor de AUC de 0.5 indica que la predicción no es mejor que una clasificación aleatoria. Menor a 0.5 indica que el clasificador está clasificando de manera inversa<span id="id5">[<a class="reference internal" href="../referencias/referencias.html#id87" title="Matthias Kohl. Performance measures in binary classification. International Journal of Statistics in Medical Research, 1(1):79–81, Oct. 2012. URL: https://lifescienceglobal.com/pms/index.php/ijsmr/article/view/512, doi:10.6000/1929-6029.2012.01.01.08.">114</a>]</span>.</p>
 <p>Los clasificadores de agrupamiento, como K-Means, no asignan puntuaciones relacionadas a la probabilidad de ser señal. Sin embargo, asignan distancias entre los datos, representados como puntos, y los centroides. En este trabajo, se tomó la distancia hacia el centroide de señal como el puntaje relacionado a la probabilidad de ser señal, de manera que los puntos más cercanos al centroide de señal poseen un puntaje mayor que los puntos más lejanos. Esta consideración se realizó para la curva ROC y las demás métricas bidimensionales.</p>
@@ -535,19 +535,19 @@ const thebe_selector_output = ".output, .cell_output"
 <a class="reference internal image-reference" href="../../_images/ml-curvapr.png"><img alt="../../_images/ml-curvapr.png" src="../../_images/ml-curvapr.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Figura 4.12 </span><span class="caption-text">Ejemplos de curvas precisión-recuperación<span id="id9">[<a class="reference internal" href="../referencias/referencias.html#id85" title="Andrea Valassi. Fisher information metrics for binary classifier evaluation and training. August 2018. URL: https://doi.org/10.5281/zenodo.1405727, doi:10.5281/zenodo.1405727.">111</a>]</span>.</span><a class="headerlink" href="#ml-curvapr" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>Análogo al AUC, se utiliza el área bajo la curva PR (AUCPR) y la precisión promedio (AP). La precisión promedio resume la curva PR utilizando la media ponderada de las precisiones logradas en cada umbral, utilizando como peso el aumento en recuperación del umbral anterior<span id="id10">[<a class="reference internal" href="../referencias/referencias.html#id90" title="scikit-learn documentation. Precision-Recall. URL: https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html.">116</a>]</span>.</p>
+<p>Análogo al AUC, se utiliza el área bajo la curva PR (AUCPR, por sus siglas en inglés) y la precisión promedio (AP, por sus siglas en inglés). La precisión promedio resume la curva PR utilizando la media ponderada de las precisiones logradas en cada umbral, usando como peso el aumento en recuperación del umbral anterior<span id="id10">[<a class="reference internal" href="../referencias/referencias.html#id90" title="scikit-learn documentation. Precision-Recall. URL: https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html.">116</a>]</span>.</p>
 <div class="math notranslate nohighlight" id="equation-ml-precisionpromedio">
 <span class="eqno">(4.19)<a class="headerlink" href="#equation-ml-precisionpromedio" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    AP=\sum_n (R_n - R_{n-1})P_n
+    AP=\sum_n (R_n - R_{n-1})P_n,
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(P_n\)</span> y <span class="math notranslate nohighlight">\(R_n\)</span> son la precisión y la recuperación del umbral enésimo.</p>
 </div>
 <div class="section" id="mejora-de-la-significancia">
 <h3><span class="section-number">4.4.2.3. </span>Mejora de la significancia<a class="headerlink" href="#mejora-de-la-significancia" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Otra medida utilizada regularmente en HEP es la <em>mejora de la significancia</em> definida como:</p>
+<p>Otra medida utilizada regularmente en HEP es la <em>mejora de la significancia</em>, definida como:</p>
 <div class="math notranslate nohighlight" id="equation-ml-mejoradelasignificancia">
 <span class="eqno">(4.20)<a class="headerlink" href="#equation-ml-mejoradelasignificancia" title="Enlace permanente a esta ecuación">¶</a></span>\[
-    \text{Mejora de la significancia} = \frac{\epsilon_s}{\sqrt{\epsilon_b}}
+    \text{Mejora de la significancia} = \frac{\epsilon_s}{\sqrt{\epsilon_b}}.
 \]</div>
 <p>Una mejora de la significancia igual a 2 significa que la mejora de la significancia inicial es amplificada por un factor de 2 después de utilizar la estrategia de clasificación<span id="id11">[<a class="reference internal" href="../referencias/referencias.html#id60" title="Gregor Kasieczka et al. The LHC olympics 2020 a community challenge for anomaly detection in high energy physics. Reports on Progress in Physics, 84(12):124201, dec 2021. URL: https://doi.org/10.1088%2F1361-6633%2Fac36b9, doi:10.1088/1361-6633/ac36b9.">75</a>]</span>.</p>
 <p>Así, se grafica la <em>mejora de la significancia</em> vs. <em>eficiencia de señal</em> con el fin de visualizar la mejora de la significancia del clasificador en múltiples umbrales. Un ejemplo de esta curva se observa en la <a class="reference internal" href="#ml-significancia"><span class="std std-numref">Figura 4.13</span></a>.</p>

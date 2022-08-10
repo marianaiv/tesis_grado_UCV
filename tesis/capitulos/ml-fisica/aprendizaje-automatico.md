@@ -30,7 +30,7 @@ Existen varios métodos de ensamble, pero, de acuerdo a los algoritmos utilizado
 El *impulso* es un tipo de método de ensamble basado en la idea de que hallar varias reglas generales aproximadas puede ser más sencillo que hallar una regla general altamente precisa{cite}`Schapire2003`. Este método se aplica utilizando un conjunto de algoritmos con poca precisión o *aprendices débiles* $\{g_k(\mathbf{x})\}$. Inicialmente, un aprendiz débil halla una regla aproximada haciendo uso de un subconjunto de los datos destinados al entrenamiento del modelo. A cada clasificador se le asocia un peso $\alpha_k$ que indica cuánto contribuye al clasificador general. El clasificador general se puede expresar matemáticamente como:
 
 $$
-    g_A(\mathbf{x})=\sum_{K=1}^{M} \alpha_K g_K(\mathbf{x})
+    g_A(\mathbf{x})=\sum_{K=1}^{M} \alpha_K g_K(\mathbf{x}),
 $$ (ml-boosting)
 
 donde $\sum_k \alpha_k=1$.
@@ -50,7 +50,7 @@ Las técnicas de detección de anomalías se pueden dividir en dos tipos{cite}`F
 - Algunas señales son cualitativamente distintas del fondo y se utilizan técnicas para caracterizar eventos individuales como anómalos. 
 - Algunos eventos de señal son similares a los de fondo, por lo que se explota información sobre la distribución de probabilidad esperada del fondo para hallar señal. 
 
-El primer caso es el que se trata en este proyecto, y los detalles se discutirán en la [última sección](lhco) de este capítulo.
+El primer caso es el que se trata en este proyecto, y los detalles se discutirán en la {numref}`lhco` de este capítulo.
 
 ### Búsquedas de nueva física independiente de modelo
 La mayor parte de la búsqueda de nueva física está guiada por modelos específicos de BSM, supersimetría o materia oscura. Sin embargo, con la introducción del aprendizaje automático, se han propuesto métodos para la búsqueda independiente de modelo. El objetivo general de estas búsquedas es que sean lo más agnósticas posibles al proceso físico subyacente que puede ser responsable de la señal de nueva física{cite}`jimenez:tel-02402488`.
