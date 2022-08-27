@@ -51,7 +51,7 @@ El clasificador de potenciación del gradiente (GBC, por sus siglas en inglés) 
 
 ```{figure} ./../../figuras/ml-gbc.png
 ---
-width: 40px
+width: 400px
 name: ml-gbc
 ---
 Diagrama del ensamble de árboles de decisión para formar un GBC{cite}`Pal_2020`.
