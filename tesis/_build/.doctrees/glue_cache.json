@@ -1,13 +1,13 @@
 {
   "capitulos\\analisis-datos\\datos-preprocesados": {
-    "mjj-RnD": {
+    "mjj-BB1": {
       "data": {
-        "text/plain": "3476.93849410142"
+        "text/plain": "3670.46231528546"
       },
       "metadata": {
         "scrapbook": {
           "mime_prefix": "",
-          "name": "mjj-RnD"
+          "name": "mjj-BB1"
         }
       },
       "output_type": "display_data"
@@ -25,14 +25,14 @@
       },
       "output_type": "display_data"
     },
-    "mjj-BB1": {
+    "mjj-RnD": {
       "data": {
-        "text/plain": "3670.46231528546"
+        "text/plain": "3476.93849410142"
       },
       "metadata": {
         "scrapbook": {
           "mime_prefix": "",
-          "name": "mjj-BB1"
+          "name": "mjj-RnD"
         }
       },
       "output_type": "display_data"
@@ -51,30 +51,6 @@
       },
       "output_type": "display_data"
     },
-    "mean_nhad_BB1_bkg": {
-      "data": {
-        "application/papermill.record/text/plain": "173.6753903122498"
-      },
-      "metadata": {
-        "scrapbook": {
-          "mime_prefix": "application/papermill.record/",
-          "name": "mean_nhad_BB1_bkg"
-        }
-      },
-      "output_type": "display_data"
-    },
-    "meanpt_sig_RnD": {
-      "data": {
-        "application/papermill.record/text/plain": "25.247649677146946"
-      },
-      "metadata": {
-        "scrapbook": {
-          "mime_prefix": "application/papermill.record/",
-          "name": "meanpt_sig_RnD"
-        }
-      },
-      "output_type": "display_data"
-    },
     "meanpt_bkg_BB1": {
       "data": {
         "application/papermill.record/text/plain": "19.942760435054584"
@@ -87,14 +63,14 @@
       },
       "output_type": "display_data"
     },
-    "mean_nhad_BB1_sig": {
+    "meanpt_bkg_RnD": {
       "data": {
-        "application/papermill.record/text/plain": "147.025"
+        "application/papermill.record/text/plain": "19.19757850577501"
       },
       "metadata": {
         "scrapbook": {
           "mime_prefix": "application/papermill.record/",
-          "name": "mean_nhad_BB1_sig"
+          "name": "meanpt_bkg_RnD"
         }
       },
       "output_type": "display_data"
@@ -112,14 +88,26 @@
       },
       "output_type": "display_data"
     },
-    "meanpt_bkg_RnD": {
+    "meanpt_sig_BB1": {
       "data": {
-        "application/papermill.record/text/plain": "19.19757850577501"
+        "application/papermill.record/text/plain": "25.202933721950238"
       },
       "metadata": {
         "scrapbook": {
           "mime_prefix": "application/papermill.record/",
-          "name": "meanpt_bkg_RnD"
+          "name": "meanpt_sig_BB1"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "meanpt_sig_RnD": {
+      "data": {
+        "application/papermill.record/text/plain": "25.247649677146946"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "meanpt_sig_RnD"
         }
       },
       "output_type": "display_data"
@@ -136,14 +124,26 @@
       },
       "output_type": "display_data"
     },
-    "meanpt_sig_BB1": {
+    "mean_nhad_BB1_bkg": {
       "data": {
-        "application/papermill.record/text/plain": "25.202933721950238"
+        "application/papermill.record/text/plain": "173.6753903122498"
       },
       "metadata": {
         "scrapbook": {
           "mime_prefix": "application/papermill.record/",
-          "name": "meanpt_sig_BB1"
+          "name": "mean_nhad_BB1_bkg"
+        }
+      },
+      "output_type": "display_data"
+    },
+    "mean_nhad_BB1_sig": {
+      "data": {
+        "application/papermill.record/text/plain": "147.025"
+      },
+      "metadata": {
+        "scrapbook": {
+          "mime_prefix": "application/papermill.record/",
+          "name": "mean_nhad_BB1_sig"
         }
       },
       "output_type": "display_data"
