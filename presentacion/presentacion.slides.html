@@ -14481,7 +14481,7 @@ a.anchor-link {
     --jp-ui-font-size1: 20px;       /* instead of 14px */
     --jp-content-font-size1: 20px;  /* instead of 14px */
     --jp-code-font-size: 19px;      /* instead of 13px */
-    --jp-cell-prompt-width: 110px;  /* instead of 64px */
+    --jp-cell-prompt-width: 0px;  /* instead of 64px */
 }
 @media print {
   body {
@@ -15989,13 +15989,411 @@ Una mejora de la significancia igual a 2 significa que la mejora de la significa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Discusiones"><font color="#307a71">Discusiones</font><a class="anchor-link" href="#Discusiones">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="M%C3%A9tricas-de-inter%C3%A9s">M&#233;tricas de inter&#233;s<a class="anchor-link" href="#M%C3%A9tricas-de-inter%C3%A9s">&#182;</a></h2><p>No existe un único modelo que sea mejor de acuerdo a todas las métricas, por lo que se debe definir cuál métrica es más relevante para esta tarea de clasificación.</p>
+<hr>
+
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<center>Existe un <b>desbalance cualitativo</b>: la clasificación correcta de eventos de fondo es irrelevante.</center>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<center>$\downarrow$</center>
+<center>Los verdaderos negativos son irrelevantes.</center>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<center>$\downarrow$</center>
+<center> Las métricas para la clasificación de eventos en HEP deben enfocarse en la correcta clasificación de eventos de señal.</center>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="M%C3%A9tricas-de-inter%C3%A9s">M&#233;tricas de inter&#233;s<a class="anchor-link" href="#M%C3%A9tricas-de-inter%C3%A9s">&#182;</a></h2><p><br></p>
+<div class="alert alert-block alert-danger">
+La <b>exactitud balanceada</b>, <b>la curva ROC</b> y el <b>AUC</b> son métricas que incluyen en sus cálculos la capacidad del modelo para etiquetar correctamente eventos de fondo.
+</div>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<center>$\downarrow$</center><div class="alert alert-block alert-success">
+<b>La precisión</b>, <b>recuperación</b>, <b>el puntaje f1</b>, la <b>curva precisión-recuperación</b> y la <b>precisión promedio</b> se enfocan en medir la correcta clasificación de eventos de señal.
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Clasificaci%C3%B3n-del-conjunto-de-datos-R&amp;D">Clasificaci&#243;n del conjunto de datos R&amp;D<a class="anchor-link" href="#Clasificaci%C3%B3n-del-conjunto-de-datos-R&amp;D">&#182;</a></h2><p><img style="float: left; padding: 0px 20px 0px 0px; width:45%" src="../tesis/figuras/presentacion-metricasRnD.png">
+<br>
+<br>
+• <strong>Los modelos supervisados tienen mejor rendimiento en este conjunto</strong> porque poseen más información en el entrenamiento.<br>
+<br>
+<br>
+• <em>De los modelos supervisados las redes neuronales presentan un mejor rendimiento</em> debido a que son los modelos más complejos.<br>
+<br>
+<br>
+• <em>De los modelos no supervisados GAN-AE obtuvo un mejor resultado</em> debido a que utiliza un codificador automático, que prioriza el aprendizaje de una función que reconstruya la mayor cantidad de datos.
+<br>
+<br>
+<br></p>
+<figcaption align = "left"> <small>Fig.??: Puntaje f1 y curva PR de los distintos clasificadores en el conjunto de datos R&D.</small></figcaption>
+</div>
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Las métricas bidimensionales coinciden para la mayoría de los modelos, pero hay algunas excepciones</li>
+</ul>
+<ul>
+<li>Como no todas las métricas coinciden, es necesario definir cuáles son de mayor importancia en la tarea específica de clasificación de eventos de señal en HEP.<ul>
+<li>Entre las métricas numéricas, el puntaje f1 es mejor métrica para este problema de clasificación, y entre las métricas bidimensionales, el gráfico de precisión-recuperación da una evaluación más realista de los modelos. A su vez, son más relevantes las métricas bidimensionales, debido a que poseen un mayor rango de clasificaciones posibles, donde, dependiendo del umbral de decisión, se pueden obtener mejores valores para las métricas numéricas.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>En general, en la clasificación del conjunto R&amp;D los modelos supervisados obtienen mejores resultados porque poseen mayor información en el entrenamiento, puesto que aprenden patrones de los datos de señal y fondo utilizando las etiquetas para los eventos. <ul>
+<li>Entre los modelos supervisados, las redes neuronales obtienen los mejores resultados. Puesto que son los modelos más complejos, son capaces de modelar más precisamente los datos. </li>
+<li>Entre los modelos no supervisados, GAN-AE obtuvo el mejor resultado para este conjunto porque utiliza un codificador automático. UCluster y KMeans, que obtuvieron el menor rendimiento, son algoritmos de agrupamiento y necesitan estructura en los datos.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="R&amp;D:-modelos-de-las-LHCO-2020">R&amp;D: modelos de las LHCO 2020<a class="anchor-link" href="#R&amp;D:-modelos-de-las-LHCO-2020">&#182;</a></h2><p>De acuerdo al puntaje f1 podemos comparar los modelos de las LHCO 2020 con las distribuciones obtenidas de la clasificación realizada por los modelos implementados en este proyecto.</p>
+
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<table><tr>
+    <td> <center><medium> UCluster $\longrightarrow$ </medium></center> </td>
+    <td> <img src="../tesis/figuras/presentacion-comparacionRnD-KMeans.png" alt="Drawing" style="width:150%;"/><figcaption align = "center"> <small>Fig.??: Distribución de $m_{jj}$ en el conjunto R&D de acuerdo a KMeans.</small></figcaption> </td>
+    <td> <center><medium> GAN-AE $\longrightarrow$</medium></center> </td>
+    <td> <img src="../tesis/figuras/presentacion-comparacionRnD-TensorflowClassifier.png" alt="Drawing" style="width:150%;"/> <figcaption align = "center"> <small>Fig.??: Distribución de $m_{jj}$ en el conjunto BB1 de acuerdo al clasificador de TensorFlow.</small></figcaption></td>    
+</tr></table><center><img src="../tesis/figuras/presentacion-aumentorendimiento.png" style="width:50%"></center>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Clasificaci%C3%B3n-del-conjunto-de-datos-BB1">Clasificaci&#243;n del conjunto de datos BB1<a class="anchor-link" href="#Clasificaci%C3%B3n-del-conjunto-de-datos-BB1">&#182;</a></h2><p><img style="float: left; padding: 0px 20px 0px 0px; width:45%" src="../tesis/figuras/presentacion-metricasBB1.png">
+<br>
+<br>
+<br>
+• La clasificación fue menos exitosa porque <strong>se utilizaron variables dependientes de la masa.</strong><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></p>
+<figcaption align = "left"> <small>Fig.??: Puntaje f1 y curva PR de los distintos clasificadores en el conjunto de datos BB1.</small></figcaption>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Variables-dependientes-de-la-masa">Variables dependientes de la masa<a class="anchor-link" href="#Variables-dependientes-de-la-masa">&#182;</a></h3><p><center><img src="../tesis/figuras/clas-senal-RnD-BB1.png" style="width:100%"></center></p>
+<figcaption align = "center"> <small>Fig.??: Comparación de las distribuciones de señal de las variables $pT$ del jet principal, $\tau_{21}$ del jet principal y $\Delta R$ de los conjuntos de datos R&D y BB1.</small></figcaption>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Clasificaci%C3%B3n-del-conjunto-de-datos-BB1">Clasificaci&#243;n del conjunto de datos BB1<a class="anchor-link" href="#Clasificaci%C3%B3n-del-conjunto-de-datos-BB1">&#182;</a></h2><p><img style="float: left; padding: 0px 20px 0px 0px; width:45%" src="../tesis/figuras/presentacion-metricasBB1.png">
+<br>
+<br>
+<br>
+• La clasificación fue menos exitosa porque <strong>se utilizaron variables dependientes de la masa</strong>.<br>
+<br>
+<br>
+• De acuerdo a las métricas bidimensionales, el modelo no supervisado GAN-AE tiene mejor rendimiento, debido a que tiene una mayor capacidad de generalización por el uso del codificador automático.
+<br>
+<br>
+• Sin embargo, los modelos no supervisados UCluster y KMeans son los que resultan en un menor rendimiento.
+<br>
+<br>
+<br>
+<br></p>
+<figcaption align = "left"> <small>Fig.??: Puntaje f1 y curva PR de los distintos clasificadores en el conjunto de datos BB1.</small></figcaption>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Clasificaci%C3%B3n-del-conjunto-de-datos-BB1:-modelos-de-las-LHCO-2020">Clasificaci&#243;n del conjunto de datos BB1: modelos de las LHCO 2020<a class="anchor-link" href="#Clasificaci%C3%B3n-del-conjunto-de-datos-BB1:-modelos-de-las-LHCO-2020">&#182;</a></h2><table><tr>
+<td> <center><medium> UCluster $\longrightarrow$ </medium></center> </td>
+<td> <img src="../tesis/figuras/presentacion-comparacionBB1-KMeans.png" alt="Drawing" style="width:100%;"/> <figcaption align = "center"> <small>Fig.??: Distribución de $m_{jj}$ en el conjunto BB1 de acuerdo a KMeans.</small></figcaption></td>    
+<td> $\dots$ </td>
+</tr></table><center><img src="../tesis/figuras/presentacion-aumentorendimiento.png" style="width:50%"></center>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Clasificaci%C3%B3n-del-conjunto-de-datos-BB1:-modelos-de-las-LHCO-2020">Clasificaci&#243;n del conjunto de datos BB1: modelos de las LHCO 2020<a class="anchor-link" href="#Clasificaci%C3%B3n-del-conjunto-de-datos-BB1:-modelos-de-las-LHCO-2020">&#182;</a></h2><table><tr>
+<td> <img src="../tesis/figuras/presentacion-comparacionBB1-QuadraticDiscriminantAnalysis.png" alt="Drawing" style="width:100%;"/> <figcaption align = "center"> <small>Fig.??: Distribución de $m_{jj}$ en el conjunto BB1 de acuerdo a QDA.</small></figcaption> </td>
+    <td> <center><medium> GAN-AE $\longrightarrow$ </medium></center> </td>
+<td> <img src="../tesis/figuras/presentacion-comparacionBB1-TensorflowClassifier.png" alt="Drawing" style="width:100%;"/> <figcaption align = "center"> <small>Fig.??: Distribución de $m_{jj}$ en el conjunto BB1 de acuerdo al clasificador de TensorFlow.</small></figcaption></td>    
+</tr></table><center><img src="../tesis/figuras/presentacion-aumentorendimiento.png" style="width:50%"></center>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Reproducibilidad">Reproducibilidad<a class="anchor-link" href="#Reproducibilidad">&#182;</a></h2><p><img style="float: left; padding: 0px 20px 0px 0px; width:50%" src=https://the-turing-way.netlify.app/_images/reproducibility.jpg></p>
+<p>Los resultados de los modelos de las LHCO 2020, GAN-AE y UCluster, fueron fácilmente reproducidos. Sin embargo:
+<br>
+<br>
+   • Se hicieron algunos ajustes para poder correr GAN-AE de la manera en que requería este proyecto.</p>
+<p>• No se encontró disponible la configuración exacta de UCluster, por lo que se usó la configuración por defecto de este modelo.
+<br>
+<br>
+En general, los modelos de las olimpiadas LHCO 2020 inspiraron la construcción de este trabajo.</p>
+<figcaption align = "left"> <small>Fig.??: Pasos para hacer una investigación reproducible.</small></figcaption>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Conclusiones"><font color="#307a71">Conclusiones</font><a class="anchor-link" href="#Conclusiones">&#182;</a></h1>
 </div>
 </div>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput ">
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Sobre-los-modelos">Sobre los modelos<a class="anchor-link" href="#Sobre-los-modelos">&#182;</a></h2><p>En el curso de este trabajo se trataron cuatros temas principales: la búsqueda de nueva física, el uso de aprendiza automático en este contexto, la comparación de algoritmos de clasificación binaria y la reproducibilidad científica. De acuerdo a lo presentado anteriormente:</p>
+<ul>
+<li><strong>Los modelos sencillos implementados en este trabajo se muestran competentes en la tarea de clasificación</strong>. Sin embargo, se evidencia que los modelos no supervisados requieren mayores esfuerzos para lograr la clasificación.</li>
+</ul>
 
-</div></section></section><section><section>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><strong>De los modelos de las LHCO 2020, GAN-AE obtuvo mejores resultados</strong> que UCluster, y mejor resultado general clasificando el conjunto de datos BB1. Esto demuestra que el uso de AE puede tener mejor rendimiento que los algoritmos de agrupamiento.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Se demuestró que <strong>un modelo supervisado clasifica mejor eventos con características similares</strong> a los utilizados en el entrenamiento, pero <strong>un modelo no supervisado más complejo puede ser mejor a la hora de generalizar</strong> y clasificar eventos en los que algunas características difieren.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="A-mejorar">A mejorar<a class="anchor-link" href="#A-mejorar">&#182;</a></h2><p>A lo largo del proyecto se demuestra la necesidad de estudiar con mayor profundidad:</p>
+<ul>
+<li>Variables independientes de la masa para analizar estos eventos.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Métricas para estudiar el rendimiento de las herramientas de aprendizaje automático en la tarea de clasificación de eventos en HEP.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Técnicas referentes a la reproducibilidad científica a la hora de hacer investigaciones con estas herramientas.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Recomendaciones">Recomendaciones<a class="anchor-link" href="#Recomendaciones">&#182;</a></h2><p>En general, se recomienda:</p>
+<ul>
+<li>Unificar y fijar las métricas más relevantes para poder comparar directamente el rendimiento de distintos modelos de aprendizaje automático en la tarea de clasificación de eventos en HEP.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>Adoptar las practicas para hacer ciencia abierta de forma reproducible discutidas en este trabajo y planteadas en The Turing Way. </li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16144,6 +16542,8 @@ require(
     function(Reveal, RevealNotes){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
         Reveal.initialize({
+	    width: 960,
+            height: 700,
             controls: true,
             progress: true,
             history: true,
