@@ -122,7 +122,7 @@ name: ml-nn
 ---
 Diagrama de una red neuronal. Las transformaciones se ordenan por capas, donde la salida de una capa es la entrada de la siguiente{cite}`Mehta_2019`
 ```
-La tarea de la red depende de su arquitectura. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria.. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoide como función de activación de la última transformación. Se suele utilizar la *entropía cruzada binaria* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
+La tarea de la red depende de su arquitectura. Aunque su uso es extenso, nos enfocaremos en su aplicación para clasificación binaria. Para utilizar una red neuronal como clasificador binario, se utiliza la función sigmoide como función de activación de la última transformación. Se suele utilizar la *entropía cruzada binaria* como función de pérdida, que calcula la entropía cruzada entre las clases predichas y las clases reales. 
 
 $$
     \mathcal{L}_{BC} = -\frac{1}{N}\sum_{i=1}^N y_i\log(p(y_i))+(1-y_i)\log(1-p(y_1)),
