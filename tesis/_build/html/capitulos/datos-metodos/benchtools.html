@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.5. Paquete benchtools &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
+    <title>4.5. Paquete benchtools &#8212; Búsqueda de nueva física utilizando técnicas de aprendizaje automático en eventos de múltiples jets</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -57,8 +57,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="3. Exploración de datos" href="../analisis-datos/resumen.html" />
-    <link rel="prev" title="2.4. Algoritmos LHCO 2020" href="algoritmos-lhco.html" />
+    <link rel="next" title="5. Exploración de datos" href="../analisis-datos/resumen.html" />
+    <link rel="prev" title="4.4. Métricas de rendimiento" href="metricas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="es">
     
@@ -96,9 +96,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduccion.html">
+   1. Introducción
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../marco-teorico/resumen.html">
-   1. Marco teórico
+   2. Marco teórico
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -108,113 +113,98 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../marco-teorico/modelo-estandar.html">
-     1.1. El módelo estándar
+     2.1. El módelo estándar
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../marco-teorico/cromodinamica-cuantica.html">
-     1.2. Cromodinámica cuántica
+     2.2. Cromodinámica cuántica
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../marco-teorico/mas-alla-del-ms.html">
-     1.3. Más allá del modelo estándar
+     2.3. Más allá del modelo estándar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../marco-teorico/detectores.html">
+     2.4. Detectores de partículas
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html">
-     1.4. Reconstrucción de jets
+     2.5. Reconstrucción de jets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ml-fisica/resumen.html">
+   3. Aprendizaje automático para la búsqueda de nueva física
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ml-fisica/aprendizaje-automatico.html">
+     3.1. Aprendizaje automático
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../marco-teorico/aprendizaje-automatico.html">
-     1.5. Aprendizaje automático
+    <a class="reference internal" href="../ml-fisica/olimpiadas-LHC.html">
+     3.2. El uso del aprendizaje automático y las Olimpiadas LHC 2020
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../marco-teorico/olimpiadas-LHC.html">
-     1.6. El uso del aprendizaje automático y las Olimpiadas LHC 2020
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../marco-teorico/reproducibilidad.html">
-     1.7. Olimpiadas LHC 2020 y la importancia de la reproducibilidad
+    <a class="reference internal" href="../ml-fisica/reproducibilidad.html">
+     3.3. Olimpiadas LHC 2020 y la importancia de la reproducibilidad
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="resumen.html">
-   2. Datos y métodos
+   4. Datos y métodos
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="datos-lhco.html">
-     2.1. Conjuntos de datos
+     4.1. Conjuntos de datos
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="algoritmos-anomalias.html">
-     2.2. Algoritmos para detección de anomalías
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="metricas.html">
-     2.3. Métricas de rendimiento
+     4.2. Algoritmos para detección de anomalías
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="algoritmos-lhco.html">
-     2.4. Algoritmos LHCO 2020
+     4.3. Algoritmos LHCO 2020
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="metricas.html">
+     4.4. Métricas de rendimiento
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.5. Paquete benchtools
+     4.5. Paquete benchtools
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../analisis-datos/resumen.html">
-   3. Exploración de datos
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analisis-datos/datos-sin-preprocesar.html">
-     3.1. Datos sin pre-procesar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analisis-datos/datos-preprocesados.html">
-     3.2. Datos pre-procesados
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analisis-datos/datos-UCluster.html">
-     3.3. Datos de UCluster
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analisis-datos/datos-GAN-AE.html">
-     3.4. Datos de GAN-AE
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../resultados/resumen.html">
-   4. Resultados
+   5. Exploración de datos
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -223,30 +213,62 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-sin-preprocesar.html">
+     5.1. Datos sin preprocesar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-preprocesados.html">
+     5.2. Datos preprocesados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-UCluster.html">
+     5.3. Datos de UCluster
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analisis-datos/datos-GAN-AE.html">
+     5.4. Datos de GAN-AE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../resultados/resumen.html">
+   6. Resultados
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../resultados/clasificacion.html">
-     4.1. Clasificación de eventos
+     6.1. Clasificación de eventos
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../resultados/comparacion-algoritmos.html">
-     4.2. Comparación de algoritmos
+     6.2. Comparación de algoritmos
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../discusion/discusion.html">
-   5. Discusión de resultados
+   7. Discusión de resultados
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../conclusion/conclusion.html">
-   6. Conclusión
+   8. Conclusión
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../referencias/referencias.html">
-   7. Referencias
+   9. Referencias
   </a>
  </li>
 </ul>
@@ -340,17 +362,17 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones">
-   2.5.1. Funciones
+   4.5.1. Funciones
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pre-procesamiento-de-datos">
-   2.5.2. Pre-procesamiento de datos
+  <a class="reference internal nav-link" href="#preprocesamiento-de-datos">
+   4.5.2. Preprocesamiento de datos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pipeline">
-   2.5.3. Pipeline
+   4.5.3. Pipeline
   </a>
  </li>
 </ul>
@@ -375,17 +397,17 @@ const thebe_selector_output = ".output, .cell_output"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones">
-   2.5.1. Funciones
+   4.5.1. Funciones
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pre-procesamiento-de-datos">
-   2.5.2. Pre-procesamiento de datos
+  <a class="reference internal nav-link" href="#preprocesamiento-de-datos">
+   4.5.2. Preprocesamiento de datos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pipeline">
-   2.5.3. Pipeline
+   4.5.3. Pipeline
   </a>
  </li>
 </ul>
@@ -398,29 +420,29 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="paquete-benchtools">
-<span id="bench"></span><h1><span class="section-number">2.5. </span>Paquete benchtools<a class="headerlink" href="#paquete-benchtools" title="Enlazar permanentemente con este título">¶</a></h1>
-<p>Como se mencionó en la <a class="reference internal" href="datos-lhco.html#datos"><span class="std std-numref">Sección 2.1</span></a>, los conjuntos de datos de las LHCO 2020 incluyen todos los hadrones producto de la colisión entre protones. A partir de estos datos, nos interesa reconstruir los jets de cada evento para analizar variables cinemáticas y de subestructura, entrenar los algoritmos explicados en la <a class="reference internal" href="algoritmos-anomalias.html#alg"><span class="std std-numref">Sección 2.2</span></a> y compararlos utilizando las métricas mencionadas en la <a class="reference internal" href="metricas.html#met"><span class="std std-numref">Sección 2.3</span></a>, que se explicarán en la <a class="reference internal" href="metricas.html#met"><span class="std std-numref">Sección 2.3</span></a>. Sin embargo, para trabajar con 1,000,000 de colisiones, donde hay posibilidad tener los datos de 700 hadrones por evento, con 3 medidas por hadrón (es decir, 2,100,000,000 de variables), es necesario desarrollar algunas herramientas para facilitar su manejo.</p>
-<p>En esta sección se describirá de manera general el paquete <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>, desarrollado para este trabajo. El paquete incluye herramientas para el manejo de datos, agrupamiento jets, comparación de algoritmos de clasificación binaria, entre otros. Información más detallada sobre el paquete y cómo utilizarlo se puede encontrar en el <a class="reference external" href="https://github.com/marianaiv/benchtools">repositorio</a>.</p>
+<span id="bench"></span><h1><span class="section-number">4.5. </span>Paquete benchtools<a class="headerlink" href="#paquete-benchtools" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Como se mencionó en la <a class="reference internal" href="datos-lhco.html#datos"><span class="std std-numref">Sección 4.1</span></a>, los conjuntos de datos de las LHCO 2020 incluyen todos los hadrones producto de la colisión entre protones. A partir de estos datos, nos interesa reconstruir los jets de cada evento para analizar variables cinemáticas y de subestructura (definidas en la <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#jets-subestructura"><span class="std std-numref">Sección 2.5.2</span></a>), entrenar los algoritmos explicados en la <a class="reference internal" href="algoritmos-anomalias.html#alg"><span class="std std-numref">Sección 4.2</span></a> y compararlos utilizando las métricas explicadas en la <a class="reference internal" href="metricas.html#met"><span class="std std-numref">Sección 4.4</span></a>. Sin embargo, para trabajar con 1,000,000 de colisiones, donde hay posibilidad tener los datos de 700 hadrones por evento, con 3 medidas por hadrón (es decir, 2,100,000,000 de variables), es necesario desarrollar algunas herramientas para facilitar su manejo.</p>
+<p>En esta sección, se describirá de manera general el paquete de software basado en Python <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>, desarrollado para este trabajo. El paquete incluye herramientas para el manejo de datos, agrupamiento jets, comparación de algoritmos de clasificación binaria, entre otros. Información más detallada sobre el paquete y cómo utilizarlo se puede encontrar en el <a class="reference external" href="https://github.com/marianaiv/benchtools">repositorio</a>, donde se publicó de manera abierta el código utilizado, siguiendo los lineamientos planteados en la <a class="reference internal" href="../ml-fisica/reproducibilidad.html#rpd"><span class="std std-numref">Sección 3.3</span></a>.</p>
 <div class="section" id="funciones">
-<span id="bench-herramientas"></span><h2><span class="section-number">2.5.1. </span>Funciones<a class="headerlink" href="#funciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<span id="bench-herramientas"></span><h2><span class="section-number">4.5.1. </span>Funciones<a class="headerlink" href="#funciones" title="Enlazar permanentemente con este título">¶</a></h2>
 <p>El paquete se puede dividir en dos partes principales: las funciones y el pipeline. Una función es un bloque de código que resuelve un problema concreto y es lo que utilizamos para armar el pipeline. Recibe cero o más argumentos de entrada y devuelve un argumento de salida o realiza una tarea. En el caso de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>, se agruparon funciones en cinco módulos diferentes de acuerdo a su utilidad.</p>
 <p>Las funciones se dividen en los siguientes módulos:</p>
 <ul class="simple">
 <li><p><strong>datatools</strong>: funciones para manejar los datos. Por ejemplo, leer datos iterativamente, unir tablas de datos, entre otras.</p></li>
 <li><p><strong>substructure</strong>: funciones para calcular variables cinemática y de subestructura de los jets.</p></li>
-<li><p><strong>clustering</strong>: funciones para pre-procesar los datos. Por ejemplo, agrupar los jets, calcular las variables de un jet, entre otras.</p></li>
+<li><p><strong>clustering</strong>: funciones para preprocesar los datos. Por ejemplo, agrupar los jets, calcular las variables de un jet, entre otras.</p></li>
 <li><p><strong>plotools</strong>: funciones para graficar datos. La característica principal es que se grafican los datos separando la señal del fondo.</p></li>
-<li><p><strong>metrictools</strong>: funciones para calcular métricas de redimiento de algoritmos de clasificación binaria.</p></li>
+<li><p><strong>metrictools</strong>: funciones para calcular métricas de rendimiento de algoritmos de clasificación binaria.</p></li>
 </ul>
 <p>Las funciones en <em>datatools</em> y <em>substructure</em> son utilizadas principalmente en otras funciones y su contenido no se discutirá en este trabajo. Las funciones en <em>plotools</em> se utilizarán más adelante y se observará su funcionamiento, por lo que omitiremos su explicación.</p>
-<p>En <em>metrictools</em> hay múltiples funciones que calculan y grafican las métricas de rendimiento. Para calcular las métricas numéricas, en general se va a utilizar <code class="docutils literal notranslate"><span class="pre">compare_metrics</span></code>, que calcula la exactitud balanceada, la precisión, el puntaje f1 y la recuperación para múltiples clasificadores. Las métricas gráficas incluidas en el paquete son la curva ROC y sus variaciones (ROC inversa y eficiencia de señal vs. rechazo de fondo), la curva PR y la curva de mejora significativa. Por último, en este archivo se encuentra una clase <code class="docutils literal notranslate"><span class="pre">clasificador</span></code>. Se utiliza para guardar los resultados de la clasificación en un objeto que contenga el nombre del clasificador, el puntaje de cada evento asociado a la probabilidad de ser señal, la etiqueta binaria predicha para cada evento y la etiqueta real.</p>
-<p>En <em>clustering</em> se encuentra la función que realiza el pre-procesamiento de los datos, <code class="docutils literal notranslate"><span class="pre">build_features</span></code>, y las funciones que la confoman.</p>
+<p>En <em>metrictools</em> hay múltiples funciones que calculan y grafican las métricas de rendimiento. Para calcular las métricas numéricas, en general se va a utilizar <code class="docutils literal notranslate"><span class="pre">compare_metrics</span></code>, que calcula la exactitud balanceada, la precisión, el puntaje f1 y la recuperación para múltiples clasificadores. Las métricas bidimensionales incluidas en el paquete son la curva ROC y sus variaciones (ROC inversa y eficiencia de señal vs. rechazo de fondo), la curva PR y la curva de mejora significativa. Por último, en este archivo se encuentra una clase <code class="docutils literal notranslate"><span class="pre">clasificador</span></code>, que se utiliza para guardar los resultados de la clasificación en un objeto que contenga el nombre del clasificador, el puntaje de cada evento asociado a la probabilidad de ser señal, la etiqueta binaria predicha para cada evento y la etiqueta real.</p>
+<p>En <em>clustering</em> se encuentra la función que realiza el preprocesamiento de los datos, <code class="docutils literal notranslate"><span class="pre">build_features</span></code>, y las funciones que la confoman.</p>
 </div>
-<div class="section" id="pre-procesamiento-de-datos">
-<span id="bench-pre"></span><h2><span class="section-number">2.5.2. </span>Pre-procesamiento de datos<a class="headerlink" href="#pre-procesamiento-de-datos" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>El pre-procesamiento de datos se realiza para obtener variables físicas. Estas variables son utilizadas por los modelos para entrenamiento y clasificación. Los pasos para pre-procesar son los siguientes:</p>
+<div class="section" id="preprocesamiento-de-datos">
+<span id="bench-pre"></span><h2><span class="section-number">4.5.2. </span>Preprocesamiento de datos<a class="headerlink" href="#preprocesamiento-de-datos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El preprocesamiento de datos se realiza para obtener variables físicas a partir de los datos de los jets. Estas variables son utilizadas por los modelos para entrenamiento y clasificación. Los pasos para preprocesar son los siguientes:</p>
 <div class="proof algorithm admonition" id="bench-predatos">
-<p class="admonition-title"><span class="caption-number">Algorithm 2.2 </span> (Pre-procesamiento)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 4.2 </span> (Preprocesamiento de <em>benchtools</em>)</p>
 <div class="algorithm-content section" id="proof-content">
 <p><strong>Input</strong>: Datos de todos los hadrones de los eventos.</p>
 <p><strong>Output</strong>: Variables físicas para cada evento.</p>
@@ -428,79 +450,83 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Importar una fracción de los eventos. Para cada fracción de eventos:</p>
 <ol class="simple">
 <li><p>Agrupar los jets de cada evento utilizando anti-kt con <span class="math notranslate nohighlight">\(R=1\)</span>.</p></li>
-<li><p>Seleccionar los jets que tengan <span class="math notranslate nohighlight">\(p_T&gt;20GeV\)</span></p></li>
-<li><p>Calcular <span class="math notranslate nohighlight">\(p_T\)</span>, <span class="math notranslate nohighlight">\(m_j\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(\tau_{21}\)</span> y el número de hadrones constituyentes, para los dos jets más energéticos. <span class="math notranslate nohighlight">\(\Delta R\)</span>, <span class="math notranslate nohighlight">\(m_{jj}\)</span> utilizando los dos jets principales y el número de hadrones del evento.</p></li>
+<li><p>Seleccionar los jets que tengan <span class="math notranslate nohighlight">\(pT&gt;20GeV\)</span></p></li>
+<li><p>Calcular <span class="math notranslate nohighlight">\(pT\)</span>, <span class="math notranslate nohighlight">\(m_j\)</span>, <span class="math notranslate nohighlight">\(\eta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span>, <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(\tau_{21}\)</span> y el número de hadrones constituyentes, para los dos jets más energéticos. <span class="math notranslate nohighlight">\(\Delta R\)</span>, <span class="math notranslate nohighlight">\(m_{jj}\)</span> utilizando los dos jets principales y el número de hadrones del evento.</p></li>
 <li><p>Guardar las variables calculadas en un marco de datos.</p></li>
 </ol>
 </li>
 </ol>
 </div>
-</div><p>Este proceso se hace iterativamente para fracciones de datos, debido a que importar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos pre-procesados.</p>
-<p>Una tabla con la descripción de cada variable calculada se encuentra <a class="reference internal" href="#bench-variables"><span class="std std-numref">Tabla 2.4</span></a>:</p>
+</div><p>Este proceso se hace paralelamente para fracciones de datos, debido a que importar todos los eventos requiere gran cantidad de memoria. Luego, se unen los archivos para tener un solo conjunto de datos preprocesados.</p>
+<p>La descripción de cada variable calculada se encuentra <a class="reference internal" href="#bench-variables"><span class="std std-numref">Tabla 4.4</span></a>.</p>
 <table class="colwidths-auto table" id="bench-variables">
-<caption><span class="caption-number">Tabla 2.4 </span><span class="caption-text">Variables calculadas en el pre-procesamiento de los datos. Las variables se calculan para i=1,2, que representan el jet principal y secundario, respectivamente.</span><a class="headerlink" href="#bench-variables" title="Enlace permanente a esta tabla">¶</a></caption>
+<caption><span class="caption-number">Tabla 4.4 </span><span class="caption-text">Variables calculadas en el preprocesamiento de los datos. Las variables se calculan para <em>i</em>=1,2, que representan el jet principal y secundario, respectivamente.</span><a class="headerlink" href="#bench-variables" title="Enlace permanente a esta tabla">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable</p></th>
 <th class="head"><p>Descripción</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_T\_j_i\)</span></p></td>
-<td><p>Momento transverso del jet <em>i</em></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(pT_{ji}\)</span></p></td>
+<td><p>Momento transversal del jet <em>i</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(m_j\_j_i\)</span></p></td>
-<td><p>Masa del jet <em>i</em></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(m_{ji}\)</span></p></td>
+<td><p>Masa invariante del jet <em>i</em></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\eta\_j_i\)</span></p></td>
-<td><p>Pseudorapidez del jet <em>i</em>(ec. <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#equation-jets-eta">(1.1)</a>)</p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\eta_{ji}\)</span></p></td>
+<td><p>Pseudorapidez del jet <em>i</em>(ec.<a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#equation-jets-eta">(2.1)</a>)</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\phi\_j_i\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\phi_{ji}\)</span></p></td>
 <td><p>Ángulo azimutal en el plano transverso del jet <em>i</em></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(E\_j_i\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(E_{ji}\)</span></p></td>
 <td><p>Energía del jet <em>i</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\tau_{21}\_j_i\)</span></p></td>
-<td><p>Subjetiness del jet <em>i</em> (ec. <a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#equation-jets-ratio-subjettiness">(1.5)</a>)</p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\tau_{21,ji}\)</span></p></td>
+<td><p>Subjetiness del jet <em>i</em> (ec.<a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#equation-jets-ratio-subjettiness">(2.6)</a>)</p></td>
 </tr>
-<tr class="row-even"><td><p>n_hadrons_<span class="math notranslate nohighlight">\(j_i\)</span></p></td>
+<tr class="row-even"><td><p>nro. hadrones <span class="math notranslate nohighlight">\(ji\)</span></p></td>
 <td><p>Número de hadrones constituyentes del jet <em>i</em></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Delta R\)</span></p></td>
-<td><p>Distancia angular entre los dos jets principales</p></td>
+<td><p>Distancia angular entre los dos jets principales (ec.<a class="reference internal" href="../marco-teorico/reconstruccion-jets.html#equation-delta-r">(2.2)</a>)</p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(m_{jj}\)</span></p></td>
 <td><p>Masa invariante de los dos jets principales</p></td>
 </tr>
-<tr class="row-odd"><td><p>n_hadrons</p></td>
+<tr class="row-odd"><td><p>nro. hadrones</p></td>
 <td><p>Número de hadrones del evento</p></td>
 </tr>
 </tbody>
 </table>
+<p>La masa invariante de los dos jets <span class="math notranslate nohighlight">\(m_{jj}\)</span> está definida como:
+$<span class="math notranslate nohighlight">\(
+    m_{jj}= \sqrt{(E_{j1}+E_{j2})-|p_{j1}+p_{j2}|^2}.
+\)</span>$ (masa invariante)</p>
 </div>
 <div class="section" id="pipeline">
-<span id="bench-pipeline-cap"></span><h2><span class="section-number">2.5.3. </span>Pipeline<a class="headerlink" href="#pipeline" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code> procesa los datos, entrena los modelos explicados en la <a class="reference internal" href="algoritmos-anomalias.html#alg"><span class="std std-numref">Sección 2.2</span></a>, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos se describen a continuación:</p>
+<span id="bench-pipeline-cap"></span><h2><span class="section-number">4.5.3. </span>Pipeline<a class="headerlink" href="#pipeline" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En programación, un pipeline consiste en una serie de pasos en los que la salida de un paso es la entrada del siguiente. Uno de los objetivos de este trabajo fue la creación de un pipeline que acepta como entrada los datos proporcionados en las olimpiadas y que tiene como salida la comparación del resultado de varios algoritmos. El pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code> preprocesa los datos, entrena los modelos explicados en la <a class="reference internal" href="algoritmos-anomalias.html#alg"><span class="std std-numref">Sección 4.2</span></a>, realiza la clasificación y compara los resultados con clasificaciones realizadas externamente, utilizando las métricas de rendimiento descritas anteriormente. Los pasos se describen a continuación:</p>
 <div class="proof algorithm admonition" id="bench-pipelinealg">
-<p class="admonition-title"><span class="caption-number">Algorithm 2.3 </span> (Pipeline)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 4.3 </span> (Pipeline de <em>benchtools</em>)</p>
 <div class="algorithm-content section" id="proof-content">
 <p><strong>Input</strong>: Datos de los eventos y lista de los clasificadores externos a comparar, salvados como un objeto <code class="docutils literal notranslate"><span class="pre">classifier</span></code>.</p>
-<p><strong>Output</strong>: Imagenes de los plots de las métricas y una tabla con las métricas númericas, así como gráficos de barra de cada variable.</p>
+<p><strong>Output</strong>: Imagenes de los gráficos de las métricas y una tabla con las métricas númericas, así como gráficos de barra de cada variable.</p>
 <ol class="simple">
-<li><p>Pre-procesar los datos de los eventos.</p></li>
+<li><p>Preprocesar los datos de los eventos.</p></li>
 <li><p>Transformar los datos para que estén confinados en un rango de valores según el clasificador a utilizar, entrenar los modelos y salvarlos.</p></li>
 <li><p>Evaluar los puntajes y predicciones de cada clasificador.</p></li>
 <li><p>Importar las clasificaciones externas.</p></li>
-<li><p>Comparar los algoritmos utilizando las métricas en <em>metrictools</em></p></li>
+<li><p>Comparar los algoritmos utilizando las métricas en <em>metrictools</em>.</p></li>
 </ol>
 </div>
-</div><p>Para entrenar los modelos, se utilizan las variables descritas en <a class="reference internal" href="#bench-variables"><span class="std std-numref">Tabla 2.4</span></a>, a excepción de <span class="math notranslate nohighlight">\(m_{jj}\)</span> y <span class="math notranslate nohighlight">\(m_{ji}\)</span>, para evitar que los modelos aprendan la masa de las partículas, y obtener una clasificación lo más libre posible de modelo.</p>
-<p>El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra la <a class="reference internal" href="#bench-pipeline"><span class="std std-numref">Figura 2.12</span></a>.</p>
+</div><p>Para entrenar los modelos, se utilizan las variables descritas en la <a class="reference internal" href="#bench-variables"><span class="std std-numref">Tabla 4.4</span></a>, a excepción de <span class="math notranslate nohighlight">\(m_{jj}\)</span> y <span class="math notranslate nohighlight">\(m_{ji}\)</span>, para evitar que los modelos aprendan la masa de las partículas, y obtener una clasificación lo más libre de modelo posible.</p>
+<p>El pipeline posee opciones para realizar algunos o todos los pasos. Un diagrama de este proceso se muestra la <a class="reference internal" href="#bench-pipeline"><span class="std std-numref">Figura 4.14</span></a>.</p>
 <div class="figure align-default" id="bench-pipeline">
 <a class="reference internal image-reference" href="../../_images/bench-pipeline.png"><img alt="../../_images/bench-pipeline.png" src="../../_images/bench-pipeline.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.12 </span><span class="caption-text">Diagrama del pipeline.</span><a class="headerlink" href="#bench-pipeline" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.14 </span><span class="caption-text">Diagrama del pipeline de <code class="docutils literal notranslate"><span class="pre">benchtools</span></code>.</span><a class="headerlink" href="#bench-pipeline" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
-<p>Las opciones para correr el pipeline se encuentran explicadas en el <a class="reference external" href="https://github.com/marianaiv/benchtools">repositorio</a>. Los resultados de su uso se observarán en la <a class="reference internal" href="../resultados/comparacion-algoritmos.html#comp"><span class="std std-numref">Sección 4.2</span></a>.</p>
+<p>Las opciones para correr el pipeline se encuentran explicadas en el <a class="reference external" href="https://github.com/marianaiv/benchtools">repositorio</a>. Los resultados de su uso se observarán en la <a class="reference internal" href="../resultados/comparacion-algoritmos.html#comp"><span class="std std-numref">Sección 6.2</span></a>.</p>
 </div>
 </div>
 
@@ -529,17 +555,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="algoritmos-lhco.html" title="anterior página">
+    <a class='left-prev' id="prev-link" href="metricas.html" title="anterior página">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">anterior</p>
-            <p class="prev-next-title"><span class="section-number">2.4. </span>Algoritmos LHCO 2020</p>
+            <p class="prev-next-title"><span class="section-number">4.4. </span>Métricas de rendimiento</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../analisis-datos/resumen.html" title="siguiente página">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Exploración de datos</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Exploración de datos</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
