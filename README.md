@@ -10,6 +10,7 @@
 - [Contenido del repositorio](#about_repo)
 - [Reproducción de resultados](#resultados)
 - [Construcción del Jupyter Book](#jb)
+- [Construcción de la presentacion](#pre)
 - [Licencia](#licencia)
 
 ## Sobre el proyecto <a name="about_project"></a>
@@ -75,6 +76,19 @@ Para construir el documento en latex:
 ```
 git checkout latexpdf
 jb build tesis --builder pdflatex
+```
+## Construcción de la presentación <a name="pre"></a>
+La presentación de este proyecto se realizó utilizando slides que se encuentran en la carpeta *presentación*. Los slides fueron hechos a partir del jupyter notebook que se encuentra en esa carpeta utilizando [nbconvert](https://nbconvert.readthedocs.io/en/latest/). El archivo .ipynb contiene las notas de lo dicho en la presentación. 
+
+Para generar el archivo .htlm (los slides) que se encuentra en *presentacion* a partir del archivo .ipynb:
+
+Entramos a la carpeta presentacion
+```
+cd presentacion
+```
+Corremos:
+```
+jupyter nbconvert --to slides --TemplateExporter.exclude_input=True --SlidesExporter.reveal_number=c/t --template=template presentacion.ipynb
 ```
 ## Licencia<a name="licencia"></a>
 El contenido del trabajo escrito está licenciado bajo [Licencia Internacional Pública de Atribución-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/legalcode.es).
