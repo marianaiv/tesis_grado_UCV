@@ -9,6 +9,213 @@ Discusiones tesis de Mariana
 
 [Link al github del benchmarking](https://github.com/marianaiv/benchmark_clalgoritmos)
 
+## Mayo
+
+### Viernes, 20 de Mayo 2022
+#### Participantes
+- Camila
+- Mariana
+#### Agenda
+- Aplicación: [Leeds Institute for Data Analytics Data Scientist](https://jobs.leeds.ac.uk/Vacancy.aspx?ref=MHLDA1040)
+    - [Cover letter](https://docs.google.com/document/d/1JZSpnR1I-VOonsP5zYLa5rP49UdLxcab2iw71MT5FZ4/edit?usp=sharing)
+    - [Supporting Statements](https://docs.google.com/document/d/1g7io0SITLZTb6Qk67GbSYm-lbmB3Y_4u65Dd4-KXSKI/edit?usp=sharing)
+    - No entiendo como llenar esto:
+        ![](https://i.imgur.com/J2QuWaA.png)
+    - Debería agregar aquí los cursos de Coursera?
+        ![](https://i.imgur.com/Te3dq9I.png)
+    - Completar referees
+        ![](https://i.imgur.com/Z0jOG7q.png)
+
+Camila:
+    - correo: crangelsmith@turing.ac.uk
+    - Position: Senior Data Scientist
+    - Tel: +44 7445146454
+- 
+- Aplicación: Mathematical Physics MSc, The University of Edinburgh
+- Tesis
+    - Discusión y conclusiones.
+    - Introducción, abstract y otros.
+    - Correcciones
+- Monografía: José Antonio me dijo que tiene que ser con el formato de la facultad
+    - Él propone que haga una monografía muy corta y mande a la gente al Jupyter Book
+    - Yo propongo pegar todo en el formato y decir que se puede conseguir como Jupyter book
+        - O lograr aplicarle la clase cuando hago el rendering del jupyter book a latex
+#### Notas
+
+#### Acciones
+#### Links relevantes
+
+
+### Viernes, 6 de Mayo 2022
+#### Participantes
+- Reina
+- Camila
+- Mariana
+#### Agenda
+- Update del documento escrito
+#### Notas
+- Hablar con José Antonio del formato
+#### Acciones
+#### Links relevantes
+- https://www.chevening.org/scholarship/venezuela/
+
+## Abril
+
+### Viernes, 15-22-29 de Abril 2022
+
+#### Notas
+- Reuniones sobre el desarrollo del documento escrito.
+
+### Viernes, 8 de Abril 2022
+#### Participantes
+- Mariana
+- Camila
+#### Agenda
+- Arreglé el código
+    - Resultados BB1
+- [Capítulos marco teórico](https://github.com/marianaiv/tesis_grado_UCV/tree/marco-teorico/tesis/capitulos/marco-teorico)
+    - Falta: 
+        - Terminar machine learning
+        - Reproducibilidad
+        - LHCO: agrego la comparación de reproducibilidad? [Algoritmos LHCO 2020](/rJUFRvAKTZubT1AzUaaMng) (Tabla resumen)
+- Test del pipeline?
+#### Notas
+#### Acciones
+#### Links relevantes
+
+## Marzo
+
+### Viernes, 18 de Marzo 2022
+#### Participantes
+- Reina
+- Camila
+- Mariana
+#### Agenda
+- [Clasificación KMeans](https://github.com/marianaiv/benchmark_clalgoritmos/blob/pipeline/notebooks/16.0-pipeline-KMeans-performance.ipynb) 
+- Importar clase de [pipeline](https://github.com/marianaiv/benchtools/blob/pipeline/benchtools/scripts/run.py) a [script](https://github.com/marianaiv/benchtools/blob/pipeline/benchtools/scripts/UCluster_data.py)
+- Los modelos de sklearn no se estan guardando entrenados (funcion linea 150 de [run.py](https://github.com/marianaiv/benchtools/blob/pipeline/benchtools/scripts/run.py))
+- Las citas de este [capitulo](https://github.com/marianaiv/tesis_grado_UCV/blob/main/tesis/capitulos/marco-teorico/modelo-estandar.md) no salen cuando hago el build
+#### Notas
+#### Acciones
+- A partir 191 que le pasa al objeto en [pipeline](https://github.com/marianaiv/benchtools/blob/pipeline/benchtools/scripts/run.py)
+- Asignar el fit a otra variable [pipeline](https://github.com/marianaiv/benchtools/blob/pipeline/benchtools/scripts/run.py)
+- Embajada de Francia Calle Madrid c/c Trinidad Las Mercedes Caracas , Venezuela. Téléphone. + 58 212 762 99 76
+- campusfrance.caracas@gmail.com
+- Revisar las citas en The Turing Way
+#### Links relevantes
+
+### Viernes, 11 de Marzo 2022
+#### Participantes
+- Reina
+- Mariana
+#### Agenda
+- Output del pipeline
+    - Agregar algo más?
+
+#### Notas
+#### Acciones
+- Comenzar a hacer el documento de la tesis
+#### Links relevantes
+
+## Febrero
+
+### Viernes, 18 de Febrero 2022
+#### Participantes
+- Camila
+- Mariana
+#### Agenda
+- UCluster: [notebook](https://github.com/marianaiv/benchmark_clalgoritmos/blob/LHCO-algorithms/notebooks/10.0-UCluster-data.ipynb)
+    - Hay que usar --train_full
+
+#### Notas
+#### Acciones
+- Arreglar la tabla de métricas
+#### Links relevantes
+
+### Viernes, 11 de Febrero 2022
+#### Participantes
+
+#### Agenda
+- Hice los plots con lo que da UCluster: [notebook](https://github.com/marianaiv/benchmark_clalgoritmos/blob/LHCO-algorithms/notebooks/10.0-UCluster-data.ipynb)
+    - Arreglé el último error que mandé por mattermost y lo corrí varias veces con algunos cambios (pero igual da todo fondo)
+- No entiendo por qué la roc invertida no da bien: comparar fig. 42 [aquí](https://arxiv.org/pdf/2101.08320.pdf) con celda 10 [aquí](https://github.com/marianaiv/benchmark_clalgoritmos/blob/LHCO-algorithms/notebooks/11.0-GAN-AE-data.ipynb)
+- Un draft de [El módelo estándar](/AMUD-82yTWeG-SEfrC0F5w)
+    - Sugerencias sobre qué más agregar :slightly_smiling_face: 
+- Como estructurar el pipeline
+    - Algoritmos, entrenamiento, guardar resultados y obtener las métricas
+#### Notas
+- ROC inversa: escala logarimitmica en el eje y
+#### Acciones
+#### Links relevantes
+- https://github.com/alan-turing-institute/Palaeoanalytics
+
+
+### Viernes, 4 de Febrero 2022
+#### Participantes
+- Camila
+- Reina
+- Mariana
+#### Agenda
+- Pre-procesamiento GAN-AE
+- UCluster: No puedo graficar con los resultados que da
+- Backbone de la tesis
+#### Notas
+- Incluir benchtools en preprocesamiento
+- Merge comparación de algoritmos con resultados 
+- Incluir busqueda dijet
+- Cambiar de lugar reproducibilidad y LHCO
+#### Acciones
+#### Links relevantes
+- https://github.com/alan-turing-institute/rds-course
+- https://jupyterbook.org/intro.html
+
+## Enero
+
+### Viernes, 28 de Enero 2022
+#### Participantes
+- Camila
+- Reina
+- Mariana
+#### Agenda
+- Clasificación con KMeans: [09.0-Kmeans-classification.ipynb](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/09.0-Kmeans-classification.ipynb)
+- Input y output data de UCluster: [10.0-UCluster-data.ipynb](https://github.com/marianaiv/benchmark_clalgoritmos/blob/LHCO-algorithms/notebooks/10.0-UCluster-data.ipynb)
+    - El output de la evaluación con todos los datos me da solo fondo (penultima celda o celda [51])
+    - No entiendo max_pool output de UCluster: [script](https://github.com/ViniciusMikuni/UCluster/blob/master/scripts/evaluate_kmeans_seg.py)
+- Input y output data de GAN-AE: [11.0-GAN-AE-data.ipynb](https://github.com/marianaiv/benchmark_clalgoritmos/blob/LHCO-algorithms/notebooks/11.0-GAN-AE-data.ipynb)
+#### Notas
+- Significancia: sig/sqrt{bkg} (curva de probabilidad)
+- Intentar utilizar un bumphunter
+#### Acciones
+#### Links relevantes
+
+### Viernes, 21 de Enero 2022
+#### Participantes
+- Reina
+- Mariana
+#### Agenda
+- Clasificación con KMeans: [09.0-Kmeans-classification.ipynb](https://github.com/marianaiv/benchmark_clalgoritmos/blob/easy-algorithms/notebooks/09.0-Kmeans-classification.ipynb)
+    - Hay que revisar las curvas 
+- Input y output data de UCluster: [10.0-UCluster-data.ipynb](https://github.com/marianaiv/benchmark_clalgoritmos/blob/LHCO-algorithms/notebooks/10.0-UCluster-data.ipynb)
+    - El output de la evaluación con todos los datos me da solo fondo (penultima celda o celda [51])
+- No entiendo max_pool output de UCluster: [script](https://github.com/ViniciusMikuni/UCluster/blob/master/scripts/evaluate_kmeans_seg.py)
+- [Pre-procesamiento de GAN-AE](https://gitlab.cern.ch/idinu/lhc-olympics-preprocessing/-/tree/master): dónde definen las variables?
+- Distancias euclideas GAN-AE en figura 13 (página 24-27) en el [pdf del paper común](https://arxiv.org/pdf/2101.08320.pdf): se refieren a la mean euclidean distance?
+#### Notas
+- Agregar significancia
+#### Acciones
+#### Links relevantes
+
+### Viernes, 14 de Enero 2022
+#### Participantes
+- Camila
+- Mariana
+#### Agenda
+- Algoritmos de clustering
+#### Notas
+- PCA: utilizar varianza (95%) para escoger nro. de componentes 
+#### Acciones
+#### Links relevantes
+
 ## Diciembre
 ### Viernes, 3 de Diciembre 2021
 #### Participantes
